@@ -5,65 +5,82 @@ title: Exonumist
 <section class="hero">
   <div class="hero-grid">
     <div>
-      <h1>New York City Transportation Tokens, Cataloged and Beyond</h1>
-      <p>Exonumist is a digital reference and showcase focused on New York City transportation tokens, varieties, unlisted pieces, oddities, patterns, club tour issues, and related transit exonumia.</p>
-      <p class="note">Official listings on this site follow the {{ site.catalog.name }} where applicable.</p>
+      <h1>New York City Transportation Tokens</h1>
+      <p>{{ site.notes.homepageTagline }}</p>
+      <p class="note">Listed material on this site follows the {{ site.catalog.name }} where applicable.</p>
       <div class="hero-actions">
-        <a href="/official/" class="btn primary">{{ site.labels.official }}</a>
-        <a href="/unlisted/" class="btn">{{ site.labels.unlisted }}</a>
+        <a href="/listed/" class="btn primary">Browse Listed Tokens</a>
+        <a href="/unlisted/" class="btn">Explore Unlisted Tokens</a>
       </div>
     </div>
-    <div class="hero-side">
-      <div class="mini-card"><strong>Official Listings</strong><br/>Standard NYC catalog entries arranged by borough and section.</div>
-      <div class="mini-card"><strong>Unlisted Tokens</strong><br/>Real New York City tokens that remain outside the printed listings.</div>
-      <div class="mini-card"><strong>Oddities &amp; Errors</strong><br/>Mispunched, double struck, exception, and other unusual pieces.</div>
-      <div class="mini-card"><strong>Patterns &amp; Special Issues</strong><br/>Patterns, club tour tokens, and other non-circulating material.</div>
+    <div class="hero-visual">
+      <div class="hero-visual-card">
+        <img src="/images/official/630/630-d-a_o.jpg" alt="NY630Da obverse" />
+      </div>
+      <div class="hero-visual-card">
+        <img src="/images/official/630/630-d-a_r.jpg" alt="NY630Da reverse" />
+      </div>
+      <div class="hero-visual-card">
+        <strong>Collector-focused.</strong>
+        <p class="note">Built around listed and unlisted New York City transportation-related tokens.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="section">
-  <h2>{{ site.labels.official }}</h2>
-  <p class="section-intro">Browse standard A/C-listed New York City tokens by borough and section.</p>
-  <div class="grid-5">
-    {% for section in sections | sort(attribute="order") %}
-      {% if section.pub %}
-      <article class="card">
-        <span class="eyebrow">Section {{ section.sec }}</span>
-        <strong>{{ section.title }}</strong>
-        <p>{{ section.borough }} listings from the {{ site.catalog.shortName }}.</p>
-        <a class="cta" href="/official/{{ section.sec }}/">Browse {{ section.title }} →</a>
-      </article>
-      {% endif %}
-    {% endfor %}
+  <h2>Listed Tokens</h2>
+  <p class="section-intro">Browse listed New York City transportation-related tokens by borough and listed special groups.</p>
+  <div class="grid-4">
+    <a class="card-link" href="/listed/628/"><article class="card"><strong>Bronx</strong><p>Listed Bronx transportation tokens.</p></article></a>
+    <a class="card-link" href="/listed/629/"><article class="card"><strong>Brooklyn</strong><p>Listed Brooklyn transportation tokens.</p></article></a>
+    <a class="card-link" href="/listed/630/"><article class="card"><strong>Manhattan</strong><p>Listed Manhattan transportation tokens.</p></article></a>
+    <a class="card-link" href="/listed/631/"><article class="card"><strong>Queens</strong><p>Listed Queens transportation tokens.</p></article></a>
+    <a class="card-link" href="/listed/632/"><article class="card"><strong>Staten Island</strong><p>Listed Staten Island transportation tokens.</p></article></a>
+    <a class="card-link" href="/listed/patterns/"><article class="card"><strong>Patterns</strong><p>Listed patterns from the {{ site.catalog.shortName }}.</p></article></a>
+    <a class="card-link" href="/listed/club-tour/"><article class="card"><strong>Club Tour (CT)</strong><p>Listed club tour issues from the {{ site.catalog.shortName }}.</p></article></a>
   </div>
 </section>
 
 <section class="section">
-  <h2>{{ site.labels.unlisted }}</h2>
-  <p class="section-intro">New York City transportation-related tokens and pieces not presently included in the Atwood-Coffee Catalog.</p>
+  <h2>Unlisted Tokens</h2>
+  <p class="section-intro">
+    New York City transportation-related tokens not presently included in the {{ site.catalog.name }}.
+  </p>
+
   <div class="grid-3">
-    {% for token in unlisted %}
-      {% if token.pub and token.home %}
+    <a class="card-link" href="/unlisted/">
       <article class="card">
-        <span class="eyebrow">{{ token.siteId }}</span>
-        <strong>{{ token.displayTitle }}</strong>
-        <p>{{ token.desc }}</p>
-        <a class="cta" href="/unlisted/{{ token.siteId | lower }}/">View token →</a>
+        <strong>Unlisted Discoveries</strong>
+        <p>
+          Tokens and related material not presently listed in the
+          {{ site.catalog.shortName }}.
+        </p>
       </article>
-      {% endif %}
-    {% endfor %}
+    </a>
+
+    <a class="card-link" href="/unlisted/#oddities">
+      <article class="card">
+        <strong>Oddities &amp; Errors</strong>
+        <p>
+          Unlisted errors, oddities, and unusual transportation-related material.
+        </p>
+      </article>
+    </a>
   </div>
 </section>
 
 <section class="section">
+  <h2>Resources</h2>
   <div class="grid-3">
     {% for resource in resources | sort(attribute="order") %}
       {% if resource.pub %}
-      <article class="resource-card">
-        <strong><a href="{{ resource.urlRef | resolveUrlRef(site) }}">{{ resource.title }}</a></strong>
-        <p>{{ resource.text }}</p>
-      </article>
+      <a class="card-link" href="{{ resource.urlRef | resolveUrlRef(site) }}">
+        <article class="resource-card">
+          <strong>{{ resource.title }}</strong>
+          <p>{{ resource.text }}</p>
+        </article>
+      </a>
       {% endif %}
     {% endfor %}
   </div>

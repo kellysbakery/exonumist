@@ -4,16 +4,33 @@ title: Unlisted Tokens
 permalink: /unlisted/index.html
 ---
 <section class="section">
-  <h1>{{ site.labels.unlisted }}</h1>
-  <p class="section-intro">New York City transportation-related tokens and pieces not presently included in the {{ site.catalog.name }}.</p>
+  <h1>Unlisted Tokens</h1>
+  <p class="section-intro">New York City transportation-related tokens and oddities not presently included in the {{ site.catalog.name }}.</p>
+  <h2>Unlisted Tokens</h2>
   <div class="grid-3">
     {% for token in unlisted %}
+      {% if token.pub %}
+      <a class="card-link" href="/unlisted/{{ token.siteId | lower }}/">
+        <article class="card">
+          <span class="eyebrow">{{ token.siteId }}</span>
+          <strong>{{ token.displayTitle }}</strong>
+          <p>{{ token.desc }}</p>
+        </article>
+      </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section" id="oddities">
+  <h2>Oddities &amp; Errors</h2>
+  <div class="grid-3">
+    {% for token in oddities %}
       {% if token.pub %}
       <article class="card">
         <span class="eyebrow">{{ token.siteId }}</span>
         <strong>{{ token.displayTitle }}</strong>
         <p>{{ token.desc }}</p>
-        <a class="cta" href="/unlisted/{{ token.siteId | lower }}/">View token →</a>
       </article>
       {% endif %}
     {% endfor %}

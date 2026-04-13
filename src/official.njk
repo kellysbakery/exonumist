@@ -1,21 +1,10 @@
 ---
 layout: base.njk
-title: Official NYC Tokens
+title: Listed Tokens
 permalink: /official/index.html
 ---
 <section class="section">
-  <h1>{{ site.labels.official }}</h1>
-  <p class="section-intro">Browse standard {{ site.catalog.shortName }} New York City tokens by borough and section.</p>
-  <div class="grid-5">
-    {% for section in sections | sort(attribute="order") %}
-      {% if section.pub %}
-      <article class="card">
-        <span class="eyebrow">Section {{ section.sec }}</span>
-        <strong>{{ section.title }}</strong>
-        <p>{{ section.city }}, {{ section.state }}</p>
-        <a class="cta" href="/official/{{ section.sec }}/">Open section →</a>
-      </article>
-      {% endif %}
-    {% endfor %}
-  </div>
+  <h1>Listed Tokens</h1>
+  <p>This site now uses <strong>Listed Tokens</strong> as the primary term for material included in the {{ site.catalog.name }}.</p>
+  <p><a class="btn primary" href="/listed/">Open Listed Tokens</a></p>
 </section>
