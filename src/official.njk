@@ -1,0 +1,21 @@
+---
+layout: layouts/base.njk
+title: Official NYC Tokens
+permalink: /official/index.html
+---
+<section class="section">
+  <h1>{{ site.labels.official }}</h1>
+  <p class="section-intro">Browse standard {{ site.catalog.shortName }} New York City tokens by borough and section.</p>
+  <div class="grid-5">
+    {% for section in sections | sort(attribute="order") %}
+      {% if section.pub %}
+      <article class="card">
+        <span class="eyebrow">Section {{ section.sec }}</span>
+        <strong>{{ section.title }}</strong>
+        <p>{{ section.city }}, {{ section.state }}</p>
+        <a class="cta" href="/official/{{ section.sec }}/">Open section →</a>
+      </article>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>

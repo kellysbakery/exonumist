@@ -1,0 +1,28 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: sections
+  size: 1
+  alias: section
+permalink: "/official/{{ section.sec }}/index.html"
+eleventyComputed:
+  title: "Section {{ section.sec }} – {{ section.title }}"
+---
+{% if section.pub %}
+<section class="section">
+  <h1>Section {{ section.sec }} – {{ section.title }}</h1>
+  <p class="section-intro">{{ section.borough }}, {{ section.city }}, {{ section.state }}.</p>
+  <div class="grid-3">
+    {% for token in collections.officialAll %}
+      {% if token.sec == section.sec and token.pub %}
+      <article class="card">
+        <span class="eyebrow">{{ token.displayId }}</span>
+        <strong>{{ token.title }}</strong>
+        <p>{{ token.desc }}{% if token.notes %} {{ token.notes }}{% endif %}</p>
+        <a class="cta" href="/official/{{ token.displayId | lower }}/">View token →</a>
+      </article>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
