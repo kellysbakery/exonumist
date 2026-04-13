@@ -4,23 +4,24 @@ pagination:
   data: sections
   size: 1
   alias: section
-permalink: "/official/{{ section.sec }}/index.html"
+permalink: "/listed/{{ section.sec }}/index.html"
 eleventyComputed:
-  title: "Section {{ section.sec }} – {{ section.title }}"
+  title: "{{ section.title }} – Listed Tokens"
 ---
 {% if section.pub %}
 <section class="section">
-  <h1>Section {{ section.sec }} – {{ section.title }}</h1>
-  <p class="section-intro">{{ section.borough }}, {{ section.city }}, {{ section.state }}.</p>
+  <h1>{{ section.title }}</h1>
+  <p class="section-intro">Listed {{ section.borough }} transportation tokens from the {{ site.catalog.shortName }}.</p>
   <div class="grid-3">
     {% for token in collections.officialAll %}
       {% if token.sec == section.sec and token.pub %}
-      <article class="card">
-        <span class="eyebrow">{{ token.displayId }}</span>
-        <strong>{{ token.title }}</strong>
-        <p>{{ token.desc }}{% if token.notes %} {{ token.notes }}{% endif %}</p>
-        <a class="cta" href="/official/{{ token.displayId | lower }}/">View token →</a>
-      </article>
+      <a class="card-link" href="/official/{{ token.displayId | lower }}/">
+        <article class="card">
+          <span class="eyebrow">{{ token.displayId }}</span>
+          <strong>{{ token.title }}</strong>
+          <p>{{ token.desc }}{% if token.notes %} {{ token.notes }}{% endif %}</p>
+        </article>
+      </a>
       {% endif %}
     {% endfor %}
   </div>

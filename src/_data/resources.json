@@ -9,8 +9,8 @@
   },
   {
     "id": "ac-info",
-    "title": "Atwood-Coffee Catalog",
-    "text": "Reference information about the A/C Catalog used throughout this site.",
+    "title": "Atwood-Coffee Catalogue",
+    "text": "Reference information about the A/C Catalogue used throughout this site.",
     "urlRef": "catalog.infoUrl",
     "pub": true,
     "order": 2

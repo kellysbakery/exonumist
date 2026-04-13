@@ -1,9 +1,9 @@
 {
   "status": {
-    "listed": "Listed in Atwood-Coffee Catalog",
-    "unlisted": "Not currently listed in Atwood-Coffee Catalog",
+    "listed": "Listed in Atwood-Coffee Catalogue",
+    "unlisted": "Not currently listed in Atwood-Coffee Catalogue",
     "special": "Listed as a special issue",
-    "exception": "Catalog exception"
+    "exception": "Catalogue exception"
   },
   "type": {
     "transit": "Transit Token",

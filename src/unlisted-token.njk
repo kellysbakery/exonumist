@@ -38,7 +38,7 @@ eleventyComputed:
       {% if token | hasFallbackImage("unlisted", "o") %}
       <img src="{{ token | fallbackImagePath('unlisted', 'o') }}" alt="{{ token.siteId }} obverse" style="width:100%;max-width:460px;aspect-ratio:1/1;object-fit:contain;display:block;margin:0 auto 12px;" />
       {% else %}
-      <div class="placeholder">Expected image:<br>{{ token | fallbackImagePath("unlisted", "o") }}</div>
+      <div class="placeholder">Image coming soon</div>
       {% endif %}
       <figcaption>Obverse</figcaption>
     </figure>
@@ -46,7 +46,7 @@ eleventyComputed:
       {% if token | hasFallbackImage("unlisted", "r") %}
       <img src="{{ token | fallbackImagePath('unlisted', 'r') }}" alt="{{ token.siteId }} reverse" style="width:100%;max-width:460px;aspect-ratio:1/1;object-fit:contain;display:block;margin:0 auto 12px;" />
       {% else %}
-      <div class="placeholder">Expected image:<br>{{ token | fallbackImagePath("unlisted", "r") }}</div>
+      <div class="placeholder">Image coming soon</div>
       {% endif %}
       <figcaption>Reverse</figcaption>
     </figure>
