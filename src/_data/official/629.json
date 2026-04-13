@@ -1,0 +1,25 @@
+[
+  {
+    "id": "official-ny629ka",
+    "displayId": "NY629KA",
+    "sec": "629",
+    "code": "KA",
+    "status": "listed",
+    "type": "transit",
+    "title": "New York City Transfer System B.M.T. Division Transfer Token",
+    "mat": "Bz",
+    "form": "R",
+    "symbol": "Sd",
+    "size": 22,
+    "obv": "NEW YORK CITY TRANSFER SYSTEM B.M.T. DIVISION TRANSFER TOKEN",
+    "rev": "Issued in Exchange for Transfer",
+    "desc": "Separate A/C listing described as an error and never used.",
+    "notes": "Catalog exception; not a minor die variety of NY629K.",
+    "val": 75,
+    "market": "",
+    "rel": [],
+    "home": false,
+    "pub": true,
+    "sort": "629-ka"
+  }
+]

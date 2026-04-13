@@ -1,0 +1,26 @@
+[
+  {
+    "id": "ava-home",
+    "title": "American Vecturist Association",
+    "text": "Official collector organization for transportation token research and membership.",
+    "urlRef": "ava.homeUrl",
+    "pub": true,
+    "order": 1
+  },
+  {
+    "id": "ac-info",
+    "title": "Atwood-Coffee Catalog",
+    "text": "Reference information about the A/C Catalog used throughout this site.",
+    "urlRef": "catalog.infoUrl",
+    "pub": true,
+    "order": 2
+  },
+  {
+    "id": "ac-membership",
+    "title": "AVA Membership",
+    "text": "The current catalog PDF is available free to AVA members upon request.",
+    "urlRef": "catalog.membershipUrl",
+    "pub": true,
+    "order": 3
+  }
+]

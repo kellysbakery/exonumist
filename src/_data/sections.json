@@ -1,0 +1,52 @@
+[
+  {
+    "id": "nyc-628",
+    "sec": "628",
+    "borough": "Bronx",
+    "city": "New York City",
+    "state": "NY",
+    "title": "Bronx",
+    "order": 1,
+    "pub": true
+  },
+  {
+    "id": "nyc-629",
+    "sec": "629",
+    "borough": "Brooklyn",
+    "city": "New York City",
+    "state": "NY",
+    "title": "Brooklyn",
+    "order": 2,
+    "pub": true
+  },
+  {
+    "id": "nyc-630",
+    "sec": "630",
+    "borough": "Manhattan",
+    "city": "New York City",
+    "state": "NY",
+    "title": "Manhattan",
+    "order": 3,
+    "pub": true
+  },
+  {
+    "id": "nyc-631",
+    "sec": "631",
+    "borough": "Queens",
+    "city": "New York City",
+    "state": "NY",
+    "title": "Queens",
+    "order": 4,
+    "pub": true
+  },
+  {
+    "id": "nyc-632",
+    "sec": "632",
+    "borough": "Staten Island",
+    "city": "New York City",
+    "state": "NY",
+    "title": "Staten Island",
+    "order": 5,
+    "pub": true
+  }
+]

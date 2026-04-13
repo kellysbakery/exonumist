@@ -1,0 +1,19 @@
+---
+layout: layouts/base.njk
+title: Oddities & Errors
+permalink: /oddities/index.html
+---
+<section class="section">
+  <h1>{{ site.labels.oddities }}</h1>
+  <div class="grid-3">
+    {% for token in oddities %}
+      {% if token.pub %}
+      <article class="card">
+        <span class="eyebrow">{{ token.siteId }}</span>
+        <strong>{{ token.displayTitle }}</strong>
+        <p>{{ token.desc }}</p>
+      </article>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>

@@ -1,0 +1,28 @@
+[
+  {
+    "id": "oddity-0001",
+    "siteId": "ODD-0001",
+    "displayTitle": "Double Obverse NYC Transit Token",
+    "status": "exception",
+    "type": "transit",
+    "oddityType": "double_obverse",
+    "baseId": "",
+    "relCatalog": [
+      "NY630AT"
+    ],
+    "city": "New York City",
+    "borough": "Manhattan",
+    "state": "NY",
+    "mat": "B",
+    "form": "R",
+    "symbol": "Sd",
+    "size": 22,
+    "obv": "",
+    "rev": "",
+    "desc": "Token struck with obverse dies on both sides.",
+    "notes": "",
+    "home": false,
+    "pub": true,
+    "sort": "odd-0001"
+  }
+]

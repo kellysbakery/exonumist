@@ -1,0 +1,25 @@
+{
+  "siteName": "Exonumist",
+  "siteUrl": "https://exonumist.com",
+  "catalog": {
+    "name": "Atwood-Coffee Catalog",
+    "shortName": "A/C Catalog",
+    "infoUrl": "https://vecturist.com/atwood-coffee-catalogue/",
+    "membershipUrl": "https://vecturist.com/",
+    "pdfNote": "The current catalog PDF is available free to AVA members upon request."
+  },
+  "ava": {
+    "name": "American Vecturist Association",
+    "shortName": "AVA",
+    "homeUrl": "https://vecturist.com/"
+  },
+  "labels": {
+    "official": "Official NYC Tokens",
+    "unlisted": "Unlisted Tokens",
+    "oddities": "Oddities & Errors",
+    "special": "Patterns & Special Issues"
+  },
+  "notes": {
+    "catalogValueDisclaimer": "A/C Catalog values are useful reference points, but they may not reflect current realized prices."
+  }
+}
