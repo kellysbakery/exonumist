@@ -8,65 +8,194 @@ permalink: "/official/{{ token.displayId | lower }}/index.html"
 eleventyComputed:
   title: "{{ token.displayId }} – {{ token.title }}"
 ---
+{% set sectionLabel = token.sec %}
+{% set sectionUrl = "/listed/" ~ token.sec ~ "/" %}
+
+{% if token.sec == "630" %}
+  {% set sectionLabel = "Manhattan" %}
+{% endif %}
+{% if token.sec == "629" %}
+  {% set sectionLabel = "Brooklyn" %}
+{% endif %}
+{% if token.sec == "628" %}
+  {% set sectionLabel = "Bronx" %}
+{% endif %}
+{% if token.sec == "631" %}
+  {% set sectionLabel = "Queens" %}
+{% endif %}
+{% if token.sec == "632" %}
+  {% set sectionLabel = "Staten Island" %}
+{% endif %}
+
+{% set sectionTokens = [] %}
+{% for item in collections.officialAll %}
+  {% if item.sec == token.sec and item.pub %}
+    {% set sectionTokens = sectionTokens.concat([item]) %}
+  {% endif %}
+{% endfor %}
+
+{% set prevToken = null %}
+{% set nextToken = null %}
+
+{% for item in sectionTokens %}
+  {% if item.displayId == token.displayId %}
+    {% if loop.index0 > 0 %}
+      {% set prevToken = sectionTokens[loop.index0 - 1] %}
+    {% endif %}
+    {% if loop.index0 < (sectionTokens | length - 1) %}
+      {% set nextToken = sectionTokens[loop.index0 + 1] %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
 <section class="token-shell">
-  <div class="token-hero">
-    <div>
-      <div class="meta">Home / Official NYC Tokens / Section {{ token.sec }} / {{ token.displayId }}</div>
-      <h1>{{ token.displayId }}</h1>
-      <p class="meta">{{ token.title }} · Section {{ token.sec }}</p>
-      <div class="badges">
-        <span class="badge">{{ token.status | lookup(lookups.status) }}</span>
-        <span class="badge">{{ token.type | lookup(lookups.type) }}</span>
-        <span class="badge">{{ token.mat | lookup(lookups.materials) }}</span>
-        <span class="badge">{{ token.form | lookup(lookups.forms) }}</span>
-        <span class="badge">{{ token.symbol | lookup(lookups.symbols) }}</span>
-        <span class="badge">{{ token.size }} mm</span>
-      </div>
-      <p>{{ token.desc }}{% if token.notes %} {{ token.notes }}{% endif %}</p>
+  <div class="token-header">
+    <div class="meta breadcrumb">
+      <a href="/">Home</a>
+      <span>/</span>
+      <a href="/listed/">Listed Tokens</a>
+      <span>/</span>
+      <a href="{{ sectionUrl }}">{{ sectionLabel }}</a>
+      <span>/</span>
+      <span aria-current="page">{{ token.displayId }}</span>
     </div>
-    <aside class="facts">
-      <h2>Quick Facts</h2>
-      <dl>
-        <div class="facts-row"><dt>Catalogue ID</dt><dd>{{ token.displayId }}</dd></div>
-        <div class="facts-row"><dt>Section</dt><dd>{{ token.sec }}</dd></div>
-        <div class="facts-row"><dt>Code</dt><dd>{{ token.code }}</dd></div>
-        {% if token.var %}<div class="facts-row"><dt>Minor Variety</dt><dd>{{ token.var }}</dd></div>{% endif %}
-        <div class="facts-row"><dt>Catalogue Status</dt><dd>{{ token.status | lookup(lookups.status) }}</dd></div>
-        <div class="facts-row"><dt>Type</dt><dd>{{ token.type | lookup(lookups.type) }}</dd></div>
-        <div class="facts-row"><dt>A/C Value</dt><dd>${{ token.val }}</dd></div>
-      </dl>
-    </aside>
+
+    <h1>{{ token.displayId }}</h1>
+
+    <p class="token-subtitle">{{ token.title }}</p>
+
+    <p class="token-meta-line">
+      Section {{ token.sec }}
+      {% if token.mat %} · {{ token.mat | lookup(lookups.materials) }}{% endif %}
+      {% if token.size %} · {{ token.size }} mm{% endif %}
+      {% if token.form %} · {{ token.form | lookup(lookups.forms) }}{% endif %}
+      {% if token.symbol %} · {{ token.symbol | lookup(lookups.symbols) | lower }}{% endif %}
+    </p>
+
+    <div class="badges">
+      {% if token.status %}<span class="badge">{{ token.status | lookup(lookups.status) }}</span>{% endif %}
+      {% if token.type %}<span class="badge">{{ token.type | lookup(lookups.type) }}</span>{% endif %}
+      {% if token.var %}<span class="badge">Var. {{ token.var }}</span>{% endif %}
+    </div>
+
+    {% if token.desc %}
+    <div class="token-summary">
+      <p>{{ token.desc }}</p>
+    </div>
+    {% endif %}
   </div>
 
   <div class="token-images">
-    <figure>
+    <figure class="token-image-card">
       {% if token | hasOfficialImage("o") %}
-      <img src="{{ token | officialImagePath('o') }}" alt="{{ token.displayId }} obverse" style="width:100%;max-width:460px;aspect-ratio:1/1;object-fit:contain;display:block;margin:0 auto 12px;" />
+      <img class="token-image" src="{{ token | officialImagePath('o') }}" alt="{{ token.displayId }} obverse" />
       {% else %}
-      <div class="placeholder">Image coming soon</div>
+      <div class="placeholder"></div>
       {% endif %}
-      <figcaption>Obverse</figcaption>
+      <figcaption class="token-face-label">Obverse</figcaption>
+      {% if token.obv %}
+      <p class="token-face-text">{{ token.obv }}</p>
+      {% endif %}
     </figure>
-    <figure>
+
+    <figure class="token-image-card">
       {% if token | hasOfficialImage("r") %}
-      <img src="{{ token | officialImagePath('r') }}" alt="{{ token.displayId }} reverse" style="width:100%;max-width:460px;aspect-ratio:1/1;object-fit:contain;display:block;margin:0 auto 12px;" />
+      <img class="token-image" src="{{ token | officialImagePath('r') }}" alt="{{ token.displayId }} reverse" />
       {% else %}
-      <div class="placeholder">Image coming soon</div>
+      <div class="placeholder"></div>
       {% endif %}
-      <figcaption>Reverse</figcaption>
+      <figcaption class="token-face-label">Reverse</figcaption>
+      {% if token.rev %}
+      <p class="token-face-text">{{ token.rev }}</p>
+      {% endif %}
     </figure>
   </div>
 
-  <section class="section">
-    <h2>Catalogue Details</h2>
-    <div class="facts">
-      <dl>
-        <div class="facts-row"><dt>Obverse</dt><dd>{{ token.obv }}</dd></div>
-        <div class="facts-row"><dt>Reverse</dt><dd>{{ token.rev }}</dd></div>
-        <div class="facts-row"><dt>Description</dt><dd>{{ token.desc }}</dd></div>
-        {% if token.notes %}<div class="facts-row"><dt>Notes</dt><dd>{{ token.notes }}</dd></div>{% endif %}
-        {% if token.market %}<div class="facts-row"><dt>Market Note</dt><dd>{{ token.market }}</dd></div>{% endif %}
-      </dl>
+  <div class="token-lower-grid">
+    <section class="section token-quickfacts">
+      <h2>Quick Facts</h2>
+      <div class="facts quickfacts-panel">
+        <dl>
+          {% if token.displayId %}<div class="facts-row"><dt>Catalogue ID</dt><dd>{{ token.displayId }}</dd></div>{% endif %}
+          {% if token.sec %}<div class="facts-row"><dt>Section</dt><dd>{{ token.sec }}</dd></div>{% endif %}
+          {% if token.code %}<div class="facts-row"><dt>Code</dt><dd>{{ token.code }}</dd></div>{% endif %}
+          {% if token.var %}<div class="facts-row"><dt>Minor Variety</dt><dd>{{ token.var }}</dd></div>{% endif %}
+
+          {% if token.status %}
+          <div class="facts-row">
+            <dt>Status</dt>
+            <dd>
+              {% if token.status == "listed" %}
+                Listed
+              {% else %}
+                {{ token.status | lookup(lookups.status) }}
+              {% endif %}
+            </dd>
+          </div>
+          {% endif %}
+
+          {% if token.type %}<div class="facts-row"><dt>Type</dt><dd>{{ token.type | lookup(lookups.type) }}</dd></div>{% endif %}
+          {% if token.mat %}<div class="facts-row"><dt>Material</dt><dd>{{ token.mat | lookup(lookups.materials) }}</dd></div>{% endif %}
+          {% if token.size %}<div class="facts-row"><dt>Size</dt><dd>{{ token.size }} mm</dd></div>{% endif %}
+          {% if token.form %}<div class="facts-row"><dt>Form</dt><dd>{{ token.form | lookup(lookups.forms) }}</dd></div>{% endif %}
+          {% if token.symbol %}<div class="facts-row"><dt>Symbol</dt><dd>{{ token.symbol | lookup(lookups.symbols) }}</dd></div>{% endif %}
+          {% if token.val is not none %}<div class="facts-row"><dt>A/C Value</dt><dd>${{ token.val | money }}</dd></div>{% endif %}
+        </dl>
+      </div>
+    </section>
+
+    {% if token.notes or token.market %}
+    <section class="section token-notes-section">
+      <h2>Notes</h2>
+
+      {% if token.notes %}
+      <details class="notes-disclosure">
+        <summary class="notes-toggle">
+          <div class="notes-preview">
+            <p>{{ token.notes }}</p>
+          </div>
+          <span class="notes-toggle-text">Read more</span>
+        </summary>
+
+        <div class="notes-body">
+          <p>{{ token.notes }}</p>
+          {% if token.market %}
+          <p class="notes-market"><strong>Market note:</strong> {{ token.market }}</p>
+          {% endif %}
+        </div>
+      </details>
+      {% elseif token.market %}
+      <div class="notes-static">
+        <p><strong>Market note:</strong> {{ token.market }}</p>
+      </div>
+      {% endif %}
+    </section>
+    {% endif %}
+  </div>
+
+  {% if prevToken or nextToken %}
+  <nav class="section token-pager" aria-label="Token navigation">
+    <div class="token-pager-grid">
+      <div class="token-pager-item token-pager-prev">
+        {% if prevToken %}
+          <a class="token-pager-link" href="/official/{{ prevToken.displayId | lower }}/">
+            <span class="token-pager-label">← Previous</span>
+            <strong>{{ prevToken.displayId }}</strong>
+            <span>{{ prevToken.title }}</span>
+          </a>
+        {% endif %}
+      </div>
+
+      <div class="token-pager-item token-pager-next">
+        {% if nextToken %}
+          <a class="token-pager-link" href="/official/{{ nextToken.displayId | lower }}/">
+            <span class="token-pager-label">Next →</span>
+            <strong>{{ nextToken.displayId }}</strong>
+            <span>{{ nextToken.title }}</span>
+          </a>
+        {% endif %}
+      </div>
     </div>
-  </section>
+  </nav>
+  {% endif %}
 </section>
