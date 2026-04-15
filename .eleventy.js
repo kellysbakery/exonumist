@@ -11,6 +11,13 @@ module.exports = function (eleventyConfig) {
     return table && code ? (table[code] || code) : "";
   });
 
+  // Format numeric values as money with 2 decimals
+  eleventyConfig.addFilter("money", (value) => {
+    const num = Number(value);
+    if (Number.isNaN(num)) return value;
+    return num.toFixed(2);
+  });
+
   // Resolve nested URLs from site.json refs like catalog.infoUrl
   eleventyConfig.addFilter("resolveUrlRef", (urlRef, site) => {
     if (!urlRef || !site) return "#";
@@ -25,9 +32,7 @@ module.exports = function (eleventyConfig) {
   // Build official image path
   eleventyConfig.addFilter("officialImagePath", (record, side) => {
     const code = String(record.code || "").toLowerCase();
-    const variant = record.var
-      ? `-${String(record.var).toLowerCase()}`
-      : "";
+    const variant = record.var ? `-${String(record.var).toLowerCase()}` : "";
 
     return `/images/official/${record.sec}/${record.sec}-${code}${variant}_${side}.jpg`;
   });
@@ -35,9 +40,7 @@ module.exports = function (eleventyConfig) {
   // Check if official image exists
   eleventyConfig.addFilter("hasOfficialImage", (record, side) => {
     const code = String(record.code || "").toLowerCase();
-    const variant = record.var
-      ? `-${String(record.var).toLowerCase()}`
-      : "";
+    const variant = record.var ? `-${String(record.var).toLowerCase()}` : "";
 
     const rel = path.join(
       "src",
@@ -67,15 +70,62 @@ module.exports = function (eleventyConfig) {
         ? String(record.siteId || "").toLowerCase()
         : String(record.displayId || "").toLowerCase();
 
-    const rel = path.join(
-      "src",
-      "images",
-      type,
-      `${key}_${side}.jpg`
-    );
+    const rel = path.join("src", "images", type, `${key}_${side}.jpg`);
 
     return fs.existsSync(path.join(process.cwd(), rel));
   });
+
+  // Catalog-aware sort for keys like:
+  // 630-d-a
+  // 630-an
+  // 630-ar
+  // single-letter codes sort before double-letter codes
+  const compareSortKeys = (a, b) => {
+    const aKey = String(a.sort || "").toLowerCase();
+    const bKey = String(b.sort || "").toLowerCase();
+
+    const aParts = aKey.split("-");
+    const bParts = bKey.split("-");
+
+    const aSection = aParts[0] || "";
+    const bSection = bParts[0] || "";
+
+    // Section numeric compare first
+    if (/^\d+$/.test(aSection) && /^\d+$/.test(bSection)) {
+      if (Number(aSection) !== Number(bSection)) {
+        return Number(aSection) - Number(bSection);
+      }
+    } else if (aSection !== bSection) {
+      return aSection.localeCompare(bSection);
+    }
+
+    const aCode = aParts[1] || "";
+    const bCode = bParts[1] || "";
+
+    // Shorter code first: A before AA, D before AN
+    if (aCode.length !== bCode.length) {
+      return aCode.length - bCode.length;
+    }
+
+    // Alphabetical within same code length
+    if (aCode !== bCode) {
+      return aCode.localeCompare(bCode);
+    }
+
+    const aVar = aParts.slice(2).join("-");
+    const bVar = bParts.slice(2).join("-");
+
+    // No variety before variety
+    if (!aVar && bVar) return -1;
+    if (aVar && !bVar) return 1;
+
+    // Shorter variety first
+    if (aVar.length !== bVar.length) {
+      return aVar.length - bVar.length;
+    }
+
+    return aVar.localeCompare(bVar);
+  };
 
   // Merge official section JSON files into one collection
   eleventyConfig.addCollection("officialAll", function () {
@@ -101,9 +151,7 @@ module.exports = function (eleventyConfig) {
       }
     }
 
-    return merged.sort((a, b) =>
-      String(a.sort || "").localeCompare(String(b.sort || ""))
-    );
+    return merged.sort(compareSortKeys);
   });
 
   return {
