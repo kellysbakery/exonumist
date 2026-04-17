@@ -151,29 +151,55 @@
     {% endif %}
   </div>
 
-  {% if not isUnlisted and (prevToken or nextToken) %}
-  <nav class="section token-pager" aria-label="Token navigation">
-    <div class="token-pager-grid">
-      <div class="token-pager-item token-pager-prev">
-        {% if prevToken %}
-          <a class="token-pager-link" href="/official/{{ prevToken.displayId | lower }}/">
+{% if not isUnlisted and (prevToken or nextToken) %}
+<nav class="section token-pager" aria-label="Token navigation">
+  <div class="token-pager-grid">
+    <div class="token-pager-item token-pager-prev">
+      {% if prevToken %}
+        <a class="token-pager-link" href="/official/{{ prevToken.displayId | lower }}/">
+          <div class="token-pager-media">
+            {% if prevToken | hasOfficialImage("o") %}
+              <img
+                class="token-pager-image"
+                src="{{ prevToken | officialImagePath('o') }}"
+                alt="{{ prevToken.displayId }} obverse" />
+            {% else %}
+              <div class="token-pager-placeholder"></div>
+            {% endif %}
+          </div>
+
+          <div class="token-pager-content">
             <span class="token-pager-label">← Previous</span>
             <strong>{{ prevToken.displayId }}</strong>
             <span>{{ prevToken.title }}</span>
-          </a>
-        {% endif %}
-      </div>
+          </div>
+        </a>
+      {% endif %}
+    </div>
 
-      <div class="token-pager-item token-pager-next">
-        {% if nextToken %}
-          <a class="token-pager-link" href="/official/{{ nextToken.displayId | lower }}/">
+    <div class="token-pager-item token-pager-next">
+      {% if nextToken %}
+        <a class="token-pager-link" href="/official/{{ nextToken.displayId | lower }}/">
+          <div class="token-pager-media">
+            {% if nextToken | hasOfficialImage("o") %}
+              <img
+                class="token-pager-image"
+                src="{{ nextToken | officialImagePath('o') }}"
+                alt="{{ nextToken.displayId }} obverse" />
+            {% else %}
+              <div class="token-pager-placeholder"></div>
+            {% endif %}
+          </div>
+
+          <div class="token-pager-content">
             <span class="token-pager-label">Next →</span>
             <strong>{{ nextToken.displayId }}</strong>
             <span>{{ nextToken.title }}</span>
-          </a>
-        {% endif %}
-      </div>
+          </div>
+        </a>
+      {% endif %}
     </div>
-  </nav>
-  {% endif %}
+  </div>
+</nav>
+{% endif %}
 </section>
