@@ -46,9 +46,13 @@
     "Bh": "Beehive",
     "Bl": "Ball",
     "Ch": "Center Hole",
+    "COsc": "Stencil-cut \"CO\"",
     "Cs": "Cross",
     "Ct": "Crescent",
     "Dd": "Diamond",
+    "Ddsc": "Stencil-cut Diamond",
+    "ESsc": "Stencil-cut \"ES\"",
+    "H-sc": "Stencil-cut \"H\"",
     "Hs": "Horse Shoe",
     "Ht": "Heart",
     "Hx": "Hexagon",
@@ -58,6 +62,7 @@
     "Ov": "Oval",
     "Pc": "Pierced",
     "Pg": "Pentagon",
+    "Pgsc": "Stencil-cut \"Pentagon\"",
     "Ro": "Rosette",
     "Sc": "Scalloped",
     "Sd": "Solid",
@@ -70,6 +75,7 @@
     "St": "Star",
     "Tr": "Triangle",
     "Wd": "Wedge",
-    "XX": "Figure 8"
+    "XX": "Figure 8",
+    "Y-sc": "Stencil-cut \"Y\""
   }
 }
