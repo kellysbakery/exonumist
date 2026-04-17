@@ -22,17 +22,3 @@ permalink: /unlisted/index.html
   </div>
 </section>
 
-<section class="section" id="oddities">
-  <h2>Oddities &amp; Errors</h2>
-  <div class="grid-3">
-    {% for token in oddities %}
-      {% if token.pub %}
-      <article class="card">
-        <span class="eyebrow">{{ token.siteId }}</span>
-        <strong>{{ token.displayTitle }}</strong>
-        <p>{{ token.desc }}</p>
-      </article>
-      {% endif %}
-    {% endfor %}
-  </div>
-</section>
