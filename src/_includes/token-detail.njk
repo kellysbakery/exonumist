@@ -1,85 +1,73 @@
+{% set detailSectionTitle = detailSectionTitle or "Tokens" %}
+{% set detailSectionUrl = detailSectionUrl or "/" %}
+{% set detailImageDataset = detailImageDataset or "official" %}
+{% set detailImageIsOfficial = detailImageIsOfficial if detailImageIsOfficial is defined else true %}
+{% set detailView = detailView or tokenDetailView or display %}
+
 <section class="token-shell">
-  <div class="token-header">
-    <div class="meta breadcrumb">
-      <a href="/">Home</a>
-      <span>/</span>
-
-      {% if isUnlisted %}
-        <a href="/unlisted/">Unlisted Tokens</a>
-        <span>/</span>
-        <span aria-current="page">{{ tokenId }}</span>
+  <div class="meta breadcrumb">
+    {% for crumb in detailView.breadcrumbItems %}
+      {% if crumb.url %}
+        <a href="{{ crumb.url }}">{{ crumb.label }}</a>
+        {% if not loop.last %}<span>/</span>{% endif %}
       {% else %}
-        <a href="/listed/">Listed Tokens</a>
-        <span>/</span>
-        <a href="{{ sectionUrl }}">{{ sectionLabel }}</a>
-        <span>/</span>
-        <span aria-current="page">{{ tokenId }}</span>
+        <span aria-current="page">{{ crumb.label }}</span>
       {% endif %}
-    </div>
+    {% endfor %}
+  </div>
 
-    <h1>{{ tokenId }}</h1>
+  <h1>{{ detailView.tokenId }}</h1>
 
-    <p class="token-subtitle">{{ tokenTitle }}</p>
+  <p class="token-subtitle">{{ detailView.tokenTitle }}</p>
 
-    <p class="token-meta-line">
-      {% if not isUnlisted and token.sec %}Section {{ token.sec }}{% endif %}
-      {% if token.mat %}{% if not isUnlisted and token.sec %} · {% endif %}{{ token.mat | lookup(lookups.materials) }}{% endif %}
-      {% if token.size %} · {{ token.size }} mm{% endif %}
-      {% if token.form %} · {{ token.form | lookup(lookups.forms) }}{% endif %}
-      {% if token.symbol %} · {{ token.symbol | lookup(lookups.symbols) | lower }}{% endif %}
-    </p>
+  {% if detailView.metaParts and detailView.metaParts.length %}
+    <p class="token-meta-line">{{ detailView.metaParts | join(" · ") }}</p>
+  {% endif %}
 
+  {% if detailView.badges and detailView.badges.length %}
     <div class="badges">
-      {% if token.status %}<span class="badge">{{ token.status | lookup(lookups.status) }}</span>{% endif %}
-      {% if token.type %}<span class="badge">{{ token.type | lookup(lookups.type) }}</span>{% endif %}
-      {% if not isUnlisted and token.var %}<span class="badge">Var. {{ token.var }}</span>{% endif %}
+      {% for badge in detailView.badges %}
+        <span class="badge">{{ badge }}</span>
+      {% endfor %}
     </div>
+  {% endif %}
 
-    {% if token.desc %}
+  {% if token.desc %}
     <div class="token-summary">
       <p>{{ token.desc }}</p>
     </div>
-    {% endif %}
-  </div>
+  {% endif %}
 
   <div class="token-images">
     <figure class="token-image-card">
-      {% if isUnlisted %}
-        {% if token | hasFallbackImage("unlisted", "o") %}
-        <img class="token-image" src="{{ token | fallbackImagePath('unlisted', 'o') }}" alt="{{ tokenId }} obverse" />
+      {% if detailImageIsOfficial %}
+        {% if token | hasOfficialImage("o") %}
+          <img class="token-image" src="{{ token | officialImagePath('o') }}" alt="{{ detailView.tokenId }} obverse" />
         {% else %}
-        <div class="placeholder"></div>
+          <div class="placeholder"></div>
         {% endif %}
       {% else %}
-        {% if token | hasOfficialImage("o") %}
-        <img class="token-image" src="{{ token | officialImagePath('o') }}" alt="{{ tokenId }} obverse" />
+        {% if token | hasFallbackImage(detailImageDataset, "o") %}
+          <img class="token-image" src="{{ token | fallbackImagePath(detailImageDataset, 'o') }}" alt="{{ detailView.tokenId }} obverse" />
         {% else %}
-        <div class="placeholder"></div>
+          <div class="placeholder"></div>
         {% endif %}
-      {% endif %}
-      <figcaption class="token-face-label">Obverse</figcaption>
-      {% if token.obv %}
-      <p class="token-face-text">{{ token.obv }}</p>
       {% endif %}
     </figure>
 
     <figure class="token-image-card">
-      {% if isUnlisted %}
-        {% if token | hasFallbackImage("unlisted", "r") %}
-        <img class="token-image" src="{{ token | fallbackImagePath('unlisted', 'r') }}" alt="{{ tokenId }} reverse" />
+      {% if detailImageIsOfficial %}
+        {% if token | hasOfficialImage("r") %}
+          <img class="token-image" src="{{ token | officialImagePath('r') }}" alt="{{ detailView.tokenId }} reverse" />
         {% else %}
-        <div class="placeholder"></div>
+          <div class="placeholder"></div>
         {% endif %}
       {% else %}
-        {% if token | hasOfficialImage("r") %}
-        <img class="token-image" src="{{ token | officialImagePath('r') }}" alt="{{ tokenId }} reverse" />
+        {% if token | hasFallbackImage(detailImageDataset, "r") %}
+          <img class="token-image" src="{{ token | fallbackImagePath(detailImageDataset, 'r') }}" alt="{{ detailView.tokenId }} reverse" />
         {% else %}
-        <div class="placeholder"></div>
+          <div class="placeholder"></div>
         {% endif %}
-      {% endif %}
-      <figcaption class="token-face-label">Reverse</figcaption>
-      {% if token.rev %}
-      <p class="token-face-text">{{ token.rev }}</p>
       {% endif %}
     </figure>
   </div>
@@ -89,117 +77,94 @@
       <h2>Quick Facts</h2>
       <div class="facts quickfacts-panel">
         <dl>
-          {% if isUnlisted %}
-            {% if token.siteId %}<div class="facts-row"><dt>Site ID</dt><dd>{{ token.siteId }}</dd></div>{% endif %}
-            {% if token.relCatalog and token.relCatalog.length %}<div class="facts-row"><dt>Related A/C</dt><dd>{{ token.relCatalog | join(", ") }}</dd></div>{% endif %}
-          {% else %}
-            {% if token.displayId %}<div class="facts-row"><dt>Catalogue ID</dt><dd>{{ token.displayId }}</dd></div>{% endif %}
-            {% if token.sec %}<div class="facts-row"><dt>Section</dt><dd>{{ token.sec }}</dd></div>{% endif %}
-            {% if token.code %}<div class="facts-row"><dt>Code</dt><dd>{{ token.code }}</dd></div>{% endif %}
-            {% if token.var %}<div class="facts-row"><dt>Minor Variety</dt><dd>{{ token.var }}</dd></div>{% endif %}
-            {% if token.val is not none %}<div class="facts-row"><dt>A/C Value</dt><dd>${{ token.val | money }}</dd></div>{% endif %}
-          {% endif %}
-
-          {% if token.status %}
-          <div class="facts-row">
-            <dt>Status</dt>
-            <dd>
-              {% if token.status == "listed" %}
-                Listed
-              {% else %}
-                {{ token.status | lookup(lookups.status) }}
-              {% endif %}
-            </dd>
-          </div>
-          {% endif %}
-
-          {% if token.type %}<div class="facts-row"><dt>Type</dt><dd>{{ token.type | lookup(lookups.type) }}</dd></div>{% endif %}
-          {% if token.mat %}<div class="facts-row"><dt>Material</dt><dd>{{ token.mat | lookup(lookups.materials) }}</dd></div>{% endif %}
-          {% if token.size %}<div class="facts-row"><dt>Size</dt><dd>{{ token.size }} mm</dd></div>{% endif %}
-          {% if token.form %}<div class="facts-row"><dt>Form</dt><dd>{{ token.form | lookup(lookups.forms) }}</dd></div>{% endif %}
-          {% if token.symbol %}<div class="facts-row"><dt>Symbol</dt><dd>{{ token.symbol | lookup(lookups.symbols) }}</dd></div>{% endif %}
+          {% for fact in detailView.quickFacts %}
+            <div class="facts-row">
+              <dt>{{ fact.label }}</dt>
+              <dd>{{ fact.value }}</dd>
+            </div>
+          {% endfor %}
         </dl>
       </div>
     </section>
 
-    {% if token.notes or token.market %}
-    <section class="section token-notes-section">
-      <h2>Notes</h2>
+    {% if detailView.notes or detailView.market %}
+      <section class="section token-notes-section">
+        <h2>Notes</h2>
 
-      {% if token.notes %}
-      <details class="notes-disclosure">
-        <summary class="notes-toggle">
-          <div class="notes-preview">
-            <p>{{ token.notes }}</p>
+        {% if detailView.notes %}
+          <details class="notes-disclosure">
+            <summary class="notes-toggle">
+              <div class="notes-preview">
+                <p>{{ detailView.notes }}</p>
+              </div>
+              <span class="notes-toggle-text">Read more</span>
+            </summary>
+
+            <div class="notes-body">
+              <p>{{ detailView.notes }}</p>
+              {% if detailView.market %}
+                <p class="notes-market"><strong>Market note:</strong> {{ detailView.market }}</p>
+              {% endif %}
+            </div>
+          </details>
+        {% elseif detailView.market %}
+          <div class="notes-static">
+            <p><strong>Market note:</strong> {{ detailView.market }}</p>
           </div>
-          <span class="notes-toggle-text">Read more</span>
-        </summary>
-
-        <div class="notes-body">
-          <p>{{ token.notes }}</p>
-          {% if token.market %}
-          <p class="notes-market"><strong>Market note:</strong> {{ token.market }}</p>
-          {% endif %}
-        </div>
-      </details>
-      {% elseif token.market %}
-      <div class="notes-static">
-        <p><strong>Market note:</strong> {{ token.market }}</p>
-      </div>
-      {% endif %}
-    </section>
+        {% endif %}
+      </section>
     {% endif %}
   </div>
 
-{% if not isUnlisted and (prevToken or nextToken) %}
-<nav class="section token-pager" aria-label="Token navigation">
-  <div class="token-pager-grid">
-    <div class="token-pager-item token-pager-prev">
-      {% if prevToken %}
-        <a class="token-pager-link" href="/official/{{ prevToken.displayId | lower }}/">
-          <div class="token-pager-media">
-            {% if prevToken | hasOfficialImage("o") %}
-              <img
-                class="token-pager-image"
-                src="{{ prevToken | officialImagePath('o') }}"
-                alt="{{ prevToken.displayId }} obverse" />
-            {% else %}
-              <div class="token-pager-placeholder"></div>
-            {% endif %}
-          </div>
+  {% if detailView.pager and (detailView.pager.prev or detailView.pager.next) %}
+    <nav class="section token-pager" aria-label="Token navigation">
+      <div class="token-pager-grid">
+        <div class="token-pager-item token-pager-prev">
+          {% if detailView.pager.prev %}
+            <a class="token-pager-link" href="{{ detailView.pager.prev.url }}">
+              <div class="token-pager-media">
+                {% if prevToken and (prevToken | hasOfficialImage("o")) %}
+                  <img
+                    class="token-pager-image"
+                    src="{{ prevToken | officialImagePath('o') }}"
+                    alt="{{ detailView.pager.prev.id }} obverse" />
+                {% else %}
+                  <div class="token-pager-placeholder"></div>
+                {% endif %}
+              </div>
 
-          <div class="token-pager-content">
-            <span class="token-pager-label">← Previous</span>
-            <strong>{{ prevToken.displayId }}</strong>
-            <span>{{ prevToken.title }}</span>
-          </div>
-        </a>
-      {% endif %}
-    </div>
+              <div class="token-pager-content">
+                <span class="token-pager-label">← Previous</span>
+                <strong>{{ detailView.pager.prev.id }}</strong>
+                <span>{{ detailView.pager.prev.title }}</span>
+              </div>
+            </a>
+          {% endif %}
+        </div>
 
-    <div class="token-pager-item token-pager-next">
-      {% if nextToken %}
-        <a class="token-pager-link" href="/official/{{ nextToken.displayId | lower }}/">
-          <div class="token-pager-media">
-            {% if nextToken | hasOfficialImage("o") %}
-              <img
-                class="token-pager-image"
-                src="{{ nextToken | officialImagePath('o') }}"
-                alt="{{ nextToken.displayId }} obverse" />
-            {% else %}
-              <div class="token-pager-placeholder"></div>
-            {% endif %}
-          </div>
+        <div class="token-pager-item token-pager-next">
+          {% if detailView.pager.next %}
+            <a class="token-pager-link" href="{{ detailView.pager.next.url }}">
+              <div class="token-pager-media">
+                {% if nextToken and (nextToken | hasOfficialImage("o")) %}
+                  <img
+                    class="token-pager-image"
+                    src="{{ nextToken | officialImagePath('o') }}"
+                    alt="{{ detailView.pager.next.id }} obverse" />
+                {% else %}
+                  <div class="token-pager-placeholder"></div>
+                {% endif %}
+              </div>
 
-          <div class="token-pager-content">
-            <span class="token-pager-label">Next →</span>
-            <strong>{{ nextToken.displayId }}</strong>
-            <span>{{ nextToken.title }}</span>
-          </div>
-        </a>
-      {% endif %}
-    </div>
-  </div>
-</nav>
-{% endif %}
+              <div class="token-pager-content">
+                <span class="token-pager-label">Next →</span>
+                <strong>{{ detailView.pager.next.id }}</strong>
+                <span>{{ detailView.pager.next.title }}</span>
+              </div>
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    </nav>
+  {% endif %}
 </section>

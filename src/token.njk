@@ -51,4 +51,24 @@ eleventyComputed:
   {% endif %}
 {% endfor %}
 
+{% set detailSectionTitle = sectionLabel %}
+{% set detailSectionUrl = sectionUrl %}
+{% set detailImageDataset = "official" %}
+{% set detailImageIsOfficial = true %}
+{% set detailShowPager = true %}
+
+{% set detailView = tokenDetailView.buildTokenDetailView(token, {
+  tokenId: tokenId,
+  tokenTitle: tokenTitle,
+  detailSectionTitle: detailSectionTitle,
+  detailSectionUrl: detailSectionUrl,
+  detailImageDataset: detailImageDataset,
+  detailImageIsOfficial: detailImageIsOfficial,
+  detailShowPager: detailShowPager,
+  prevToken: prevToken,
+  nextToken: nextToken,
+  isUnlisted: isUnlisted,
+  lookups: lookups
+}) %}
+
 {% include "token-detail.njk" %}
