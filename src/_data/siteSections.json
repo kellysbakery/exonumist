@@ -1,0 +1,14 @@
+[
+  {
+    "key": "listed",
+    "title": "Listed Tokens"
+  },
+  {
+    "key": "unlisted",
+    "title": "Unlisted Tokens"
+  },
+  {
+    "key": "spotlight",
+    "title": "Spotlight"
+  }
+]
