@@ -5,13 +5,47 @@ permalink: /oddities/index.html
 ---
 <section class="section">
   <h1>{{ site.labels.oddities }}</h1>
-  <div class="grid-3">
+
+  <div class="grid-3 token-card-grid">
     {% for token in oddities %}
       {% if token.pub %}
-      <article class="card">
-        <span class="eyebrow">{{ token.siteId }}</span>
-        <strong>{{ token.displayTitle }}</strong>
-        <p>{{ token.desc }}</p>
+      <article class="card token-list-card">
+
+        <div class="token-list-card-media">
+          {% if token | hasFallbackImage("oddities", "o") %}
+            <img
+              class="token-list-card-image"
+              src="{{ token | fallbackImagePath('oddities', 'o') }}"
+              alt="{{ token.siteId }} obverse" />
+          {% else %}
+            <div class="token-list-card-placeholder"></div>
+          {% endif %}
+        </div>
+
+        <div class="token-list-card-body">
+          <span class="eyebrow">{{ token.siteId }}</span>
+
+          <strong class="token-list-card-title">
+            {{ token.displayTitle }}
+          </strong>
+
+          {% if token.desc %}
+            <p class="token-list-card-desc">
+              {{ token.desc }}
+            </p>
+          {% endif %}
+
+          <p class="token-list-card-meta">
+            {% if token.relCatalog and token.relCatalog.length %}
+              Related to {{ token.relCatalog | join(", ") }}
+            {% endif %}
+            {% if token.oddityType %}
+              {% if token.relCatalog and token.relCatalog.length %} · {% endif %}
+              {{ token.oddityType | replace("_", " ") | title }}
+            {% endif %}
+          </p>
+        </div>
+
       </article>
       {% endif %}
     {% endfor %}
