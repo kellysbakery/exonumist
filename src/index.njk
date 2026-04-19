@@ -33,21 +33,22 @@ title: Keith's NYC Transit Token Collection
       </div>
     </div>
 
+  {% for group in groups %}
+    {% if group.featured %}
     <aside class="hero-feature">
-      <a class="card-link" href="/official/ny630da/">
-        <div class="hero-feature-card">
-          <img src="/images/official/630/630-d-a_o.jpg" alt="NY630Da obverse" />
+      <a class="card-link" href="{{ group.url }}">
+        <div class="hero-feature-card hero-feature-card-minimal">
+          <img src="{{ group.heroImage }}" alt="{{ group.title }}" />
           <div class="hero-feature-text">
-            <strong>Featured Group</strong>
-            <p><strong>New York &amp; Harlaem Railroad Series</strong></p>
-            <p>
-              Seven related octagonal varieties spanning the listed NY630D issues and the copper
-              and lead NY998 pattern pieces.
-            </p>
+            <strong>{{ group.heroLabel }}</strong>
+            <p><strong>{{ group.title }}</strong></p>
+            <p>{{ group.heroText }}</p>
           </div>
         </div>
       </a>
     </aside>
+  {% endif %}
+{% endfor %}
   </div>
 </section>
 
@@ -56,14 +57,18 @@ title: Keith's NYC Transit Token Collection
   <p class="section-intro">
     Browse listed New York City transportation-related tokens by borough and listed special groups.
   </p>
+
   <div class="grid-4">
-    <a class="card-link" href="/listed/628/"><article class="card"><strong>Bronx</strong><p>Listed Bronx transportation tokens.</p></article></a>
-    <a class="card-link" href="/listed/629/"><article class="card"><strong>Brooklyn</strong><p>Listed Brooklyn transportation tokens.</p></article></a>
-    <a class="card-link" href="/listed/630/"><article class="card"><strong>Manhattan</strong><p>Listed Manhattan transportation tokens.</p></article></a>
-    <a class="card-link" href="/listed/631/"><article class="card"><strong>Queens</strong><p>Listed Queens transportation tokens.</p></article></a>
-    <a class="card-link" href="/listed/632/"><article class="card"><strong>Staten Island</strong><p>Listed Staten Island transportation tokens.</p></article></a>
-    <a class="card-link" href="/listed/patterns/"><article class="card"><strong>Patterns</strong><p>Listed patterns from the {{ site.catalog.shortName }}.</p></article></a>
-    <a class="card-link" href="/listed/club-tour/"><article class="card"><strong>Club Tour (CT)</strong><p>Listed club tour issues from the {{ site.catalog.shortName }}.</p></article></a>
+    {% for group in groups | sort(attribute="order") %}
+      {% if group.section == "listed" %}
+      <a class="card-link" href="{{ group.url }}">
+        <article class="card">
+          <strong>{{ group.title }}</strong>
+          <p>{{ group.description }}</p>
+        </article>
+      </a>
+      {% endif %}
+    {% endfor %}
   </div>
 </section>
 
@@ -74,23 +79,36 @@ title: Keith's NYC Transit Token Collection
   </p>
 
   <div class="grid-3">
-    <a class="card-link" href="/unlisted/">
-      <article class="card">
-        <strong>Unlisted Discoveries</strong>
-        <p>
-          Tokens and related material not presently listed in the {{ site.catalog.shortName }}.
-        </p>
-      </article>
-    </a>
+    {% for group in groups | sort(attribute="order") %}
+      {% if group.section == "unlisted" %}
+      <a class="card-link" href="{{ group.url }}">
+        <article class="card">
+          <strong>{{ group.title }}</strong>
+          <p>{{ group.description }}</p>
+        </article>
+      </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
 
-    <a class="card-link" href="/unlisted/#oddities">
-      <article class="card">
-        <strong>Oddities &amp; Errors</strong>
-        <p>
-          Unlisted errors, oddities, and unusual transportation-related material.
-        </p>
-      </article>
-    </a>
+<section class="section">
+  <h2>Spotlight</h2>
+  <p class="section-intro">
+    Featured collecting areas and historically significant token groups.
+  </p>
+
+  <div class="grid-3">
+    {% for group in groups | sort(attribute="order") %}
+      {% if group.section == "spotlight" %}
+      <a class="card-link" href="{{ group.url }}">
+        <article class="card">
+          <strong>{{ group.title }}</strong>
+          <p>{{ group.description }}</p>
+        </article>
+      </a>
+      {% endif %}
+    {% endfor %}
   </div>
 </section>
 
