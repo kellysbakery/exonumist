@@ -5,6 +5,7 @@
     "displayTitle": "Unlisted Gold Presentation Piece Related to NY630AS",
     "status": "unlisted",
     "type": "presentation",
+    "groups": ["discoveries"],
     "city": "New York City",
     "borough": "Manhattan",
     "state": "NY",
@@ -16,9 +17,7 @@
     "rev": "(C)TA",
     "desc": "Gold piece related to NY630AS, likely struck as a presentation issue.",
     "notes": "Not currently listed in the Atwood-Coffee Catalogue.",
-    "relCatalog": [
-      "NY630AS"
-    ],
+    "relCatalog": ["NY630AS"],
     "confidence": "probable",
     "home": true,
     "pub": true,

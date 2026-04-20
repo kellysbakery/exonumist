@@ -6,6 +6,7 @@
     "code": "A",
     "status": "listed",
     "type": "transit",
+    "groups": ["manhattan"],
     "title": "I. Gibbs / Belleville & New York / U.S.M. / Stage",
     "mat": "B",
     "form": "",
@@ -30,15 +31,16 @@
     "var": "a",
     "status": "listed",
     "type": "transit",
-    "title": "New York & Harlem Railroad Omnibus",
+    "groups": ["manhattan", "nyhrr"],
+    "title": "New York & Harlaem Railroad Omnibus",
     "mat": "Gs",
     "form": "Oc",
     "symbol": "",
     "size": 18,
-    "obv": "NEW YORK & HARLEM R.R. (rosette counterstamp)",
+    "obv": "NEW YORK & HARLAEM R.R. (rosette counterstamp)",
     "rev": "(OMNIBUS)",
-    "desc": "Early octagonal New York & Harlem Railroad omnibus token in German silver. ",
-    "notes": "The New York & Harlaem Railroad, incorporated in 1831, operated one of the earliest urban rail lines in the United States and is widely regarded as New York City\u2019s first street railway. Service began in 1832 along the Bowery from Prince Street to 14th Street, with later extensions north on Fourth Avenue to Harlem and south to City Hall. Horse power was used initially, with steam locomotives introduced in 1837 for service north of the 27th Street depot. These tokens are believed to be the first transportation tokens issued for use in New York City.\n\nCollectors recognize seven major octagonal token varieties associated with the line. The regular circulating issues are the 18mm German silver pieces listed as Atwood-Coffee NY630: plain (NY630Dc), rosette counterstamp (NY630Da), and the famous dog counterstamp (NY630Db). Additional pattern issues were struck in copper and lead under the NY998 listings. Copper varieties include plain (NY998Ca) and leaf counterstamp (NY998Cb). Lead varieties include plain (NY998Da) and leaf counterstamp (NY998Db). The initials 'B & S' found beneath the railroad coach identify the token makers, Bale & Smith, noted New York engravers.\n\nToday these pieces are considered among the most historic American transit tokens, linking directly to the earliest development of organized public transportation in New York City.",
+    "desc": "Early octagonal New York & Harlaem Railroad omnibus token in German silver. ",
+    "notes": "The New York & Harlaem Railroad, incorporated in 1831, operated one of the earliest urban rail lines in the United States and is widely regarded as New York City’s first street railway. Service began in 1832 along the Bowery from Prince Street to 14th Street, with later extensions north on Fourth Avenue to Harlem and south to City Hall. Horse power was used initially, with steam locomotives introduced in 1837 for service north of the 27th Street depot. These tokens are believed to be the first transportation tokens issued for use in New York City.\n\nCollectors recognize seven major octagonal token varieties associated with the line. The regular circulating issues are the 18mm German silver pieces listed as Atwood-Coffee NY630: plain (NY630Dc), rosette counterstamp (NY630Da), and the famous dog counterstamp (NY630Db). Additional pattern issues were struck in copper and lead under the NY998 listings. Copper varieties include plain (NY998Ca) and leaf counterstamp (NY998Cb). Lead varieties include plain (NY998Da) and leaf counterstamp (NY998Db). The initials 'B & S' found beneath the railroad coach identify the token makers, Bale & Smith, noted New York engravers.\n\nToday these pieces are considered among the most historic American transit tokens, linking directly to the earliest development of organized public transportation in New York City.",
     "val": 600,
     "market": "",
     "rel": [],
@@ -53,6 +55,7 @@
     "code": "D",
     "status": "listed",
     "type": "transit",
+    "groups": ["manhattan", "nyhrr"],
     "title": "The N-York & Harlaem Railroad Company (dog counterstamp)",
     "mat": "Gs",
     "form": "Oc",
@@ -61,7 +64,7 @@
     "obv": "THE N-YORK /& HARLAEM /RAILROAD /COMPANY",
     "rev": "B & S N.Y",
     "desc": "Listed Manhattan transit token: The N-York & Harlaem Railroad Company.",
-   "notes": "The New York & Harlaem Railroad, incorporated in 1831, operated one of the earliest urban rail lines in the United States and is widely regarded as New York City\u2019s first street railway. Service began in 1832 along the Bowery from Prince Street to 14th Street, with later extensions north on Fourth Avenue to Harlem and south to City Hall. Horse power was used initially, with steam locomotives introduced in 1837 for service north of the 27th Street depot. These tokens are believed to be the first transportation tokens issued for use in New York City.\n\nCollectors recognize seven major octagonal token varieties associated with the line. The regular circulating issues are the 18mm German silver pieces listed as Atwood-Coffee NY630: plain (NY630Dc), rosette counterstamp (NY630Da), and the famous dog counterstamp (NY630Db). Additional pattern issues were struck in copper and lead under the NY998 listings. Copper varieties include plain (NY998Ca) and leaf counterstamp (NY998Cb). Lead varieties include plain (NY998Da) and leaf counterstamp (NY998Db). The initials 'B & S' found beneath the railroad coach identify the token makers, Bale & Smith, noted New York engravers.\n\nToday these pieces are considered among the most historic American transit tokens, linking directly to the earliest development of organized public transportation in New York City.",
+    "notes": "The New York & Harlaem Railroad, incorporated in 1831, operated one of the earliest urban rail lines in the United States and is widely regarded as New York City’s first street railway. Service began in 1832 along the Bowery from Prince Street to 14th Street, with later extensions north on Fourth Avenue to Harlem and south to City Hall. Horse power was used initially, with steam locomotives introduced in 1837 for service north of the 27th Street depot. These tokens are believed to be the first transportation tokens issued for use in New York City.\n\nCollectors recognize seven major octagonal token varieties associated with the line. The regular circulating issues are the 18mm German silver pieces listed as Atwood-Coffee NY630: plain (NY630Dc), rosette counterstamp (NY630Da), and the famous dog counterstamp (NY630Db). Additional pattern issues were struck in copper and lead under the NY998 listings. Copper varieties include plain (NY998Ca) and leaf counterstamp (NY998Cb). Lead varieties include plain (NY998Da) and leaf counterstamp (NY998Db). The initials 'B & S' found beneath the railroad coach identify the token makers, Bale & Smith, noted New York engravers.\n\nToday these pieces are considered among the most historic American transit tokens, linking directly to the earliest development of organized public transportation in New York City.",
     "val": 600,
     "market": "",
     "rel": [],
@@ -77,6 +80,7 @@
     "code": "D",
     "status": "listed",
     "type": "transit",
+    "groups": ["manhattan", "nyhrr"],
     "title": "The N-York & Harlaem Railroad Company (Not counterstamped)",
     "mat": "Gs",
     "form": "Oc",
@@ -85,7 +89,7 @@
     "obv": "THE N-YORK /& HARLAEM /RAILROAD /COMPANY",
     "rev": "B & S N.Y",
     "desc": "Listed Manhattan transit token: The N-York & Harlaem Railroad Company.",
-    "notes": "The New York & Harlaem Railroad, incorporated in 1831, operated one of the earliest urban rail lines in the United States and is widely regarded as New York City\u2019s first street railway. Service began in 1832 along the Bowery from Prince Street to 14th Street, with later extensions north on Fourth Avenue to Harlem and south to City Hall. Horse power was used initially, with steam locomotives introduced in 1837 for service north of the 27th Street depot. These tokens are believed to be the first transportation tokens issued for use in New York City.\n\nCollectors recognize seven major octagonal token varieties associated with the line. The regular circulating issues are the 18mm German silver pieces listed as Atwood-Coffee NY630: plain (NY630Dc), rosette counterstamp (NY630Da), and the famous dog counterstamp (NY630Db). Additional pattern issues were struck in copper and lead under the NY998 listings. Copper varieties include plain (NY998Ca) and leaf counterstamp (NY998Cb). Lead varieties include plain (NY998Da) and leaf counterstamp (NY998Db). The initials 'B & S' found beneath the railroad coach identify the token makers, Bale & Smith, noted New York engravers.\n\nToday these pieces are considered among the most historic American transit tokens, linking directly to the earliest development of organized public transportation in New York City.",
+    "notes": "The New York & Harlaem Railroad, incorporated in 1831, operated one of the earliest urban rail lines in the United States and is widely regarded as New York City’s first street railway. Service began in 1832 along the Bowery from Prince Street to 14th Street, with later extensions north on Fourth Avenue to Harlem and south to City Hall. Horse power was used initially, with steam locomotives introduced in 1837 for service north of the 27th Street depot. These tokens are believed to be the first transportation tokens issued for use in New York City.\n\nCollectors recognize seven major octagonal token varieties associated with the line. The regular circulating issues are the 18mm German silver pieces listed as Atwood-Coffee NY630: plain (NY630Dc), rosette counterstamp (NY630Da), and the famous dog counterstamp (NY630Db). Additional pattern issues were struck in copper and lead under the NY998 listings. Copper varieties include plain (NY998Ca) and leaf counterstamp (NY998Cb). Lead varieties include plain (NY998Da) and leaf counterstamp (NY998Db). The initials 'B & S' found beneath the railroad coach identify the token makers, Bale & Smith, noted New York engravers.\n\nToday these pieces are considered among the most historic American transit tokens, linking directly to the earliest development of organized public transportation in New York City.",
     "val": 300,
     "market": "",
     "rel": [],
@@ -101,6 +105,7 @@
     "code": "E",
     "status": "listed",
     "type": "transit",
+    "groups": ["manhattan"],
     "title": "4th Avenue Line / Haskins / & / Wilkins",
     "mat": "Pt",
     "form": "",
@@ -138,7 +143,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-f"
+    "sort": "630-f",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630g",
@@ -161,7 +167,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-g"
+    "sort": "630-g",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630h",
@@ -184,7 +191,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-h"
+    "sort": "630-h",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630i",
@@ -207,7 +215,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-i"
+    "sort": "630-i",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630j",
@@ -230,7 +239,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-j"
+    "sort": "630-j",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630k",
@@ -253,7 +263,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-k"
+    "sort": "630-k",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630la",
@@ -277,7 +288,8 @@
     "home": false,
     "pub": true,
     "sort": "630-l-a",
-    "var": "a"
+    "var": "a",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630lb",
@@ -301,7 +313,8 @@
     "home": false,
     "pub": true,
     "sort": "630-l-b",
-    "var": "b"
+    "var": "b",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630lc",
@@ -325,7 +338,8 @@
     "home": false,
     "pub": true,
     "sort": "630-l-c",
-    "var": "c"
+    "var": "c",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630ld",
@@ -349,7 +363,8 @@
     "home": false,
     "pub": true,
     "sort": "630-l-d",
-    "var": "d"
+    "var": "d",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630m",
@@ -372,7 +387,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-m"
+    "sort": "630-m",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630n",
@@ -395,7 +411,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-n"
+    "sort": "630-n",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630o",
@@ -418,7 +435,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-o"
+    "sort": "630-o",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630p",
@@ -441,7 +459,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-p"
+    "sort": "630-p",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630q",
@@ -464,7 +483,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-q"
+    "sort": "630-q",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630r",
@@ -487,7 +507,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-r"
+    "sort": "630-r",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630s",
@@ -510,7 +531,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-s"
+    "sort": "630-s",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630t",
@@ -533,7 +555,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-t"
+    "sort": "630-t",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630u",
@@ -556,7 +579,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-u"
+    "sort": "630-u",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630v",
@@ -579,7 +603,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-v"
+    "sort": "630-v",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630w",
@@ -602,7 +627,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-w"
+    "sort": "630-w",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630y",
@@ -625,7 +651,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-y"
+    "sort": "630-y",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630z",
@@ -648,7 +675,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-z"
+    "sort": "630-z",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630aa",
@@ -671,7 +699,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-aa"
+    "sort": "630-aa",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630aba",
@@ -695,7 +724,8 @@
     "home": false,
     "pub": true,
     "sort": "630-ab-a",
-    "var": "a"
+    "var": "a",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630abb",
@@ -719,7 +749,8 @@
     "home": false,
     "pub": true,
     "sort": "630-ab-b",
-    "var": "b"
+    "var": "b",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630aca",
@@ -743,7 +774,8 @@
     "home": false,
     "pub": true,
     "sort": "630-ac-a",
-    "var": "a"
+    "var": "a",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630acb",
@@ -767,7 +799,8 @@
     "home": false,
     "pub": true,
     "sort": "630-ac-b",
-    "var": "b"
+    "var": "b",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630ad",
@@ -790,7 +823,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-ad"
+    "sort": "630-ad",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630ae",
@@ -813,7 +847,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-ae"
+    "sort": "630-ae",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630af",
@@ -836,7 +871,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-af"
+    "sort": "630-af",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630ag",
@@ -859,7 +895,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-ag"
+    "sort": "630-ag",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630ah",
@@ -882,7 +919,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-ah"
+    "sort": "630-ah",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630ai",
@@ -905,7 +943,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-ai"
+    "sort": "630-ai",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630aj",
@@ -928,7 +967,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-aj"
+    "sort": "630-aj",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630ak",
@@ -951,7 +991,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-ak"
+    "sort": "630-ak",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630al",
@@ -974,7 +1015,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-al"
+    "sort": "630-al",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630am",
@@ -997,7 +1039,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-am"
+    "sort": "630-am",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630an",
@@ -1020,7 +1063,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-an"
+    "sort": "630-an",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630ao",
@@ -1043,7 +1087,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-ao"
+    "sort": "630-ao",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630ap",
@@ -1066,7 +1111,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-ap"
+    "sort": "630-ap",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630aq",
@@ -1089,7 +1135,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-aq"
+    "sort": "630-aq",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630ar",
@@ -1103,16 +1150,17 @@
     "form": "Ov",
     "symbol": "Sd",
     "size": 18,
-    "obv": "1965 A.V.A. CONVENTION \u2022 NEW YORK",
+    "obv": "1965 A.V.A. CONVENTION • NEW YORK",
     "rev": "BOAT RIDE AROUND MANHATTAN",
     "desc": "Brass convention tour token issued for the 1965 American Vecturist Association convention in New York City.",
-    "notes": "Issued for the 1965 American Vecturist Association Convention in New York City, this brass token had a reported mintage of 300 pieces. The token itself identifies the convention\u2019s boat ride around Manhattan, while contemporary accounts in The Fare Box noted that these special convention tour tokens were required to obtain admission tickets for the ship. Today it survives as a collectible souvenir from an early organized gathering of transit token enthusiasts.",
+    "notes": "Issued for the 1965 American Vecturist Association Convention in New York City, this brass token had a reported mintage of 300 pieces. The token itself identifies the convention’s boat ride around Manhattan, while contemporary accounts in The Fare Box noted that these special convention tour tokens were required to obtain admission tickets for the ship. Today it survives as a collectible souvenir from an early organized gathering of transit token enthusiasts.",
     "val": 15,
     "market": "",
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-ar"
+    "sort": "630-ar",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630as",
@@ -1135,7 +1183,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-as"
+    "sort": "630-as",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630at",
@@ -1158,7 +1207,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-at"
+    "sort": "630-at",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630au",
@@ -1181,7 +1231,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-au"
+    "sort": "630-au",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630av",
@@ -1204,7 +1255,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-av"
+    "sort": "630-av",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630aw",
@@ -1227,7 +1279,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-aw"
+    "sort": "630-aw",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630ax",
@@ -1250,7 +1303,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-ax"
+    "sort": "630-ax",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630ay",
@@ -1273,7 +1327,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-ay"
+    "sort": "630-ay",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630az",
@@ -1296,7 +1351,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-az"
+    "sort": "630-az",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630ba",
@@ -1319,7 +1375,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-ba"
+    "sort": "630-ba",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630bb",
@@ -1342,7 +1399,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-bb"
+    "sort": "630-bb",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630bc",
@@ -1365,7 +1423,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-bc"
+    "sort": "630-bc",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630bd",
@@ -1388,7 +1447,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-bd"
+    "sort": "630-bd",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630be",
@@ -1411,7 +1471,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-be"
+    "sort": "630-be",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630bf",
@@ -1434,7 +1495,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-bf"
+    "sort": "630-bf",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630bg",
@@ -1457,7 +1519,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-bg"
+    "sort": "630-bg",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630bh",
@@ -1471,7 +1534,7 @@
     "form": "",
     "symbol": "Sd",
     "size": 23,
-    "obv": "ROOSEVELT ISLAND OPERATING CORPORATION / OF THE STATE OF NEW YORK \u00ae (BRIDGE)",
+    "obv": "ROOSEVELT ISLAND OPERATING CORPORATION / OF THE STATE OF NEW YORK ® (BRIDGE)",
     "rev": "Roosevelt Island Tramway (SUSPENDED TRAM)",
     "desc": "Listed Manhattan transit token: Roosevelt Island Operating Corporation of the State of New York.",
     "notes": "8 mm magnetic plug in center of token.",
@@ -1480,7 +1543,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-bh"
+    "sort": "630-bh",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630bi",
@@ -1503,7 +1567,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-bi"
+    "sort": "630-bi",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630bj",
@@ -1526,7 +1591,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-bj"
+    "sort": "630-bj",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630bk",
@@ -1549,7 +1615,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-bk"
+    "sort": "630-bk",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630bl",
@@ -1572,7 +1639,8 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-bl"
+    "sort": "630-bl",
+    "groups": ["manhattan"]
   },
   {
     "id": "official-ny630bm",
@@ -1581,20 +1649,21 @@
     "code": "BM",
     "status": "listed",
     "type": "transit",
-    "title": "Riverbank State Park - New York State Office of Parks \u00b7 Recreation \u00b7 Historic Preservation",
+    "title": "Riverbank State Park - New York State Office of Parks · Recreation · Historic Preservation",
     "mat": "Wgz",
     "form": "",
     "symbol": "Sd",
     "size": 38,
-    "obv": "RIVERBANK STATE PARK - NEW YORK STATE OFFICE / OF PARKS \u00b7 RECREATION \u00b7 HISTORIC PRESERVATION / (LEAF)",
+    "obv": "RIVERBANK STATE PARK - NEW YORK STATE OFFICE / OF PARKS · RECREATION · HISTORIC PRESERVATION / (LEAF)",
     "rev": "One Ride Totally Kid Carousel / (JESTER CAP)",
-    "desc": "Listed Manhattan transit token: Riverbank State Park - New York State Office of Parks \u00b7 Recreation \u00b7 Historic Preservation.",
+    "desc": "Listed Manhattan transit token: Riverbank State Park - New York State Office of Parks · Recreation · Historic Preservation.",
     "notes": "First use listed as 1999.",
     "val": 0.5,
     "market": "",
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-bm"
+    "sort": "630-bm",
+    "groups": ["manhattan"]
   }
 ]

@@ -8,7 +8,7 @@ module.exports = function (eleventyConfig) {
 
   // Generic lookup filter
   eleventyConfig.addFilter("lookup", (code, table) => {
-    return table && code ? (table[code] || code) : "";
+    return table && code ? table[code] || code : "";
   });
 
   // Format numeric values as money with 2 decimals
@@ -53,10 +53,10 @@ module.exports = function (eleventyConfig) {
     return fs.existsSync(path.join(process.cwd(), rel));
   });
 
-  // Build image path for unlisted / oddities / special
+  // Build image path for unlisted / oddities / counterfeit / special
   eleventyConfig.addFilter("fallbackImagePath", (record, type, side) => {
     const key =
-      type === "unlisted" || type === "oddities"
+      type === "unlisted" || type === "oddities" || type === "counterfeit"
         ? String(record.siteId || "").toLowerCase()
         : String(record.displayId || "").toLowerCase();
 
@@ -66,7 +66,7 @@ module.exports = function (eleventyConfig) {
   // Check if fallback image exists
   eleventyConfig.addFilter("hasFallbackImage", (record, type, side) => {
     const key =
-      type === "unlisted" || type === "oddities"
+      type === "unlisted" || type === "oddities" || type === "counterfeit"
         ? String(record.siteId || "").toLowerCase()
         : String(record.displayId || "").toLowerCase();
 
