@@ -1,0 +1,27 @@
+[
+  {
+    "id": "counterfeit-ny630at-001",
+    "displayId": "Counterfeit NY630AT",
+    "sec": "630",
+    "code": "AT",
+    "status": "unlisted",
+    "type": "transit",
+    "title": "Counterfeit New York City Transit Authority NYC",
+    "mat": "L",
+    "form": "",
+    "symbol": "Sd",
+    "size": 22,
+    "obv": "NEW YORK CITY TRANSIT AUTHORITY NYC",
+    "rev": "Good For One Fare NYC",
+    "desc": "Counterfeit token imitating NY630AT.",
+    "notes": "Modern or unofficial imitation of the listed NY630AT type.",
+    "val": 0,
+    "market": "",
+    "rel": [],
+    "home": false,
+    "pub": true,
+    "sort": "630-at-counterfeit",
+    "groups": ["counterfeit"],
+    "siteId": "cf-0001"
+  }
+]
