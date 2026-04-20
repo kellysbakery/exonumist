@@ -53,6 +53,12 @@
           <div class="placeholder"></div>
         {% endif %}
       {% endif %}
+
+      {% if detailView.obverseText %}
+        <figcaption class="token-image-caption">
+          <strong>Obverse:</strong> {{ detailView.obverseText }}
+        </figcaption>
+      {% endif %}
     </figure>
 
     <figure class="token-image-card">
@@ -68,6 +74,12 @@
         {% else %}
           <div class="placeholder"></div>
         {% endif %}
+      {% endif %}
+
+      {% if detailView.reverseText %}
+        <figcaption class="token-image-caption">
+          <strong>Reverse:</strong> {{ detailView.reverseText }}
+        </figcaption>
       {% endif %}
     </figure>
   </div>

@@ -1,0 +1,98 @@
+---
+layout: base.njk
+pagination:
+  data: groupOfficialPages
+  size: 1
+  alias: pageData
+permalink: "/groups/{{ pageData.group.key }}/{{ pageData.pageId | lower }}/index.html"
+eleventyComputed:
+  title: "{% if pageData.token.displayId %}{{ pageData.token.displayId }}{% else %}{{ pageData.token.siteId }}{% endif %} – {% if pageData.token.title %}{{ pageData.token.title }}{% else %}{{ pageData.token.displayTitle }}{% endif %}"
+---
+
+{% set group = pageData.group %}
+{% set token = pageData.token %}
+{% set dataset = pageData.dataset or "official" %}
+
+{% set tokenId = token.displayId or token.siteId %}
+{% set tokenTitle = token.title or token.displayTitle %}
+{% set isUnlisted = dataset != "official" %}
+
+{% set detailSectionTitle = group.title %}
+{% set detailSectionUrl = group.url %}
+{% set detailImageDataset = dataset %}
+{% set detailImageIsOfficial = (dataset == "official") %}
+{% set detailShowPager = true %}
+
+{% set groupTokens = [] %}
+
+{% for item in collections.officialAll %}
+  {% if item.pub and item.groups and (group.key in item.groups) %}
+    {% set groupTokens = groupTokens.concat([{
+      "record": item,
+      "dataset": "official",
+      "pageId": item.displayId
+    }]) %}
+  {% endif %}
+{% endfor %}
+
+{% for item in oddities %}
+  {% if item.pub and item.groups and (group.key in item.groups) %}
+    {% set groupTokens = groupTokens.concat([{
+      "record": item,
+      "dataset": "oddities",
+      "pageId": item.siteId
+    }]) %}
+  {% endif %}
+{% endfor %}
+
+{% for item in unlisted %}
+  {% if item.pub and item.groups and (group.key in item.groups) %}
+    {% set groupTokens = groupTokens.concat([{
+      "record": item,
+      "dataset": "unlisted",
+      "pageId": item.siteId
+    }]) %}
+  {% endif %}
+{% endfor %}
+
+{% for item in counterfeit %}
+  {% if item.pub and item.groups and (group.key in item.groups) %}
+    {% set groupTokens = groupTokens.concat([{
+      "record": item,
+      "dataset": "counterfeit",
+      "pageId": item.siteId
+    }]) %}
+  {% endif %}
+{% endfor %}
+
+{% set prevToken = null %}
+{% set nextToken = null %}
+
+{% for item in groupTokens %}
+  {% if item.pageId == pageData.pageId %}
+    {% if loop.index0 > 0 %}
+      {% set prevToken = groupTokens[loop.index0 - 1].record %}
+    {% endif %}
+    {% if loop.index0 < (groupTokens | length - 1) %}
+      {% set nextToken = groupTokens[loop.index0 + 1].record %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% set detailView = tokenDetailView.buildTokenDetailView(token, {
+  tokenId: tokenId,
+  tokenTitle: tokenTitle,
+  detailSectionTitle: detailSectionTitle,
+  detailSectionUrl: detailSectionUrl,
+  detailImageDataset: detailImageDataset,
+  detailImageIsOfficial: detailImageIsOfficial,
+  detailShowPager: detailShowPager,
+  prevToken: prevToken,
+  nextToken: nextToken,
+  pagerUrlBuilder: "group",
+  pagerGroupKey: group.key,
+  isUnlisted: isUnlisted,
+  lookups: lookups
+}) %}
+
+{% include "token-detail.njk" %}
