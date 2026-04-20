@@ -7,9 +7,7 @@
     "type": "transit",
     "oddityType": "double_obverse",
     "baseId": "",
-    "relCatalog": [
-      "NY630AT"
-    ],
+    "relCatalog": ["NY630AT"],
     "city": "New York City",
     "borough": "Manhattan",
     "state": "NY",
@@ -23,7 +21,8 @@
     "notes": "",
     "home": false,
     "pub": true,
-    "sort": "odd-0001"
+    "sort": "odd-0001",
+    "groups": ["errors"]
   },
   {
     "id": "oddity-0002",
@@ -33,9 +32,7 @@
     "type": "transit",
     "oddityType": "unpunched",
     "baseId": "NY630AO",
-    "relCatalog": [
-      "NY630AO"
-    ],
+    "relCatalog": ["NY630AO"],
     "city": "New York City",
     "borough": "Manhattan",
     "state": "NY",
@@ -49,7 +46,8 @@
     "notes": "The punch-out portion of the design was not cut out.",
     "home": false,
     "pub": true,
-    "sort": "odd-0002"
+    "sort": "odd-0002",
+    "groups": ["errors"]
   },
   {
     "id": "oddity-0003",
@@ -59,9 +57,7 @@
     "type": "transit",
     "oddityType": "unpunched",
     "baseId": "NY630AP",
-    "relCatalog": [
-      "NY630AP"
-    ],
+    "relCatalog": ["NY630AP"],
     "city": "New York City",
     "borough": "Manhattan",
     "state": "NY",
@@ -75,7 +71,8 @@
     "notes": "The punch-out portion of the design was not cut out.",
     "home": false,
     "pub": true,
-    "sort": "odd-0003"
+    "sort": "odd-0003",
+    "groups": ["errors"]
   },
   {
     "id": "oddity-0004",
@@ -85,9 +82,7 @@
     "type": "transit",
     "oddityType": "mispunched",
     "baseId": "NY630AS",
-    "relCatalog": [
-      "NY630AS"
-    ],
+    "relCatalog": ["NY630AS"],
     "city": "New York City",
     "borough": "Manhattan",
     "state": "NY",
@@ -101,7 +96,8 @@
     "notes": "The punch-out portion of the design was punched incorrectly.",
     "home": false,
     "pub": true,
-    "sort": "odd-0004"
+    "sort": "odd-0004",
+    "groups": ["errors"]
   },
   {
     "id": "oddity-0005",
@@ -111,9 +107,7 @@
     "type": "transit",
     "oddityType": "unpunched",
     "baseId": "NY630AS",
-    "relCatalog": [
-      "NY630AS"
-    ],
+    "relCatalog": ["NY630AS"],
     "city": "New York City",
     "borough": "Manhattan",
     "state": "NY",
@@ -127,7 +121,8 @@
     "notes": "The punch-out portion of the design was not cut out.",
     "home": false,
     "pub": true,
-    "sort": "odd-0005"
+    "sort": "odd-0005",
+    "groups": ["errors"]
   },
   {
     "id": "oddity-0006",
@@ -137,9 +132,7 @@
     "type": "transit",
     "oddityType": "unpunched",
     "baseId": "NY631E",
-    "relCatalog": [
-      "NY631E"
-    ],
+    "relCatalog": ["NY631E"],
     "city": "New York City",
     "borough": "Queens",
     "state": "NY",
@@ -153,6 +146,7 @@
     "notes": "The punch-out portion of the design was not cut out.",
     "home": false,
     "pub": true,
-    "sort": "odd-0006"
+    "sort": "odd-0006",
+    "groups": ["errors"]
   }
 ]

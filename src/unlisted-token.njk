@@ -1,7 +1,7 @@
 ---
 layout: base.njk
 pagination:
-  data: unlisted
+  data: unlistedAll
   size: 1
   alias: token
 permalink: "/unlisted/{{ token.siteId | lower }}/index.html"
@@ -15,7 +15,15 @@ eleventyComputed:
 
 {% set detailSectionTitle = "Unlisted Tokens" %}
 {% set detailSectionUrl = "/unlisted/" %}
-{% set detailImageDataset = "unlisted" %}
+
+{% if token.groups and ("counterfeit" in token.groups) %}
+  {% set detailImageDataset = "counterfeit" %}
+{% elseif token.groups and ("errors" in token.groups) %}
+  {% set detailImageDataset = "oddities" %}
+{% else %}
+  {% set detailImageDataset = "unlisted" %}
+{% endif %}
+
 {% set detailImageIsOfficial = false %}
 {% set detailShowPager = false %}
 

@@ -1640,7 +1640,7 @@
     "home": false,
     "pub": true,
     "sort": "630-bl",
-    "groups": ["manhattan"]
+    "groups": ["manhattan", "errors"]
   },
   {
     "id": "official-ny630bm",
