@@ -98,5 +98,30 @@
     "home": false,
     "pub": true,
     "sort": "998-d-b"
+  },
+  {
+    "id": "official-ny998n",
+    "displayId": "NY998N",
+    "sec": "998",
+    "code": "N",
+    "var": "",
+    "status": "listed",
+    "type": "transit",
+    "groups": ["patterns"],
+    "title": "Proposed pattern for the NYC subway.",
+    "mat": "wm",
+    "form": "Solid",
+    "symbol": "Bl",
+    "size": 18,
+    "obv": "NEW YORK CITY TRANSIT SYSTEM NYC",
+    "rev": "Good For One Fare NYC",
+    "desc": "",
+    "notes": "This was a proposed token for the NYC subway. This design was ultimately not used.",
+    "val": 50,
+    "market": "",
+    "rel": [],
+    "home": false,
+    "pub": true,
+    "sort": "998-d-b"
   }
 ]

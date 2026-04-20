@@ -9,7 +9,10 @@
     "transit": "Transit Token",
     "pattern": "Pattern",
     "club": "Club Tour Token",
-    "presentation": "Probable Presentation Piece"
+    "presentation": "Probable Presentation Piece",
+    "fantasy": "Fantasy Token",
+    "timetable": "Timetable Token",
+    "zonecheck": "Zone Check Token"
   },
   "materials": {
     "A": "Aluminum",
@@ -28,6 +31,7 @@
     "Sv": "Silver",
     "T": "Tin",
     "V": "Vulcanite",
+    "Ve": "Black Vulcanite",
     "W": "Wood",
     "WM": "White Metal",
     "X": "Solid Gold",

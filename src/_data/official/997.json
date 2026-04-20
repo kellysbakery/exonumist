@@ -1,0 +1,28 @@
+[
+  {
+    "id": "official-997-a",
+    "displayId": "NY997A",
+    "series": "NY",
+    "sec": "997",
+    "code": "A",
+    "status": "listed",
+    "type": "zonecheck",
+    "groups": ["zonecheck"],
+    "title": "B.C.R.R. Co. Zone Check",
+    "mat": "Ve",
+    "form": "Sd",
+    "symbol": "",
+    "size": 31,
+    "obv": "B.C.R.R. CO.",
+    "rev": "To Be Surrendered at /the /City Line",
+    "desc": "Zone check issued by B.C.R.R. Co. for surrender at the city line.",
+    "notes": "Listed as NY997A in the Zone Checks section of the Atwood-Coffee catalogue.",
+    "val": 600,
+    "market": "",
+    "rel": [],
+    "home": false,
+    "pub": true,
+    "sort": "997-a",
+    "owned": false
+  }
+]
