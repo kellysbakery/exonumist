@@ -1,34 +1,34 @@
 [
   {
-    "key": "manhattan",
-    "title": "Manhattan",
-    "section": "listed",
-    "order": 1,
-    "url": "/listed/630/",
-    "description": "Listed Manhattan transportation tokens."
-  },
-  {
     "key": "bronx",
     "title": "Bronx",
     "section": "listed",
-    "order": 2,
-    "url": "/listed/628/",
+    "order": 1,
+    "url": "/groups/bronx/",
     "description": "Listed Bronx transportation tokens."
   },
   {
     "key": "brooklyn",
     "title": "Brooklyn",
     "section": "listed",
-    "order": 3,
-    "url": "/listed/629/",
+    "order": 2,
+    "url": "/groups/brooklyn/",
     "description": "Listed Brooklyn transportation tokens."
+  },
+  {
+    "key": "manhattan",
+    "title": "Manhattan",
+    "section": "listed",
+    "order": 3,
+    "url": "/groups/manhattan/",
+    "description": "Listed Manhattan transportation tokens."
   },
   {
     "key": "queens",
     "title": "Queens",
     "section": "listed",
     "order": 4,
-    "url": "/listed/631/",
+    "url": "/groups/queens/",
     "description": "Listed Queens transportation tokens."
   },
   {
@@ -36,7 +36,7 @@
     "title": "Staten Island",
     "section": "listed",
     "order": 5,
-    "url": "/listed/632/",
+    "url": "/groups/statenisland/",
     "description": "Listed Staten Island transportation tokens."
   },
   {
@@ -44,43 +44,85 @@
     "title": "Patterns",
     "section": "listed",
     "order": 6,
-    "url": "/listed/patterns/",
+    "url": "/groups/patterns/",
     "description": "Listed patterns from the A/C Catalogue."
   },
   {
-    "key": "clubtour",
-    "title": "Club Tour (CT)",
+    "key": "timetables",
+    "title": "Timetables",
     "section": "listed",
     "order": 7,
-    "url": "/listed/club-tour/",
+    "url": "/groups/timetables/",
+    "description": "Listed timetables issues from the A/C Catalogue."
+  },
+  {
+    "key": "clubtour",
+    "title": "Club Tour",
+    "section": "listed",
+    "order": 8,
+    "url": "/groups/clubtour/",
     "description": "Listed club tour issues from the A/C Catalogue."
+  },
+  {
+    "key": "fantasy",
+    "title": "Fantasy",
+    "section": "listed",
+    "order": 9,
+    "url": "/groups/fantasy/",
+    "description": "Fantasy issues from the A/C Catalogue."
+  },
+  {
+    "key": "presentation",
+    "title": "Presentation Pieces",
+    "section": "listed",
+    "order": 10,
+    "url": "/groups/presentation/",
+    "description": "Presentation pieces from the A/C Catalogue."
+  },
+  {
+    "key": "zonecheck",
+    "title": "Zone Check",
+    "section": "listed",
+    "order": 11,
+    "url": "/groups/zonecheck/",
+    "description": "Zone Check pieces from the A/C Catalogue."
   },
   {
     "key": "discoveries",
     "title": "Unlisted Discoveries",
     "section": "unlisted",
     "order": 1,
-    "url": "/unlisted/",
+    "url": "/groups/discoveries/",
     "description": "Tokens and related material not presently listed in the A/C Catalogue."
   },
   {
-    "key": "oddities",
+    "key": "errors",
     "title": "Oddities & Errors",
     "section": "unlisted",
     "order": 2,
-    "url": "/oddities/",
+    "url": "/groups/errors/",
     "description": "Unlisted errors, oddities, and unusual transportation-related material."
+  },
+  {
+    "key": "counterfeit",
+    "title": "Counterfeit Tokens",
+    "section": "unlisted",
+    "order": 3,
+    "url": "/groups/counterfeit/",
+    "description": "Counterfeit and imitation transportation tokens.",
+    "intro": "Transportation tokens and related pieces made to imitate genuine issues."
   },
   {
     "key": "nyhrr",
     "title": "New York & Harlem Railroad",
     "section": "spotlight",
     "order": 1,
-    "url": "/official/ny630da/",
+    "url": "/groups/nyhrr/",
     "description": "Related octagonal varieties spanning the listed NY630D issues and the NY998 pattern pieces.",
+    "intro": "Tokens and related pieces associated with the New York & Harlem Railroad.",
     "featured": true,
     "heroImage": "/images/official/630/630-d-a_o.jpg",
     "heroLabel": "Featured Group",
-    "heroText": "New York & Harlem Railroad token group."
+    "heroText": "Tokens from the New York & Harlem Railroad."
   }
 ]

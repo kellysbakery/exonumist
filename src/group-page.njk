@@ -1,0 +1,128 @@
+---
+layout: base.njk
+pagination:
+  data: groups
+  size: 1
+  alias: group
+permalink: "/groups/{{ group.key }}/index.html"
+eleventyComputed:
+  title: "{{ group.title }}"
+---
+
+{% set groupTokens = [] %}
+
+{% for token in collections.officialAll %}
+  {% if token.groups and (group.key in token.groups) %}
+    {% set groupTokens = groupTokens.concat([{
+      "record": token,
+      "dataset": "official"
+    }]) %}
+  {% endif %}
+{% endfor %}
+
+{% for token in oddities %}
+  {% if token.pub and token.groups and (group.key in token.groups) %}
+    {% set groupTokens = groupTokens.concat([{
+      "record": token,
+      "dataset": "oddities"
+    }]) %}
+  {% endif %}
+{% endfor %}
+
+{% for token in unlisted %}
+  {% if token.pub and token.groups and (group.key in token.groups) %}
+    {% set groupTokens = groupTokens.concat([{
+      "record": token,
+      "dataset": "unlisted"
+    }]) %}
+  {% endif %}
+{% endfor %}
+
+{% for token in counterfeit %}
+  {% if token.pub and token.groups and (group.key in token.groups) %}
+    {% set groupTokens = groupTokens.concat([{
+      "record": token,
+      "dataset": "counterfeit"
+    }]) %}
+  {% endif %}
+{% endfor %}
+
+<section class="section">
+  <div class="meta breadcrumb">
+    <a href="/">Home</a>
+    <span>/</span>
+    <span aria-current="page">{{ group.title }}</span>
+  </div>
+
+  <h1>{{ group.title }}</h1>
+
+  {% if group.intro %}
+  <p class="section-intro">
+    {{ group.intro }}
+  </p>
+  {% endif %}
+
+  <div class="grid-3 token-card-grid">
+    {% for item in groupTokens %}
+      {% set token = item.record %}
+      <a class="card-link"
+         href="{% if item.dataset == 'official' %}/official/{{ token.displayId | lower }}/{% elseif item.dataset == 'oddities' %}/oddities/{{ token.siteId | lower }}/{% elseif item.dataset == 'unlisted' %}/unlisted/{{ token.siteId | lower }}/{% elseif item.dataset == 'counterfeit' %}/counterfeit/{{ token.siteId | lower }}/{% endif %}">
+        <article class="card token-list-card">
+
+          <div class="token-list-card-media">
+            {% if item.dataset == "official" %}
+              {% if token | hasOfficialImage("o") %}
+                <img
+                  class="token-list-card-image"
+                  src="{{ token | officialImagePath('o') }}"
+                  alt="{{ token.displayId }} obverse" />
+              {% else %}
+                <div class="token-list-card-placeholder"></div>
+              {% endif %}
+            {% else %}
+              {% if token | hasFallbackImage(item.dataset, "o") %}
+                <img
+                  class="token-list-card-image"
+                  src="{{ token | fallbackImagePath(item.dataset, 'o') }}"
+                  alt="{% if token.displayId %}{{ token.displayId }}{% else %}{{ token.siteId }}{% endif %} obverse" />
+              {% else %}
+                <div class="token-list-card-placeholder"></div>
+              {% endif %}
+            {% endif %}
+          </div>
+
+          <div class="token-list-card-body">
+            <span class="eyebrow">
+              {% if token.displayId %}{{ token.displayId }}{% else %}{{ token.siteId }}{% endif %}
+            </span>
+
+            <strong class="token-list-card-title">
+              {% if token.title %}{{ token.title }}{% else %}{{ token.displayTitle }}{% endif %}
+            </strong>
+
+            {% if token.desc %}
+              <p class="token-list-card-desc">
+                {{ token.desc }}
+              </p>
+            {% endif %}
+
+            <p class="token-list-card-meta">
+              {% if token.mat %}
+                {{ token.mat | lookup(lookups.materials) }}
+              {% endif %}
+              {% if token.size %}
+                · {{ token.size }} mm
+              {% endif %}
+              {% if token.form %}
+                · {{ token.form | lookup(lookups.forms) }}
+              {% elseif token.symbol %}
+                · {{ token.symbol | lookup(lookups.symbols) }}
+              {% endif %}
+            </p>
+          </div>
+
+        </article>
+      </a>
+    {% endfor %}
+  </div>
+</section>
