@@ -57,9 +57,9 @@ eleventyComputed:
   <h1>{{ group.title }}</h1>
 
   {% if group.intro %}
-  <p class="section-intro">
-    {{ group.intro }}
-  </p>
+    <p class="section-intro">
+      {{ group.intro }}
+    </p>
   {% endif %}
 
   <div class="grid-3 token-card-grid">
@@ -67,7 +67,7 @@ eleventyComputed:
       {% set token = item.record %}
       <a
         class="card-link"
-        href="{% if item.dataset == 'official' %}/official/{{ token.displayId | lower }}/{% elseif item.dataset == 'oddities' or item.dataset == 'unlisted' or item.dataset == 'counterfeit' %}/unlisted/{{ token.siteId | lower }}/{% endif %}">
+        href="{% if item.dataset == 'official' %}/groups/{{ group.key }}/{{ token.displayId | lower }}/{% elseif item.dataset == 'oddities' or item.dataset == 'unlisted' or item.dataset == 'counterfeit' %}/unlisted/{{ token.siteId | lower }}/{% endif %}">
         <article class="card token-list-card">
 
           <div class="token-list-card-media">
