@@ -1,14 +1,20 @@
 [
   {
     "key": "listed",
-    "title": "Listed Tokens"
+    "title": "Listed Tokens",
+    "intro": "Browse listed New York City transportation-related tokens by borough and listed special groups.",
+    "gridClass": "grid-4"
   },
   {
     "key": "unlisted",
-    "title": "Unlisted, Errors & Oddities"
+    "title": "Unlisted, Errors & Oddities",
+    "intro": "New York City transportation-related material not presently included in the Atwood-Coffee Catalogue, along with errors, oddities, and related unofficial pieces.",
+    "gridClass": "grid-3"
   },
   {
     "key": "spotlight",
-    "title": "Spotlights"
+    "title": "Spotlight",
+    "intro": "Featured collecting areas and historically significant token groups.",
+    "gridClass": "grid-3"
   }
 ]
