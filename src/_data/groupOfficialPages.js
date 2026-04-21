@@ -2,9 +2,9 @@ const fs = require("fs");
 const path = require("path");
 
 const groups = require("./groups.json");
-const oddities = require("./oddities.json");
-const unlisted = require("./unlisted.json");
-const counterfeit = require("./counterfeit.json");
+const oddities = require("./unofficial/oddities.json");
+const unlisted = require("./unofficial/unlisted.json");
+const counterfeit = require("./unofficial/counterfeit.json");
 
 function loadOfficialTokens() {
   const officialDir = path.join(__dirname, "official");
@@ -30,7 +30,7 @@ function buildGroupTokens(group) {
   const tokens = [];
 
   for (const token of officialAll) {
-    if (token.pub && token.groups && token.groups.includes(group.key)) {
+    if (token.pub && Array.isArray(token.groups) && token.groups.includes(group.key)) {
       tokens.push({
         group,
         token,
@@ -41,34 +41,34 @@ function buildGroupTokens(group) {
   }
 
   for (const token of oddities) {
-    if (token.pub && token.groups && token.groups.includes(group.key)) {
+    if (token.pub && Array.isArray(token.groups) && token.groups.includes(group.key)) {
       tokens.push({
         group,
         token,
         dataset: "oddities",
-        pageId: token.siteId
+        pageId: token.displayId
       });
     }
   }
 
   for (const token of unlisted) {
-    if (token.pub && token.groups && token.groups.includes(group.key)) {
+    if (token.pub && Array.isArray(token.groups) && token.groups.includes(group.key)) {
       tokens.push({
         group,
         token,
         dataset: "unlisted",
-        pageId: token.siteId
+        pageId: token.displayId
       });
     }
   }
 
   for (const token of counterfeit) {
-    if (token.pub && token.groups && token.groups.includes(group.key)) {
+    if (token.pub && Array.isArray(token.groups) && token.groups.includes(group.key)) {
       tokens.push({
         group,
         token,
         dataset: "counterfeit",
-        pageId: token.siteId
+        pageId: token.displayId
       });
     }
   }

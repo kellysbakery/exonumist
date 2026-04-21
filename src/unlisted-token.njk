@@ -4,14 +4,14 @@ pagination:
   data: unlistedAll
   size: 1
   alias: token
-permalink: "/unlisted/{{ token.siteId | lower }}/index.html"
+permalink: "/unlisted/{{ token.displayId | lower }}/index.html"
 eleventyComputed:
-  title: "{{ token.siteId }} – {{ token.displayTitle }}"
+  title: "{{ token.displayId }} – {{ token.title }}"
 ---
 
-{% set tokenId = token.displayId or token.siteId %}
-{% set tokenTitle = token.title or token.displayTitle %}
-{% set isUnlisted = token.siteId and not token.displayId %}
+{% set tokenId = token.displayId %}
+{% set tokenTitle = token.title %}
+{% set isUnlisted = true %}
 
 {% set detailSectionTitle = "Unlisted" %}
 {% set detailSectionUrl = "/unlisted/" %}

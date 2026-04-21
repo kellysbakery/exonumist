@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://exonumist.com/schemas/token-record.schema.json",
+  "title": "Exonumist Token Record",
+  "description": "Normalized token/discovery record used by exonumist.com",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "displayId",
+    "sec",
+    "code",
+    "var",
+    "status",
+    "type",
+    "groups",
+    "title",
+    "city",
+    "borough",
+    "state",
+    "mat",
+    "form",
+    "symbol",
+    "size",
+    "obv",
+    "rev",
+    "desc",
+    "notes",
+    "val",
+    "market",
+    "rel",
+    "baseId",
+    "oddityType",
+    "confidence",
+    "home",
+    "pub",
+    "sort"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "displayId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sec": {
+      "type": "string"
+    },
+    "code": {
+      "type": "string"
+    },
+    "var": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "minLength": 1
+    },
+    "type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "groups": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "city": {
+      "type": "string"
+    },
+    "borough": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "mat": {
+      "type": "string"
+    },
+    "form": {
+      "type": "string"
+    },
+    "symbol": {
+      "type": "string"
+    },
+    "size": {
+      "type": [
+        "integer",
+        "number",
+        "null"
+      ]
+    },
+    "obv": {
+      "type": "string"
+    },
+    "rev": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "val": {
+      "type": [
+        "number",
+        "integer",
+        "null"
+      ]
+    },
+    "market": {
+      "type": "string"
+    },
+    "rel": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "baseId": {
+      "type": "string"
+    },
+    "oddityType": {
+      "type": "string"
+    },
+    "confidence": {
+      "type": "string"
+    },
+    "home": {
+      "type": "boolean"
+    },
+    "pub": {
+      "type": "boolean"
+    },
+    "sort": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}
