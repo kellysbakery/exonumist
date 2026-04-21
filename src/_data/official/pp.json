@@ -2,7 +2,7 @@
   {
     "id": "official-pp-am",
     "displayId": "PP-AM",
-    "series": "PP",
+    "sec": "PP",
     "code": "AM",
     "status": "listed",
     "type": "presentation",

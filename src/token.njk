@@ -12,22 +12,17 @@ eleventyComputed:
 {% set tokenTitle = token.title or token.displayTitle %}
 {% set isUnlisted = token.siteId and not token.displayId %}
 {% set sectionLabel = token.sec %}
-{% set sectionUrl = "/listed/" ~ token.sec ~ "/" %}
+{% set sectionUrl = "/listed/" ~ token.sec | lower ~ "/" %}
+{% set matchedSection = null %}
 
-{% if token.sec == "630" %}
-  {% set sectionLabel = "Manhattan" %}
-{% endif %}
-{% if token.sec == "629" %}
-  {% set sectionLabel = "Brooklyn" %}
-{% endif %}
-{% if token.sec == "628" %}
-  {% set sectionLabel = "Bronx" %}
-{% endif %}
-{% if token.sec == "631" %}
-  {% set sectionLabel = "Queens" %}
-{% endif %}
-{% if token.sec == "632" %}
-  {% set sectionLabel = "Staten Island" %}
+{% for section in sections %}
+  {% if section.sec == token.sec and section.pub %}
+    {% set matchedSection = section %}
+  {% endif %}
+{% endfor %}
+
+{% if matchedSection %}
+  {% set sectionLabel = matchedSection.title %}
 {% endif %}
 
 {% set sectionTokens = [] %}

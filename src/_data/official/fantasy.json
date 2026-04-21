@@ -2,7 +2,7 @@
   {
     "id": "official-ff-ny-1",
     "displayId": "FF-NY-1",
-    "series": "FF",
+    "sec": "FF",
     "code": "1",
     "state": "NY",
     "status": "listed",
@@ -27,7 +27,7 @@
   {
     "id": "official-ff-ny-2",
     "displayId": "FF-NY-2",
-    "series": "FF",
+    "sec": "FF",
     "code": "2",
     "state": "NY",
     "status": "listed",

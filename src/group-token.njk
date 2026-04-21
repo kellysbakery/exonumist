@@ -23,6 +23,20 @@ eleventyComputed:
 {% set detailImageIsOfficial = (dataset == "official") %}
 {% set detailShowPager = true %}
 
+{% if dataset == "official" and token.sec %}
+  {% set matchedSection = null %}
+  {% for section in sections %}
+    {% if section.sec == token.sec and section.pub %}
+      {% set matchedSection = section %}
+    {% endif %}
+  {% endfor %}
+
+  {% if matchedSection %}
+    {% set detailSectionTitle = matchedSection.title %}
+    {% set detailSectionUrl = "/listed/" ~ token.sec | lower ~ "/" %}
+  {% endif %}
+{% endif %}
+
 {% set groupTokens = [] %}
 
 {% for item in collections.officialAll %}

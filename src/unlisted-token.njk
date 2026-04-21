@@ -13,12 +13,16 @@ eleventyComputed:
 {% set tokenTitle = token.title or token.displayTitle %}
 {% set isUnlisted = token.siteId and not token.displayId %}
 
-{% set detailSectionTitle = "Unlisted Tokens" %}
+{% set detailSectionTitle = "Unlisted" %}
 {% set detailSectionUrl = "/unlisted/" %}
 
 {% if token.groups and ("counterfeit" in token.groups) %}
+  {% set detailSectionTitle = "Counterfeit" %}
+  {% set detailSectionUrl = "/groups/counterfeit/" %}
   {% set detailImageDataset = "counterfeit" %}
 {% elseif token.groups and ("errors" in token.groups) %}
+  {% set detailSectionTitle = "Oddities & Errors" %}
+  {% set detailSectionUrl = "/groups/errors/" %}
   {% set detailImageDataset = "oddities" %}
 {% else %}
   {% set detailImageDataset = "unlisted" %}
