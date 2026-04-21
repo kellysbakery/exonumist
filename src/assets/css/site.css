@@ -394,6 +394,8 @@ h2 {
 .token-quickfacts,
 .token-notes-section {
   margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .token-quickfacts h2,
@@ -412,6 +414,7 @@ h2 {
   max-width: 100%;
   margin: 0;
   height: 100%;
+  flex: 1;
 }
 
 .quickfacts-panel dl {
@@ -451,88 +454,71 @@ h2 {
   padding: 20px;
 }
 
-.notes-disclosure,
-.notes-static {
+.notes-frame {
+  position: relative;
   border: 1px solid #e6dccd;
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.6);
+  transition: height 0.18s ease;
+}
+
+.notes-frame.is-collapsed {
   overflow: hidden;
 }
 
-.notes-toggle {
-  list-style: none;
-  cursor: pointer;
-  display: block;
-  padding: 0;
-  user-select: none;
+.notes-frame.is-expanded {
+  overflow: visible;
 }
 
-.notes-toggle::-webkit-details-marker {
-  display: none;
-}
-
-.notes-preview {
-  position: relative;
-  padding: 1rem 1.1rem 0.35rem;
-}
-
-.notes-preview p {
-  margin: 0;
-  color: var(--text);
-  line-height: 1.7;
-  white-space: pre-line;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.notes-preview::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 3.2em;
-  background: linear-gradient(to bottom, rgba(255, 253, 248, 0), rgba(255, 253, 248, 1));
-  pointer-events: none;
-}
-
-.notes-toggle-text {
-  display: block;
-  padding: 0.25rem 1.1rem 1rem;
-  font-weight: 700;
-  color: var(--accent);
-}
-
-.notes-toggle-text::after {
-  content: " ↓";
-}
-
-.notes-disclosure[open] .notes-toggle-text::after {
-  content: " ↑";
-}
-
-.notes-disclosure[open] .notes-preview {
-  display: none;
-}
-
-.notes-body {
-  padding: 0 1.1rem 1.1rem;
+.notes-content {
+  padding: 1.1rem 1.1rem 4.25rem;
   color: var(--text);
 }
 
-.notes-body p,
-.notes-static p {
+.notes-content p {
   margin: 0 0 1rem;
   max-width: 74ch;
   line-height: 1.72;
   white-space: pre-line;
 }
 
-.notes-body p:last-child,
-.notes-static p:last-child {
+.notes-content p:last-child {
   margin-bottom: 0;
+}
+
+.notes-frame.is-collapsed .notes-content {
+  height: calc(100% - 5.1rem);
+  overflow: hidden;
+}
+
+.notes-frame.is-collapsed::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 2.6rem;
+  height: 5.5rem;
+  background: linear-gradient(to bottom, rgba(255, 253, 248, 0), rgba(255, 253, 248, 1));
+  pointer-events: none;
+  z-index: 1;
+}
+
+.notes-more {
+  position: absolute;
+  left: 1.1rem;
+  bottom: 1rem;
+  border: 0;
+  background: rgba(255, 253, 248, 0.99);
+  padding: 0.2rem 0.45rem;
+  font: inherit;
+  font-weight: 700;
+  color: var(--accent);
+  cursor: pointer;
+  z-index: 3;
+}
+
+.notes-more:hover {
+  text-decoration: underline;
 }
 
 .notes-market strong {
@@ -627,16 +613,20 @@ h2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
+  align-items: stretch;
 }
 
 .token-pager-item {
   min-height: 1px;
+  display: flex;
 }
 
 .token-pager-link {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 14px;
+  width: 100%;
+  min-height: 100%;
   text-decoration: none;
   padding: 14px 16px;
   border: 1px solid var(--line);
@@ -682,8 +672,10 @@ h2 {
 .token-pager-content {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   gap: 4px;
   min-width: 0;
+  padding-top: 2px;
 }
 
 .token-pager-next .token-pager-link {
@@ -692,10 +684,13 @@ h2 {
 }
 
 .token-pager-label {
+  display: block;
   color: var(--muted);
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
+  line-height: 1.1;
+  margin-bottom: 4px;
 }
 
 .token-pager-link strong {
@@ -854,6 +849,31 @@ h2 {
   .hero-feature {
     justify-content: flex-start;
   }
+
+   .notes-frame {
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .notes-frame.is-collapsed .notes-content,
+  .notes-frame.is-expanded .notes-content {
+    height: auto;
+    overflow: visible;
+  }
+
+  .notes-more {
+    position: static;
+    display: inline-block;
+    margin: 0 0 1rem 1.1rem;
+  }
+
+  .notes-content {
+    padding-bottom: 1.1rem;
+  }
+
+  .notes-frame.is-collapsed::after {
+    display: none;
+  }
 }
 
 @media (max-width: 640px) {
@@ -886,18 +906,6 @@ h2 {
 
   .facts dd {
     font-size: 0.95rem;
-  }
-
-  .notes-preview {
-    padding: 0.95rem 1rem 0.3rem;
-  }
-
-  .notes-toggle-text {
-    padding: 0.2rem 1rem 0.95rem;
-  }
-
-  .notes-body {
-    padding: 0 1rem 1rem;
   }
 
   .token-list-card {

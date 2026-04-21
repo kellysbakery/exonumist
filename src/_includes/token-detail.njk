@@ -89,12 +89,43 @@
       <h2>Quick Facts</h2>
       <div class="facts quickfacts-panel">
         <dl>
+          {% set hasShape = false %}
+          {% set hasSymbol = false %}
+
           {% for fact in detailView.quickFacts %}
+            {% set normalizedLabel = fact.label | lower | trim %}
+            {% if normalizedLabel == "form" or normalizedLabel == "shape" %}
+              {% set hasShape = true %}
+            {% endif %}
+            {% if normalizedLabel == "symbol" %}
+              {% set hasSymbol = true %}
+            {% endif %}
+
             <div class="facts-row">
-              <dt>{{ fact.label }}</dt>
+              <dt>{% if normalizedLabel == "form" %}Shape{% else %}{{ fact.label }}{% endif %}</dt>
               <dd>{{ fact.value }}</dd>
             </div>
           {% endfor %}
+
+          {% if not hasShape %}
+            {% set fallbackShape = detailView.shape or detailView.form or token.shape or token.form %}
+            {% if fallbackShape %}
+              <div class="facts-row">
+                <dt>Shape</dt>
+                <dd>{{ fallbackShape }}</dd>
+              </div>
+            {% endif %}
+          {% endif %}
+
+          {% if not hasSymbol %}
+            {% set fallbackSymbol = detailView.symbol or token.symbol %}
+            {% if fallbackSymbol %}
+              <div class="facts-row">
+                <dt>Symbol</dt>
+                <dd>{{ fallbackSymbol }}</dd>
+              </div>
+            {% endif %}
+          {% endif %}
         </dl>
       </div>
     </section>
@@ -103,27 +134,24 @@
       <section class="section token-notes-section">
         <h2>Notes</h2>
 
-        {% if detailView.notes %}
-          <details class="notes-disclosure">
-            <summary class="notes-toggle">
-              <div class="notes-preview">
-                <p>{{ detailView.notes }}</p>
-              </div>
-              <span class="notes-toggle-text">Read more</span>
-            </summary>
-
-            <div class="notes-body">
+        <div class="notes-frame js-notes-frame">
+          <div class="notes-content js-notes-content">
+            {% if detailView.notes %}
               <p>{{ detailView.notes }}</p>
-              {% if detailView.market %}
-                <p class="notes-market"><strong>Market note:</strong> {{ detailView.market }}</p>
-              {% endif %}
-            </div>
-          </details>
-        {% elseif detailView.market %}
-          <div class="notes-static">
-            <p><strong>Market note:</strong> {{ detailView.market }}</p>
+            {% endif %}
+            {% if detailView.market %}
+              <p class="notes-market"><strong>Market note:</strong> {{ detailView.market }}</p>
+            {% endif %}
           </div>
-        {% endif %}
+
+          <button
+            type="button"
+            class="notes-more js-notes-more"
+            hidden
+            aria-expanded="false">
+            Read more
+          </button>
+        </div>
       </section>
     {% endif %}
   </div>
@@ -179,4 +207,72 @@
       </div>
     </nav>
   {% endif %}
+
+  <script>
+    (function () {
+      function setupNotes() {
+        const grids = document.querySelectorAll(".token-lower-grid");
+
+        grids.forEach((grid) => {
+          const quickFactsSection = grid.querySelector(".token-quickfacts");
+          const notesSection = grid.querySelector(".token-notes-section");
+          const notesFrame = grid.querySelector(".js-notes-frame");
+          const notesContent = grid.querySelector(".js-notes-content");
+          const notesMore = grid.querySelector(".js-notes-more");
+
+          if (!quickFactsSection || !notesSection || !notesFrame || !notesContent || !notesMore) {
+            return;
+          }
+
+          notesSection.style.minHeight = "";
+          notesFrame.style.height = "";
+          notesFrame.classList.remove("is-collapsed", "is-expanded");
+          notesMore.hidden = true;
+          notesMore.setAttribute("aria-expanded", "false");
+          notesMore.textContent = "Read more";
+
+          const heading = notesSection.querySelector("h2");
+          const headingHeight = heading ? heading.offsetHeight + 14 : 48;
+
+          const quickFactsHeight = quickFactsSection.offsetHeight;
+          if (!quickFactsHeight) return;
+
+          const frameHeight = Math.max(140, quickFactsHeight - headingHeight - 42);
+
+          notesSection.style.minHeight = quickFactsHeight + "px";
+          notesFrame.style.height = frameHeight + "px";
+
+          const needsToggle = notesContent.scrollHeight > notesFrame.clientHeight + 2;
+
+          if (needsToggle) {
+            notesFrame.classList.add("is-collapsed");
+            notesMore.hidden = false;
+          } else {
+            notesFrame.classList.add("is-expanded");
+          }
+
+            notesMore.onclick = function () {
+            const isExpanded = notesFrame.classList.contains("is-expanded");
+
+            if (isExpanded) {
+              notesFrame.classList.remove("is-expanded");
+              notesFrame.classList.add("is-collapsed");
+              notesFrame.style.height = frameHeight + "px";
+              notesMore.textContent = "Read more";
+              notesMore.setAttribute("aria-expanded", "false");
+            } else {
+              notesFrame.classList.remove("is-collapsed");
+              notesFrame.classList.add("is-expanded");
+              notesFrame.style.height = (notesContent.scrollHeight + 8) + "px";
+              notesMore.textContent = "Show less";
+              notesMore.setAttribute("aria-expanded", "true");
+            }
+          };
+        });
+      }
+
+      window.addEventListener("load", setupNotes);
+      window.addEventListener("resize", setupNotes);
+    })();
+  </script>
 </section>
