@@ -4,10 +4,16 @@
     "displayId": "PP-AM",
     "sec": "PP",
     "code": "AM",
+    "var": "",
     "status": "listed",
     "type": "presentation",
-    "groups": ["presentation"],
+    "groups": [
+      "presentation"
+    ],
     "title": "NY 630 AY Presentation Piece",
+    "city": "",
+    "borough": "",
+    "state": "",
     "mat": "X",
     "form": "Ddsc",
     "symbol": "",
@@ -18,7 +24,12 @@
     "notes": "Listed as PP-AM in the Presentation Pieces section of the Atwood-Coffee catalogue. Struck in 14k gold. The catalogue notes that 500 were made.",
     "val": 125,
     "market": "",
-    "rel": ["NY630AY"],
+    "rel": [
+      "NY630AY"
+    ],
+    "baseId": "",
+    "oddityType": "",
+    "confidence": "",
     "home": false,
     "pub": true,
     "sort": "pp-am"

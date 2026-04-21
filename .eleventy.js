@@ -53,23 +53,15 @@ module.exports = function (eleventyConfig) {
     return fs.existsSync(path.join(process.cwd(), rel));
   });
 
-  // Build image path for unlisted / oddities / counterfeit / special
+  // Build image path for unlisted / oddities / counterfeit
   eleventyConfig.addFilter("fallbackImagePath", (record, type, side) => {
-    const key =
-      type === "unlisted" || type === "oddities" || type === "counterfeit"
-        ? String(record.siteId || "").toLowerCase()
-        : String(record.displayId || "").toLowerCase();
-
+    const key = String(record.displayId || "").toLowerCase();
     return `/images/${type}/${key}_${side}.jpg`;
   });
 
   // Check if fallback image exists
   eleventyConfig.addFilter("hasFallbackImage", (record, type, side) => {
-    const key =
-      type === "unlisted" || type === "oddities" || type === "counterfeit"
-        ? String(record.siteId || "").toLowerCase()
-        : String(record.displayId || "").toLowerCase();
-
+    const key = String(record.displayId || "").toLowerCase();
     const rel = path.join("src", "images", type, `${key}_${side}.jpg`);
 
     return fs.existsSync(path.join(process.cwd(), rel));

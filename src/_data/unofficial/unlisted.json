@@ -1,11 +1,16 @@
 [
   {
     "id": "unlisted-man-0001",
-    "siteId": "UNL-MAN-0001",
-    "displayTitle": "Unlisted Gold Presentation Piece Related to NY630AS",
+    "displayId": "UNL-MAN-0001",
+    "sec": "",
+    "code": "",
+    "var": "",
     "status": "unlisted",
     "type": "presentation",
-    "groups": ["discoveries"],
+    "groups": [
+      "discoveries"
+    ],
+    "title": "Unlisted Gold Presentation Piece Related to NY630AS",
     "city": "New York City",
     "borough": "Manhattan",
     "state": "NY",
@@ -17,7 +22,13 @@
     "rev": "(C)TA",
     "desc": "Gold piece related to NY630AS, likely struck as a presentation issue.",
     "notes": "Not currently listed in the Atwood-Coffee Catalogue.",
-    "relCatalog": ["NY630AS"],
+    "val": null,
+    "market": "",
+    "rel": [
+      "NY630AS"
+    ],
+    "baseId": "",
+    "oddityType": "",
     "confidence": "probable",
     "home": true,
     "pub": true,

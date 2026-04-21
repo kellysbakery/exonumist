@@ -20,7 +20,7 @@ eleventyComputed:
   {% endif %}
 {% endfor %}
 
-{% for token in oddities %}
+{% for token in unofficial.oddities %}
   {% if token.pub and token.groups and (group.key in token.groups) %}
     {% set groupTokens = groupTokens.concat([{
       "record": token,
@@ -29,7 +29,7 @@ eleventyComputed:
   {% endif %}
 {% endfor %}
 
-{% for token in unlisted %}
+{% for token in unofficial.unlisted %}
   {% if token.pub and token.groups and (group.key in token.groups) %}
     {% set groupTokens = groupTokens.concat([{
       "record": token,
@@ -38,7 +38,7 @@ eleventyComputed:
   {% endif %}
 {% endfor %}
 
-{% for token in counterfeit %}
+{% for token in unofficial.counterfeit %}
   {% if token.pub and token.groups and (group.key in token.groups) %}
     {% set groupTokens = groupTokens.concat([{
       "record": token,
@@ -67,7 +67,7 @@ eleventyComputed:
       {% set token = item.record %}
       <a
         class="card-link"
-        href="{% if item.dataset == 'official' %}/groups/{{ group.key }}/{{ token.displayId | lower }}/{% elseif item.dataset == 'oddities' or item.dataset == 'unlisted' or item.dataset == 'counterfeit' %}/unlisted/{{ token.siteId | lower }}/{% endif %}">
+        href="{% if item.dataset == 'official' %}/groups/{{ group.key }}/{{ token.displayId | lower }}/{% elseif item.dataset == 'oddities' or item.dataset == 'unlisted' or item.dataset == 'counterfeit' %}/unlisted/{{ token.displayId | lower }}/{% endif %}">
         <article class="card token-list-card">
 
           <div class="token-list-card-media">
@@ -85,7 +85,7 @@ eleventyComputed:
                 <img
                   class="token-list-card-image"
                   src="{{ token | fallbackImagePath(item.dataset, 'o') }}"
-                  alt="{% if token.displayId %}{{ token.displayId }}{% else %}{{ token.siteId }}{% endif %} obverse" />
+                  alt="{{ token.displayId }} obverse" />
               {% else %}
                 <div class="token-list-card-placeholder"></div>
               {% endif %}
@@ -94,11 +94,11 @@ eleventyComputed:
 
           <div class="token-list-card-body">
             <span class="eyebrow">
-              {% if token.displayId %}{{ token.displayId }}{% else %}{{ token.siteId }}{% endif %}
+              {{ token.displayId }}
             </span>
 
             <strong class="token-list-card-title">
-              {% if token.title %}{{ token.title }}{% else %}{{ token.displayTitle }}{% endif %}
+              {{ token.title }}
             </strong>
 
             {% if token.desc %}

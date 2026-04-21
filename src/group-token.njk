@@ -6,15 +6,15 @@ pagination:
   alias: pageData
 permalink: "/groups/{{ pageData.group.key }}/{{ pageData.pageId | lower }}/index.html"
 eleventyComputed:
-  title: "{% if pageData.token.displayId %}{{ pageData.token.displayId }}{% else %}{{ pageData.token.siteId }}{% endif %} – {% if pageData.token.title %}{{ pageData.token.title }}{% else %}{{ pageData.token.displayTitle }}{% endif %}"
+  title: "{{ pageData.token.displayId }} – {{ pageData.token.title }}"
 ---
 
 {% set group = pageData.group %}
 {% set token = pageData.token %}
 {% set dataset = pageData.dataset or "official" %}
 
-{% set tokenId = token.displayId or token.siteId %}
-{% set tokenTitle = token.title or token.displayTitle %}
+{% set tokenId = token.displayId %}
+{% set tokenTitle = token.title %}
 {% set isUnlisted = dataset != "official" %}
 
 {% set detailSectionTitle = group.title %}
@@ -49,32 +49,32 @@ eleventyComputed:
   {% endif %}
 {% endfor %}
 
-{% for item in oddities %}
+{% for item in unofficial.oddities %}
   {% if item.pub and item.groups and (group.key in item.groups) %}
     {% set groupTokens = groupTokens.concat([{
       "record": item,
       "dataset": "oddities",
-      "pageId": item.siteId
+      "pageId": item.displayId
     }]) %}
   {% endif %}
 {% endfor %}
 
-{% for item in unlisted %}
+{% for item in unofficial.unlisted %}
   {% if item.pub and item.groups and (group.key in item.groups) %}
     {% set groupTokens = groupTokens.concat([{
       "record": item,
       "dataset": "unlisted",
-      "pageId": item.siteId
+      "pageId": item.displayId
     }]) %}
   {% endif %}
 {% endfor %}
 
-{% for item in counterfeit %}
+{% for item in unofficial.counterfeit %}
   {% if item.pub and item.groups and (group.key in item.groups) %}
     {% set groupTokens = groupTokens.concat([{
       "record": item,
       "dataset": "counterfeit",
-      "pageId": item.siteId
+      "pageId": item.displayId
     }]) %}
   {% endif %}
 {% endfor %}

@@ -60,9 +60,9 @@ function buildQuickFacts(token, context = {}) {
   };
 
   if (isUnlisted) {
-    addRow("Site ID", token.siteId);
-    if (token.relCatalog && token.relCatalog.length) {
-      addRow("Related A/C", token.relCatalog.join(", "));
+    addRow("ID", token.displayId);
+    if (Array.isArray(token.rel) && token.rel.length) {
+      addRow("Related A/C", token.rel.join(", "));
     }
   } else {
     addRow("Catalogue ID", token.displayId);
@@ -176,23 +176,23 @@ function buildPagerItem(token, options = {}) {
     officialImagePath
   } = options;
 
-  const id = token.displayId || token.siteId || "";
-  const slug = (token.displayId || token.siteId || "").toLowerCase();
+  const id = token.displayId || "";
+  const slug = (token.displayId || "").toLowerCase();
 
   let url = "";
   if (typeof urlBuilder === "function") {
     url = urlBuilder(token);
   } else if (urlBuilder === "group" && pagerGroupKey && slug) {
     url = `/groups/${pagerGroupKey}/${slug}/`;
-  } else if (token.displayId) {
+  } else if (token.status === "listed") {
     url = `/official/${token.displayId.toLowerCase()}/`;
-  } else if (token.siteId) {
-    url = `/unlisted/${token.siteId.toLowerCase()}/`;
+  } else if (token.displayId) {
+    url = `/unlisted/${token.displayId.toLowerCase()}/`;
   }
 
   return {
     id,
-    title: token.title || token.displayTitle || "",
+    title: token.title || "",
     url,
     image: hasOfficialImage && hasOfficialImage(token, "o")
       ? officialImagePath(token, "o")
