@@ -7,11 +7,11 @@
     "var": "",
     "status": "unlisted",
     "type": "transit",
-    "groups": ["counterfeit"],
+    "groups": [
+      "counterfeit"
+    ],
     "title": "Counterfeit New York City Transit Authority NYC",
-    "city": "",
     "borough": "",
-    "state": "",
     "mat": "L",
     "form": "",
     "symbol": "Sd",
@@ -21,11 +21,9 @@
     "desc": "Counterfeit token imitating NY630AT.",
     "notes": "Modern or unofficial imitation of the listed NY630AT type.",
     "val": null,
-    "market": "",
-    "rel": ["NY630AT"],
-    "baseId": "NY630AT",
-    "oddityType": "",
-    "confidence": "",
+    "rel": [
+      "NY630AT"
+    ],
     "home": false,
     "pub": true,
     "sort": "630-at-counterfeit"

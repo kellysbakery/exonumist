@@ -11,9 +11,7 @@
       "transitrelated"
     ],
     "title": "Department of Marine Aviation / LaGuardia Field",
-    "city": "",
     "borough": "",
-    "state": "",
     "mat": "Bz",
     "form": "Ch",
     "symbol": "",
@@ -23,11 +21,7 @@
     "desc": "Listed transportation-related token.",
     "notes": "Listed in the Atwood-Coffee Transportation Related category as New York - New York City: Queens NY515A. Details in Farebox: March, 2020.",
     "val": null,
-    "market": "",
     "rel": [],
-    "baseId": "",
-    "oddityType": "",
-    "confidence": "",
     "home": false,
     "pub": true,
     "sort": "tr-515"

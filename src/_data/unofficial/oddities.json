@@ -7,11 +7,11 @@
     "var": "",
     "status": "exception",
     "type": "transit",
-    "groups": ["errors"],
+    "groups": [
+      "errors"
+    ],
     "title": "Double Obverse NYC Transit Token",
-    "city": "New York City",
     "borough": "Manhattan",
-    "state": "NY",
     "mat": "B",
     "form": "R",
     "symbol": "Sd",
@@ -21,11 +21,9 @@
     "desc": "Token struck with obverse dies on both sides.",
     "notes": "",
     "val": null,
-    "market": "",
-    "rel": ["NY630AT"],
-    "baseId": "",
-    "oddityType": "double_obverse",
-    "confidence": "",
+    "rel": [
+      "NY630AT"
+    ],
     "home": false,
     "pub": true,
     "sort": "odd-0001"
@@ -38,11 +36,11 @@
     "var": "",
     "status": "exception",
     "type": "transit",
-    "groups": ["errors"],
+    "groups": [
+      "errors"
+    ],
     "title": "NY630AO Unpunched Variety",
-    "city": "New York City",
     "borough": "Manhattan",
-    "state": "NY",
     "mat": "",
     "form": "",
     "symbol": "",
@@ -52,11 +50,9 @@
     "desc": "Unpunched variety of NY630AO.",
     "notes": "The punch-out portion of the design was not cut out.",
     "val": null,
-    "market": "",
-    "rel": ["NY630AO"],
-    "baseId": "NY630AO",
-    "oddityType": "unpunched",
-    "confidence": "",
+    "rel": [
+      "NY630AO"
+    ],
     "home": false,
     "pub": true,
     "sort": "odd-0002"
@@ -69,11 +65,11 @@
     "var": "",
     "status": "exception",
     "type": "transit",
-    "groups": ["errors"],
+    "groups": [
+      "errors"
+    ],
     "title": "NY630AP Unpunched Variety",
-    "city": "New York City",
     "borough": "Manhattan",
-    "state": "NY",
     "mat": "",
     "form": "",
     "symbol": "",
@@ -83,11 +79,9 @@
     "desc": "Unpunched variety of NY630AP.",
     "notes": "The punch-out portion of the design was not cut out.",
     "val": null,
-    "market": "",
-    "rel": ["NY630AP"],
-    "baseId": "NY630AP",
-    "oddityType": "unpunched",
-    "confidence": "",
+    "rel": [
+      "NY630AP"
+    ],
     "home": false,
     "pub": true,
     "sort": "odd-0003"
@@ -100,11 +94,11 @@
     "var": "",
     "status": "exception",
     "type": "transit",
-    "groups": ["errors"],
+    "groups": [
+      "errors"
+    ],
     "title": "NY630AS Mispunched Variety",
-    "city": "New York City",
     "borough": "Manhattan",
-    "state": "NY",
     "mat": "",
     "form": "",
     "symbol": "",
@@ -114,11 +108,9 @@
     "desc": "Mispunched variety of NY630AS.",
     "notes": "The punch-out portion of the design was punched incorrectly.",
     "val": null,
-    "market": "",
-    "rel": ["NY630AS"],
-    "baseId": "NY630AS",
-    "oddityType": "mispunched",
-    "confidence": "",
+    "rel": [
+      "NY630AS"
+    ],
     "home": false,
     "pub": true,
     "sort": "odd-0004"
@@ -131,11 +123,11 @@
     "var": "",
     "status": "exception",
     "type": "transit",
-    "groups": ["errors"],
+    "groups": [
+      "errors"
+    ],
     "title": "NY630AS Unpunched Variety",
-    "city": "New York City",
     "borough": "Manhattan",
-    "state": "NY",
     "mat": "",
     "form": "",
     "symbol": "",
@@ -145,11 +137,9 @@
     "desc": "Unpunched variety of NY630AS.",
     "notes": "The punch-out portion of the design was not cut out.",
     "val": null,
-    "market": "",
-    "rel": ["NY630AS"],
-    "baseId": "NY630AS",
-    "oddityType": "unpunched",
-    "confidence": "",
+    "rel": [
+      "NY630AS"
+    ],
     "home": false,
     "pub": true,
     "sort": "odd-0005"
@@ -162,11 +152,11 @@
     "var": "",
     "status": "exception",
     "type": "transit",
-    "groups": ["errors"],
+    "groups": [
+      "errors"
+    ],
     "title": "NY631E Unpunched Variety",
-    "city": "New York City",
     "borough": "Queens",
-    "state": "NY",
     "mat": "",
     "form": "",
     "symbol": "",
@@ -176,11 +166,9 @@
     "desc": "Unpunched variety of NY631E.",
     "notes": "The punch-out portion of the design was not cut out.",
     "val": null,
-    "market": "",
-    "rel": ["NY631E"],
-    "baseId": "NY631E",
-    "oddityType": "unpunched",
-    "confidence": "",
+    "rel": [
+      "NY631E"
+    ],
     "home": false,
     "pub": true,
     "sort": "odd-0006"

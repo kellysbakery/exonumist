@@ -521,10 +521,6 @@ h2 {
   text-decoration: underline;
 }
 
-.notes-market strong {
-  color: var(--text);
-}
-
 .section-intro {
   color: var(--muted);
   max-width: 70ch;

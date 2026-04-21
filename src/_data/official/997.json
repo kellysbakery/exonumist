@@ -11,9 +11,7 @@
       "zonecheck"
     ],
     "title": "B.C.R.R. Co. Zone Check",
-    "city": "",
     "borough": "",
-    "state": "",
     "mat": "Ve",
     "form": "Sd",
     "symbol": "",
@@ -23,11 +21,7 @@
     "desc": "Zone check issued by B.C.R.R. Co. for surrender at the city line.",
     "notes": "Listed as NY997A in the Zone Checks section of the Atwood-Coffee catalogue.",
     "val": 600,
-    "market": "",
     "rel": [],
-    "baseId": "",
-    "oddityType": "",
-    "confidence": "",
     "home": false,
     "pub": true,
     "sort": "997-a"
