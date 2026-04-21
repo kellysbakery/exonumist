@@ -2,7 +2,7 @@
   {
     "id": "official-ttf",
     "displayId": "TTF",
-    "series": "TT",
+    "sec": "TT",
     "code": "F",
     "status": "listed",
     "type": "timetable",
@@ -26,7 +26,7 @@
   {
     "id": "official-ttg",
     "displayId": "TTG",
-    "series": "TT",
+    "sec": "TT",
     "code": "G",
     "status": "listed",
     "type": "timetable",
@@ -50,7 +50,7 @@
   {
     "id": "official-tth",
     "displayId": "TTH",
-    "series": "TT",
+    "sec": "TT",
     "code": "H",
     "status": "listed",
     "type": "timetable",
@@ -74,7 +74,7 @@
   {
     "id": "official-tti",
     "displayId": "TTI",
-    "series": "TT",
+    "sec": "TT",
     "code": "I",
     "status": "listed",
     "type": "timetable",
@@ -98,7 +98,7 @@
   {
     "id": "official-ttj",
     "displayId": "TTJ",
-    "series": "TT",
+    "sec": "TT",
     "code": "J",
     "status": "listed",
     "type": "timetable",

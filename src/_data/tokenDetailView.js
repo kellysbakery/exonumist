@@ -107,17 +107,23 @@ function buildQuickFacts(token, context = {}) {
 function buildMetaParts(token, context = {}) {
   const {
     isUnlisted = false,
-    lookups = {}
+    lookups = {},
+    detailSectionTitle = ""
   } = context;
 
   const parts = [];
 
-  if (!isUnlisted && token.sec) parts.push(`Section ${token.sec}`);
+  if (detailSectionTitle) {
+    parts.push(detailSectionTitle);
+  } else if (!isUnlisted && token.sec) {
+    parts.push(`Section ${token.sec}`);
+  }
+
   if (token.mat) parts.push(lookupValue(token.mat, lookups.materials || lookups.metal));
   if (token.size) parts.push(`${token.size} mm`);
   if (token.form) parts.push(lookupValue(token.form, lookups.forms || lookups.form));
   if (token.symbol) {
-    parts.push(String(lookupValue(token.symbol, lookups.symbols || lookups.shape)).toLowerCase());
+    parts.push(String(lookupValue(token.symbol, lookups.symbols || lookups.shape)));
   }
 
   return parts.filter(Boolean);
@@ -230,7 +236,7 @@ function buildTokenDetailView(token, context = {}) {
       detailSectionUrl,
       tokenId
     }),
-    metaParts: buildMetaParts(token, { isUnlisted, lookups }),
+    metaParts: buildMetaParts(token, { isUnlisted, lookups, detailSectionTitle }),
     badges: buildBadges(token, { lookups, isUnlisted, detailSectionTitle }),
     quickFacts: buildQuickFacts(token, { isUnlisted, lookups, detailSectionTitle }),
     obverseText,
