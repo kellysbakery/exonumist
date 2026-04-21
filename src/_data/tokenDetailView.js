@@ -90,7 +90,7 @@ function buildQuickFacts(token, context = {}) {
   addRow("Symbol", lookupValue(token.symbol, lookups.symbols || lookups.shape));
 
   addRow("Issuer", token.issuer);
-  addRow("Borough", token.borough || token.city);
+  addRow("Borough", token.borough);
   addRow("Line", token.line);
   addRow("Denomination", token.denomination);
   addRow("Fare", token.fare);
@@ -252,7 +252,6 @@ function buildTokenDetailView(token, context = {}) {
       ...helperFns
     }),
     notes: token.notes || "",
-    market: token.market || "",
     pager: detailShowPager
       ? {
           prev: buildPagerItem(prevToken, {

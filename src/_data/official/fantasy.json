@@ -11,9 +11,7 @@
       "fantasy"
     ],
     "title": "Fulton Ferry Crossing E-River",
-    "city": "",
     "borough": "",
-    "state": "NY",
     "mat": "B",
     "form": "Sd",
     "symbol": "",
@@ -23,11 +21,7 @@
     "desc": "Fantasy token copying an authentic Fulton Ferry ticket design for a Brooklyn to Manhattan crossing.",
     "notes": "Listed as FF-NY-1 in the Atwood-Coffee catalogue. Manufactured in the 1970s and wholesaled to dealers for a few cents apiece. The design is copied after an authentic ticket issued by the Fulton Ferry.",
     "val": 2,
-    "market": "",
     "rel": [],
-    "baseId": "",
-    "oddityType": "",
-    "confidence": "",
     "home": false,
     "pub": true,
     "sort": "ff-ny-1"
@@ -44,9 +38,7 @@
       "fantasy"
     ],
     "title": "NYCTA Bombardier R62A Inaugural Service Run",
-    "city": "",
     "borough": "",
-    "state": "NY",
     "mat": "L",
     "form": "Sd",
     "symbol": "",
@@ -56,11 +48,7 @@
     "desc": "Fantasy token referencing the introduction of R62A subway cars by the New York City Transit Authority.",
     "notes": "Listed as FF-NY-2 in the Atwood-Coffee catalogue. Associated with the Bombardier-built R62A cars and their inaugural service.",
     "val": 10,
-    "market": "",
     "rel": [],
-    "baseId": "",
-    "oddityType": "",
-    "confidence": "",
     "home": false,
     "pub": true,
     "sort": "ff-ny-2"

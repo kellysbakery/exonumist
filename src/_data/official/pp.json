@@ -11,9 +11,7 @@
       "presentation"
     ],
     "title": "NY 630 AY Presentation Piece",
-    "city": "",
     "borough": "",
-    "state": "",
     "mat": "X",
     "form": "Ddsc",
     "symbol": "",
@@ -23,13 +21,9 @@
     "desc": "Presentation piece based on NY 630 AY, struck in 14k gold with edge numeral and H STERN incused.",
     "notes": "Listed as PP-AM in the Presentation Pieces section of the Atwood-Coffee catalogue. Struck in 14k gold. The catalogue notes that 500 were made.",
     "val": 125,
-    "market": "",
     "rel": [
       "NY630AY"
     ],
-    "baseId": "",
-    "oddityType": "",
-    "confidence": "",
     "home": false,
     "pub": true,
     "sort": "pp-am"

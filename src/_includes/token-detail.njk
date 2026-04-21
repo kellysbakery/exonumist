@@ -130,7 +130,7 @@
       </div>
     </section>
 
-    {% if detailView.notes or detailView.market %}
+    {% if detailView.notes %}
       <section class="section token-notes-section">
         <h2>Notes</h2>
 
@@ -138,9 +138,6 @@
           <div class="notes-content js-notes-content">
             {% if detailView.notes %}
               <p>{{ detailView.notes }}</p>
-            {% endif %}
-            {% if detailView.market %}
-              <p class="notes-market"><strong>Market note:</strong> {{ detailView.market }}</p>
             {% endif %}
           </div>
 
