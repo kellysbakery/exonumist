@@ -86,11 +86,11 @@ function buildQuickFacts(token, context = {}) {
 
   addRow("Material", lookupValue(token.mat || token.metal, lookups.materials || lookups.metal));
   addRow("Size", hasMeaningfulValue(token.size) ? `${token.size} mm` : "");
-  addRow("Form", lookupValue(token.form, lookups.forms || lookups.form));
+  addRow("Shape", lookupValue(token.form, lookups.forms || lookups.form));
   addRow("Symbol", lookupValue(token.symbol, lookups.symbols || lookups.shape));
 
   addRow("Issuer", token.issuer);
-  addRow("City", token.city);
+  addRow("Borough", token.borough || token.city);
   addRow("Line", token.line);
   addRow("Denomination", token.denomination);
   addRow("Fare", token.fare);
@@ -193,7 +193,6 @@ function buildPagerItem(token, options = {}) {
       : ""
   };
 }
-
 
 function buildTokenDetailView(token, context = {}) {
   const {
