@@ -27,24 +27,10 @@ function formatPrice(value) {
  * Resolve image path for a token side.
  */
 function buildImagePath(token, side, options = {}) {
-  const {
-    detailImageIsOfficial = true,
-    detailImageDataset = "official",
-    hasOfficialImage,
-    officialImagePath,
-    hasFallbackImage,
-    fallbackImagePath
-  } = options;
+  const { hasTokenImage, tokenImagePath } = options;
 
-  if (detailImageIsOfficial) {
-    if (hasOfficialImage && hasOfficialImage(token, side)) {
-      return officialImagePath(token, side);
-    }
-    return "";
-  }
-
-  if (hasFallbackImage && hasFallbackImage(token, detailImageDataset, side)) {
-    return fallbackImagePath(token, detailImageDataset, side);
+  if (hasTokenImage && hasTokenImage(token, side)) {
+    return tokenImagePath(token, side);
   }
 
   return "";
@@ -183,12 +169,12 @@ function buildBreadcrumbItems(context = {}) {
 function buildPagerItem(token, options = {}) {
   if (!token) return null;
 
-  const {
-    urlBuilder,
-    pagerGroupKey,
-    hasOfficialImage,
-    officialImagePath
-  } = options;
+const {
+  urlBuilder,
+  pagerGroupKey,
+  hasTokenImage,
+  tokenImagePath
+} = options;
 
   const id = token.displayId || "";
   const slug = id.toLowerCase();
@@ -210,8 +196,8 @@ function buildPagerItem(token, options = {}) {
     title: token.title || "",
     url,
     image:
-      hasOfficialImage && hasOfficialImage(token, "o")
-        ? officialImagePath(token, "o")
+      hasTokenImage && hasTokenImage(token, "o")
+        ? tokenImagePath(token, "o")
         : ""
   };
 }
@@ -227,8 +213,6 @@ function buildTokenDetailView(token, context = {}) {
     detailSectionUrl = "/",
     prevToken = null,
     nextToken = null,
-    detailImageIsOfficial = true,
-    detailImageDataset = "official",
     detailShowPager = false,
     pagerUrlBuilder = null,
     pagerGroupKey = "",
@@ -244,8 +228,6 @@ function buildTokenDetailView(token, context = {}) {
     tokenTitle,
     detailSectionTitle,
     detailSectionUrl,
-    detailImageDataset,
-    detailImageIsOfficial,
     detailShowPager,
     isUnlisted,
 
@@ -276,36 +258,28 @@ function buildTokenDetailView(token, context = {}) {
     obverseText: token.obv || "",
     reverseText: token.rev || "",
 
-    obverseImage: buildImagePath(token, "o", {
-      detailImageIsOfficial,
-      detailImageDataset,
-      ...helperFns
-    }),
+    obverseImage: buildImagePath(token, "o", helperFns),
 
-    reverseImage: buildImagePath(token, "r", {
-      detailImageIsOfficial,
-      detailImageDataset,
-      ...helperFns
-    }),
+    reverseImage: buildImagePath(token, "r", helperFns),
 
     notes: token.notes || "",
 
     pager: detailShowPager
-      ? {
-          prev: buildPagerItem(prevToken, {
-            urlBuilder: pagerUrlBuilder,
-            pagerGroupKey,
-            hasOfficialImage: helperFns.hasOfficialImage,
-            officialImagePath: helperFns.officialImagePath
-          }),
-          next: buildPagerItem(nextToken, {
-            urlBuilder: pagerUrlBuilder,
-            pagerGroupKey,
-            hasOfficialImage: helperFns.hasOfficialImage,
-            officialImagePath: helperFns.officialImagePath
-          })
-        }
-      : null
+    ? {
+        prev: buildPagerItem(prevToken, {
+          urlBuilder: pagerUrlBuilder,
+          pagerGroupKey,
+          hasTokenImage: helperFns.hasTokenImage,
+          tokenImagePath: helperFns.tokenImagePath
+        }),
+        next: buildPagerItem(nextToken, {
+          urlBuilder: pagerUrlBuilder,
+          pagerGroupKey,
+          hasTokenImage: helperFns.hasTokenImage,
+          tokenImagePath: helperFns.tokenImagePath
+        })
+      }
+    : null
   };
 }
 

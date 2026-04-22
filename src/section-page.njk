@@ -1,0 +1,32 @@
+---
+layout: base.njk
+pagination:
+  data: siteSections
+  size: 1
+  alias: siteSection
+permalink: "/{{ siteSection.key }}/index.html"
+eleventyComputed:
+  title: "{{ siteSection.title }}"
+---
+
+<section class="section">
+  <h1>{{ siteSection.title }}</h1>
+
+{% if siteSection.intro %}
+
+<p class="section-intro">{{ siteSection.intro }}</p>
+{% endif %}
+
+  <div class="{{ siteSection.gridClass }}">
+    {% for group in groups | sort(attribute="order") %}
+      {% if group.section == siteSection.key %}
+        <a class="card-link" href="{{ group.url }}">
+          <article class="card">
+            <strong>{{ group.title }}</strong>
+            <p>{{ group.description }}</p>
+          </article>
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
