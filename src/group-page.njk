@@ -11,45 +11,26 @@ eleventyComputed:
 
 {% set groupTokens = [] %}
 
-{% for token in collections.officialAll %}
+{% for token in allTokens %}
   {% if token.groups and (group.key in token.groups) %}
-    {% set groupTokens = groupTokens.concat([{
-      "record": token,
-      "dataset": "official"
-    }]) %}
-  {% endif %}
-{% endfor %}
-
-{% for token in unofficial.oddities %}
-  {% if token.pub and token.groups and (group.key in token.groups) %}
-    {% set groupTokens = groupTokens.concat([{
-      "record": token,
-      "dataset": "oddities"
-    }]) %}
-  {% endif %}
-{% endfor %}
-
-{% for token in unofficial.unlisted %}
-  {% if token.pub and token.groups and (group.key in token.groups) %}
-    {% set groupTokens = groupTokens.concat([{
-      "record": token,
-      "dataset": "unlisted"
-    }]) %}
-  {% endif %}
-{% endfor %}
-
-{% for token in unofficial.counterfeit %}
-  {% if token.pub and token.groups and (group.key in token.groups) %}
-    {% set groupTokens = groupTokens.concat([{
-      "record": token,
-      "dataset": "counterfeit"
-    }]) %}
+    {% set groupTokens = groupTokens.concat([token]) %}
   {% endif %}
 {% endfor %}
 
 <section class="section">
+  {% set matchedSiteSection = null %}
+  {% for siteSection in siteSections %}
+    {% if siteSection.key == group.section %}
+      {% set matchedSiteSection = siteSection %}
+    {% endif %}
+  {% endfor %}
+
   <div class="meta breadcrumb">
     <a href="/">Home</a>
+    {% if matchedSiteSection %}
+      <span>/</span>
+      <a href="/{{ matchedSiteSection.key }}/">{{ matchedSiteSection.title }}</a>
+    {% endif %}
     <span>/</span>
     <span aria-current="page">{{ group.title }}</span>
   </div>
@@ -63,32 +44,20 @@ eleventyComputed:
   {% endif %}
 
   <div class="grid-3 token-card-grid">
-    {% for item in groupTokens %}
-      {% set token = item.record %}
+    {% for token in groupTokens %}
       <a
         class="card-link"
         href="/groups/{{ group.key }}/{{ token.displayId | lower }}/">
         <article class="card token-list-card">
 
           <div class="token-list-card-media">
-            {% if item.dataset == "official" %}
-              {% if token | hasOfficialImage("o") %}
-                <img
-                  class="token-list-card-image"
-                  src="{{ token | officialImagePath('o') }}"
-                  alt="{{ token.displayId }} obverse" />
-              {% else %}
-                <div class="token-list-card-placeholder"></div>
-              {% endif %}
+            {% if token | hasTokenImage("o") %}
+              <img
+                class="token-list-card-image"
+                src="{{ token | tokenImagePath('o') }}"
+                alt="{{ token.displayId }} obverse" />
             {% else %}
-              {% if token | hasFallbackImage(item.dataset, "o") %}
-                <img
-                  class="token-list-card-image"
-                  src="{{ token | fallbackImagePath(item.dataset, 'o') }}"
-                  alt="{{ token.displayId }} obverse" />
-              {% else %}
-                <div class="token-list-card-placeholder"></div>
-              {% endif %}
+              <div class="token-list-card-placeholder"></div>
             {% endif %}
           </div>
 
@@ -116,7 +85,8 @@ eleventyComputed:
               {% endif %}
               {% if token.form %}
                 · {{ token.form | lookup(lookups.forms) }}
-              {% elseif token.symbol %}
+              {% endif %}
+              {% if token.symbol %}
                 · {{ token.symbol | lookup(lookups.symbols) }}
               {% endif %}
             </p>
