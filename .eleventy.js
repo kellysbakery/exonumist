@@ -29,42 +29,79 @@ module.exports = function (eleventyConfig) {
     );
   });
 
-  // Build official image path
+    function normalizeImageSide(side) {
+    const normalized = String(side || "").toLowerCase();
+
+    if (normalized === "o" || normalized === "obverse") return "o";
+    if (normalized === "r" || normalized === "rev" || normalized === "reverse") return "r";
+
+    return normalized;
+  }
+
+  function buildTokenImageStem(record) {
+    if (!record) return "";
+
+    const status = String(record.status || "").toLowerCase();
+
+    if (status === "listed" && record.sort) {
+      return String(record.sort).trim().toLowerCase();
+    }
+
+    return String(record.displayId || "").trim().toLowerCase();
+  }
+
+  function buildTokenImageFilename(record, side) {
+    const stem = buildTokenImageStem(record);
+    const normalizedSide = normalizeImageSide(side);
+
+    if (!stem || !normalizedSide) {
+      return "";
+    }
+
+    return `${stem}_${normalizedSide}.jpg`;
+  }
+
+  function buildTokenImageFsPath(record, side) {
+    const filename = buildTokenImageFilename(record, side);
+    if (!filename) return "";
+
+    return path.join(process.cwd(), "src", "images", filename);
+  }
+
+  function buildTokenImageWebPath(record, side) {
+    const filename = buildTokenImageFilename(record, side);
+    if (!filename) return "";
+
+    return `/images/${filename}`;
+  }
+
+  // Canonical generic image helpers
+  eleventyConfig.addFilter("tokenImagePath", (record, side) => {
+    return buildTokenImageWebPath(record, side);
+  });
+
+  eleventyConfig.addFilter("hasTokenImage", (record, side) => {
+    const fsPath = buildTokenImageFsPath(record, side);
+    return fsPath ? fs.existsSync(fsPath) : false;
+  });
+
+  // Temporary compatibility aliases while templates are migrated
   eleventyConfig.addFilter("officialImagePath", (record, side) => {
-    const code = String(record.code || "").toLowerCase();
-    const variant = record.var ? `-${String(record.var).toLowerCase()}` : "";
-
-    return `/images/official/${record.sec}/${record.sec}-${code}${variant}_${side}.jpg`;
+    return buildTokenImageWebPath(record, side);
   });
 
-  // Check if official image exists
   eleventyConfig.addFilter("hasOfficialImage", (record, side) => {
-    const code = String(record.code || "").toLowerCase();
-    const variant = record.var ? `-${String(record.var).toLowerCase()}` : "";
-
-    const rel = path.join(
-      "src",
-      "images",
-      "official",
-      String(record.sec),
-      `${record.sec}-${code}${variant}_${side}.jpg`
-    );
-
-    return fs.existsSync(path.join(process.cwd(), rel));
+    const fsPath = buildTokenImageFsPath(record, side);
+    return fsPath ? fs.existsSync(fsPath) : false;
   });
 
-  // Build image path for unlisted / oddities / counterfeit
-  eleventyConfig.addFilter("fallbackImagePath", (record, type, side) => {
-    const key = String(record.displayId || "").toLowerCase();
-    return `/images/${type}/${key}_${side}.jpg`;
+  eleventyConfig.addFilter("fallbackImagePath", (record, _type, side) => {
+    return buildTokenImageWebPath(record, side);
   });
 
-  // Check if fallback image exists
-  eleventyConfig.addFilter("hasFallbackImage", (record, type, side) => {
-    const key = String(record.displayId || "").toLowerCase();
-    const rel = path.join("src", "images", type, `${key}_${side}.jpg`);
-
-    return fs.existsSync(path.join(process.cwd(), rel));
+  eleventyConfig.addFilter("hasFallbackImage", (record, _type, side) => {
+    const fsPath = buildTokenImageFsPath(record, side);
+    return fsPath ? fs.existsSync(fsPath) : false;
   });
 
   // Catalog-aware sort for keys like:

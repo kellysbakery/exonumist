@@ -2,6 +2,7 @@
 layout: base.njk
 title: Keith's NYC Transit Token Collection
 ---
+
 <section class="hero hero-home hero-home-wide">
   <div class="hero-home-grid">
     <div class="hero-home-main">
@@ -33,61 +34,60 @@ title: Keith's NYC Transit Token Collection
       </div>
     </div>
 
-  {% for group in groups %}
-    {% if group.featured %}
-    <aside class="hero-feature">
-      <a class="card-link" href="{{ group.url }}">
-        <div class="hero-feature-card hero-feature-card-minimal">
-          <img src="{{ group.heroImage }}" alt="{{ group.title }}" />
-          <div class="hero-feature-text">
-            <strong>{{ group.heroLabel }}</strong>
-            <p><strong>{{ group.title }}</strong></p>
-            <p>{{ group.heroText }}</p>
-          </div>
-        </div>
-      </a>
-    </aside>
-  {% endif %}
-{% endfor %}
-  </div>
-</section>
-
-{% for siteSection in siteSections %}
-<section class="section">
-  <h2>{{ siteSection.title }}</h2>
-
-  {% if siteSection.intro %}
-  <p class="section-intro">
-    {{ siteSection.intro }}
-  </p>
-  {% endif %}
-
-  <div class="{{ siteSection.gridClass }}">
-    {% for group in groups | sort(attribute="order") %}
-      {% if group.section == siteSection.key %}
-      <a class="card-link" href="{{ group.url }}">
-        <article class="card">
-          <strong>{{ group.title }}</strong>
-          <p>{{ group.description }}</p>
-        </article>
-      </a>
+    {% for group in groups %}
+      {% if group.featured %}
+        <aside class="hero-feature">
+          <a class="card-link" href="{{ group.url }}">
+            <div class="hero-feature-card hero-feature-card-minimal">
+              <img src="{{ group.heroImage }}" alt="{{ group.title }}" />
+              <div class="hero-feature-text">
+                <strong>{{ group.heroLabel }}</strong>
+                <p><strong>{{ group.title }}</strong></p>
+                <p>{{ group.heroText }}</p>
+              </div>
+            </div>
+          </a>
+        </aside>
       {% endif %}
     {% endfor %}
   </div>
 </section>
+
+{% for siteSection in siteSections %}
+  <section class="section">
+    <h2>{{ siteSection.title }}</h2>
+
+    {% if siteSection.intro %}
+      <p class="section-intro">{{ siteSection.intro }}</p>
+    {% endif %}
+
+    <div class="{{ siteSection.gridClass }}">
+      {% for group in groups | sort(attribute="order") %}
+        {% if group.section == siteSection.key %}
+          <a class="card-link" href="{{ group.url }}">
+            <article class="card">
+              <strong>{{ group.title }}</strong>
+              <p>{{ group.description }}</p>
+            </article>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
 {% endfor %}
 
 <section class="section">
   <h2>Resources</h2>
+
   <div class="grid-3">
     {% for resource in resources | sort(attribute="order") %}
       {% if resource.pub %}
-      <a class="card-link" href="{{ resource.urlRef | resolveUrlRef(site) }}">
-        <article class="resource-card">
-          <strong>{{ resource.title }}</strong>
-          <p>{{ resource.text }}</p>
-        </article>
-      </a>
+        <a class="card-link" href="{{ resource.urlRef | resolveUrlRef(site) }}">
+          <article class="resource-card">
+            <strong>{{ resource.title }}</strong>
+            <p>{{ resource.text }}</p>
+          </article>
+        </a>
       {% endif %}
     {% endfor %}
   </div>

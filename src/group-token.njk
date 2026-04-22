@@ -11,19 +11,18 @@ eleventyComputed:
 
 {% set group = pageData.group %}
 {% set token = pageData.token %}
-{% set dataset = pageData.dataset or "official" %}
 
 {% set tokenId = token.displayId %}
 {% set tokenTitle = token.title %}
-{% set isUnlisted = dataset != "official" %}
+{% set isUnlisted = token.status != "listed" %}
 
 {% set detailSectionTitle = group.title %}
-{% set detailSectionUrl = group.url %}
-{% set detailImageDataset = dataset %}
-{% set detailImageIsOfficial = (dataset == "official") %}
+{% set detailSectionUrl = "/groups/" ~ group.key ~ "/" %}
+{% set detailImageIsOfficial = (token.status == "listed") %}
+{% set detailImageDataset = detailImageIsOfficial and "official" or "unofficial" %}
 {% set detailShowPager = true %}
 
-{% if dataset == "official" and token.sec %}
+{% if detailImageIsOfficial and token.sec %}
   {% set matchedSection = null %}
   {% for section in sections %}
     {% if section.sec == token.sec and section.pub %}
@@ -33,49 +32,14 @@ eleventyComputed:
 
   {% if matchedSection %}
     {% set detailSectionTitle = matchedSection.title %}
-    {% set detailSectionUrl = "/listed/" ~ token.sec | lower ~ "/" %}
+    {% set detailSectionUrl = "/listed/" ~ (token.sec | lower) ~ "/" %}
   {% endif %}
 {% endif %}
 
 {% set groupTokens = [] %}
-
-{% for item in collections.officialAll %}
-  {% if item.pub and item.groups and (group.key in item.groups) %}
-    {% set groupTokens = groupTokens.concat([{
-      "record": item,
-      "dataset": "official",
-      "pageId": item.displayId
-    }]) %}
-  {% endif %}
-{% endfor %}
-
-{% for item in unofficial.oddities %}
-  {% if item.pub and item.groups and (group.key in item.groups) %}
-    {% set groupTokens = groupTokens.concat([{
-      "record": item,
-      "dataset": "oddities",
-      "pageId": item.displayId
-    }]) %}
-  {% endif %}
-{% endfor %}
-
-{% for item in unofficial.unlisted %}
-  {% if item.pub and item.groups and (group.key in item.groups) %}
-    {% set groupTokens = groupTokens.concat([{
-      "record": item,
-      "dataset": "unlisted",
-      "pageId": item.displayId
-    }]) %}
-  {% endif %}
-{% endfor %}
-
-{% for item in unofficial.counterfeit %}
-  {% if item.pub and item.groups and (group.key in item.groups) %}
-    {% set groupTokens = groupTokens.concat([{
-      "record": item,
-      "dataset": "counterfeit",
-      "pageId": item.displayId
-    }]) %}
+{% for item in groupOfficialPages %}
+  {% if item.group.key == group.key %}
+    {% set groupTokens = groupTokens.concat([item.token]) %}
   {% endif %}
 {% endfor %}
 
@@ -83,12 +47,12 @@ eleventyComputed:
 {% set nextToken = null %}
 
 {% for item in groupTokens %}
-  {% if item.pageId == pageData.pageId %}
+  {% if item.displayId == token.displayId %}
     {% if loop.index0 > 0 %}
-      {% set prevToken = groupTokens[loop.index0 - 1].record %}
+      {% set prevToken = groupTokens[loop.index0 - 1] %}
     {% endif %}
     {% if loop.index0 < (groupTokens | length - 1) %}
-      {% set nextToken = groupTokens[loop.index0 + 1].record %}
+      {% set nextToken = groupTokens[loop.index0 + 1] %}
     {% endif %}
   {% endif %}
 {% endfor %}

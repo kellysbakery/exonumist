@@ -87,45 +87,15 @@
   <div class="token-lower-grid">
     <section class="section token-quickfacts">
       <h2>Quick Facts</h2>
+
       <div class="facts quickfacts-panel">
         <dl>
-          {% set hasShape = false %}
-          {% set hasSymbol = false %}
-
           {% for fact in detailView.quickFacts %}
-            {% set normalizedLabel = fact.label | lower | trim %}
-            {% if normalizedLabel == "form" or normalizedLabel == "shape" %}
-              {% set hasShape = true %}
-            {% endif %}
-            {% if normalizedLabel == "symbol" %}
-              {% set hasSymbol = true %}
-            {% endif %}
-
             <div class="facts-row">
-              <dt>{% if normalizedLabel == "form" %}Shape{% else %}{{ fact.label }}{% endif %}</dt>
+              <dt>{{ fact.label }}</dt>
               <dd>{{ fact.value }}</dd>
             </div>
           {% endfor %}
-
-          {% if not hasShape %}
-            {% set fallbackShape = detailView.shape or detailView.form or token.shape or token.form %}
-            {% if fallbackShape %}
-              <div class="facts-row">
-                <dt>Shape</dt>
-                <dd>{{ fallbackShape }}</dd>
-              </div>
-            {% endif %}
-          {% endif %}
-
-          {% if not hasSymbol %}
-            {% set fallbackSymbol = detailView.symbol or token.symbol %}
-            {% if fallbackSymbol %}
-              <div class="facts-row">
-                <dt>Symbol</dt>
-                <dd>{{ fallbackSymbol }}</dd>
-              </div>
-            {% endif %}
-          {% endif %}
         </dl>
       </div>
     </section>
@@ -136,9 +106,7 @@
 
         <div class="notes-frame js-notes-frame">
           <div class="notes-content js-notes-content">
-            {% if detailView.notes %}
-              <p>{{ detailView.notes }}</p>
-            {% endif %}
+            <p>{{ detailView.notes }}</p>
           </div>
 
           <button
@@ -248,7 +216,7 @@
             notesFrame.classList.add("is-expanded");
           }
 
-            notesMore.onclick = function () {
+          notesMore.onclick = function () {
             const isExpanded = notesFrame.classList.contains("is-expanded");
 
             if (isExpanded) {
