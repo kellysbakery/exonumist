@@ -11,18 +11,12 @@ eleventyComputed:
 
 {% set group = pageData.group %}
 {% set token = pageData.token %}
-
-{% set tokenId = token.displayId %}
-{% set tokenTitle = token.title %}
 {% set isUnlisted = token.status != "listed" %}
 
 {% set detailSectionTitle = group.title %}
 {% set detailSectionUrl = "/groups/" ~ group.key ~ "/" %}
-{% set detailImageIsOfficial = (token.status == "listed") %}
-{% set detailImageDataset = detailImageIsOfficial and "official" or "unofficial" %}
-{% set detailShowPager = true %}
 
-{% if detailImageIsOfficial and token.sec %}
+{% if token.status == "listed" and token.sec %}
   {% set matchedSection = null %}
   {% for section in sections %}
     {% if section.sec == token.sec and section.pub %}
@@ -58,13 +52,11 @@ eleventyComputed:
 {% endfor %}
 
 {% set detailView = tokenDetailView.buildTokenDetailView(token, {
-  tokenId: tokenId,
-  tokenTitle: tokenTitle,
+  tokenId: token.displayId,
+  tokenTitle: token.title,
   detailSectionTitle: detailSectionTitle,
   detailSectionUrl: detailSectionUrl,
-  detailImageDataset: detailImageDataset,
-  detailImageIsOfficial: detailImageIsOfficial,
-  detailShowPager: detailShowPager,
+  detailShowPager: true,
   prevToken: prevToken,
   nextToken: nextToken,
   pagerUrlBuilder: "group",
