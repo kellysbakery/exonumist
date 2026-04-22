@@ -67,7 +67,7 @@ eleventyComputed:
       {% set token = item.record %}
       <a
         class="card-link"
-        href="{% if item.dataset == 'official' %}/groups/{{ group.key }}/{{ token.displayId | lower }}/{% elseif item.dataset == 'oddities' or item.dataset == 'unlisted' or item.dataset == 'counterfeit' %}/unlisted/{{ token.displayId | lower }}/{% endif %}">
+        href="/groups/{{ group.key }}/{{ token.displayId | lower }}/">
         <article class="card token-list-card">
 
           <div class="token-list-card-media">
