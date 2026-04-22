@@ -154,10 +154,15 @@ function buildBadges(token, context = {}) {
 
 function buildBreadcrumbItems(context = {}) {
   const {
+    breadcrumbItems = null,
     detailSectionTitle = "Tokens",
     detailSectionUrl = "/",
     tokenId = ""
   } = context;
+
+  if (Array.isArray(breadcrumbItems) && breadcrumbItems.length) {
+    return breadcrumbItems;
+  }
 
   return [
     { label: "Home", url: "/" },
@@ -211,6 +216,7 @@ function buildTokenDetailView(token, context = {}) {
     tokenTitle = "",
     detailSectionTitle = "Tokens",
     detailSectionUrl = "/",
+    breadcrumbItems = null,
     prevToken = null,
     nextToken = null,
     detailShowPager = false,
@@ -232,6 +238,7 @@ function buildTokenDetailView(token, context = {}) {
     isUnlisted,
 
     breadcrumbItems: buildBreadcrumbItems({
+      breadcrumbItems,
       detailSectionTitle,
       detailSectionUrl,
       tokenId
