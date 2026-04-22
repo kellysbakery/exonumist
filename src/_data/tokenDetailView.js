@@ -6,20 +6,26 @@ function lookupValue(code, table) {
 function hasMeaningfulValue(value) {
   if (value === undefined || value === null) return false;
   if (typeof value === "number") return value !== 0;
+
   const trimmed = String(value).trim();
   return trimmed !== "" && trimmed !== "0" && trimmed !== "$0";
 }
 
 function formatPrice(value) {
   if (!hasMeaningfulValue(value)) return "";
+
   const num = Number(value);
   if (!Number.isNaN(num)) {
     return `$${num.toFixed(2)}`;
   }
+
   const trimmed = String(value).trim();
   return trimmed.startsWith("$") ? trimmed : `$${trimmed}`;
 }
 
+/**
+ * Resolve image path for a token side.
+ */
 function buildImagePath(token, side, options = {}) {
   const {
     detailImageIsOfficial = true,
@@ -44,6 +50,10 @@ function buildImagePath(token, side, options = {}) {
   return "";
 }
 
+/**
+ * Build the Quick Facts rows shown on detail pages.
+ * Canonical schema only.
+ */
 function buildQuickFacts(token, context = {}) {
   const {
     isUnlisted = false,
@@ -61,6 +71,7 @@ function buildQuickFacts(token, context = {}) {
 
   if (isUnlisted) {
     addRow("ID", token.displayId);
+
     if (Array.isArray(token.rel) && token.rel.length) {
       addRow("Related A/C", token.rel.join(", "));
     }
@@ -68,42 +79,37 @@ function buildQuickFacts(token, context = {}) {
     addRow("Catalogue ID", token.displayId);
     addRow("Minor Variety", token.var);
 
-    const price = formatPrice(token.val ?? token.value ?? token.price);
+    const price = formatPrice(token.val);
     if (price) {
       addRow("A/C Value", price);
     }
   }
 
+  const status = String(token.status || "").toLowerCase();
+  const section = String(detailSectionTitle || "").toLowerCase();
+
   const statusIsRedundant =
-    !token.status ||
-    String(token.status).toLowerCase() === "listed" ||
-    String(token.status).toLowerCase() === "official" ||
-    String(token.status).toLowerCase() === String(detailSectionTitle).toLowerCase();
+    !status ||
+    status === "listed" ||
+    status === "official" ||
+    status === section;
 
   if (!statusIsRedundant) {
     addRow("Status", token.status);
   }
 
-  addRow("Material", lookupValue(token.mat || token.metal, lookups.materials || lookups.metal));
+  addRow("Material", lookupValue(token.mat, lookups.materials));
   addRow("Size", hasMeaningfulValue(token.size) ? `${token.size} mm` : "");
-  addRow("Shape", lookupValue(token.form, lookups.forms || lookups.form));
-  addRow("Symbol", lookupValue(token.symbol, lookups.symbols || lookups.shape));
-
-  addRow("Issuer", token.issuer);
+  addRow("Shape", lookupValue(token.form, lookups.forms));
+  addRow("Symbol", lookupValue(token.symbol, lookups.symbols));
   addRow("Borough", token.borough);
-  addRow("Line", token.line);
-  addRow("Denomination", token.denomination);
-  addRow("Fare", token.fare);
-  addRow("Color", lookupValue(token.color, lookups.colors || lookups.color));
-  addRow("Diameter", hasMeaningfulValue(token.diameter) ? `${token.diameter} mm` : "");
-  addRow("Edge", lookupValue(token.edge, lookups.edges || lookups.edge));
-  addRow("Punch", token.punch);
-  addRow("Reference", token.reference);
-  addRow("Catalog", token.catalog);
 
   return rows;
 }
 
+/**
+ * Build compact metadata shown near the page title.
+ */
 function buildMetaParts(token, context = {}) {
   const {
     isUnlisted = false,
@@ -119,26 +125,34 @@ function buildMetaParts(token, context = {}) {
     parts.push(`Section ${token.sec}`);
   }
 
-  if (token.mat) parts.push(lookupValue(token.mat, lookups.materials || lookups.metal));
+  if (token.mat) parts.push(lookupValue(token.mat, lookups.materials));
   if (token.size) parts.push(`${token.size} mm`);
-  if (token.form) parts.push(lookupValue(token.form, lookups.forms || lookups.form));
-  if (token.symbol) {
-    parts.push(String(lookupValue(token.symbol, lookups.symbols || lookups.shape)));
-  }
+  if (token.form) parts.push(lookupValue(token.form, lookups.forms));
+  if (token.symbol) parts.push(String(lookupValue(token.symbol, lookups.symbols)));
 
   return parts.filter(Boolean);
 }
 
+/**
+ * Build badge chips shown near the title.
+ */
 function buildBadges(token, context = {}) {
-  const { lookups = {}, isUnlisted = false, detailSectionTitle = "" } = context;
+  const {
+    lookups = {},
+    isUnlisted = false,
+    detailSectionTitle = ""
+  } = context;
+
   const badges = [];
 
   if (token.status) {
-    const status = String(token.status);
+    const status = String(token.status).toLowerCase();
+    const section = String(detailSectionTitle).toLowerCase();
+
     const redundant =
-      status.toLowerCase() === "listed" ||
-      status.toLowerCase() === "official" ||
-      status.toLowerCase() === String(detailSectionTitle).toLowerCase();
+      status === "listed" ||
+      status === "official" ||
+      status === section;
 
     if (!redundant) {
       badges.push(lookupValue(token.status, lookups.status) || token.status);
@@ -177,35 +191,40 @@ function buildPagerItem(token, options = {}) {
   } = options;
 
   const id = token.displayId || "";
-  const slug = (token.displayId || "").toLowerCase();
+  const slug = id.toLowerCase();
 
   let url = "";
+
   if (typeof urlBuilder === "function") {
     url = urlBuilder(token);
   } else if (urlBuilder === "group" && pagerGroupKey && slug) {
     url = `/groups/${pagerGroupKey}/${slug}/`;
   } else if (token.status === "listed") {
-    url = `/official/${token.displayId.toLowerCase()}/`;
-  } else if (token.displayId) {
-    url = `/unlisted/${token.displayId.toLowerCase()}/`;
+    url = `/official/${slug}/`;
+  } else {
+    url = `/unlisted/${slug}/`;
   }
 
   return {
     id,
     title: token.title || "",
     url,
-    image: hasOfficialImage && hasOfficialImage(token, "o")
-      ? officialImagePath(token, "o")
-      : ""
+    image:
+      hasOfficialImage && hasOfficialImage(token, "o")
+        ? officialImagePath(token, "o")
+        : ""
   };
 }
 
+/**
+ * Main page view model for token detail templates.
+ */
 function buildTokenDetailView(token, context = {}) {
   const {
     tokenId = "",
+    tokenTitle = "",
     detailSectionTitle = "Tokens",
     detailSectionUrl = "/",
-    tokenTitle = "",
     prevToken = null,
     nextToken = null,
     detailImageIsOfficial = true,
@@ -218,8 +237,6 @@ function buildTokenDetailView(token, context = {}) {
   } = context;
 
   const helperFns = context.helperFns || {};
-  const obverseText = token.obv || token.obverse || "";
-  const reverseText = token.rev || token.reverse || "";
 
   return {
     token,
@@ -231,27 +248,48 @@ function buildTokenDetailView(token, context = {}) {
     detailImageIsOfficial,
     detailShowPager,
     isUnlisted,
+
     breadcrumbItems: buildBreadcrumbItems({
       detailSectionTitle,
       detailSectionUrl,
       tokenId
     }),
-    metaParts: buildMetaParts(token, { isUnlisted, lookups, detailSectionTitle }),
-    badges: buildBadges(token, { lookups, isUnlisted, detailSectionTitle }),
-    quickFacts: buildQuickFacts(token, { isUnlisted, lookups, detailSectionTitle }),
-    obverseText,
-    reverseText,
+
+    metaParts: buildMetaParts(token, {
+      isUnlisted,
+      lookups,
+      detailSectionTitle
+    }),
+
+    badges: buildBadges(token, {
+      lookups,
+      isUnlisted,
+      detailSectionTitle
+    }),
+
+    quickFacts: buildQuickFacts(token, {
+      isUnlisted,
+      lookups,
+      detailSectionTitle
+    }),
+
+    obverseText: token.obv || "",
+    reverseText: token.rev || "",
+
     obverseImage: buildImagePath(token, "o", {
       detailImageIsOfficial,
       detailImageDataset,
       ...helperFns
     }),
+
     reverseImage: buildImagePath(token, "r", {
       detailImageIsOfficial,
       detailImageDataset,
       ...helperFns
     }),
+
     notes: token.notes || "",
+
     pager: detailShowPager
       ? {
           prev: buildPagerItem(prevToken, {

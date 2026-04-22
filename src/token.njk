@@ -8,9 +8,20 @@ permalink: "/official/{{ token.displayId | lower }}/index.html"
 eleventyComputed:
   title: "{{ token.displayId }} – {{ token.title }}"
 ---
-{% set tokenId = token.displayId or token.siteId %}
-{% set tokenTitle = token.title or token.displayTitle %}
-{% set isUnlisted = token.siteId and not token.displayId %}
+
+{#
+  Canonical official token page.
+  Assumptions:
+  - official tokens use canonical schema fields only
+  - displayId and title always exist
+  - official tokens are never inferred from fallback IDs
+#}
+
+{% set tokenId = token.displayId %}
+{% set tokenTitle = token.title %}
+{% set isUnlisted = false %}
+
+{# Resolve the display label for the owning listed section. #}
 {% set sectionLabel = token.sec %}
 {% set sectionUrl = "/listed/" ~ token.sec | lower ~ "/" %}
 {% set matchedSection = null %}
@@ -25,6 +36,7 @@ eleventyComputed:
   {% set sectionLabel = matchedSection.title %}
 {% endif %}
 
+{# Build the ordered set of published official tokens in the same section for pager navigation. #}
 {% set sectionTokens = [] %}
 {% for item in collections.officialAll %}
   {% if item.sec == token.sec and item.pub %}
@@ -46,20 +58,14 @@ eleventyComputed:
   {% endif %}
 {% endfor %}
 
-{% set detailSectionTitle = sectionLabel %}
-{% set detailSectionUrl = sectionUrl %}
-{% set detailImageDataset = "official" %}
-{% set detailImageIsOfficial = true %}
-{% set detailShowPager = true %}
-
 {% set detailView = tokenDetailView.buildTokenDetailView(token, {
   tokenId: tokenId,
   tokenTitle: tokenTitle,
-  detailSectionTitle: detailSectionTitle,
-  detailSectionUrl: detailSectionUrl,
-  detailImageDataset: detailImageDataset,
-  detailImageIsOfficial: detailImageIsOfficial,
-  detailShowPager: detailShowPager,
+  detailSectionTitle: sectionLabel,
+  detailSectionUrl: sectionUrl,
+  detailImageDataset: "official",
+  detailImageIsOfficial: true,
+  detailShowPager: true,
   prevToken: prevToken,
   nextToken: nextToken,
   isUnlisted: isUnlisted,
