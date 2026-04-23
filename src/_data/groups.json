@@ -5,7 +5,8 @@
     "section": "listed",
     "order": 1,
     "url": "/groups/bronx/",
-    "description": "Listed Bronx transportation tokens."
+    "cardImage": "/images/628-a_o.jpg",
+    "description": "Bronx transportation tokens."
   },
   {
     "key": "brooklyn",
@@ -13,7 +14,8 @@
     "section": "listed",
     "order": 2,
     "url": "/groups/brooklyn/",
-    "description": "Listed Brooklyn transportation tokens."
+    "cardImage": "/images/629-a_o.jpg",
+    "description": "Brooklyn transportation tokens."
   },
   {
     "key": "manhattan",
@@ -21,7 +23,8 @@
     "section": "listed",
     "order": 3,
     "url": "/groups/manhattan/",
-    "description": "Listed Manhattan transportation tokens."
+    "cardImage": "/images/630-ap_o.jpg",
+    "description": "Manhattan transportation tokens."
   },
   {
     "key": "queens",
@@ -29,7 +32,8 @@
     "section": "listed",
     "order": 4,
     "url": "/groups/queens/",
-    "description": "Listed Queens transportation tokens."
+    "cardImage": "/images/631-q_o.jpg",
+    "description": "Queens transportation tokens."
   },
   {
     "key": "statenisland",
@@ -37,7 +41,8 @@
     "section": "listed",
     "order": 5,
     "url": "/groups/statenisland/",
-    "description": "Listed Staten Island transportation tokens."
+    "cardImage": "/images/632-b_r.jpg",
+    "description": "Staten Island transportation tokens."
   },
   {
     "key": "patterns",
@@ -45,7 +50,7 @@
     "section": "listed",
     "order": 6,
     "url": "/groups/patterns/",
-    "description": "Listed patterns from the A/C Catalogue."
+    "description": "Patterns from the A/C Catalogue."
   },
   {
     "key": "timetables",
@@ -53,7 +58,7 @@
     "section": "listed",
     "order": 7,
     "url": "/groups/timetables/",
-    "description": "Listed timetables issues from the A/C Catalogue."
+    "description": "Timetables issues from the A/C Catalogue."
   },
   {
     "key": "clubtour",
@@ -61,7 +66,7 @@
     "section": "listed",
     "order": 8,
     "url": "/groups/clubtour/",
-    "description": "Listed club tour issues from the A/C Catalogue."
+    "description": "Club Tour issues from the A/C Catalogue."
   },
   {
     "key": "fantasy",
@@ -109,6 +114,7 @@
     "section": "unlisted",
     "order": 2,
     "url": "/groups/errors/",
+    "cardImage": "/images/odd-0003_o.jpg",
     "description": "Unlisted errors, oddities, and unusual transportation-related material."
   },
   {
@@ -118,6 +124,7 @@
     "order": 3,
     "url": "/groups/counterfeit/",
     "description": "Counterfeit and imitation transportation tokens.",
+    "cardImage": "/images/cf-0001_o.jpg",
     "intro": "Transportation tokens and related pieces made to imitate genuine issues."
   },
   {
@@ -126,6 +133,7 @@
     "section": "spotlight",
     "order": 1,
     "url": "/groups/nyhrr/",
+    "cardImage": "/images/630-d-a_o.jpg",
     "description": "Related octagonal varieties spanning the listed NY630D issues and the NY998 pattern pieces.",
     "intro": "Tokens and related pieces associated with the New York & Harlem Railroad.",
     "featured": true,
