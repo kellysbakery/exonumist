@@ -85,25 +85,6 @@ module.exports = function (eleventyConfig) {
     return fsPath ? fs.existsSync(fsPath) : false;
   });
 
-  // Temporary compatibility aliases while templates are migrated
-  eleventyConfig.addFilter("officialImagePath", (record, side) => {
-    return buildTokenImageWebPath(record, side);
-  });
-
-  eleventyConfig.addFilter("hasOfficialImage", (record, side) => {
-    const fsPath = buildTokenImageFsPath(record, side);
-    return fsPath ? fs.existsSync(fsPath) : false;
-  });
-
-  eleventyConfig.addFilter("fallbackImagePath", (record, _type, side) => {
-    return buildTokenImageWebPath(record, side);
-  });
-
-  eleventyConfig.addFilter("hasFallbackImage", (record, _type, side) => {
-    const fsPath = buildTokenImageFsPath(record, side);
-    return fsPath ? fs.existsSync(fsPath) : false;
-  });
-
   // Catalog-aware sort for keys like:
   // 630-d-a
   // 630-an

@@ -171,6 +171,28 @@ function buildBreadcrumbItems(context = {}) {
   ];
 }
 
+function findPrevNext(items = [], currentToken) {
+  if (!Array.isArray(items) || !currentToken) {
+    return { prev: null, next: null };
+  }
+
+  const currentId = String(currentToken.displayId || "").toLowerCase();
+
+  const index = items.findIndex(
+    (item) =>
+      String(item.displayId || "").toLowerCase() === currentId
+  );
+
+  if (index === -1) {
+    return { prev: null, next: null };
+  }
+
+  return {
+    prev: index > 0 ? items[index - 1] : null,
+    next: index < items.length - 1 ? items[index + 1] : null
+  };
+}
+
 function buildPagerItem(token, options = {}) {
   if (!token) return null;
 
@@ -290,7 +312,65 @@ function buildTokenDetailView(token, context = {}) {
   };
 }
 
+function findSection(sections = [], sec = "") {
+  if (!Array.isArray(sections) || !sec) return null;
+
+  return (
+    sections.find(
+      (section) =>
+        section.pub &&
+        String(section.sec) === String(sec)
+    ) || null
+  );
+}
+
+function buildGroupBreadcrumbItems(group, token, siteSections = []) {
+  const items = [{ label: "Home", url: "/" }];
+
+  if (group && group.section && Array.isArray(siteSections)) {
+    const matchedSiteSection =
+      siteSections.find(
+        (siteSection) => siteSection.key === group.section
+      ) || null;
+
+    if (matchedSiteSection) {
+      items.push({
+        label: matchedSiteSection.title,
+        url: `/${matchedSiteSection.key}/`
+      });
+    }
+  }
+
+  if (group) {
+    items.push({
+      label: group.title || "",
+      url: `/groups/${group.key}/`
+    });
+  }
+
+  items.push({
+    label: token?.displayId || "",
+    url: ""
+  });
+
+  return items;
+}
+
+function findGroupTokens(groupTokenPages = [], groupKey = "") {
+  if (!Array.isArray(groupTokenPages) || !groupKey) {
+    return [];
+  }
+
+  return groupTokenPages
+    .filter((item) => item.group && item.group.key === groupKey)
+    .map((item) => item.token);
+}
+
 module.exports = {
+  findPrevNext,
+  findSection,
+  buildGroupBreadcrumbItems,
+  findGroupTokens,
   buildPagerItem,
   buildTokenDetailView
 };
