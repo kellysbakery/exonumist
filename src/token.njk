@@ -9,19 +9,9 @@ eleventyComputed:
   title: "{{ token.displayId }} – {{ token.title }}"
 ---
 
-{% set sectionLabel = token.sec %}
+{% set matchedSection = tokenDetailView.findSection(sections, token.sec) %}
+{% set sectionLabel = matchedSection.title if matchedSection else token.sec %}
 {% set sectionUrl = "/listed/" ~ (token.sec | lower) ~ "/" %}
-{% set matchedSection = null %}
-
-{% for section in sections %}
-  {% if section.sec == token.sec and section.pub %}
-    {% set matchedSection = section %}
-  {% endif %}
-{% endfor %}
-
-{% if matchedSection %}
-  {% set sectionLabel = matchedSection.title %}
-{% endif %}
 
 {% set sectionTokens = [] %}
 {% for item in collections.officialAll %}
@@ -30,19 +20,9 @@ eleventyComputed:
   {% endif %}
 {% endfor %}
 
-{% set prevToken = null %}
-{% set nextToken = null %}
-
-{% for item in sectionTokens %}
-  {% if item.displayId == token.displayId %}
-    {% if loop.index0 > 0 %}
-      {% set prevToken = sectionTokens[loop.index0 - 1] %}
-    {% endif %}
-    {% if loop.index0 < (sectionTokens | length - 1) %}
-      {% set nextToken = sectionTokens[loop.index0 + 1] %}
-    {% endif %}
-  {% endif %}
-{% endfor %}
+{% set pager = tokenDetailView.findPrevNext(sectionTokens, token) %}
+{% set prevToken = pager.prev %}
+{% set nextToken = pager.next %}
 
 {% set detailView = tokenDetailView.buildTokenDetailView(token, {
   tokenId: token.displayId,

@@ -1,7 +1,7 @@
 ---
 layout: base.njk
 pagination:
-  data: groupOfficialPages
+  data: groupTokenPages
   size: 1
   alias: pageData
 permalink: "/groups/{{ pageData.group.key }}/{{ pageData.pageId | lower }}/index.html"
@@ -17,12 +17,7 @@ eleventyComputed:
 {% set detailSectionUrl = "/groups/" ~ group.key ~ "/" %}
 
 {% if token.status == "listed" and token.sec %}
-  {% set matchedSection = null %}
-  {% for section in sections %}
-    {% if section.sec == token.sec and section.pub %}
-      {% set matchedSection = section %}
-    {% endif %}
-  {% endfor %}
+  {% set matchedSection = tokenDetailView.findSection(sections, token.sec) %}
 
   {% if matchedSection %}
     {% set detailSectionTitle = matchedSection.title %}
@@ -30,56 +25,13 @@ eleventyComputed:
   {% endif %}
 {% endif %}
 
-{% set groupTokens = [] %}
-{% for item in groupOfficialPages %}
-  {% if item.group.key == group.key %}
-    {% set groupTokens = groupTokens.concat([item.token]) %}
-  {% endif %}
-{% endfor %}
+{% set groupTokens = tokenDetailView.findGroupTokens(groupTokenPages, group.key) %}
 
-{% set prevToken = null %}
-{% set nextToken = null %}
+{% set pager = tokenDetailView.findPrevNext(groupTokens, token) %}
+{% set prevToken = pager.prev %}
+{% set nextToken = pager.next %}
 
-{% for item in groupTokens %}
-  {% if item.displayId == token.displayId %}
-    {% if loop.index0 > 0 %}
-      {% set prevToken = groupTokens[loop.index0 - 1] %}
-    {% endif %}
-    {% if loop.index0 < (groupTokens | length - 1) %}
-      {% set nextToken = groupTokens[loop.index0 + 1] %}
-    {% endif %}
-  {% endif %}
-{% endfor %}
-
-{% set breadcrumbItems = [
-  { "label": "Home", "url": "/" }
-] %}
-
-{% if group.section %}
-  {% set matchedSiteSection = null %}
-  {% for siteSection in siteSections %}
-    {% if siteSection.key == group.section %}
-      {% set matchedSiteSection = siteSection %}
-    {% endif %}
-  {% endfor %}
-
-  {% if matchedSiteSection %}
-    {% set breadcrumbItems = breadcrumbItems.concat([{
-      "label": matchedSiteSection.title,
-      "url": "/" ~ matchedSiteSection.key ~ "/"
-    }]) %}
-  {% endif %}
-{% endif %}
-
-{% set breadcrumbItems = breadcrumbItems.concat([{
-  "label": group.title,
-  "url": "/groups/" ~ group.key ~ "/"
-}]) %}
-
-{% set breadcrumbItems = breadcrumbItems.concat([{
-  "label": token.displayId,
-  "url": ""
-}]) %}
+{% set breadcrumbItems = tokenDetailView.buildGroupBreadcrumbItems(group, token, siteSections) %}
 
 {% set detailView = tokenDetailView.buildTokenDetailView(token, {
   tokenId: token.displayId,

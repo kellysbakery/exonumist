@@ -1,7 +1,5 @@
 {% set detailSectionTitle = detailSectionTitle or "Tokens" %}
 {% set detailSectionUrl = detailSectionUrl or "/" %}
-{% set detailImageDataset = detailImageDataset or "official" %}
-{% set detailImageIsOfficial = detailImageIsOfficial if detailImageIsOfficial is defined else true %}
 {% set detailView = detailView or tokenDetailView or display %}
 
 <section class="token-shell">
@@ -40,18 +38,13 @@
 
   <div class="token-images">
     <figure class="token-image-card">
-      {% if detailImageIsOfficial %}
-        {% if token | hasOfficialImage("o") %}
-          <img class="token-image" src="{{ token | officialImagePath('o') }}" alt="{{ detailView.tokenId }} obverse" />
-        {% else %}
-          <div class="placeholder"></div>
-        {% endif %}
+      {% if token | hasTokenImage("o") %}
+        <img
+          class="token-image"
+          src="{{ token | tokenImagePath('o') }}"
+          alt="{{ detailView.tokenId }} obverse" />
       {% else %}
-        {% if token | hasFallbackImage(detailImageDataset, "o") %}
-          <img class="token-image" src="{{ token | fallbackImagePath(detailImageDataset, 'o') }}" alt="{{ detailView.tokenId }} obverse" />
-        {% else %}
-          <div class="placeholder"></div>
-        {% endif %}
+        <div class="placeholder"></div>
       {% endif %}
 
       {% if detailView.obverseText %}
@@ -62,18 +55,13 @@
     </figure>
 
     <figure class="token-image-card">
-      {% if detailImageIsOfficial %}
-        {% if token | hasOfficialImage("r") %}
-          <img class="token-image" src="{{ token | officialImagePath('r') }}" alt="{{ detailView.tokenId }} reverse" />
-        {% else %}
-          <div class="placeholder"></div>
-        {% endif %}
+      {% if token | hasTokenImage("r") %}
+        <img
+          class="token-image"
+          src="{{ token | tokenImagePath('r') }}"
+          alt="{{ detailView.tokenId }} reverse" />
       {% else %}
-        {% if token | hasFallbackImage(detailImageDataset, "r") %}
-          <img class="token-image" src="{{ token | fallbackImagePath(detailImageDataset, 'r') }}" alt="{{ detailView.tokenId }} reverse" />
-        {% else %}
-          <div class="placeholder"></div>
-        {% endif %}
+        <div class="placeholder"></div>
       {% endif %}
 
       {% if detailView.reverseText %}
@@ -128,10 +116,10 @@
           {% if detailView.pager.prev %}
             <a class="token-pager-link" href="{{ detailView.pager.prev.url }}">
               <div class="token-pager-media">
-                {% if prevToken and (prevToken | hasOfficialImage("o")) %}
+                {% if prevToken and (prevToken | hasTokenImage("o")) %}
                   <img
                     class="token-pager-image"
-                    src="{{ prevToken | officialImagePath('o') }}"
+                    src="{{ prevToken | tokenImagePath('o') }}"
                     alt="{{ detailView.pager.prev.id }} obverse" />
                 {% else %}
                   <div class="token-pager-placeholder"></div>
@@ -151,10 +139,10 @@
           {% if detailView.pager.next %}
             <a class="token-pager-link" href="{{ detailView.pager.next.url }}">
               <div class="token-pager-media">
-                {% if nextToken and (nextToken | hasOfficialImage("o")) %}
+                {% if nextToken and (nextToken | hasTokenImage("o")) %}
                   <img
                     class="token-pager-image"
-                    src="{{ nextToken | officialImagePath('o') }}"
+                    src="{{ nextToken | tokenImagePath('o') }}"
                     alt="{{ detailView.pager.next.id }} obverse" />
                 {% else %}
                   <div class="token-pager-placeholder"></div>
