@@ -66,9 +66,21 @@ title: Keith's NYC Transit Token Collection
         {% if group.section == siteSection.key %}
           <a class="card-link" href="{{ group.url }}">
             <article class="card home-section-card">
-              <span class="eyebrow">{{ siteSection.title }}</span>
-              <strong class="home-section-card-title">{{ group.title }}</strong>
-              <p class="home-section-card-desc">{{ group.description }}</p>
+              <div class="home-section-card-layout">
+                <div class="home-section-card-body">
+                  <strong class="home-section-card-title">{{ group.title }}</strong>
+                  <p class="home-section-card-desc">{{ group.description }}</p>
+                </div>
+
+                {% if group.cardImage %}
+                  <div class="home-section-card-media">
+                    <img
+                      class="home-section-card-image"
+                      src="{{ group.cardImage }}"
+                      alt="{{ group.title }}" />
+                  </div>
+                {% endif %}
+              </div>
             </article>
           </a>
         {% endif %}
