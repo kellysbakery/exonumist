@@ -795,6 +795,32 @@ h2 {
   line-height: 1.45;
 }
 
+/* Homepage section cards */
+
+.home-section-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.home-section-card {
+  height: 100%;
+  padding: 18px;
+}
+
+.home-section-card-title {
+  display: block;
+  font-size: 1.08rem;
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.home-section-card-desc {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
 /* Responsive */
 
 @media (max-width: 980px) {
@@ -808,6 +834,10 @@ h2 {
   .token-lower-grid,
   .token-pager-grid,
   .hero-home-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-section-grid {
     grid-template-columns: 1fr;
   }
 

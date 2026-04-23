@@ -24,19 +24,6 @@ function formatPrice(value) {
 }
 
 /**
- * Resolve image path for a token side.
- */
-function buildImagePath(token, side, options = {}) {
-  const { hasTokenImage, tokenImagePath } = options;
-
-  if (hasTokenImage && hasTokenImage(token, side)) {
-    return tokenImagePath(token, side);
-  }
-
-  return "";
-}
-
-/**
  * Build the Quick Facts rows shown on detail pages.
  * Canonical schema only.
  */
@@ -286,10 +273,6 @@ function buildTokenDetailView(token, context = {}) {
 
     obverseText: token.obv || "",
     reverseText: token.rev || "",
-
-    obverseImage: buildImagePath(token, "o", helperFns),
-
-    reverseImage: buildImagePath(token, "r", helperFns),
 
     notes: token.notes || "",
 
