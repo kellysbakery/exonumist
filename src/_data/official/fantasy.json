@@ -7,9 +7,7 @@
     "var": "",
     "status": "listed",
     "type": "fantasy",
-    "groups": [
-      "fantasy"
-    ],
+    "groups": ["fantasy"],
     "title": "Fulton Ferry Crossing E-River",
     "borough": "Manhattan",
     "mat": "B",
@@ -34,9 +32,7 @@
     "var": "",
     "status": "listed",
     "type": "fantasy",
-    "groups": [
-      "fantasy"
-    ],
+    "groups": ["fantasy"],
     "title": "NYCTA Bombardier R62A Inaugural Service Run",
     "borough": "Manhattan",
     "mat": "L",

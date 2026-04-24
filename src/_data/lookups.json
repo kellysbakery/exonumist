@@ -1,17 +1,18 @@
 {
   "status": {
     "listed": "Listed in Atwood-Coffee Catalogue",
-    "unlisted": "Not currently listed in Atwood-Coffee Catalogue",
-    "special": "Listed as a special issue",
-    "exception": "Catalogue exception"
+    "unlisted": "Not currently listed in Atwood-Coffee Catalogue"
   },
   "type": {
-    "transit": "Transit Token",
-    "pattern": "Pattern",
     "club": "Club Tour Token",
-    "presentation": "Probable Presentation Piece",
+    "counterfeit": "Counterfeit Token",
+    "error": "Error / Oddity",
     "fantasy": "Fantasy Token",
+    "pattern": "Pattern",
+    "presentation": "Probable Presentation Piece",
     "timetable": "Timetable Token",
+    "transit": "Transit Token",
+    "transportation-related": "Transportation Related",
     "zonecheck": "Zone Check Token"
   },
   "materials": {
@@ -34,6 +35,7 @@
     "Ve": "Black Vulcanite",
     "Vi": "Brown Vulcanite",
     "W": "Wood",
+    "Wgz": "Wood (Green)",
     "WM": "White Metal",
     "X": "Solid Gold",
     "Z": "Zinc"
@@ -48,6 +50,7 @@
   },
   "symbols": {
     "Ap": "Apple",
+    "Bar": "Bar",
     "Bh": "Beehive",
     "Bl": "Ball",
     "Ch": "Center Hole",
@@ -58,6 +61,7 @@
     "Ddsc": "Stencil-cut Diamond",
     "ESsc": "Stencil-cut \"ES\"",
     "H-sc": "Stencil-cut \"H\"",
+    "K-sc": "Stencil-cut \"K\"",
     "Hs": "Horse Shoe",
     "Ht": "Heart",
     "Hx": "Hexagon",
@@ -68,7 +72,9 @@
     "Pc": "Pierced",
     "Pg": "Pentagon",
     "Pgsc": "Stencil-cut \"Pentagon\"",
+    "R": "R",
     "Ro": "Rosette",
+    "S": "S",
     "Sc": "Scalloped",
     "Sd": "Solid",
     "Sddg": "Solid (Dog Counterstamp)",
@@ -81,7 +87,11 @@
     "Sp": "Spade",
     "Sq": "Square",
     "St": "Star",
+    "Stsc": "Stencil-cut Star",
+    "T-sc": "Stencil-cut \"T\"",
+    "Trsc": "Stencil-cut Triangle",
     "Tr": "Triangle",
+    "W": "W",
     "Wd": "Wedge",
     "XX": "Figure 8",
     "Y-sc": "Stencil-cut \"Y\""

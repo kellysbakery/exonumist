@@ -7,23 +7,19 @@
     "var": "",
     "status": "listed",
     "type": "presentation",
-    "groups": [
-      "presentation"
-    ],
+    "groups": ["presentation"],
     "title": "NY 630 AY Presentation Piece",
     "borough": "Manhattan",
     "mat": "X",
-    "form": "Ddsc",
-    "symbol": "",
+    "form": "R",
+    "symbol": "Ddsc",
     "size": 23,
     "obv": "NY 630 AY",
     "rev": "H STERN incused / numeral engraved on edge",
     "desc": "Presentation piece based on NY 630 AY, struck in 14k gold with edge numeral and H STERN incused.",
     "notes": "Listed as PP-AM in the Presentation Pieces section of the Atwood-Coffee catalogue. Struck in 14k gold. The catalogue notes that 500 were made.",
     "val": 125,
-    "rel": [
-      "NY630AY"
-    ],
+    "rel": ["NY630AY"],
     "home": false,
     "pub": true,
     "sort": "pp-am"

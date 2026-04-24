@@ -7,14 +7,12 @@
     "var": "",
     "status": "listed",
     "type": "transportation-related",
-    "groups": [
-      "transitrelated"
-    ],
+    "groups": ["transitrelated"],
     "title": "Department of Marine Aviation / LaGuardia Field",
     "borough": "Queens",
     "mat": "Bz",
-    "form": "Ch",
-    "symbol": "",
+    "form": "R",
+    "symbol": "Ch",
     "size": 23,
     "obv": "DEPT. OF MARINE AVIATION / LAGUARDIA FIELD",
     "rev": "Good For One Admission NYC",

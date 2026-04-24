@@ -6,11 +6,8 @@
     "code": "C",
     "var": "a",
     "status": "listed",
-    "type": "transit",
-    "groups": [
-      "patterns",
-      "nyhrr"
-    ],
+    "type": "pattern",
+    "groups": ["patterns", "nyhrr"],
     "title": "New York & Harlaem Railroad Omnibus",
     "borough": "Manhattan",
     "mat": "K",
@@ -34,11 +31,8 @@
     "code": "C",
     "var": "b",
     "status": "listed",
-    "type": "transit",
-    "groups": [
-      "patterns",
-      "nyhrr"
-    ],
+    "type": "pattern",
+    "groups": ["patterns", "nyhrr"],
     "title": "New York & Harlaem Railroad Omnibus",
     "borough": "Manhattan",
     "mat": "K",
@@ -62,11 +56,8 @@
     "code": "D",
     "var": "a",
     "status": "listed",
-    "type": "transit",
-    "groups": [
-      "patterns",
-      "nyhrr"
-    ],
+    "type": "pattern",
+    "groups": ["patterns", "nyhrr"],
     "title": "New York & Harlaem Railroad Omnibus",
     "borough": "Manhattan",
     "mat": "L",
@@ -90,11 +81,8 @@
     "code": "D",
     "var": "b",
     "status": "listed",
-    "type": "transit",
-    "groups": [
-      "patterns",
-      "nyhrr"
-    ],
+    "type": "pattern",
+    "groups": ["patterns", "nyhrr"],
     "title": "New York & Harlaem Railroad Omnibus",
     "borough": "Manhattan",
     "mat": "L",
@@ -118,24 +106,22 @@
     "code": "N",
     "var": "",
     "status": "listed",
-    "type": "transit",
-    "groups": [
-      "patterns"
-    ],
+    "type": "pattern",
+    "groups": ["patterns"],
     "title": "Proposed pattern for the NYC subway.",
     "borough": "Manhattan",
-    "mat": "wm",
-    "form": "Solid",
+    "mat": "WM",
+    "form": "Sd",
     "symbol": "Bl",
     "size": 18,
     "obv": "NEW YORK CITY TRANSIT SYSTEM NYC",
     "rev": "Good For One Fare NYC",
-    "desc": "",
+    "desc": "A proposed NYC subway token.",
     "notes": "This was a proposed token for the NYC subway. This design was ultimately not used.",
     "val": 50,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "998-d-b"
+    "sort": "998-n"
   }
 ]
