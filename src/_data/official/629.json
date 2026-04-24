@@ -11,7 +11,7 @@
       "brooklyn"
     ],
     "title": "Nassau / R.R. Co.",
-    "borough": "",
+    "borough": "Brooklyn",
     "mat": "Vi",
     "form": "R",
     "symbol": "Sd",
@@ -38,7 +38,7 @@
       "brooklyn"
     ],
     "title": "Brooklyn Cross Town R.R. / Pass",
-    "borough": "",
+    "borough": "Brooklyn",
     "mat": "WM",
     "form": "R",
     "symbol": "Sd",
@@ -63,7 +63,7 @@
     "type": "transit",
     "groups": [],
     "title": "Brooklyn Bus Corporation / Transfer Token",
-    "borough": "",
+    "borough": "Brooklyn",
     "mat": "WM",
     "form": "R",
     "symbol": "Sd",
@@ -90,7 +90,7 @@
       "brooklyn"
     ],
     "title": "Brooklyn and Queens Transit Corporation / Transfer Token",
-    "borough": "",
+    "borough": "Brooklyn",
     "mat": "WM",
     "form": "R",
     "symbol": "Sd",
@@ -115,7 +115,7 @@
     "type": "transit",
     "groups": [],
     "title": "Brooklyn and Queens Transit Corporation / Half Fare Token",
-    "borough": "",
+    "borough": "Brooklyn",
     "mat": "B",
     "form": "R",
     "symbol": "Ch",
@@ -142,7 +142,7 @@
       "brooklyn"
     ],
     "title": "New York City Transit System B.M.T. Div. / Transfer Token",
-    "borough": "",
+    "borough": "Brooklyn",
     "mat": "WM",
     "form": "R",
     "symbol": "Sd",
@@ -169,7 +169,7 @@
       "brooklyn"
     ],
     "title": "New York City Transit System B.M.T. Div. / Transfer Token",
-    "borough": "",
+    "borough": "Brooklyn",
     "mat": "S",
     "form": "R",
     "symbol": "Sd",
@@ -196,7 +196,7 @@
       "brooklyn"
     ],
     "title": "New York City Transit System B.M.T. Div. / Transfer Token",
-    "borough": "",
+    "borough": "Brooklyn",
     "mat": "B",
     "form": "R",
     "symbol": "Sd",
@@ -221,7 +221,7 @@
     "type": "transit",
     "groups": [],
     "title": "New York City Transit System BMT Div. / Half Fare Token",
-    "borough": "",
+    "borough": "Brooklyn",
     "mat": "B",
     "form": "R",
     "symbol": "Ch",
@@ -248,7 +248,7 @@
       "brooklyn"
     ],
     "title": "New York City Transit System B.M.T. Division Transfer Token",
-    "borough": "",
+    "borough": "Brooklyn",
     "mat": "B",
     "form": "R",
     "symbol": "Sd",
@@ -276,7 +276,7 @@
       "errors"
     ],
     "title": "New York City Transfer System B.M.T. Division Transfer Token",
-    "borough": "",
+    "borough": "Brooklyn",
     "mat": "Bz",
     "form": "R",
     "symbol": "Sd",
@@ -303,7 +303,7 @@
       "brooklyn"
     ],
     "title": "R.T. Corp. One Way Fare",
-    "borough": "",
+    "borough": "Brooklyn",
     "mat": "WM",
     "form": "R",
     "symbol": "R",

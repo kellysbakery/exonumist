@@ -12,7 +12,7 @@
       "nyhrr"
     ],
     "title": "New York & Harlaem Railroad Omnibus",
-    "borough": "",
+    "borough": "Manhattan",
     "mat": "K",
     "form": "Oc",
     "symbol": "Sd",
@@ -40,7 +40,7 @@
       "nyhrr"
     ],
     "title": "New York & Harlaem Railroad Omnibus",
-    "borough": "",
+    "borough": "Manhattan",
     "mat": "K",
     "form": "Oc",
     "symbol": "Sd",
@@ -68,7 +68,7 @@
       "nyhrr"
     ],
     "title": "New York & Harlaem Railroad Omnibus",
-    "borough": "",
+    "borough": "Manhattan",
     "mat": "L",
     "form": "Oc",
     "symbol": "Sd",
@@ -96,7 +96,7 @@
       "nyhrr"
     ],
     "title": "New York & Harlaem Railroad Omnibus",
-    "borough": "",
+    "borough": "Manhattan",
     "mat": "L",
     "form": "Oc",
     "symbol": "Sdlf",
@@ -123,7 +123,7 @@
       "patterns"
     ],
     "title": "Proposed pattern for the NYC subway.",
-    "borough": "",
+    "borough": "Manhattan",
     "mat": "wm",
     "form": "Solid",
     "symbol": "Bl",

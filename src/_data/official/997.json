@@ -7,11 +7,9 @@
     "var": "",
     "status": "listed",
     "type": "zonecheck",
-    "groups": [
-      "zonecheck"
-    ],
+    "groups": ["zonecheck"],
     "title": "B.C.R.R. Co. Zone Check",
-    "borough": "",
+    "borough": "Manhattan",
     "mat": "Ve",
     "form": "Sd",
     "symbol": "",
