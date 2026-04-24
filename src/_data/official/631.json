@@ -11,7 +11,7 @@
       "queens"
     ],
     "title": "N.Y. & Q.C. Ry. Co. Lincoln C Andrews / NYQ",
-    "borough": "",
+    "borough": "Queens",
     "mat": "WM",
     "form": "R",
     "symbol": "Bl",
@@ -38,7 +38,7 @@
       "queens"
     ],
     "title": "Kings Coach Company",
-    "borough": "",
+    "borough": "Queens",
     "mat": "WM",
     "form": "R",
     "symbol": "K-sc",
@@ -65,7 +65,7 @@
       "queens"
     ],
     "title": "Kings Coach Company",
-    "borough": "",
+    "borough": "Queens",
     "mat": "WM",
     "form": "R",
     "symbol": "K-sc",
@@ -92,7 +92,7 @@
       "queens"
     ],
     "title": "Jamaica Buses, Inc. Transfer Token",
-    "borough": "",
+    "borough": "Queens",
     "mat": "B",
     "form": "R",
     "symbol": "Sd",
@@ -117,7 +117,7 @@
     "type": "transit",
     "groups": [],
     "title": "Rauchwerger Bus Line / Flushing, L.I. N.Y. (BUS, type 1)",
-    "borough": "",
+    "borough": "Queens",
     "mat": "WM",
     "form": "R",
     "symbol": "Bar",
@@ -144,7 +144,7 @@
       "queens"
     ],
     "title": "North Shore Bus Co. Inc.",
-    "borough": "",
+    "borough": "Queens",
     "mat": "WM",
     "form": "R",
     "symbol": "Trsc",
@@ -169,7 +169,7 @@
     "type": "transit",
     "groups": [],
     "title": "North Shore Bus Co. Inc.",
-    "borough": "",
+    "borough": "Queens",
     "mat": "WM",
     "form": "R",
     "symbol": "R",
@@ -196,7 +196,7 @@
       "queens"
     ],
     "title": "Perey Turnstiles For Better Fare Collection",
-    "borough": "",
+    "borough": "Queens",
     "mat": "WM",
     "form": "R",
     "symbol": "Sd",
@@ -223,7 +223,7 @@
       "queens"
     ],
     "title": "Perey Turnstiles For Better Fare Collection",
-    "borough": "",
+    "borough": "Queens",
     "mat": "B",
     "form": "R",
     "symbol": "Sd",
@@ -250,7 +250,7 @@
       "queens"
     ],
     "title": "Triboro Coach Corp. No Value T",
-    "borough": "",
+    "borough": "Queens",
     "mat": "WM",
     "form": "R",
     "symbol": "Sd",
@@ -277,7 +277,7 @@
       "queens"
     ],
     "title": "Triboro Coach Corp. No Value T",
-    "borough": "",
+    "borough": "Queens",
     "mat": "WM",
     "form": "R",
     "symbol": "Sd",
@@ -304,7 +304,7 @@
       "queens"
     ],
     "title": "Triboro Coach Corp. No Value T",
-    "borough": "",
+    "borough": "Queens",
     "mat": "B",
     "form": "R",
     "symbol": "Sd",
@@ -329,7 +329,7 @@
     "type": "transit",
     "groups": [],
     "title": "Triboro Coach Corp. No Value",
-    "borough": "",
+    "borough": "Queens",
     "mat": "B",
     "form": "R",
     "symbol": "T-sc",
@@ -356,7 +356,7 @@
       "queens"
     ],
     "title": "Triboro Coach Corp. No Value S",
-    "borough": "",
+    "borough": "Queens",
     "mat": "WM",
     "form": "R",
     "symbol": "Sd",
@@ -383,7 +383,7 @@
       "queens"
     ],
     "title": "Triboro Coach Corp. No Value S",
-    "borough": "",
+    "borough": "Queens",
     "mat": "WM",
     "form": "R",
     "symbol": "Sd",
@@ -410,7 +410,7 @@
       "queens"
     ],
     "title": "Queensboro Bridge Railway Co., Inc. (Streetcar)",
-    "borough": "",
+    "borough": "Queens",
     "mat": "S",
     "form": "R",
     "symbol": "Bar",
@@ -437,7 +437,7 @@
       "queens"
     ],
     "title": "Queensboro Bridge Railway Co., Inc. (Streetcar)",
-    "borough": "",
+    "borough": "Queens",
     "mat": "B",
     "form": "R",
     "symbol": "Bar",
@@ -464,7 +464,7 @@
       "queens"
     ],
     "title": "Queensboro Bridge Railway Co., Inc. (Streetcar)",
-    "borough": "",
+    "borough": "Queens",
     "mat": "WM",
     "form": "R",
     "symbol": "Bar",
@@ -491,7 +491,7 @@
       "queens"
     ],
     "title": "Green Bus Lines, Inc. GBL INC.",
-    "borough": "",
+    "borough": "Queens",
     "mat": "Bz",
     "form": "R",
     "symbol": "Bl",
@@ -518,7 +518,7 @@
       "queens"
     ],
     "title": "One Fare The Long Island Rail Road / The Route of the Dashing Commuter",
-    "borough": "",
+    "borough": "Queens",
     "mat": "Bz",
     "form": "R",
     "symbol": "Sd",
@@ -545,7 +545,7 @@
       "queens"
     ],
     "title": "Queensboro Bridge Ry. Co., Inc. (BUS)",
-    "borough": "",
+    "borough": "Queens",
     "mat": "B",
     "form": "R",
     "symbol": "Bl",
@@ -572,7 +572,7 @@
       "queens"
     ],
     "title": "Jamaica Buses, Inc.",
-    "borough": "",
+    "borough": "Queens",
     "mat": "B",
     "form": "R",
     "symbol": "Sd",
@@ -599,7 +599,7 @@
       "queens"
     ],
     "title": "Jamaica Buses Inc. N.Y.C. (Bus, type 2)",
-    "borough": "",
+    "borough": "Queens",
     "mat": "B",
     "form": "R",
     "symbol": "Bar",
@@ -626,7 +626,7 @@
       "queens"
     ],
     "title": "Steinway Transit Corp.",
-    "borough": "",
+    "borough": "Queens",
     "mat": "WM",
     "form": "R",
     "symbol": "S",
@@ -653,7 +653,7 @@
       "queens"
     ],
     "title": "Airline· Connection Bus",
-    "borough": "",
+    "borough": "Queens",
     "mat": "B",
     "form": "R",
     "symbol": "Sd",
@@ -680,7 +680,7 @@
       "queens"
     ],
     "title": "Triborough Bridge and Tunnel Authority",
-    "borough": "",
+    "borough": "Queens",
     "mat": "S",
     "form": "R",
     "symbol": "Sd",
