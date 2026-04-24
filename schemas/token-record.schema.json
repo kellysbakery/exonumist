@@ -2,7 +2,6 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://exonumist.com/schemas/token-record.schema.json",
   "title": "Exonumist Token Record",
-  "description": "Normalized token/discovery record used by exonumist.com",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -15,9 +14,7 @@
     "type",
     "groups",
     "title",
-    "city",
     "borough",
-    "state",
     "mat",
     "form",
     "symbol",
@@ -27,11 +24,7 @@
     "desc",
     "notes",
     "val",
-    "market",
     "rel",
-    "baseId",
-    "oddityType",
-    "confidence",
     "home",
     "pub",
     "sort"
@@ -56,16 +49,28 @@
     },
     "status": {
       "type": "string",
-      "minLength": 1
+      "enum": ["listed", "unlisted"]
     },
     "type": {
       "type": "string",
-      "minLength": 1
+      "enum": [
+        "transit",
+        "pattern",
+        "club",
+        "fantasy",
+        "presentation",
+        "timetable",
+        "zonecheck",
+        "transportation-related",
+        "error",
+        "counterfeit"
+      ]
     },
     "groups": {
       "type": "array",
       "items": {
-        "type": "string"
+        "type": "string",
+        "minLength": 1
       },
       "uniqueItems": true
     },
@@ -73,14 +78,9 @@
       "type": "string",
       "minLength": 1
     },
-    "city": {
-      "type": "string"
-    },
     "borough": {
-      "type": "string"
-    },
-    "state": {
-      "type": "string"
+      "type": "string",
+      "enum": ["Bronx", "Brooklyn", "Manhattan", "Queens", "Staten Island"]
     },
     "mat": {
       "type": "string"
@@ -92,11 +92,8 @@
       "type": "string"
     },
     "size": {
-      "type": [
-        "integer",
-        "number",
-        "null"
-      ]
+      "type": ["number", "null"],
+      "minimum": 0
     },
     "obv": {
       "type": "string"
@@ -110,30 +107,56 @@
     "notes": {
       "type": "string"
     },
-    "val": {
-      "type": [
-        "number",
-        "integer",
-        "null"
-      ]
-    },
-    "market": {
+    "maker": {
       "type": "string"
+    },
+    "issued": {
+      "type": "string"
+    },
+    "mintage": {
+      "type": ["integer", "null"],
+      "minimum": 0
+    },
+    "usage": {
+      "type": "string"
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["title", "issue"],
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "issue": {
+            "type": "string",
+            "minLength": 1
+          },
+          "page": {
+            "type": ["integer", "string"]
+          },
+          "note": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "val": {
+      "type": ["number", "null"],
+      "minimum": 0
     },
     "rel": {
       "type": "array",
       "items": {
         "type": "string"
-      }
-    },
-    "baseId": {
-      "type": "string"
-    },
-    "oddityType": {
-      "type": "string"
-    },
-    "confidence": {
-      "type": "string"
+      },
+      "uniqueItems": true
     },
     "home": {
       "type": "boolean"
