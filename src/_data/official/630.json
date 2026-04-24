@@ -7,9 +7,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "I. Gibbs / Belleville & New York / U.S.M. / Stage",
     "borough": "Manhattan",
     "mat": "B",
@@ -34,10 +32,7 @@
     "var": "a",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan",
-      "nyhrr"
-    ],
+    "groups": ["manhattan", "nyhrr"],
     "title": "New York & Harlaem Railroad Omnibus",
     "borough": "Manhattan",
     "mat": "Gs",
@@ -62,10 +57,7 @@
     "var": "b",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan",
-      "nyhrr"
-    ],
+    "groups": ["manhattan", "nyhrr"],
     "title": "The N-York & Harlaem Railroad Company (dog counterstamp)",
     "borough": "Manhattan",
     "mat": "Gs",
@@ -90,10 +82,7 @@
     "var": "c",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan",
-      "nyhrr"
-    ],
+    "groups": ["manhattan", "nyhrr"],
     "title": "The N-York & Harlaem Railroad Company (Not counterstamped)",
     "borough": "Manhattan",
     "mat": "Gs",
@@ -118,9 +107,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "4th Avenue Line / Haskins / & / Wilkins",
     "borough": "Manhattan",
     "mat": "Pt",
@@ -145,9 +132,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "5th & 7th Avenue Lines / Marshalls / & / Townsend",
     "borough": "Manhattan",
     "mat": "Pt",
@@ -172,9 +157,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "7th Avenue Lines / Marshalls / & / Townsend",
     "borough": "Manhattan",
     "mat": "Pt",
@@ -199,9 +182,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "7th Avenue Lines / Marshalls / & / Townsend",
     "borough": "Manhattan",
     "mat": "Pt",
@@ -226,9 +207,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "6th Avenue Lines / Young / & / Ward.",
     "borough": "Manhattan",
     "mat": "Pt",
@@ -253,9 +232,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "8th Avenue Lines / Finch / Sanderson / & Co.",
     "borough": "Manhattan",
     "mat": "Pt",
@@ -280,9 +257,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "Chelsea Line / Kipp Brown & Co.",
     "borough": "Manhattan",
     "mat": "Pt",
@@ -307,9 +282,7 @@
     "var": "a",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "Telegraph Line / Tyson & Co.",
     "borough": "Manhattan",
     "mat": "B",
@@ -334,9 +307,7 @@
     "var": "b",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "Telegraph Line / Tyson & Co.",
     "borough": "Manhattan",
     "mat": "B",
@@ -361,9 +332,7 @@
     "var": "c",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "Telegraph Line / Tyson & Co.",
     "borough": "Manhattan",
     "mat": "B",
@@ -388,9 +357,7 @@
     "var": "d",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "Telegraph Line / Tyson & Co.",
     "borough": "Manhattan",
     "mat": "B",
@@ -415,9 +382,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "Third Avenue Rail Road (Omnibus)",
     "borough": "Manhattan",
     "mat": "Pt",
@@ -442,9 +407,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "Third Avenue Rail Road (Omnibus)",
     "borough": "Manhattan",
     "mat": "Pt",
@@ -469,9 +432,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "Third Avenue Rail Road (Streetcar)",
     "borough": "Manhattan",
     "mat": "Pt",
@@ -496,9 +457,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "Third Avenue Rail Road (Streetcar)",
     "borough": "Manhattan",
     "mat": "Pt",
@@ -523,9 +482,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "3rd Ave R.R. to Cable Line",
     "borough": "Manhattan",
     "mat": "WM",
@@ -550,9 +507,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "Hoboken Ferry",
     "borough": "Manhattan",
     "mat": "B",
@@ -577,9 +532,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "42nd St. M. & St. N. Ave Ry. Transfer",
     "borough": "Manhattan",
     "mat": "WM",
@@ -604,9 +557,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "Bridge R.R. New York Dep't. P & S.",
     "borough": "Manhattan",
     "mat": "WM",
@@ -631,9 +582,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "Interborough Rapid Transit Co. IRT",
     "borough": "Manhattan",
     "mat": "WM",
@@ -658,9 +607,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "New York City Transit System Manhattan Bus Div. Transfer Token",
     "borough": "Manhattan",
     "mat": "WM",
@@ -685,9 +632,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "Comprehensive Omnibus Corporation",
     "borough": "Manhattan",
     "mat": "Bz",
@@ -712,9 +657,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "Comprehensive Omnibus Corporation",
     "borough": "Manhattan",
     "mat": "S",
@@ -739,9 +682,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "East Side Omnibus Corporation",
     "borough": "Manhattan",
     "mat": "WM",
@@ -766,9 +707,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "East Side Omnibus Corporation",
     "borough": "Manhattan",
     "mat": "S",
@@ -793,9 +732,7 @@
     "var": "a",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "Avenue B & East Broadway Trans. Co.",
     "borough": "Manhattan",
     "mat": "WM",
@@ -820,9 +757,7 @@
     "var": "b",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "Avenue B & East Broadway Trans. Co.",
     "borough": "Manhattan",
     "mat": "WM",
@@ -847,9 +782,7 @@
     "var": "a",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "Avenue B & East Broadway Trans. Co.",
     "borough": "Manhattan",
     "mat": "WM",
@@ -874,9 +807,7 @@
     "var": "b",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "Avenue B & East Broadway Trans. Co.",
     "borough": "Manhattan",
     "mat": "WM",
@@ -901,9 +832,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "Avenue B & East Broadway Trans. Co.",
     "borough": "Manhattan",
     "mat": "WM",
@@ -928,9 +857,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "Avenue B & East Broadway Trans. Co.",
     "borough": "Manhattan",
     "mat": "WM",
@@ -955,9 +882,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "Avenue B & East Broadway Trans. Co.",
     "borough": "Manhattan",
     "mat": "WM",
@@ -982,9 +907,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "125th Street Ferry EF",
     "borough": "Manhattan",
     "mat": "WM",
@@ -1009,9 +932,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "H. & M. One Fare",
     "borough": "Manhattan",
     "mat": "WM",
@@ -1036,9 +957,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "H. & M. One Fare",
     "borough": "Manhattan",
     "mat": "B",
@@ -1063,9 +982,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "H. & M. One Fare",
     "borough": "Manhattan",
     "mat": "WM",
@@ -1090,9 +1007,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "H. & M. One Fare",
     "borough": "Manhattan",
     "mat": "WM",
@@ -1117,9 +1032,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "H & M / One Fare",
     "borough": "Manhattan",
     "mat": "Bz",
@@ -1144,9 +1057,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "Westchester St. Transp. Co., Inc.",
     "borough": "Manhattan",
     "mat": "B",
@@ -1171,9 +1082,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "New York City Transit Authority NYC",
     "borough": "Manhattan",
     "mat": "B",
@@ -1198,9 +1107,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "New York City Transit Authority NYC",
     "borough": "Manhattan",
     "mat": "B",
@@ -1225,9 +1132,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "New York City Transit Authority NYC",
     "borough": "Manhattan",
     "mat": "B",
@@ -1252,9 +1157,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "P A T H NY = NJ (Arrow)",
     "borough": "Manhattan",
     "mat": "B",
@@ -1279,9 +1182,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "1965 A.V.A. Convention Tour Token",
     "borough": "Manhattan",
     "mat": "B",
@@ -1306,9 +1207,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "New York City Transit Authority N(Y)C",
     "borough": "Manhattan",
     "mat": "B",
@@ -1333,9 +1232,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "New York City Transit Authority NYC",
     "borough": "Manhattan",
     "mat": "B",
@@ -1360,9 +1257,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "M 50 TBTA",
     "borough": "Manhattan",
     "mat": "S",
@@ -1387,9 +1282,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "M 75 TBTA",
     "borough": "Manhattan",
     "mat": "S",
@@ -1414,9 +1307,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "M 100 TBTA",
     "borough": "Manhattan",
     "mat": "S",
@@ -1441,9 +1332,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "New York City Transit Authority NYC",
     "borough": "Manhattan",
     "mat": "WM",
@@ -1468,9 +1357,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "NYC Subway 1904-1979 / People Moving People",
     "borough": "Manhattan",
     "mat": "B",
@@ -1495,9 +1382,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "M 75 TBTA",
     "borough": "Manhattan",
     "mat": "S",
@@ -1522,9 +1407,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "Triborough Bridge and Tunnel Authority",
     "borough": "Manhattan",
     "mat": "B",
@@ -1549,9 +1432,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "New York Street Railway Co. 1900",
     "borough": "Manhattan",
     "mat": "A",
@@ -1576,9 +1457,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "Triborough Bridge and Tunnel Authority",
     "borough": "Manhattan",
     "mat": "S",
@@ -1603,9 +1482,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "Triborough Bridge and Tunnel Authority",
     "borough": "Manhattan",
     "mat": "S",
@@ -1630,9 +1507,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "New York City Transit Authority",
     "borough": "Manhattan",
     "mat": "B",
@@ -1657,9 +1532,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "The N.Y. Trolley Car Company Inc. 1986 First Edition",
     "borough": "Manhattan",
     "mat": "B",
@@ -1684,9 +1557,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "New York City Transit Authority",
     "borough": "Manhattan",
     "mat": "B",
@@ -1711,9 +1582,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "Roosevelt Island Operating Corporation of the State of New York",
     "borough": "Manhattan",
     "mat": "WM",
@@ -1738,9 +1607,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "New York City Transit Authority",
     "borough": "Manhattan",
     "mat": "B",
@@ -1765,9 +1632,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "New York City Transit Authority",
     "borough": "Manhattan",
     "mat": "S",
@@ -1792,9 +1657,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "M 75 TBTA",
     "borough": "Manhattan",
     "mat": "B",
@@ -1819,10 +1682,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan",
-      "errors"
-    ],
+    "groups": ["manhattan", "errors"],
     "title": "New York City Transit Authority NYC",
     "borough": "Manhattan",
     "mat": "B",
@@ -1847,9 +1707,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "manhattan"
-    ],
+    "groups": ["manhattan"],
     "title": "Riverbank State Park - New York State Office of Parks · Recreation · Historic Preservation",
     "borough": "Manhattan",
     "mat": "Wgz",

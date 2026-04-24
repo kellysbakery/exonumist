@@ -7,9 +7,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "queens"
-    ],
+    "groups": ["queens"],
     "title": "N.Y. & Q.C. Ry. Co. Lincoln C Andrews / NYQ",
     "borough": "Queens",
     "mat": "WM",
@@ -34,9 +32,7 @@
     "var": "a",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "queens"
-    ],
+    "groups": ["queens"],
     "title": "Kings Coach Company",
     "borough": "Queens",
     "mat": "WM",
@@ -61,9 +57,7 @@
     "var": "b",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "queens"
-    ],
+    "groups": ["queens"],
     "title": "Kings Coach Company",
     "borough": "Queens",
     "mat": "WM",
@@ -88,9 +82,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "queens"
-    ],
+    "groups": ["queens"],
     "title": "Jamaica Buses, Inc. Transfer Token",
     "borough": "Queens",
     "mat": "B",
@@ -115,7 +107,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [],
+    "groups": ["queens"],
     "title": "Rauchwerger Bus Line / Flushing, L.I. N.Y. (BUS, type 1)",
     "borough": "Queens",
     "mat": "WM",
@@ -140,9 +132,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "queens"
-    ],
+    "groups": ["queens"],
     "title": "North Shore Bus Co. Inc.",
     "borough": "Queens",
     "mat": "WM",
@@ -167,7 +157,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [],
+    "groups": ["queens"],
     "title": "North Shore Bus Co. Inc.",
     "borough": "Queens",
     "mat": "WM",
@@ -192,9 +182,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "queens"
-    ],
+    "groups": ["queens"],
     "title": "Perey Turnstiles For Better Fare Collection",
     "borough": "Queens",
     "mat": "WM",
@@ -219,9 +207,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "queens"
-    ],
+    "groups": ["queens"],
     "title": "Perey Turnstiles For Better Fare Collection",
     "borough": "Queens",
     "mat": "B",
@@ -246,9 +232,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "queens"
-    ],
+    "groups": ["queens"],
     "title": "Triboro Coach Corp. No Value T",
     "borough": "Queens",
     "mat": "WM",
@@ -273,9 +257,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "queens"
-    ],
+    "groups": ["queens"],
     "title": "Triboro Coach Corp. No Value T",
     "borough": "Queens",
     "mat": "WM",
@@ -300,9 +282,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "queens"
-    ],
+    "groups": ["queens"],
     "title": "Triboro Coach Corp. No Value T",
     "borough": "Queens",
     "mat": "B",
@@ -327,7 +307,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [],
+    "groups": ["queens"],
     "title": "Triboro Coach Corp. No Value",
     "borough": "Queens",
     "mat": "B",
@@ -352,9 +332,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "queens"
-    ],
+    "groups": ["queens"],
     "title": "Triboro Coach Corp. No Value S",
     "borough": "Queens",
     "mat": "WM",
@@ -379,9 +357,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "queens"
-    ],
+    "groups": ["queens"],
     "title": "Triboro Coach Corp. No Value S",
     "borough": "Queens",
     "mat": "WM",
@@ -406,9 +382,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "queens"
-    ],
+    "groups": ["queens"],
     "title": "Queensboro Bridge Railway Co., Inc. (Streetcar)",
     "borough": "Queens",
     "mat": "S",
@@ -433,9 +407,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "queens"
-    ],
+    "groups": ["queens"],
     "title": "Queensboro Bridge Railway Co., Inc. (Streetcar)",
     "borough": "Queens",
     "mat": "B",
@@ -460,9 +432,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "queens"
-    ],
+    "groups": ["queens"],
     "title": "Queensboro Bridge Railway Co., Inc. (Streetcar)",
     "borough": "Queens",
     "mat": "WM",
@@ -487,9 +457,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "queens"
-    ],
+    "groups": ["queens"],
     "title": "Green Bus Lines, Inc. GBL INC.",
     "borough": "Queens",
     "mat": "Bz",
@@ -514,9 +482,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "queens"
-    ],
+    "groups": ["queens"],
     "title": "One Fare The Long Island Rail Road / The Route of the Dashing Commuter",
     "borough": "Queens",
     "mat": "Bz",
@@ -541,9 +507,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "queens"
-    ],
+    "groups": ["queens"],
     "title": "Queensboro Bridge Ry. Co., Inc. (BUS)",
     "borough": "Queens",
     "mat": "B",
@@ -568,9 +532,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "queens"
-    ],
+    "groups": ["queens"],
     "title": "Jamaica Buses, Inc.",
     "borough": "Queens",
     "mat": "B",
@@ -595,9 +557,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "queens"
-    ],
+    "groups": ["queens"],
     "title": "Jamaica Buses Inc. N.Y.C. (Bus, type 2)",
     "borough": "Queens",
     "mat": "B",
@@ -622,9 +582,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "queens"
-    ],
+    "groups": ["queens"],
     "title": "Steinway Transit Corp.",
     "borough": "Queens",
     "mat": "WM",
@@ -649,9 +607,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "queens"
-    ],
+    "groups": ["queens"],
     "title": "Airline· Connection Bus",
     "borough": "Queens",
     "mat": "B",
@@ -676,9 +632,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "queens"
-    ],
+    "groups": ["queens"],
     "title": "Triborough Bridge and Tunnel Authority",
     "borough": "Queens",
     "mat": "S",

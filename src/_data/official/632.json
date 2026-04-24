@@ -7,9 +7,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "statenisland"
-    ],
+    "groups": ["statenisland"],
     "title": "Richmond L. & R.R. Co. Staten Island, N.Y.",
     "borough": "Staten Island",
     "mat": "WM",
@@ -34,9 +32,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "statenisland"
-    ],
+    "groups": ["statenisland"],
     "title": "Department of Transportation / Good For One Fare NYC",
     "borough": "Staten Island",
     "mat": "B",
@@ -61,9 +57,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "statenisland"
-    ],
+    "groups": ["statenisland"],
     "title": "Department of Transportation / Good For One Fare NYC",
     "borough": "Staten Island",
     "mat": "WM",
@@ -88,9 +82,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "statenisland"
-    ],
+    "groups": ["statenisland"],
     "title": "Triborough Bridge and Tunnel Authority",
     "borough": "Staten Island",
     "mat": "S",
@@ -115,9 +107,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "statenisland"
-    ],
+    "groups": ["statenisland"],
     "title": "A Carousel For All Children / At Willowbrook Park",
     "borough": "Staten Island",
     "mat": "B",

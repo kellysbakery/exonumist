@@ -7,9 +7,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "brooklyn"
-    ],
+    "groups": ["brooklyn"],
     "title": "Nassau / R.R. Co.",
     "borough": "Brooklyn",
     "mat": "Vi",
@@ -34,9 +32,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "brooklyn"
-    ],
+    "groups": ["brooklyn"],
     "title": "Brooklyn Cross Town R.R. / Pass",
     "borough": "Brooklyn",
     "mat": "WM",
@@ -61,7 +57,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [],
+    "groups": ["brooklyn"],
     "title": "Brooklyn Bus Corporation / Transfer Token",
     "borough": "Brooklyn",
     "mat": "WM",
@@ -86,9 +82,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "brooklyn"
-    ],
+    "groups": ["brooklyn"],
     "title": "Brooklyn and Queens Transit Corporation / Transfer Token",
     "borough": "Brooklyn",
     "mat": "WM",
@@ -113,7 +107,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [],
+    "groups": ["brooklyn"],
     "title": "Brooklyn and Queens Transit Corporation / Half Fare Token",
     "borough": "Brooklyn",
     "mat": "B",
@@ -138,9 +132,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "brooklyn"
-    ],
+    "groups": ["brooklyn"],
     "title": "New York City Transit System B.M.T. Div. / Transfer Token",
     "borough": "Brooklyn",
     "mat": "WM",
@@ -165,9 +157,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "brooklyn"
-    ],
+    "groups": ["brooklyn"],
     "title": "New York City Transit System B.M.T. Div. / Transfer Token",
     "borough": "Brooklyn",
     "mat": "S",
@@ -192,9 +182,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "brooklyn"
-    ],
+    "groups": ["brooklyn"],
     "title": "New York City Transit System B.M.T. Div. / Transfer Token",
     "borough": "Brooklyn",
     "mat": "B",
@@ -219,7 +207,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [],
+    "groups": ["brooklyn"],
     "title": "New York City Transit System BMT Div. / Half Fare Token",
     "borough": "Brooklyn",
     "mat": "B",
@@ -244,9 +232,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "brooklyn"
-    ],
+    "groups": ["brooklyn"],
     "title": "New York City Transit System B.M.T. Division Transfer Token",
     "borough": "Brooklyn",
     "mat": "B",
@@ -271,10 +257,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "brooklyn",
-      "errors"
-    ],
+    "groups": ["brooklyn", "errors"],
     "title": "New York City Transfer System B.M.T. Division Transfer Token",
     "borough": "Brooklyn",
     "mat": "Bz",
@@ -299,9 +282,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [
-      "brooklyn"
-    ],
+    "groups": ["brooklyn"],
     "title": "R.T. Corp. One Way Fare",
     "borough": "Brooklyn",
     "mat": "WM",
