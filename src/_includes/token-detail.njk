@@ -84,6 +84,34 @@
               <dd>{{ fact.value }}</dd>
             </div>
           {% endfor %}
+
+          {% if token.maker %}
+            <div class="facts-row">
+              <dt>Maker</dt>
+              <dd>{{ token.maker }}</dd>
+            </div>
+          {% endif %}
+
+          {% if token.issued %}
+            <div class="facts-row">
+              <dt>Issued</dt>
+              <dd>{{ token.issued }}</dd>
+            </div>
+          {% endif %}
+
+          {% if token.mintage %}
+            <div class="facts-row">
+              <dt>Mintage</dt>
+              <dd>{{ token.mintage }}</dd>
+            </div>
+          {% endif %}
+
+          {% if token.usage %}
+            <div class="facts-row">
+              <dt>Usage</dt>
+              <dd>{{ token.usage }}</dd>
+            </div>
+          {% endif %}
         </dl>
       </div>
     </section>
