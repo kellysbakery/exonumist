@@ -5,7 +5,7 @@
     "sec": "",
     "code": "",
     "var": "",
-    "status": "exception",
+    "status": "unlisted",
     "type": "transit",
     "groups": [
       "errors"
@@ -34,7 +34,7 @@
     "sec": "",
     "code": "",
     "var": "",
-    "status": "exception",
+    "status": "unlisted",
     "type": "transit",
     "groups": [
       "errors"
@@ -63,7 +63,7 @@
     "sec": "",
     "code": "",
     "var": "",
-    "status": "exception",
+    "status": "unlisted",
     "type": "transit",
     "groups": [
       "errors"
@@ -92,7 +92,7 @@
     "sec": "",
     "code": "",
     "var": "",
-    "status": "exception",
+    "status": "unlisted",
     "type": "transit",
     "groups": [
       "errors"
@@ -121,7 +121,7 @@
     "sec": "",
     "code": "",
     "var": "",
-    "status": "exception",
+    "status": "unlisted",
     "type": "transit",
     "groups": [
       "errors"
@@ -150,7 +150,7 @@
     "sec": "",
     "code": "",
     "var": "",
-    "status": "exception",
+    "status": "unlisted",
     "type": "transit",
     "groups": [
       "errors"
