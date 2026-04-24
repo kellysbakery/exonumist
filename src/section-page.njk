@@ -12,18 +12,30 @@ eleventyComputed:
 <section class="section">
   <h1>{{ siteSection.title }}</h1>
 
-{% if siteSection.intro %}
+  {% if siteSection.intro %}
+    <p class="section-intro">{{ siteSection.intro }}</p>
+  {% endif %}
 
-<p class="section-intro">{{ siteSection.intro }}</p>
-{% endif %}
-
-  <div class="{{ siteSection.gridClass }}">
+  <div class="home-section-grid">
     {% for group in groups | sort(attribute="order") %}
       {% if group.section == siteSection.key %}
         <a class="card-link" href="{{ group.url }}">
-          <article class="card">
-            <strong>{{ group.title }}</strong>
-            <p>{{ group.description }}</p>
+          <article class="card home-section-card">
+            <div class="home-section-card-layout">
+              <div class="home-section-card-body">
+                <strong class="home-section-card-title">{{ group.title }}</strong>
+                <p class="home-section-card-desc">{{ group.description }}</p>
+              </div>
+
+              {% if group.cardImage %}
+                <div class="home-section-card-media">
+                  <img
+                    class="home-section-card-image"
+                    src="{{ group.cardImage }}"
+                    alt="{{ group.title }}" />
+                </div>
+              {% endif %}
+            </div>
           </article>
         </a>
       {% endif %}
