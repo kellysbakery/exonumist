@@ -142,12 +142,20 @@
     "obv": "5th & 7th AVENUE /LINES / MARSHALLS /& /TOWNSEND",
     "rev": "Transfer Ticket",
     "desc": "Listed Manhattan transit token: 5th & 7th Avenue Lines / Marshalls / & / Townsend.",
-    "notes": "",
+    "notes": "Atwood-Coffee notes that this line is not listed in the 1851 City Directory.",
     "val": 1300,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-f"
+    "sort": "630-f",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 373,
+        "note": "Manhattan 630 section notes NY630F line is not listed in the 1851 City Directory."
+      }
+    ]
   },
   {
     "id": "official-ny630g",
@@ -217,12 +225,22 @@
     "obv": "6th AVENUE LINES /YOUNG /& /WARD.",
     "rev": "Transfer Ticket",
     "desc": "Listed Manhattan transit token: 6th Avenue Lines / Young / & / Ward..",
-    "notes": "",
+    "notes": "Atwood-Coffee notes that an 1851 City Directory lists a Waverley Line operated by Ward, Bolster & Jacacks, probably predecessor to the Sixth Avenue Lines. The route ran from 34th Street & 6th Avenue along 6th Avenue to 8th Street, Broadway and Whitehall Street to South Ferry, operating 20 stages.",
     "val": 600,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-i"
+    "sort": "630-i",
+    "issued": "1851",
+    "usage": "Transfer-ticket token for an omnibus line.",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 373,
+        "note": "Manhattan 630 section gives Waverley Line route and 1851 directory context."
+      }
+    ]
   },
   {
     "id": "official-ny630j",
@@ -242,12 +260,22 @@
     "obv": "8th AVENUE LINES /FINCH /SANDERSON /& CO.",
     "rev": "Transfer Ticket",
     "desc": "Listed Manhattan transit token: 8th Avenue Lines / Finch / Sanderson / & Co..",
-    "notes": "",
+    "notes": "Finch & Sanderson were listed in 1851 as proprietors of the Knickerbocker Line and Phenix Line. Atwood-Coffee notes NY630J was quite likely used on either line.",
     "val": 350,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-j"
+    "sort": "630-j",
+    "issued": "1851",
+    "usage": "Transfer-ticket token likely used on the Knickerbocker Line or Phenix Line.",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 373,
+        "note": "Manhattan 630 section gives Finch & Sanderson route context and likely usage."
+      }
+    ]
   },
   {
     "id": "official-ny630k",
@@ -267,12 +295,22 @@
     "obv": "CHELSEA LINE /KIPP BROWN & CO.",
     "rev": "Transfer Ticket",
     "desc": "Listed Manhattan transit token: Chelsea Line / Kipp Brown & Co..",
-    "notes": "",
+    "notes": "Chelsea Line, operated by Kipp & Brown, operated 40 coaches beginning at 27th Street & 9th Avenue, along 9th Avenue, Hudson and Canal Streets, and Broadway to Bowling Green.",
     "val": 220,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-k"
+    "sort": "630-k",
+    "issued": "1851",
+    "usage": "Transfer-ticket token for the Chelsea Line.",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 373,
+        "note": "Manhattan 630 section gives Chelsea Line operator, coach count, and route."
+      }
+    ]
   },
   {
     "id": "official-ny630la",
@@ -292,12 +330,22 @@
     "obv": "TELEGRAPH LINE /TYSON & CO.",
     "rev": "Transfer Ticket",
     "desc": "Listed Manhattan transit token: Telegraph Line / Tyson & Co..",
-    "notes": "Letters close to edge; 2 periods. Vars. 4.",
+    "notes": "Letters close to edge; 2 periods. Vars. 4. Telegraph Line was operated by William Tyson with 20 coaches, running from Grand Street Ferry through Grand Street, Broadway, Canal, Greenwich and Cortlandt Streets to the Jersey City Ferry. Atwood-Coffee notes these transfer-ticket tokens were good for transfer from one omnibus line to another.",
     "val": 35,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-l-a"
+    "sort": "630-l-a",
+    "issued": "1851",
+    "usage": "Transfer-ticket token for transfer from one omnibus line to another.",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 373,
+        "note": "Manhattan 630 section gives Telegraph Line route, operator, and transfer-token usage."
+      }
+    ]
   },
   {
     "id": "official-ny630lb",
@@ -317,12 +365,22 @@
     "obv": "TELEGRAPH LINE /TYSON & CO.",
     "rev": "Transfer Ticket",
     "desc": "Listed Manhattan transit token: Telegraph Line / Tyson & Co..",
-    "notes": "Letters close to edge; 3 periods. Vars. 4.",
+    "notes": "Letters close to edge; 3 periods. Vars. 4. Telegraph Line was operated by William Tyson with 20 coaches, running from Grand Street Ferry through Grand Street, Broadway, Canal, Greenwich and Cortlandt Streets to the Jersey City Ferry. Atwood-Coffee notes Tyson tokens are brass, with four die varieties, and comparatively common.",
     "val": 50,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-l-b"
+    "sort": "630-l-b",
+    "issued": "1851",
+    "usage": "Transfer-ticket token for transfer from one omnibus line to another.",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 373,
+        "note": "Manhattan 630 section gives Telegraph Line route, operator, and transfer-token usage."
+      }
+    ]
   },
   {
     "id": "official-ny630lc",
@@ -342,12 +400,22 @@
     "obv": "TELEGRAPH LINE /TYSON & CO.",
     "rev": "Transfer Ticket",
     "desc": "Listed Manhattan transit token: Telegraph Line / Tyson & Co..",
-    "notes": "Letters away from edge; period after N. Vars. 4.",
+    "notes": "Letters away from edge; period after N. Vars. 4. Telegraph Line was operated by William Tyson with 20 coaches, running from Grand Street Ferry through Grand Street, Broadway, Canal, Greenwich and Cortlandt Streets to the Jersey City Ferry.",
     "val": 20,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-l-c"
+    "sort": "630-l-c",
+    "issued": "1851",
+    "usage": "Transfer-ticket token for transfer from one omnibus line to another.",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 373,
+        "note": "Manhattan 630 section gives Telegraph Line route, operator, and transfer-token usage."
+      }
+    ]
   },
   {
     "id": "official-ny630ld",
@@ -367,12 +435,22 @@
     "obv": "TELEGRAPH LINE /TYSON & CO.",
     "rev": "Transfer Ticket",
     "desc": "Listed Manhattan transit token: Telegraph Line / Tyson & Co..",
-    "notes": "Letters away from edge; no period after N. Vars. 4.",
+    "notes": "Letters away from edge; no period after N. Vars. 4. Telegraph Line was operated by William Tyson with 20 coaches, running from Grand Street Ferry through Grand Street, Broadway, Canal, Greenwich and Cortlandt Streets to the Jersey City Ferry.",
     "val": 40,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-l-d"
+    "sort": "630-l-d",
+    "issued": "1851",
+    "usage": "Transfer-ticket token for transfer from one omnibus line to another.",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 373,
+        "note": "Manhattan 630 section gives Telegraph Line route, operator, and transfer-token usage."
+      }
+    ]
   },
   {
     "id": "official-ny630m",
@@ -392,12 +470,20 @@
     "obv": "THIRD AVENUE RAIL ROAD (OMNIBUS)",
     "rev": "Harlem",
     "desc": "Listed Manhattan transit token: Third Avenue Rail Road (Omnibus).",
-    "notes": "",
+    "notes": "Third Avenue Railroad was chartered October 8, 1853. Cable power was substituted for horses in 1893.",
     "val": 400,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-m"
+    "sort": "630-m",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 373,
+        "note": "Manhattan 630 section gives Third Avenue Railroad charter date and cable-power context for NY630M-Q."
+      }
+    ]
   },
   {
     "id": "official-ny630n",
@@ -417,12 +503,20 @@
     "obv": "THIRD AVENUE RAIL ROAD (OMNIBUS)",
     "rev": "Yorkville.",
     "desc": "Listed Manhattan transit token: Third Avenue Rail Road (Omnibus).",
-    "notes": "",
+    "notes": "Third Avenue Railroad was chartered October 8, 1853. Cable power was substituted for horses in 1893.",
     "val": 1000,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-n"
+    "sort": "630-n",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 373,
+        "note": "Manhattan 630 section gives Third Avenue Railroad charter date and cable-power context for NY630M-Q."
+      }
+    ]
   },
   {
     "id": "official-ny630o",
@@ -442,12 +536,20 @@
     "obv": "THIRD AVENUE RAIL ROAD (STREETCAR)",
     "rev": "Harlem",
     "desc": "Listed Manhattan transit token: Third Avenue Rail Road (Streetcar).",
-    "notes": "",
+    "notes": "Third Avenue Railroad was chartered October 8, 1853. Cable power was substituted for horses in 1893.",
     "val": 1000,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-o"
+    "sort": "630-o",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 373,
+        "note": "Manhattan 630 section gives Third Avenue Railroad charter date and cable-power context for NY630M-Q."
+      }
+    ]
   },
   {
     "id": "official-ny630p",
@@ -467,12 +569,20 @@
     "obv": "THIRD AVENUE RAIL ROAD (STREETCAR)",
     "rev": "Yorkville.",
     "desc": "Listed Manhattan transit token: Third Avenue Rail Road (Streetcar).",
-    "notes": "",
+    "notes": "Third Avenue Railroad was chartered October 8, 1853. Cable power was substituted for horses in 1893.",
     "val": 240,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-p"
+    "sort": "630-p",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 373,
+        "note": "Manhattan 630 section gives Third Avenue Railroad charter date and cable-power context for NY630M-Q."
+      }
+    ]
   },
   {
     "id": "official-ny630q",
@@ -492,12 +602,20 @@
     "obv": "3RD AVE R.R. TO CABLE LINE",
     "rev": "One Fare Going West",
     "desc": "Listed Manhattan transit token: 3rd Ave R.R. to Cable Line.",
-    "notes": "",
+    "notes": "Third Avenue Railroad was chartered October 8, 1853. Cable power was substituted for horses in 1893.",
     "val": 25,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-q"
+    "sort": "630-q",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 373,
+        "note": "Manhattan 630 section gives Third Avenue Railroad charter date and cable-power context for NY630M-Q."
+      }
+    ]
   },
   {
     "id": "official-ny630r",
@@ -517,12 +635,21 @@
     "obv": "HOBOKEN /FERRY",
     "rev": "Car Check",
     "desc": "Listed Manhattan ferry token: Hoboken Ferry.",
-    "notes": "",
+    "notes": "Atwood-Coffee notes this may have been a streetcar token issued in conjunction with a combination ferry-streetcar ride.",
     "val": 2000,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-r"
+    "sort": "630-r",
+    "usage": "Possible combination ferry-streetcar ride token.",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 373,
+        "note": "Manhattan 630 section notes possible ferry-streetcar combination usage."
+      }
+    ]
   },
   {
     "id": "official-ny630s",
@@ -542,12 +669,22 @@
     "obv": "42nd ST. M. & /ST. N. AVE RY. /TRANSFER",
     "rev": "86th St. /to /Boulevard /or /Amsterdam Ave.",
     "desc": "Listed Manhattan transfer token: 42nd St. M. & St. N. Ave Ry. Transfer.",
-    "notes": "",
+    "notes": "42nd Street, Manhattanville & St. Nicholas Avenue Railway began operating August 9, 1884 and was taken over by the Third Avenue Railroad in January 1896. It was a horsecar line operating 24.9 miles of track.",
     "val": 1300,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-s"
+    "sort": "630-s",
+    "issued": "1884-1896",
+    "usage": "Transfer token for a horsecar line.",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 373,
+        "note": "Manhattan 630 section gives railway operating dates, takeover, and track mileage."
+      }
+    ]
   },
   {
     "id": "official-ny630t",
@@ -567,12 +704,22 @@
     "obv": "BRIDGE R.R. NEW YORK DEP'T. P & S. / GROVER A WHALEN.",
     "rev": "Bridge R.R. New York Good For One Fare",
     "desc": "Listed Manhattan toll token: Bridge R.R. New York Dep't. P & S..",
-    "notes": "",
+    "notes": "Grover Whalen was in charge of the New York Department of Plants and Structures from 1919 to 1924, so the token was issued during that period. The token was used on the streetcar shuttle on the Williamsburg Bridge, operated by that department.",
     "val": 7.5,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-t"
+    "sort": "630-t",
+    "issued": "1919-1924",
+    "usage": "Used on the streetcar shuttle on the Williamsburg Bridge.",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 373,
+        "note": "Manhattan 630 section dates Grover Whalen's department role and describes Williamsburg Bridge shuttle usage."
+      }
+    ]
   },
   {
     "id": "official-ny630u",
@@ -592,12 +739,23 @@
     "obv": "INTERBOROUGH RAPID TRANSIT CO. IRT",
     "rev": "Good For One Fare IRT",
     "desc": "Listed Manhattan transit token: Interborough Rapid Transit Co. IRT.",
-    "notes": "Vars. 6.",
+    "notes": "Vars. 6. Interborough Rapid Transit opened subway service October 27, 1904 with a 5¢ fare. In 1928, in anticipation of a 7¢ fare that never materialized, 6,000,000 tokens were struck. In 1940, NYCTS inherited these tokens when it took over IRT and unified it with BMT and IND. During World War II some were sold to other companies, and in 1948 NYCTA sold the remaining stock for scrap.",
     "val": 15,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-u"
+    "sort": "630-u",
+    "issued": "1928",
+    "mintage": 6000000,
+    "usage": "Intended for a proposed 7¢ subway fare that never materialized.",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 373,
+        "note": "Manhattan 630 section states 6,000,000 struck in 1928 and explains intended fare use, later inheritance, resale, and scrapping."
+      }
+    ]
   },
   {
     "id": "official-ny630v",
@@ -617,12 +775,22 @@
     "obv": "NEW YORK CITY TRANSIT SYSTEM / MANHATTAN BUS DIV. TRANSFER TOKEN",
     "rev": "Issued in Exchange for Transfer",
     "desc": "Listed Manhattan transfer token: New York City Transit System Manhattan Bus Div. Transfer Token.",
-    "notes": "First use listed as 1949.",
+    "notes": "First use listed as 1949. In 1940, the IRT and BMT were acquired by the City of New York and unified with its publicly owned IND system to form New York City Transit System, which lasted under that name until 1953.",
     "val": 65,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-v"
+    "sort": "630-v",
+    "issued": "1949-12",
+    "mintage": 5000,
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 373,
+        "note": "Manhattan 630 section states 5,000 struck 12/49 and provides NYCTS formation context."
+      }
+    ]
   },
   {
     "id": "official-ny630w",
@@ -642,12 +810,22 @@
     "obv": "COMPREHENSIVE OMNIBUS CORPORATION",
     "rev": "Issued in Exchange for Transfer",
     "desc": "Listed Manhattan transit token: Comprehensive Omnibus Corporation.",
-    "notes": "First use listed as 1935.",
+    "notes": "First use listed as 1935. Comprehensive Omnibus Corp. and East Side Omnibus Corp. had the same address, 433 East 92nd Street, in 1945, and were both taken over by the City of New York in 1948.",
     "val": 3.5,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-w"
+    "sort": "630-w",
+    "issued": "1935-1944",
+    "mintage": 14000,
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 375,
+        "note": "Manhattan 630 section states 5,000 struck 2/4/35, 2,000 struck 2/3/41, 2,000 struck 2/4/42, and 5,000 struck 10/3/44."
+      }
+    ]
   },
   {
     "id": "official-ny630y",
@@ -667,12 +845,22 @@
     "obv": "COMPREHENSIVE OMNIBUS CORPORATION",
     "rev": "Issued in Exchange for Transfer",
     "desc": "Listed Manhattan transit token: Comprehensive Omnibus Corporation.",
-    "notes": "First use listed as 1944. Plating: bronze.",
+    "notes": "First use listed as 1944. Plating: bronze. Comprehensive Omnibus Corp. and East Side Omnibus Corp. had the same address, 433 East 92nd Street, in 1945, and were both taken over by the City of New York in 1948.",
     "val": 7.5,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-y"
+    "sort": "630-y",
+    "issued": "1933",
+    "mintage": 11000,
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 375,
+        "note": "Manhattan 630 section states 11,000 struck total in 5 orders beginning 6/13/33."
+      }
+    ]
   },
   {
     "id": "official-ny630z",
@@ -697,7 +885,17 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-z"
+    "sort": "630-z",
+    "issued": "1944-10-06",
+    "mintage": 5000,
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 375,
+        "note": "Manhattan 630 section states 5,000 struck 10/6/44."
+      }
+    ]
   },
   {
     "id": "official-ny630aa",
@@ -717,12 +915,20 @@
     "obv": "EAST SIDE OMNIBUS CORPORATION",
     "rev": "Issued in Exchange for Transfer",
     "desc": "Listed Manhattan transit token: East Side Omnibus Corporation.",
-    "notes": "First use listed as 1944.",
+    "notes": "First use listed as 1944. Comprehensive Omnibus Corp. and East Side Omnibus Corp. had the same address, 433 East 92nd Street, in 1945, and were both taken over by the City of New York in 1948.",
     "val": 7.5,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-aa"
+    "sort": "630-aa",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 375,
+        "note": "Manhattan 630 section gives Comprehensive Omnibus Corp. and East Side Omnibus Corp. shared address and 1948 city takeover."
+      }
+    ]
   },
   {
     "id": "official-ny630aba",
@@ -742,12 +948,22 @@
     "obv": "AVENUE B & EAST BROADWAY TRANS. CO. (BUS, type 1)",
     "rev": "Transfer Exchange",
     "desc": "Listed Manhattan transit token: Avenue B & East Broadway Trans. Co..",
-    "notes": "Counterstamped numerals. First use listed as 1934. Vars. 2.",
+    "notes": "Counterstamped numerals. First use listed as 1934. Vars. 2. Avenue B & East Broadway Transit Company operated 34 buses in 1945. Larger tokens AB and AC were used when the fare was 5¢.",
     "val": 3,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-ab-a"
+    "sort": "630-ab-a",
+    "issued": "1934",
+    "mintage": 5000,
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 375,
+        "note": "Manhattan 630 section states 5,000 struck total in 4 orders beginning 10/34 and explains Avenue B & East Broadway token usage."
+      }
+    ]
   },
   {
     "id": "official-ny630abb",
@@ -767,12 +983,22 @@
     "obv": "AVENUE B & EAST BROADWAY TRANS. CO. (BUS, type 1)",
     "rev": "Transfer Exchange",
     "desc": "Listed Manhattan transit token: Avenue B & East Broadway Trans. Co..",
-    "notes": "Not counterstamped. First use listed as 1934. Vars. 2.",
+    "notes": "Not counterstamped. First use listed as 1934. Vars. 2. Avenue B & East Broadway Transit Company operated 34 buses in 1945. Larger tokens AB and AC were used when the fare was 5¢.",
     "val": 3,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-ab-b"
+    "sort": "630-ab-b",
+    "issued": "1934",
+    "mintage": 5000,
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 375,
+        "note": "Manhattan 630 section states 5,000 struck total in 4 orders beginning 10/34 and explains Avenue B & East Broadway token usage."
+      }
+    ]
   },
   {
     "id": "official-ny630aca",
@@ -792,12 +1018,22 @@
     "obv": "AVENUE B & EAST BROADWAY TRANS. CO.",
     "rev": "Transfer Exchange",
     "desc": "Listed Manhattan transit token: Avenue B & East Broadway Trans. Co..",
-    "notes": "Counterstamped numerals. First use listed as 1947. Vars. 2.",
+    "notes": "Counterstamped numerals. First use listed as 1947. Vars. 2. Larger tokens AB and AC were used when the fare was 5¢.",
     "val": 3,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-ac-a"
+    "sort": "630-ac-a",
+    "issued": "1947-06",
+    "mintage": 2500,
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 375,
+        "note": "Manhattan 630 section states 2,500 struck 6/47 and explains Avenue B & East Broadway token usage."
+      }
+    ]
   },
   {
     "id": "official-ny630acb",
@@ -817,12 +1053,22 @@
     "obv": "AVENUE B & EAST BROADWAY TRANS. CO.",
     "rev": "Transfer Exchange",
     "desc": "Listed Manhattan transit token: Avenue B & East Broadway Trans. Co..",
-    "notes": "Not counterstamped. First use listed as 1947. Vars. 2.",
+    "notes": "Not counterstamped. First use listed as 1947. Vars. 2. Larger tokens AB and AC were used when the fare was 5¢.",
     "val": 3,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-ac-b"
+    "sort": "630-ac-b",
+    "issued": "1947-06",
+    "mintage": 2500,
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 375,
+        "note": "Manhattan 630 section states 2,500 struck 6/47 and explains Avenue B & East Broadway token usage."
+      }
+    ]
   },
   {
     "id": "official-ny630ad",
@@ -842,12 +1088,22 @@
     "obv": "AVENUE B & EAST BROADWAY TRANS. CO.",
     "rev": "Transfer Exchange",
     "desc": "Listed Manhattan transit token: Avenue B & East Broadway Trans. Co..",
-    "notes": "First use listed as 1951.",
+    "notes": "First use listed as 1951. Smaller tokens AD-AF were used when the fare was 10¢. The AD token was too similar to a dime, so the company had them Gm-plated or oxidized to distinguish them.",
     "val": 25,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-ad"
+    "sort": "630-ad",
+    "issued": "1951-02",
+    "mintage": 3000,
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 375,
+        "note": "Manhattan 630 section states 3,000 struck 2/51 and explains small-token usage and plating context."
+      }
+    ]
   },
   {
     "id": "official-ny630ae",
@@ -867,12 +1123,21 @@
     "obv": "AVENUE B & EAST BROADWAY TRANS. CO.",
     "rev": "Transfer Exchange",
     "desc": "Listed Manhattan transit token: Avenue B & East Broadway Trans. Co..",
-    "notes": "Gm-plated. First use listed as 1951.",
+    "notes": "Gm-plated. First use listed as 1951. Smaller tokens AD-AF were used when the fare was 10¢.",
     "val": 4.5,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-ae"
+    "sort": "630-ae",
+    "issued": "1951-1952",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 375,
+        "note": "Manhattan 630 section dates NY630AE to 1951-52 and explains small-token usage."
+      }
+    ]
   },
   {
     "id": "official-ny630af",
@@ -892,12 +1157,21 @@
     "obv": "AVENUE B & EAST BROADWAY TRANS. CO.",
     "rev": "Transfer Exchange",
     "desc": "Listed Manhattan transit token: Avenue B & East Broadway Trans. Co..",
-    "notes": "Red-enameled. First use listed as 1952.",
+    "notes": "Red-enameled. First use listed as 1952. Smaller tokens AD-AF were used when the fare was 10¢ and these were used until 1958.",
     "val": 2.5,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-af"
+    "sort": "630-af",
+    "issued": "1952-1958",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 375,
+        "note": "Manhattan 630 section dates NY630AF to 1952-58 and notes these were used until 1958."
+      }
+    ]
   },
   {
     "id": "official-ny630ag",
@@ -917,12 +1191,23 @@
     "obv": "125th STREET FERRY EF",
     "rev": "Good For One Passage EF",
     "desc": "Listed Manhattan ferry token: 125th Street Ferry EF.",
-    "notes": "First use listed as 1947. Vars. 2.",
+    "notes": "First use listed as 1947. Vars. 2. Used on the Edgewater Ferry, owned by Electric Ferries, which operated from 1943 until December 1950. It was strictly a convenience token with no discount.",
     "val": 0.35,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-ag"
+    "sort": "630-ag",
+    "issued": "1947-1948",
+    "mintage": 100000,
+    "usage": "Used on the Edgewater Ferry.",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 375,
+        "note": "Manhattan 630 section states 100,000 struck total in 3 orders from 7/25/47 to 6/11/48 and describes Edgewater Ferry usage."
+      }
+    ]
   },
   {
     "id": "official-ny630ah",
@@ -942,12 +1227,20 @@
     "obv": "H. & M. ONE FARE",
     "rev": "(same as obverse)",
     "desc": "Listed Manhattan transit token: H. & M. One Fare.",
-    "notes": "",
+    "notes": "Hudson & Manhattan Railroad Company operated 321 electric passenger cars over 9 route miles through a tunnel. H&M was taken over by Port Authority Trans-Hudson in September 1962.",
     "val": 0.35,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-ah"
+    "sort": "630-ah",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 375,
+        "note": "Manhattan 630 section gives Hudson & Manhattan Railroad operating details and 1962 PATH takeover."
+      }
+    ]
   },
   {
     "id": "official-ny630ai",
@@ -1067,12 +1360,22 @@
     "obv": "WESTCHESTER ST. TRANSP. CO., INC.",
     "rev": "Good For One Fare",
     "desc": "Listed Manhattan transit token: Westchester St. Transp. Co., Inc..",
-    "notes": "",
+    "notes": "Made sometime in the 1950s, probably by Scovill, but never placed in use. Probably made for use in Westchester County, though the company's office was in New York City.",
     "val": 1,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-am"
+    "sort": "630-am",
+    "issued": "1950s",
+    "maker": "Probably Scovill",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 375,
+        "note": "Manhattan 630 section notes NY630AM was probably made by Scovill in the 1950s and never placed in use."
+      }
+    ]
   },
   {
     "id": "official-ny630an",
@@ -1092,12 +1395,22 @@
     "obv": "NEW YORK CITY TRANSIT AUTHORITY NYC",
     "rev": "Good For One Fare NYC",
     "desc": "1953 small-format New York City Transit Authority fare token.",
-    "notes": "Vars. 4. First use listed as 1953.",
+    "notes": "Vars. 4. Two varieties: one by Scovill and one by Osborne. Varieties are no dots (Scovill) and dots (Osborne).",
     "val": 1,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-an"
+    "sort": "630-an",
+    "issued": "1953-07-25",
+    "maker": "Scovill; Osborne",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 375,
+        "note": "Manhattan 630 section states NY630AN has Scovill and Osborne varieties dated 7/25/53."
+      }
+    ]
   },
   {
     "id": "official-ny630ao",
@@ -1117,12 +1430,22 @@
     "obv": "NEW YORK CITY TRANSIT AUTHORITY NYC",
     "rev": "Good For One Fare NYC",
     "desc": "Listed Manhattan transit token: New York City Transit Authority NYC.",
-    "notes": "First use listed as 1953. Vars. 6.",
+    "notes": "First use listed as 1953. Vars. 6. Three legitimate varieties are listed: no dots by Scovill, dots with tail on G by Meyer & Wenthe, and dots with no tail on G by Osborne. Approximately 1,500,000 counterfeits were also made. These may be distinguished by the lined background not showing clearly inside the letters, particularly the O's. NY630AO is used as a children's admission token at the historical museum operated by the New York Subway system.",
     "val": 0.35,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-ao"
+    "sort": "630-ao",
+    "issued": "1953-07-25",
+    "mintage": 2100000,
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 375,
+        "note": "Manhattan 630 section states 2,100,000 legitimate NY630AO tokens made and approximately 1,500,000 counterfeits."
+      }
+    ]
   },
   {
     "id": "official-ny630ap",
@@ -1142,12 +1465,21 @@
     "obv": "NEW YORK CITY TRANSIT AUTHORITY NYC",
     "rev": "Good For One Fare NYC",
     "desc": "Listed Manhattan transit token: New York City Transit Authority NYC.",
-    "notes": "First use listed as 1966.",
+    "notes": "First use listed as 1966. Used in season for trips to Aqueduct Race Track. New York City Transit Authority was created 3/23/53, became effective 6/15/53, and became part of the Metropolitan Transportation Authority on 3/1/68.",
     "val": 5,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-ap"
+    "sort": "630-ap",
+    "usage": "Used in season for trips to Aqueduct Race Track.",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 375,
+        "note": "Manhattan 630 section notes Aqueduct Race Track usage and gives NYCTA/MTA organizational dates."
+      }
+    ]
   },
   {
     "id": "official-ny630aq",
@@ -1167,12 +1499,23 @@
     "obv": "P A T H NY = NJ (ARROW)",
     "rev": "Port Authority Trans-Hudson 1 Fare",
     "desc": "Listed Manhattan transit token: P A T H NY = NJ (Arrow).",
-    "notes": "First use listed as 1963. Vars. 2.",
+    "notes": "First use listed as 1963. Vars. 2. Atwood-Coffee reports 1,000,000 struck by Osborne.",
     "val": 1,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-aq"
+    "sort": "630-aq",
+    "issued": "1963-1970",
+    "mintage": 1000000,
+    "maker": "Osborne",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 376,
+        "note": "Manhattan 630 section states 1,000,000 struck by Osborne for NY630AQ."
+      }
+    ]
   },
   {
     "id": "official-ny630ar",
@@ -1197,7 +1540,18 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-ar"
+    "sort": "630-ar",
+    "issued": "1965",
+    "mintage": 300,
+    "usage": "A.V.A. Convention tour token.",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 376,
+        "note": "Manhattan 630 section states 300 struck for the A.V.A. Convention."
+      }
+    ]
   },
   {
     "id": "official-ny630as",
@@ -1217,12 +1571,22 @@
     "obv": "NEW YORK CITY TRANSIT AUTHORITY N(Y)C",
     "rev": "Good For One Fare N(Y)C",
     "desc": "Listed Manhattan transit token: New York City Transit Authority N(Y)C.",
-    "notes": "First use listed as 1970. Vars. 4.",
+    "notes": "First use listed as 1970. Vars. 4. Put in use when the fare went to 30¢.",
     "val": 0.75,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-as"
+    "sort": "630-as",
+    "issued": "1970-01-04",
+    "usage": "Used when the New York City transit fare increased to 30¢.",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 376,
+        "note": "Manhattan 630 section notes NY630AS was put in use when the fare went to 30¢."
+      }
+    ]
   },
   {
     "id": "official-ny630at",
@@ -1242,12 +1606,24 @@
     "obv": "NEW YORK CITY TRANSIT AUTHORITY NYC",
     "rev": "Good For One Fare NYC",
     "desc": "Listed Manhattan transit token: New York City Transit Authority NYC.",
-    "notes": "First use listed as 1980.",
+    "notes": "First use listed as 1980. Roger Williams Mint struck 35,000,000 in June 1975 in anticipation of a fare increase, but they were not used until June 1980. At that time, a new order for 15,000,000 was placed. The token went into use when the fare increased to 75¢.",
     "val": 0.75,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-at"
+    "sort": "630-at",
+    "issued": "1980-06",
+    "mintage": 50000000,
+    "maker": "Roger Williams Mint",
+    "usage": "Used when the New York City transit fare increased to 75¢.",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 376,
+        "note": "Manhattan 630 section states 35,000,000 struck in June 1975, plus a later 15,000,000 order, and explains 1980 fare-increase use."
+      }
+    ]
   },
   {
     "id": "official-ny630au",
@@ -1267,12 +1643,22 @@
     "obv": "M 50 TBTA",
     "rev": "(same as obverse)",
     "desc": "Listed Manhattan toll token: M 50 TBTA.",
-    "notes": "Reeded edge. First use listed as 1976. Plating: brass-plated.",
+    "notes": "Reeded edge. First use listed as 1976. Plating: brass-plated. For use on Henry Hudson, Marine Parkway, and Cross Bay Bridges. AU, AV, and AW are TBTA tokens bearing the M logo.",
     "val": 2.5,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-au"
+    "sort": "630-au",
+    "issued": "1976-06-29",
+    "usage": "For use on Henry Hudson, Marine Parkway, and Cross Bay Bridges.",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 376,
+        "note": "Manhattan 630 section gives 6/29/76 issue date and bridge usage for NY630AU."
+      }
+    ]
   },
   {
     "id": "official-ny630av",
@@ -1292,12 +1678,22 @@
     "obv": "M 75 TBTA",
     "rev": "(same as obverse)",
     "desc": "Listed Manhattan toll token: M 75 TBTA.",
-    "notes": "Reeded edge. First use listed as 1976. Plating: copper-plated.",
+    "notes": "Reeded edge. First use listed as 1976. Plating: copper-plated. For use on Triborough, Whitestone, and Throgs Neck Bridges, and the Queens Midtown and Brooklyn Battery Tunnels. AU, AV, and AW are TBTA tokens bearing the M logo.",
     "val": 3.5,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-av"
+    "sort": "630-av",
+    "issued": "1976-06-29",
+    "usage": "For use on Triborough, Whitestone, and Throgs Neck Bridges, and the Queens Midtown and Brooklyn Battery Tunnels.",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 376,
+        "note": "Manhattan 630 section gives 6/29/76 issue date and bridge/tunnel usage for NY630AV."
+      }
+    ]
   },
   {
     "id": "official-ny630aw",
@@ -1317,12 +1713,22 @@
     "obv": "M 100 TBTA",
     "rev": "(same as obverse)",
     "desc": "Listed Manhattan toll token: M 100 TBTA.",
-    "notes": "Reeded edge. First use listed as 1976. Plating: WM-plated.",
+    "notes": "Reeded edge. First use listed as 1976. Plating: WM-plated. For use on the Verrazano Narrows Bridge. AU, AV, and AW are TBTA tokens bearing the M logo.",
     "val": 3,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-aw"
+    "sort": "630-aw",
+    "issued": "1976-06-29",
+    "usage": "For use on the Verrazano Narrows Bridge.",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 376,
+        "note": "Manhattan 630 section gives 6/29/76 issue date and Verrazano Narrows Bridge usage for NY630AW."
+      }
+    ]
   },
   {
     "id": "official-ny630ax",
@@ -1342,12 +1748,24 @@
     "obv": "NEW YORK CITY TRANSIT AUTHORITY NYC",
     "rev": "Special Fare NYC",
     "desc": "Listed Manhattan transit token: New York City Transit Authority NYC.",
-    "notes": "500K.",
+    "notes": "Originally intended for use on “The Train to the Plane,” a special express train to John F. Kennedy Airport. Instead it was used only at the Aqueduct Race Track stop on the inbound express train to Manhattan, where it was purchased at that station and inserted in a turnstile.",
     "val": 10,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-ax"
+    "sort": "630-ax",
+    "issued": "1982",
+    "mintage": 500000,
+    "maker": "Roger Williams Mint",
+    "usage": "Used at the Aqueduct Race Track stop on the inbound express train to Manhattan.",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 376,
+        "note": "Manhattan 630 section states 500,000 struck by Roger Williams Mint and explains intended JFK express use versus actual Aqueduct usage."
+      }
+    ]
   },
   {
     "id": "official-ny630ay",
@@ -1367,12 +1785,22 @@
     "obv": "NYC SUBWAY 1904-1979 / PEOPLE MOVING PEOPLE (OLD SUBWAY KIOSK MARKED \"SUBWAY\" AND \"ENTRANCE\")",
     "rev": "Diamond Jubilee Seventy Fifth Anniversary / NYC Subway 1904-1979 (OLD SUBWAY CAR MARKED \"Interborough\" WITH \"3354\" AT BOTH ENDS)",
     "desc": "Listed Manhattan transit token: NYC Subway 1904-1979 / People Moving People.",
-    "notes": "Vars. 2.",
+    "notes": "Vars. 2. Atwood-Coffee reports 10,000,000 struck.",
     "val": 1,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-ay"
+    "sort": "630-ay",
+    "issued": "1979-10",
+    "mintage": 10000000,
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 376,
+        "note": "Manhattan 630 section states 10,000,000 struck for NY630AY."
+      }
+    ]
   },
   {
     "id": "official-ny630az",
@@ -1392,12 +1820,21 @@
     "obv": "M 75 TBTA",
     "rev": "(same as obverse)",
     "desc": "Listed Manhattan toll token: M 75 TBTA.",
-    "notes": "Reeded edge. First use listed as 1979. Vars. 2. Plating: copper-plated.",
+    "notes": "Reeded edge. First use listed as 1979. Vars. 2. Plating: copper-plated. Comes with both sharp and dull strikings; the varieties differ in the size of the M on the token.",
     "val": 2,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-az"
+    "sort": "630-az",
+    "issued": "1979-08",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 376,
+        "note": "Manhattan 630 section notes sharp and dull striking varieties and difference in size of the M."
+      }
+    ]
   },
   {
     "id": "official-ny630ba",
@@ -1417,12 +1854,22 @@
     "obv": "TRIBOROUGH BRIDGE AND TUNNEL AUTHORITY (CREST OF BRIDGE OVER TBTA)",
     "rev": "M 100",
     "desc": "Listed Manhattan toll token: Triborough Bridge and Tunnel Authority.",
-    "notes": "Reeded edge. First use listed as 1980.",
+    "notes": "Reeded edge. First use listed as 1980. Introduced for increased TBTA tolls that had formerly been 75¢. Good for Brooklyn Battery Tunnel, Queens Midtown Tunnel, Bronx Whitestone Bridge, and Triborough Bridge; also good for Verrazano-Narrows Bridge while its toll remained $1.00. Tokens were sold in rolls of 20 for $20, giving drivers one free passage at purchase.",
     "val": 2,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-ba"
+    "sort": "630-ba",
+    "issued": "1980-08",
+    "usage": "TBTA toll token for selected bridges and tunnels.",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 376,
+        "note": "Manhattan 630 section explains NY630BA toll increase context, facilities, roll sale terms, and 5% discount."
+      }
+    ]
   },
   {
     "id": "official-ny630bb",
@@ -1442,12 +1889,21 @@
     "obv": "NEW YORK STREET RAILWAY CO. 1900 (HORSECAR)",
     "rev": "Good For One Ride 5",
     "desc": "Listed Manhattan transit token: New York Street Railway Co. 1900.",
-    "notes": "Used for charter buses at a Roosevelt Island medical convention. First use listed as 1968.",
+    "notes": "Used only during a medical convention to pay fare on Steinway Transit buses operating to or from Roosevelt Island, then known as Welfare Island. Made to resemble an early token of 1900, apparently as a lark.",
     "val": 40,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-bb"
+    "sort": "630-bb",
+    "usage": "Used during a medical convention on Steinway Transit buses to or from Roosevelt Island.",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 376,
+        "note": "Manhattan 630 section explains NY630BB medical convention use and novelty purpose."
+      }
+    ]
   },
   {
     "id": "official-ny630bc",
@@ -1467,12 +1923,24 @@
     "obv": "TRIBOROUGH BRIDGE AND TUNNEL AUTHORITY (CREST OF BRIDGE OVER TBTA)",
     "rev": "Marine Henry Hudson Cross Bay M",
     "desc": "Listed Manhattan toll token: Triborough Bridge and Tunnel Authority.",
-    "notes": "Reeded edge. 5mm stainless steel stripe. First use listed as 1982. Plating: copper-plated.",
+    "notes": "Reeded edge. 5mm stainless steel stripe. First use listed as 1982. Plating: copper-plated. Sold in rolls of 19 for $12; purchaser could pass free at time of purchase. Issued to reflect a toll increase from 75¢ to 90¢ on various facilities.",
     "val": 1.75,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-bc"
+    "sort": "630-bc",
+    "issued": "1982-04-19",
+    "mintage": 1500000,
+    "maker": "Roger Williams Mint",
+    "usage": "TBTA toll token issued for a toll increase from 75¢ to 90¢.",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 376,
+        "note": "Manhattan 630 section states 1,500,000 struck by Roger Williams Mint and explains roll sale and toll increase context."
+      }
+    ]
   },
   {
     "id": "official-ny630bd",
@@ -1492,12 +1960,24 @@
     "obv": "TRIBOROUGH BRIDGE AND TUNNEL AUTHORITY (CREST OF BRIDGE OVER TBTA)",
     "rev": "Triborough Bronx Whitestone Verrazano Narrows / Brooklyn Battery Queens Midtown Throgs Neck / M",
     "desc": "Listed Manhattan toll token: Triborough Bridge and Tunnel Authority.",
-    "notes": "Reeded edge. 5mm stainless steel stripe. First use listed as 1982. Plating: copper-plated.",
+    "notes": "Reeded edge. 5mm stainless steel stripe. First use listed as 1982. Plating: copper-plated. Sold in rolls of 19 for $22; purchaser could pass free at time of purchase. Issued to reflect a toll increase from $1.00 to $1.25 on certain facilities.",
     "val": 3.5,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-bd"
+    "sort": "630-bd",
+    "issued": "1982-04-19",
+    "mintage": 7500000,
+    "maker": "Roger Williams Mint",
+    "usage": "TBTA toll token issued for a toll increase from $1.00 to $1.25.",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 376,
+        "note": "Manhattan 630 section states 7,500,000 struck by Roger Williams Mint and explains roll sale and toll increase context."
+      }
+    ]
   },
   {
     "id": "official-ny630be",
