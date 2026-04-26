@@ -17,7 +17,15 @@
     "obv": "NASSAU /R.R. CO.",
     "rev": "One /Fare",
     "desc": "Listed transit token.",
-    "notes": "",
+    "notes": "Atwood-Coffee notes that these tokens seem to have been impregnated with mica.",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 371,
+        "note": "Brooklyn 629 section notes mica-impregnated tokens."
+      }
+    ],
     "val": 600,
     "rel": [],
     "home": false,
@@ -42,9 +50,17 @@
     "obv": "BROOKLYN CROSS TOWN R.R. /PASS",
     "rev": "(same as obverse)",
     "desc": "Listed transit token.",
-    "notes": "All letters incuse.",
+    "notes": "All letters incuse. Brooklyn Crosstown Railroad was chartered in 1872 and leased its property in August 1889 to the Brooklyn City Railroad.",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 371,
+        "note": "Brooklyn 629 section gives Brooklyn Crosstown Railroad history and references NY997A."
+      }
+    ],
     "val": 300,
-    "rel": [],
+    "rel": ["NY997A"],
     "home": false,
     "pub": true,
     "sort": "629-b"
@@ -67,7 +83,17 @@
     "obv": "BROOKLYN BUS CORPORATION / TRANSFER TOKEN",
     "rev": "Issued in Exchange for Transfer",
     "desc": "Listed transit token.",
-    "notes": "Gm-plated. Vars. 2.",
+    "notes": "Gm-plated. Vars. 2. Brooklyn Bus Corporation was incorporated in 1925 and operated buses in Brooklyn and Queens, including service across the Manhattan Bridge into Manhattan. Transfer token use was instituted in 1929.",
+    "issued": "1938-05",
+    "mintage": 5000,
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 371,
+        "note": "Brooklyn 629 section states 5,000 struck 5/38 and provides Brooklyn Bus Corporation context."
+      }
+    ],
     "val": 10,
     "rel": [],
     "home": false,
@@ -92,7 +118,17 @@
     "obv": "BROOKLYN AND QUEENS TRANSIT CORPORATION / TRANSFER TOKEN",
     "rev": "Issued in Exchange for Transfer",
     "desc": "Listed transit token.",
-    "notes": "Vars. 4. (*1929)",
+    "notes": "Vars. 4. Brooklyn & Queens Transit Corporation was incorporated in 1929 as a consolidation of earlier companies.",
+    "issued": "1929-1939",
+    "mintage": 45000,
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 371,
+        "note": "Brooklyn 629 section states 45,000 struck in 10 orders from 12/29 to 1939."
+      }
+    ],
     "val": 3,
     "rel": [],
     "home": false,
@@ -117,7 +153,17 @@
     "obv": "BROOKLYN AND QUEENS TRANSIT CORPORATION / HALF FARE TOKEN",
     "rev": "Issued in Exchange for Three Cents",
     "desc": "Listed transit token.",
-    "notes": "",
+    "notes": "Brooklyn & Queens Transit Corp. became part of New York City Transit System in 1940.",
+    "issued": "1936-04",
+    "mintage": 5000,
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 371,
+        "note": "Brooklyn 629 section states 5,000 struck 4/36."
+      }
+    ],
     "val": 10,
     "rel": [],
     "home": false,
@@ -142,7 +188,17 @@
     "obv": "NEW YORK CITY TRANSIT SYSTEM B.M.T. DIV. / TRANSFER TOKEN",
     "rev": "Issued in Exchange for Transfer",
     "desc": "Listed transit token.",
-    "notes": "Vars. 5. (*1940)",
+    "notes": "Vars. 5. In 1940 the New York City Transit System was organized and took over the Brooklyn-Manhattan Transit Corp., which became a division of NYCTS, the B.M.T. Division.",
+    "issued": "1940-1947",
+    "mintage": 75000,
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 371,
+        "note": "Brooklyn 629 section states 75,000 struck total in 5 orders from 9/40 to 1947."
+      }
+    ],
     "val": 3.5,
     "rel": [],
     "home": false,
@@ -217,7 +273,17 @@
     "obv": "NEW YORK CITY TRANSIT SYSTEM BMT DIV. / HALF FARE TOKEN",
     "rev": "Issued in Exchange for Three Cents",
     "desc": "Listed transit token.",
-    "notes": "",
+    "notes": "In 1940 the New York City Transit System was organized and took over the Brooklyn-Manhattan Transit Corp., which became a division of NYCTS, the B.M.T. Division.",
+    "issued": "1941",
+    "mintage": 25000,
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 371,
+        "note": "Brooklyn 629 section states 25,000 struck total in 4 orders beginning 7/41."
+      }
+    ],
     "val": 4,
     "rel": [],
     "home": false,
@@ -292,7 +358,18 @@
     "obv": "R.T. CORP. ONE WAY FARE",
     "rev": "(same as obverse)",
     "desc": "Listed transit token.",
-    "notes": "Vars. 2. (*1949)",
+    "notes": "Vars. 2. This token became obsolete in early summer 1977. It was used on a boat operated by Rockaway Transit Corporation crossing Sheepshead Bay.",
+    "issued": "1949-1968",
+    "mintage": 11000,
+    "usage": "Good for the return portion of a round-trip fare on the Rockaway Transit Corporation boat crossing Sheepshead Bay.",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 371,
+        "note": "Brooklyn 629 section states 11,000 struck total in 4 orders from 6/14/49 to 6/10/68 and describes boat usage."
+      }
+    ],
     "val": 1,
     "rel": [],
     "home": false,
