@@ -95,14 +95,14 @@
           {% if token.issued %}
             <div class="facts-row">
               <dt>Issued</dt>
-              <dd>{{ token.issued }}</dd>
+              <dd>{{ token.issued | formatDateUS }}</dd>
             </div>
           {% endif %}
 
           {% if token.mintage %}
             <div class="facts-row">
               <dt>Mintage</dt>
-              <dd>{{ token.mintage }}</dd>
+              <dd>{{ token.mintage | formatNumber }}</dd>
             </div>
           {% endif %}
 
