@@ -7,7 +7,9 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [
+      "queens"
+    ],
     "title": "N.Y. & Q.C. Ry. Co. Lincoln C Andrews / NYQ",
     "borough": "Queens",
     "mat": "WM",
@@ -17,12 +19,22 @@
     "obv": "N.Y. & Q.C. RY. CO. LINCOLN C ANDREWS (fax) / NYQ",
     "rev": "Good For One Fare Queens NYQ",
     "desc": "Listed transit token.",
-    "notes": "",
+    "notes": "Lincoln C. Andrews was appointed receiver of this line on January 18, 1923. The following year, use of a 6¢ convenience token was instituted. New York & Queens County Railway was taken over by New York & Queens Transit in 1932.",
     "val": 12,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "631-a"
+    "sort": "631-a",
+    "issued": "1924-07-26",
+    "mintage": 100000,
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 377,
+        "note": "Queens 631 section states 100,000 struck 7/26/24 and gives receiver/company history."
+      }
+    ]
   },
   {
     "id": "official-ny631ba",
@@ -32,7 +44,9 @@
     "var": "a",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [
+      "queens"
+    ],
     "title": "Kings Coach Company",
     "borough": "Queens",
     "mat": "WM",
@@ -42,12 +56,20 @@
     "obv": "KINGS COACH COMPANY",
     "rev": "Issued In Exchange for Transfer",
     "desc": "Listed transit token.",
-    "notes": "Counterstamped numerals.",
+    "notes": "Counterstamped numerals. Atwood-Coffee reports 1,000 struck for NY631B overall on 2/8/35. Kings Coach Company was taken over by Triborough Coach Corporation.",
     "val": 12,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "631-b-a"
+    "sort": "631-b-a",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 377,
+        "note": "Queens 631 section states 1,000 struck 2/8/35 for NY631B overall and notes Kings Coach Company history."
+      }
+    ]
   },
   {
     "id": "official-ny631bb",
@@ -57,7 +79,9 @@
     "var": "b",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [
+      "queens"
+    ],
     "title": "Kings Coach Company",
     "borough": "Queens",
     "mat": "WM",
@@ -67,12 +91,20 @@
     "obv": "KINGS COACH COMPANY",
     "rev": "Issued In Exchange for Transfer",
     "desc": "Listed transit token.",
-    "notes": "Not counterstamped.",
+    "notes": "Not counterstamped. Atwood-Coffee reports 1,000 struck for NY631B overall on 2/8/35. Kings Coach Company was taken over by Triborough Coach Corporation.",
     "val": 15,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "631-b-b"
+    "sort": "631-b-b",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 377,
+        "note": "Queens 631 section states 1,000 struck 2/8/35 for NY631B overall and notes Kings Coach Company history."
+      }
+    ]
   },
   {
     "id": "official-ny631c",
@@ -82,7 +114,9 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [
+      "queens"
+    ],
     "title": "Jamaica Buses, Inc. Transfer Token",
     "borough": "Queens",
     "mat": "B",
@@ -92,12 +126,20 @@
     "obv": "JAMAICA BUSES, INC. TRANSFER TOKEN",
     "rev": "Issued In Exchange for Transfer",
     "desc": "Listed transit token.",
-    "notes": "",
+    "notes": "Jamaica Buses, Inc. was taken over by Green Bus Lines.",
     "val": 5,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "631-c"
+    "sort": "631-c",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 377,
+        "note": "Queens 631 section notes Jamaica Buses, Inc. was taken over by Green Bus Lines."
+      }
+    ]
   },
   {
     "id": "official-ny631d",
@@ -107,7 +149,9 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [
+      "queens"
+    ],
     "title": "Rauchwerger Bus Line / Flushing, L.I. N.Y. (BUS, type 1)",
     "borough": "Queens",
     "mat": "WM",
@@ -117,12 +161,22 @@
     "obv": "RAUCHWERGER BUS LINE / FLUSHING, L.I. N.Y. (BUS, type 1)",
     "rev": "Good For One Fare (bus)",
     "desc": "Listed transit token.",
-    "notes": "",
+    "notes": "Rauchwerger Bus Line was taken over by North Shore Bus Company on January 30.",
     "val": 3.5,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "631-d"
+    "sort": "631-d",
+    "issued": "1926",
+    "mintage": 4000,
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 377,
+        "note": "Queens 631 section states 4,000 struck total in 3 orders beginning 6/14/26 and gives Rauchwerger Bus Line history."
+      }
+    ]
   },
   {
     "id": "official-ny631e",
@@ -132,7 +186,9 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [
+      "queens"
+    ],
     "title": "North Shore Bus Co. Inc.",
     "borough": "Queens",
     "mat": "WM",
@@ -157,7 +213,9 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [
+      "queens"
+    ],
     "title": "North Shore Bus Co. Inc.",
     "borough": "Queens",
     "mat": "WM",
@@ -167,12 +225,22 @@
     "obv": "NORTH SHORE BUS CO. INC.",
     "rev": "Good For One Half Fare",
     "desc": "Listed transit token.",
-    "notes": "",
+    "notes": "North Shore Bus Company was taken over by the City of New York in 1947.",
     "val": 3.5,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "631-f"
+    "sort": "631-f",
+    "issued": "1930",
+    "mintage": 5000,
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 377,
+        "note": "Queens 631 section states 5,000 struck in 1930 and notes North Shore Bus Company was taken over by the City of New York in 1947."
+      }
+    ]
   },
   {
     "id": "official-ny631g",
@@ -182,7 +250,9 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [
+      "queens"
+    ],
     "title": "Perey Turnstiles For Better Fare Collection",
     "borough": "Queens",
     "mat": "WM",
@@ -192,12 +262,22 @@
     "obv": "PEREY TURNSTILES FOR BETTER / FARE COLLECTION",
     "rev": "Perey Turnstiles Tighten Up / Fare Collection",
     "desc": "Listed transit token.",
-    "notes": "Gm-plated.",
+    "notes": "Gm-plated. Used by Green Bus Lines. Became obsolete in 1950.",
     "val": 3.5,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "631-g"
+    "sort": "631-g",
+    "issued": "1935-1945",
+    "mintage": 3500,
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 377,
+        "note": "Queens 631 section states 3,500 struck total in 3 orders from 4/20/35 to 11/1/45 and notes Green Bus Lines usage."
+      }
+    ]
   },
   {
     "id": "official-ny631h",
@@ -207,7 +287,9 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [
+      "queens"
+    ],
     "title": "Perey Turnstiles For Better Fare Collection",
     "borough": "Queens",
     "mat": "B",
@@ -217,12 +299,23 @@
     "obv": "PEREY TURNSTILES FOR BETTER / FARE COLLECTION",
     "rev": "Perey Turnstiles Tighten Up / Fare Collection",
     "desc": "Listed transit token.",
-    "notes": "",
+    "notes": "Used by Green Bus Lines. Became obsolete in 1950.",
     "val": 5,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "631-h"
+    "sort": "631-h",
+    "issued": "1941-04-18",
+    "mintage": 1000,
+    "usage": "Used by Green Bus Lines.",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 377,
+        "note": "Queens 631 section states 1,000 struck 4/18/41 and notes Green Bus Lines usage."
+      }
+    ]
   },
   {
     "id": "official-ny631i",
@@ -232,7 +325,9 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [
+      "queens"
+    ],
     "title": "Triboro Coach Corp. No Value T",
     "borough": "Queens",
     "mat": "WM",
@@ -257,7 +352,9 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [
+      "queens"
+    ],
     "title": "Triboro Coach Corp. No Value T",
     "borough": "Queens",
     "mat": "WM",
@@ -272,7 +369,17 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "631-j"
+    "sort": "631-j",
+    "issued": "1936-1937",
+    "mintage": 4000,
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 377,
+        "note": "Queens 631 section states 2,000 struck 2/5/36 and 2,000 struck 11/13/37."
+      }
+    ]
   },
   {
     "id": "official-ny631k",
@@ -282,7 +389,9 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [
+      "queens"
+    ],
     "title": "Triboro Coach Corp. No Value T",
     "borough": "Queens",
     "mat": "B",
@@ -297,7 +406,17 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "631-k"
+    "sort": "631-k",
+    "issued": "1936-1937",
+    "mintage": 4000,
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 377,
+        "note": "Queens 631 section states 2,000 struck 12/5/36 and 2,000 struck 11/13/37."
+      }
+    ]
   },
   {
     "id": "official-ny631l",
@@ -307,7 +426,9 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [
+      "queens"
+    ],
     "title": "Triboro Coach Corp. No Value",
     "borough": "Queens",
     "mat": "B",
@@ -322,7 +443,17 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "631-l"
+    "sort": "631-l",
+    "issued": "1940-1947",
+    "mintage": 7000,
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 377,
+        "note": "Queens 631 section states 7,000 struck total in 4 orders from 7/3/40 to 2/47."
+      }
+    ]
   },
   {
     "id": "official-ny631m",
@@ -332,7 +463,9 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [
+      "queens"
+    ],
     "title": "Triboro Coach Corp. No Value S",
     "borough": "Queens",
     "mat": "WM",
@@ -342,12 +475,21 @@
     "obv": "TRIBORO COACH CORP. NO VALUE S",
     "rev": "In Exchange for School Ticket S",
     "desc": "Listed transit token.",
-    "notes": "Copper-plated.",
+    "notes": "Copper-plated. Copper plating was probably done by the bus company.",
     "val": 3,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "631-m"
+    "sort": "631-m",
+    "issued": "1940",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 377,
+        "note": "Queens 631 section notes copper plating was probably done by the bus company."
+      }
+    ]
   },
   {
     "id": "official-ny631n",
@@ -357,7 +499,9 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [
+      "queens"
+    ],
     "title": "Triboro Coach Corp. No Value S",
     "borough": "Queens",
     "mat": "WM",
@@ -367,12 +511,22 @@
     "obv": "TRIBORO COACH CORP. NO VALUE S",
     "rev": "In Exchange for School Ticket S",
     "desc": "Listed transit token.",
-    "notes": "Gm-plated.",
+    "notes": "Gm-plated. In 1947, Triborough Coach Corporation expected the City of New York to take over its system; when that did not happen, Triborough merged with Green Bus Lines.",
     "val": 7.5,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "631-n"
+    "sort": "631-n",
+    "issued": "1940",
+    "mintage": 6000,
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 377,
+        "note": "Queens 631 section states 6,000 struck total in 4 orders beginning 7/30/40 and gives Triborough/Green Bus Lines context."
+      }
+    ]
   },
   {
     "id": "official-ny631o",
@@ -382,7 +536,9 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [
+      "queens"
+    ],
     "title": "Queensboro Bridge Railway Co., Inc. (Streetcar)",
     "borough": "Queens",
     "mat": "S",
@@ -397,7 +553,17 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "631-o"
+    "sort": "631-o",
+    "issued": "1944-1970",
+    "mintage": 20000,
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 377,
+        "note": "Queens 631 section states 20,000 struck 7/28/44."
+      }
+    ]
   },
   {
     "id": "official-ny631p",
@@ -407,7 +573,9 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [
+      "queens"
+    ],
     "title": "Queensboro Bridge Railway Co., Inc. (Streetcar)",
     "borough": "Queens",
     "mat": "B",
@@ -422,7 +590,17 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "631-p"
+    "sort": "631-p",
+    "issued": "1945-1970",
+    "mintage": 40000,
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 377,
+        "note": "Queens 631 section states 40,000 struck total in 5 orders beginning 3/12/45."
+      }
+    ]
   },
   {
     "id": "official-ny631q",
@@ -432,7 +610,9 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [
+      "queens"
+    ],
     "title": "Queensboro Bridge Railway Co., Inc. (Streetcar)",
     "borough": "Queens",
     "mat": "WM",
@@ -442,12 +622,22 @@
     "obv": "QUEENSBORO BRIDGE RAILWAY CO., INC. / (STREETCAR)",
     "rev": "Good For One Fare (streetcar)",
     "desc": "Listed transit token.",
-    "notes": "Vars. 5.",
+    "notes": "Vars. 5. Streetcar service over the Queensboro Bridge began in 1909. Until 1939 it was known as the Steinway Railway, then renamed Queensboro Bridge Railway. Streetcar service ended April 7, 1957, but NY631W tokens continued to be used on buses operated by Steinway Transit Corporation.",
     "val": 1,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "631-q"
+    "sort": "631-q",
+    "issued": "1947-1970",
+    "mintage": 330000,
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 377,
+        "note": "Queens 631 section states 330,000 struck total in 11 orders beginning 4/9/47 and gives Queensboro Bridge Railway history."
+      }
+    ]
   },
   {
     "id": "official-ny631r",
@@ -457,7 +647,9 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [
+      "queens"
+    ],
     "title": "Green Bus Lines, Inc. GBL INC.",
     "borough": "Queens",
     "mat": "Bz",
@@ -467,12 +659,22 @@
     "obv": "GREEN BUS LINES, INC. GBL INC.",
     "rev": "Good For One 5¢ Ride GBL Inc.",
     "desc": "Listed transit token.",
-    "notes": "",
+    "notes": "There is some question as to whether these tokens were ever placed in use. They were extremely rare for years, but later several hundred became available. Green Bus Lines was incorporated in April 1925.",
     "val": 3.5,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "631-r"
+    "sort": "631-r",
+    "issued": "1937-06-04",
+    "mintage": 10000,
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 377,
+        "note": "Queens 631 section states 10,000 struck 6/4/37 and discusses uncertain usage and later availability."
+      }
+    ]
   },
   {
     "id": "official-ny631s",
@@ -482,7 +684,9 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [
+      "queens"
+    ],
     "title": "One Fare The Long Island Rail Road / The Route of the Dashing Commuter",
     "borough": "Queens",
     "mat": "Bz",
@@ -492,12 +696,23 @@
     "obv": "ONE FARE THE LONG ISLAND RAIL ROAD / THE ROUTE OF THE DASHING COMMUTER / (MAN RUNNING TO CATCH TRAIN)",
     "rev": "©1961 New York World's Fair / 1964-1965 Corporation ® (unisphere)",
     "desc": "Listed transit token.",
-    "notes": "Vars. 2.",
+    "notes": "Vars. 2. Used on special trains to the New York World's Fair and deposited in turnstiles accepting either 50¢ in coins or one token. The Long Island Rail Road also sold special kits containing one of these tokens; after the fair, 200,000 were melted down.",
     "val": 2.5,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "631-s"
+    "sort": "631-s",
+    "issued": "1963-1964",
+    "mintage": 300000,
+    "usage": "Used on special trains to the New York World's Fair.",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 377,
+        "note": "Queens 631 section states 200,000 struck 12/6/63 and 100,000 struck 7/64 and describes World's Fair usage."
+      }
+    ]
   },
   {
     "id": "official-ny631t",
@@ -507,7 +722,9 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [
+      "queens"
+    ],
     "title": "Queensboro Bridge Ry. Co., Inc. (BUS)",
     "borough": "Queens",
     "mat": "B",
@@ -517,12 +734,22 @@
     "obv": "QUEENSBORO BRIDGE RY. CO., INC. (BUS)",
     "rev": "Good For One Fare (bus)(2 slots)",
     "desc": "Listed transit token.",
-    "notes": "",
+    "notes": "These were issued so bridge railway tokens would differ in size from New York subway tokens. Sold to employees at 15¢ less than subway tokens. NY631T replaced NY631Q.",
     "val": 1,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "631-t"
+    "sort": "631-t",
+    "issued": "1970-1971",
+    "mintage": 150000,
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 377,
+        "note": "Queens 631 section states 150,000 struck total in 4 orders from 3/5/70 to 1/13/71 and explains the size/use change."
+      }
+    ]
   },
   {
     "id": "official-ny631u",
@@ -532,7 +759,9 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [
+      "queens"
+    ],
     "title": "Jamaica Buses, Inc.",
     "borough": "Queens",
     "mat": "B",
@@ -547,7 +776,17 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "631-u"
+    "sort": "631-u",
+    "issued": "1972-05-25",
+    "usage": "Used in a turnstile for express bus service to or from either Aqueduct or Belmont Race Track.",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 377,
+        "note": "Queens 631 section notes 5/25/72 usage for express bus service to or from Aqueduct or Belmont Race Track."
+      }
+    ]
   },
   {
     "id": "official-ny631v",
@@ -557,7 +796,9 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [
+      "queens"
+    ],
     "title": "Jamaica Buses Inc. N.Y.C. (Bus, type 2)",
     "borough": "Queens",
     "mat": "B",
@@ -572,7 +813,16 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "631-v"
+    "sort": "631-v",
+    "issued": "1976-06-30",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 377,
+        "note": "Queens 631 section lists NY631V with date 6/30/76."
+      }
+    ]
   },
   {
     "id": "official-ny631w",
@@ -582,7 +832,9 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [
+      "queens"
+    ],
     "title": "Steinway Transit Corp.",
     "borough": "Queens",
     "mat": "WM",
@@ -592,12 +844,21 @@
     "obv": "STEINWAY TRANSIT CORP.",
     "rev": "Good For One Fare",
     "desc": "Listed transit token.",
-    "notes": "Vars. 2.",
+    "notes": "Vars. 2. Issued to coincide with the fare increase on New York subways. Continued in use with the necessity of paying 15¢ cash in addition to the token. Replaced NY631T as a full 50¢ fare. Used only on Route Q-102 of Steinway Transit Corp., serving Roosevelt Island.",
     "val": 1.5,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "631-w"
+    "sort": "631-w",
+    "issued": "1976-03-29",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 377,
+        "note": "Queens 631 section notes 3/29/76 issue, fare-increase context, and Route Q-102 usage."
+      }
+    ]
   },
   {
     "id": "official-ny631x",
@@ -607,7 +868,9 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [
+      "queens"
+    ],
     "title": "Airline· Connection Bus",
     "borough": "Queens",
     "mat": "B",
@@ -617,12 +880,22 @@
     "obv": "AIRLINE· CONNECTION BUS",
     "rev": "(blank) (thick & thin)(2K)",
     "desc": "Listed transit token.",
-    "notes": "",
+    "notes": "Made for the Port Authority of New York and shipped to Airway Equipment Rentals Co. Intended for use at Kennedy Airport on a bus connecting various airport terminals, but tickets were used instead of tokens.",
     "val": 2,
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "631-x"
+    "sort": "631-x",
+    "issued": "1976",
+    "mintage": 2000,
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 377,
+        "note": "Queens 631 section states 2,000 struck in 1976 but never placed in use."
+      }
+    ]
   },
   {
     "id": "official-ny631y",
@@ -632,7 +905,9 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [
+      "queens"
+    ],
     "title": "Triborough Bridge and Tunnel Authority",
     "borough": "Queens",
     "mat": "S",
