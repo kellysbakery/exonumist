@@ -48,30 +48,40 @@ permalink: /browse/index.html
   </div>
 
   <div id="browse-grid" class="grid-3 browse-grid">
-    {% for token in browseView.tokens %}
-      <article
-        class="card browse-card"
-        data-borough="{{ token.borough }}"
-        data-types="{{ token.browseTypes | join(' ') }}">
+  {% for token in browseView.tokens %}
+    <article
+      class="card browse-card"
+      data-borough="{{ token.borough }}"
+      data-types="{{ token.browseTypes | join(' ') }}">
 
-        <a class="card-link browse-card-link" href="{{ token.url or '/' }}">
-          <div class="browse-card-media">
-            {% if token | hasTokenImage("o") %}
-              <img src="{{ token | tokenImagePath('o') }}" alt="{{ token.displayId }}">
-            {% endif %}
+      <a class="card-link browse-card-link" href="{{ token.url or '/' }}">
+        <div class="browse-card-media">
+          {% if token | hasTokenImage("o") %}
+            <img src="{{ token | tokenImagePath('o') }}" alt="{{ token.displayId }}">
+          {% else %}
+            <div class="browse-card-placeholder">No Image</div>
+          {% endif %}
+        </div>
+
+        <div class="browse-card-body">
+          <div class="browse-card-topline">
+            <strong class="browse-card-id">{{ token.displayId }}</strong>
+
+            <span class="browse-badge browse-badge-{{ token.status }}">
+              {{ token.status | capitalize }}
+            </span>
           </div>
 
-          <div class="browse-card-body">
-            <strong>{{ token.displayId }}</strong>
-            <p>{{ token.title }}</p>
-            <p class="meta">
-              {{ token.borough }} · {{ lookups.type[token.type] }} · {{ token.status | capitalize }}
-            </p>
-          </div>
-        </a>
-      </article>
-    {% endfor %}
-  </div>
+          <p class="browse-card-title">{{ token.title }}</p>
+
+          <p class="meta browse-card-meta">
+            {{ token.borough }} · {{ lookups.type[token.type] }}
+          </p>
+        </div>
+      </a>
+    </article>
+  {% endfor %}
+</div>
 </section>
 
 <style>
@@ -118,6 +128,11 @@ permalink: /browse/index.html
     padding: 0.45rem 0.8rem;
     cursor: pointer;
     font: inherit;
+    transition: 0.15s ease;
+  }
+
+  .browse-chip:hover {
+    transform: translateY(-1px);
   }
 
   .browse-chip.is-active {
@@ -139,10 +154,21 @@ permalink: /browse/index.html
     flex-wrap: wrap;
   }
 
+  .browse-card {
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .browse-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.08);
+  }
+
   .browse-card-link {
     display: flex;
     flex-direction: column;
     min-height: 100%;
+    text-decoration: none;
+    color: inherit;
   }
 
   .browse-card-media {
@@ -151,6 +177,8 @@ permalink: /browse/index.html
     align-items: center;
     justify-content: center;
     margin-bottom: 0.75rem;
+    border-radius: 0.75rem;
+    background: rgba(0,0,0,0.02);
   }
 
   .browse-card-media img {
@@ -159,8 +187,55 @@ permalink: /browse/index.html
     object-fit: contain;
   }
 
+  .browse-card-placeholder {
+    font-size: 0.9rem;
+    opacity: 0.55;
+  }
+
   .browse-card-body {
     margin-top: auto;
+  }
+
+  .browse-card-topline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .browse-card-id {
+    font-size: 1.05rem;
+  }
+
+  .browse-card-title {
+    margin: 0 0 0.45rem 0;
+    line-height: 1.35;
+  }
+
+  .browse-card-meta {
+    font-size: 0.92rem;
+    opacity: 0.8;
+  }
+
+  .browse-badge {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.45rem;
+    border-radius: 999px;
+    white-space: nowrap;
+    border: 1px solid transparent;
+  }
+
+  .browse-badge-listed {
+    background: #eef7ee;
+    color: #246b2b;
+    border-color: #cfe6d1;
+  }
+
+  .browse-badge-unlisted {
+    background: #f8f1e5;
+    color: #8a5a00;
+    border-color: #ead7aa;
   }
 </style>
 
@@ -240,7 +315,7 @@ permalink: /browse/index.html
 
   function readHash() {
     if (!location.hash || location.hash.length < 2) {
-      return false;
+      return;
     }
 
     const params = new URLSearchParams(location.hash.slice(1));
@@ -259,8 +334,6 @@ permalink: /browse/index.html
         );
       });
     });
-
-    return true;
   }
 
   function applyFilters(updateUrl = true) {
