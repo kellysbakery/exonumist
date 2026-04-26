@@ -17,7 +17,16 @@
     "obv": "RICHMOND L. & R.R. CO. STATEN ISLAND, N.Y.",
     "rev": "Good For One Fare J.J. Kuhn Receiver",
     "desc": "Listed transit token.",
-    "notes": "",
+    "notes": "J.J. Kuhn served as receiver from April 27, 1920 until August 1, 1923. Tokens were placed in use in 1921 when the fare increased to 8¢ cash or two tokens for 15¢. Streetcar service was discontinued January 24, 1934, after which the system continued as an all-bus operation.",
+    "issued": "1921",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 378,
+        "note": "Staten Island 632 section gives receiver dates, 1921 token-use context, and later service history."
+      }
+    ],
     "val": 12,
     "rel": [],
     "home": false,
@@ -42,7 +51,18 @@
     "obv": "DEPARTMENT OF TRANSPORTATION / GOOD FOR ONE FARE NYC",
     "rev": "Staten Island Ferry New York City (ferry) GD",
     "desc": "Listed transit token.",
-    "notes": "900K in 1982.",
+    "notes": "Staten Island Ferry tokens were struck for use with a proposed 50¢ fare. The 50¢ fare was postponed in June 1982, and these tokens were stored in vaults until a fare increase.",
+    "issued": "1982",
+    "mintage": 900000,
+    "usage": "Intended for Staten Island Ferry fare use.",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 378,
+        "note": "Staten Island 632 section states the ferry had 1,000,000 total tokens struck for a new 50¢ fare; existing notes identify this brass issue as 900,000 struck in 1982."
+      }
+    ],
     "val": 3.5,
     "rel": [],
     "home": false,
@@ -67,7 +87,18 @@
     "obv": "DEPARTMENT OF TRANSPORTATION / GOOD FOR ONE FARE NYC",
     "rev": "Staten Island Ferry New York City (ferry) GD",
     "desc": "Listed transit token.",
-    "notes": "100K in 1982, but token has not been used.",
+    "notes": "White metal issue struck in 1982 but not used. Staten Island Ferry tokens were struck for use with a proposed 50¢ fare, which was postponed in June 1982.",
+    "issued": "1982",
+    "mintage": 100000,
+    "usage": "Intended for Staten Island Ferry fare use, but not placed in use.",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 378,
+        "note": "Staten Island 632 section states the ferry had 1,000,000 total tokens struck for a new 50¢ fare; existing notes identify this white metal issue as 100,000 struck in 1982 and unused."
+      }
+    ],
     "val": 3.5,
     "rel": [],
     "home": false,
