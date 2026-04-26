@@ -183,7 +183,9 @@ permalink: /browse/index.html
   }
 
   function allInGroupActive(filterName) {
-    return groupChips(filterName).every(chip => chip.classList.contains("is-active"));
+    return groupChips(filterName).every(chip =>
+      chip.classList.contains("is-active")
+    );
   }
 
   function selections() {
@@ -215,7 +217,8 @@ permalink: /browse/index.html
         type: filterName === "type" ? [value] : selected.type
       };
 
-      countEl.textContent = cards.filter(card => cardMatches(card, test)).length;
+      countEl.textContent =
+        cards.filter(card => cardMatches(card, test)).length;
     });
   }
 
@@ -225,18 +228,60 @@ permalink: /browse/index.html
     }
   }
 
-  function applyFilters() {
+  function writeHash() {
+    const selected = selections();
+    const params = new URLSearchParams();
+
+    params.set("borough", selected.borough.join(","));
+    params.set("type", selected.type.join(","));
+
+    history.replaceState(null, "", "#" + params.toString());
+  }
+
+  function readHash() {
+    if (!location.hash || location.hash.length < 2) {
+      return false;
+    }
+
+    const params = new URLSearchParams(location.hash.slice(1));
+
+    ["borough", "type"].forEach(filterName => {
+      const values = (params.get(filterName) || "")
+        .split(",")
+        .filter(Boolean);
+
+      if (!values.length) return;
+
+      groupChips(filterName).forEach(chip => {
+        chip.classList.toggle(
+          "is-active",
+          values.includes(chip.dataset.value)
+        );
+      });
+    });
+
+    return true;
+  }
+
+  function applyFilters(updateUrl = true) {
     const selected = selections();
     let visible = 0;
 
     cards.forEach(card => {
       const match = cardMatches(card, selected);
       card.style.display = match ? "" : "none";
+
       if (match) visible++;
     });
 
-    count.textContent = visible + " of " + cards.length + " token(s) shown";
+    count.textContent =
+      visible + " of " + cards.length + " token(s) shown";
+
     updateChipCounts(selected);
+
+    if (updateUrl) {
+      writeHash();
+    }
   }
 
   chips.forEach(chip => {
@@ -244,7 +289,9 @@ permalink: /browse/index.html
       const filterName = chip.dataset.filter;
 
       if (allInGroupActive(filterName)) {
-        groupChips(filterName).forEach(other => other.classList.remove("is-active"));
+        groupChips(filterName).forEach(other =>
+          other.classList.remove("is-active")
+        );
         chip.classList.add("is-active");
       } else {
         chip.classList.toggle("is-active");
@@ -257,7 +304,10 @@ permalink: /browse/index.html
 
   groupActions.forEach(button => {
     button.addEventListener("click", function () {
-      groupChips(button.dataset.filter).forEach(chip => chip.classList.add("is-active"));
+      groupChips(button.dataset.filter).forEach(chip =>
+        chip.classList.add("is-active")
+      );
+
       applyFilters();
     });
   });
@@ -267,6 +317,7 @@ permalink: /browse/index.html
     applyFilters();
   });
 
-  applyFilters();
+  readHash();
+  applyFilters(false);
 })();
 </script>
