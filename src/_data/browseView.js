@@ -27,8 +27,23 @@ function buildBrowseTypes(token) {
   return [...types];
 }
 
+function buildBrowseUrl(token) {
+  if (token.status === "listed") {
+    return `/official/${String(token.displayId).toLowerCase()}/`;
+  }
+
+  const primaryGroup = (token.groups || [])[0];
+
+  if (primaryGroup) {
+    return `/groups/${primaryGroup}/${String(token.displayId).toLowerCase()}/`;
+  }
+
+  return "/";
+}
+
 const tokens = allTokens.map((token) => ({
   ...token,
+  url: buildBrowseUrl(token),
   browseTypes: buildBrowseTypes(token)
 }));
 
