@@ -11,12 +11,44 @@ module.exports = function (eleventyConfig) {
     return table && code ? table[code] || code : "";
   });
 
-  // Format numeric values as money with 2 decimals
-  eleventyConfig.addFilter("money", (value) => {
-    const num = Number(value);
-    if (Number.isNaN(num)) return value;
-    return num.toFixed(2);
-  });
+// Format numeric values as money with 2 decimals
+eleventyConfig.addFilter("money", (value) => {
+  const num = Number(value);
+  if (Number.isNaN(num)) return value;
+  return num.toFixed(2);
+});
+
+// Format whole numbers with commas
+eleventyConfig.addFilter("formatNumber", (value) => {
+  if (value === null || value === undefined || value === "") return "";
+
+  const num = Number(value);
+  if (Number.isNaN(num)) return value;
+
+  return num.toLocaleString("en-US");
+});
+
+// Format token issue dates for display
+eleventyConfig.addFilter("formatDateUS", (value) => {
+  if (!value) return "";
+
+  const text = String(value);
+
+  const fullDate = /^(\d{4})-(\d{2})-(\d{2})$/;
+  const yearMonth = /^(\d{4})-(\d{2})$/;
+
+  if (fullDate.test(text)) {
+    const [, year, month, day] = text.match(fullDate);
+    return `${month}/${day}/${year}`;
+  }
+
+  if (yearMonth.test(text)) {
+    const [, year, month] = text.match(yearMonth);
+    return `${month}/${year}`;
+  }
+
+  return text;
+});
 
   // Resolve nested URLs from site.json refs like catalog.infoUrl
   eleventyConfig.addFilter("resolveUrlRef", (urlRef, site) => {
