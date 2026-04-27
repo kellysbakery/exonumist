@@ -59,39 +59,41 @@ title: Keith's NYC Transit Token Collection
 </section>
 
 {% for siteSection in siteSections %}
-  <section class="section">
-    <h2>{{ siteSection.title }}</h2>
+  {% if siteSection.pub != false %}
+    <section class="section">
+      <h2>{{ siteSection.title }}</h2>
 
-    {% if siteSection.intro %}
-      <p class="section-intro">{{ siteSection.intro }}</p>
-    {% endif %}
+      {% if siteSection.intro %}
+        <p class="section-intro">{{ siteSection.intro }}</p>
+      {% endif %}
 
-    <div class="home-section-grid">
-      {% for group in groups | sort(attribute="order") %}
-        {% if group.section == siteSection.key %}
-          <a class="card-link" href="{{ group.url }}">
-            <article class="card home-section-card">
-              <div class="home-section-card-layout">
-                <div class="home-section-card-body">
-                  <strong class="home-section-card-title">{{ group.title }}</strong>
-                  <p class="home-section-card-desc">{{ group.description }}</p>
-                </div>
-
-                {% if group.cardImage %}
-                  <div class="home-section-card-media">
-                    <img
-                      class="home-section-card-image"
-                      src="{{ group.cardImage }}"
-                      alt="{{ group.title }}" />
+      <div class="home-section-grid">
+        {% for group in groups | sort(attribute="order") %}
+          {% if group.section == siteSection.key %}
+            <a class="card-link" href="{{ group.url }}">
+              <article class="card home-section-card">
+                <div class="home-section-card-layout">
+                  <div class="home-section-card-body">
+                    <strong class="home-section-card-title">{{ group.title }}</strong>
+                    <p class="home-section-card-desc">{{ group.description }}</p>
                   </div>
-                {% endif %}
-              </div>
-            </article>
-          </a>
-        {% endif %}
-      {% endfor %}
-    </div>
-  </section>
+
+                  {% if group.cardImage %}
+                    <div class="home-section-card-media">
+                      <img
+                        class="home-section-card-image"
+                        src="{{ group.cardImage }}"
+                        alt="{{ group.title }}" />
+                    </div>
+                  {% endif %}
+                </div>
+              </article>
+            </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
 {% endfor %}
 
 <section class="section">
