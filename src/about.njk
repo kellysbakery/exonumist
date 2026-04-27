@@ -3,7 +3,34 @@ layout: base.njk
 title: About
 permalink: /about/index.html
 ---
+
 <section class="section">
   <h1>About This Site</h1>
-  <p>Exonumist is intended as a collector-focused reference site built around cataloged New York City tokens while also documenting unlisted material, patterns, oddities, and related issues that deserve long-term visibility.</p>
+
+  <p>
+    Exonumist is intended as a collector-focused reference site built around cataloged New York City
+    tokens while also documenting unlisted material, patterns, oddities, and related issues that
+    deserve long-term visibility.
+  </p>
+</section>
+
+<section class="section">
+  <h2>Resources</h2>
+
+  <p class="section-intro">
+    References and organizations useful for transportation token research and catalog information.
+  </p>
+
+  <div class="grid-3">
+    {% for resource in resources | sort(attribute="order") %}
+      {% if resource.pub %}
+        <a class="card-link" href="{{ resource.urlRef | resolveUrlRef(site) }}">
+          <article class="resource-card">
+            <strong>{{ resource.title }}</strong>
+            <p>{{ resource.text }}</p>
+          </article>
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
 </section>
