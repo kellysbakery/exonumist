@@ -215,6 +215,17 @@
           const heading = notesSection.querySelector("h2");
           const headingHeight = heading ? heading.offsetHeight + 14 : 48;
 
+          const isMobile = window.matchMedia("(max-width: 700px)").matches;
+
+          if (isMobile) {
+            notesFrame.classList.add("is-expanded");
+            notesFrame.classList.remove("is-collapsed");
+            notesMore.hidden = true;
+            notesFrame.style.height = "auto";
+            notesSection.style.minHeight = "";
+            return;
+          }
+
           const quickFactsHeight = quickFactsSection.offsetHeight;
           if (!quickFactsHeight) return;
 
