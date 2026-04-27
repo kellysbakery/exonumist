@@ -4,16 +4,16 @@
     "unlisted": "Not currently listed in Atwood-Coffee Catalogue"
   },
   "type": {
-    "club": "Club Tour Token",
-    "counterfeit": "Counterfeit Token",
-    "error": "Error / Oddity",
-    "fantasy": "Fantasy Token",
+    "club": "Club Tour",
+    "counterfeit": "Counterfeit",
+    "error": "Errors / Oddities",
+    "fantasy": "Fantasy",
     "pattern": "Pattern",
-    "presentation": "Presentation Piece",
-    "timetable": "Timetable Token",
-    "transit": "Transit Token",
+    "presentation": "Presentation",
+    "timetable": "Timetable",
+    "transit": "Transit",
     "transportation-related": "Transportation Related",
-    "zonecheck": "Zone Check Token"
+    "zonecheck": "Zone Check"
   },
   "materials": {
     "A": "Aluminum",
