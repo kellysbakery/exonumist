@@ -5,10 +5,39 @@ const GROUP_BROWSE_TYPES = {
   counterfeit: "counterfeit"
 };
 
+const TYPE_ORDER = [
+  "transit",
+  "error",
+  "pattern",
+  "timetable",
+  "counterfeit",
+  "fantasy",
+  "presentation",
+  "club",
+  "zonecheck",
+  "transportation-related"
+];
+
 function uniqueSorted(values) {
   return [...new Set(values.filter(Boolean))].sort((a, b) =>
     a.localeCompare(b)
   );
+}
+
+function uniqueTypeSorted(values) {
+  return [...new Set(values.filter(Boolean))].sort((a, b) => {
+    const aIndex = TYPE_ORDER.indexOf(a);
+    const bIndex = TYPE_ORDER.indexOf(b);
+
+    if (aIndex !== -1 && bIndex !== -1) {
+      return aIndex - bIndex;
+    }
+
+    if (aIndex !== -1) return -1;
+    if (bIndex !== -1) return 1;
+
+    return a.localeCompare(b);
+  });
 }
 
 function buildBrowseTypes(token) {
@@ -51,6 +80,6 @@ module.exports = {
   tokens,
   filters: {
     boroughs: uniqueSorted(tokens.map((t) => t.borough)),
-    types: uniqueSorted(tokens.flatMap((t) => t.browseTypes))
+    types: uniqueTypeSorted(tokens.flatMap((t) => t.browseTypes))
   }
 };
