@@ -184,6 +184,7 @@ h2 {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+  align-items: center;
   margin-top: 14px;
 }
 
@@ -1065,4 +1066,23 @@ h2 {
   .hero-feature-card {
     max-width: none;
   }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    align-items: stretch;
+  }
+
+  .hero-actions .btn {
+    text-align: center;
+    padding: 9px 12px;
+    font-size: 0.95rem;
+  }
+
+  .hero-actions .btn.primary {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+
 }
