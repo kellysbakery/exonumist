@@ -60,17 +60,27 @@ title: Keith's NYC Transit Token Collection
 
 {% for siteSection in siteSections %}
   {% if siteSection.pub != false %}
-    <section class="section">
+    <section
+      class="section"
+      {% if siteSection.previewLimit %}
+        data-preview-section
+      {% endif %}>
       <h2>{{ siteSection.title }}</h2>
 
       {% if siteSection.intro %}
         <p class="section-intro">{{ siteSection.intro }}</p>
       {% endif %}
 
+      {% set shown = 0 %}
+
       <div class="home-section-grid">
         {% for group in groups | sort(attribute="order") %}
           {% if group.section == siteSection.key %}
-            <a class="card-link" href="{{ group.url }}">
+            {% set shown = shown + 1 %}
+
+            <a
+              class="card-link{% if siteSection.previewLimit and shown > siteSection.previewLimit %} is-preview-hidden{% endif %}"
+              href="{{ group.url }}">
               <article class="card home-section-card">
                 <div class="home-section-card-layout">
                   <div class="home-section-card-body">
@@ -92,6 +102,41 @@ title: Keith's NYC Transit Token Collection
           {% endif %}
         {% endfor %}
       </div>
+
+      {% if siteSection.previewLimit and shown > siteSection.previewLimit %}
+        <button
+          class="section-toggle"
+          type="button"
+          data-show-label="{{ siteSection.showAllLabel }}"
+          data-hide-label="{{ siteSection.showFewerLabel }}">
+          {{ siteSection.showAllLabel }} ↓
+        </button>
+      {% endif %}
     </section>
   {% endif %}
 {% endfor %}
+
+<script>
+  document.querySelectorAll("[data-preview-section]").forEach((section) => {
+    const toggle = section.querySelector(".section-toggle");
+    if (!toggle) return;
+
+    const hiddenCards = section.querySelectorAll(".is-preview-hidden");
+    const showLabel = toggle.dataset.showLabel || "Show All";
+    const hideLabel = toggle.dataset.hideLabel || "Show Fewer";
+
+    toggle.addEventListener("click", () => {
+      const isExpanded = section.classList.toggle("is-expanded");
+
+      hiddenCards.forEach((card) => {
+        card.hidden = !isExpanded;
+      });
+
+      toggle.textContent = isExpanded ? `${hideLabel} ↑` : `${showLabel} ↓`;
+    });
+
+    hiddenCards.forEach((card) => {
+      card.hidden = true;
+    });
+  });
+</script>

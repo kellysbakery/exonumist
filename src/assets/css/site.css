@@ -580,6 +580,25 @@ h2 {
   max-width: 70ch;
 }
 
+.is-preview-hidden[hidden] {
+  display: none;
+}
+
+.section-toggle {
+  margin-top: 16px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--accent);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.section-toggle:hover {
+  text-decoration: underline;
+}
+
 .note {
   color: var(--muted);
   font-size: 0.94rem;
