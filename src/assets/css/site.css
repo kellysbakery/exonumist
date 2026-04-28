@@ -576,26 +576,35 @@ h2 {
 }
 
 .wanted-note {
-  margin-top: 1rem;
+  margin-top: 1.25rem;
   padding-top: 0.9rem;
   border-top: 1px solid #e7e0d2;
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.45;
 }
 
-.wanted-note strong {
+.wanted-note-label {
+  margin-bottom: 0.25rem;
+  font-size: 0.82rem;
   font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 
-.wanted-note a {
+.wanted-note-text {
+  margin: 0;
+}
+
+.wanted-note-link {
   display: inline-block;
-  margin-left: 0.35rem;
+  margin-top: 0.55rem;
   font-weight: 700;
   text-decoration: none;
   color: var(--accent);
 }
 
-.wanted-note a:hover {
+.wanted-note-link:hover {
   text-decoration: underline;
 }
 
