@@ -123,6 +123,14 @@
         <div class="notes-frame js-notes-frame">
           <div class="notes-content js-notes-content">
             <p>{{ detailView.notes }}</p>
+
+            {% if token.wanted %}
+              <div class="wanted-note">
+                <strong>Collector Interest:</strong>
+                {{ token.wantedNote or "I am interested in adding or upgrading this token in my collection." }}
+                  <a href="/about/#want-list">Have one for sale? Contact me.</a>
+              </div>
+            {% endif %}
           </div>
 
           <button

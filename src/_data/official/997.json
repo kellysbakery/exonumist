@@ -18,6 +18,8 @@
     "rev": "To Be Surrendered at /the /City Line",
     "desc": "Zone check issued by B.C.R.R. Co. for surrender at the city line.",
     "notes": "Listed as NY997A in the Zone Checks section of the Atwood-Coffee catalogue.",
+    "wanted": true,
+    "wantedNote": "Actively seeking an example of this token.",
     "val": 600,
     "rel": [],
     "home": false,

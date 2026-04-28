@@ -575,6 +575,30 @@ h2 {
   text-decoration: underline;
 }
 
+.wanted-note {
+  margin-top: 1rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid #e7e0d2;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.wanted-note strong {
+  font-weight: 700;
+}
+
+.wanted-note a {
+  display: inline-block;
+  margin-left: 0.35rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--accent);
+}
+
+.wanted-note a:hover {
+  text-decoration: underline;
+}
+
 .section-intro {
   color: var(--muted);
   max-width: 70ch;
