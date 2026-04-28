@@ -60,43 +60,54 @@ permalink: /about/index.html
 </section>
 
 <section class="section" id="want-list">
-  <h2>Want List</h2>
+  <div class="about-split">
+    <div>
+      <h2>Want List</h2>
 
-  <p class="section-intro">
-    I am actively looking for certain pieces for the collection, especially early New York
-    transportation tokens, undocumented material, unusual varieties, and better examples of
-    pieces already represented here.
-  </p>
+      <p class="section-intro">
+        I am actively looking for certain pieces for the collection, especially early New York
+        transportation tokens, undocumented material, unusual varieties, and better examples of
+        pieces already represented here.
+      </p>
 
-  {% set wantedTokens = [] %}
-  {% for token in collections.officialAll %}
-    {% if token.wanted %}
-      {% set wantedTokens = wantedTokens.concat([token]) %}
-    {% endif %}
-  {% endfor %}
-
-  {% if wantedTokens.length %}
-    <h3>Currently Seeking</h3>
-
-    <div class="wanted-token-list">
-      {% for token in wantedTokens %}
-        <a class="wanted-token-link" href="/official/{{ token.displayId | lower }}/">
-          <strong>{{ token.displayId }}</strong>
-          <span>{{ token.title }}</span>
-        </a>
+      {% set wantedTokens = [] %}
+      {% for token in collections.officialAll %}
+        {% if token.wanted %}
+          {% set wantedTokens = wantedTokens.concat([token]) %}
+        {% endif %}
       {% endfor %}
+
+      {% if wantedTokens.length %}
+        <h3>Currently Seeking</h3>
+
+        <div class="wanted-token-list">
+          {% for token in wantedTokens %}
+            <a class="wanted-token-link" href="/official/{{ token.displayId | lower }}/">
+              <strong>{{ token.displayId }}</strong>
+              <span>{{ token.title }}</span>
+            </a>
+          {% endfor %}
+        </div>
+      {% endif %}
     </div>
-  {% endif %}
 
-  <p class="section-intro">
-    I am also interested in New York transportation tokens, Civil War tokens, Hard Times tokens,
-    merchant tokens, arcade tokens, trade tokens, and other historically interesting exonumia.
-  </p>
+    <aside class="about-aside">
+      <h3>Also Interested In</h3>
 
-  <p class="section-intro">
-    Have something available for sale or trade?
-    <a href="mailto:YOUR_EMAIL_HERE">Contact me</a>.
-  </p>
+      <ul>
+        <li>New York transportation tokens</li>
+        <li>Undocumented or unusual pieces</li>
+        <li>Civil War tokens</li>
+        <li>Hard Times tokens</li>
+        <li>Merchant, arcade, and trade tokens</li>
+      </ul>
+
+      <p style="margin-top: 1rem;">
+        Have something available for sale or trade?
+        <a href="mailto:keith@exonumist.com">Contact me</a>.
+      </p>
+    </aside>
+  </div>
 </section>
 
 <section class="section">
