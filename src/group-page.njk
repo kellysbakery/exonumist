@@ -70,6 +70,12 @@ eleventyComputed:
               {{ token.title }}
             </strong>
 
+            {% if token.counterstamp %}
+              <p class="token-list-card-variant">
+                {{ token.counterstamp }} Counterstamp
+              </p>
+            {% endif %}
+
             {% if token.desc %}
               <p class="token-list-card-desc">
                 {{ token.desc }}
