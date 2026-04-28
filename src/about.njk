@@ -8,26 +8,53 @@ permalink: /about/index.html
   <h1>About This Site</h1>
 
   <p>
-    Exonumist is intended as a collector-focused reference site built around cataloged New York City
-    tokens while also documenting unlisted material, patterns, oddities, and related issues that
-    deserve long-term visibility.
+    Exonumist is a collector-focused reference site built around cataloged New York City
+    transportation tokens while also documenting unlisted material, patterns, oddities, errors,
+    counterfeits, and related pieces that deserve long-term visibility.
   </p>
 </section>
 
 <section class="section">
-  <h2>Resources</h2>
+  <h2>My Collection</h2>
+
+  <p>
+    While this site currently focuses on New York City transportation exonumia, my broader collection
+    includes Arcade, Hard Times, Civil War, Merchant, and Miscellaneous tokens — basically, interesting
+    shiny metal things with history behind them.
+  </p>
+
+  <p>
+    Listed transportation material follows the Atwood-Coffee Catalogue where applicable. Unlisted items
+    are included when they help document discoveries, varieties, errors, oddities, or related collecting
+    areas.
+  </p>
+</section>
+
+<section class="section">
+  <h2>Research & References</h2>
 
   <p class="section-intro">
     References and organizations useful for transportation token research and catalog information.
   </p>
 
-  <div class="grid-3">
+  <div class="grid-1">
     {% for resource in resources | sort(attribute="order") %}
       {% if resource.pub %}
         <a class="card-link" href="{{ resource.urlRef | resolveUrlRef(site) }}">
-          <article class="resource-card">
-            <strong>{{ resource.title }}</strong>
-            <p>{{ resource.text }}</p>
+          <article class="resource-card resource-card-with-media">
+            <div class="resource-card-body">
+              <strong>{{ resource.title }}</strong>
+              <p>{{ resource.text }}</p>
+            </div>
+
+            {% if resource.image %}
+              <div class="resource-card-media">
+                <img
+                  class="resource-card-logo"
+                  src="{{ resource.image }}"
+                  alt="{{ resource.title }}" />
+              </div>
+            {% endif %}
           </article>
         </a>
       {% endif %}
