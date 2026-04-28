@@ -126,9 +126,11 @@
 
             {% if token.wanted %}
               <div class="wanted-note">
-                <strong>Collector Interest:</strong>
-                {{ token.wantedNote or "I am interested in adding or upgrading this token in my collection." }}
-                  <a href="/about/#want-list">Have one for sale? Contact me.</a>
+                <div class="wanted-note-label">Collector Interest</div>
+                <div class="wanted-note-text">
+                  {{ token.wantedNote or "I am interested in adding or upgrading this token in my collection." }}
+                </div>
+                <a class="wanted-note-link" href="/about/#want-list">Have one for sale? Contact me.</a>
               </div>
             {% endif %}
           </div>
