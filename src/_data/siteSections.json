@@ -2,9 +2,12 @@
   {
     "key": "listed",
     "title": "Listed Tokens",
-    "intro": "Browse listed New York City transportation-related tokens by borough and listed special groups.",
+    "intro": "Browse listed tokens by borough and specialty groups.",
     "gridClass": "grid-4",
-    "pub": true
+    "pub": true,
+    "previewLimit": 6,
+    "showAllLabel": "Show All Listed Groups",
+    "showFewerLabel": "Show Fewer Listed Groups"
   },
   {
     "key": "unlisted",
