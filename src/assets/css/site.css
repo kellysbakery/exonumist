@@ -137,7 +137,7 @@ h2 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.grid-1 {
+.grid-narrow {
   display: grid;
   grid-template-columns: minmax(0, 560px);
   gap: 18px;
