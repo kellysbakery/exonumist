@@ -37,7 +37,7 @@ permalink: /about/index.html
     References and organizations useful for transportation token research and catalog information.
   </p>
 
-  <div class="grid-1">
+  <div class="grid-narrow">
     {% for resource in resources | sort(attribute="order") %}
       {% if resource.pub %}
         <a class="card-link" href="{{ resource.urlRef | resolveUrlRef(site) }}">
