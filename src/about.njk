@@ -28,7 +28,36 @@ permalink: /about/index.html
     are included when they help document discoveries, varieties, errors, oddities, or related collecting
     areas.
   </p>
-</section>
+  </section>
+
+  <section class="section">
+    <h2>Want List</h2>
+
+    <p class="section-intro">
+      I am always interested in additions to the collection, especially items that are unknown,
+      undocumented, unusual, or historically interesting.
+    </p>
+
+    {% set wantedItems = wantList | sort(attribute="sort") %}
+
+    <div class="grid-narrow">
+      {% for item in wantedItems %}
+        {% if item.visibility == "public" and item.status == "wanted" %}
+          <article class="resource-card">
+            <div class="resource-card-body">
+              <strong>{{ item.title }}</strong>
+              <p>{{ item.summary }}</p>
+            </div>
+          </article>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <p>
+      Something not listed here? Contact me. I am often most interested in the pieces I do not know
+      about yet.
+    </p>
+  </section>
 
 <section class="section">
   <h2>Research & References</h2>
