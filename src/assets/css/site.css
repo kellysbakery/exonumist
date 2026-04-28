@@ -126,25 +126,25 @@ h2 {
 }
 
 .about-aside {
-  line-height: 1.5;
-  padding: 1rem 1.1rem;
+  padding: 1.1rem 1.15rem;
   border: 1px solid var(--line);
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.55);
+  line-height: 1.5;
 }
 
 .about-aside h3 {
-  margin: 0 0 0.65rem;
-  font-size: 1rem;
+  margin: 0 0 0.75rem;
+  font-size: 1.05rem;
 }
 
 .about-aside ul {
   margin: 0;
-  padding-left: 1.1rem;
+  padding-left: 1.15rem;
 }
 
 .about-aside li + li {
-  margin-top: 0.35rem;
+  margin-top: 0.45rem;
 }
 
 .grid-5,
@@ -602,6 +602,18 @@ h2 {
 
 .notes-more:hover {
   text-decoration: underline;
+}
+
+.want-list-cta p {
+  margin: 0.75rem 0 0;
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+.want-list-cta-link,
+.want-list-cta a {
+  font-weight: 700;
+  color: var(--accent);
 }
 
 .wanted-token-list {
