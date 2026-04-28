@@ -49,7 +49,7 @@
 
       {% if detailView.obverseText %}
         <figcaption class="token-image-caption">
-          <strong>Obverse:</strong> {{ detailView.obverseText }}
+          <strong>Obverse:</strong> {{ detailView.obverseText }}{% if token.counterstamp %} · {{ token.counterstamp }} Counterstamp{% endif %}
         </figcaption>
       {% endif %}
     </figure>
