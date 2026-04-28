@@ -118,6 +118,35 @@ h2 {
   margin-bottom: 22px;
 }
 
+.about-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 28px;
+  align-items: start;
+}
+
+.about-aside {
+  line-height: 1.5;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.about-aside h3 {
+  margin: 0 0 0.65rem;
+  font-size: 1rem;
+}
+
+.about-aside ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.about-aside li + li {
+  margin-top: 0.35rem;
+}
+
 .grid-5,
 .grid-4,
 .grid-3 {
@@ -575,6 +604,38 @@ h2 {
   text-decoration: underline;
 }
 
+.wanted-token-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 1rem 0 1.25rem;
+}
+
+.wanted-token-link {
+  display: block;
+  padding: 0.85rem 0.95rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+}
+
+.wanted-token-link strong {
+  display: block;
+  margin-bottom: 0.2rem;
+  color: var(--accent);
+}
+
+.wanted-token-link span {
+  display: block;
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+.wanted-token-link:hover {
+  border-color: #b8a78d;
+}
+
 .wanted-note {
   margin-top: 1.25rem;
   padding-top: 0.9rem;
@@ -608,9 +669,13 @@ h2 {
   text-decoration: underline;
 }
 
+.section-intro,
+.prose-width {
+  max-width: 76ch;
+}
+
 .section-intro {
   color: var(--muted);
-  max-width: 70ch;
 }
 
 .is-preview-hidden[hidden] {
