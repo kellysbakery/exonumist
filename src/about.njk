@@ -128,7 +128,7 @@ permalink: /about/index.html
 
   <div class="grid-narrow">
     {% for resource in resources | sort(attribute="order") %}
-      {% if resource.pub %}
+      {% if resource.pub != false %}
         <a class="card-link" href="{{ resource.urlRef | resolveUrlRef(site) }}">
           <article class="resource-card resource-card-with-media">
             <div class="resource-card-body">

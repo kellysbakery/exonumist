@@ -15,7 +15,7 @@ eleventyComputed:
 
 {% set sectionTokens = [] %}
 {% for item in collections.officialAll %}
-  {% if item.sec == token.sec and item.pub %}
+  {% if item.sec == token.sec and item.pub != false %}
     {% set sectionTokens = sectionTokens.concat([item]) %}
   {% endif %}
 {% endfor %}

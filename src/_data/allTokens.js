@@ -12,7 +12,9 @@ function loadJsonArray(filePath) {
 
 function loadOfficialTokens() {
   const officialDir = path.join(__dirname, "official");
-  const files = fs.readdirSync(officialDir).filter((file) => file.endsWith(".json"));
+  const files = fs
+    .readdirSync(officialDir)
+    .filter((file) => file.endsWith(".json"));
 
   return files.flatMap((file) => {
     const fullPath = path.join(officialDir, file);

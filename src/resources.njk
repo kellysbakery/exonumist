@@ -7,7 +7,7 @@ permalink: /resources/index.html
   <h1>Resources</h1>
   <div class="grid-3">
     {% for resource in resources | sort(attribute="order") %}
-      {% if resource.pub %}
+      {% if resource.pub != false %}
       <article class="resource-card">
         <strong><a href="{{ resource.urlRef | resolveUrlRef(site) }}">{{ resource.title }}</a></strong>
         <p>{{ resource.text }}</p>

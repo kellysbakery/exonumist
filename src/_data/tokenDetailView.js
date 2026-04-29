@@ -302,7 +302,7 @@ function findSection(sections = [], sec = "") {
 
   return (
     sections.find(
-      (section) => section.pub && String(section.sec) === String(sec)
+      (section) => section.pub !== false && String(section.sec) === String(sec)
     ) || null
   );
 }
