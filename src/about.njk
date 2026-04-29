@@ -81,7 +81,7 @@ permalink: /about/index.html
 
         <div class="wanted-token-list">
           {% for token in wantedTokens %}
-            <a class="wanted-token-link" href="/official/{{ token.displayId | lower }}/">
+            <a class="wanted-token-link" href="{{ tokenDetailView.buildTokenUrl(token) }}">
             <strong>{{ token.displayId }}</strong>
             <span>{{ token.title }}</span>
 

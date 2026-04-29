@@ -1,3 +1,5 @@
+const tokenDetailView = require("./tokenDetailView");
+
 const allTokens = require("./allTokens");
 
 const GROUP_BROWSE_TYPES = {
@@ -57,17 +59,7 @@ function buildBrowseTypes(token) {
 }
 
 function buildBrowseUrl(token) {
-  if (token.status === "listed") {
-    return `/official/${String(token.displayId).toLowerCase()}/`;
-  }
-
-  const primaryGroup = (token.groups || [])[0];
-
-  if (primaryGroup) {
-    return `/groups/${primaryGroup}/${String(token.displayId).toLowerCase()}/`;
-  }
-
-  return "/";
+  return tokenDetailView.buildTokenUrl(token);
 }
 
 const tokens = allTokens.map((token) => ({
