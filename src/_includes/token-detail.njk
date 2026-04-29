@@ -49,7 +49,7 @@
 
       {% if detailView.obverseText %}
         <figcaption class="token-image-caption">
-          <strong>Obverse:</strong> {{ detailView.obverseText }}{% if token.counterstamp %} · {{ token.counterstamp }} Counterstamp{% endif %}
+          <strong>Obverse:</strong> {{ detailView.obverseText }}{% if token.counterstamp %} ({{ token.counterstamp }} Counterstamp){% endif %}
         </figcaption>
       {% endif %}
     </figure>
@@ -79,6 +79,13 @@
       <div class="facts quickfacts-panel">
         <dl>
           {% for fact in detailView.quickFacts %}
+            {% if fact.label == "Borough" and token.counterstamp %}
+              <div class="facts-row">
+                <dt>Counterstamp</dt>
+                <dd>{{ token.counterstamp }}</dd>
+              </div>
+            {% endif %}
+
             <div class="facts-row">
               <dt>{{ fact.label }}</dt>
               <dd>{{ fact.value }}</dd>
