@@ -34,4 +34,4 @@ module.exports = [
   ...withSource(oddities, "oddities"),
   ...withSource(unlisted, "unlisted"),
   ...withSource(counterfeit, "counterfeit")
-].filter((token) => token.pub);
+].filter((token) => token.pub !== false);
