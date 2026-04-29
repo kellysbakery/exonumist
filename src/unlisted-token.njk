@@ -9,16 +9,9 @@ eleventyComputed:
   title: "{{ token.displayId }} – {{ token.title }}"
 ---
 
-{% set detailSectionTitle = "Unlisted" %}
-{% set detailSectionUrl = "/unlisted/" %}
-
-{% if token.groups and ("counterfeit" in token.groups) %}
-  {% set detailSectionTitle = "Counterfeit" %}
-  {% set detailSectionUrl = "/groups/counterfeit/" %}
-{% elseif token.groups and ("errors" in token.groups) %}
-  {% set detailSectionTitle = "Oddities & Errors" %}
-  {% set detailSectionUrl = "/groups/errors/" %}
-{% endif %}
+{% set unlistedSection = tokenDetailView.buildUnlistedSection(token) %}
+{% set detailSectionTitle = unlistedSection.title %}
+{% set detailSectionUrl = unlistedSection.url %}
 
 {% set detailView = tokenDetailView.buildTokenDetailView(token, {
   tokenId: token.displayId,

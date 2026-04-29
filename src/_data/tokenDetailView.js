@@ -338,11 +338,35 @@ function findGroupTokens(groupTokenPages = [], groupKey = "") {
     .map((item) => item.token);
 }
 
+function buildUnlistedSection(token) {
+  const groups = Array.isArray(token?.groups) ? token.groups : [];
+
+  if (groups.includes("counterfeit")) {
+    return {
+      title: "Counterfeit",
+      url: "/groups/counterfeit/"
+    };
+  }
+
+  if (groups.includes("errors")) {
+    return {
+      title: "Oddities & Errors",
+      url: "/groups/errors/"
+    };
+  }
+
+  return {
+    title: "Unlisted",
+    url: "/unlisted/"
+  };
+}
+
 module.exports = {
   findPrevNext,
   findSection,
   buildGroupBreadcrumbItems,
   findGroupTokens,
   buildPagerItem,
-  buildTokenDetailView
+  buildTokenDetailView,
+  buildUnlistedSection
 };
