@@ -936,6 +936,65 @@ h2 {
   display: block;
 }
 
+/* About page */
+
+.about-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 320px);
+  gap: 2rem;
+  align-items: start;
+}
+
+.about-aside {
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  background: var(--panel);
+}
+
+.wanted-token-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+.wanted-token-link {
+  display: grid;
+  gap: 0.15rem;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 0.65rem;
+  background: #fffdf8;
+  text-decoration: none;
+}
+
+.wanted-token-link:hover {
+  text-decoration: underline;
+}
+
+.wanted-token-link strong,
+.wanted-token-link span {
+  display: block;
+}
+
+@media (max-width: 760px) {
+  .about-split {
+    grid-template-columns: 1fr;
+  }
+
+  .about-aside {
+    border-left: 0;
+    padding-left: 0;
+    border-top: 1px solid var(--line);
+    padding-top: 1rem;
+  }
+
+  .wanted-token-list {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Responsive */
 
 @media (max-width: 980px) {
@@ -1172,5 +1231,24 @@ h2 {
   .hero-actions .btn.primary {
     grid-column: 1 / -1;
     justify-self: start;
+  }
+
+  /* Final About page aside override */
+
+  .section .about-split .about-aside {
+    padding: 1rem;
+    border: 1px solid var(--line);
+    border-radius: 0.75rem;
+    background: var(--panel);
+    box-shadow: none;
+  }
+
+  @media (max-width: 760px) {
+    .section .about-split .about-aside {
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 0.75rem;
+      background: var(--panel);
+    }
   }
 }
