@@ -49,7 +49,7 @@
 
       {% if detailView.obverseText %}
         <figcaption class="token-image-caption">
-          <strong>Obverse:</strong> {{ detailView.obverseText }}{% if token.counterstamp %} ({{ token.counterstamp }} Counterstamp){% endif %}
+          <strong>Obverse:</strong> {{ detailView.obverseText }}
         </figcaption>
       {% endif %}
     </figure>
@@ -100,7 +100,7 @@
               <div class="wanted-note">
                 <div class="wanted-note-label">Collector Interest</div>
                 <div class="wanted-note-text">
-                  {{ token.wantedNote or "I am interested in adding or upgrading this token in my collection." }}
+                  {{ detailView.wantedNote }}
                 </div>
                 <a class="wanted-note-link" href="/about/#want-list">Have one for sale? Contact me.</a>
               </div>
