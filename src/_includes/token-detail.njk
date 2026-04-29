@@ -148,56 +148,56 @@
   </div>
 
   {% if detailView.pager and (detailView.pager.prev or detailView.pager.next) %}
-    <nav class="section token-pager" aria-label="Token navigation">
-      <div class="token-pager-grid">
+  <nav class="token-pager" aria-label="Token navigation">
+    <div class="token-pager-grid">
+      {% if detailView.pager.prev %}
         <div class="token-pager-item token-pager-prev">
-          {% if detailView.pager.prev %}
-            <a class="token-pager-link" href="{{ detailView.pager.prev.url }}">
-              <div class="token-pager-media">
-                {% if prevToken and (prevToken | hasTokenImage("o")) %}
-                  <img
-                    class="token-pager-image"
-                    src="{{ prevToken | tokenImagePath('o') }}"
-                    alt="{{ detailView.pager.prev.id }} obverse" />
-                {% else %}
-                  <div class="token-pager-placeholder"></div>
-                {% endif %}
-              </div>
+          <a class="token-pager-link" href="{{ detailView.pager.prev.url }}">
+            <div class="token-pager-media">
+              {% if prevToken and (prevToken | hasTokenImage("o")) %}
+                <img
+                  class="token-pager-image"
+                  src="{{ prevToken | tokenImagePath('o') }}"
+                  alt="{{ detailView.pager.prev.id }} obverse" />
+              {% else %}
+                <div class="token-pager-placeholder"></div>
+              {% endif %}
+            </div>
 
-              <div class="token-pager-content">
-                <span class="token-pager-label">← Previous</span>
-                <strong>{{ detailView.pager.prev.id }}</strong>
-                <span>{{ detailView.pager.prev.title }}</span>
-              </div>
-            </a>
-          {% endif %}
+            <div class="token-pager-content">
+              <span class="token-pager-label">← Previous</span>
+              <strong>{{ detailView.pager.prev.id }}</strong>
+              <span>{{ detailView.pager.prev.title }}</span>
+            </div>
+          </a>
         </div>
+      {% endif %}
 
+      {% if detailView.pager.next %}
         <div class="token-pager-item token-pager-next">
-          {% if detailView.pager.next %}
-            <a class="token-pager-link" href="{{ detailView.pager.next.url }}">
-              <div class="token-pager-media">
-                {% if nextToken and (nextToken | hasTokenImage("o")) %}
-                  <img
-                    class="token-pager-image"
-                    src="{{ nextToken | tokenImagePath('o') }}"
-                    alt="{{ detailView.pager.next.id }} obverse" />
-                {% else %}
-                  <div class="token-pager-placeholder"></div>
-                {% endif %}
-              </div>
+          <a class="token-pager-link" href="{{ detailView.pager.next.url }}">
+            <div class="token-pager-media">
+              {% if nextToken and (nextToken | hasTokenImage("o")) %}
+                <img
+                  class="token-pager-image"
+                  src="{{ nextToken | tokenImagePath('o') }}"
+                  alt="{{ detailView.pager.next.id }} obverse" />
+              {% else %}
+                <div class="token-pager-placeholder"></div>
+              {% endif %}
+            </div>
 
-              <div class="token-pager-content">
-                <span class="token-pager-label">Next →</span>
-                <strong>{{ detailView.pager.next.id }}</strong>
-                <span>{{ detailView.pager.next.title }}</span>
-              </div>
-            </a>
-          {% endif %}
+            <div class="token-pager-content">
+              <span class="token-pager-label">Next →</span>
+              <strong>{{ detailView.pager.next.id }}</strong>
+              <span>{{ detailView.pager.next.title }}</span>
+            </div>
+          </a>
         </div>
-      </div>
-    </nav>
-  {% endif %}
+      {% endif %}
+    </div>
+  </nav>
+{% endif %}
 
   <script>
     (function () {
