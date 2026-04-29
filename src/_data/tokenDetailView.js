@@ -28,11 +28,7 @@ function formatPrice(value) {
  * Canonical schema only.
  */
 function buildQuickFacts(token, context = {}) {
-  const {
-    isUnlisted = false,
-    lookups = {},
-    detailSectionTitle = ""
-  } = context;
+  const { isUnlisted = false, lookups = {}, detailSectionTitle = "" } = context;
 
   const rows = [];
 
@@ -75,7 +71,12 @@ function buildQuickFacts(token, context = {}) {
   addRow("Size", hasMeaningfulValue(token.size) ? `${token.size} mm` : "");
   addRow("Shape", lookupValue(token.form, lookups.forms));
   addRow("Symbol", lookupValue(token.symbol, lookups.symbols));
+  addRow("Counterstamp", token.counterstamp);
   addRow("Borough", token.borough);
+  addRow("Maker", token.maker);
+  addRow("Issued", token.issued);
+  addRow("Mintage", token.mintage);
+  addRow("Usage", token.usage);
 
   return rows;
 }
@@ -84,11 +85,7 @@ function buildQuickFacts(token, context = {}) {
  * Build compact metadata shown near the page title.
  */
 function buildMetaParts(token, context = {}) {
-  const {
-    isUnlisted = false,
-    lookups = {},
-    detailSectionTitle = ""
-  } = context;
+  const { isUnlisted = false, lookups = {}, detailSectionTitle = "" } = context;
 
   const parts = [];
 
@@ -101,7 +98,8 @@ function buildMetaParts(token, context = {}) {
   if (token.mat) parts.push(lookupValue(token.mat, lookups.materials));
   if (token.size) parts.push(`${token.size} mm`);
   if (token.form) parts.push(lookupValue(token.form, lookups.forms));
-  if (token.symbol) parts.push(String(lookupValue(token.symbol, lookups.symbols)));
+  if (token.symbol)
+    parts.push(String(lookupValue(token.symbol, lookups.symbols)));
 
   return parts.filter(Boolean);
 }
@@ -110,11 +108,7 @@ function buildMetaParts(token, context = {}) {
  * Build badge chips shown near the title.
  */
 function buildBadges(token, context = {}) {
-  const {
-    lookups = {},
-    isUnlisted = false,
-    detailSectionTitle = ""
-  } = context;
+  const { lookups = {}, isUnlisted = false, detailSectionTitle = "" } = context;
 
   const badges = [];
 
@@ -123,9 +117,7 @@ function buildBadges(token, context = {}) {
     const section = String(detailSectionTitle).toLowerCase();
 
     const redundant =
-      status === "listed" ||
-      status === "official" ||
-      status === section;
+      status === "listed" || status === "official" || status === section;
 
     if (!redundant) {
       badges.push(lookupValue(token.status, lookups.status) || token.status);
@@ -166,8 +158,7 @@ function findPrevNext(items = [], currentToken) {
   const currentId = String(currentToken.displayId || "").toLowerCase();
 
   const index = items.findIndex(
-    (item) =>
-      String(item.displayId || "").toLowerCase() === currentId
+    (item) => String(item.displayId || "").toLowerCase() === currentId
   );
 
   if (index === -1) {
@@ -183,12 +174,7 @@ function findPrevNext(items = [], currentToken) {
 function buildPagerItem(token, options = {}) {
   if (!token) return null;
 
-const {
-  urlBuilder,
-  pagerGroupKey,
-  hasTokenImage,
-  tokenImagePath
-} = options;
+  const { urlBuilder, pagerGroupKey, hasTokenImage, tokenImagePath } = options;
 
   const id = token.displayId || "";
   const slug = id.toLowerCase();
@@ -277,21 +263,21 @@ function buildTokenDetailView(token, context = {}) {
     notes: token.notes || "",
 
     pager: detailShowPager
-    ? {
-        prev: buildPagerItem(prevToken, {
-          urlBuilder: pagerUrlBuilder,
-          pagerGroupKey,
-          hasTokenImage: helperFns.hasTokenImage,
-          tokenImagePath: helperFns.tokenImagePath
-        }),
-        next: buildPagerItem(nextToken, {
-          urlBuilder: pagerUrlBuilder,
-          pagerGroupKey,
-          hasTokenImage: helperFns.hasTokenImage,
-          tokenImagePath: helperFns.tokenImagePath
-        })
-      }
-    : null
+      ? {
+          prev: buildPagerItem(prevToken, {
+            urlBuilder: pagerUrlBuilder,
+            pagerGroupKey,
+            hasTokenImage: helperFns.hasTokenImage,
+            tokenImagePath: helperFns.tokenImagePath
+          }),
+          next: buildPagerItem(nextToken, {
+            urlBuilder: pagerUrlBuilder,
+            pagerGroupKey,
+            hasTokenImage: helperFns.hasTokenImage,
+            tokenImagePath: helperFns.tokenImagePath
+          })
+        }
+      : null
   };
 }
 
@@ -300,9 +286,7 @@ function findSection(sections = [], sec = "") {
 
   return (
     sections.find(
-      (section) =>
-        section.pub &&
-        String(section.sec) === String(sec)
+      (section) => section.pub && String(section.sec) === String(sec)
     ) || null
   );
 }
@@ -312,9 +296,8 @@ function buildGroupBreadcrumbItems(group, token, siteSections = []) {
 
   if (group && group.section && Array.isArray(siteSections)) {
     const matchedSiteSection =
-      siteSections.find(
-        (siteSection) => siteSection.key === group.section
-      ) || null;
+      siteSections.find((siteSection) => siteSection.key === group.section) ||
+      null;
 
     if (matchedSiteSection) {
       items.push({

@@ -79,46 +79,11 @@
       <div class="facts quickfacts-panel">
         <dl>
           {% for fact in detailView.quickFacts %}
-            {% if fact.label == "Borough" and token.counterstamp %}
-              <div class="facts-row">
-                <dt>Counterstamp</dt>
-                <dd>{{ token.counterstamp }}</dd>
-              </div>
-            {% endif %}
-
             <div class="facts-row">
               <dt>{{ fact.label }}</dt>
               <dd>{{ fact.value }}</dd>
             </div>
           {% endfor %}
-
-          {% if token.maker %}
-            <div class="facts-row">
-              <dt>Maker</dt>
-              <dd>{{ token.maker }}</dd>
-            </div>
-          {% endif %}
-
-          {% if token.issued %}
-            <div class="facts-row">
-              <dt>Issued</dt>
-              <dd>{{ token.issued | formatDateUS }}</dd>
-            </div>
-          {% endif %}
-
-          {% if token.mintage %}
-            <div class="facts-row">
-              <dt>Mintage</dt>
-              <dd>{{ token.mintage | formatNumber }}</dd>
-            </div>
-          {% endif %}
-
-          {% if token.usage %}
-            <div class="facts-row">
-              <dt>Usage</dt>
-              <dd>{{ token.usage }}</dd>
-            </div>
-          {% endif %}
         </dl>
       </div>
     </section>
