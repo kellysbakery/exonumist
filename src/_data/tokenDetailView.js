@@ -257,10 +257,16 @@ function buildTokenDetailView(token, context = {}) {
       detailSectionTitle
     }),
 
-    obverseText: token.obv || "",
+    obverseText: token.obv
+      ? token.counterstamp
+        ? `${token.obv} (${token.counterstamp} Counterstamp)`
+        : token.obv
+      : "",
+
     reverseText: token.rev || "",
 
     notes: token.notes || "",
+    wantedNote: token.wantedNote || "",
 
     pager: detailShowPager
       ? {
