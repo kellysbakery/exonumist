@@ -171,6 +171,18 @@ function findPrevNext(items = [], currentToken) {
   };
 }
 
+function buildTokenUrl(token) {
+  if (!token || !token.displayId) return "/";
+
+  const slug = String(token.displayId).toLowerCase();
+
+  if (token.status === "listed") {
+    return `/official/${slug}/`;
+  }
+
+  return `/unlisted/${slug}/`;
+}
+
 function buildPagerItem(token, options = {}) {
   if (!token) return null;
 
@@ -185,10 +197,8 @@ function buildPagerItem(token, options = {}) {
     url = urlBuilder(token);
   } else if (urlBuilder === "group" && pagerGroupKey && slug) {
     url = `/groups/${pagerGroupKey}/${slug}/`;
-  } else if (token.status === "listed") {
-    url = `/official/${slug}/`;
   } else {
-    url = `/unlisted/${slug}/`;
+    url = buildTokenUrl(token);
   }
 
   return {
@@ -368,5 +378,6 @@ module.exports = {
   findGroupTokens,
   buildPagerItem,
   buildTokenDetailView,
-  buildUnlistedSection
+  buildUnlistedSection,
+  buildTokenUrl
 };
