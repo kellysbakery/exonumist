@@ -1,3 +1,10 @@
+/* =========================================================
+   EXONUMIST SITE STYLES
+
+   Keep page-specific styles in the clearly labeled sections below.
+   When changing CSS, search for the matching section heading first.
+   ========================================================= */
+
 :root {
   --bg: #f4f1ea;
   --panel: #fffdf8;
@@ -294,7 +301,10 @@ h2 {
   border-color: #b8a78d;
 }
 
-/* Token detail page */
+/* =========================================================
+   TOKEN DETAIL PAGE
+   Used by: individual token detail pages
+   ========================================================= */
 
 .token-shell {
   padding: 28px;
@@ -352,8 +362,9 @@ h2 {
 }
 
 .badge {
-  background: var(--soft);
+  background: transparent;
   border: 1px solid var(--line);
+  opacity: 0.85;
   border-radius: 999px;
   padding: 0.35rem 0.72rem;
   font-size: 0.78rem;
@@ -604,7 +615,10 @@ h2 {
   font-size: 0.94rem;
 }
 
-/* Section / city token cards improvements */
+/* =========================================================
+   TOKEN LIST CARDS
+   Used by: section, city, and group listing cards
+   ========================================================= */
 
 .token-card-grid {
   align-items: stretch;
@@ -673,7 +687,10 @@ h2 {
   padding-top: 6px;
 }
 
-/* Token detail pager */
+/* =========================================================
+   TOKEN DETAIL PAGER
+   Previous / Next navigation on token detail pages
+   ========================================================= */
 
 .token-pager {
   margin-top: 18px;
@@ -784,7 +801,10 @@ h2 {
   color: var(--muted);
 }
 
-/* Homepage masthead */
+/* =========================================================
+   HOMEPAGE MASTHEAD
+   Top hero area on the home page
+   ========================================================= */
 
 .hero-home-wide {
   padding: 18px 24px 20px;
@@ -882,7 +902,10 @@ h2 {
   line-height: 1.45;
 }
 
-/* Homepage section cards */
+/* =========================================================
+   HOMEPAGE SECTION CARDS
+   Listed / Unlisted / Spotlight cards on home page
+   ========================================================= */
 
 .home-section-grid {
   display: grid;
@@ -936,7 +959,15 @@ h2 {
   display: block;
 }
 
-/* About page */
+/* =========================================================
+   ABOUT PAGE
+   Used by: /about/
+
+   This section controls:
+   - Two-column about page rows
+   - Right-side boxed asides (Site Focus, Also Collecting, etc.)
+   - Want List token cards
+   ========================================================= */
 
 .about-split {
   display: grid;
@@ -952,6 +983,7 @@ h2 {
   background: var(--panel);
 }
 
+/* Want List token card grid */
 .wanted-token-list {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -959,14 +991,21 @@ h2 {
   margin-top: 1rem;
 }
 
+/* Individual Want List token cards */
 .wanted-token-link {
+  position: relative;
   display: grid;
   gap: 0.15rem;
-  padding: 0.75rem 0.9rem;
+  padding: 0.75rem 1rem 0.75rem 0.9rem;
   border: 1px solid var(--line);
   border-radius: 0.65rem;
   background: #fffdf8;
   text-decoration: none;
+}
+
+.wanted-token-link strong {
+  padding-right: 3.5rem;
+  display: inline-block;
 }
 
 .wanted-token-link:hover {
@@ -978,6 +1017,25 @@ h2 {
   display: block;
 }
 
+/* Top-right "Wanted" badge on Want List token cards */
+.wanted-token-badge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  padding: 0.2rem 0.45rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--soft);
+  color: var(--accent);
+  font-size: 0.65rem; /* slightly smaller */
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  opacity: 0.85; /* slightly lighter */
+}
+
+/* Muted material / counterstamp / type line on Want List cards */
 .wanted-token-meta {
   margin-top: 0.35rem;
   color: var(--muted);
@@ -991,10 +1049,10 @@ h2 {
   }
 
   .about-aside {
-    border-left: 0;
-    padding-left: 0;
-    border-top: 1px solid var(--line);
-    padding-top: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--line);
+    border-radius: 0.75rem;
+    background: var(--panel);
   }
 
   .wanted-token-list {
@@ -1002,7 +1060,10 @@ h2 {
   }
 }
 
-/* Browse page */
+/* =========================================================
+   BROWSE PAGE
+   Used by: /browse/ filter controls and token result cards
+   ========================================================= */
 
 .browse-controls {
   padding: 1rem;
@@ -1159,7 +1220,10 @@ h2 {
   border-color: #ead7aa;
 }
 
-/* Responsive */
+/* =========================================================
+   RESPONSIVE RULES
+   Shared tablet/mobile layout adjustments
+   ========================================================= */
 
 @media (max-width: 980px) {
   .hero-grid,
@@ -1395,24 +1459,5 @@ h2 {
   .hero-actions .btn.primary {
     grid-column: 1 / -1;
     justify-self: start;
-  }
-
-  /* Final About page aside override */
-
-  .section .about-split .about-aside {
-    padding: 1rem;
-    border: 1px solid var(--line);
-    border-radius: 0.75rem;
-    background: var(--panel);
-    box-shadow: none;
-  }
-
-  @media (max-width: 760px) {
-    .section .about-split .about-aside {
-      padding: 1rem;
-      border: 1px solid var(--line);
-      border-radius: 0.75rem;
-      background: var(--panel);
-    }
   }
 }

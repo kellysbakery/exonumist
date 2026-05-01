@@ -82,7 +82,9 @@ permalink: /about/index.html
         <div class="wanted-token-list">
           {% for token in wantedTokens %}
             <a class="wanted-token-link" href="{{ tokenDetailView.buildTokenUrl(token) }}">
-            <strong>{{ token.displayId }}</strong>
+            <span class="wanted-token-badge">Wanted</span>
+              <strong>{{ token.displayId }}</strong>
+
             <span>{{ token.title }}</span>
 
             <span class="wanted-token-meta">
@@ -90,9 +92,9 @@ permalink: /about/index.html
               {% if token.counterstamp %}
                 {% if token.mat %} · {% endif %}{{ token.counterstamp }} counterstamp
               {% endif %}
-              <!-- {% if token.type and token.type != "transit" %}
+              {% if token.type and token.type != "transit" %}
                 {% if token.mat or token.counterstamp %} · {% endif %}{{ token.type | lookup(lookups.type) }}
-              {% endif %} -->
+              {% endif %}
             </span>
           </a>
           {% endfor %}
