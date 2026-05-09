@@ -1530,9 +1530,12 @@ h2 {
   border: none;
   cursor: pointer;
 }
-
 /* =========================================================
    FOR SALE PAGE
+   Used by: /for-sale/
+
+   Displays sale inventory from src/_data/forSale.csv.
+   Items are grouped by state in collapsible sections.
    ========================================================= */
 
 .for-sale-list {
@@ -1541,7 +1544,7 @@ h2 {
 
 .for-sale-group {
   margin-bottom: 1rem;
-  border: 1px solid var(--panel-border);
+  border: 1px solid var(--line);
   border-radius: 0.75rem;
   background: var(--panel);
   overflow: hidden;
@@ -1551,6 +1554,7 @@ h2 {
   cursor: pointer;
   padding: 0.85rem 1rem;
   font-weight: 800;
+  background: rgba(239, 231, 218, 0.45);
 }
 
 .for-sale-group summary span {
@@ -1559,15 +1563,25 @@ h2 {
 }
 
 .for-sale-items {
-  border-top: 1px solid var(--panel-border);
+  border-top: 1px solid var(--line);
 }
 
 .for-sale-item {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(8rem, 1fr) auto;
   gap: 1rem;
+  align-items: baseline;
   padding: 0.45rem 1rem;
-  border-bottom: 1px solid var(--panel-border);
+  border-bottom: 1px solid rgba(217, 210, 197, 0.65);
+}
+
+/* Alternating row color for easier scanning */
+.for-sale-item:nth-child(even) {
+  background: rgba(239, 231, 218, 0.32);
+}
+
+.for-sale-item:hover {
+  background: rgba(239, 231, 218, 0.65);
 }
 
 .for-sale-item:last-child {
@@ -1581,4 +1595,6 @@ h2 {
 
 .for-sale-price {
   white-space: nowrap;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
 }
