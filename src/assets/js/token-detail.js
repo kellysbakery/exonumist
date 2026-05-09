@@ -80,4 +80,27 @@
 
   window.addEventListener("load", setupNotes);
   window.addEventListener("resize", setupNotes);
+
+  // Image modal functionality
+  const modal = document.getElementById('image-modal');
+  const modalImg = document.getElementById('modal-image');
+  const closeBtn = document.querySelector('.image-modal-close');
+
+  document.querySelectorAll('.token-image').forEach(img => {
+    img.addEventListener('click', function() {
+      modal.style.display = 'flex';
+      modalImg.src = this.src;
+      modalImg.alt = this.alt;
+    });
+  });
+
+  closeBtn.addEventListener('click', function() {
+    modal.style.display = 'none';
+  });
+
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
 })();
