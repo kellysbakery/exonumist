@@ -56,7 +56,9 @@ permalink: /browse/index.html
 
       <a class="card-link browse-card-link" href="{{ token.url or '/' }}">
         <div class="browse-card-media">
-          {% if token | hasTokenImage("o") %}
+          {% if token | hasTokenThumb("o") %}
+            <img src="{{ token | tokenThumbPath('o') }}" alt="{{ token.displayId }}">
+          {% elif token | hasTokenImage("o") %}
             <img src="{{ token | tokenImagePath('o') }}" alt="{{ token.displayId }}">
           {% else %}
             <div class="browse-card-placeholder">No Image</div>
