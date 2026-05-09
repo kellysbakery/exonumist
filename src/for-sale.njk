@@ -13,20 +13,40 @@ permalink: /for-sale/index.html
   </p>
 
   <p class="section-intro">
-    <strong>{{ forSale.total }}</strong> tokens listed.
-    Last updated: {{ forSale.updatedLabel }}
+    <strong>{{ forSale.total }}</strong> tokens available.
+    Last updated: {{ forSaleMeta.lastUpdated }}
+  </p>
+  <div class="for-sale-search">
+    <label for="for-sale-search-input">Search catalog number</label>
+    <input
+      id="for-sale-search-input"
+      type="search"
+      placeholder="Search, e.g. NY630AN, NY630, PPZ, FFIN2"
+      autocomplete="off" />
+  </div>
+
+
+
+  <p class="section-intro for-sale-results-summary">
+    <strong id="for-sale-visible-count">{{ forSale.total }}</strong>
+    of
+    <strong>{{ forSale.total }}</strong>
+    tokens shown.
   </p>
 
   <div class="for-sale-list">
     {% for group in forSale.groups %}
-      <details class="for-sale-group" open>
+      <details class="for-sale-group" data-sale-group>
         <summary>
-          {{ group.stateName }} <span>({{ group.items.length }})</span>
+          {{ group.stateName }}
+          <span>
+            (<span data-group-visible-count>{{ group.items.length }}</span>)
+          </span>
         </summary>
 
         <div class="for-sale-items">
           {% for item in group.items %}
-            <div class="for-sale-item">
+            <div class="for-sale-item" data-sale-item data-search="{{ item.searchText }}">
               <span class="for-sale-id">{{ item.catalogId }}</span>
               <span class="for-sale-price">{{ item.value }}</span>
             </div>
@@ -35,4 +55,10 @@ permalink: /for-sale/index.html
       </details>
     {% endfor %}
   </div>
+
+  <p class="for-sale-empty" id="for-sale-empty" hidden>
+    No matching tokens found.
+  </p>
 </section>
+
+<script src="/assets/js/for-sale.js"></script>

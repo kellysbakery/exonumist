@@ -1598,3 +1598,34 @@ h2 {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
+
+.for-sale-search {
+  max-width: 700px;
+  margin: 1.25rem 0 1rem;
+}
+
+.for-sale-search label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 800;
+}
+
+.for-sale-search input {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  background: var(--panel);
+  color: var(--text);
+  font: inherit;
+}
+
+.for-sale-search input:focus {
+  outline: 2px solid rgba(107, 79, 47, 0.35);
+  outline-offset: 2px;
+}
+
+.for-sale-empty {
+  color: var(--muted);
+  font-weight: 700;
+}
