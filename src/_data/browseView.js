@@ -70,8 +70,11 @@ function buildSearchText(token) {
     token.borough || "",
     token.type ? lookups.type[token.type] || token.type : "",
     token.mat ? lookups.materials[token.mat] || token.mat : "",
-    token.notes || ""
+    token.counterstamp || "",
+    token.obv || "",
+    token.rev || ""
   ];
+
   return parts.join(" ").toLowerCase();
 }
 
