@@ -13,19 +13,6 @@
     "sort": "001-unknown-nyc-transit"
   },
   {
-    "id": "specific-listed-nyc-tokens",
-    "title": "Specific listed NYC transportation tokens",
-    "summary": "I am looking for selected listed transportation tokens needed to improve or complete the catalog.",
-    "category": "transportation",
-    "type": "listed-token",
-    "status": "wanted",
-    "priority": "medium",
-    "visibility": "public",
-    "groups": ["listed"],
-    "tags": ["listed", "nyc", "transportation"],
-    "sort": "010-specific-listed-nyc"
-  },
-  {
     "id": "civil-war-tokens",
     "title": "Civil War tokens",
     "summary": "I am interested in Civil War tokens with strong historical appeal, unusual merchants, or interesting designs.",
