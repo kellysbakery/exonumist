@@ -126,10 +126,10 @@
         <div class="token-pager-item token-pager-prev">
           <a class="token-pager-link" href="{{ detailView.pager.prev.url }}">
             <div class="token-pager-media">
-              {% if prevToken and (prevToken | hasTokenImage("o")) %}
+              {% if prevToken and (prevToken | hasTokenThumb("o")) %}
                 <img
                   class="token-pager-image"
-                  src="{{ prevToken | tokenImagePath('o') }}"
+                  src="{{ prevToken | tokenThumbPath('o') }}"
                   alt="{{ detailView.pager.prev.id }} obverse" />
               {% else %}
                 <div class="token-pager-placeholder"></div>
@@ -149,10 +149,10 @@
         <div class="token-pager-item token-pager-next">
           <a class="token-pager-link" href="{{ detailView.pager.next.url }}">
             <div class="token-pager-media">
-              {% if nextToken and (nextToken | hasTokenImage("o")) %}
+              {% if nextToken and (nextToken | hasTokenThumb("o")) %}
                 <img
                   class="token-pager-image"
-                  src="{{ nextToken | tokenImagePath('o') }}"
+                  src="{{ nextToken | tokenThumbPath('o') }}"
                   alt="{{ detailView.pager.next.id }} obverse" />
               {% else %}
                 <div class="token-pager-placeholder"></div>

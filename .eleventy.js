@@ -97,14 +97,22 @@ eleventyConfig.addFilter("formatDateUS", (value) => {
     const filename = buildTokenImageFilename(record, side);
     if (!filename) return "";
 
-    return path.join(process.cwd(), "src", "images", filename);
+    return path.join(process.cwd(), "src", "assets", "images", "token", filename);
   }
 
   function buildTokenImageWebPath(record, side) {
     const filename = buildTokenImageFilename(record, side);
     if (!filename) return "";
 
-    return `/images/${filename}`;
+    return `/assets/images/token/${filename}`;
+  }
+
+  function buildTokenThumbWebPath(record, side) {
+    const filename = buildTokenImageFilename(record, side);
+    if (!filename) return "";
+
+    const thumbFilename = filename.replace('.jpg', '.webp');
+    return `/assets/images/thumb/${thumbFilename}`;
   }
 
   // Canonical generic image helpers
@@ -112,9 +120,22 @@ eleventyConfig.addFilter("formatDateUS", (value) => {
     return buildTokenImageWebPath(record, side);
   });
 
+  eleventyConfig.addFilter("tokenThumbPath", (record, side) => {
+    return buildTokenThumbWebPath(record, side);
+  });
+
   eleventyConfig.addFilter("hasTokenImage", (record, side) => {
     const fsPath = buildTokenImageFsPath(record, side);
     return fsPath ? fs.existsSync(fsPath) : false;
+  });
+
+  eleventyConfig.addFilter("hasTokenThumb", (record, side) => {
+    const filename = buildTokenImageFilename(record, side);
+    if (!filename) return false;
+
+    const thumbFilename = filename.replace('.jpg', '.webp');
+    const fsPath = path.join(process.cwd(), "src", "assets", "images", "thumb", thumbFilename);
+    return fs.existsSync(fsPath);
   });
 
   // Catalog-aware sort for keys like:

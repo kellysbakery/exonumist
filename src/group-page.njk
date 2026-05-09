@@ -51,7 +51,12 @@ eleventyComputed:
         <article class="card token-list-card">
 
           <div class="token-list-card-media">
-            {% if token | hasTokenImage("o") %}
+            {% if token | hasTokenThumb("o") %}
+              <img
+                class="token-list-card-image"
+                src="{{ token | tokenThumbPath('o') }}"
+                alt="{{ token.displayId }} obverse" />
+            {% elif token | hasTokenImage("o") %}
               <img
                 class="token-list-card-image"
                 src="{{ token | tokenImagePath('o') }}"
