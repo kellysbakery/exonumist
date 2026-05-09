@@ -9,6 +9,14 @@ permalink: /browse/index.html
   <p class="section-intro">Browse by borough and token type.</p>
 
   <div class="card browse-controls">
+    <div class="browse-search-group">
+      <input
+        type="text"
+        id="browse-search"
+        class="browse-search-input"
+        placeholder="Search by ID, title, borough, type, material, or notes..." />
+    </div>
+
     <div class="browse-filter-group" data-filter-group="borough">
       <div class="browse-filter-heading">
         <strong>Borough</strong>
@@ -52,7 +60,8 @@ permalink: /browse/index.html
     <article
       class="card browse-card"
       data-borough="{{ token.borough }}"
-      data-types="{{ token.browseTypes | join(' ') }}">
+      data-types="{{ token.browseTypes | join(' ') }}"
+      data-search="{{ token.searchText }}">
 
       <a class="card-link browse-card-link" href="{{ token.url or '/' }}">
         <div class="browse-card-media">
