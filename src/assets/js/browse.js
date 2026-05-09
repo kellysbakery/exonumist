@@ -4,19 +4,23 @@
   const cards = [...document.querySelectorAll(".browse-card")];
   const count = document.getElementById("browse-count");
   const reset = document.getElementById("browse-reset");
+  const searchInput = document.getElementById("browse-search");
+
+  let searchTerm = "";
+  let searchTimeout;
 
   function groupChips(filterName) {
-    return chips.filter(chip => chip.dataset.filter === filterName);
+    return chips.filter((chip) => chip.dataset.filter === filterName);
   }
 
   function activeValues(filterName) {
     return groupChips(filterName)
-      .filter(chip => chip.classList.contains("is-active"))
-      .map(chip => chip.dataset.value);
+      .filter((chip) => chip.classList.contains("is-active"))
+      .map((chip) => chip.dataset.value);
   }
 
   function allInGroupActive(filterName) {
-    return groupChips(filterName).every(chip =>
+    return groupChips(filterName).every((chip) =>
       chip.classList.contains("is-active")
     );
   }
@@ -32,15 +36,21 @@
     return (card.dataset.types || "").split(" ").filter(Boolean);
   }
 
-  function cardMatches(card, selected) {
-    return (
+  function cardMatches(card, selected, search = "") {
+    const matchesFilters =
       selected.borough.includes(card.dataset.borough) &&
-      cardTypes(card).some(type => selected.type.includes(type))
-    );
+      cardTypes(card).some((type) => selected.type.includes(type));
+
+    if (!search) {
+      return matchesFilters;
+    }
+
+    const cardSearch = card.dataset.search || "";
+    return matchesFilters && cardSearch.includes(search.toLowerCase());
   }
 
   function updateChipCounts(selected) {
-    chips.forEach(chip => {
+    chips.forEach((chip) => {
       const filterName = chip.dataset.filter;
       const value = chip.dataset.value;
       const countEl = chip.querySelector(".browse-chip-count");
@@ -50,8 +60,9 @@
         type: filterName === "type" ? [value] : selected.type
       };
 
-      countEl.textContent =
-        cards.filter(card => cardMatches(card, test)).length;
+      countEl.textContent = cards.filter((card) =>
+        cardMatches(card, test, searchTerm)
+      ).length;
     });
   }
 
@@ -78,18 +89,13 @@
 
     const params = new URLSearchParams(location.hash.slice(1));
 
-    ["borough", "type"].forEach(filterName => {
-      const values = (params.get(filterName) || "")
-        .split(",")
-        .filter(Boolean);
+    ["borough", "type"].forEach((filterName) => {
+      const values = (params.get(filterName) || "").split(",").filter(Boolean);
 
       if (!values.length) return;
 
-      groupChips(filterName).forEach(chip => {
-        chip.classList.toggle(
-          "is-active",
-          values.includes(chip.dataset.value)
-        );
+      groupChips(filterName).forEach((chip) => {
+        chip.classList.toggle("is-active", values.includes(chip.dataset.value));
       });
     });
   }
@@ -98,15 +104,14 @@
     const selected = selections();
     let visible = 0;
 
-    cards.forEach(card => {
-      const match = cardMatches(card, selected);
+    cards.forEach((card) => {
+      const match = cardMatches(card, selected, searchTerm);
       card.style.display = match ? "" : "none";
 
       if (match) visible++;
     });
 
-    count.textContent =
-      `${visible} of ${cards.length} shown`;
+    count.textContent = `${visible} of ${cards.length} shown`;
 
     updateChipCounts(selected);
 
@@ -115,12 +120,12 @@
     }
   }
 
-  chips.forEach(chip => {
+  chips.forEach((chip) => {
     chip.addEventListener("click", function () {
       const filterName = chip.dataset.filter;
 
       if (allInGroupActive(filterName)) {
-        groupChips(filterName).forEach(other =>
+        groupChips(filterName).forEach((other) =>
           other.classList.remove("is-active")
         );
         chip.classList.add("is-active");
@@ -133,9 +138,9 @@
     });
   });
 
-  groupActions.forEach(button => {
+  groupActions.forEach((button) => {
     button.addEventListener("click", function () {
-      groupChips(button.dataset.filter).forEach(chip =>
+      groupChips(button.dataset.filter).forEach((chip) =>
         chip.classList.add("is-active")
       );
 
@@ -144,11 +149,20 @@
   });
 
   reset.addEventListener("click", function () {
-    chips.forEach(chip => chip.classList.add("is-active"));
+    chips.forEach((chip) => chip.classList.add("is-active"));
     applyFilters();
+  });
+
+  // Search input with debouncing
+  searchInput.addEventListener("input", function () {
+    clearTimeout(searchTimeout);
+    searchTerm = this.value;
+
+    searchTimeout = setTimeout(() => {
+      applyFilters();
+    }, 150);
   });
 
   readHash();
   applyFilters(false);
 })();
-

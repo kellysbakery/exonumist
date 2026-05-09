@@ -1071,6 +1071,30 @@ h2 {
   margin-bottom: 1rem;
 }
 
+.browse-search-group {
+  margin-bottom: 1rem;
+}
+
+.browse-search-input {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background-color: var(--panel);
+  font-family: inherit;
+}
+
+.browse-search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.browse-search-input:focus {
+  outline: none;
+  border-color: var(--text);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
 .browse-filter-group + .browse-filter-group {
   margin-top: 1rem;
 }

@@ -1,6 +1,7 @@
 const tokenDetailView = require("./tokenDetailView");
 
 const allTokens = require("./allTokens");
+const lookups = require("./lookups.json");
 
 const GROUP_BROWSE_TYPES = {
   errors: "error",
@@ -62,10 +63,23 @@ function buildBrowseUrl(token) {
   return tokenDetailView.buildTokenUrl(token);
 }
 
+function buildSearchText(token) {
+  const parts = [
+    token.displayId || "",
+    token.title || "",
+    token.borough || "",
+    token.type ? lookups.type[token.type] || token.type : "",
+    token.mat ? lookups.materials[token.mat] || token.mat : "",
+    token.notes || ""
+  ];
+  return parts.join(" ").toLowerCase();
+}
+
 const tokens = allTokens.map((token) => ({
   ...token,
   url: buildBrowseUrl(token),
-  browseTypes: buildBrowseTypes(token)
+  browseTypes: buildBrowseTypes(token),
+  searchText: buildSearchText(token)
 }));
 
 module.exports = {
