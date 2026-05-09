@@ -146,8 +146,9 @@ h2 {
 
 .grid-narrow {
   display: grid;
-  grid-template-columns: minmax(0, 560px);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
+  max-width: 980px;
 }
 
 .card,
@@ -1310,6 +1311,10 @@ h2 {
 @media (max-width: 640px) {
   .topbar {
     padding: 8px 12px;
+  }
+
+  .grid-narrow {
+    grid-template-columns: 1fr;
   }
 
   .nav {
