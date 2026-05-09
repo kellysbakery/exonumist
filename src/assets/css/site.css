@@ -1530,3 +1530,55 @@ h2 {
   border: none;
   cursor: pointer;
 }
+
+/* =========================================================
+   FOR SALE PAGE
+   ========================================================= */
+
+.for-sale-list {
+  max-width: 700px;
+}
+
+.for-sale-group {
+  margin-bottom: 1rem;
+  border: 1px solid var(--panel-border);
+  border-radius: 0.75rem;
+  background: var(--panel);
+  overflow: hidden;
+}
+
+.for-sale-group summary {
+  cursor: pointer;
+  padding: 0.85rem 1rem;
+  font-weight: 800;
+}
+
+.for-sale-group summary span {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.for-sale-items {
+  border-top: 1px solid var(--panel-border);
+}
+
+.for-sale-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.45rem 1rem;
+  border-bottom: 1px solid var(--panel-border);
+}
+
+.for-sale-item:last-child {
+  border-bottom: 0;
+}
+
+.for-sale-id {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.for-sale-price {
+  white-space: nowrap;
+}

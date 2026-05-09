@@ -1,0 +1,38 @@
+---
+layout: base.njk
+title: For Sale
+permalink: /for-sale/index.html
+---
+
+<section class="section">
+  <h1>For Sale</h1>
+
+  <p class="section-intro">
+    Duplicate transportation tokens available for sale or trade. Please contact me to confirm
+    availability before purchase.
+  </p>
+
+  <p class="section-intro">
+    <strong>{{ forSale.total }}</strong> tokens listed.
+    Last updated: {{ forSale.updatedLabel }}
+  </p>
+
+  <div class="for-sale-list">
+    {% for group in forSale.groups %}
+      <details class="for-sale-group" open>
+        <summary>
+          {{ group.stateName }} <span>({{ group.items.length }})</span>
+        </summary>
+
+        <div class="for-sale-items">
+          {% for item in group.items %}
+            <div class="for-sale-item">
+              <span class="for-sale-id">{{ item.catalogId }}</span>
+              <span class="for-sale-price">{{ item.value }}</span>
+            </div>
+          {% endfor %}
+        </div>
+      </details>
+    {% endfor %}
+  </div>
+</section>
