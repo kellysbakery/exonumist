@@ -42,18 +42,86 @@ function parseCsvLine(line) {
 // ---------------------------------------------------------
 // stateName(code)
 //
-// Converts a two-letter state abbreviation into a friendly
-// display name used as the group heading.
+// Converts a state/province abbreviation into a friendly
+// display name used as the collapsible group heading.
 //
-// If the state is not listed here, the abbreviation itself
-// is returned.
-//
-// Add more states here as needed.
+// Includes U.S. states and Canadian provinces because
+// transportation token catalogs include both.
 // ---------------------------------------------------------
 function stateName(code) {
   const states = {
     AL: "Alabama",
-    NY: "New York"
+    AK: "Alaska",
+    AR: "Arkansas",
+    AZ: "Arizona",
+    CA: "California",
+    CO: "Colorado",
+    CT: "Connecticut",
+    DC: "District of Columbia",
+    DE: "Delaware",
+    FL: "Florida",
+    GA: "Georgia",
+    HI: "Hawaii",
+    IA: "Iowa",
+    ID: "Idaho",
+    IL: "Illinois",
+    IN: "Indiana",
+    KS: "Kansas",
+    KY: "Kentucky",
+    LA: "Louisiana",
+    MA: "Massachusetts",
+    MD: "Maryland",
+    ME: "Maine",
+    MI: "Michigan",
+    MN: "Minnesota",
+    MO: "Missouri",
+    MS: "Mississippi",
+    MT: "Montana",
+    NC: "North Carolina",
+    ND: "North Dakota",
+    NE: "Nebraska",
+    NH: "New Hampshire",
+    NJ: "New Jersey",
+    NM: "New Mexico",
+    NV: "Nevada",
+    NY: "New York",
+    OH: "Ohio",
+    OK: "Oklahoma",
+    OR: "Oregon",
+    PA: "Pennsylvania",
+    PR: "Puerto Rico",
+    RI: "Rhode Island",
+    SC: "South Carolina",
+    SD: "South Dakota",
+    TN: "Tennessee",
+    TX: "Texas",
+    UT: "Utah",
+    VA: "Virginia",
+    VT: "Vermont",
+    WA: "Washington",
+    WI: "Wisconsin",
+    WV: "West Virginia",
+    WY: "Wyoming",
+
+    // Canadian provinces / territories
+    AB: "Alberta",
+    BC: "British Columbia",
+    MB: "Manitoba",
+    NB: "New Brunswick",
+    NL: "Newfoundland",
+    NS: "Nova Scotia",
+    ON: "Ontario",
+    PE: "Prince Edward Island",
+    PQ: "Quebec",
+    SK: "Saskatchewan",
+
+    // Countries
+    PI: "Philippines",
+
+    // Special
+    CC: "Club Tour",
+    FF: "Fantasy",
+    PP: "Presentation Pieces"
   };
 
   return states[code] || code;
