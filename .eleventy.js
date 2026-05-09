@@ -11,48 +11,56 @@ module.exports = function (eleventyConfig) {
     return table && code ? table[code] || code : "";
   });
 
-// Format numeric values as money with 2 decimals
-eleventyConfig.addFilter("money", (value) => {
-  const num = Number(value);
-  if (Number.isNaN(num)) return value;
-  return num.toFixed(2);
-});
+  // Format numeric values as money with 2 decimals
+  eleventyConfig.addFilter("money", (value) => {
+    const num = Number(value);
+    if (Number.isNaN(num)) return value;
+    return num.toFixed(2);
+  });
 
-// Format whole numbers with commas
-eleventyConfig.addFilter("formatNumber", (value) => {
-  if (value === null || value === undefined || value === "") return "";
+  // Format whole numbers with commas
+  eleventyConfig.addFilter("formatNumber", (value) => {
+    if (value === null || value === undefined || value === "") return "";
 
-  const num = Number(value);
-  if (Number.isNaN(num)) return value;
+    const num = Number(value);
+    if (Number.isNaN(num)) return value;
 
-  return num.toLocaleString("en-US");
-});
+    return num.toLocaleString("en-US");
+  });
 
-// Format token issue dates for display
-eleventyConfig.addFilter("formatDateUS", (value) => {
-  if (!value) return "";
+  // Format token issue dates for display
+  eleventyConfig.addFilter("formatDateUS", (value) => {
+    if (!value) return "";
 
-  const text = String(value);
+    const text = String(value);
 
-  const fullDate = /^(\d{4})-(\d{2})-(\d{2})$/;
-  const yearMonth = /^(\d{4})-(\d{2})$/;
+    const fullDate = /^(\d{4})-(\d{2})-(\d{2})$/;
+    const yearMonth = /^(\d{4})-(\d{2})$/;
 
-  if (fullDate.test(text)) {
-    const [, year, month, day] = text.match(fullDate);
-    return `${month}/${day}/${year}`;
-  }
+    if (fullDate.test(text)) {
+      const [, year, month, day] = text.match(fullDate);
+      return `${month}/${day}/${year}`;
+    }
 
-  if (yearMonth.test(text)) {
-    const [, year, month] = text.match(yearMonth);
-    return `${month}/${year}`;
-  }
+    if (yearMonth.test(text)) {
+      const [, year, month] = text.match(yearMonth);
+      return `${month}/${year}`;
+    }
 
-  return text;
-});
+    return text;
+  });
 
   // Resolve nested URLs from site.json refs like catalog.infoUrl
   eleventyConfig.addFilter("resolveUrlRef", (urlRef, site) => {
-    if (!urlRef || !site) return "#";
+    if (!urlRef) return "#";
+
+    // If it's already a full URL, return it as-is
+    if (urlRef.startsWith("http://") || urlRef.startsWith("https://")) {
+      return urlRef;
+    }
+
+    // Otherwise, try to resolve it from the site object
+    if (!site) return "#";
 
     return (
       urlRef.split(".").reduce((acc, key) => {
@@ -61,11 +69,12 @@ eleventyConfig.addFilter("formatDateUS", (value) => {
     );
   });
 
-    function normalizeImageSide(side) {
+  function normalizeImageSide(side) {
     const normalized = String(side || "").toLowerCase();
 
     if (normalized === "o" || normalized === "obverse") return "o";
-    if (normalized === "r" || normalized === "rev" || normalized === "reverse") return "r";
+    if (normalized === "r" || normalized === "rev" || normalized === "reverse")
+      return "r";
 
     return normalized;
   }
@@ -79,7 +88,9 @@ eleventyConfig.addFilter("formatDateUS", (value) => {
       return String(record.sort).trim().toLowerCase();
     }
 
-    return String(record.displayId || "").trim().toLowerCase();
+    return String(record.displayId || "")
+      .trim()
+      .toLowerCase();
   }
 
   function buildTokenImageFilename(record, side) {
@@ -97,7 +108,14 @@ eleventyConfig.addFilter("formatDateUS", (value) => {
     const filename = buildTokenImageFilename(record, side);
     if (!filename) return "";
 
-    return path.join(process.cwd(), "src", "assets", "images", "token", filename);
+    return path.join(
+      process.cwd(),
+      "src",
+      "assets",
+      "images",
+      "token",
+      filename
+    );
   }
 
   function buildTokenImageWebPath(record, side) {
@@ -111,7 +129,7 @@ eleventyConfig.addFilter("formatDateUS", (value) => {
     const filename = buildTokenImageFilename(record, side);
     if (!filename) return "";
 
-    const thumbFilename = filename.replace('.jpg', '.webp');
+    const thumbFilename = filename.replace(".jpg", ".webp");
     return `/assets/images/thumb/${thumbFilename}`;
   }
 
@@ -133,8 +151,15 @@ eleventyConfig.addFilter("formatDateUS", (value) => {
     const filename = buildTokenImageFilename(record, side);
     if (!filename) return false;
 
-    const thumbFilename = filename.replace('.jpg', '.webp');
-    const fsPath = path.join(process.cwd(), "src", "assets", "images", "thumb", thumbFilename);
+    const thumbFilename = filename.replace(".jpg", ".webp");
+    const fsPath = path.join(
+      process.cwd(),
+      "src",
+      "assets",
+      "images",
+      "thumb",
+      thumbFilename
+    );
     return fs.existsSync(fsPath);
   });
 
