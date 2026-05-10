@@ -42,7 +42,7 @@ permalink: /for-sale/index.html
 
   <div class="for-sale-list">
     {% for group in forSale.groups %}
-      <details class="for-sale-group" data-sale-group>
+      <details class="for-sale-group" data-sale-group data-count="{{ group.items.length }}">
         <summary>
           {{ group.stateName }}
           <span>
@@ -52,7 +52,7 @@ permalink: /for-sale/index.html
 
         <div class="for-sale-items">
           {% for item in group.items %}
-            <div class="for-sale-item" data-sale-item data-search="{{ item.searchText }}">
+            <div class="for-sale-item" data-sale-item data-search-text="{{ item.searchText }}">
               <span class="for-sale-id">{{ item.catalogId }}</span>
               <span class="for-sale-price">{{ item.value }}</span>
             </div>
