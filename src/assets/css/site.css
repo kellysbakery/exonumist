@@ -1000,6 +1000,10 @@ h2 {
   margin-top: 1rem;
 }
 
+.wanted-secondary-heading {
+  margin-top: 2rem;
+}
+
 /* Individual Want List token cards */
 .wanted-token-link {
   position: relative;
