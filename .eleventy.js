@@ -69,6 +69,21 @@ module.exports = function (eleventyConfig) {
     );
   });
 
+  eleventyConfig.addFilter("absoluteUrl", (urlPath, site) => {
+    const baseUrl = site?.siteUrl || site?.url || site?.baseUrl || "";
+    if (!urlPath) return baseUrl;
+
+    if (/^https?:\/\//.test(urlPath)) {
+      return urlPath;
+    }
+
+    if (!baseUrl) {
+      return urlPath;
+    }
+
+    return new URL(urlPath, baseUrl).href;
+  });
+
   function normalizeImageSide(side) {
     const normalized = String(side || "").toLowerCase();
 

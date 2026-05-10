@@ -1,9 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  {% set siteTitle = site.siteName or site.title or "Exonumist" %}
+  {% set defaultDescription = "A collector-focused reference for transportation tokens, exonumia, unlisted pieces, patterns, counterfeits, errors, oddities, and related material." %}
+  {% set pageTitle = title or siteTitle %}
+  {% set metaTitle = pageTitle if pageTitle == siteTitle else pageTitle ~ " | " ~ siteTitle %}
+  {% set metaDescription = description or site.description or defaultDescription %}
+  {% set canonicalUrl = page.url | absoluteUrl(site) %}
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{ (title or site.siteName) | safe }}</title>
+  <title>{{ metaTitle }}</title>
+  <meta name="description" content="{{ metaDescription }}" />
+  <link rel="canonical" href="{{ canonicalUrl }}" />
+  <meta property="og:title" content="{{ metaTitle }}" />
+  <meta property="og:description" content="{{ metaDescription }}" />
+  <meta property="og:url" content="{{ canonicalUrl }}" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="{{ metaTitle }}" />
+  <meta name="twitter:description" content="{{ metaDescription }}" />
   <link rel="stylesheet" href="/assets/css/site.css" />
 </head>
 <body>
