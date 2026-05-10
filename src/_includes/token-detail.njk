@@ -1,6 +1,44 @@
-{% set detailSectionTitle = detailSectionTitle or "Tokens" %}
-{% set detailSectionUrl = detailSectionUrl or "/" %}
-{% set detailView = detailView or tokenDetailView or display %}
+{%- set detailSectionTitle = detailSectionTitle or "Tokens" -%}
+{%- set detailSectionUrl = detailSectionUrl or "/" -%}
+{%- set detailView = detailView or tokenDetailView or display -%}
+{%- set tokenStructuredName = detailView.tokenId -%}
+{%- if detailView.tokenTitle -%}
+  {%- set tokenStructuredName = detailView.tokenId ~ " | " ~ detailView.tokenTitle -%}
+{%- endif -%}
+{%- set tokenStructuredDescription = token.desc or detailView.tokenTitle or detailView.tokenId -%}
+{%- set tokenStructuredCategory = lookups.type[token.type] if token.type and lookups.type else token.type -%}
+{%- set tokenStructuredMaterial = lookups.materials[token.mat] if token.mat and lookups.materials else token.mat -%}
+{%- set tokenStructuredImages = [] -%}
+{%- if token | hasTokenImage("o") -%}
+  {%- set tokenStructuredImages = tokenStructuredImages.concat([(token | tokenImagePath("o")) | absoluteUrl(site)]) -%}
+{%- endif -%}
+{%- if token | hasTokenImage("r") -%}
+  {%- set tokenStructuredImages = tokenStructuredImages.concat([(token | tokenImagePath("r")) | absoluteUrl(site)]) -%}
+{%- endif %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemPage",
+  "name": {{ tokenStructuredName | dump | safe }},
+  "url": {{ (page.url | absoluteUrl(site)) | dump | safe }},
+  "description": {{ tokenStructuredDescription | dump | safe }},
+  "about": {
+    "@type": "IndividualProduct",
+    "name": {{ tokenStructuredName | dump | safe }},
+    "identifier": {{ detailView.tokenId | dump | safe }}{% if tokenStructuredCategory or tokenStructuredMaterial or tokenStructuredImages.length %},{% endif %}
+    {%- if tokenStructuredCategory %}
+      "category": {{ tokenStructuredCategory | dump | safe }}{% if tokenStructuredMaterial or tokenStructuredImages.length %},{% endif %}
+    {%- endif %}
+    {%- if tokenStructuredMaterial %}
+      "material": {{ tokenStructuredMaterial | dump | safe }}{% if tokenStructuredImages.length %},{% endif %}
+    {%- endif %}
+    {%- if tokenStructuredImages.length %}
+      "image": {{ tokenStructuredImages | dump | safe }}
+    {%- endif %}
+  }
+}
+</script>
 
 <section class="token-shell">
   <nav class="breadcrumb" aria-label="Breadcrumb">
