@@ -65,85 +65,13 @@ permalink: /about/index.html
   </div>
 </section>
 
-<section class="section" id="want-list">
-  <div class="about-split">
-    <div>
-      <h2>Want List</h2>
+<section class="section">
+  <h2>Want List</h2>
 
-      <p class="section-intro">
-        I am actively looking for certain pieces for the collection, especially early New York
-        transportation tokens, undocumented material, unusual varieties, and better examples of
-        pieces already represented here.
-      </p>
-
-      {# Specific catalog tokens marked with wanted: true in token JSON files #}
-      {% set wantedTokens = [] %}
-      {% for token in collections.officialAll %}
-        {% if token.wanted %}
-          {% set wantedTokens = wantedTokens.concat([token]) %}
-        {% endif %}
-      {% endfor %}
-
-      {% if wantedTokens.length %}
-        <h3>Currently Seeking</h3>
-
-        <div class="wanted-token-list">
-          {% for token in wantedTokens %}
-            <a class="wanted-token-link" href="{{ tokenDetailView.buildTokenUrl(token) }}">
-              <span class="wanted-token-badge">Wanted</span>
-
-              <strong>{{ token.displayId }}</strong>
-
-              <span>{{ token.title }}</span>
-
-              <span class="wanted-token-meta">
-                {% if token.mat %}{{ token.mat | lookup(lookups.materials) }}{% endif %}
-                {% if token.counterstamp %}
-                  {% if token.mat %} · {% endif %}{{ token.counterstamp }} counterstamp
-                {% endif %}
-                {% if token.type and token.type != "transit" %}
-                  {% if token.mat or token.counterstamp %} · {% endif %}{{ token.type | lookup(lookups.type) }}
-                {% endif %}
-              </span>
-            </a>
-          {% endfor %}
-        </div>
-      {% endif %}
-
-      {# General want-list entries from src/_data/wantList.json #}
-      {% if wantList and wantList.length %}
-        <h3>Other Wanted Material</h3>
-
-        <ul class="prose-width">
-          {% for item in wantList | sort(attribute="sort") %}
-            {% if item.visibility != "private" and item.status == "wanted" %}
-              <li>
-                <strong>{{ item.title }}</strong>
-                <!-- {% if item.summary %} — {{ item.summary }}{% endif %} -->
-              </li>
-            {% endif %}
-          {% endfor %}
-        </ul>
-      {% endif %}
-    </div>
-
-    <aside class="about-aside want-list-cta">
-      <h3>Have something interesting?</h3>
-
-      <p>
-        I am especially interested in New York transportation tokens, undocumented pieces,
-        unusual varieties, and historically interesting exonumia.
-      </p>
-
-      <p>
-        Unknown and error tokens interest me most.
-      </p>
-
-      <p class="want-list-cta-link">Have tokens or exonumia to sell or trade?
-        <a href="mailto:contact@exonumist.com">Get in touch.</a>
-      </p>
-    </aside>
-  </div>
+  <p class="section-intro">
+    Looking for specific items I am actively seeking? Visit the
+    <a href="/wanted/">Want List</a>.
+  </p>
 </section>
 
 <section class="section">
