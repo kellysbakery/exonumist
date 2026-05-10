@@ -3,7 +3,7 @@
 {% set detailView = detailView or tokenDetailView or display %}
 
 <section class="token-shell">
-  <div class="meta breadcrumb">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
     {% for crumb in detailView.breadcrumbItems %}
       {% if crumb.url %}
         <a href="{{ crumb.url }}">{{ crumb.label }}</a>
@@ -12,7 +12,7 @@
         <span aria-current="page">{{ crumb.label }}</span>
       {% endif %}
     {% endfor %}
-  </div>
+  </nav>
 
   <h1>{{ detailView.tokenId }}</h1>
 

@@ -25,7 +25,7 @@ eleventyComputed:
     {% endif %}
   {% endfor %}
 
-  <div class="meta breadcrumb">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
     <a href="/">Home</a>
     {% if matchedSiteSection %}
       <span>/</span>
@@ -33,7 +33,7 @@ eleventyComputed:
     {% endif %}
     <span>/</span>
     <span aria-current="page">{{ group.title }}</span>
-  </div>
+  </nav>
 
   <h1>{{ group.title }}</h1>
 
