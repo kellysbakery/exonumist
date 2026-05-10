@@ -2,11 +2,15 @@ function normalize(value) {
   return value.trim().toLowerCase();
 }
 
+function setElementHidden(element, isHidden) {
+  element.hidden = isHidden;
+}
+
 function updateForSaleSearch() {
   const input = document.querySelector("#for-sale-search-input");
   const visibleCount = document.querySelector("#for-sale-visible-count");
   const emptyMessage = document.querySelector("#for-sale-empty");
-  const groups = document.querySelectorAll("[data-sale-group]");
+  const groups = [...document.querySelectorAll("[data-sale-group]")];
 
   if (!input || !visibleCount || !emptyMessage) return;
 
@@ -16,23 +20,24 @@ function updateForSaleSearch() {
   groups.forEach((group) => {
     const items = group.querySelectorAll("[data-sale-item]");
     const groupCount = group.querySelector("[data-group-visible-count]");
+    const defaultCount = Number(group.dataset.count) || items.length;
     let visibleInGroup = 0;
 
     items.forEach((item) => {
-      const searchText = item.dataset.search || "";
+      const searchText = normalize(item.dataset.searchText || "");
       const isMatch = !query || searchText.includes(query);
 
-      item.hidden = !isMatch;
+      setElementHidden(item, !isMatch);
 
       if (isMatch) {
         visibleInGroup += 1;
       }
     });
 
-    group.hidden = visibleInGroup === 0;
+    setElementHidden(group, visibleInGroup === 0);
 
     if (groupCount) {
-      groupCount.textContent = visibleInGroup;
+      groupCount.textContent = query ? visibleInGroup : defaultCount;
     }
 
     if (query && visibleInGroup > 0) {
@@ -47,7 +52,7 @@ function updateForSaleSearch() {
   });
 
   visibleCount.textContent = totalVisible;
-  emptyMessage.hidden = totalVisible !== 0;
+  setElementHidden(emptyMessage, totalVisible !== 0);
 }
 
 document.addEventListener("DOMContentLoaded", () => {

@@ -1585,6 +1585,12 @@ h2 {
   border-bottom: 1px solid rgba(217, 210, 197, 0.65);
 }
 
+.for-sale-group[hidden],
+.for-sale-item[hidden],
+#for-sale-empty[hidden] {
+  display: none;
+}
+
 /* Alternating row color for easier scanning */
 .for-sale-item:nth-child(even) {
   background: rgba(239, 231, 218, 0.32);
