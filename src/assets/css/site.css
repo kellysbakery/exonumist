@@ -1074,6 +1074,118 @@ h2 {
 }
 
 /* =========================================================
+   CONTACT PAGE
+   Used by: /contact/
+   ========================================================= */
+
+.contact-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(420px, 500px);
+  gap: 2rem;
+  align-items: center;
+}
+
+.contact-hero-content {
+  min-width: 0;
+}
+
+.contact-profile-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  max-width: 500px;
+  padding: 2rem;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.48);
+}
+
+.contact-profile-image {
+  flex: 0 0 150px;
+  width: 150px;
+  height: 150px;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 1px solid var(--line);
+}
+
+.contact-profile-body {
+  min-width: 0;
+}
+
+.contact-profile-body h2 {
+  margin-bottom: 0.35rem;
+  font-size: 1.2rem;
+}
+
+.contact-profile-name {
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.contact-profile-body p {
+  margin: 0 0 0.45rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.contact-profile-link {
+  color: var(--accent);
+  font-size: 0.94rem;
+  font-weight: 700;
+}
+
+.section:has(.contact-hero) ~ .section:has(.about-split) {
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.section:has(.contact-hero) ~ .section .about-split {
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.section:has(.contact-hero) ~ .section .about-split h2 {
+  margin-bottom: 0.45rem;
+}
+
+.section:has(.contact-hero) ~ .section .about-split .prose-width {
+  margin: 0;
+}
+
+.section:has(.contact-hero) ~ .section .about-aside {
+  align-self: start;
+  padding: 0.85rem 1rem;
+}
+
+.section:has(.contact-hero) ~ .section .about-aside h3 {
+  margin-top: 0;
+  margin-bottom: 0.45rem;
+}
+
+.section:has(.contact-hero) ~ .section .about-aside ul {
+  margin: 0.35rem 0 0;
+  padding-left: 1.25rem;
+}
+
+@media (max-width: 760px) {
+  .contact-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-profile-card {
+    max-width: 100%;
+    padding: 1.25rem;
+  }
+
+  .contact-profile-image {
+    flex-basis: 112px;
+    width: 112px;
+    height: 112px;
+  }
+}
+
+/* =========================================================
    BROWSE PAGE
    Used by: /browse/ filter controls and token result cards
    ========================================================= */
