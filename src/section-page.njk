@@ -10,6 +10,12 @@ eleventyComputed:
 ---
 
 <section class="section">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span>/</span>
+    <span>{{ siteSection.title }}</span>
+  </nav>
+
   <h1>{{ siteSection.title }}</h1>
 
   {% if siteSection.intro %}
