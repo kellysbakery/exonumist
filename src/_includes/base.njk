@@ -1,25 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <head>
   {% set siteTitle = site.siteName or site.title or "Exonumist" %}
   {% set defaultDescription = "A collector-focused reference for transportation tokens, exonumia, unlisted pieces, patterns, counterfeits, errors, oddities, and related material." %}
   {% set pageTitle = title or siteTitle %}
   {% set metaTitle = pageTitle if pageTitle == siteTitle else pageTitle ~ " | " ~ siteTitle %}
   {% set metaDescription = description or site.description or defaultDescription %}
   {% set canonicalUrl = page.url | absoluteUrl(site) %}
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>{{ metaTitle }}</title>
   <meta name="description" content="{{ metaDescription }}" />
   <link rel="canonical" href="{{ canonicalUrl }}" />
+
+  <!-- Open Graph -->
   <meta property="og:title" content="{{ metaTitle }}" />
   <meta property="og:description" content="{{ metaDescription }}" />
   <meta property="og:url" content="{{ canonicalUrl }}" />
   <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary" />
+  <meta
+    property="og:image"
+    content="{{ '/assets/images/site/social-preview.png' | absoluteUrl(site) }}" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="{{ metaTitle }}" />
   <meta name="twitter:description" content="{{ metaDescription }}" />
+  <meta
+    name="twitter:image"
+    content="{{ '/assets/images/site/social-preview.png' | absoluteUrl(site) }}" />
+
   <link rel="stylesheet" href="/assets/css/site.css" />
+</head>
 </head>
 <body>
   {% include "partials/header.njk" %}
