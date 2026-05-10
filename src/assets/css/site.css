@@ -120,7 +120,8 @@ h2 {
   font-size: 1.5rem;
 }
 
-.section {
+.section,
+.token-shell {
   padding: 22px;
   margin-bottom: 22px;
 }
@@ -332,10 +333,6 @@ h2 {
    TOKEN DETAIL PAGE
    Used by: individual token detail pages
    ========================================================= */
-
-.token-shell {
-  padding: 28px;
-}
 
 .token-header {
   margin-bottom: 1.5rem;
@@ -1282,6 +1279,7 @@ h2 {
     font-size: 2.25rem;
   }
 
+  .section,
   .token-shell {
     padding: 20px;
   }
@@ -1362,6 +1360,7 @@ h2 {
     padding: 2px 0;
   }
 
+  .section,
   .token-shell {
     padding: 16px;
   }
