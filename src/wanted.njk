@@ -58,7 +58,7 @@ permalink: /wanted/index.html
 
       {# General want-list entries from src/_data/wantList.json #}
       {% if wantList and wantList.length %}
-        <h2>Other Wanted Material</h2>
+        <h2 class="wanted-secondary-heading">Other Wanted Material</h2>
 
         <ul class="prose-width">
           {% for item in wantList | sort(attribute="sort") %}
