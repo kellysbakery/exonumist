@@ -1191,6 +1191,31 @@ h2 {
   font-weight: 700;
 }
 
+.related-page-card-with-media {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 88px;
+  gap: 14px;
+  align-items: center;
+}
+
+.related-page-card-body {
+  min-width: 0;
+}
+
+.related-page-card-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.related-page-card-image {
+  display: block;
+  width: 100%;
+  max-width: 88px;
+  max-height: 72px;
+  object-fit: contain;
+}
+
 /*
   Contact detail rows reuse the About page split layout.
   These scoped rules tighten the cards without changing the About page itself.
@@ -1250,6 +1275,15 @@ h2 {
     flex-basis: 112px;
     width: 112px;
     height: 112px;
+  }
+
+  .related-page-card-with-media {
+    grid-template-columns: minmax(0, 1fr) 72px;
+  }
+
+  .related-page-card-image {
+    max-width: 72px;
+    max-height: 64px;
   }
 }
 

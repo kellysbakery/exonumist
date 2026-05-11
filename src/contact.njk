@@ -72,9 +72,20 @@ permalink: /contact/index.html
   <div class="grid-3">
     {% for relatedPage in contactPage.relatedPages %}
       <a class="card-link" href="{{ relatedPage.url }}">
-        <article class="card">
-          <strong>{{ relatedPage.title }}</strong>
-          <p class="section-intro">{{ relatedPage.description }}</p>
+        <article class="card related-page-card{% if relatedPage.image %} related-page-card-with-media{% endif %}">
+          <div class="related-page-card-body">
+            <strong>{{ relatedPage.title }}</strong>
+            <p class="section-intro">{{ relatedPage.description }}</p>
+          </div>
+
+          {% if relatedPage.image %}
+            <div class="related-page-card-media">
+              <img
+                class="related-page-card-image"
+                src="{{ relatedPage.image }}"
+                alt="{{ relatedPage.imageAlt }}" />
+            </div>
+          {% endif %}
         </article>
       </a>
     {% endfor %}
