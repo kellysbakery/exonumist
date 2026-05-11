@@ -893,6 +893,10 @@ h2 {
   justify-content: center;
 }
 
+.hero-feature .card-link {
+  cursor: pointer;
+}
+
 .hero-feature-card {
   width: 100%;
   max-width: 250px;
@@ -900,7 +904,19 @@ h2 {
   border: 1px solid var(--line);
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
   text-align: center;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    border-color 160ms ease;
+}
+
+.hero-feature .card-link:hover .hero-feature-card,
+.hero-feature .card-link:focus-visible .hero-feature-card {
+  border-color: #b8a78d;
+  box-shadow: 0 14px 30px rgba(82, 63, 39, 0.12);
+  transform: translateY(-3px) scale(1.01);
 }
 
 .hero-feature-card img {
