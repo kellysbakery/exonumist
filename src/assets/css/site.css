@@ -1072,7 +1072,6 @@ h2 {
     grid-template-columns: 1fr;
   }
 }
-
 /* =========================================================
    CONTACT PAGE
    Used by: /contact/
@@ -1135,6 +1134,10 @@ h2 {
   font-weight: 700;
 }
 
+/*
+  Contact detail rows reuse the About page split layout.
+  These scoped rules tighten the cards without changing the About page itself.
+*/
 .section:has(.contact-hero) ~ .section:has(.about-split) {
   padding-top: 18px;
   padding-bottom: 18px;
@@ -1149,8 +1152,16 @@ h2 {
   margin-bottom: 0.45rem;
 }
 
-.section:has(.contact-hero) ~ .section .about-split .prose-width {
+/*
+  Keep Contact page section paragraphs controlled and predictable.
+  The second paragraph gets explicit spacing so it reads as a separate thought.
+*/
+.contact-section-content .prose-width {
   margin: 0;
+}
+
+.contact-section-content .prose-width + .prose-width {
+  margin-top: 1rem;
 }
 
 .section:has(.contact-hero) ~ .section .about-aside {
