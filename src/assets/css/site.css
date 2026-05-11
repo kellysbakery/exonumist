@@ -5,6 +5,11 @@
    When changing CSS, search for the matching section heading first.
    ========================================================= */
 
+/* =========================================================
+   DESIGN TOKENS
+   Shared color and interaction values used across page sections.
+   ========================================================= */
+
 :root {
   --bg: #f4f1ea;
   --panel: #fffdf8;
@@ -14,6 +19,13 @@
   --accent: #6b4f2f;
   --soft: #efe7da;
   --dark: #211d18;
+
+  /* Interactive hover states cue clickability while preserving the museum-style palette. */
+  --interactive-border: #b8a78d;
+  --interactive-outline: 1px solid rgba(120, 98, 71, 0.26);
+  --interactive-shadow-soft: 0 12px 28px rgba(82, 63, 39, 0.1);
+  --interactive-shadow-medium: 0 14px 30px rgba(82, 63, 39, 0.12);
+  --interactive-shadow-strong: 0 12px 30px rgba(82, 63, 39, 0.16);
 }
 
 * {
@@ -307,6 +319,11 @@ h2 {
   display: block;
 }
 
+/* =========================================================
+   INTERACTIVE HOVER STATES
+   Shared cues for linked cards so clickable surfaces respond consistently.
+   ========================================================= */
+
 .card-link {
   display: block;
   text-decoration: none;
@@ -326,7 +343,7 @@ h2 {
 .card-link:hover .resource-card {
   transform: translateY(-3px);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
-  border-color: #b8a78d;
+  border-color: var(--interactive-border);
 }
 
 /* =========================================================
@@ -427,8 +444,8 @@ h2 {
 
 .token-image:hover,
 .token-image:focus-visible {
-  box-shadow: 0 12px 30px rgba(82, 63, 39, 0.16);
-  outline: 1px solid rgba(120, 98, 71, 0.26);
+  box-shadow: var(--interactive-shadow-strong);
+  outline: var(--interactive-outline);
   outline-offset: 4px;
   transform: scale(1.015);
 }
@@ -761,7 +778,7 @@ h2 {
 .token-pager-link:hover {
   transform: translateY(-1px);
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.05);
-  border-color: #b8a78d;
+  border-color: var(--interactive-border);
 }
 
 .token-pager-media {
@@ -914,8 +931,8 @@ h2 {
 
 .hero-feature .card-link:hover .hero-feature-card,
 .hero-feature .card-link:focus-visible .hero-feature-card {
-  border-color: #b8a78d;
-  box-shadow: 0 14px 30px rgba(82, 63, 39, 0.12);
+  border-color: var(--interactive-border);
+  box-shadow: var(--interactive-shadow-medium);
   transform: translateY(-3px) scale(1.01);
 }
 
@@ -1058,8 +1075,8 @@ h2 {
 
 .wanted-token-link:hover,
 .wanted-token-link:focus-visible {
-  border-color: #b8a78d;
-  box-shadow: 0 12px 28px rgba(82, 63, 39, 0.1);
+  border-color: var(--interactive-border);
+  box-shadow: var(--interactive-shadow-soft);
   text-decoration: none;
   transform: translateY(-3px);
 }
