@@ -1042,7 +1042,13 @@ h2 {
   border: 1px solid var(--line);
   border-radius: 0.65rem;
   background: #fffdf8;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  cursor: pointer;
   text-decoration: none;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    border-color 160ms ease;
 }
 
 .wanted-token-link strong {
@@ -1050,8 +1056,12 @@ h2 {
   display: inline-block;
 }
 
-.wanted-token-link:hover {
-  text-decoration: underline;
+.wanted-token-link:hover,
+.wanted-token-link:focus-visible {
+  border-color: #b8a78d;
+  box-shadow: 0 12px 28px rgba(82, 63, 39, 0.1);
+  text-decoration: none;
+  transform: translateY(-3px);
 }
 
 .wanted-token-link strong,
