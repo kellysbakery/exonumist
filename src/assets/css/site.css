@@ -418,6 +418,19 @@ h2 {
   object-fit: contain;
   display: block;
   margin: 0 auto 0.9rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.token-image:hover,
+.token-image:focus-visible {
+  box-shadow: 0 12px 30px rgba(82, 63, 39, 0.16);
+  outline: 1px solid rgba(120, 98, 71, 0.26);
+  outline-offset: 4px;
+  transform: scale(1.015);
 }
 
 .placeholder {
