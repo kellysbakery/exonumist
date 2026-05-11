@@ -54,7 +54,9 @@
     {
       "title": "About",
       "url": "/about/",
-      "description": "Learn more about the collection and site goals."
+      "description": "Learn more about the collection and site goals.",
+      "image": "/assets/images/site/exonumist-logo-square.png",
+      "imageAlt": "Exonumist token logo banner"
     },
     {
       "title": "For Sale",
