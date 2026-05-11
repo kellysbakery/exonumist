@@ -19,6 +19,7 @@
   --accent: #6b4f2f;
   --soft: #efe7da;
   --dark: #211d18;
+  --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.04);
 
   /* Interactive hover states cue clickability while preserving the museum-style palette. */
   --interactive-border: #b8a78d;
@@ -106,7 +107,7 @@ a {
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 18px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  box-shadow: var(--shadow-card);
 }
 
 .hero {
@@ -921,7 +922,7 @@ h2 {
   border: 1px solid var(--line);
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.55);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  box-shadow: var(--shadow-card);
   text-align: center;
   transition:
     transform 160ms ease,
@@ -1058,8 +1059,8 @@ h2 {
   padding: 0.75rem 1rem 0.75rem 0.9rem;
   border: 1px solid var(--line);
   border-radius: 0.65rem;
-  background: #fffdf8;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  background: var(--panel);
+  box-shadow: var(--shadow-card);
   cursor: pointer;
   text-decoration: none;
   transition:
@@ -1277,7 +1278,7 @@ h2 {
 }
 
 .browse-search-input::placeholder {
-  color: var(--text-muted);
+  color: var(--muted);
 }
 
 .browse-search-input:focus {
