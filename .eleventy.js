@@ -11,6 +11,11 @@ module.exports = function (eleventyConfig) {
     return table && code ? table[code] || code : "";
   });
 
+  eleventyConfig.addFilter("isRoundToken", (record) => {
+    const form = String(record?.form || record || "").trim().toLowerCase();
+    return form === "r" || form === "round";
+  });
+
   // Format numeric values as money with 2 decimals
   eleventyConfig.addFilter("money", (value) => {
     const num = Number(value);
