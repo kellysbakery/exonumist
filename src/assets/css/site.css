@@ -681,12 +681,35 @@ h2 {
   overflow: hidden;
 }
 
+.token-list-card-media-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.token-list-card-media-frame--round {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.38);
+  overflow: hidden;
+}
+
 .token-list-card-image {
   width: 100%;
   max-width: 170px;
   max-height: 150px;
   object-fit: contain;
   display: block;
+}
+
+.token-list-card-media-frame--round .token-list-card-image {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
 }
 
 .token-list-card-placeholder {
@@ -1526,6 +1549,11 @@ h2 {
     max-height: 140px;
   }
 
+  .token-list-card-media-frame--round {
+    width: 140px;
+    height: 140px;
+  }
+
   .hero-feature {
     justify-content: flex-start;
   }
@@ -1619,6 +1647,11 @@ h2 {
   .token-list-card-image {
     max-width: 135px;
     max-height: 120px;
+  }
+
+  .token-list-card-media-frame--round {
+    width: 120px;
+    height: 120px;
   }
 
   .token-list-card-title {

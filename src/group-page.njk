@@ -52,15 +52,19 @@ eleventyComputed:
 
           <div class="token-list-card-media">
             {% if token | hasTokenThumb("o") %}
-              <img
-                class="token-list-card-image"
-                src="{{ token | tokenThumbPath('o') }}"
-                alt="{{ token.displayId }} obverse" />
+              <div class="token-list-card-media-frame{% if token | isRoundToken %} token-list-card-media-frame--round{% endif %}">
+                <img
+                  class="token-list-card-image"
+                  src="{{ token | tokenThumbPath('o') }}"
+                  alt="{{ token.displayId }} obverse" />
+              </div>
             {% elif token | hasTokenImage("o") %}
-              <img
-                class="token-list-card-image"
-                src="{{ token | tokenImagePath('o') }}"
-                alt="{{ token.displayId }} obverse" />
+              <div class="token-list-card-media-frame{% if token | isRoundToken %} token-list-card-media-frame--round{% endif %}">
+                <img
+                  class="token-list-card-image"
+                  src="{{ token | tokenImagePath('o') }}"
+                  alt="{{ token.displayId }} obverse" />
+              </div>
             {% else %}
               <div class="token-list-card-placeholder"></div>
             {% endif %}
