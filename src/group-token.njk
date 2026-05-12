@@ -18,10 +18,11 @@ eleventyComputed:
 
 {% if token.status == "listed" and token.sec %}
   {% set matchedSection = tokenDetailView.findSection(sections, token.sec) %}
+  {% set matchedGroup = tokenDetailView.findListedGroupForSection(sections, groups, token.sec) %}
 
   {% if matchedSection %}
     {% set detailSectionTitle = matchedSection.title %}
-    {% set detailSectionUrl = "/listed/" ~ (token.sec | lower) ~ "/" %}
+    {% set detailSectionUrl = matchedGroup.url if matchedGroup else detailSectionUrl %}
   {% endif %}
 {% endif %}
 
