@@ -307,6 +307,21 @@ function findSection(sections = [], sec = "") {
   );
 }
 
+function findListedGroupForSection(sections = [], groups = [], sec = "") {
+  const section = findSection(sections, sec);
+  if (!section || !Array.isArray(groups)) return null;
+
+  return (
+    groups.find(
+      (group) =>
+        group.pub !== false &&
+        group.section === "listed" &&
+        group.title === section.title &&
+        group.url
+    ) || null
+  );
+}
+
 function buildGroupBreadcrumbItems(group, token, siteSections = []) {
   const items = [{ label: "Home", url: "/" }];
 
@@ -374,6 +389,7 @@ function buildUnlistedSection(token) {
 module.exports = {
   findPrevNext,
   findSection,
+  findListedGroupForSection,
   buildGroupBreadcrumbItems,
   findGroupTokens,
   buildPagerItem,

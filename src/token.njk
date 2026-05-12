@@ -10,8 +10,9 @@ eleventyComputed:
 ---
 
 {% set matchedSection = tokenDetailView.findSection(sections, token.sec) %}
+{% set matchedGroup = tokenDetailView.findListedGroupForSection(sections, groups, token.sec) %}
 {% set sectionLabel = matchedSection.title if matchedSection else token.sec %}
-{% set sectionUrl = "/listed/" ~ (token.sec | lower) ~ "/" %}
+{% set sectionUrl = matchedGroup.url if matchedGroup else "/listed/" %}
 
 {% set sectionTokens = [] %}
 {% for item in collections.officialAll %}
