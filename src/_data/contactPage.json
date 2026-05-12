@@ -55,18 +55,22 @@
       "title": "About",
       "url": "/about/",
       "description": "Learn more about the collection and site goals.",
-      "image": "/assets/images/site/exonumist-logo-square.png",
-      "imageAlt": "Exonumist token logo banner"
+      "image": "/assets/images/site/aboutus.png",
+      "imageAlt": "AboutUs"
     },
     {
       "title": "For Sale",
       "url": "/for-sale/",
-      "description": "View duplicate transportation tokens available for sale or trade."
+      "description": "View duplicate transportation tokens available for sale or trade.",
+      "image": "/assets/images/site/forsale.png",
+      "imageAlt": "For Sale"
     },
     {
       "title": "Want List",
       "url": "/wanted/",
-      "description": "See pieces currently being sought for the collection."
+      "description": "See pieces currently being sought for the collection.",
+      "image": "/assets/images/site/wantlist.png",
+      "imageAlt": "Want List"
     }
   ]
 }
