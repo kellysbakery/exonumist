@@ -58,52 +58,12 @@
     "description": "Pattern pieces listed in the Atwood-Coffee Catalogue."
   },
   {
-    "key": "timetables",
-    "title": "Timetables",
+    "key": "specialty",
+    "title": "Specialty Tokens",
     "section": "listed",
     "order": 7,
-    "url": "/groups/timetables/",
-    "description": "Timetable issues listed in the Atwood-Coffee Catalogue."
-  },
-  {
-    "key": "clubtour",
-    "title": "Club Tour",
-    "section": "listed",
-    "order": 8,
-    "url": "/groups/clubtour/",
-    "description": "Club tour pieces listed in the Atwood-Coffee Catalogue."
-  },
-  {
-    "key": "fantasy",
-    "title": "Fantasy",
-    "section": "listed",
-    "order": 9,
-    "url": "/groups/fantasy/",
-    "description": "Fantasy issues from the A/C Catalogue."
-  },
-  {
-    "key": "presentation",
-    "title": "Presentation Pieces",
-    "section": "listed",
-    "order": 10,
-    "url": "/groups/presentation/",
-    "description": "Presentation pieces from the A/C Catalogue."
-  },
-  {
-    "key": "zonecheck",
-    "title": "Zone Check",
-    "section": "listed",
-    "order": 11,
-    "url": "/groups/zonecheck/",
-    "description": "Zone Check pieces from the A/C Catalogue."
-  },
-  {
-    "key": "transitrelated",
-    "title": "Transportation Related",
-    "section": "listed",
-    "order": 12,
-    "url": "/groups/transitrelated/",
-    "description": "Transportation Related pieces from the A/C Catalogue."
+    "url": "/groups/specialty/",
+    "description": "Zone checks, club tour, fantasy, presentation, transit-related, and timetable tokens listed in the A-C Catalogue."
   },
   {
     "key": "discoveries",
