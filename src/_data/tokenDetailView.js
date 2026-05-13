@@ -23,6 +23,15 @@ function formatPrice(value) {
   return trimmed.startsWith("$") ? trimmed : `$${trimmed}`;
 }
 
+function formatNumber(value) {
+  if (value === null || value === undefined || value === "") return "";
+
+  const num = Number(value);
+  if (Number.isNaN(num)) return value;
+
+  return num.toLocaleString("en-US");
+}
+
 /**
  * Build the Quick Facts rows shown on detail pages.
  * Canonical schema only.
@@ -75,7 +84,7 @@ function buildQuickFacts(token, context = {}) {
   addRow("Borough", token.borough);
   addRow("Maker", token.maker);
   addRow("Issued", token.issued);
-  addRow("Mintage", token.mintage);
+  addRow("Mintage", formatNumber(token.mintage));
   addRow("Usage", token.usage);
 
   return rows;
