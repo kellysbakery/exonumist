@@ -164,14 +164,9 @@
         <div class="token-pager-item token-pager-prev">
           <a class="token-pager-link" href="{{ detailView.pager.prev.url }}"{% if prevToken %} data-prev-obverse="{{ prevToken | tokenImagePath('o') }}" data-prev-reverse="{{ prevToken | tokenImagePath('r') }}"{% endif %}>
             <div class="token-pager-media">
-              {% if prevToken and (prevToken | hasTokenThumb("o")) %}
-                <img
-                  class="token-pager-image"
-                  src="{{ prevToken | tokenThumbPath('o') }}"
-                  alt="{{ detailView.pager.prev.id }} obverse" />
-              {% else %}
-                <div class="token-pager-placeholder"></div>
-              {% endif %}
+              {% set pagerToken = prevToken %}
+              {% set pagerAltText = detailView.pager.prev.id ~ " obverse" %}
+              {% include "token-pager-image.njk" %}
             </div>
 
             <div class="token-pager-content">
@@ -187,14 +182,9 @@
         <div class="token-pager-item token-pager-next">
           <a class="token-pager-link" href="{{ detailView.pager.next.url }}"{% if nextToken %} data-next-obverse="{{ nextToken | tokenImagePath('o') }}" data-next-reverse="{{ nextToken | tokenImagePath('r') }}"{% endif %}>
             <div class="token-pager-media">
-              {% if nextToken and (nextToken | hasTokenThumb("o")) %}
-                <img
-                  class="token-pager-image"
-                  src="{{ nextToken | tokenThumbPath('o') }}"
-                  alt="{{ detailView.pager.next.id }} obverse" />
-              {% else %}
-                <div class="token-pager-placeholder"></div>
-              {% endif %}
+              {% set pagerToken = nextToken %}
+              {% set pagerAltText = detailView.pager.next.id ~ " obverse" %}
+              {% include "token-pager-image.njk" %}
             </div>
 
             <div class="token-pager-content">
