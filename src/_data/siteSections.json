@@ -4,10 +4,7 @@
     "title": "Listed Tokens",
     "intro": "Browse listed tokens by borough and specialty groups.",
     "gridClass": "grid-4",
-    "pub": true,
-    "previewLimit": 6,
-    "showAllLabel": "Show All Listed Groups",
-    "showFewerLabel": "Show Fewer Listed Groups"
+    "pub": true
   },
   {
     "key": "unlisted",
