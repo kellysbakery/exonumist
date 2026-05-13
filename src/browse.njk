@@ -80,8 +80,16 @@ permalink: /browse/index.html
           {% endif %}
 
           {% if browseImagePath %}
+            {% set browseTokenForm = token.form | lower | trim %}
             {% if token | isRoundToken %}
               <div class="token-list-card-media-frame token-list-card-media-frame--round">
+                <img
+                  class="token-list-card-image"
+                  src="{{ browseImagePath }}"
+                  alt="{{ token.displayId }}">
+              </div>
+            {% elif browseTokenForm == "oc" %}
+              <div class="token-list-card-media-frame token-list-card-media-frame--octagon">
                 <img
                   class="token-list-card-image"
                   src="{{ browseImagePath }}"
