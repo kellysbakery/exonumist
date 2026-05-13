@@ -81,10 +81,26 @@ description: Collector-focused reference for New York City transportation tokens
 
                   {% if group.cardImage %}
                     <div class="home-section-card-media">
-                      <img
-                        class="home-section-card-image"
-                        src="{{ group.cardImage }}"
-                        alt="{{ group.title }}" />
+                      {% if group.cardImageForm == "R" %}
+                        <div class="token-list-card-media-frame token-list-card-media-frame--round">
+                          <img
+                            class="token-list-card-image"
+                            src="{{ group.cardImage }}"
+                            alt="{{ group.title }}" />
+                        </div>
+                      {% elif group.cardImageForm == "Oc" %}
+                        <div class="token-list-card-media-frame token-list-card-media-frame--octagon">
+                          <img
+                            class="token-list-card-image"
+                            src="{{ group.cardImage }}"
+                            alt="{{ group.title }}" />
+                        </div>
+                      {% else %}
+                        <img
+                          class="home-section-card-image"
+                          src="{{ group.cardImage }}"
+                          alt="{{ group.title }}" />
+                      {% endif %}
                     </div>
                   {% endif %}
                 </div>
