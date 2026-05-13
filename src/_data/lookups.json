@@ -43,10 +43,7 @@
   "forms": {
     "R": "Round",
     "Oc": "Octagon",
-    "Ov": "Oval",
-    "Pg": "Pentagon",
-    "Sc": "Scalloped",
-    "Sd": "Solid"
+    "Ov": "Oval"
   },
   "symbols": {
     "Ap": "Apple",
@@ -72,9 +69,9 @@
     "Pc": "Pierced",
     "Pg": "Pentagon",
     "Pgsc": "Stencil-cut \"Pentagon\"",
-    "R": "R",
+    "R": "Letter R",
     "Ro": "Rosette",
-    "S": "S",
+    "S": "Letter S",
     "Sc": "Scalloped",
     "Sd": "Solid",
     "Sh": "Shamrock",
@@ -88,7 +85,7 @@
     "T-sc": "Stencil-cut \"T\"",
     "Trsc": "Stencil-cut Triangle",
     "Tr": "Triangle",
-    "W": "W",
+    "W": "Letter W",
     "Wd": "Wedge",
     "XX": "Figure 8",
     "Y-sc": "Stencil-cut \"Y\""
