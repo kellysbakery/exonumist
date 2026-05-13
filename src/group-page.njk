@@ -51,20 +51,35 @@ eleventyComputed:
         <article class="card token-list-card">
 
           <div class="token-list-card-media">
+            {% set imagePath = "" %}
             {% if token | hasTokenThumb("o") %}
-              <div class="token-list-card-media-frame{% if token | isRoundToken %} token-list-card-media-frame--round{% endif %}">
-                <img
-                  class="token-list-card-image"
-                  src="{{ token | tokenThumbPath('o') }}"
-                  alt="{{ token.displayId }} obverse" />
-              </div>
+              {% set imagePath = token | tokenThumbPath("o") %}
             {% elif token | hasTokenImage("o") %}
-              <div class="token-list-card-media-frame{% if token | isRoundToken %} token-list-card-media-frame--round{% endif %}">
+              {% set imagePath = token | tokenImagePath("o") %}
+            {% endif %}
+
+            {% if imagePath %}
+              {% set tokenForm = token.form | default("") | lower | trim %}
+              {% if token | isRoundToken %}
+                <div class="token-list-card-media-frame token-list-card-media-frame--round">
+                  <img
+                    class="token-list-card-image"
+                    src="{{ imagePath }}"
+                    alt="{{ token.displayId }} obverse" />
+                </div>
+              {% elif tokenForm == "oc" %}
+                <div class="token-list-card-media-frame token-list-card-media-frame--octagon">
+                  <img
+                    class="token-list-card-image"
+                    src="{{ imagePath }}"
+                    alt="{{ token.displayId }} obverse" />
+                </div>
+              {% else %}
                 <img
                   class="token-list-card-image"
-                  src="{{ token | tokenImagePath('o') }}"
+                  src="{{ imagePath }}"
                   alt="{{ token.displayId }} obverse" />
-              </div>
+              {% endif %}
             {% else %}
               <div class="token-list-card-placeholder"></div>
             {% endif %}
