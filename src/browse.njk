@@ -72,10 +72,24 @@ permalink: /browse/index.html
 
       <a class="card-link browse-card-link" href="{{ token.url or '/' }}">
         <div class="browse-card-media">
+          {% set browseImagePath = "" %}
           {% if token | hasTokenThumb("o") %}
-            <img src="{{ token | tokenThumbPath('o') }}" alt="{{ token.displayId }}">
+            {% set browseImagePath = token | tokenThumbPath("o") %}
           {% elif token | hasTokenImage("o") %}
-            <img src="{{ token | tokenImagePath('o') }}" alt="{{ token.displayId }}">
+            {% set browseImagePath = token | tokenImagePath("o") %}
+          {% endif %}
+
+          {% if browseImagePath %}
+            {% if token | isRoundToken %}
+              <div class="token-list-card-media-frame token-list-card-media-frame--round">
+                <img
+                  class="token-list-card-image"
+                  src="{{ browseImagePath }}"
+                  alt="{{ token.displayId }}">
+              </div>
+            {% else %}
+              <img src="{{ browseImagePath }}" alt="{{ token.displayId }}">
+            {% endif %}
           {% else %}
             <div class="browse-card-placeholder">No Image</div>
           {% endif %}
