@@ -1083,6 +1083,17 @@ h2 {
   display: block;
 }
 
+.home-section-card-media .token-list-card-media-frame--round,
+.home-section-card-media .token-list-card-media-frame--octagon {
+  width: 110px;
+  height: 110px;
+}
+
+.home-section-card-media .token-list-card-image {
+  width: 100%;
+  height: 100%;
+}
+
 /* =========================================================
    ABOUT PAGE
    Used by: /about/
