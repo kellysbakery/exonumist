@@ -50,20 +50,12 @@
     "description": "Staten Island transit tokens and related transportation pieces."
   },
   {
-    "key": "patterns",
-    "title": "Patterns",
-    "section": "listed",
-    "order": 6,
-    "url": "/groups/patterns/",
-    "description": "Pattern pieces listed in the Atwood-Coffee Catalogue."
-  },
-  {
     "key": "specialty",
     "title": "Specialty Tokens",
     "section": "listed",
-    "order": 7,
+    "order": 6,
     "url": "/groups/specialty/",
-    "description": "Zone checks, club tour, fantasy, presentation, transit-related, and timetable tokens listed in the A-C Catalogue."
+    "description": "Transit-related, patterns, zone checks, club tour, fantasy, presentation, and timetable tokens."
   },
   {
     "key": "discoveries",
