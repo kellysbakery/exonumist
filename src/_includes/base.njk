@@ -11,12 +11,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>{{ metaTitle }}</title>
+  <title>{{ metaTitle | safe }}</title>
   <meta name="description" content="{{ metaDescription }}" />
   <link rel="canonical" href="{{ canonicalUrl }}" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="{{ metaTitle }}" />
+  <meta property="og:title" content="{{ metaTitle | safe }}" />
   <meta property="og:description" content="{{ metaDescription }}" />
   <meta property="og:url" content="{{ canonicalUrl }}" />
   <meta property="og:type" content="website" />
@@ -26,7 +26,7 @@
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="{{ metaTitle }}" />
+  <meta name="twitter:title" content="{{ metaTitle | safe }}" />
   <meta name="twitter:description" content="{{ metaDescription }}" />
   <meta
     name="twitter:image"
