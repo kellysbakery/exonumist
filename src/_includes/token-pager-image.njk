@@ -1,0 +1,24 @@
+{% if pagerToken and (pagerToken | hasTokenThumb("o")) %}
+  {% if pagerToken.form == "R" %}
+    <div class="token-pager-image-frame token-pager-image-frame--round">
+      <img
+        class="token-pager-image"
+        src="{{ pagerToken | tokenThumbPath('o') }}"
+        alt="{{ pagerAltText }}" />
+    </div>
+  {% elif pagerToken.form == "Oc" %}
+    <div class="token-pager-image-frame token-pager-image-frame--octagon">
+      <img
+        class="token-pager-image"
+        src="{{ pagerToken | tokenThumbPath('o') }}"
+        alt="{{ pagerAltText }}" />
+    </div>
+  {% else %}
+    <img
+      class="token-pager-image"
+      src="{{ pagerToken | tokenThumbPath('o') }}"
+      alt="{{ pagerAltText }}" />
+  {% endif %}
+{% else %}
+  <div class="token-pager-placeholder"></div>
+{% endif %}

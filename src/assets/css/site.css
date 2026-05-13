@@ -839,6 +839,33 @@ h2 {
   display: block;
 }
 
+.token-pager-image-frame {
+  width: 72px;
+  height: 72px;
+  overflow: hidden;
+}
+
+.token-pager-image-frame--round {
+  border-radius: 50%;
+}
+
+.token-pager-image-frame--octagon {
+  clip-path: polygon(
+    30% 0%,
+    70% 0%,
+    100% 30%,
+    100% 70%,
+    70% 100%,
+    30% 100%,
+    0% 70%,
+    0% 30%
+  );
+}
+
+.token-pager-image-frame .token-pager-image {
+  object-fit: cover;
+}
+
 .token-pager-placeholder {
   width: 56px;
   height: 56px;
@@ -1701,6 +1728,11 @@ h2 {
   .token-pager-media {
     order: 2;
     flex-basis: auto;
+    width: 64px;
+    height: 64px;
+  }
+
+  .token-pager-image-frame {
     width: 64px;
     height: 64px;
   }
