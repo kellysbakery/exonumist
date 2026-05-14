@@ -42,7 +42,6 @@
  * desc
  * notes
  *
- * val
  * rel
  *
  * home
@@ -61,7 +60,6 @@
  * - Missing arrays become []
  * - Missing booleans become false
  * - Empty numeric values become null
- * - val becomes number or null
  * - size becomes number or null
  * - Records are rewritten in consistent key order
  *
@@ -162,7 +160,6 @@ function ordered(record) {
     desc: record.desc || "",
     notes: record.notes || "",
 
-    val: normalizeNullableNumber(record.val),
     rel,
 
     home: Boolean(record.home),
