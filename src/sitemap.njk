@@ -12,9 +12,6 @@ eleventyExcludeFromCollections: true
   "/wanted/",
   "/resources/"
 ] -%}
-{%- for siteSection in siteSections -%}
-  {%- set sitemapUrls = sitemapUrls.concat(["/" ~ siteSection.key ~ "/"]) -%}
-{%- endfor -%}
 {%- for group in groups -%}
   {%- set sitemapUrls = sitemapUrls.concat([group.url]) -%}
 {%- endfor -%}
@@ -26,12 +23,6 @@ eleventyExcludeFromCollections: true
 {%- endfor -%}
 {%- for pageData in groupTokenPages -%}
   {%- set sitemapUrls = sitemapUrls.concat(["/groups/" ~ pageData.group.key ~ "/" ~ (pageData.pageId | lower) ~ "/"]) -%}
-{%- endfor -%}
-{%- for token in collections.officialAll -%}
-  {%- set sitemapUrls = sitemapUrls.concat(["/official/" ~ (token.displayId | lower) ~ "/"]) -%}
-{%- endfor -%}
-{%- for token in unofficialAll -%}
-  {%- set sitemapUrls = sitemapUrls.concat(["/unlisted/" ~ (token.displayId | lower) ~ "/"]) -%}
 {%- endfor -%}
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

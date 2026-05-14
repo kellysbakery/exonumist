@@ -35,7 +35,7 @@ permalink: /wanted/index.html
 
         <div class="wanted-token-list">
           {% for token in wantedTokens %}
-            <a class="wanted-token-link" href="{{ tokenDetailView.buildTokenUrl(token) }}">
+            <a class="wanted-token-link" href="{{ collectionTokenUrls[token.id | lower] or collectionTokenUrls[token.displayId | lower] or '/' }}">
               <span class="wanted-token-badge">Wanted</span>
 
               <strong>{{ token.displayId }}</strong>

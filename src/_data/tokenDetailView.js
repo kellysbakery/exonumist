@@ -163,18 +163,6 @@ function findPrevNext(items = [], currentToken) {
   };
 }
 
-function buildTokenUrl(token) {
-  if (!token || !token.displayId) return "/";
-
-  const slug = String(token.displayId).toLowerCase();
-
-  if (token.status === "listed") {
-    return `/official/${slug}/`;
-  }
-
-  return `/unlisted/${slug}/`;
-}
-
 function buildPagerItem(token, options = {}) {
   if (!token) return null;
 
@@ -192,7 +180,7 @@ function buildPagerItem(token, options = {}) {
   } else if (urlBuilder === "group" && pagerGroupKey && slug) {
     url = `/groups/${pagerGroupKey}/${slug}/`;
   } else {
-    url = buildTokenUrl(token);
+    url = "/";
   }
 
   return {
@@ -316,21 +304,8 @@ function findListedGroupForSection(sections = [], groups = [], sec = "") {
   );
 }
 
-function buildGroupBreadcrumbItems(group, token, siteSections = []) {
+function buildGroupBreadcrumbItems(group, token) {
   const items = [{ label: "Home", url: "/" }];
-
-  if (group && group.section && Array.isArray(siteSections)) {
-    const matchedSiteSection =
-      siteSections.find((siteSection) => siteSection.key === group.section) ||
-      null;
-
-    if (matchedSiteSection) {
-      items.push({
-        label: matchedSiteSection.title,
-        url: `/${matchedSiteSection.key}/`
-      });
-    }
-  }
 
   if (group) {
     items.push({
@@ -357,29 +332,6 @@ function findGroupTokens(groupTokenPages = [], groupKey = "") {
     .map((item) => item.token);
 }
 
-function buildUnlistedSection(token) {
-  const groups = Array.isArray(token?.groups) ? token.groups : [];
-
-  if (groups.includes("counterfeit")) {
-    return {
-      title: "Counterfeit",
-      url: "/groups/counterfeit/"
-    };
-  }
-
-  if (groups.includes("errors")) {
-    return {
-      title: "Oddities & Errors",
-      url: "/groups/errors/"
-    };
-  }
-
-  return {
-    title: "Unlisted",
-    url: "/unlisted/"
-  };
-}
-
 module.exports = {
   findPrevNext,
   findSection,
@@ -387,7 +339,5 @@ module.exports = {
   buildGroupBreadcrumbItems,
   findGroupTokens,
   buildPagerItem,
-  buildTokenDetailView,
-  buildUnlistedSection,
-  buildTokenUrl
+  buildTokenDetailView
 };

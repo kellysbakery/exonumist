@@ -32,7 +32,7 @@ eleventyComputed:
 {% set prevToken = pager.prev %}
 {% set nextToken = pager.next %}
 
-{% set breadcrumbItems = tokenDetailView.buildGroupBreadcrumbItems(group, token, siteSections) %}
+{% set breadcrumbItems = tokenDetailView.buildGroupBreadcrumbItems(group, token) %}
 
 {% set detailView = tokenDetailView.buildTokenDetailView(token, {
   tokenId: token.displayId,
