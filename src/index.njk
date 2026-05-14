@@ -133,7 +133,7 @@ description: Collector-focused reference for New York City transportation tokens
 
   <div class="home-section-grid">
     {% for group in groups | sort(attribute="order") %}
-      {% if group.section == "spotlight" or group.featured %}
+      {% if group.section == "spotlight" or group.spotlight or group.featured %}
         {% set spotlightImage = group.cardImage or group.heroImage %}
         {% set spotlightImageForm = group.cardImageForm or group.heroImageForm %}
 
