@@ -14,12 +14,11 @@
     "homeUrl": "https://vecturist.com/"
   },
   "labels": {
-    "official": "Listed Tokens",
-    "unlisted": "Unlisted Tokens",
+    "collection": "Collection",
     "oddities": "Oddities & Errors",
     "special": "Patterns & Special Issues"
   },
   "notes": {
-    "homepageTagline": "A digital reference for listed and unlisted New York City transportation-related tokens."
+    "homepageTagline": "A digital reference for New York City transportation tokens, patterns, errors, counterfeits, and related exonumia."
   }
 }
