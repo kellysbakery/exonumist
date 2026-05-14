@@ -26,7 +26,6 @@
         "note": "Brooklyn 629 section notes mica-impregnated tokens."
       }
     ],
-    "val": 600,
     "rel": [],
     "home": false,
     "pub": true,
@@ -59,7 +58,6 @@
         "note": "Brooklyn 629 section gives Brooklyn Crosstown Railroad history and references NY997A."
       }
     ],
-    "val": 300,
     "rel": ["NY997A"],
     "home": false,
     "pub": true,
@@ -94,7 +92,6 @@
         "note": "Brooklyn 629 section states 5,000 struck 5/38 and provides Brooklyn Bus Corporation context."
       }
     ],
-    "val": 10,
     "rel": [],
     "home": false,
     "pub": true,
@@ -129,7 +126,6 @@
         "note": "Brooklyn 629 section states 45,000 struck in 10 orders from 12/29 to 1939."
       }
     ],
-    "val": 3,
     "rel": [],
     "home": false,
     "pub": true,
@@ -164,7 +160,6 @@
         "note": "Brooklyn 629 section states 5,000 struck 4/36."
       }
     ],
-    "val": 10,
     "rel": [],
     "home": false,
     "pub": true,
@@ -199,7 +194,6 @@
         "note": "Brooklyn 629 section states 75,000 struck total in 5 orders from 9/40 to 1947."
       }
     ],
-    "val": 3.5,
     "rel": [],
     "home": false,
     "pub": true,
@@ -224,7 +218,6 @@
     "rev": "Issued in Exchange for Transfer",
     "desc": "Listed transit token.",
     "notes": "",
-    "val": 10,
     "rel": [],
     "home": false,
     "pub": true,
@@ -249,7 +242,6 @@
     "rev": "Issued in Exchange for Transfer",
     "desc": "Listed transit token.",
     "notes": "",
-    "val": 15,
     "rel": [],
     "home": false,
     "pub": true,
@@ -284,7 +276,6 @@
         "note": "Brooklyn 629 section states 25,000 struck total in 4 orders beginning 7/41."
       }
     ],
-    "val": 4,
     "rel": [],
     "home": false,
     "pub": true,
@@ -309,7 +300,6 @@
     "rev": "Issued in Exchange for Transfer",
     "desc": "Listed transit token.",
     "notes": "",
-    "val": 10,
     "rel": [],
     "home": false,
     "pub": true,
@@ -334,7 +324,6 @@
     "rev": "Issued in Exchange for Transfer",
     "desc": "Listed transit token.",
     "notes": "KA with TRANSFER SYSTEM was an error, and never used.",
-    "val": 75,
     "rel": [],
     "home": false,
     "pub": true,
@@ -370,7 +359,6 @@
         "note": "Brooklyn 629 section states 11,000 struck total in 4 orders from 6/14/49 to 6/10/68 and describes boat usage."
       }
     ],
-    "val": 1,
     "rel": [],
     "home": false,
     "pub": true,
