@@ -24,22 +24,21 @@ description: Collector-focused reference for New York City transportation tokens
         </p>
 
         <p class="note">
-          In addition to Transit pieces, my collection includes Arcade, Hard Times, Civil War, Merchant,
-          and Miscellaneous tokens. Listed material follows the {{ site.catalog.name }} where applicable.
+          Start with the Collection areas below, or use Browse to search across listed, unlisted,
+          specialty, oddity, counterfeit, and related material.
         </p>
       </div>
 
       <div class="hero-actions">
-        <a href="/browse/" class="btn primary">Browse All Tokens</a>
-        <a href="/listed/" class="btn">Listed Catalog</a>
-        <a href="/unlisted/" class="btn">Unlisted Items</a>
+        <a href="/collection/" class="btn primary">Enter Collection</a>
+        <a href="/browse/" class="btn">Browse All Tokens</a>
       </div>
     </div>
 
     {% for group in groups %}
       {% if group.featured %}
         <aside class="hero-feature">
-          <a class="card-link" href="{{ group.url }}">
+          <a class="card-link" href="/collection/specialty/">
             <div class="hero-feature-card hero-feature-card-minimal">
               <div class="hero-feature-text">
                 <strong>{{ group.heroLabel }}</strong>
@@ -77,56 +76,50 @@ description: Collector-focused reference for New York City transportation tokens
   </div>
 </section>
 
-{% for siteSection in siteSections %}
-  {% if siteSection.pub != false %}
-    <section class="section">
-      <h2>{{ siteSection.title }}</h2>
+<section class="section">
+  <h2>Collection</h2>
 
-      {% if siteSection.intro %}
-        <p class="section-intro">{{ siteSection.intro }}</p>
-      {% endif %}
+  <p class="section-intro">
+    Browse by collecting area. Listed and unlisted status stays inside each area as metadata and filters.
+  </p>
 
-      <div class="home-section-grid">
-        {% for group in groups | sort(attribute="order") %}
-          {% if group.section == siteSection.key %}
-            <a class="card-link" href="{{ group.url }}">
-              <article class="card home-section-card">
-                <div class="home-section-card-layout">
-                  <div class="home-section-card-body">
-                    <strong class="home-section-card-title">{{ group.title }}</strong>
-                    <p class="home-section-card-desc">{{ group.description }}</p>
+  <div class="home-section-grid">
+    {% for area in collectionAreas %}
+      <a class="card-link" href="/collection/{{ area.slug }}/">
+        <article class="card home-section-card">
+          <div class="home-section-card-layout">
+            <div class="home-section-card-body">
+              <strong class="home-section-card-title">{{ area.title }}</strong>
+              <p class="home-section-card-desc">{{ area.description }}</p>
+            </div>
+
+            {% if area.cardImage %}
+              <div class="home-section-card-media">
+                {% if area.cardImageForm == "R" %}
+                  <div class="token-list-card-media-frame token-list-card-media-frame--round">
+                    <img
+                      class="token-list-card-image"
+                      src="{{ area.cardImage }}"
+                      alt="{{ area.title }}" />
                   </div>
-
-                  {% if group.cardImage %}
-                    <div class="home-section-card-media">
-                      {% if group.cardImageForm == "R" %}
-                        <div class="token-list-card-media-frame token-list-card-media-frame--round">
-                          <img
-                            class="token-list-card-image"
-                            src="{{ group.cardImage }}"
-                            alt="{{ group.title }}" />
-                        </div>
-                      {% elif group.cardImageForm == "Oc" %}
-                        <div class="token-list-card-media-frame token-list-card-media-frame--octagon">
-                          <img
-                            class="token-list-card-image"
-                            src="{{ group.cardImage }}"
-                            alt="{{ group.title }}" />
-                        </div>
-                      {% else %}
-                        <img
-                          class="home-section-card-image"
-                          src="{{ group.cardImage }}"
-                          alt="{{ group.title }}" />
-                      {% endif %}
-                    </div>
-                  {% endif %}
-                </div>
-              </article>
-            </a>
-          {% endif %}
-        {% endfor %}
-      </div>
-    </section>
-  {% endif %}
-{% endfor %}
+                {% elif area.cardImageForm == "Oc" %}
+                  <div class="token-list-card-media-frame token-list-card-media-frame--octagon">
+                    <img
+                      class="token-list-card-image"
+                      src="{{ area.cardImage }}"
+                      alt="{{ area.title }}" />
+                  </div>
+                {% else %}
+                  <img
+                    class="home-section-card-image"
+                    src="{{ area.cardImage }}"
+                    alt="{{ area.title }}" />
+                {% endif %}
+              </div>
+            {% endif %}
+          </div>
+        </article>
+      </a>
+    {% endfor %}
+  </div>
+</section>
