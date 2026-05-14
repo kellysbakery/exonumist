@@ -23,7 +23,6 @@
     "rev",
     "desc",
     "notes",
-    "val",
     "rel",
     "home",
     "pub",
@@ -146,10 +145,6 @@
           }
         }
       }
-    },
-    "val": {
-      "type": ["number", "null"],
-      "minimum": 0
     },
     "rel": {
       "type": "array",

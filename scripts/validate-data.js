@@ -23,7 +23,6 @@ const REQUIRED_FIELDS = [
   "rev",
   "desc",
   "notes",
-  "val",
   "rel",
   "home",
   "pub",
@@ -180,9 +179,6 @@ function main() {
         errors.push(`${label}: size must be numeric or null`);
       }
 
-      if (token.val !== null && typeof token.val !== "number") {
-        errors.push(`${label}: val must be numeric or null`);
-      }
     });
   }
 
