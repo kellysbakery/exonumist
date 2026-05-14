@@ -38,7 +38,7 @@ description: Collector-focused reference for New York City transportation tokens
     {% for group in groups %}
       {% if group.featured %}
         <aside class="hero-feature">
-          <a class="card-link" href="/collection/specialty/">
+          <a class="card-link" href="{{ group.url }}">
             <div class="hero-feature-card hero-feature-card-minimal">
               <div class="hero-feature-text">
                 <strong>{{ group.heroLabel }}</strong>
