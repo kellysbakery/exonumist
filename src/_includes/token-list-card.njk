@@ -4,6 +4,7 @@
   {% if tokenCardFilterable %}
     data-collection-token-card
     data-status="{{ tokenCardToken.status }}"
+    data-search="{{ tokenCardSearchText | default('') | escape }}"
   {% endif %}>
   <article class="card token-list-card">
 

@@ -40,6 +40,28 @@ eleventyComputed:
     </p>
   {% endif %}
 
+  <div class="card browse-controls collection-search-controls">
+    <label class="browse-filter-heading" for="collection-search-{{ collectionArea.slug }}">
+      <strong>Search this area</strong>
+    </label>
+    <input
+      id="collection-search-{{ collectionArea.slug }}"
+      class="collection-search-input"
+      type="search"
+      placeholder="Search {{ collectionArea.title }}..."
+      data-collection-search />
+    <p class="collection-search-help">
+      Search by token ID, legend text, authority, type, notes, or description.
+    </p>
+    <p class="collection-result-summary">
+      Showing
+      <span data-collection-result-count>{{ groupTokens.length }}</span>
+      of
+      <span data-collection-result-total>{{ groupTokens.length }}</span>
+      tokens
+    </p>
+  </div>
+
   {% if showStatusFilters %}
     <div class="card browse-controls" data-collection-status-filters>
       <div class="browse-filter-heading">
@@ -68,6 +90,20 @@ eleventyComputed:
       {% set tokenCardToken = token %}
       {% set tokenCardUrl = token.collectionUrl %}
       {% set tokenCardFilterable = true %}
+      {% set tokenCardSearchText %}
+        {{ token.displayId }}
+        {{ token.title }}
+        {{ token.desc }}
+        {{ token.obv }}
+        {{ token.rev }}
+        {{ token.notes }}
+        {{ token.status }}
+        {{ token.type }}
+        {{ token.borough }}
+        {{ token.mat | lookup(lookups.materials) }}
+        {{ token.form | lookup(lookups.forms) }}
+        {{ token.symbol | lookup(lookups.symbols) }}
+      {% endset %}
       {% include "token-list-card.njk" %}
     {% endfor %}
   </div>

@@ -1366,7 +1366,8 @@ h2 {
   margin-bottom: 1rem;
 }
 
-.browse-search-input {
+.browse-search-input,
+.collection-search-input {
   width: 100%;
   padding: 0.75rem;
   font-size: 1rem;
@@ -1376,14 +1377,27 @@ h2 {
   font-family: inherit;
 }
 
-.browse-search-input::placeholder {
+.browse-search-input::placeholder,
+.collection-search-input::placeholder {
   color: var(--muted);
 }
 
-.browse-search-input:focus {
+.browse-search-input:focus,
+.collection-search-input:focus {
   outline: none;
   border-color: var(--text);
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.collection-search-help,
+.collection-result-summary {
+  margin: 0.65rem 0 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.collection-result-summary {
+  font-weight: 700;
 }
 
 .browse-filter-group + .browse-filter-group {
