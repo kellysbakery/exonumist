@@ -49,6 +49,18 @@ a {
   display: none !important;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .topbar {
   background: var(--dark);
   color: #f7f2e9;
@@ -447,11 +459,37 @@ h2 {
     box-shadow 160ms ease;
 }
 
+.token-image-button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+  font: inherit;
+}
+
+.token-image-button .token-image {
+  cursor: zoom-in;
+}
+
 .token-image:hover,
+.token-image-button:hover .token-image,
 .token-image:focus-visible {
   box-shadow: var(--interactive-shadow-strong);
   outline: var(--interactive-outline);
   outline-offset: 4px;
+  transform: scale(1.015);
+}
+
+.token-image-button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 12px;
+}
+
+.token-image-button:focus-visible .token-image {
+  box-shadow: var(--interactive-shadow-strong);
   transform: scale(1.015);
 }
 
@@ -1390,7 +1428,8 @@ h2 {
 }
 
 .collection-search-help,
-.collection-result-summary {
+.collection-result-summary,
+.collection-empty-message {
   margin: 0.65rem 0 0;
   color: var(--muted);
   font-size: 0.94rem;

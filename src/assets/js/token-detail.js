@@ -85,9 +85,42 @@
   const modal = document.getElementById("image-modal");
   const modalImg = document.getElementById("modal-image");
   const closeBtn = document.querySelector(".image-modal-close");
+  let previouslyFocusedElement = null;
+
+  function openModal(img, trigger) {
+    previouslyFocusedElement = trigger || document.activeElement;
+    modal.style.display = "flex";
+    modalImg.src = img.src;
+    modalImg.alt = img.alt;
+    closeBtn.focus();
+  }
+
+  function closeModal() {
+    modal.style.display = "none";
+    modalImg.src = "";
+    modalImg.alt = "";
+
+    if (
+      previouslyFocusedElement &&
+      typeof previouslyFocusedElement.focus === "function"
+    ) {
+      previouslyFocusedElement.focus();
+    }
+  }
+
+  document.querySelectorAll(".token-image-button").forEach((button) => {
+    button.addEventListener("click", function () {
+      const img = this.querySelector(".token-image");
+      if (!img) return;
+
+      openModal(img, this);
+    });
+  });
 
   document.querySelectorAll(".token-image").forEach((img) => {
     img.addEventListener("click", function () {
+      if (this.closest(".token-image-button")) return;
+
       modal.style.display = "flex";
       modalImg.src = this.src;
       modalImg.alt = this.alt;
@@ -95,12 +128,18 @@
   });
 
   closeBtn.addEventListener("click", function () {
-    modal.style.display = "none";
+    closeModal();
   });
 
   modal.addEventListener("click", function (e) {
     if (e.target === modal) {
-      modal.style.display = "none";
+      closeModal();
+    }
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && modal.style.display !== "none") {
+      closeModal();
     }
   });
 
