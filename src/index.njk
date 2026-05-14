@@ -123,3 +123,56 @@ description: Collector-focused reference for New York City transportation tokens
     {% endfor %}
   </div>
 </section>
+
+<section class="section">
+  <h2>Spotlight</h2>
+
+  <p class="section-intro">
+    Curated collecting areas, favorite pieces, and historically significant groups from the collection.
+  </p>
+
+  <div class="home-section-grid">
+    {% for group in groups | sort(attribute="order") %}
+      {% if group.section == "spotlight" or group.featured %}
+        {% set spotlightImage = group.cardImage or group.heroImage %}
+        {% set spotlightImageForm = group.cardImageForm or group.heroImageForm %}
+
+        <a class="card-link" href="{{ group.url }}">
+          <article class="card home-section-card">
+            <div class="home-section-card-layout">
+              <div class="home-section-card-body">
+                <strong class="home-section-card-title">{{ group.title }}</strong>
+                <p class="home-section-card-desc">{{ group.description }}</p>
+              </div>
+
+              {% if spotlightImage %}
+                <div class="home-section-card-media">
+                  {% if spotlightImageForm == "R" %}
+                    <div class="token-list-card-media-frame token-list-card-media-frame--round">
+                      <img
+                        class="token-list-card-image"
+                        src="{{ spotlightImage }}"
+                        alt="{{ group.title }}" />
+                    </div>
+                  {% elif spotlightImageForm == "Oc" %}
+                    <div class="token-list-card-media-frame token-list-card-media-frame--octagon">
+                      <img
+                        class="token-list-card-image"
+                        src="{{ spotlightImage }}"
+                        alt="{{ group.title }}" />
+                    </div>
+                  {% else %}
+                    <img
+                      class="home-section-card-image"
+                      src="{{ spotlightImage }}"
+                      alt="{{ group.title }}" />
+                  {% endif %}
+                </div>
+              {% endif %}
+            </div>
+          </article>
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
