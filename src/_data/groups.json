@@ -72,7 +72,8 @@
     "order": 2,
     "url": "/groups/errors/",
     "cardImage": "/assets/images/thumb/odd-0003_o.webp",
-    "description": "Mistakes, varieties, and unusual transportation-related pieces."
+    "description": "Unusual pieces, production mistakes, varieties, and related oddities that add depth to the collection.",
+    "spotlight": true
   },
   {
     "key": "counterfeit",
