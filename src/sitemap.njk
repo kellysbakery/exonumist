@@ -5,6 +5,7 @@ eleventyExcludeFromCollections: true
 {%- set sitemapUrls = [
   "/",
   "/browse/",
+  "/collection/",
   "/about/",
   "/contact/",
   "/for-sale/",
@@ -16,6 +17,12 @@ eleventyExcludeFromCollections: true
 {%- endfor -%}
 {%- for group in groups -%}
   {%- set sitemapUrls = sitemapUrls.concat([group.url]) -%}
+{%- endfor -%}
+{%- for area in collectionAreas -%}
+  {%- set sitemapUrls = sitemapUrls.concat(["/collection/" ~ area.slug ~ "/"]) -%}
+{%- endfor -%}
+{%- for pageData in collectionTokenPages -%}
+  {%- set sitemapUrls = sitemapUrls.concat(["/collection/" ~ pageData.collectionArea.slug ~ "/" ~ (pageData.pageId | lower) ~ "/"]) -%}
 {%- endfor -%}
 {%- for pageData in groupTokenPages -%}
   {%- set sitemapUrls = sitemapUrls.concat(["/groups/" ~ pageData.group.key ~ "/" ~ (pageData.pageId | lower) ~ "/"]) -%}

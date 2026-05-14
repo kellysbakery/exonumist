@@ -1,0 +1,51 @@
+---
+layout: base.njk
+pagination:
+  data: collectionTokenPages
+  size: 1
+  alias: collectionPage
+permalink: "/collection/{{ collectionPage.collectionArea.slug }}/{{ collectionPage.pageId | lower }}/index.html"
+eleventyComputed:
+  title: "{{ collectionPage.token.displayId }} – {{ collectionPage.token.title }}"
+---
+
+{% set collectionArea = collectionPage.collectionArea %}
+{% set token = collectionPage.token %}
+{% set isUnlisted = token.status != "listed" %}
+
+{% set detailSectionTitle = collectionArea.title %}
+{% set detailSectionUrl = "/collection/" ~ collectionArea.slug ~ "/" %}
+
+{% set prevToken = collectionPage.previousToken %}
+{% set nextToken = collectionPage.nextToken %}
+
+{% set detailView = tokenDetailView.buildTokenDetailView(token, {
+  tokenId: token.displayId,
+  tokenTitle: token.title,
+  detailSectionTitle: detailSectionTitle,
+  detailSectionUrl: detailSectionUrl,
+  breadcrumbItems: [
+    {
+      label: "Home",
+      url: "/"
+    },
+    {
+      label: "Collection",
+      url: "/collection/"
+    },
+    {
+      label: detailSectionTitle,
+      url: detailSectionUrl
+    },
+    {
+      label: token.displayId
+    }
+  ],
+  detailShowPager: true,
+  prevToken: prevToken,
+  nextToken: nextToken,
+  isUnlisted: isUnlisted,
+  lookups: lookups
+}) %}
+
+{% include "token-detail.njk" %}

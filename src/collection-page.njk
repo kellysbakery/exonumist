@@ -1,0 +1,62 @@
+---
+layout: base.njk
+pagination:
+  data: collectionAreas
+  size: 1
+  alias: collectionArea
+permalink: "/collection/{{ collectionArea.slug }}/index.html"
+eleventyComputed:
+  title: "{{ collectionArea.title }}"
+---
+
+{% set groupTokens = collectionAreaTokens[collectionArea.slug] %}
+
+<section class="section">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span>/</span>
+    <a href="/collection/">Collection</a>
+    <span>/</span>
+    <span aria-current="page">{{ collectionArea.title }}</span>
+  </nav>
+
+  <h1>{{ collectionArea.title }}</h1>
+
+  {% if collectionArea.intro %}
+    <p class="section-intro">
+      {{ collectionArea.intro }}
+    </p>
+  {% endif %}
+
+  <div class="card browse-controls" data-collection-status-filters>
+    <div class="browse-filter-heading">
+      <strong>Status</strong>
+    </div>
+
+    <div class="browse-chip-row">
+      <button type="button" class="browse-chip is-active" data-status-filter="all">
+        All
+        <span class="browse-chip-count" data-status-count="all">0</span>
+      </button>
+      <button type="button" class="browse-chip" data-status-filter="listed">
+        Listed
+        <span class="browse-chip-count" data-status-count="listed">0</span>
+      </button>
+      <button type="button" class="browse-chip" data-status-filter="unlisted">
+        Unlisted
+        <span class="browse-chip-count" data-status-count="unlisted">0</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="grid-3 token-card-grid">
+    {% for token in groupTokens %}
+      {% set tokenCardToken = token %}
+      {% set tokenCardUrl = token.collectionUrl %}
+      {% set tokenCardFilterable = true %}
+      {% include "token-list-card.njk" %}
+    {% endfor %}
+  </div>
+</section>
+
+<script src="/assets/js/collection.js" defer></script>
