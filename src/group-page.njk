@@ -18,19 +18,8 @@ eleventyComputed:
 {% endfor %}
 
 <section class="section">
-  {% set matchedSiteSection = null %}
-  {% for siteSection in siteSections %}
-    {% if siteSection.key == group.section %}
-      {% set matchedSiteSection = siteSection %}
-    {% endif %}
-  {% endfor %}
-
   <nav class="breadcrumb" aria-label="Breadcrumb">
     <a href="/">Home</a>
-    {% if matchedSiteSection %}
-      <span>/</span>
-      <a href="/{{ matchedSiteSection.key }}/">{{ matchedSiteSection.title }}</a>
-    {% endif %}
     <span>/</span>
     <span aria-current="page">{{ group.title }}</span>
   </nav>

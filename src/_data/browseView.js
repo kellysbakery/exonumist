@@ -1,6 +1,5 @@
-const tokenDetailView = require("./tokenDetailView");
-
 const allTokens = require("./allTokens");
+const collectionTokenUrls = require("./collectionTokenUrls");
 const lookups = require("./lookups.json");
 
 const GROUP_BROWSE_TYPES = {
@@ -60,7 +59,16 @@ function buildBrowseTypes(token) {
 }
 
 function buildBrowseUrl(token) {
-  return tokenDetailView.buildTokenUrl(token);
+  const keys = [token.id, token.displayId];
+
+  for (const key of keys) {
+    if (!key) continue;
+
+    const url = collectionTokenUrls[String(key).trim().toLowerCase()];
+    if (url) return url;
+  }
+
+  return "/";
 }
 
 function buildSearchText(token) {
