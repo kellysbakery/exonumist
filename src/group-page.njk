@@ -45,85 +45,10 @@ eleventyComputed:
 
   <div class="grid-3 token-card-grid">
     {% for token in groupTokens %}
-      <a
-        class="card-link"
-        href="/groups/{{ group.key }}/{{ token.displayId | lower }}/">
-        <article class="card token-list-card">
-
-          <div class="token-list-card-media">
-            {% set imagePath = "" %}
-            {% if token | hasTokenThumb("o") %}
-              {% set imagePath = token | tokenThumbPath("o") %}
-            {% elif token | hasTokenImage("o") %}
-              {% set imagePath = token | tokenImagePath("o") %}
-            {% endif %}
-
-            {% if imagePath %}
-              {% set tokenForm = token.form | default("") | lower | trim %}
-              {% if token | isRoundToken %}
-                <div class="token-list-card-media-frame token-list-card-media-frame--round">
-                  <img
-                    class="token-list-card-image"
-                    src="{{ imagePath }}"
-                    alt="{{ token.displayId }} obverse" />
-                </div>
-              {% elif tokenForm == "oc" %}
-                <div class="token-list-card-media-frame token-list-card-media-frame--octagon">
-                  <img
-                    class="token-list-card-image"
-                    src="{{ imagePath }}"
-                    alt="{{ token.displayId }} obverse" />
-                </div>
-              {% else %}
-                <img
-                  class="token-list-card-image"
-                  src="{{ imagePath }}"
-                  alt="{{ token.displayId }} obverse" />
-              {% endif %}
-            {% else %}
-              <div class="token-list-card-placeholder"></div>
-            {% endif %}
-          </div>
-
-          <div class="token-list-card-body">
-            <span class="eyebrow">
-              {{ token.displayId }}
-            </span>
-
-            <strong class="token-list-card-title">
-              {{ token.title }}
-            </strong>
-
-            {% if token.counterstamp %}
-              <p class="token-list-card-variant">
-                {{ token.counterstamp }} Counterstamp
-              </p>
-            {% endif %}
-
-            {% if token.desc %}
-              <p class="token-list-card-desc">
-                {{ token.desc }}
-              </p>
-            {% endif %}
-
-            <p class="token-list-card-meta">
-              {% if token.mat %}
-                {{ token.mat | lookup(lookups.materials) }}
-              {% endif %}
-              {% if token.size %}
-                · {{ token.size }} mm
-              {% endif %}
-              {% if token.form %}
-                · {{ token.form | lookup(lookups.forms) }}
-              {% endif %}
-              {% if token.symbol %}
-                · {{ token.symbol | lookup(lookups.symbols) }}
-              {% endif %}
-            </p>
-          </div>
-
-        </article>
-      </a>
+      {% set tokenCardToken = token %}
+      {% set tokenCardUrl = "/groups/" ~ group.key ~ "/" ~ (token.displayId | lower) ~ "/" %}
+      {% set tokenCardFilterable = false %}
+      {% include "token-list-card.njk" %}
     {% endfor %}
   </div>
 </section>

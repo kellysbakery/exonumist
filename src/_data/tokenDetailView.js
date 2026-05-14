@@ -185,7 +185,9 @@ function buildPagerItem(token, options = {}) {
 
   let url = "";
 
-  if (typeof urlBuilder === "function") {
+  if (token.collectionUrl) {
+    url = token.collectionUrl;
+  } else if (typeof urlBuilder === "function") {
     url = urlBuilder(token);
   } else if (urlBuilder === "group" && pagerGroupKey && slug) {
     url = `/groups/${pagerGroupKey}/${slug}/`;
