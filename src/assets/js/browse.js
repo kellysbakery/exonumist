@@ -66,6 +66,15 @@
     });
   }
 
+  function syncChipPressedState() {
+    chips.forEach((chip) => {
+      chip.setAttribute(
+        "aria-pressed",
+        chip.classList.contains("is-active") ? "true" : "false"
+      );
+    });
+  }
+
   function ensureAtLeastOneActive(filterName, fallbackChip) {
     if (!activeValues(filterName).length) {
       fallbackChip.classList.add("is-active");
@@ -114,6 +123,7 @@
     count.textContent = `${visible} of ${cards.length} shown`;
 
     updateChipCounts(selected);
+    syncChipPressedState();
 
     if (updateUrl) {
       writeHash();

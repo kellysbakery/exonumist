@@ -60,6 +60,9 @@ eleventyComputed:
       <span data-collection-result-total>{{ groupTokens.length }}</span>
       tokens
     </p>
+    <p class="collection-empty-message" data-collection-empty hidden>
+      No matching tokens found.
+    </p>
   </div>
 
   {% if showStatusFilters %}
@@ -69,15 +72,15 @@ eleventyComputed:
       </div>
 
       <div class="browse-chip-row">
-        <button type="button" class="browse-chip is-active" data-status-filter="all">
+        <button type="button" class="browse-chip is-active" data-status-filter="all" aria-pressed="true">
           All
           <span class="browse-chip-count" data-status-count="all">{{ groupTokens.length }}</span>
         </button>
-        <button type="button" class="browse-chip" data-status-filter="listed">
+        <button type="button" class="browse-chip" data-status-filter="listed" aria-pressed="false">
           Listed
           <span class="browse-chip-count" data-status-count="listed">{{ listedCount }}</span>
         </button>
-        <button type="button" class="browse-chip" data-status-filter="unlisted">
+        <button type="button" class="browse-chip" data-status-filter="unlisted" aria-pressed="false">
           Unlisted
           <span class="browse-chip-count" data-status-count="unlisted">{{ unlistedCount }}</span>
         </button>

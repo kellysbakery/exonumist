@@ -4,6 +4,7 @@
     const searchInput = document.querySelector("[data-collection-search]");
     const resultCount = document.querySelector("[data-collection-result-count]");
     const resultTotal = document.querySelector("[data-collection-result-total]");
+    const emptyMessage = document.querySelector("[data-collection-empty]");
     const buttons = filterPanel
       ? [...filterPanel.querySelectorAll("[data-status-filter]")]
       : [];
@@ -26,6 +27,8 @@
     }
 
     function updateCounts() {
+      let visibleCount = 0;
+
       buttons.forEach((button) => {
         const status = button.dataset.statusFilter;
         const count = button.querySelector("[data-status-count]");
@@ -37,14 +40,20 @@
         }).length;
       });
 
+      visibleCount = cards.filter((card) => {
+        return cardMatchesStatus(card, activeStatus) && cardMatchesSearch(card);
+      }).length;
+
       if (resultCount) {
-        resultCount.textContent = cards.filter((card) => {
-          return cardMatchesStatus(card, activeStatus) && cardMatchesSearch(card);
-        }).length;
+        resultCount.textContent = visibleCount;
       }
 
       if (resultTotal) {
         resultTotal.textContent = cards.length;
+      }
+
+      if (emptyMessage) {
+        emptyMessage.hidden = visibleCount !== 0;
       }
     }
 
@@ -58,10 +67,13 @@
       });
 
       buttons.forEach((button) => {
+        const isActive = button.dataset.statusFilter === activeStatus;
+
         button.classList.toggle(
           "is-active",
-          button.dataset.statusFilter === activeStatus
+          isActive
         );
+        button.setAttribute("aria-pressed", isActive ? "true" : "false");
       });
 
       updateCounts();

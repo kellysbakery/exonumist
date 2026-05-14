@@ -77,10 +77,15 @@
   <div class="token-images">
     <figure class="token-image-card">
       {% if token | hasTokenImage("o") %}
-        <img
-          class="token-image"
-          src="{{ token | tokenImagePath('o') }}"
-          alt="{{ detailView.tokenId }} obverse" />
+        <button
+          type="button"
+          class="token-image-button"
+          aria-label="Enlarge {{ detailView.tokenId }} obverse image">
+          <img
+            class="token-image"
+            src="{{ token | tokenImagePath('o') }}"
+            alt="{{ detailView.tokenId }} obverse" />
+        </button>
       {% else %}
         <div class="placeholder"></div>
       {% endif %}
@@ -94,10 +99,15 @@
 
     <figure class="token-image-card">
       {% if token | hasTokenImage("r") %}
-        <img
-          class="token-image"
-          src="{{ token | tokenImagePath('r') }}"
-          alt="{{ detailView.tokenId }} reverse" />
+        <button
+          type="button"
+          class="token-image-button"
+          aria-label="Enlarge {{ detailView.tokenId }} reverse image">
+          <img
+            class="token-image"
+            src="{{ token | tokenImagePath('r') }}"
+            alt="{{ detailView.tokenId }} reverse" />
+        </button>
       {% else %}
         <div class="placeholder"></div>
       {% endif %}
@@ -199,10 +209,16 @@
   </nav>
 {% endif %}
 
-  <div id="image-modal" class="image-modal" style="display: none;">
+  <div
+    id="image-modal"
+    class="image-modal"
+    style="display: none;"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Enlarged token image">
     <div class="image-modal-content">
       <img id="modal-image" src="" alt="">
-      <button class="image-modal-close">&times;</button>
+      <button class="image-modal-close" type="button" aria-label="Close enlarged image">&times;</button>
     </div>
   </div>
 
