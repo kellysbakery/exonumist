@@ -16,13 +16,6 @@ module.exports = function (eleventyConfig) {
     return form === "r" || form === "round";
   });
 
-  // Format numeric values as money with 2 decimals
-  eleventyConfig.addFilter("money", (value) => {
-    const num = Number(value);
-    if (Number.isNaN(num)) return value;
-    return num.toFixed(2);
-  });
-
   // Format whole numbers with commas
   eleventyConfig.addFilter("formatNumber", (value) => {
     if (value === null || value === undefined || value === "") return "";

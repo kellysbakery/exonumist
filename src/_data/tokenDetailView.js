@@ -11,18 +11,6 @@ function hasMeaningfulValue(value) {
   return trimmed !== "" && trimmed !== "0" && trimmed !== "$0";
 }
 
-function formatPrice(value) {
-  if (!hasMeaningfulValue(value)) return "";
-
-  const num = Number(value);
-  if (!Number.isNaN(num)) {
-    return `$${num.toFixed(2)}`;
-  }
-
-  const trimmed = String(value).trim();
-  return trimmed.startsWith("$") ? trimmed : `$${trimmed}`;
-}
-
 function formatNumber(value) {
   if (value === null || value === undefined || value === "") return "";
 
@@ -56,11 +44,6 @@ function buildQuickFacts(token, context = {}) {
   } else {
     addRow("Catalogue ID", token.displayId);
     addRow("Minor Variety", token.var);
-
-    const price = formatPrice(token.val);
-    if (price) {
-      addRow("A/C Value", price);
-    }
   }
 
   const status = String(token.status || "").toLowerCase();
