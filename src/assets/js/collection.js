@@ -1,10 +1,29 @@
 (function () {
   function initCollectionFilters() {
     const filterPanel = document.querySelector("[data-collection-status-filters]");
-    if (!filterPanel) return;
-
-    const buttons = [...filterPanel.querySelectorAll("[data-status-filter]")];
+    const searchInput = document.querySelector("[data-collection-search]");
+    const resultCount = document.querySelector("[data-collection-result-count]");
+    const resultTotal = document.querySelector("[data-collection-result-total]");
+    const buttons = filterPanel
+      ? [...filterPanel.querySelectorAll("[data-status-filter]")]
+      : [];
     const cards = [...document.querySelectorAll("[data-collection-token-card]")];
+
+    if (!searchInput && !buttons.length) return;
+
+    let activeStatus = "all";
+    let searchTerm = "";
+
+    function cardMatchesStatus(card, status) {
+      return status === "all" || card.dataset.status === status;
+    }
+
+    function cardMatchesSearch(card) {
+      return (
+        !searchTerm ||
+        (card.dataset.search || "").toLowerCase().includes(searchTerm)
+      );
+    }
 
     function updateCounts() {
       buttons.forEach((button) => {
@@ -14,14 +33,26 @@
         if (!count) return;
 
         count.textContent = cards.filter((card) => {
-          return status === "all" || card.dataset.status === status;
+          return cardMatchesStatus(card, status) && cardMatchesSearch(card);
         }).length;
       });
+
+      if (resultCount) {
+        resultCount.textContent = cards.filter((card) => {
+          return cardMatchesStatus(card, activeStatus) && cardMatchesSearch(card);
+        }).length;
+      }
+
+      if (resultTotal) {
+        resultTotal.textContent = cards.length;
+      }
     }
 
-    function applyFilter(status) {
+    function applyFilters() {
       cards.forEach((card) => {
-        const shouldHide = status !== "all" && card.dataset.status !== status;
+        const shouldHide =
+          !cardMatchesStatus(card, activeStatus) || !cardMatchesSearch(card);
+
         card.classList.toggle("is-filter-hidden", shouldHide);
         card.setAttribute("aria-hidden", shouldHide ? "true" : "false");
       });
@@ -29,21 +60,32 @@
       buttons.forEach((button) => {
         button.classList.toggle(
           "is-active",
-          button.dataset.statusFilter === status
+          button.dataset.statusFilter === activeStatus
         );
+      });
+
+      updateCounts();
+    }
+
+    if (filterPanel) {
+      filterPanel.addEventListener("click", (event) => {
+        const button = event.target.closest("[data-status-filter]");
+        if (!button) return;
+
+        event.preventDefault();
+        activeStatus = button.dataset.statusFilter;
+        applyFilters();
       });
     }
 
-    filterPanel.addEventListener("click", (event) => {
-      const button = event.target.closest("[data-status-filter]");
-      if (!button) return;
+    if (searchInput) {
+      searchInput.addEventListener("input", () => {
+        searchTerm = searchInput.value.trim().toLowerCase();
+        applyFilters();
+      });
+    }
 
-      event.preventDefault();
-      applyFilter(button.dataset.statusFilter);
-    });
-
-    updateCounts();
-    applyFilter("all");
+    applyFilters();
   }
 
   if (document.readyState === "loading") {
