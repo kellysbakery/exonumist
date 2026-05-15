@@ -8,6 +8,7 @@ const DATA_DIR = path.join(ROOT, "src", "_data");
 const OFFICIAL_DIR = path.join(DATA_DIR, "official");
 const UNOFFICIAL_DIR = path.join(DATA_DIR, "unofficial");
 const ALLOWED_IMAGE_FORMS = new Set(["R", "Oc"]);
+const urlHelpers = require("../src/_data/urlHelpers");
 
 const REQUIRED_FIELDS = [
   "id",
@@ -105,7 +106,7 @@ function validateCollectionCoverage(errors, allTokens) {
   for (const page of collectionTokenPages) {
     const token = page.token || {};
     const areaSlug = page.collectionArea?.slug || "unknown";
-    const url = `/collection/${areaSlug}/${page.pageId}/`;
+    const url = urlHelpers.collectionTokenUrl(areaSlug, page.pageId);
     const owner = `${token.id || "missing"} (${token.displayId || "missing"}) in ${areaSlug}`;
     const keys = [token.id, token.displayId].filter(Boolean).map(normalizeKey);
 
@@ -191,8 +192,10 @@ function validateGroups(errors, groups) {
       seenGroupKeys.set(group.key, index);
     }
 
-    if (!group.url || !group.url.startsWith("/groups/")) {
-      errors.push(`${label}: group.url must exist and start with '/groups/'`);
+    if (!group.url || group.url !== urlHelpers.groupUrl(group.key)) {
+      errors.push(
+        `${label}: group.url must be '${urlHelpers.groupUrl(group.key)}'`
+      );
     }
 
     validateImageReference(errors, label, "cardImage", group.cardImage);

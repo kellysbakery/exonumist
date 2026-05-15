@@ -38,7 +38,7 @@ description: Collector-focused reference for New York City transportation tokens
     {% for group in groups %}
       {% if group.featured %}
         <aside class="hero-feature">
-          <a class="card-link" href="{{ group.url }}">
+          <a class="card-link" href="{{ urlHelpers.groupUrl(group.key) }}">
             <div class="hero-feature-card hero-feature-card-minimal">
               <div class="hero-feature-text">
                 <strong>{{ group.heroLabel }}</strong>
@@ -85,7 +85,7 @@ description: Collector-focused reference for New York City transportation tokens
 
   <div class="home-section-grid">
     {% for area in collectionAreas %}
-      <a class="card-link" href="/collection/{{ area.slug }}/">
+      <a class="card-link" href="{{ urlHelpers.collectionAreaUrl(area.slug) }}">
         <article class="card home-section-card">
           <div class="home-section-card-layout">
             <div class="home-section-card-body">
@@ -137,7 +137,7 @@ description: Collector-focused reference for New York City transportation tokens
         {% set spotlightImage = group.cardImage or group.heroImage %}
         {% set spotlightImageForm = group.cardImageForm or group.heroImageForm %}
 
-        <a class="card-link" href="{{ group.url }}">
+        <a class="card-link" href="{{ urlHelpers.groupUrl(group.key) }}">
           <article class="card home-section-card">
             <div class="home-section-card-layout">
               <div class="home-section-card-body">

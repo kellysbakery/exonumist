@@ -1,5 +1,6 @@
 const allTokens = require("./allTokens");
 const collectionAreas = require("./collectionAreas");
+const urlHelpers = require("./urlHelpers");
 
 function normalize(value) {
   return String(value || "")
@@ -27,7 +28,7 @@ module.exports = collectionAreas.reduce((result, area) => {
     .map((token) => ({
       ...token,
       collectionPageId: buildPageId(token),
-      collectionUrl: `/collection/${area.slug}/${buildPageId(token)}/`
+      collectionUrl: urlHelpers.collectionTokenUrl(area.slug, buildPageId(token))
     }));
 
   return result;

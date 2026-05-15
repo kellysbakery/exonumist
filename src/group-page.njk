@@ -4,7 +4,7 @@ pagination:
   data: groups
   size: 1
   alias: group
-permalink: "/groups/{{ group.key }}/index.html"
+permalink: "{{ urlHelpers.groupUrl(group.key) }}index.html"
 eleventyComputed:
   title: "{{ group.title }}"
 ---
@@ -35,7 +35,7 @@ eleventyComputed:
   <div class="grid-3 token-card-grid">
     {% for token in groupTokens %}
       {% set tokenCardToken = token %}
-      {% set tokenCardUrl = "/groups/" ~ group.key ~ "/" ~ (token.displayId | lower) ~ "/" %}
+      {% set tokenCardUrl = urlHelpers.groupTokenUrl(group.key, token.displayId | lower) %}
       {% set tokenCardFilterable = false %}
       {% include "token-list-card.njk" %}
     {% endfor %}

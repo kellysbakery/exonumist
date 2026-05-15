@@ -13,16 +13,16 @@ eleventyExcludeFromCollections: true
   "/resources/"
 ] -%}
 {%- for group in groups -%}
-  {%- set sitemapUrls = sitemapUrls.concat([group.url]) -%}
+  {%- set sitemapUrls = sitemapUrls.concat([urlHelpers.groupUrl(group.key)]) -%}
 {%- endfor -%}
 {%- for area in collectionAreas -%}
-  {%- set sitemapUrls = sitemapUrls.concat(["/collection/" ~ area.slug ~ "/"]) -%}
+  {%- set sitemapUrls = sitemapUrls.concat([urlHelpers.collectionAreaUrl(area.slug)]) -%}
 {%- endfor -%}
 {%- for pageData in collectionTokenPages -%}
-  {%- set sitemapUrls = sitemapUrls.concat(["/collection/" ~ pageData.collectionArea.slug ~ "/" ~ (pageData.pageId | lower) ~ "/"]) -%}
+  {%- set sitemapUrls = sitemapUrls.concat([urlHelpers.collectionTokenUrl(pageData.collectionArea.slug, pageData.pageId | lower)]) -%}
 {%- endfor -%}
 {%- for pageData in groupTokenPages -%}
-  {%- set sitemapUrls = sitemapUrls.concat(["/groups/" ~ pageData.group.key ~ "/" ~ (pageData.pageId | lower) ~ "/"]) -%}
+  {%- set sitemapUrls = sitemapUrls.concat([urlHelpers.groupTokenUrl(pageData.group.key, pageData.pageId | lower)]) -%}
 {%- endfor -%}
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

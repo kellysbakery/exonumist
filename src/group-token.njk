@@ -4,7 +4,7 @@ pagination:
   data: groupTokenPages
   size: 1
   alias: pageData
-permalink: "/groups/{{ pageData.group.key }}/{{ pageData.pageId | lower }}/index.html"
+permalink: "{{ urlHelpers.groupTokenUrl(pageData.group.key, pageData.pageId | lower) }}index.html"
 eleventyComputed:
   title: "{{ pageData.token.displayId }} – {{ pageData.token.title }}"
 ---
@@ -14,7 +14,7 @@ eleventyComputed:
 {% set isUnlisted = token.status != "listed" %}
 
 {% set detailSectionTitle = group.title %}
-{% set detailSectionUrl = "/groups/" ~ group.key ~ "/" %}
+{% set detailSectionUrl = urlHelpers.groupUrl(group.key) %}
 
 {% if token.status == "listed" and token.sec %}
   {% set matchedSection = tokenDetailView.findSection(sections, token.sec) %}
