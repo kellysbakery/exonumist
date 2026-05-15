@@ -9,8 +9,7 @@ eleventyExcludeFromCollections: true
   "/about/",
   "/contact/",
   "/for-sale/",
-  "/wanted/",
-  "/resources/"
+  "/wanted/"
 ] -%}
 {%- for group in groups -%}
   {%- set sitemapUrls = sitemapUrls.concat([urlHelpers.groupUrl(group.key)]) -%}
