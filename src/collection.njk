@@ -30,26 +30,13 @@ permalink: /collection/index.html
 
             {% if area.cardImage %}
               <div class="home-section-card-media">
-                {% if area.cardImageForm == "R" %}
-                  <div class="token-list-card-media-frame token-list-card-media-frame--round">
-                    <img
-                      class="token-list-card-image"
-                      src="{{ area.cardImage }}"
-                      alt="{{ area.title }}" />
-                  </div>
-                {% elif area.cardImageForm == "Oc" %}
-                  <div class="token-list-card-media-frame token-list-card-media-frame--octagon">
-                    <img
-                      class="token-list-card-image"
-                      src="{{ area.cardImage }}"
-                      alt="{{ area.title }}" />
-                  </div>
-                {% else %}
-                  <img
-                    class="home-section-card-image"
-                    src="{{ area.cardImage }}"
-                    alt="{{ area.title }}" />
-                {% endif %}
+                {% set imagePath = area.cardImage %}
+                {% set imageAlt = area.title %}
+                {% set imageForm = area.cardImageForm %}
+                {% set imageClass = "token-list-card-image" %}
+                {% set plainImageClass = "home-section-card-image" %}
+                {% set frameClassPrefix = "token-list-card-media-frame" %}
+                {% include "shaped-image.njk" %}
               </div>
             {% endif %}
           </div>
