@@ -17,27 +17,11 @@
       {% endif %}
 
       {% if imagePath %}
-        {% set tokenForm = tokenCardToken.form | default("") | lower | trim %}
-        {% if tokenCardToken | isRoundToken %}
-          <div class="token-list-card-media-frame token-list-card-media-frame--round">
-            <img
-              class="token-list-card-image"
-              src="{{ imagePath }}"
-              alt="{{ tokenCardToken.displayId }} obverse" />
-          </div>
-        {% elif tokenForm == "oc" %}
-          <div class="token-list-card-media-frame token-list-card-media-frame--octagon">
-            <img
-              class="token-list-card-image"
-              src="{{ imagePath }}"
-              alt="{{ tokenCardToken.displayId }} obverse" />
-          </div>
-        {% else %}
-          <img
-            class="token-list-card-image"
-            src="{{ imagePath }}"
-            alt="{{ tokenCardToken.displayId }} obverse" />
-        {% endif %}
+        {% set imageForm = tokenCardToken.form %}
+        {% set imageAlt = tokenCardToken.displayId ~ " obverse" %}
+        {% set imageClass = "token-list-card-image" %}
+        {% set frameClassPrefix = "token-list-card-media-frame" %}
+        {% include "shaped-image.njk" %}
       {% else %}
         <div class="token-list-card-placeholder"></div>
       {% endif %}

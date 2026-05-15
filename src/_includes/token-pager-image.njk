@@ -1,24 +1,10 @@
 {% if pagerToken and (pagerToken | hasTokenThumb("o")) %}
-  {% if pagerToken.form == "R" %}
-    <div class="token-pager-image-frame token-pager-image-frame--round">
-      <img
-        class="token-pager-image"
-        src="{{ pagerToken | tokenThumbPath('o') }}"
-        alt="{{ pagerAltText }}" />
-    </div>
-  {% elif pagerToken.form == "Oc" %}
-    <div class="token-pager-image-frame token-pager-image-frame--octagon">
-      <img
-        class="token-pager-image"
-        src="{{ pagerToken | tokenThumbPath('o') }}"
-        alt="{{ pagerAltText }}" />
-    </div>
-  {% else %}
-    <img
-      class="token-pager-image"
-      src="{{ pagerToken | tokenThumbPath('o') }}"
-      alt="{{ pagerAltText }}" />
-  {% endif %}
+  {% set imagePath = pagerToken | tokenThumbPath("o") %}
+  {% set imageAlt = pagerAltText %}
+  {% set imageForm = pagerToken.form %}
+  {% set imageClass = "token-pager-image" %}
+  {% set frameClassPrefix = "token-pager-image-frame" %}
+  {% include "shaped-image.njk" %}
 {% else %}
   <div class="token-pager-placeholder"></div>
 {% endif %}

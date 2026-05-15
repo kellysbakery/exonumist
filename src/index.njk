@@ -45,25 +45,13 @@ description: Collector-focused reference for New York City transportation tokens
                 <p><strong>{{ group.title }}</strong></p>
               </div>
 
-              {% if group.heroImageForm == "R" %}
-                <div class="token-list-card-media-frame token-list-card-media-frame--round">
-                  <img
-                    class="token-list-card-image"
-                    src="{{ group.heroImage }}"
-                    alt="{{ group.title }}" />
-                </div>
-              {% elif group.heroImageForm == "Oc" %}
-                <div class="token-list-card-media-frame token-list-card-media-frame--octagon">
-                  <img
-                    class="token-list-card-image"
-                    src="{{ group.heroImage }}"
-                    alt="{{ group.title }}" />
-                </div>
-              {% else %}
-                <img
-                  src="{{ group.heroImage }}"
-                  alt="{{ group.title }}" />
-              {% endif %}
+              {% set imagePath = group.heroImage %}
+              {% set imageAlt = group.title %}
+              {% set imageForm = group.heroImageForm %}
+              {% set imageClass = "token-list-card-image" %}
+              {% set plainImageClass = "" %}
+              {% set frameClassPrefix = "token-list-card-media-frame" %}
+              {% include "shaped-image.njk" %}
 
               <div class="hero-feature-text">
                 <p>{{ group.heroText }}</p>
@@ -95,26 +83,13 @@ description: Collector-focused reference for New York City transportation tokens
 
             {% if area.cardImage %}
               <div class="home-section-card-media">
-                {% if area.cardImageForm == "R" %}
-                  <div class="token-list-card-media-frame token-list-card-media-frame--round">
-                    <img
-                      class="token-list-card-image"
-                      src="{{ area.cardImage }}"
-                      alt="{{ area.title }}" />
-                  </div>
-                {% elif area.cardImageForm == "Oc" %}
-                  <div class="token-list-card-media-frame token-list-card-media-frame--octagon">
-                    <img
-                      class="token-list-card-image"
-                      src="{{ area.cardImage }}"
-                      alt="{{ area.title }}" />
-                  </div>
-                {% else %}
-                  <img
-                    class="home-section-card-image"
-                    src="{{ area.cardImage }}"
-                    alt="{{ area.title }}" />
-                {% endif %}
+                {% set imagePath = area.cardImage %}
+                {% set imageAlt = area.title %}
+                {% set imageForm = area.cardImageForm %}
+                {% set imageClass = "token-list-card-image" %}
+                {% set plainImageClass = "home-section-card-image" %}
+                {% set frameClassPrefix = "token-list-card-media-frame" %}
+                {% include "shaped-image.njk" %}
               </div>
             {% endif %}
           </div>
@@ -147,26 +122,13 @@ description: Collector-focused reference for New York City transportation tokens
 
               {% if spotlightImage %}
                 <div class="home-section-card-media">
-                  {% if spotlightImageForm == "R" %}
-                    <div class="token-list-card-media-frame token-list-card-media-frame--round">
-                      <img
-                        class="token-list-card-image"
-                        src="{{ spotlightImage }}"
-                        alt="{{ group.title }}" />
-                    </div>
-                  {% elif spotlightImageForm == "Oc" %}
-                    <div class="token-list-card-media-frame token-list-card-media-frame--octagon">
-                      <img
-                        class="token-list-card-image"
-                        src="{{ spotlightImage }}"
-                        alt="{{ group.title }}" />
-                    </div>
-                  {% else %}
-                    <img
-                      class="home-section-card-image"
-                      src="{{ spotlightImage }}"
-                      alt="{{ group.title }}" />
-                  {% endif %}
+                  {% set imagePath = spotlightImage %}
+                  {% set imageAlt = group.title %}
+                  {% set imageForm = spotlightImageForm %}
+                  {% set imageClass = "token-list-card-image" %}
+                  {% set plainImageClass = "home-section-card-image" %}
+                  {% set frameClassPrefix = "token-list-card-media-frame" %}
+                  {% include "shaped-image.njk" %}
                 </div>
               {% endif %}
             </div>
