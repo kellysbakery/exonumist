@@ -4,7 +4,7 @@ pagination:
   data: collectionTokenPages
   size: 1
   alias: collectionPage
-permalink: "/collection/{{ collectionPage.collectionArea.slug }}/{{ collectionPage.pageId | lower }}/index.html"
+permalink: "{{ urlHelpers.collectionTokenUrl(collectionPage.collectionArea.slug, collectionPage.pageId | lower) }}index.html"
 eleventyComputed:
   title: "{{ collectionPage.token.displayId }} – {{ collectionPage.token.title }}"
 ---
@@ -14,7 +14,7 @@ eleventyComputed:
 {% set isUnlisted = token.status != "listed" %}
 
 {% set detailSectionTitle = collectionArea.title %}
-{% set detailSectionUrl = "/collection/" ~ collectionArea.slug ~ "/" %}
+{% set detailSectionUrl = urlHelpers.collectionAreaUrl(collectionArea.slug) %}
 
 {% set prevToken = collectionPage.previousToken %}
 {% set nextToken = collectionPage.nextToken %}

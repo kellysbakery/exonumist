@@ -20,7 +20,7 @@ permalink: /collection/index.html
 
   <div class="home-section-grid">
     {% for area in collectionAreas %}
-      <a class="card-link" href="/collection/{{ area.slug }}/">
+      <a class="card-link" href="{{ urlHelpers.collectionAreaUrl(area.slug) }}">
         <article class="card home-section-card">
           <div class="home-section-card-layout">
             <div class="home-section-card-body">

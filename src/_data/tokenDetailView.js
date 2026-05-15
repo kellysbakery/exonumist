@@ -1,3 +1,5 @@
+const urlHelpers = require("./urlHelpers");
+
 function lookupValue(code, table) {
   if (!code || !table) return "";
   return table[code] || table[String(code).toLowerCase()] || code;
@@ -178,7 +180,7 @@ function buildPagerItem(token, options = {}) {
   } else if (typeof urlBuilder === "function") {
     url = urlBuilder(token);
   } else if (urlBuilder === "group" && pagerGroupKey && slug) {
-    url = `/groups/${pagerGroupKey}/${slug}/`;
+    url = urlHelpers.groupTokenUrl(pagerGroupKey, slug);
   } else {
     url = "/";
   }
@@ -299,7 +301,7 @@ function findListedGroupForSection(sections = [], groups = [], sec = "") {
         group.pub !== false &&
         group.section === "listed" &&
         group.title === section.title &&
-        group.url
+        group.key
     ) || null
   );
 }
@@ -310,7 +312,7 @@ function buildGroupBreadcrumbItems(group, token) {
   if (group) {
     items.push({
       label: group.title || "",
-      url: `/groups/${group.key}/`
+      url: urlHelpers.groupUrl(group.key)
     });
   }
 
