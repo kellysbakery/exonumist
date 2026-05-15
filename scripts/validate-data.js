@@ -7,6 +7,7 @@ const ROOT = process.cwd();
 const DATA_DIR = path.join(ROOT, "src", "_data");
 const OFFICIAL_DIR = path.join(DATA_DIR, "official");
 const UNOFFICIAL_DIR = path.join(DATA_DIR, "unofficial");
+const ALLOWED_IMAGE_FORMS = new Set(["R", "Oc"]);
 
 const REQUIRED_FIELDS = [
   "id",
@@ -44,6 +45,174 @@ function getJsonFiles(dir) {
     .map((file) => path.join(dir, file));
 }
 
+function normalizeKey(value) {
+  return String(value || "")
+    .trim()
+    .toLowerCase();
+}
+
+function describeToken(token) {
+  return [
+    `id=${token.id || "missing"}`,
+    `displayId=${token.displayId || "missing"}`,
+    `title=${token.title || "missing"}`,
+    `borough=${token.borough || "missing"}`,
+    `groups=${Array.isArray(token.groups) ? token.groups.join(",") : "missing"}`
+  ].join("; ");
+}
+
+function assetExists(webPath) {
+  if (!webPath || /^https?:\/\//i.test(webPath)) {
+    return true;
+  }
+
+  if (!webPath.startsWith("/")) {
+    return false;
+  }
+
+  return fs.existsSync(path.join(ROOT, "src", webPath.replace(/^\/+/, "")));
+}
+
+function validateImageReference(errors, sourceLabel, fieldName, webPath) {
+  if (!webPath) return;
+
+  if (!assetExists(webPath)) {
+    errors.push(
+      `${sourceLabel}: ${fieldName} references missing image '${webPath}'`
+    );
+  }
+}
+
+function validateImageForm(errors, sourceLabel, fieldName, value) {
+  if (value === undefined || value === null || value === "") return;
+
+  if (!ALLOWED_IMAGE_FORMS.has(value)) {
+    errors.push(
+      `${sourceLabel}: ${fieldName} has invalid image form '${value}'`
+    );
+  }
+}
+
+function validateCollectionCoverage(errors, allTokens) {
+  const collectionAreaTokens = require("../src/_data/collectionAreaTokens");
+  const collectionTokenPages = require("../src/_data/collectionTokenPages");
+  const collectionTokenUrls = require("../src/_data/collectionTokenUrls");
+
+  const pagesByTokenKey = new Map();
+  const urlOwners = new Map();
+  const lookupKeyOwners = new Map();
+
+  for (const page of collectionTokenPages) {
+    const token = page.token || {};
+    const areaSlug = page.collectionArea?.slug || "unknown";
+    const url = `/collection/${areaSlug}/${page.pageId}/`;
+    const owner = `${token.id || "missing"} (${token.displayId || "missing"}) in ${areaSlug}`;
+    const keys = [token.id, token.displayId].filter(Boolean).map(normalizeKey);
+
+    if (urlOwners.has(url) && urlOwners.get(url) !== owner) {
+      errors.push(
+        `Collection URL collision '${url}': ${urlOwners.get(url)} and ${owner}`
+      );
+    } else {
+      urlOwners.set(url, owner);
+    }
+
+    for (const key of keys) {
+      if (!pagesByTokenKey.has(key)) {
+        pagesByTokenKey.set(key, []);
+      }
+
+      pagesByTokenKey.get(key).push({ url, areaSlug, owner });
+    }
+  }
+
+  for (const [key, url] of Object.entries(collectionTokenUrls)) {
+    const pages = pagesByTokenKey.get(key) || [];
+    const matchingPage = pages.find((page) => page.url === url);
+
+    if (!matchingPage) {
+      errors.push(
+        `Collection lookup key '${key}' maps to '${url}', but no matching collection token page exists`
+      );
+      continue;
+    }
+
+    if (lookupKeyOwners.has(key) && lookupKeyOwners.get(key) !== url) {
+      errors.push(
+        `Collection lookup key '${key}' maps inconsistently to '${lookupKeyOwners.get(key)}' and '${url}'`
+      );
+    } else {
+      lookupKeyOwners.set(key, url);
+    }
+  }
+
+  for (const token of allTokens) {
+    const idKey = normalizeKey(token.id);
+    const displayIdKey = normalizeKey(token.displayId);
+    const idUrl = idKey ? collectionTokenUrls[idKey] : "";
+    const displayIdUrl = displayIdKey ? collectionTokenUrls[displayIdKey] : "";
+    const membershipCount = Object.values(collectionAreaTokens).filter((tokens) =>
+      tokens.some((item) => item.id === token.id)
+    ).length;
+
+    if (!membershipCount) {
+      errors.push(
+        `Public token has no Collection area membership: ${describeToken(token)}`
+      );
+    }
+
+    if (!idUrl && !displayIdUrl) {
+      errors.push(
+        `Public token has no canonical Collection URL: ${describeToken(token)}`
+      );
+    }
+
+    if (idUrl && displayIdUrl && idUrl !== displayIdUrl) {
+      errors.push(
+        `Public token Collection URL mismatch for ${describeToken(token)}: id maps to '${idUrl}', displayId maps to '${displayIdUrl}'`
+      );
+    }
+  }
+}
+
+function validateGroups(errors, groups) {
+  const seenGroupKeys = new Map();
+
+  groups.forEach((group, index) => {
+    const label = `src/_data/groups.json[${index}] (${group.key || "missing"})`;
+
+    if (!group.key) {
+      errors.push(`${label}: missing group key`);
+    } else if (seenGroupKeys.has(group.key)) {
+      errors.push(
+        `${label}: duplicate group key '${group.key}' (already used at index ${seenGroupKeys.get(group.key)})`
+      );
+    } else {
+      seenGroupKeys.set(group.key, index);
+    }
+
+    if (!group.url || !group.url.startsWith("/groups/")) {
+      errors.push(`${label}: group.url must exist and start with '/groups/'`);
+    }
+
+    validateImageReference(errors, label, "cardImage", group.cardImage);
+    validateImageReference(errors, label, "heroImage", group.heroImage);
+    validateImageForm(errors, label, "cardImageForm", group.cardImageForm);
+    validateImageForm(errors, label, "heroImageForm", group.heroImageForm);
+  });
+}
+
+function validateCollectionAreas(errors) {
+  const collectionAreas = require("../src/_data/collectionAreas");
+
+  collectionAreas.forEach((area, index) => {
+    const label = `collectionAreas[${index}] (${area.slug || "missing"})`;
+
+    validateImageReference(errors, label, "cardImage", area.cardImage);
+    validateImageForm(errors, label, "cardImageForm", area.cardImageForm);
+  });
+}
+
 function fail(errors) {
   console.error("");
   console.error("❌ Data validation failed");
@@ -67,6 +236,7 @@ function main() {
   // Load lookup data
   const lookups = loadJson(path.join(DATA_DIR, "lookups.json"));
   const groups = loadJson(path.join(DATA_DIR, "groups.json"));
+  const allTokens = require("../src/_data/allTokens");
 
   const validStatuses = new Set(Object.keys(lookups.status || {}));
   const validTypes = new Set(Object.keys(lookups.type || {}));
@@ -83,6 +253,8 @@ function main() {
 
   const seenIds = new Map();
   const seenDisplayIds = new Map();
+
+  validateGroups(errors, groups);
 
   for (const filePath of tokenFiles) {
     const fileName = path.relative(ROOT, filePath);
@@ -181,6 +353,9 @@ function main() {
 
     });
   }
+
+  validateCollectionAreas(errors);
+  validateCollectionCoverage(errors, allTokens);
 
   if (errors.length > 0) {
     fail(errors);
