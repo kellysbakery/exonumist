@@ -60,9 +60,17 @@
         type: filterName === "type" ? [value] : selected.type
       };
 
-      countEl.textContent = cards.filter((card) =>
+      const chipCount = cards.filter((card) =>
         cardMatches(card, test, searchTerm)
       ).length;
+      const groupIsNarrowed = !allInGroupActive(filterName);
+      const chipIsSelectedInNarrowedGroup =
+        groupIsNarrowed && chip.classList.contains("is-active");
+      const shouldHide = chipCount === 0 && !chipIsSelectedInNarrowedGroup;
+
+      countEl.textContent = chipCount;
+      chip.hidden = shouldHide;
+      chip.style.display = shouldHide ? "none" : "";
     });
   }
 
