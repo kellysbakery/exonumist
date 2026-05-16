@@ -1693,7 +1693,7 @@ h2 {
   }
 
   .nav {
-    gap: 10px 14px;
+    gap: 10px;
     font-size: 0.88rem;
     line-height: 1.2;
   }
@@ -1846,6 +1846,15 @@ h2 {
     text-align: center;
     padding: 9px 12px;
     font-size: 0.95rem;
+  }
+
+  .hero-home .hero-actions .btn {
+    justify-self: stretch;
+    white-space: nowrap;
+  }
+
+  .hero-home .hero-actions .btn.primary {
+    grid-column: auto;
   }
 
   .hero-actions .btn.primary {
