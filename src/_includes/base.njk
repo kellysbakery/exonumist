@@ -60,6 +60,7 @@
   {% endif %}
 
   <link rel="stylesheet" href="/assets/css/site.css" />
+  {% if eleventy.env.runMode == "build" %}
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LQLSFWP6FW"></script>
 <script>
@@ -69,6 +70,7 @@
 
   gtag('config', 'G-LQLSFWP6FW');
 </script>
+  {% endif %}
 </head>
 <body>
   {% include "partials/header.njk" %}
