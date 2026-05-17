@@ -1,0 +1,115 @@
+---
+layout: base.njk
+pagination:
+  data: collectionAreas
+  size: 1
+  alias: collectionArea
+permalink: "{{ urlHelpers.collectionAreaUrl(collectionArea.slug) }}index.html"
+eleventyComputed:
+  title: "{{ collectionArea.title }}"
+---
+
+{% set groupTokens = collectionAreaTokens[collectionArea.slug] %}
+{% set listedCount = 0 %}
+{% set unlistedCount = 0 %}
+
+{% for token in groupTokens %}
+  {% if token.status == "listed" %}
+    {% set listedCount = listedCount + 1 %}
+  {% elif token.status == "unlisted" %}
+    {% set unlistedCount = unlistedCount + 1 %}
+  {% endif %}
+{% endfor %}
+
+{% set showStatusFilters = listedCount > 0 and unlistedCount > 0 %}
+
+<section class="section">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span>/</span>
+    <a href="/collection/">Collection</a>
+    <span>/</span>
+    <span aria-current="page">{{ collectionArea.title }}</span>
+  </nav>
+
+  <h1>{{ collectionArea.title }}</h1>
+
+  {% if collectionArea.intro %}
+    <p class="section-intro">
+      {{ collectionArea.intro }}
+    </p>
+  {% endif %}
+
+  <div class="card browse-controls collection-search-controls">
+    <label class="browse-filter-heading" for="collection-search-{{ collectionArea.slug }}">
+      <strong>Search this area</strong>
+    </label>
+    <input
+      id="collection-search-{{ collectionArea.slug }}"
+      class="collection-search-input"
+      type="search"
+      placeholder="Search {{ collectionArea.title }}, e.g. Fare, Authority, NY..."
+      data-collection-search />
+    <p class="collection-search-help">
+      Search by token ID, legend text, authority, type, notes, or description.
+    </p>
+    <p class="collection-result-summary">
+      Showing
+      <span data-collection-result-count>{{ groupTokens.length }}</span>
+      of
+      <span data-collection-result-total>{{ groupTokens.length }}</span>
+      tokens
+    </p>
+    <p class="collection-empty-message" data-collection-empty hidden>
+      No matching tokens found.
+    </p>
+  </div>
+
+  {% if showStatusFilters %}
+    <div class="card browse-controls" data-collection-status-filters>
+      <div class="browse-filter-heading">
+        <strong>Status</strong>
+      </div>
+
+      <div class="browse-chip-row">
+        <button type="button" class="browse-chip is-active" data-status-filter="all" aria-pressed="true">
+          All
+          <span class="browse-chip-count" data-status-count="all">{{ groupTokens.length }}</span>
+        </button>
+        <button type="button" class="browse-chip" data-status-filter="listed" aria-pressed="false">
+          Listed
+          <span class="browse-chip-count" data-status-count="listed">{{ listedCount }}</span>
+        </button>
+        <button type="button" class="browse-chip" data-status-filter="unlisted" aria-pressed="false">
+          Unlisted
+          <span class="browse-chip-count" data-status-count="unlisted">{{ unlistedCount }}</span>
+        </button>
+      </div>
+    </div>
+  {% endif %}
+
+  <div class="grid-3 token-card-grid">
+    {% for token in groupTokens %}
+      {% set tokenCardToken = token %}
+      {% set tokenCardUrl = token.collectionUrl %}
+      {% set tokenCardFilterable = true %}
+      {% set tokenCardSearchText %}
+        {{ token.displayId }}
+        {{ token.title }}
+        {{ token.desc }}
+        {{ token.obv }}
+        {{ token.rev }}
+        {{ token.notes }}
+        {{ token.status }}
+        {{ token.type }}
+        {{ token.borough }}
+        {{ token.mat | lookup(lookups.materials) }}
+        {{ token.form | lookup(lookups.forms) }}
+        {{ token.symbol | lookup(lookups.symbols) }}
+      {% endset %}
+      {% include "token-list-card.njk" %}
+    {% endfor %}
+  </div>
+</section>
+
+<script src="/assets/js/collection.js" defer></script>

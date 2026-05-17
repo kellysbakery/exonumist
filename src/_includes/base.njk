@@ -1,10 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  {% set siteTitle = site.siteName or site.title or "Exonumist" %}
+  {% set defaultDescription = "A collector-focused reference for transportation tokens, exonumia, unlisted pieces, patterns, counterfeits, errors, oddities, and related material." %}
+  {% set pageTitle = title or siteTitle %}
+  {% set metaTitle = pageTitle if pageTitle == siteTitle else pageTitle ~ " | " ~ siteTitle %}
+  {% set metaDescription = description or site.description or defaultDescription %}
+  {% set canonicalUrl = page.url | absoluteUrl(site) %}
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{ title or site.siteName }}</title>
+
+  <title>{{ metaTitle | safe }}</title>
+  <meta name="description" content="{{ metaDescription }}" />
+  <link rel="canonical" href="{{ canonicalUrl }}" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{ metaTitle | safe }}" />
+  <meta property="og:description" content="{{ metaDescription }}" />
+  <meta property="og:url" content="{{ canonicalUrl }}" />
+  <meta property="og:type" content="website" />
+  <meta
+    property="og:image"
+    content="{{ '/assets/images/site/social-preview.png' | absoluteUrl(site) }}" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{{ metaTitle | safe }}" />
+  <meta name="twitter:description" content="{{ metaDescription }}" />
+  <meta
+    name="twitter:image"
+    content="{{ '/assets/images/site/social-preview.png' | absoluteUrl(site) }}" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": {{ siteTitle | dump | safe }},
+    "url": {{ ("/" | absoluteUrl(site)) | dump | safe }},
+    "description": {{ (site.description or defaultDescription) | dump | safe }}
+  }
+  </script>
+
+  {% if page.url == "/contact/" %}
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": {{ "Contact" | dump | safe }},
+    "url": {{ canonicalUrl | dump | safe }},
+    "description": {{ metaDescription | dump | safe }},
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": {{ siteTitle | dump | safe }},
+      "url": {{ ("/" | absoluteUrl(site)) | dump | safe }}
+    }
+  }
+    </script>
+  {% endif %}
+
   <link rel="stylesheet" href="/assets/css/site.css" />
+  {% if eleventy.env.runMode == "build" %}
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LQLSFWP6FW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LQLSFWP6FW');
+</script>
+  {% endif %}
 </head>
 <body>
   {% include "partials/header.njk" %}

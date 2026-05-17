@@ -1,0 +1,10 @@
+{% if pagerToken and (pagerToken | hasTokenThumb("o")) %}
+  {% set imagePath = pagerToken | tokenThumbPath("o") %}
+  {% set imageAlt = pagerAltText %}
+  {% set imageForm = pagerToken.form %}
+  {% set imageClass = "token-pager-image" %}
+  {% set frameClassPrefix = "token-pager-image-frame" %}
+  {% include "shaped-image.njk" %}
+{% else %}
+  <div class="token-pager-placeholder"></div>
+{% endif %}

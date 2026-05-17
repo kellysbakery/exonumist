@@ -1,0 +1,30 @@
+[
+  {
+    "id": "unlisted-man-0001",
+    "displayId": "UNL-MAN-0001",
+    "sec": "",
+    "code": "",
+    "var": "",
+    "status": "unlisted",
+    "type": "presentation",
+    "groups": [
+      "discoveries"
+    ],
+    "title": "Unlisted Gold Presentation Piece Related to NY630AS",
+    "borough": "Manhattan",
+    "mat": "X",
+    "form": "R",
+    "symbol": "Sd",
+    "size": 23,
+    "obv": "NEW YORK CITY TRANSIT AUTHORITY N(Y)C",
+    "rev": "(C)TA",
+    "desc": "Gold piece related to NY630AS, likely struck as a presentation issue.",
+    "notes": "Not currently listed in the Atwood-Coffee Catalogue.",
+    "rel": [
+      "NY630AS"
+    ],
+    "home": true,
+    "pub": true,
+    "sort": "manhattan-unlisted-0001"
+  }
+]

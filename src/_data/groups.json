@@ -1,0 +1,105 @@
+[
+  {
+    "key": "bronx",
+    "title": "Bronx",
+    "section": "listed",
+    "order": 1,
+    "url": "/groups/bronx/",
+    "cardImage": "/assets/images/thumb/628-a_o.webp",
+    "cardImageForm": "R",
+    "description": "Bronx transit tokens, including Orchard Beach and related issues."
+  },
+  {
+    "key": "brooklyn",
+    "title": "Brooklyn",
+    "section": "listed",
+    "order": 2,
+    "url": "/groups/brooklyn/",
+    "cardImage": "/assets/images/thumb/629-a_o.webp",
+    "cardImageForm": "R",
+    "description": "Brooklyn transit tokens from street railways and local transportation lines."
+  },
+  {
+    "key": "manhattan",
+    "title": "Manhattan",
+    "section": "listed",
+    "order": 3,
+    "url": "/groups/manhattan/",
+    "cardImage": "/assets/images/thumb/630-ap_o.webp",
+    "cardImageForm": "R",
+    "description": "Manhattan transit tokens, including railway, bus, and subway-related issues."
+  },
+  {
+    "key": "queens",
+    "title": "Queens",
+    "section": "listed",
+    "order": 4,
+    "url": "/groups/queens/",
+    "cardImage": "/assets/images/thumb/631-q_o.webp",
+    "cardImageForm": "R",
+    "description": "Queens transit tokens from local transportation and bus-related issues."
+  },
+  {
+    "key": "statenisland",
+    "title": "Staten Island",
+    "section": "listed",
+    "order": 5,
+    "url": "/groups/statenisland/",
+    "cardImage": "/assets/images/thumb/632-b_r.webp",
+    "cardImageForm": "R",
+    "description": "Staten Island transit tokens and related transportation pieces."
+  },
+  {
+    "key": "specialty",
+    "title": "Specialty Tokens",
+    "section": "listed",
+    "order": 6,
+    "url": "/groups/specialty/",
+    "description": "Transit-related, patterns, zone checks, club tour, fantasy, presentation, and timetable tokens."
+  },
+  {
+    "key": "discoveries",
+    "title": "Unlisted Discoveries",
+    "section": "unlisted",
+    "order": 1,
+    "url": "/groups/discoveries/",
+    "description": "New discoveries, unidentified pieces, and material not yet catalogued."
+  },
+  {
+    "key": "errors",
+    "title": "Oddities & Errors",
+    "section": "unlisted",
+    "order": 2,
+    "url": "/groups/errors/",
+    "cardImage": "/assets/images/thumb/odd-0003_o.webp",
+    "description": "Unusual pieces, production mistakes, varieties, and related oddities that add depth to the collection.",
+    "spotlight": true
+  },
+  {
+    "key": "counterfeit",
+    "title": "Counterfeit Tokens",
+    "section": "unlisted",
+    "order": 3,
+    "url": "/groups/counterfeit/",
+    "description": "Imitation, deceptive, and counterfeit transportation tokens.",
+    "cardImage": "/assets/images/thumb/cf-0001_o.webp",
+    "cardImageForm": "R",
+    "intro": "Transportation tokens and related pieces made to imitate genuine issues."
+  },
+  {
+    "key": "nyhrr",
+    "title": "New York & Harlem Railroad",
+    "section": "spotlight",
+    "order": 1,
+    "url": "/groups/nyhrr/",
+    "cardImage": "/assets/images/thumb/630-d-c_o.webp",
+    "cardImageForm": "Oc",
+    "description": "Related octagonal varieties spanning the listed NY630D issues and the NY998 pattern pieces.",
+    "intro": "Tokens and related pieces associated with the New York & Harlem Railroad.",
+    "featured": true,
+    "heroImage": "/assets/images/thumb/630-d-c_o.webp",
+    "heroImageForm": "Oc",
+    "heroLabel": "Featured Collection",
+    "heroText": "Explore tokens from one of New York’s earliest railroads."
+  }
+]

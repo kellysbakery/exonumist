@@ -1,0 +1,226 @@
+{%- set detailSectionTitle = detailSectionTitle or "Tokens" -%}
+{%- set detailSectionUrl = detailSectionUrl or "/" -%}
+{%- set detailView = detailView or tokenDetailView or display -%}
+{%- set tokenStructuredName = detailView.tokenId -%}
+{%- if detailView.tokenTitle -%}
+  {%- set tokenStructuredName = detailView.tokenId ~ " | " ~ detailView.tokenTitle -%}
+{%- endif -%}
+{%- set tokenStructuredDescription = token.desc or detailView.tokenTitle or detailView.tokenId -%}
+{%- set tokenStructuredCategory = lookups.type[token.type] if token.type and lookups.type else token.type -%}
+{%- set tokenStructuredMaterial = lookups.materials[token.mat] if token.mat and lookups.materials else token.mat -%}
+{%- set tokenStructuredImages = [] -%}
+{%- if token | hasTokenImage("o") -%}
+  {%- set tokenStructuredImages = tokenStructuredImages.concat([(token | tokenImagePath("o")) | absoluteUrl(site)]) -%}
+{%- endif -%}
+{%- if token | hasTokenImage("r") -%}
+  {%- set tokenStructuredImages = tokenStructuredImages.concat([(token | tokenImagePath("r")) | absoluteUrl(site)]) -%}
+{%- endif %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemPage",
+  "name": {{ tokenStructuredName | dump | safe }},
+  "url": {{ (page.url | absoluteUrl(site)) | dump | safe }},
+  "description": {{ tokenStructuredDescription | dump | safe }},
+  "about": {
+    "@type": "IndividualProduct",
+    "name": {{ tokenStructuredName | dump | safe }},
+    "identifier": {{ detailView.tokenId | dump | safe }}{% if tokenStructuredCategory or tokenStructuredMaterial or tokenStructuredImages.length %},{% endif %}
+    {%- if tokenStructuredCategory %}
+      "category": {{ tokenStructuredCategory | dump | safe }}{% if tokenStructuredMaterial or tokenStructuredImages.length %},{% endif %}
+    {%- endif %}
+    {%- if tokenStructuredMaterial %}
+      "material": {{ tokenStructuredMaterial | dump | safe }}{% if tokenStructuredImages.length %},{% endif %}
+    {%- endif %}
+    {%- if tokenStructuredImages.length %}
+      "image": {{ tokenStructuredImages | dump | safe }}
+    {%- endif %}
+  }
+}
+</script>
+
+<section class="token-shell">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    {% for crumb in detailView.breadcrumbItems %}
+      {% if crumb.url %}
+        <a href="{{ crumb.url }}">{{ crumb.label }}</a>
+        {% if not loop.last %}<span>/</span>{% endif %}
+      {% else %}
+        <span aria-current="page">{{ crumb.label }}</span>
+      {% endif %}
+    {% endfor %}
+  </nav>
+
+  <h1>{{ detailView.tokenId }}</h1>
+
+  <p class="token-subtitle">{{ detailView.tokenTitle }}</p>
+
+  {% if detailView.metaParts and detailView.metaParts.length %}
+    <p class="token-meta-line">{{ detailView.metaParts | join(" · ") }}</p>
+  {% endif %}
+
+  {% if detailView.badges and detailView.badges.length %}
+    <div class="badges">
+      {% for badge in detailView.badges %}
+        <span class="badge">{{ badge }}</span>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% if token.desc %}
+    <div class="token-summary">
+      <p>{{ token.desc }}</p>
+    </div>
+  {% endif %}
+
+  <div class="token-images">
+    <figure class="token-image-card">
+      {% if token | hasTokenImage("o") %}
+        <button
+          type="button"
+          class="token-image-button"
+          aria-label="Enlarge {{ detailView.tokenId }} obverse image">
+          <img
+            class="token-image"
+            src="{{ token | tokenImagePath('o') }}"
+            alt="{{ detailView.tokenId }} obverse" />
+        </button>
+      {% else %}
+        <div class="placeholder"></div>
+      {% endif %}
+
+      {% if detailView.obverseText %}
+        <figcaption class="token-image-caption">
+          <strong>Obverse:</strong> {{ detailView.obverseText }}
+        </figcaption>
+      {% endif %}
+    </figure>
+
+    <figure class="token-image-card">
+      {% if token | hasTokenImage("r") %}
+        <button
+          type="button"
+          class="token-image-button"
+          aria-label="Enlarge {{ detailView.tokenId }} reverse image">
+          <img
+            class="token-image"
+            src="{{ token | tokenImagePath('r') }}"
+            alt="{{ detailView.tokenId }} reverse" />
+        </button>
+      {% else %}
+        <div class="placeholder"></div>
+      {% endif %}
+
+      {% if detailView.reverseText %}
+        <figcaption class="token-image-caption">
+          <strong>Reverse:</strong> {{ detailView.reverseText }}
+        </figcaption>
+      {% endif %}
+    </figure>
+  </div>
+
+  <div class="token-lower-grid">
+    <section class="section token-quickfacts">
+      <h2>Quick Facts</h2>
+
+      <div class="facts quickfacts-panel">
+        <dl>
+          {% for fact in detailView.quickFacts %}
+            <div class="facts-row">
+              <dt>{{ fact.label }}</dt>
+              <dd>{{ fact.value }}</dd>
+            </div>
+          {% endfor %}
+        </dl>
+      </div>
+    </section>
+
+    {% if detailView.notes %}
+      <section class="section token-notes-section">
+        <h2>Notes</h2>
+
+        <div class="notes-frame js-notes-frame">
+          <div class="notes-content js-notes-content">
+            <p>{{ detailView.notes }}</p>
+
+            {% if token.wanted %}
+              <div class="wanted-note">
+                <div class="wanted-note-label">Collector Interest</div>
+                <div class="wanted-note-text">
+                  {{ detailView.wantedNote }}
+                </div>
+                <a class="wanted-note-link" href="/wanted/">Have one for sale? Contact me.</a>
+              </div>
+            {% endif %}
+          </div>
+
+          <button
+            type="button"
+            class="notes-more js-notes-more"
+            hidden
+            aria-expanded="false">
+            Read more
+          </button>
+        </div>
+      </section>
+    {% endif %}
+  </div>
+
+  {% if detailView.pager and (detailView.pager.prev or detailView.pager.next) %}
+  <nav class="token-pager" aria-label="Token navigation">
+    <div class="token-pager-grid">
+      {% if detailView.pager.prev %}
+        <div class="token-pager-item token-pager-prev">
+          <a class="token-pager-link" href="{{ detailView.pager.prev.url }}"{% if prevToken %} data-prev-obverse="{{ prevToken | tokenImagePath('o') }}" data-prev-reverse="{{ prevToken | tokenImagePath('r') }}"{% endif %}>
+            <div class="token-pager-media">
+              {% set pagerToken = prevToken %}
+              {% set pagerAltText = detailView.pager.prev.id ~ " obverse" %}
+              {% include "token-pager-image.njk" %}
+            </div>
+
+            <div class="token-pager-content">
+              <span class="token-pager-label">← Previous</span>
+              <strong>{{ detailView.pager.prev.id }}</strong>
+              <span>{{ detailView.pager.prev.title }}</span>
+            </div>
+          </a>
+        </div>
+      {% endif %}
+
+      {% if detailView.pager.next %}
+        <div class="token-pager-item token-pager-next">
+          <a class="token-pager-link" href="{{ detailView.pager.next.url }}"{% if nextToken %} data-next-obverse="{{ nextToken | tokenImagePath('o') }}" data-next-reverse="{{ nextToken | tokenImagePath('r') }}"{% endif %}>
+            <div class="token-pager-media">
+              {% set pagerToken = nextToken %}
+              {% set pagerAltText = detailView.pager.next.id ~ " obverse" %}
+              {% include "token-pager-image.njk" %}
+            </div>
+
+            <div class="token-pager-content">
+              <span class="token-pager-label">Next →</span>
+              <strong>{{ detailView.pager.next.id }}</strong>
+              <span>{{ detailView.pager.next.title }}</span>
+            </div>
+          </a>
+        </div>
+      {% endif %}
+    </div>
+  </nav>
+{% endif %}
+
+  <div
+    id="image-modal"
+    class="image-modal"
+    style="display: none;"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Enlarged token image">
+    <div class="image-modal-content">
+      <img id="modal-image" src="" alt="">
+      <button class="image-modal-close" type="button" aria-label="Close enlarged image">&times;</button>
+    </div>
+  </div>
+
+  <script src="/assets/js/token-detail.js" defer></script>
+</section>

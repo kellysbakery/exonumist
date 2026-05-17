@@ -1,0 +1,68 @@
+<a
+  class="card-link"
+  href="{{ tokenCardUrl }}"
+  {% if tokenCardFilterable %}
+    data-collection-token-card
+    data-status="{{ tokenCardToken.status }}"
+    data-search="{{ tokenCardSearchText | default('') | escape }}"
+  {% endif %}>
+  <article class="card token-list-card">
+
+    <div class="token-list-card-media">
+      {% set imagePath = "" %}
+      {% if tokenCardToken | hasTokenThumb("o") %}
+        {% set imagePath = tokenCardToken | tokenThumbPath("o") %}
+      {% elif tokenCardToken | hasTokenImage("o") %}
+        {% set imagePath = tokenCardToken | tokenImagePath("o") %}
+      {% endif %}
+
+      {% if imagePath %}
+        {% set imageForm = tokenCardToken.form %}
+        {% set imageAlt = tokenCardToken.displayId ~ " obverse" %}
+        {% set imageClass = "token-list-card-image" %}
+        {% set frameClassPrefix = "token-list-card-media-frame" %}
+        {% include "shaped-image.njk" %}
+      {% else %}
+        <div class="token-list-card-placeholder"></div>
+      {% endif %}
+    </div>
+
+    <div class="token-list-card-body">
+      <span class="eyebrow">
+        {{ tokenCardToken.displayId }}
+      </span>
+
+      <strong class="token-list-card-title">
+        {{ tokenCardToken.title }}
+      </strong>
+
+      {% if tokenCardToken.counterstamp %}
+        <p class="token-list-card-variant">
+          {{ tokenCardToken.counterstamp }} Counterstamp
+        </p>
+      {% endif %}
+
+      {% if tokenCardToken.desc %}
+        <p class="token-list-card-desc">
+          {{ tokenCardToken.desc }}
+        </p>
+      {% endif %}
+
+      <p class="token-list-card-meta">
+        {% if tokenCardToken.mat %}
+          {{ tokenCardToken.mat | lookup(lookups.materials) }}
+        {% endif %}
+        {% if tokenCardToken.size %}
+          · {{ tokenCardToken.size }} mm
+        {% endif %}
+        {% if tokenCardToken.form %}
+          · {{ tokenCardToken.form | lookup(lookups.forms) }}
+        {% endif %}
+        {% if tokenCardToken.symbol %}
+          · {{ tokenCardToken.symbol | lookup(lookups.symbols) }}
+        {% endif %}
+      </p>
+    </div>
+
+  </article>
+</a>

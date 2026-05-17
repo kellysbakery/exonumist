@@ -1,1 +1,107 @@
-[]
+[
+  {
+    "id": "official-ny628a",
+    "displayId": "NY628A",
+    "sec": "628",
+    "code": "A",
+    "var": "",
+    "status": "listed",
+    "type": "transit",
+    "groups": ["bronx"],
+    "title": "Orchard Beach Turnstile S.T.C.",
+    "borough": "Bronx",
+    "mat": "WM",
+    "form": "R",
+    "symbol": "Bar",
+    "size": 23,
+    "obv": "ORCHARD BEACH TURNSTILE S.T.C.",
+    "rev": "Good For One Zone S.T.C.",
+    "desc": "Listed Bronx transit token used at Orchard Beach turnstiles.",
+    "notes": "Surface Transportation Corp. was controlled by the Third Avenue Transit Corp. and was taken over in March 1962 by the Manhattan and Bronx Surface Transit Operating Authority. In 1945, Surface Transit operated 308 buses over 198 route miles. NY628A and NY628B were only used at the end of one line, in turnstiles.",
+    "issued": "1949, 1954",
+    "mintage": 30000,
+    "usage": "Used at Orchard Beach turnstiles for one zone.",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 371,
+        "note": "Lists NY628A with 15,000 struck in June 1949 and 15,000 struck in June 1954; includes Surface Transportation Corp. operating notes."
+      }
+    ],
+    "rel": [],
+    "home": false,
+    "pub": true,
+    "sort": "628-a"
+  },
+  {
+    "id": "official-ny628b",
+    "displayId": "NY628B",
+    "sec": "628",
+    "code": "B",
+    "var": "",
+    "status": "listed",
+    "type": "transit",
+    "groups": ["bronx"],
+    "title": "Orchard Beach Turnstile S.T.C.",
+    "borough": "Bronx",
+    "mat": "B",
+    "form": "R",
+    "symbol": "Bar",
+    "size": 16,
+    "obv": "ORCHARD BEACH TURNSTILE S.T.C.",
+    "rev": "Good For Two Zones S.T.C.",
+    "desc": "Listed Bronx transit token used at Orchard Beach turnstiles.",
+    "notes": "Surface Transportation Corp. was controlled by the Third Avenue Transit Corp. and was taken over in March 1962 by the Manhattan and Bronx Surface Transit Operating Authority. In 1945, Surface Transit operated 308 buses over 198 route miles. NY628A and NY628B were only used at the end of one line, in turnstiles.",
+    "issued": "1949",
+    "mintage": 10000,
+    "usage": "Used at Orchard Beach turnstiles for two zones.",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 371,
+        "note": "Lists NY628B with 10,000 struck in June 1949; includes Surface Transportation Corp. operating notes."
+      }
+    ],
+    "rel": [],
+    "home": false,
+    "pub": true,
+    "sort": "628-b"
+  },
+  {
+    "id": "official-ny628c",
+    "displayId": "NY628C",
+    "sec": "628",
+    "code": "C",
+    "var": "",
+    "status": "listed",
+    "type": "transit",
+    "groups": ["bronx"],
+    "title": "Orchard Beach Turnstile M.A.B.",
+    "borough": "Bronx",
+    "mat": "WM",
+    "form": "R",
+    "symbol": "Bar",
+    "size": 23,
+    "obv": "ORCHARD BEACH TURNSTILE M.A.B.",
+    "rev": "Good For One Zone M.A.B.",
+    "desc": "Listed Bronx transit token used at Orchard Beach turnstiles.",
+    "notes": "M.A.B. refers to the Manhattan and Bronx Surface Transit Operating Authority, which became a subsidiary of the Metropolitan Transportation Authority in 1968.",
+    "issued": "1965, 1969",
+    "mintage": 12000,
+    "usage": "Used at Orchard Beach turnstiles for one zone.",
+    "sources": [
+      {
+        "title": "Atwood-Coffee Catalogue",
+        "issue": "Volume 2",
+        "page": 371,
+        "note": "Lists NY628C with 7,000 struck in July 1965 and 5,000 struck in July 1969; explains M.A.B. attribution."
+      }
+    ],
+    "rel": [],
+    "home": false,
+    "pub": true,
+    "sort": "628-c"
+  }
+]

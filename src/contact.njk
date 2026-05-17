@@ -1,0 +1,93 @@
+---
+layout: base.njk
+title: Contact
+description: Contact Exonumist about New York transportation tokens, unlisted pieces, errors, oddities, buying, selling, trading, and collector research.
+permalink: /contact/index.html
+---
+
+<section class="section">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span>/</span>
+    <span>{{ contactPage.hero.label }}</span>
+  </nav>
+
+  <div class="contact-hero">
+    <div class="contact-hero-content">
+      <h1>{{ contactPage.hero.title }}</h1>
+
+      <p class="section-intro">
+        {{ contactPage.hero.intro }}
+      </p>
+
+      <a class="btn primary" href="mailto:{{ contactPage.hero.email }}">{{ contactPage.hero.email }}</a>
+    </div>
+
+    <aside class="contact-profile-card">
+      <img
+        class="contact-profile-image"
+        src="{{ contactPage.profile.image }}"
+        alt="{{ contactPage.profile.imageAlt }}" />
+
+      <div class="contact-profile-body">
+        <h2>{{ contactPage.profile.heading }}</h2>
+        <strong class="contact-profile-name">{{ contactPage.profile.name }}</strong>
+        <p>
+          {{ contactPage.profile.bio }}
+        </p>
+        {% for link in contactPage.profile.links %}
+          <a class="contact-profile-link" href="{{ link.url }}">{{ link.label }}</a>
+        {% endfor %}
+      </div>
+    </aside>
+  </div>
+</section>
+
+{% for section in contactPage.sections %}
+  <section class="section">
+    <div class="about-split">
+      <div class="contact-section-content">
+        <h2>{{ section.title }}</h2>
+
+        {% for paragraph in section.body %}
+          <p class="prose-width">{{ paragraph }}</p>
+        {% endfor %}
+      </div>
+
+      <aside class="about-aside">
+        <h3>{{ section.aside.title }}</h3>
+        <ul>
+          {% for item in section.aside.items %}
+            <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </aside>
+    </div>
+  </section>
+{% endfor %}
+
+<section class="section">
+  <h2>Related Pages</h2>
+
+  <div class="grid-3">
+    {% for relatedPage in contactPage.relatedPages %}
+      <a class="card-link" href="{{ relatedPage.url }}">
+        <article class="card related-page-card{% if relatedPage.image %} related-page-card-with-media{% endif %}">
+          <div class="related-page-card-body">
+            <strong>{{ relatedPage.title }}</strong>
+            <p class="section-intro">{{ relatedPage.description }}</p>
+          </div>
+
+          {% if relatedPage.image %}
+            <div class="related-page-card-media">
+              <img
+                class="related-page-card-image"
+                src="{{ relatedPage.image }}"
+                alt="{{ relatedPage.imageAlt }}" />
+            </div>
+          {% endif %}
+        </article>
+      </a>
+    {% endfor %}
+  </div>
+</section>

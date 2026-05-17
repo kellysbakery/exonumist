@@ -1,86 +1,139 @@
 ---
 layout: base.njk
-title: Exonumist
+title: Keith's NYC Transit Token Collection
+description: Collector-focused reference for New York City transportation tokens, patterns, errors, counterfeits, and related exonumia.
 ---
-<section class="hero">
-  <div class="hero-grid">
-    <div>
-      <h1>New York City Transportation Tokens</h1>
-      <p>{{ site.notes.homepageTagline }}</p>
-      <p class="note">Listed material on this site follows the {{ site.catalog.name }} where applicable.</p>
+
+<section class="hero hero-home hero-home-wide">
+  <div class="hero-home-grid">
+    <div class="hero-home-main">
+      <div class="hero-branding">
+        <img
+          class="hero-logo"
+          src="/assets/images/site/exonumist-banner.png"
+          alt="Exonumist.com token logo banner" />
+      </div>
+
+      <h1>Keith&rsquo;s NYC Transit Token Collection</h1>
+
+      <div class="hero-copy">
+        <p>
+          Welcome to my online token collection, with a special focus on New York City transportation
+          exonumia. I collect tokens for the history they preserve, the stories they tell, and the
+          connection they offer to everyday life in earlier eras.
+        </p>
+
+        <p class="note">
+          Start with the Collection areas below, or use Browse to search across cataloged,
+          undocumented, specialty, oddities, counterfeits, and related material.
+        </p>
+      </div>
+
       <div class="hero-actions">
-        <a href="/listed/" class="btn primary">Browse Listed Tokens</a>
-        <a href="/unlisted/" class="btn">Explore Unlisted Tokens</a>
+        <a href="/collection/" class="btn primary">Collection</a>
+        <a href="/browse/" class="btn">Browse</a>
       </div>
     </div>
-    <div class="hero-visual">
-      <div class="hero-visual-card">
-        <img src="/images/official/630/630-d-a_o.jpg" alt="NY630Da obverse" />
-      </div>
-      <div class="hero-visual-card">
-        <img src="/images/official/630/630-d-a_r.jpg" alt="NY630Da reverse" />
-      </div>
-      <div class="hero-visual-card">
-        <strong>Collector-focused.</strong>
-        <p class="note">Built around listed and unlisted New York City transportation-related tokens.</p>
-      </div>
-    </div>
+
+    {% for group in groups %}
+      {% if group.featured %}
+        <aside class="hero-feature">
+          <a class="card-link" href="{{ urlHelpers.groupUrl(group.key) }}">
+            <div class="hero-feature-card hero-feature-card-minimal">
+              <div class="hero-feature-text">
+                <strong>{{ group.heroLabel }}</strong>
+                <p><strong>{{ group.title }}</strong></p>
+              </div>
+
+              {% set imagePath = group.heroImage %}
+              {% set imageAlt = group.title %}
+              {% set imageForm = group.heroImageForm %}
+              {% set imageClass = "token-list-card-image" %}
+              {% set plainImageClass = "" %}
+              {% set frameClassPrefix = "token-list-card-media-frame" %}
+              {% include "shaped-image.njk" %}
+
+              <div class="hero-feature-text">
+                <p>{{ group.heroText }}</p>
+              </div>
+            </div>
+          </a>
+        </aside>
+      {% endif %}
+    {% endfor %}
   </div>
 </section>
 
 <section class="section">
-  <h2>Listed Tokens</h2>
-  <p class="section-intro">Browse listed New York City transportation-related tokens by borough and listed special groups.</p>
-  <div class="grid-4">
-    <a class="card-link" href="/listed/628/"><article class="card"><strong>Bronx</strong><p>Listed Bronx transportation tokens.</p></article></a>
-    <a class="card-link" href="/listed/629/"><article class="card"><strong>Brooklyn</strong><p>Listed Brooklyn transportation tokens.</p></article></a>
-    <a class="card-link" href="/listed/630/"><article class="card"><strong>Manhattan</strong><p>Listed Manhattan transportation tokens.</p></article></a>
-    <a class="card-link" href="/listed/631/"><article class="card"><strong>Queens</strong><p>Listed Queens transportation tokens.</p></article></a>
-    <a class="card-link" href="/listed/632/"><article class="card"><strong>Staten Island</strong><p>Listed Staten Island transportation tokens.</p></article></a>
-    <a class="card-link" href="/listed/patterns/"><article class="card"><strong>Patterns</strong><p>Listed patterns from the {{ site.catalog.shortName }}.</p></article></a>
-    <a class="card-link" href="/listed/club-tour/"><article class="card"><strong>Club Tour (CT)</strong><p>Listed club tour issues from the {{ site.catalog.shortName }}.</p></article></a>
-  </div>
-</section>
+  <h2>Collection</h2>
 
-<section class="section">
-  <h2>Unlisted Tokens</h2>
   <p class="section-intro">
-    New York City transportation-related tokens not presently included in the {{ site.catalog.name }}.
+    Browse by collecting area. Catalog status stays inside each area as metadata and filters.
   </p>
 
-  <div class="grid-3">
-    <a class="card-link" href="/unlisted/">
-      <article class="card">
-        <strong>Unlisted Discoveries</strong>
-        <p>
-          Tokens and related material not presently listed in the
-          {{ site.catalog.shortName }}.
-        </p>
-      </article>
-    </a>
+  <div class="home-section-grid">
+    {% for area in collectionAreas %}
+      <a class="card-link" href="{{ urlHelpers.collectionAreaUrl(area.slug) }}">
+        <article class="card home-section-card">
+          <div class="home-section-card-layout">
+            <div class="home-section-card-body">
+              <strong class="home-section-card-title">{{ area.title }}</strong>
+              <p class="home-section-card-desc">{{ area.description }}</p>
+            </div>
 
-    <a class="card-link" href="/unlisted/#oddities">
-      <article class="card">
-        <strong>Oddities &amp; Errors</strong>
-        <p>
-          Unlisted errors, oddities, and unusual transportation-related material.
-        </p>
-      </article>
-    </a>
+            {% if area.cardImage %}
+              <div class="home-section-card-media">
+                {% set imagePath = area.cardImage %}
+                {% set imageAlt = area.title %}
+                {% set imageForm = area.cardImageForm %}
+                {% set imageClass = "token-list-card-image" %}
+                {% set plainImageClass = "home-section-card-image" %}
+                {% set frameClassPrefix = "token-list-card-media-frame" %}
+                {% include "shaped-image.njk" %}
+              </div>
+            {% endif %}
+          </div>
+        </article>
+      </a>
+    {% endfor %}
   </div>
 </section>
 
 <section class="section">
-  <h2>Resources</h2>
-  <div class="grid-3">
-    {% for resource in resources | sort(attribute="order") %}
-      {% if resource.pub %}
-      <a class="card-link" href="{{ resource.urlRef | resolveUrlRef(site) }}">
-        <article class="resource-card">
-          <strong>{{ resource.title }}</strong>
-          <p>{{ resource.text }}</p>
-        </article>
-      </a>
+  <h2>Spotlight</h2>
+
+  <p class="section-intro">
+    Curated collecting areas, favorite pieces, and historically significant groups from the collection.
+  </p>
+
+  <div class="home-section-grid">
+    {% for group in groups | sort(attribute="order") %}
+      {% if group.section == "spotlight" or group.spotlight or group.featured %}
+        {% set spotlightImage = group.cardImage or group.heroImage %}
+        {% set spotlightImageForm = group.cardImageForm or group.heroImageForm %}
+
+        <a class="card-link" href="{{ urlHelpers.groupUrl(group.key) }}">
+          <article class="card home-section-card">
+            <div class="home-section-card-layout">
+              <div class="home-section-card-body">
+                <strong class="home-section-card-title">{{ group.title }}</strong>
+                <p class="home-section-card-desc">{{ group.description }}</p>
+              </div>
+
+              {% if spotlightImage %}
+                <div class="home-section-card-media">
+                  {% set imagePath = spotlightImage %}
+                  {% set imageAlt = group.title %}
+                  {% set imageForm = spotlightImageForm %}
+                  {% set imageClass = "token-list-card-image" %}
+                  {% set plainImageClass = "home-section-card-image" %}
+                  {% set frameClassPrefix = "token-list-card-media-frame" %}
+                  {% include "shaped-image.njk" %}
+                </div>
+              {% endif %}
+            </div>
+          </article>
+        </a>
       {% endif %}
     {% endfor %}
   </div>

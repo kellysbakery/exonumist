@@ -1,0 +1,43 @@
+---
+layout: base.njk
+pagination:
+  data: groups
+  size: 1
+  alias: group
+permalink: "{{ urlHelpers.groupUrl(group.key) }}index.html"
+eleventyComputed:
+  title: "{{ group.title }}"
+---
+
+{% set groupTokens = [] %}
+
+{% for token in allTokens %}
+  {% if token.groups and (group.key in token.groups) %}
+    {% set groupTokens = groupTokens.concat([token]) %}
+  {% endif %}
+{% endfor %}
+
+<section class="section">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span>/</span>
+    <span aria-current="page">{{ group.title }}</span>
+  </nav>
+
+  <h1>{{ group.title }}</h1>
+
+  {% if group.intro %}
+    <p class="section-intro">
+      {{ group.intro }}
+    </p>
+  {% endif %}
+
+  <div class="grid-3 token-card-grid">
+    {% for token in groupTokens %}
+      {% set tokenCardToken = token %}
+      {% set tokenCardUrl = urlHelpers.groupTokenUrl(group.key, token.displayId | lower) %}
+      {% set tokenCardFilterable = false %}
+      {% include "token-list-card.njk" %}
+    {% endfor %}
+  </div>
+</section>
