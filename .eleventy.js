@@ -8,12 +8,57 @@ module.exports = function (eleventyConfig) {
 
   // Generic lookup filter
   eleventyConfig.addFilter("lookup", (code, table) => {
-    return table && code ? (table[code] || code) : "";
+    return table && code ? table[code] || code : "";
+  });
+
+  eleventyConfig.addFilter("isRoundToken", (record) => {
+    const form = String(record?.form || record || "").trim().toLowerCase();
+    return form === "r" || form === "round";
+  });
+
+  // Format whole numbers with commas
+  eleventyConfig.addFilter("formatNumber", (value) => {
+    if (value === null || value === undefined || value === "") return "";
+
+    const num = Number(value);
+    if (Number.isNaN(num)) return value;
+
+    return num.toLocaleString("en-US");
+  });
+
+  // Format token issue dates for display
+  eleventyConfig.addFilter("formatDateUS", (value) => {
+    if (!value) return "";
+
+    const text = String(value);
+
+    const fullDate = /^(\d{4})-(\d{2})-(\d{2})$/;
+    const yearMonth = /^(\d{4})-(\d{2})$/;
+
+    if (fullDate.test(text)) {
+      const [, year, month, day] = text.match(fullDate);
+      return `${month}/${day}/${year}`;
+    }
+
+    if (yearMonth.test(text)) {
+      const [, year, month] = text.match(yearMonth);
+      return `${month}/${year}`;
+    }
+
+    return text;
   });
 
   // Resolve nested URLs from site.json refs like catalog.infoUrl
   eleventyConfig.addFilter("resolveUrlRef", (urlRef, site) => {
-    if (!urlRef || !site) return "#";
+    if (!urlRef) return "#";
+
+    // If it's already a full URL, return it as-is
+    if (urlRef.startsWith("http://") || urlRef.startsWith("https://")) {
+      return urlRef;
+    }
+
+    // Otherwise, try to resolve it from the site object
+    if (!site) return "#";
 
     return (
       urlRef.split(".").reduce((acc, key) => {
@@ -22,60 +67,166 @@ module.exports = function (eleventyConfig) {
     );
   });
 
-  // Build official image path
-  eleventyConfig.addFilter("officialImagePath", (record, side) => {
-    const code = String(record.code || "").toLowerCase();
-    const variant = record.var
-      ? `-${String(record.var).toLowerCase()}`
-      : "";
+  eleventyConfig.addFilter("absoluteUrl", (urlPath, site) => {
+    const baseUrl = site?.siteUrl || site?.url || site?.baseUrl || "";
+    if (!urlPath) return baseUrl;
 
-    return `/images/official/${record.sec}/${record.sec}-${code}${variant}_${side}.jpg`;
+    if (/^https?:\/\//.test(urlPath)) {
+      return urlPath;
+    }
+
+    if (!baseUrl) {
+      return urlPath;
+    }
+
+    return new URL(urlPath, baseUrl).href;
   });
 
-  // Check if official image exists
-  eleventyConfig.addFilter("hasOfficialImage", (record, side) => {
-    const code = String(record.code || "").toLowerCase();
-    const variant = record.var
-      ? `-${String(record.var).toLowerCase()}`
-      : "";
+  function normalizeImageSide(side) {
+    const normalized = String(side || "").toLowerCase();
 
-    const rel = path.join(
+    if (normalized === "o" || normalized === "obverse") return "o";
+    if (normalized === "r" || normalized === "rev" || normalized === "reverse")
+      return "r";
+
+    return normalized;
+  }
+
+  function buildTokenImageStem(record) {
+    if (!record) return "";
+
+    const status = String(record.status || "").toLowerCase();
+
+    if (status === "listed" && record.sort) {
+      return String(record.sort).trim().toLowerCase();
+    }
+
+    return String(record.displayId || "")
+      .trim()
+      .toLowerCase();
+  }
+
+  function buildTokenImageFilename(record, side) {
+    const stem = buildTokenImageStem(record);
+    const normalizedSide = normalizeImageSide(side);
+
+    if (!stem || !normalizedSide) {
+      return "";
+    }
+
+    return `${stem}_${normalizedSide}.jpg`;
+  }
+
+  function buildTokenImageFsPath(record, side) {
+    const filename = buildTokenImageFilename(record, side);
+    if (!filename) return "";
+
+    return path.join(
+      process.cwd(),
       "src",
+      "assets",
       "images",
-      "official",
-      String(record.sec),
-      `${record.sec}-${code}${variant}_${side}.jpg`
+      "token",
+      filename
     );
+  }
 
-    return fs.existsSync(path.join(process.cwd(), rel));
+  function buildTokenImageWebPath(record, side) {
+    const filename = buildTokenImageFilename(record, side);
+    if (!filename) return "";
+
+    return `/assets/images/token/${filename}`;
+  }
+
+  function buildTokenThumbWebPath(record, side) {
+    const filename = buildTokenImageFilename(record, side);
+    if (!filename) return "";
+
+    const thumbFilename = filename.replace(".jpg", ".webp");
+    return `/assets/images/thumb/${thumbFilename}`;
+  }
+
+  // Canonical generic image helpers
+  eleventyConfig.addFilter("tokenImagePath", (record, side) => {
+    return buildTokenImageWebPath(record, side);
   });
 
-  // Build image path for unlisted / oddities / special
-  eleventyConfig.addFilter("fallbackImagePath", (record, type, side) => {
-    const key =
-      type === "unlisted" || type === "oddities"
-        ? String(record.siteId || "").toLowerCase()
-        : String(record.displayId || "").toLowerCase();
-
-    return `/images/${type}/${key}_${side}.jpg`;
+  eleventyConfig.addFilter("tokenThumbPath", (record, side) => {
+    return buildTokenThumbWebPath(record, side);
   });
 
-  // Check if fallback image exists
-  eleventyConfig.addFilter("hasFallbackImage", (record, type, side) => {
-    const key =
-      type === "unlisted" || type === "oddities"
-        ? String(record.siteId || "").toLowerCase()
-        : String(record.displayId || "").toLowerCase();
+  eleventyConfig.addFilter("hasTokenImage", (record, side) => {
+    const fsPath = buildTokenImageFsPath(record, side);
+    return fsPath ? fs.existsSync(fsPath) : false;
+  });
 
-    const rel = path.join(
+  eleventyConfig.addFilter("hasTokenThumb", (record, side) => {
+    const filename = buildTokenImageFilename(record, side);
+    if (!filename) return false;
+
+    const thumbFilename = filename.replace(".jpg", ".webp");
+    const fsPath = path.join(
+      process.cwd(),
       "src",
+      "assets",
       "images",
-      type,
-      `${key}_${side}.jpg`
+      "thumb",
+      thumbFilename
     );
-
-    return fs.existsSync(path.join(process.cwd(), rel));
+    return fs.existsSync(fsPath);
   });
+
+  // Catalog-aware sort for keys like:
+  // 630-d-a
+  // 630-an
+  // 630-ar
+  // single-letter codes sort before double-letter codes
+  const compareSortKeys = (a, b) => {
+    const aKey = String(a.sort || "").toLowerCase();
+    const bKey = String(b.sort || "").toLowerCase();
+
+    const aParts = aKey.split("-");
+    const bParts = bKey.split("-");
+
+    const aSection = aParts[0] || "";
+    const bSection = bParts[0] || "";
+
+    // Section numeric compare first
+    if (/^\d+$/.test(aSection) && /^\d+$/.test(bSection)) {
+      if (Number(aSection) !== Number(bSection)) {
+        return Number(aSection) - Number(bSection);
+      }
+    } else if (aSection !== bSection) {
+      return aSection.localeCompare(bSection);
+    }
+
+    const aCode = aParts[1] || "";
+    const bCode = bParts[1] || "";
+
+    // Shorter code first: A before AA, D before AN
+    if (aCode.length !== bCode.length) {
+      return aCode.length - bCode.length;
+    }
+
+    // Alphabetical within same code length
+    if (aCode !== bCode) {
+      return aCode.localeCompare(bCode);
+    }
+
+    const aVar = aParts.slice(2).join("-");
+    const bVar = bParts.slice(2).join("-");
+
+    // No variety before variety
+    if (!aVar && bVar) return -1;
+    if (aVar && !bVar) return 1;
+
+    // Shorter variety first
+    if (aVar.length !== bVar.length) {
+      return aVar.length - bVar.length;
+    }
+
+    return aVar.localeCompare(bVar);
+  };
 
   // Merge official section JSON files into one collection
   eleventyConfig.addCollection("officialAll", function () {
@@ -101,9 +252,7 @@ module.exports = function (eleventyConfig) {
       }
     }
 
-    return merged.sort((a, b) =>
-      String(a.sort || "").localeCompare(String(b.sort || ""))
-    );
+    return merged.sort(compareSortKeys);
   });
 
   return {

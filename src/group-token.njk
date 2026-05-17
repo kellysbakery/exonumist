@@ -1,0 +1,52 @@
+---
+layout: base.njk
+pagination:
+  data: groupTokenPages
+  size: 1
+  alias: pageData
+permalink: "{{ urlHelpers.groupTokenUrl(pageData.group.key, pageData.pageId | lower) }}index.html"
+eleventyComputed:
+  title: "{{ pageData.token.displayId }} – {{ pageData.token.title }}"
+---
+
+{% set group = pageData.group %}
+{% set token = pageData.token %}
+{% set isUnlisted = token.status != "listed" %}
+
+{% set detailSectionTitle = group.title %}
+{% set detailSectionUrl = urlHelpers.groupUrl(group.key) %}
+
+{% if token.status == "listed" and token.sec %}
+  {% set matchedSection = tokenDetailView.findSection(sections, token.sec) %}
+  {% set matchedGroup = tokenDetailView.findListedGroupForSection(sections, groups, token.sec) %}
+
+  {% if matchedSection %}
+    {% set detailSectionTitle = matchedSection.title %}
+    {% set detailSectionUrl = matchedGroup.url if matchedGroup else detailSectionUrl %}
+  {% endif %}
+{% endif %}
+
+{% set groupTokens = tokenDetailView.findGroupTokens(groupTokenPages, group.key) %}
+
+{% set pager = tokenDetailView.findPrevNext(groupTokens, token) %}
+{% set prevToken = pager.prev %}
+{% set nextToken = pager.next %}
+
+{% set breadcrumbItems = tokenDetailView.buildGroupBreadcrumbItems(group, token) %}
+
+{% set detailView = tokenDetailView.buildTokenDetailView(token, {
+  tokenId: token.displayId,
+  tokenTitle: token.title,
+  detailSectionTitle: detailSectionTitle,
+  detailSectionUrl: detailSectionUrl,
+  breadcrumbItems: breadcrumbItems,
+  detailShowPager: true,
+  prevToken: prevToken,
+  nextToken: nextToken,
+  pagerUrlBuilder: "group",
+  pagerGroupKey: group.key,
+  isUnlisted: isUnlisted,
+  lookups: lookups
+}) %}
+
+{% include "token-detail.njk" %}

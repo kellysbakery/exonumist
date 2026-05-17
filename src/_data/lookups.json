@@ -1,15 +1,19 @@
 {
   "status": {
     "listed": "Listed in Atwood-Coffee Catalogue",
-    "unlisted": "Not currently listed in Atwood-Coffee Catalogue",
-    "special": "Listed as a special issue",
-    "exception": "Catalogue exception"
+    "unlisted": "Not currently listed in Atwood-Coffee Catalogue"
   },
   "type": {
-    "transit": "Transit Token",
+    "club": "Club Tour",
+    "counterfeit": "Counterfeit",
+    "error": "Errors / Oddities",
+    "fantasy": "Fantasy",
     "pattern": "Pattern",
-    "club": "Club Tour Token",
-    "presentation": "Probable Presentation Piece"
+    "presentation": "Presentation",
+    "timetable": "Timetable",
+    "transit": "Transit",
+    "transportation-related": "Transportation Related",
+    "zonecheck": "Zone Check"
   },
   "materials": {
     "A": "Aluminum",
@@ -28,7 +32,10 @@
     "Sv": "Silver",
     "T": "Tin",
     "V": "Vulcanite",
+    "Ve": "Black Vulcanite",
+    "Vi": "Brown Vulcanite",
     "W": "Wood",
+    "Wgz": "Wood (Green & Purple)",
     "WM": "White Metal",
     "X": "Solid Gold",
     "Z": "Zinc"
@@ -36,19 +43,22 @@
   "forms": {
     "R": "Round",
     "Oc": "Octagon",
-    "Ov": "Oval",
-    "Pg": "Pentagon",
-    "Sc": "Scalloped",
-    "Sd": "Solid"
+    "Ov": "Oval"
   },
   "symbols": {
     "Ap": "Apple",
+    "Bar": "Bar",
     "Bh": "Beehive",
     "Bl": "Ball",
     "Ch": "Center Hole",
+    "COsc": "Stencil-cut \"CO\"",
     "Cs": "Cross",
     "Ct": "Crescent",
     "Dd": "Diamond",
+    "Ddsc": "Stencil-cut Diamond",
+    "ESsc": "Stencil-cut \"ES\"",
+    "H-sc": "Stencil-cut \"H\"",
+    "K-sc": "Stencil-cut \"K\"",
     "Hs": "Horse Shoe",
     "Ht": "Heart",
     "Hx": "Hexagon",
@@ -58,7 +68,10 @@
     "Ov": "Oval",
     "Pc": "Pierced",
     "Pg": "Pentagon",
+    "Pgsc": "Stencil-cut \"Pentagon\"",
+    "R": "Letter R",
     "Ro": "Rosette",
+    "S": "Letter S",
     "Sc": "Scalloped",
     "Sd": "Solid",
     "Sh": "Shamrock",
@@ -68,8 +81,13 @@
     "Sp": "Spade",
     "Sq": "Square",
     "St": "Star",
+    "Stsc": "Stencil-cut Star",
+    "T-sc": "Stencil-cut \"T\"",
+    "Trsc": "Stencil-cut Triangle",
     "Tr": "Triangle",
+    "W": "Letter W",
     "Wd": "Wedge",
-    "XX": "Figure 8"
+    "XX": "Figure 8",
+    "Y-sc": "Stencil-cut \"Y\""
   }
 }

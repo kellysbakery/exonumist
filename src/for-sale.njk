@@ -1,0 +1,70 @@
+---
+layout: base.njk
+title: For Sale
+description: Duplicate transportation tokens available for sale or trade, organized by state and catalog number.
+permalink: /for-sale/index.html
+---
+
+<section class="section">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span>/</span>
+    <span>For Sale</span>
+  </nav>
+  <h1>For Sale</h1>
+
+  <p class="section-intro">
+    Duplicate transportation tokens available for sale or trade. Please contact me to confirm
+    availability before purchase.
+  </p>
+
+  <p class="section-intro">
+    <strong>{{ forSale.total }}</strong> tokens available.
+    Last updated: {{ forSaleMeta.lastUpdated }}
+  </p>
+  <div class="for-sale-search">
+    <label for="for-sale-search-input">Search catalog number</label>
+    <input
+      id="for-sale-search-input"
+      type="search"
+      placeholder="Search, e.g. NY905A, AL120..."
+      autocomplete="off" />
+  </div>
+
+
+
+  <p class="section-intro for-sale-results-summary">
+    <strong id="for-sale-visible-count">{{ forSale.total }}</strong>
+    of
+    <strong>{{ forSale.total }}</strong>
+    tokens shown.
+  </p>
+
+  <div class="for-sale-list">
+    {% for group in forSale.groups %}
+      <details class="for-sale-group" data-sale-group data-count="{{ group.items.length }}">
+        <summary>
+          {{ group.stateName }}
+          <span>
+            (<span data-group-visible-count>{{ group.items.length }}</span>)
+          </span>
+        </summary>
+
+        <div class="for-sale-items">
+          {% for item in group.items %}
+            <div class="for-sale-item" data-sale-item data-search-text="{{ item.searchText }}">
+              <span class="for-sale-id">{{ item.catalogId }}</span>
+              <span class="for-sale-price">{{ item.value }}</span>
+            </div>
+          {% endfor %}
+        </div>
+      </details>
+    {% endfor %}
+  </div>
+
+  <p class="for-sale-empty" id="for-sale-empty" hidden>
+    No matching tokens found.
+  </p>
+</section>
+
+<script src="/assets/js/for-sale.js"></script>

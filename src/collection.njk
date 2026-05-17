@@ -1,0 +1,47 @@
+---
+layout: base.njk
+title: Collection
+description: Browse the Exonumist collection by collecting area.
+permalink: /collection/index.html
+---
+
+<section class="section">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span>/</span>
+    <span>Collection</span>
+  </nav>
+
+  <h1>Collection</h1>
+
+  <p class="section-intro">
+    Browse the collection by collecting area. Catalog status remains metadata within each area.
+  </p>
+
+  <div class="home-section-grid">
+    {% for area in collectionAreas %}
+      <a class="card-link" href="{{ urlHelpers.collectionAreaUrl(area.slug) }}">
+        <article class="card home-section-card">
+          <div class="home-section-card-layout">
+            <div class="home-section-card-body">
+              <strong class="home-section-card-title">{{ area.title }}</strong>
+              <p class="home-section-card-desc">{{ area.description }}</p>
+            </div>
+
+            {% if area.cardImage %}
+              <div class="home-section-card-media">
+                {% set imagePath = area.cardImage %}
+                {% set imageAlt = area.title %}
+                {% set imageForm = area.cardImageForm %}
+                {% set imageClass = "token-list-card-image" %}
+                {% set plainImageClass = "home-section-card-image" %}
+                {% set frameClassPrefix = "token-list-card-media-frame" %}
+                {% include "shaped-image.njk" %}
+              </div>
+            {% endif %}
+          </div>
+        </article>
+      </a>
+    {% endfor %}
+  </div>
+</section>

@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://exonumist.com/schemas/token-record.schema.json",
+  "title": "Exonumist Token Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "displayId",
+    "sec",
+    "code",
+    "var",
+    "status",
+    "type",
+    "groups",
+    "title",
+    "borough",
+    "mat",
+    "form",
+    "symbol",
+    "size",
+    "obv",
+    "rev",
+    "desc",
+    "notes",
+    "rel",
+    "home",
+    "pub",
+    "sort"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "displayId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sec": {
+      "type": "string"
+    },
+    "code": {
+      "type": "string"
+    },
+    "var": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["listed", "unlisted"]
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "transit",
+        "pattern",
+        "club",
+        "fantasy",
+        "presentation",
+        "timetable",
+        "zonecheck",
+        "transportation-related",
+        "error",
+        "counterfeit"
+      ]
+    },
+    "groups": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "borough": {
+      "type": "string",
+      "enum": ["Bronx", "Brooklyn", "Manhattan", "Queens", "Staten Island"]
+    },
+    "mat": {
+      "type": "string"
+    },
+    "form": {
+      "type": "string"
+    },
+    "symbol": {
+      "type": "string"
+    },
+    "size": {
+      "type": ["number", "null"],
+      "minimum": 0
+    },
+    "obv": {
+      "type": "string"
+    },
+    "rev": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "maker": {
+      "type": "string"
+    },
+    "issued": {
+      "type": "string"
+    },
+    "mintage": {
+      "type": ["integer", "null"],
+      "minimum": 0
+    },
+    "usage": {
+      "type": "string"
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["title", "issue"],
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "issue": {
+            "type": "string",
+            "minLength": 1
+          },
+          "page": {
+            "type": ["integer", "string"]
+          },
+          "note": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "rel": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "home": {
+      "type": "boolean"
+    },
+    "pub": {
+      "type": "boolean"
+    },
+    "sort": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

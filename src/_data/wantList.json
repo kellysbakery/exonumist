@@ -1,0 +1,54 @@
+[
+  {
+    "id": "unknown-nyc-transit-material",
+    "title": "Unknown, unlisted, or undocumented NYC transportation tokens",
+    "summary": "I am especially interested in pieces not listed on this site, including errors, oddities, undocumented issues, and unusual transportation-related tokens.",
+    "category": "unknown",
+    "type": "undocumented-piece",
+    "status": "wanted",
+    "priority": "high",
+    "visibility": "public",
+    "groups": ["discoveries"],
+    "tags": ["unknown", "unlisted", "oddities", "transportation"],
+    "sort": "001-unknown-nyc-transit"
+  },
+  {
+    "id": "civil-war-tokens",
+    "title": "Civil War tokens",
+    "summary": "I am interested in Civil War tokens with strong historical appeal, unusual merchants, or interesting designs.",
+    "category": "civil-war",
+    "type": "general-category",
+    "status": "wanted",
+    "priority": "medium",
+    "visibility": "public",
+    "groups": [],
+    "tags": ["civil-war", "non-transit"],
+    "sort": "300-civil-war"
+  },
+  {
+    "id": "hard-times-tokens",
+    "title": "Hard Times tokens",
+    "summary": "I am interested in Hard Times tokens, especially pieces with unusual themes, merchants, political messages, or strong historical context.",
+    "category": "hard-times",
+    "type": "general-category",
+    "status": "wanted",
+    "priority": "medium",
+    "visibility": "public",
+    "groups": [],
+    "tags": ["hard-times", "non-transit"],
+    "sort": "310-hard-times"
+  },
+  {
+    "id": "merchant-arcade-trade-tokens",
+    "title": "Merchant, arcade, and trade tokens",
+    "summary": "I am interested in unusual merchant, arcade, trade, amusement, and related exonumia pieces.",
+    "category": "merchant",
+    "type": "general-category",
+    "status": "wanted",
+    "priority": "low",
+    "visibility": "public",
+    "groups": [],
+    "tags": ["merchant", "arcade", "trade", "non-transit"],
+    "sort": "320-merchant-arcade"
+  }
+]

@@ -1,25 +1,28 @@
 [
   {
-    "id": "ava-home",
+    "id": "ava",
     "title": "American Vecturist Association",
-    "text": "Official collector organization for transportation token research and membership.",
-    "urlRef": "ava.homeUrl",
+    "text": "Collector organization for transportation token research, AVA membership, and catalog resources including the Atwood-Coffee Catalogue.",
+    "urlRef": "https://www.vecturist.com",
+    "image": "/assets/images/resources/ava-logo.png",
     "pub": true,
     "order": 1
   },
   {
-    "id": "ac-info",
-    "title": "Atwood-Coffee Catalogue",
-    "text": "Reference information about the A/C Catalogue used throughout this site.",
-    "urlRef": "catalog.infoUrl",
+    "id": "tokencatalog",
+    "title": "Token Catalog",
+    "text": "Large user-contributed online catalog of tokens and exonumia with hundreds of thousands of listings, images, and searchable reference data.",
+    "urlRef": "https://www.tokencatalog.com",
+    "image": "/assets/images/resources/tokencatalog.png",
     "pub": true,
     "order": 2
   },
   {
-    "id": "ac-membership",
-    "title": "AVA Membership",
-    "text": "The current catalog PDF is available free to AVA members upon request.",
-    "urlRef": "catalog.membershipUrl",
+    "id": "facebook-transportation-tokens",
+    "title": "Transportation Tokens Collectors",
+    "text": "Active Facebook community where collectors share transportation tokens, ask identification questions, discuss research, and buy or trade material.",
+    "urlRef": "https://www.facebook.com/groups/transportationtokens/",
+    "image": "/assets/images/resources/facebook-transportation-tokens.png",
     "pub": true,
     "order": 3
   }

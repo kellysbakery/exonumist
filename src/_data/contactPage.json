@@ -1,0 +1,76 @@
+{
+  "hero": {
+    "title": "Contact",
+    "label": "Contact",
+    "intro": "Collectors, sellers, traders, and researchers are welcome to get in touch about New York transportation tokens, related exonumia, and pieces that may deserve more documentation.",
+    "email": "contact@exonumist.com"
+  },
+  "profile": {
+    "heading": "About Keith",
+    "name": "Keith Baron",
+    "image": "/assets/images/site/keith-baron-sketch.jpg",
+    "imageAlt": "Sketch portrait of Keith Baron",
+    "bio": "Independent collector and software developer with a particular interest in New York City transportation tokens, undocumented varieties, and historical research.",
+    "links": [
+      {
+        "label": "LinkedIn profile",
+        "url": "https://www.linkedin.com/in/keithbaron/"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "title": "Buying, Selling, or Trading",
+      "body": [
+        "I am especially interested in New York City transportation tokens, unlisted or undocumented pieces, errors, oddities, counterfeits, unusual varieties, and related exonumia with useful collector or historical context.",
+        "No collection is too big, or too small. I buy single pieces or entire collections."
+      ],
+      "aside": {
+        "title": "Of Interest",
+        "items": [
+          "Tokens from New York City",
+          "Unlisted and undocumented pieces",
+          "Errors, oddities, and counterfeits"
+        ]
+      }
+    },
+    {
+      "title": "Research and Corrections",
+      "body": [
+        "Corrections, attributions, discoveries, provenance notes, and additional information are always appreciated. If you can help identify a token, clarify a variety, or improve a listing, please send the details along."
+      ],
+      "aside": {
+        "title": "Helpful Details",
+        "items": [
+          "Clear photos of both sides",
+          "Diameter, material, or weight",
+          "Catalog references/attributions",
+          "Discovery or ownership history"
+        ]
+      }
+    }
+  ],
+  "relatedPages": [
+    {
+      "title": "About",
+      "url": "/about/",
+      "description": "Learn more about the collection and site goals.",
+      "image": "/assets/images/site/aboutus.png",
+      "imageAlt": "AboutUs"
+    },
+    {
+      "title": "For Sale",
+      "url": "/for-sale/",
+      "description": "View duplicate transportation tokens available for sale or trade.",
+      "image": "/assets/images/site/forsale.png",
+      "imageAlt": "For Sale"
+    },
+    {
+      "title": "Want List",
+      "url": "/wanted/",
+      "description": "See pieces currently being sought for the collection.",
+      "image": "/assets/images/site/wantlist.png",
+      "imageAlt": "Want List"
+    }
+  ]
+}

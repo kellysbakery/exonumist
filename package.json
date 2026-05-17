@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "start": "eleventy --serve",
-    "build": "eleventy"
+    "build": "if [ -f \"scripts/generate-thumbnails.js\" ]; then echo \"Running thumbnails...\"; node scripts/generate-thumbnails.js; else echo \"Skipping thumbnails (no generator script found)\"; fi && eleventy",
+    "thumbs": "node scripts/generate-thumbnails.js"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^3.0.0"
+    "@11ty/eleventy": "^3.0.0",
+    "sharp": "^0.34.5"
   }
 }

@@ -1,0 +1,24 @@
+{%- set normalizedImageForm = imageForm | default("") | lower | trim -%}
+{%- set shapedImageClass = imageClass | default("") -%}
+{%- set unshapedImageClass = plainImageClass if plainImageClass is defined else shapedImageClass -%}
+{%- set shapedFrameClassPrefix = frameClassPrefix | default("token-list-card-media-frame") -%}
+{%- if normalizedImageForm == "r" or normalizedImageForm == "round" %}
+  <div class="{{ shapedFrameClassPrefix }} {{ shapedFrameClassPrefix }}--round">
+    <img
+      {% if shapedImageClass %}class="{{ shapedImageClass }}"{% endif %}
+      src="{{ imagePath }}"
+      alt="{{ imageAlt }}" />
+  </div>
+{% elif normalizedImageForm == "oc" %}
+  <div class="{{ shapedFrameClassPrefix }} {{ shapedFrameClassPrefix }}--octagon">
+    <img
+      {% if shapedImageClass %}class="{{ shapedImageClass }}"{% endif %}
+      src="{{ imagePath }}"
+      alt="{{ imageAlt }}" />
+  </div>
+{% else %}
+  <img
+    {% if unshapedImageClass %}class="{{ unshapedImageClass }}"{% endif %}
+    src="{{ imagePath }}"
+    alt="{{ imageAlt }}" />
+{% endif -%}

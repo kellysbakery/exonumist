@@ -1,0 +1,116 @@
+---
+layout: base.njk
+title: Browse Tokens
+description: Browse transportation tokens by borough and type, including cataloged and undocumented material.
+permalink: /browse/index.html
+---
+
+<section class="section">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span>/</span>
+    <span>Browse</span>
+  </nav>
+
+  <h1>Browse Tokens</h1>
+  <p class="section-intro">Browse across the Collection by borough and token type.</p>
+
+  <div class="card browse-controls">
+    <div class="browse-search-group">
+      <label class="sr-only" for="browse-search">Search tokens</label>
+      <input
+        type="text"
+        id="browse-search"
+        class="browse-search-input"
+        placeholder="Search by ID, title, borough, type, material, or notes..." />
+    </div>
+
+    <div class="browse-filter-group" data-filter-group="borough">
+      <div class="browse-filter-heading">
+        <strong>Borough</strong>
+        <button type="button" class="browse-group-action" data-action="all" data-filter="borough">All boroughs</button>
+      </div>
+
+      <div class="browse-chip-row">
+        {% for item in browseView.filters.boroughs %}
+          <button type="button" class="browse-chip is-active" data-filter="borough" data-value="{{ item }}" aria-pressed="true">
+            <span>{{ item }}</span>
+            <span class="browse-chip-count">0</span>
+          </button>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="browse-filter-group" data-filter-group="type">
+      <div class="browse-filter-heading">
+        <strong>Type</strong>
+        <button type="button" class="browse-group-action" data-action="all" data-filter="type">All types</button>
+      </div>
+
+      <div class="browse-chip-row">
+        {% for item in browseView.filters.types %}
+          <button type="button" class="browse-chip is-active" data-filter="type" data-value="{{ item }}" aria-pressed="true">
+            <span>{{ lookups.type[item] }}</span>
+            <span class="browse-chip-count">0</span>
+          </button>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="browse-summary">
+      <strong id="browse-count"></strong>
+      <button type="button" id="browse-reset">Reset filters</button>
+    </div>
+  </div>
+
+  <div id="browse-grid" class="grid-3 browse-grid">
+  {% for token in browseView.tokens %}
+    <article
+      class="card browse-card"
+      data-borough="{{ token.borough }}"
+      data-types="{{ token.browseTypes | join(' ') }}"
+      data-search="{{ token.searchText }}">
+
+      <a class="card-link browse-card-link" href="{{ token.url or '/' }}">
+        <div class="browse-card-media">
+          {% set browseImagePath = "" %}
+          {% if token | hasTokenThumb("o") %}
+            {% set browseImagePath = token | tokenThumbPath("o") %}
+          {% elif token | hasTokenImage("o") %}
+            {% set browseImagePath = token | tokenImagePath("o") %}
+          {% endif %}
+
+          {% if browseImagePath %}
+            {% set imagePath = browseImagePath %}
+            {% set imageAlt = token.displayId %}
+            {% set imageForm = token.form %}
+            {% set imageClass = "token-list-card-image" %}
+            {% set plainImageClass = "" %}
+            {% set frameClassPrefix = "token-list-card-media-frame" %}
+            {% include "shaped-image.njk" %}
+          {% else %}
+            <div class="browse-card-placeholder">No Image</div>
+          {% endif %}
+        </div>
+
+        <div class="browse-card-body">
+          <div class="browse-card-topline">
+            <strong class="browse-card-id">{{ token.displayId }}</strong>
+
+            <span class="browse-badge browse-badge-{{ token.status }}">
+              {{ token.status | capitalize }}
+            </span>
+          </div>
+
+          <p class="browse-card-title">{{ token.title }}</p>
+
+          <p class="meta browse-card-meta">
+            {{ token.borough }} · {{ lookups.type[token.type] }}
+          </p>
+        </div>
+      </a>
+    </article>
+  {% endfor %}
+</div>
+</section>
+<script src="/assets/js/browse.js" defer></script>
