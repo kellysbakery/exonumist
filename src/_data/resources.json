@@ -6,7 +6,7 @@
     "urlRef": "https://www.vecturist.com",
     "image": "/assets/images/resources/ava-logo.png",
     "pub": true,
-    "order": 1
+    "order": 3
   },
   {
     "id": "tokencatalog",
@@ -24,6 +24,6 @@
     "urlRef": "https://www.facebook.com/groups/transportationtokens/",
     "image": "/assets/images/resources/facebook-transportation-tokens.png",
     "pub": true,
-    "order": 3
+    "order": 1
   }
 ]
