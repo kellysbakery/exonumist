@@ -177,6 +177,7 @@
           <a class="token-pager-link" href="{{ detailView.pager.prev.url }}"{% if prevToken %} data-prev-obverse="{{ prevToken | tokenImagePath('o') }}" data-prev-reverse="{{ prevToken | tokenImagePath('r') }}"{% endif %}>
             <div class="token-pager-media">
               {% set pagerToken = prevToken %}
+              {% set pagerDirection = "prev" %}
               {% set pagerAltText = detailView.pager.prev.id ~ " obverse" %}
               {% include "token-pager-image.njk" %}
             </div>
@@ -195,6 +196,7 @@
           <a class="token-pager-link" href="{{ detailView.pager.next.url }}"{% if nextToken %} data-next-obverse="{{ nextToken | tokenImagePath('o') }}" data-next-reverse="{{ nextToken | tokenImagePath('r') }}"{% endif %}>
             <div class="token-pager-media">
               {% set pagerToken = nextToken %}
+              {% set pagerDirection = "next" %}
               {% set pagerAltText = detailView.pager.next.id ~ " obverse" %}
               {% include "token-pager-image.njk" %}
             </div>
