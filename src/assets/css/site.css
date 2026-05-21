@@ -934,8 +934,11 @@ h2 {
 }
 
 .token-pager-placeholder {
-  width: 56px;
-  height: 56px;
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 1px dashed rgba(120, 98, 71, 0.22);
   border-radius: 10px;
   background: linear-gradient(
@@ -943,6 +946,9 @@ h2 {
     rgba(255, 255, 255, 0.38),
     rgba(245, 238, 226, 0.52)
   );
+  color: var(--muted);
+  font-size: 2rem;
+  line-height: 1;
 }
 
 .token-pager-content {
