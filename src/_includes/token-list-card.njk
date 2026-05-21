@@ -23,7 +23,8 @@
         {% set frameClassPrefix = "token-list-card-media-frame" %}
         {% include "shaped-image.njk" %}
       {% else %}
-        <div class="token-list-card-placeholder"></div>
+        {% set tokenPlaceholderClass = "token-list-card-placeholder" %}
+        {% include "token-placeholder.njk" %}
       {% endif %}
     </div>
 

@@ -89,7 +89,8 @@ permalink: /browse/index.html
             {% set frameClassPrefix = "token-list-card-media-frame" %}
             {% include "shaped-image.njk" %}
           {% else %}
-            <div class="browse-card-placeholder">No Image</div>
+            {% set tokenPlaceholderClass = "browse-card-placeholder" %}
+            {% include "token-placeholder.njk" %}
           {% endif %}
         </div>
 

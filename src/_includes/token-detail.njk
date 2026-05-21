@@ -87,7 +87,8 @@
             alt="{{ detailView.tokenId }} obverse" />
         </button>
       {% else %}
-        <div class="placeholder"></div>
+        {% set tokenPlaceholderClass = "placeholder" %}
+        {% include "token-placeholder.njk" %}
       {% endif %}
 
       {% if detailView.obverseText %}
@@ -109,7 +110,8 @@
             alt="{{ detailView.tokenId }} reverse" />
         </button>
       {% else %}
-        <div class="placeholder"></div>
+        {% set tokenPlaceholderClass = "placeholder" %}
+        {% include "token-placeholder.njk" %}
       {% endif %}
 
       {% if detailView.reverseText %}
