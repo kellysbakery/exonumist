@@ -493,19 +493,48 @@ h2 {
   transform: scale(1.015);
 }
 
-.placeholder {
-  width: 100%;
-  max-width: 520px;
-  aspect-ratio: 1 / 1;
-  display: block;
-  margin: 0 auto 0.9rem;
+.token-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  box-sizing: border-box;
+  padding: 0.9rem;
   border: 1px dashed rgba(120, 98, 71, 0.35);
-  border-radius: 12px;
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.55),
     rgba(245, 238, 226, 0.8)
   );
+  color: var(--muted);
+  text-align: center;
+}
+
+.token-placeholder-icon {
+  font-size: clamp(2rem, 6vw, 2.5rem);
+  line-height: 1;
+}
+
+.token-placeholder-title {
+  color: var(--text);
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.token-placeholder-subtitle {
+  max-width: 18rem;
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.placeholder {
+  width: 100%;
+  max-width: 520px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto 0.9rem;
+  border-radius: 12px;
 }
 
 .token-face-label {
@@ -756,13 +785,28 @@ h2 {
 .token-list-card-placeholder {
   width: 108px;
   height: 108px;
-  border: 1px dashed rgba(120, 98, 71, 0.22);
+  gap: 0.2rem;
+  padding: 0.45rem;
+  border-color: rgba(120, 98, 71, 0.22);
   border-radius: 12px;
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.38),
     rgba(245, 238, 226, 0.52)
   );
+}
+
+.token-list-card-placeholder .token-placeholder-icon {
+  font-size: 1.65rem;
+}
+
+.token-list-card-placeholder .token-placeholder-title {
+  font-size: 0.78rem;
+}
+
+.token-list-card-placeholder .token-placeholder-subtitle {
+  font-size: 0.62rem;
+  line-height: 1.2;
 }
 
 .token-list-card-body {
@@ -1539,8 +1583,15 @@ h2 {
 }
 
 .browse-card-placeholder {
-  font-size: 0.9rem;
-  opacity: 0.55;
+  width: 100%;
+  height: 100%;
+  border-color: rgba(120, 98, 71, 0.22);
+  border-radius: 0.75rem;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.38),
+    rgba(245, 238, 226, 0.52)
+  );
 }
 
 .browse-card-body {
