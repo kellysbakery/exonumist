@@ -24,10 +24,12 @@ permalink: /contact/index.html
     </div>
 
     <aside class="contact-profile-card">
-      <img
-        class="contact-profile-image"
-        src="{{ contactPage.profile.image }}"
-        alt="{{ contactPage.profile.imageAlt }}" />
+      <div class="contact-profile-image-frame">
+        <img
+          class="contact-profile-image"
+          src="{{ contactPage.profile.image }}"
+          alt="{{ contactPage.profile.imageAlt }}" />
+      </div>
 
       <div class="contact-profile-body">
         <h2>{{ contactPage.profile.heading }}</h2>
