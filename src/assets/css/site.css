@@ -1308,13 +1308,20 @@ h2 {
   background: rgba(255, 255, 255, 0.48);
 }
 
-.contact-profile-image {
+.contact-profile-image-frame {
   flex: 0 0 150px;
   width: 150px;
   height: 150px;
   border-radius: 999px;
-  object-fit: cover;
   border: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.contact-profile-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .contact-profile-body {
@@ -1429,7 +1436,7 @@ h2 {
     padding: 1.25rem;
   }
 
-  .contact-profile-image {
+  .contact-profile-image-frame {
     flex-basis: 112px;
     width: 112px;
     height: 112px;
