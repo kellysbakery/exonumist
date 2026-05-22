@@ -6,11 +6,11 @@
     "email": "contact@exonumist.com"
   },
   "profile": {
-    "heading": "About Keith",
+    "heading": "About the Collector",
     "name": "Keith Baron",
-    "image": "/assets/images/site/keith-baron-sketch.jpg",
-    "imageAlt": "Sketch portrait of Keith Baron",
-    "bio": "Independent collector and software developer with a particular interest in New York City transportation tokens, undocumented varieties, and historical research.",
+    "image": "/assets/images/token/630-ap_r.jpg",
+    "imageAlt": "Reverse of token NY630AP showing Good For One Fare",
+    "bio": "Independent collector with a particular interest in New York City transportation tokens, undocumented varieties, and historical research.",
     "links": [
       {
         "label": "LinkedIn profile",
