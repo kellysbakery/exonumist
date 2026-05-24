@@ -1,6 +1,6 @@
 ---
 layout: base.njk
-title: For Sale
+title: For Sale or Trade
 description: Duplicate transportation tokens available for sale or trade, organized by state and catalog number.
 permalink: /for-sale/index.html
 ---
@@ -9,13 +9,17 @@ permalink: /for-sale/index.html
   <nav class="breadcrumb" aria-label="Breadcrumb">
     <a href="/">Home</a>
     <span>/</span>
-    <span>For Sale</span>
+    <span>For Sale or Trade</span>
   </nav>
-  <h1>For Sale</h1>
+  <h1>For Sale or Trade</h1>
 
   <p class="section-intro">
-    Duplicate transportation tokens available for sale or trade. Please contact me to confirm
-    availability before purchase.
+    Duplicate transportation tokens from my collection are available for sale or trade.
+  </p>
+
+  <p class="for-sale-terms">
+    Please contact me to confirm current availability. Values shown are catalog values, not
+    sale prices. Unless otherwise noted, sale prices are generally 1.5× catalog value.
   </p>
 
   <p class="section-intro">
@@ -54,7 +58,7 @@ permalink: /for-sale/index.html
           {% for item in group.items %}
             <div class="for-sale-item" data-sale-item data-search-text="{{ item.searchText }}">
               <span class="for-sale-id">{{ item.catalogId }}</span>
-              <span class="for-sale-price">{{ item.value }}</span>
+              <span class="for-sale-price">Catalog value: {{ item.value }}</span>
             </div>
           {% endfor %}
         </div>
