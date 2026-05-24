@@ -2,7 +2,7 @@
   "hero": {
     "title": "Contact",
     "label": "Contact",
-    "intro": "Collectors, sellers, traders, and researchers are welcome to get in touch about New York transportation tokens, related exonumia, and pieces that may deserve more documentation.",
+    "intro": "Collectors, sellers, traders, and researchers are welcome to get in touch about New York City transportation tokens, related exonumia, undocumented pieces, errors, oddities, counterfeits, or items that may deserve more research.",
     "email": "contact@exonumist.com"
   },
   "profile": {
@@ -10,7 +10,7 @@
     "name": "Keith Baron",
     "image": "/assets/images/token/630-ap_r.jpg",
     "imageAlt": "Reverse of token NY630AP showing Good For One Fare",
-    "bio": "Independent collector with a particular interest in New York City transportation tokens, undocumented varieties, and historical research.",
+    "bio": "Independent collector with a particular interest in New York City transportation tokens, undocumented varieties, oddities, and the history connected to everyday transit objects.",
     "links": [
       {
         "label": "LinkedIn profile",
@@ -20,10 +20,10 @@
   },
   "sections": [
     {
-      "title": "Buying, Selling, or Trading",
+      "title": "Buying, Selling, or Trading Tokens",
       "body": [
         "I am especially interested in New York City transportation tokens, unlisted or undocumented pieces, errors, oddities, counterfeits, unusual varieties, and related exonumia with useful collector or historical context.",
-        "No collection is too big, or too small. I buy single pieces or entire collections."
+        "Single pieces, small groups, and larger collections are all welcome."
       ],
       "aside": {
         "title": "Of Interest",
@@ -37,7 +37,7 @@
     {
       "title": "Research and Corrections",
       "body": [
-        "Corrections, attributions, discoveries, provenance notes, and additional information are always appreciated. If you can help identify a token, clarify a variety, or improve a listing, please send the details along."
+        "Corrections, attributions, discoveries, provenance notes, and additional information are always welcome. If you can help identify a token, clarify a variety, or improve a listing, please send the details along."
       ],
       "aside": {
         "title": "Helpful Details",
