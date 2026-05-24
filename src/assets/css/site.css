@@ -1987,6 +1987,110 @@ h2 {
   color: var(--muted);
 }
 
+.inquiry-panel {
+  max-width: 700px;
+  margin: 1rem 0 1.25rem;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  background: var(--panel);
+  box-shadow: var(--shadow-card);
+}
+
+.inquiry-panel-title {
+  margin-bottom: 0.35rem;
+  font-size: 1.2rem;
+}
+
+.inquiry-panel .section-intro {
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+}
+
+.inquiry-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
+}
+
+.inquiry-count {
+  margin: 0 0 0.8rem;
+  font-weight: 800;
+}
+
+.inquiry-warning {
+  margin: 0 0 0.8rem;
+  color: #8b3a26;
+  font-weight: 700;
+}
+
+.inquiry-toggle {
+  justify-self: end;
+  padding: 0.38rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel);
+  color: var(--accent);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 800;
+  line-height: 1.2;
+  white-space: nowrap;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.inquiry-toggle:hover,
+.inquiry-toggle:focus-visible {
+  border-color: var(--interactive-border);
+  background: var(--soft);
+}
+
+.inquiry-toggle.is-selected {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fffaf4;
+}
+
+.inquiry-bar {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 20;
+  display: flex;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  background: rgba(255, 253, 248, 0.96);
+  box-shadow: var(--interactive-shadow-medium);
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.inquiry-bar .inquiry-count {
+  margin: 0;
+}
+
+.inquiry-bar[hidden] {
+  display: none;
+}
+
+.btn:disabled,
+.inquiry-toggle:disabled {
+  cursor: not-allowed;
+  opacity: 0.58;
+  transform: none;
+  box-shadow: none;
+}
+
 .for-sale-group {
   margin-bottom: 1rem;
   border: 1px solid var(--line);
@@ -2013,7 +2117,7 @@ h2 {
 
 .for-sale-item {
   display: grid;
-  grid-template-columns: minmax(8rem, 1fr) auto;
+  grid-template-columns: minmax(8rem, 1fr) auto auto;
   gap: 1rem;
   align-items: baseline;
   padding: 0.45rem 1rem;
@@ -2079,4 +2183,32 @@ h2 {
 .for-sale-empty {
   color: var(--muted);
   font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .for-sale-item {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+    align-items: start;
+  }
+
+  .for-sale-price,
+  .inquiry-toggle {
+    justify-self: start;
+    text-align: left;
+  }
+
+  .inquiry-bar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .inquiry-bar .inquiry-actions {
+    width: 100%;
+  }
+
+  .inquiry-bar .btn {
+    flex: 1;
+    text-align: center;
+  }
 }
