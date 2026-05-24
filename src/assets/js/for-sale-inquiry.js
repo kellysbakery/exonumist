@@ -38,6 +38,16 @@
     return `${count} ${count === 1 ? "token" : "tokens"} selected`;
   }
 
+  function pluralize(count, singular, plural) {
+    return `${count} ${count === 1 ? singular : plural}`;
+  }
+
+  function normalizeCatalogId(value) {
+    return String(value || "")
+      .toUpperCase()
+      .replace(/[^A-Z0-9]/g, "");
+  }
+
   function getRowToken(row) {
     return {
       catalogId: row.dataset.catalogId || "",
@@ -54,6 +64,49 @@
       `${isSelected ? "Remove" : "Add"} ${catalogId} ${isSelected ? "from" : "to"} inquiry list`
     );
     button.textContent = isSelected ? "Added ✓" : "Add";
+  }
+
+  function getAvailableTokenMap() {
+    const available = new Map();
+
+    document.querySelectorAll("[data-sale-item]").forEach((row) => {
+      const token = getRowToken(row);
+      const normalized = normalizeCatalogId(token.catalogId);
+
+      if (normalized && !available.has(normalized)) {
+        available.set(normalized, token);
+      }
+    });
+
+    return available;
+  }
+
+  function parseWantListEntries(value) {
+    const candidates = new Set();
+    const catalogPattern =
+      /\b[A-Za-z]{1,3}[\s._,-]*\d{1,5}[\s._,-]*[A-Za-z]{0,4}\b/g;
+    const matches = String(value || "").match(catalogPattern) || [];
+
+    matches.forEach((match) => {
+      const normalized = normalizeCatalogId(match);
+
+      if (/^[A-Z]{1,3}\d{1,5}[A-Z]{0,4}$/.test(normalized)) {
+        candidates.add(normalized);
+      }
+    });
+
+    return [...candidates];
+  }
+
+  function formatNotFound(candidates) {
+    if (!candidates.length) return "";
+
+    const visible = candidates.slice(0, 20).join(", ");
+    const remaining = candidates.length - 20;
+
+    return remaining > 0
+      ? ` Not found: ${visible}, and ${remaining} more.`
+      : ` Not found: ${visible}.`;
   }
 
   function buildMailtoUrl() {
@@ -137,6 +190,83 @@
     render();
   }
 
+  function matchWantList() {
+    const input = document.querySelector("[data-want-list-input]");
+    const result = document.querySelector("[data-want-list-result]");
+
+    if (!input || !result) return;
+
+    const available = getAvailableTokenMap();
+    const candidates = parseWantListEntries(input.value);
+    let matched = 0;
+    let alreadySelected = 0;
+    let added = 0;
+    const unmatched = [];
+
+    candidates.forEach((candidate) => {
+      const token = available.get(candidate);
+
+      if (!token) {
+        unmatched.push(candidate);
+        return;
+      }
+
+      matched += 1;
+
+      if (selected.has(token.catalogId)) {
+        alreadySelected += 1;
+        return;
+      }
+
+      selected.set(token.catalogId, token);
+      added += 1;
+    });
+
+    if (added > 0) {
+      saveSelections();
+      render();
+    }
+
+    if (matched > 0 && alreadySelected > 0) {
+      result.textContent = `Matched ${pluralize(
+        matched,
+        "token",
+        "tokens"
+      )}. ${alreadySelected} ${alreadySelected === 1 ? "was" : "were"} already in your inquiry list.${formatNotFound(
+        unmatched
+      )}`;
+      return;
+    }
+
+    if (matched > 0) {
+      result.textContent = `Matched ${pluralize(
+        matched,
+        "token",
+        "tokens"
+      )} and added ${added === 1 ? "it" : "them"} to your inquiry list.${formatNotFound(
+        unmatched
+      )}`;
+      return;
+    }
+
+    result.textContent = `No available tokens matched your want list.${formatNotFound(
+      unmatched
+    )}`;
+  }
+
+  function clearWantList() {
+    const input = document.querySelector("[data-want-list-input]");
+    const result = document.querySelector("[data-want-list-result]");
+
+    if (input) {
+      input.value = "";
+    }
+
+    if (result) {
+      result.textContent = "";
+    }
+  }
+
   function clearSelections() {
     selected.clear();
     saveSelections();
@@ -150,7 +280,7 @@
   }
 
   document.addEventListener("DOMContentLoaded", () => {
-    if (!document.querySelector("[data-inquiry-panel]")) return;
+    if (!document.querySelector("[data-inquiry-bar]")) return;
 
     loadSelections();
 
@@ -169,6 +299,14 @@
       .forEach((button) => {
         button.addEventListener("click", clearSelections);
       });
+
+    document.querySelectorAll("[data-want-list-match]").forEach((button) => {
+      button.addEventListener("click", matchWantList);
+    });
+
+    document.querySelectorAll("[data-want-list-clear]").forEach((button) => {
+      button.addEventListener("click", clearWantList);
+    });
 
     document
       .querySelectorAll("[data-inquiry-email], [data-inquiry-bar-email]")

@@ -22,22 +22,35 @@ permalink: /for-sale/index.html
     sale prices. Unless otherwise noted, sale prices are generally 1.5× catalog value.
   </p>
 
-  <div class="inquiry-panel" data-inquiry-panel>
-    <h2 class="inquiry-panel-title">Inquiry List</h2>
-    <p class="section-intro">
-      Select tokens below to inquire about availability. This does not reserve or purchase the tokens.
-    </p>
+  <details class="want-list-panel">
+    <summary>Have a want list?</summary>
+    <div class="want-list">
+      <label class="want-list-label" for="want-list-input">Want List</label>
+      <p class="want-list-help">
+        Paste catalog numbers below, preferably one per line. Comma-separated lists also work. After
+        pasting your want list, click <strong>Match Want List</strong>.
+      </p>
+      <p class="want-list-help">
+        Example:<br />
+        AL120G<br />
+        NY630D<br />
+        PA316A
+      </p>
+      <textarea
+        class="want-list-input"
+        id="want-list-input"
+        data-want-list-input
+        rows="5"
+        placeholder="Paste your want list here..."></textarea>
 
-    <p class="inquiry-count" data-inquiry-count>0 tokens selected</p>
-    <p class="inquiry-warning" data-inquiry-warning hidden>
-      Please limit your inquiry list to 50 tokens or fewer before sending an email.
-    </p>
+      <div class="want-list-actions">
+        <button class="btn" type="button" data-want-list-match>Match Want List</button>
+        <button class="btn" type="button" data-want-list-clear>Clear Want List</button>
+      </div>
 
-    <div class="inquiry-actions">
-      <button class="btn primary" type="button" data-inquiry-email disabled>Email Inquiry</button>
-      <button class="btn" type="button" data-inquiry-clear disabled>Clear List</button>
+      <p class="want-list-result" data-want-list-result aria-live="polite"></p>
     </div>
-  </div>
+  </details>
 
   <p class="section-intro">
     <strong>{{ forSale.total }}</strong> tokens available.
@@ -103,7 +116,12 @@ permalink: /for-sale/index.html
 </section>
 
 <div class="inquiry-bar" data-inquiry-bar hidden>
-  <span class="inquiry-count" data-inquiry-bar-count>0 tokens selected</span>
+  <div>
+    <span class="inquiry-count" data-inquiry-bar-count>0 tokens selected</span>
+    <p class="inquiry-warning" data-inquiry-warning hidden>
+      Please limit your inquiry list to 50 tokens or fewer before sending an email.
+    </p>
+  </div>
   <div class="inquiry-actions">
     <button class="btn primary" type="button" data-inquiry-bar-email disabled>Email Inquiry</button>
     <button class="btn" type="button" data-inquiry-bar-clear disabled>Clear List</button>
