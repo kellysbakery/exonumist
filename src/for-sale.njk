@@ -22,6 +22,23 @@ permalink: /for-sale/index.html
     sale prices. Unless otherwise noted, sale prices are generally 1.5× catalog value.
   </p>
 
+  <div class="inquiry-panel" data-inquiry-panel>
+    <h2 class="inquiry-panel-title">Inquiry List</h2>
+    <p class="section-intro">
+      Select tokens below to inquire about availability. This does not reserve or purchase the tokens.
+    </p>
+
+    <p class="inquiry-count" data-inquiry-count>0 tokens selected</p>
+    <p class="inquiry-warning" data-inquiry-warning hidden>
+      Please limit your inquiry list to 50 tokens or fewer before sending an email.
+    </p>
+
+    <div class="inquiry-actions">
+      <button class="btn primary" type="button" data-inquiry-email disabled>Email Inquiry</button>
+      <button class="btn" type="button" data-inquiry-clear disabled>Clear List</button>
+    </div>
+  </div>
+
   <p class="section-intro">
     <strong>{{ forSale.total }}</strong> tokens available.
     Last updated: {{ forSaleMeta.lastUpdated }}
@@ -56,9 +73,23 @@ permalink: /for-sale/index.html
 
         <div class="for-sale-items">
           {% for item in group.items %}
-            <div class="for-sale-item" data-sale-item data-search-text="{{ item.searchText }}">
+            <div
+              class="for-sale-item"
+              data-sale-item
+              data-search-text="{{ item.searchText }}"
+              data-catalog-id="{{ item.catalogId }}"
+              data-catalog-value="{{ item.value }}"
+              data-group-name="{{ group.stateName }}">
               <span class="for-sale-id">{{ item.catalogId }}</span>
               <span class="for-sale-price">Catalog value: {{ item.value }}</span>
+              <button
+                class="inquiry-toggle"
+                type="button"
+                data-inquiry-toggle
+                aria-pressed="false"
+                aria-label="Add {{ item.catalogId }} to inquiry list">
+                Add
+              </button>
             </div>
           {% endfor %}
         </div>
@@ -71,4 +102,13 @@ permalink: /for-sale/index.html
   </p>
 </section>
 
+<div class="inquiry-bar" data-inquiry-bar hidden>
+  <span class="inquiry-count" data-inquiry-bar-count>0 tokens selected</span>
+  <div class="inquiry-actions">
+    <button class="btn primary" type="button" data-inquiry-bar-email disabled>Email Inquiry</button>
+    <button class="btn" type="button" data-inquiry-bar-clear disabled>Clear List</button>
+  </div>
+</div>
+
 <script src="/assets/js/for-sale.js"></script>
+<script src="/assets/js/for-sale-inquiry.js"></script>
