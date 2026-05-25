@@ -59,11 +59,11 @@
       "imageAlt": "AboutUs"
     },
     {
-      "title": "For Sale",
-      "url": "/for-sale/",
+      "title": "Available",
+      "url": "/available/",
       "description": "View duplicate transportation tokens available for sale or trade.",
       "image": "/assets/images/site/forsale.png",
-      "imageAlt": "For Sale"
+      "imageAlt": "Available"
     },
     {
       "title": "Want List",

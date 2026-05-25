@@ -1,40 +1,81 @@
 ---
 layout: base.njk
-title: For Sale or Trade
+title: Available
 description: Duplicate transportation tokens available for sale or trade, organized by state and catalog number.
-permalink: /for-sale/index.html
+permalink: /available/index.html
 ---
 
 <section class="section">
   <nav class="breadcrumb" aria-label="Breadcrumb">
     <a href="/">Home</a>
     <span>/</span>
-    <span>For Sale or Trade</span>
+    <span>Available</span>
   </nav>
-  <h1>For Sale or Trade</h1>
+  <h1>Available</h1>
 
   <p class="section-intro">
     Duplicate transportation tokens from my collection are available for sale or trade.
   </p>
 
   <p class="for-sale-terms">
-    Please contact me to confirm current availability. Values shown are catalog values, not
-    sale prices. Unless otherwise noted, sale prices are generally 1.5× catalog value.
+    Please contact me to confirm current availability. Prices are based on catalog value unless
+    otherwise noted.
   </p>
 
-  <details class="want-list-panel">
-    <summary>Have a want list?</summary>
+  <div class="available-mode-switch" aria-label="Available token search mode">
+    <button
+      class="available-mode-button is-active"
+      type="button"
+      data-available-mode-button="search"
+      aria-pressed="true">
+      Search one token
+    </button>
+    <button
+      class="available-mode-button"
+      type="button"
+      data-available-mode-button="want"
+      aria-pressed="false">
+      Match a want list
+    </button>
+  </div>
+
+  <p class="section-intro">
+    <strong>{{ forSale.total }}</strong> tokens available.
+    Last updated: {{ forSaleMeta.lastUpdated }}
+  </p>
+
+  <div class="available-workflow" data-available-panel="search">
+    <h2>Find a token</h2>
+    <p class="section-intro">
+      Search by catalog number to check whether I have a duplicate available.
+    </p>
+
+    <div class="for-sale-search">
+      <label for="for-sale-search-input">Search catalog number</label>
+      <input
+        id="for-sale-search-input"
+        type="search"
+        placeholder="Search, e.g. NY905A, AL120..."
+        autocomplete="off" />
+    </div>
+  </div>
+
+  <div class="available-workflow" data-available-panel="want" hidden>
+    <h2>Match a want list</h2>
+    <p class="section-intro">
+      Paste the catalog numbers you're looking for, then match them against my available duplicates.
+    </p>
+
     <div class="want-list">
       <label class="want-list-label" for="want-list-input">Want List</label>
       <p class="want-list-help">
-        Paste catalog numbers below, preferably one per line. Comma-separated lists also work. After
-        pasting your want list, click <strong>Match Want List</strong>.
+        One catalog number per line works best. Comma-separated lists are okay too.
       </p>
-      <p class="want-list-help">
+      <p class="want-list-help want-list-example">
         Example:<br />
-        AL120G<br />
-        NY630D<br />
-        PA316A
+        AK50A<br />
+        AR300F<br />
+        NY905A
       </p>
       <textarea
         class="want-list-input"
@@ -50,22 +91,7 @@ permalink: /for-sale/index.html
 
       <p class="want-list-result" data-want-list-result aria-live="polite"></p>
     </div>
-  </details>
-
-  <p class="section-intro">
-    <strong>{{ forSale.total }}</strong> tokens available.
-    Last updated: {{ forSaleMeta.lastUpdated }}
-  </p>
-  <div class="for-sale-search">
-    <label for="for-sale-search-input">Search catalog number</label>
-    <input
-      id="for-sale-search-input"
-      type="search"
-      placeholder="Search, e.g. NY905A, AL120..."
-      autocomplete="off" />
   </div>
-
-
 
   <p class="section-intro for-sale-results-summary">
     <strong id="for-sale-visible-count">{{ forSale.total }}</strong>
@@ -94,7 +120,7 @@ permalink: /for-sale/index.html
               data-catalog-value="{{ item.value }}"
               data-group-name="{{ group.stateName }}">
               <span class="for-sale-id">{{ item.catalogId }}</span>
-              <span class="for-sale-price">Catalog value: {{ item.value }}</span>
+              <span class="for-sale-price">Price: {{ item.value }}</span>
               <button
                 class="inquiry-toggle"
                 type="button"

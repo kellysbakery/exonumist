@@ -1967,8 +1967,8 @@ h2 {
   cursor: pointer;
 }
 /* =========================================================
-   FOR SALE PAGE
-   Used by: /for-sale/
+   AVAILABLE PAGE
+   Used by: /available/
 
    Displays sale inventory from src/_data/forSale.csv.
    Items are grouped by state in collapsible sections.
@@ -1987,20 +1987,39 @@ h2 {
   color: var(--muted);
 }
 
-.want-list-panel {
+.available-mode-switch {
+  display: inline-flex;
+  flex-wrap: wrap;
   max-width: 700px;
   margin: 1rem 0 1.25rem;
   border: 1px solid var(--line);
-  border-radius: 0.75rem;
+  border-radius: 999px;
   background: var(--panel);
   overflow: hidden;
 }
 
-.want-list-panel summary {
-  padding: 0.85rem 1rem;
-  background: rgba(239, 231, 218, 0.45);
+.available-mode-button {
+  padding: 0.72rem 1rem;
+  border: 0;
+  background: transparent;
+  color: var(--accent);
   cursor: pointer;
+  font: inherit;
   font-weight: 800;
+}
+
+.available-mode-button.is-active {
+  background: var(--accent);
+  color: #fffaf4;
+}
+
+.available-workflow {
+  max-width: 700px;
+  margin: 0 0 1.25rem;
+}
+
+.available-workflow h2 {
+  margin-bottom: 0.35rem;
 }
 
 .inquiry-actions {
@@ -2023,9 +2042,6 @@ h2 {
 
 .want-list {
   margin: 0;
-  padding: 0.9rem;
-  border-top: 1px solid var(--line);
-  background: rgba(239, 231, 218, 0.28);
 }
 
 .want-list-label {
@@ -2038,6 +2054,12 @@ h2 {
   margin: 0 0 0.65rem;
   color: var(--muted);
   font-size: 0.94rem;
+}
+
+.want-list-example {
+  margin-top: 0.35rem;
+  font-size: 0.88rem;
+  line-height: 1.45;
 }
 
 .want-list-input {
@@ -2109,20 +2131,20 @@ h2 {
 .inquiry-bar {
   position: fixed;
   right: 1rem;
-  bottom: 1rem;
+  bottom: max(0.5rem, env(safe-area-inset-bottom));
   left: 1rem;
   z-index: 20;
   display: flex;
-  max-width: 700px;
+  max-width: 640px;
   margin: 0 auto;
-  padding: 0.8rem 1rem;
+  padding: 0.7rem 0.9rem;
   border: 1px solid var(--line);
-  border-radius: 0.75rem;
+  border-radius: 0.625rem;
   background: rgba(255, 253, 248, 0.96);
-  box-shadow: var(--interactive-shadow-medium);
+  box-shadow: 0 8px 22px rgba(82, 63, 39, 0.14);
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 0.85rem;
 }
 
 .inquiry-bar .inquiry-count {
@@ -2131,6 +2153,10 @@ h2 {
 
 .inquiry-bar[hidden] {
   display: none;
+}
+
+body:has(.inquiry-bar.is-visible) .shell {
+  padding-bottom: 9.5rem;
 }
 
 .btn:disabled,
@@ -2250,7 +2276,11 @@ h2 {
 
   .inquiry-bar {
     align-items: stretch;
+    right: 0.75rem;
+    bottom: max(0.5rem, env(safe-area-inset-bottom));
+    left: 0.75rem;
     flex-direction: column;
+    padding: 0.7rem;
   }
 
   .inquiry-bar .inquiry-actions {
@@ -2260,6 +2290,10 @@ h2 {
   .inquiry-bar .btn {
     flex: 1;
     text-align: center;
+  }
+
+  body:has(.inquiry-bar.is-visible) .shell {
+    padding-bottom: 14rem;
   }
 
   .want-list-actions .btn {
