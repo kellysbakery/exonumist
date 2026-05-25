@@ -42,6 +42,23 @@
     return `${count} ${count === 1 ? singular : plural}`;
   }
 
+  function parsePrice(value) {
+    const amount = Number.parseFloat(String(value || "").replace(/[^0-9.-]/g, ""));
+
+    return Number.isFinite(amount) ? amount : 0;
+  }
+
+  function getEstimatedTotal() {
+    return [...selected.values()].reduce(
+      (total, item) => total + parsePrice(item.catalogValue),
+      0
+    );
+  }
+
+  function formatCurrency(value) {
+    return `$${value.toFixed(2)}`;
+  }
+
   function normalizeCatalogId(value) {
     return String(value || "")
       .toUpperCase()
@@ -111,8 +128,9 @@
 
   function buildMailtoUrl() {
     const lines = [...selected.values()].map(
-      (item) => `- ${item.catalogId} — Catalog value: ${item.catalogValue}`
+      (item) => `- ${item.catalogId} — Price: ${item.catalogValue}`
     );
+    const estimatedTotal = formatCurrency(getEstimatedTotal());
     const body = [
       "Hello,",
       "",
@@ -120,7 +138,9 @@
       "",
       ...lines,
       "",
-      "Please let me know whether these are currently available and what the total would be.",
+      `Estimated total: ${estimatedTotal}`,
+      "",
+      "Please confirm whether these are currently available.",
       "",
       "Thank you."
     ].join("\n");
@@ -133,6 +153,9 @@
   function render() {
     const count = selected.size;
     const countText = pluralizeToken(count);
+    const countWithTotalText = `${countText} · Estimated total: ${formatCurrency(
+      getEstimatedTotal()
+    )}`;
     const isOverLimit = count > MAX_EMAIL_TOKENS;
     const canEmail = count > 0 && !isOverLimit;
 
@@ -141,7 +164,7 @@
     });
 
     document.querySelectorAll("[data-inquiry-bar-count]").forEach((element) => {
-      element.textContent = countText;
+      element.textContent = countWithTotalText;
     });
 
     document
@@ -198,9 +221,16 @@
 
     const available = getAvailableTokenMap();
     const candidates = parseWantListEntries(input.value);
+
+    if (!candidates.length) {
+      clearWantListMatch();
+      return;
+    }
+
     let matched = 0;
     let alreadySelected = 0;
     let added = 0;
+    const matchedCatalogIds = [];
     const unmatched = [];
 
     candidates.forEach((candidate) => {
@@ -212,6 +242,7 @@
       }
 
       matched += 1;
+      matchedCatalogIds.push(token.catalogId);
 
       if (selected.has(token.catalogId)) {
         alreadySelected += 1;
@@ -227,44 +258,67 @@
       render();
     }
 
-    if (matched > 0 && alreadySelected > 0) {
-      result.textContent = `Matched ${pluralize(
+    document.dispatchEvent(
+      new CustomEvent("available:want-list-matched", {
+        detail: {
+          catalogIds: matchedCatalogIds
+        }
+      })
+    );
+
+    if (matched > 0 && alreadySelected === matched) {
+      result.textContent = `${pluralize(
         matched,
-        "token",
-        "tokens"
-      )}. ${alreadySelected} ${alreadySelected === 1 ? "was" : "were"} already in your inquiry list.${formatNotFound(
+        "available token",
+        "available tokens"
+      )} matched your want list. ${matched === 1 ? "It was" : "All were"} already in your inquiry list.${formatNotFound(
+        unmatched
+      )}`;
+      return;
+    }
+
+    if (matched > 0 && alreadySelected > 0) {
+      result.textContent = `${pluralize(
+        matched,
+        "available token",
+        "available tokens"
+      )} matched your want list. ${alreadySelected} ${alreadySelected === 1 ? "was" : "were"} already in your inquiry list.${formatNotFound(
         unmatched
       )}`;
       return;
     }
 
     if (matched > 0) {
-      result.textContent = `Matched ${pluralize(
+      result.textContent = `${pluralize(
         matched,
-        "token",
-        "tokens"
-      )} and added ${added === 1 ? "it" : "them"} to your inquiry list.${formatNotFound(
+        "available token",
+        "available tokens"
+      )} matched your want list and ${added === 1 ? "was" : "were"} added to your inquiry list.${formatNotFound(
         unmatched
       )}`;
       return;
     }
 
-    result.textContent = `No available tokens matched your want list.${formatNotFound(
-      unmatched
-    )}`;
+    result.textContent = "";
   }
 
-  function clearWantList() {
+  function clearWantListMatch({ clearInput = false } = {}) {
     const input = document.querySelector("[data-want-list-input]");
     const result = document.querySelector("[data-want-list-result]");
 
-    if (input) {
+    if (input && clearInput) {
       input.value = "";
     }
 
     if (result) {
       result.textContent = "";
     }
+
+    document.dispatchEvent(new CustomEvent("available:want-list-cleared"));
+  }
+
+  function clearWantList() {
+    clearWantListMatch({ clearInput: true });
   }
 
   function clearSelections() {
@@ -306,6 +360,14 @@
 
     document.querySelectorAll("[data-want-list-clear]").forEach((button) => {
       button.addEventListener("click", clearWantList);
+    });
+
+    document.querySelectorAll("[data-want-list-input]").forEach((input) => {
+      input.addEventListener("input", () => {
+        if (!input.value.trim()) {
+          clearWantListMatch();
+        }
+      });
     });
 
     document

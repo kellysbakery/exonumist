@@ -6,6 +6,26 @@ function setElementHidden(element, isHidden) {
   element.hidden = isHidden;
 }
 
+let availableMode = "search";
+let wantListMatches = null;
+
+function setAvailableMode(mode) {
+  availableMode = mode;
+
+  document.querySelectorAll("[data-available-mode-button]").forEach((button) => {
+    const isActive = button.dataset.availableModeButton === mode;
+
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-pressed", isActive ? "true" : "false");
+  });
+
+  document.querySelectorAll("[data-available-panel]").forEach((panel) => {
+    setElementHidden(panel, panel.dataset.availablePanel !== mode);
+  });
+
+  updateForSaleSearch();
+}
+
 function updateForSaleSearch() {
   const input = document.querySelector("#for-sale-search-input");
   const visibleCount = document.querySelector("#for-sale-visible-count");
@@ -15,6 +35,8 @@ function updateForSaleSearch() {
   if (!input || !visibleCount || !emptyMessage) return;
 
   const query = normalize(input.value);
+  const isWantMode = availableMode === "want";
+  const hasWantListFilter = wantListMatches instanceof Set;
   let totalVisible = 0;
 
   groups.forEach((group) => {
@@ -25,7 +47,10 @@ function updateForSaleSearch() {
 
     items.forEach((item) => {
       const searchText = normalize(item.dataset.searchText || "");
-      const isMatch = !query || searchText.includes(query);
+      const catalogId = item.dataset.catalogId || "";
+      const isMatch = isWantMode
+        ? !hasWantListFilter || wantListMatches.has(catalogId)
+        : !query || searchText.includes(query);
 
       setElementHidden(item, !isMatch);
 
@@ -37,14 +62,15 @@ function updateForSaleSearch() {
     setElementHidden(group, visibleInGroup === 0);
 
     if (groupCount) {
-      groupCount.textContent = query ? visibleInGroup : defaultCount;
+      groupCount.textContent =
+        query || (isWantMode && hasWantListFilter) ? visibleInGroup : defaultCount;
     }
 
-    if (query && visibleInGroup > 0) {
+    if ((query || (isWantMode && hasWantListFilter)) && visibleInGroup > 0) {
       group.open = true;
     }
 
-    if (!query) {
+    if ((!query && !isWantMode) || (isWantMode && !hasWantListFilter)) {
       group.open = false;
     }
 
@@ -52,6 +78,10 @@ function updateForSaleSearch() {
   });
 
   visibleCount.textContent = totalVisible;
+  emptyMessage.textContent =
+    isWantMode && hasWantListFilter
+      ? "No available tokens matched your want list."
+      : "No available tokens match that catalog number.";
   setElementHidden(emptyMessage, totalVisible !== 0);
 }
 
@@ -60,6 +90,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!input) return;
 
+  document.querySelectorAll("[data-available-mode-button]").forEach((button) => {
+    button.addEventListener("click", () => {
+      setAvailableMode(button.dataset.availableModeButton || "search");
+    });
+  });
+
+  document.addEventListener("available:want-list-matched", (event) => {
+    wantListMatches = new Set(event.detail?.catalogIds || []);
+    setAvailableMode("want");
+  });
+
+  document.addEventListener("available:want-list-cleared", () => {
+    wantListMatches = null;
+    updateForSaleSearch();
+  });
+
   input.addEventListener("input", updateForSaleSearch);
+  setAvailableMode("search");
   updateForSaleSearch();
 });
