@@ -15,7 +15,7 @@
     "section": "listed",
     "order": 2,
     "url": "/groups/brooklyn/",
-    "cardImage": "/assets/images/thumb/629-a_o.webp",
+    "cardImage": "/assets/images/thumb/629-c_o.webp",
     "cardImageForm": "R",
     "description": "Brooklyn transit tokens from street railways and local transportation lines."
   },
@@ -35,7 +35,7 @@
     "section": "listed",
     "order": 4,
     "url": "/groups/queens/",
-    "cardImage": "/assets/images/thumb/631-q_o.webp",
+    "cardImage": "/assets/images/thumb/631-o_o.webp",
     "cardImageForm": "R",
     "description": "Queens transit tokens from local transportation and bus-related issues."
   },
@@ -45,7 +45,7 @@
     "section": "listed",
     "order": 5,
     "url": "/groups/statenisland/",
-    "cardImage": "/assets/images/thumb/632-b_r.webp",
+    "cardImage": "/assets/images/thumb/632-c_r.webp",
     "cardImageForm": "R",
     "description": "Staten Island transit tokens and related transportation pieces."
   },
@@ -55,7 +55,7 @@
     "section": "listed",
     "order": 6,
     "url": "/groups/specialty/",
-    "description": "Transit-related, patterns, zone checks, club tour, fantasy, presentation, and timetable tokens."
+    "description": "Transit-related, patterns, zone checks, club tour, fantasy, and presentation tokens."
   },
   {
     "key": "discoveries",
