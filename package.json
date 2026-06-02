@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "eleventy --serve",
+    "start": "echo \"Starting exonumist.com at http://localhost:8080\" && echo \"Press Control-C to stop the server.\" && eleventy --serve --port=8080",
+    "dev": "echo \"Starting exonumist.com at http://localhost:8080\" && echo \"Press Control-C to stop the server.\" && eleventy --serve --port=8080",
     "build": "if [ -f \"scripts/generate-thumbnails.js\" ]; then echo \"Running thumbnails...\"; node scripts/generate-thumbnails.js; else echo \"Skipping thumbnails (no generator script found)\"; fi && eleventy",
     "thumbs": "node scripts/generate-thumbnails.js"
   },
