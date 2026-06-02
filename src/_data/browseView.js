@@ -2,11 +2,6 @@ const allTokens = require("./allTokens");
 const collectionTokenUrls = require("./collectionTokenUrls");
 const lookups = require("./lookups.json");
 
-const GROUP_BROWSE_TYPES = {
-  errors: "error",
-  counterfeit: "counterfeit"
-};
-
 const TYPE_ORDER = [
   "transit",
   "error",
@@ -49,10 +44,12 @@ function buildBrowseTypes(token) {
     types.add(token.type);
   }
 
-  for (const group of token.groups || []) {
-    if (GROUP_BROWSE_TYPES[group]) {
-      types.add(GROUP_BROWSE_TYPES[group]);
-    }
+  if (token.classification === "error" || token.classification === "oddity") {
+    types.add("error");
+  }
+
+  if (token.classification === "counterfeit") {
+    types.add("counterfeit");
   }
 
   return [...types];
@@ -76,6 +73,9 @@ function buildSearchText(token) {
     token.displayId || "",
     token.title || "",
     token.borough || "",
+    token.classification
+      ? lookups.classification[token.classification] || token.classification
+      : "",
     token.type ? lookups.type[token.type] || token.type : "",
     token.mat ? lookups.materials[token.mat] || token.mat : "",
     token.counterstamp || "",

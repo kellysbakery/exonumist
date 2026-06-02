@@ -24,7 +24,7 @@ permalink: /wanted/index.html
 
       {# Specific catalog tokens marked with wanted: true in token JSON files #}
       {% set wantedTokens = [] %}
-      {% for token in collections.officialAll %}
+      {% for token in allTokens %}
         {% if token.wanted %}
           {% set wantedTokens = wantedTokens.concat([token]) %}
         {% endif %}

@@ -9,6 +9,10 @@ function normalize(value) {
 }
 
 function tokenInArea(token, area) {
+  if (token.collectionArea) {
+    return normalize(token.collectionArea) === normalize(area.slug);
+  }
+
   if (area.slug === "specialty") {
     return Array.isArray(token.groups) && token.groups.includes(area.groupKey);
   }

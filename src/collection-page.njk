@@ -14,9 +14,10 @@ eleventyComputed:
 {% set unlistedCount = 0 %}
 
 {% for token in groupTokens %}
-  {% if token.status == "listed" %}
+  {% set catalogStatus = token.catalogStatus or token.status %}
+  {% if catalogStatus == "listed" %}
     {% set listedCount = listedCount + 1 %}
-  {% elif token.status == "unlisted" %}
+  {% elif catalogStatus == "unlisted" %}
     {% set unlistedCount = unlistedCount + 1 %}
   {% endif %}
 {% endfor %}
@@ -68,7 +69,7 @@ eleventyComputed:
   {% if showStatusFilters %}
     <div class="card browse-controls" data-collection-status-filters>
       <div class="browse-filter-heading">
-        <strong>Status</strong>
+        <strong>Catalog Status</strong>
       </div>
 
       <div class="browse-chip-row">
@@ -100,7 +101,8 @@ eleventyComputed:
         {{ token.obv }}
         {{ token.rev }}
         {{ token.notes }}
-        {{ token.status }}
+        {{ token.catalogStatus or token.status }}
+        {{ token.classification }}
         {{ token.type }}
         {{ token.borough }}
         {{ token.mat | lookup(lookups.materials) }}

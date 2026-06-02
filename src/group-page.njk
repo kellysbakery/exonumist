@@ -12,7 +12,10 @@ eleventyComputed:
 {% set groupTokens = [] %}
 
 {% for token in allTokens %}
-  {% if token.groups and (group.key in token.groups) %}
+  {% set legacyGroupMatch = token.groups and (group.key in token.groups) %}
+  {% set errorsGroupMatch = group.key == "errors" and (token.classification == "error" or token.classification == "oddity" or (token.groups and ("errors" in token.groups))) %}
+
+  {% if legacyGroupMatch or errorsGroupMatch %}
     {% set groupTokens = groupTokens.concat([token]) %}
   {% endif %}
 {% endfor %}
@@ -35,7 +38,7 @@ eleventyComputed:
   <div class="grid-3 token-card-grid">
     {% for token in groupTokens %}
       {% set tokenCardToken = token %}
-      {% set tokenCardUrl = urlHelpers.groupTokenUrl(group.key, token.displayId | lower) %}
+      {% set tokenCardUrl = collectionTokenUrls[token.id | lower] or collectionTokenUrls[token.displayId | lower] or "/" %}
       {% set tokenCardFilterable = false %}
       {% include "token-list-card.njk" %}
     {% endfor %}

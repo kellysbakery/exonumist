@@ -7,7 +7,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "I. Gibbs / Belleville & New York / U.S.M. / Stage",
     "borough": "Manhattan",
     "mat": "B",
@@ -21,7 +21,10 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-a"
+    "sort": "630-a",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630da",
@@ -31,7 +34,9 @@
     "var": "a",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan", "nyhrr"],
+    "groups": [
+      "nyhrr"
+    ],
     "title": "New York & Harlaem Railroad",
     "borough": "Manhattan",
     "mat": "Gs",
@@ -48,7 +53,10 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-d-a"
+    "sort": "630-d-a",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630db",
@@ -58,7 +66,9 @@
     "var": "b",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan", "nyhrr"],
+    "groups": [
+      "nyhrr"
+    ],
     "title": "New York & Harlaem Railroad",
     "borough": "Manhattan",
     "mat": "Gs",
@@ -75,7 +85,10 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-d-b"
+    "sort": "630-d-b",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630dc",
@@ -85,7 +98,9 @@
     "var": "c",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan", "nyhrr"],
+    "groups": [
+      "nyhrr"
+    ],
     "title": "New York & Harlaem Railroad",
     "borough": "Manhattan",
     "mat": "Gs",
@@ -102,7 +117,10 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-d-c"
+    "sort": "630-d-c",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630e",
@@ -112,7 +130,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "4th Avenue Line / Haskins / & / Wilkins",
     "borough": "Manhattan",
     "mat": "Pt",
@@ -126,7 +144,10 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-e"
+    "sort": "630-e",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630f",
@@ -136,7 +157,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "5th & 7th Avenue Lines / Marshalls / & / Townsend",
     "borough": "Manhattan",
     "mat": "Pt",
@@ -158,7 +179,10 @@
         "page": 373,
         "note": "Manhattan 630 section notes NY630F line is not listed in the 1851 City Directory."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630g",
@@ -168,7 +192,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "7th Avenue Lines / Marshalls / & / Townsend",
     "borough": "Manhattan",
     "mat": "Pt",
@@ -182,7 +206,10 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-g"
+    "sort": "630-g",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630h",
@@ -192,7 +219,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "7th Avenue Lines / Marshalls / & / Townsend",
     "borough": "Manhattan",
     "mat": "Pt",
@@ -206,7 +233,10 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-h"
+    "sort": "630-h",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630i",
@@ -216,7 +246,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "6th Avenue Lines / Young / & / Ward.",
     "borough": "Manhattan",
     "mat": "Pt",
@@ -240,7 +270,10 @@
         "page": 373,
         "note": "Manhattan 630 section gives Waverley Line route and 1851 directory context."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630j",
@@ -250,7 +283,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "8th Avenue Lines / Finch / Sanderson / & Co.",
     "borough": "Manhattan",
     "mat": "Pt",
@@ -274,7 +307,10 @@
         "page": 373,
         "note": "Manhattan 630 section gives Finch & Sanderson route context and likely usage."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630k",
@@ -284,7 +320,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Chelsea Line / Kipp Brown & Co.",
     "borough": "Manhattan",
     "mat": "Pt",
@@ -308,7 +344,10 @@
         "page": 373,
         "note": "Manhattan 630 section gives Chelsea Line operator, coach count, and route."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630la",
@@ -318,7 +357,7 @@
     "var": "a",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Telegraph Line / Tyson & Co.",
     "borough": "Manhattan",
     "mat": "B",
@@ -342,7 +381,10 @@
         "page": 373,
         "note": "Manhattan 630 section gives Telegraph Line route, operator, and transfer-token usage."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630lb",
@@ -352,7 +394,7 @@
     "var": "b",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Telegraph Line / Tyson & Co.",
     "borough": "Manhattan",
     "mat": "B",
@@ -376,7 +418,10 @@
         "page": 373,
         "note": "Manhattan 630 section gives Telegraph Line route, operator, and transfer-token usage."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630lc",
@@ -386,7 +431,7 @@
     "var": "c",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Telegraph Line / Tyson & Co.",
     "borough": "Manhattan",
     "mat": "B",
@@ -410,7 +455,10 @@
         "page": 373,
         "note": "Manhattan 630 section gives Telegraph Line route, operator, and transfer-token usage."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630ld",
@@ -420,7 +468,7 @@
     "var": "d",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Telegraph Line / Tyson & Co.",
     "borough": "Manhattan",
     "mat": "B",
@@ -444,7 +492,10 @@
         "page": 373,
         "note": "Manhattan 630 section gives Telegraph Line route, operator, and transfer-token usage."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630m",
@@ -454,7 +505,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Third Avenue Rail Road (Omnibus)",
     "borough": "Manhattan",
     "mat": "Pt",
@@ -476,7 +527,10 @@
         "page": 373,
         "note": "Manhattan 630 section gives Third Avenue Railroad charter date and cable-power context for NY630M-Q."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630n",
@@ -486,7 +540,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Third Avenue Rail Road (Omnibus)",
     "borough": "Manhattan",
     "mat": "Pt",
@@ -508,7 +562,10 @@
         "page": 373,
         "note": "Manhattan 630 section gives Third Avenue Railroad charter date and cable-power context for NY630M-Q."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630o",
@@ -518,7 +575,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Third Avenue Rail Road (Streetcar)",
     "borough": "Manhattan",
     "mat": "Pt",
@@ -540,7 +597,10 @@
         "page": 373,
         "note": "Manhattan 630 section gives Third Avenue Railroad charter date and cable-power context for NY630M-Q."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630p",
@@ -550,7 +610,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Third Avenue Rail Road (Streetcar)",
     "borough": "Manhattan",
     "mat": "Pt",
@@ -572,7 +632,10 @@
         "page": 373,
         "note": "Manhattan 630 section gives Third Avenue Railroad charter date and cable-power context for NY630M-Q."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630q",
@@ -582,7 +645,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "3rd Ave R.R. to Cable Line",
     "borough": "Manhattan",
     "mat": "WM",
@@ -604,7 +667,10 @@
         "page": 373,
         "note": "Manhattan 630 section gives Third Avenue Railroad charter date and cable-power context for NY630M-Q."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630r",
@@ -614,7 +680,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Hoboken Ferry",
     "borough": "Manhattan",
     "mat": "B",
@@ -637,7 +703,10 @@
         "page": 373,
         "note": "Manhattan 630 section notes possible ferry-streetcar combination usage."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630s",
@@ -647,7 +716,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "42nd St. M. & St. N. Ave Ry. Transfer",
     "borough": "Manhattan",
     "mat": "WM",
@@ -671,7 +740,10 @@
         "page": 373,
         "note": "Manhattan 630 section gives railway operating dates, takeover, and track mileage."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630t",
@@ -681,7 +753,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Bridge R.R. New York Dep't. P & S.",
     "borough": "Manhattan",
     "mat": "WM",
@@ -705,7 +777,10 @@
         "page": 373,
         "note": "Manhattan 630 section dates Grover Whalen's department role and describes Williamsburg Bridge shuttle usage."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630u",
@@ -715,7 +790,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Interborough Rapid Transit Co. IRT",
     "borough": "Manhattan",
     "mat": "WM",
@@ -740,7 +815,10 @@
         "page": 373,
         "note": "Manhattan 630 section states 6,000,000 struck in 1928 and explains intended fare use, later inheritance, resale, and scrapping."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630v",
@@ -750,7 +828,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "New York City Transit System Manhattan Bus Div. Transfer Token",
     "borough": "Manhattan",
     "mat": "WM",
@@ -774,7 +852,10 @@
         "page": 373,
         "note": "Manhattan 630 section states 5,000 struck 12/49 and provides NYCTS formation context."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630w",
@@ -784,7 +865,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Comprehensive Omnibus Corporation",
     "borough": "Manhattan",
     "mat": "Bz",
@@ -808,7 +889,10 @@
         "page": 375,
         "note": "Manhattan 630 section states 5,000 struck 2/4/35, 2,000 struck 2/3/41, 2,000 struck 2/4/42, and 5,000 struck 10/3/44."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630y",
@@ -818,7 +902,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Comprehensive Omnibus Corporation",
     "borough": "Manhattan",
     "mat": "S",
@@ -842,7 +926,10 @@
         "page": 375,
         "note": "Manhattan 630 section states 11,000 struck total in 5 orders beginning 6/13/33."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630z",
@@ -852,7 +939,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "East Side Omnibus Corporation",
     "borough": "Manhattan",
     "mat": "WM",
@@ -876,7 +963,10 @@
         "page": 375,
         "note": "Manhattan 630 section states 5,000 struck 10/6/44."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630aa",
@@ -886,7 +976,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "East Side Omnibus Corporation",
     "borough": "Manhattan",
     "mat": "S",
@@ -908,7 +998,10 @@
         "page": 375,
         "note": "Manhattan 630 section gives Comprehensive Omnibus Corp. and East Side Omnibus Corp. shared address and 1948 city takeover."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630aba",
@@ -918,7 +1011,7 @@
     "var": "a",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Avenue B & East Broadway Trans. Co.",
     "borough": "Manhattan",
     "mat": "WM",
@@ -942,7 +1035,10 @@
         "page": 375,
         "note": "Manhattan 630 section states 5,000 struck total in 4 orders beginning 10/34 and explains Avenue B & East Broadway token usage."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630abb",
@@ -952,7 +1048,7 @@
     "var": "b",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Avenue B & East Broadway Trans. Co.",
     "borough": "Manhattan",
     "mat": "WM",
@@ -976,7 +1072,10 @@
         "page": 375,
         "note": "Manhattan 630 section states 5,000 struck total in 4 orders beginning 10/34 and explains Avenue B & East Broadway token usage."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630aca",
@@ -986,7 +1085,7 @@
     "var": "a",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Avenue B & East Broadway Trans. Co.",
     "borough": "Manhattan",
     "mat": "WM",
@@ -1010,7 +1109,10 @@
         "page": 375,
         "note": "Manhattan 630 section states 2,500 struck 6/47 and explains Avenue B & East Broadway token usage."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630acb",
@@ -1020,7 +1122,7 @@
     "var": "b",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Avenue B & East Broadway Trans. Co.",
     "borough": "Manhattan",
     "mat": "WM",
@@ -1044,7 +1146,10 @@
         "page": 375,
         "note": "Manhattan 630 section states 2,500 struck 6/47 and explains Avenue B & East Broadway token usage."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630ad",
@@ -1054,7 +1159,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Avenue B & East Broadway Trans. Co.",
     "borough": "Manhattan",
     "mat": "WM",
@@ -1078,7 +1183,10 @@
         "page": 375,
         "note": "Manhattan 630 section states 3,000 struck 2/51 and explains small-token usage and plating context."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630ae",
@@ -1088,7 +1196,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Avenue B & East Broadway Trans. Co.",
     "borough": "Manhattan",
     "mat": "WM",
@@ -1111,7 +1219,10 @@
         "page": 375,
         "note": "Manhattan 630 section dates NY630AE to 1951-52 and explains small-token usage."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630af",
@@ -1121,7 +1232,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Avenue B & East Broadway Trans. Co.",
     "borough": "Manhattan",
     "mat": "WM",
@@ -1144,7 +1255,10 @@
         "page": 375,
         "note": "Manhattan 630 section dates NY630AF to 1952-58 and notes these were used until 1958."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630ag",
@@ -1154,7 +1268,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "125th Street Ferry EF",
     "borough": "Manhattan",
     "mat": "WM",
@@ -1179,7 +1293,10 @@
         "page": 375,
         "note": "Manhattan 630 section states 100,000 struck total in 3 orders from 7/25/47 to 6/11/48 and describes Edgewater Ferry usage."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630ah",
@@ -1189,7 +1306,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "H. & M. One Fare",
     "borough": "Manhattan",
     "mat": "WM",
@@ -1211,7 +1328,10 @@
         "page": 375,
         "note": "Manhattan 630 section gives Hudson & Manhattan Railroad operating details and 1962 PATH takeover."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630ai",
@@ -1221,7 +1341,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "H. & M. One Fare",
     "borough": "Manhattan",
     "mat": "B",
@@ -1235,7 +1355,10 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-ai"
+    "sort": "630-ai",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630aj",
@@ -1245,7 +1368,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "H. & M. One Fare",
     "borough": "Manhattan",
     "mat": "WM",
@@ -1259,7 +1382,10 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-aj"
+    "sort": "630-aj",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630ak",
@@ -1269,7 +1395,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "H. & M. One Fare",
     "borough": "Manhattan",
     "mat": "WM",
@@ -1283,7 +1409,10 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-ak"
+    "sort": "630-ak",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630al",
@@ -1293,7 +1422,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "H & M / One Fare",
     "borough": "Manhattan",
     "mat": "Bz",
@@ -1307,7 +1436,10 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-al"
+    "sort": "630-al",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630am",
@@ -1317,7 +1449,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Westchester St. Transp. Co., Inc.",
     "borough": "Manhattan",
     "mat": "B",
@@ -1341,7 +1473,10 @@
         "page": 375,
         "note": "Manhattan 630 section notes NY630AM was probably made by Scovill in the 1950s and never placed in use."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630an",
@@ -1351,7 +1486,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "New York City Transit Authority NYC",
     "borough": "Manhattan",
     "mat": "B",
@@ -1375,7 +1510,10 @@
         "page": 375,
         "note": "Manhattan 630 section states NY630AN has Scovill and Osborne varieties dated 7/25/53."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630ao",
@@ -1385,7 +1523,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "New York City Transit Authority NYC",
     "borough": "Manhattan",
     "mat": "B",
@@ -1409,7 +1547,10 @@
         "page": 375,
         "note": "Manhattan 630 section states 2,100,000 legitimate NY630AO tokens made and approximately 1,500,000 counterfeits."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630ap",
@@ -1419,7 +1560,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "New York City Transit Authority NYC",
     "borough": "Manhattan",
     "mat": "B",
@@ -1442,7 +1583,10 @@
         "page": 375,
         "note": "Manhattan 630 section notes Aqueduct Race Track usage and gives NYCTA/MTA organizational dates."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630aq",
@@ -1452,7 +1596,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "P A T H NY = NJ (Arrow)",
     "borough": "Manhattan",
     "mat": "B",
@@ -1477,7 +1621,10 @@
         "page": 376,
         "note": "Manhattan 630 section states 1,000,000 struck by Osborne for NY630AQ."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630ar",
@@ -1487,7 +1634,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "1965 A.V.A. Convention Tour Token",
     "borough": "Manhattan",
     "mat": "B",
@@ -1512,7 +1659,10 @@
         "page": 376,
         "note": "Manhattan 630 section states 300 struck for the A.V.A. Convention."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630as",
@@ -1522,7 +1672,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "New York City Transit Authority N(Y)C",
     "borough": "Manhattan",
     "mat": "B",
@@ -1546,7 +1696,10 @@
         "page": 376,
         "note": "Manhattan 630 section notes NY630AS was put in use when the fare went to 30¢."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630at",
@@ -1556,7 +1709,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "New York City Transit Authority NYC",
     "borough": "Manhattan",
     "mat": "B",
@@ -1582,7 +1735,10 @@
         "page": 376,
         "note": "Manhattan 630 section states 35,000,000 struck in June 1975, plus a later 15,000,000 order, and explains 1980 fare-increase use."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630au",
@@ -1592,7 +1748,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "M 50 TBTA",
     "borough": "Manhattan",
     "mat": "S",
@@ -1616,7 +1772,10 @@
         "page": 376,
         "note": "Manhattan 630 section gives 6/29/76 issue date and bridge usage for NY630AU."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630av",
@@ -1626,7 +1785,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "M 75 TBTA",
     "borough": "Manhattan",
     "mat": "S",
@@ -1650,7 +1809,10 @@
         "page": 376,
         "note": "Manhattan 630 section gives 6/29/76 issue date and bridge/tunnel usage for NY630AV."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630aw",
@@ -1660,7 +1822,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "M 100 TBTA",
     "borough": "Manhattan",
     "mat": "S",
@@ -1684,7 +1846,10 @@
         "page": 376,
         "note": "Manhattan 630 section gives 6/29/76 issue date and Verrazano Narrows Bridge usage for NY630AW."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630ax",
@@ -1694,7 +1859,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "New York City Transit Authority NYC",
     "borough": "Manhattan",
     "mat": "WM",
@@ -1720,7 +1885,10 @@
         "page": 376,
         "note": "Manhattan 630 section states 500,000 struck by Roger Williams Mint and explains intended JFK express use versus actual Aqueduct usage."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630ay",
@@ -1730,7 +1898,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "NYC Subway 1904-1979 / People Moving People",
     "borough": "Manhattan",
     "mat": "B",
@@ -1754,7 +1922,10 @@
         "page": 376,
         "note": "Manhattan 630 section states 10,000,000 struck for NY630AY."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630az",
@@ -1764,7 +1935,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "M 75 TBTA",
     "borough": "Manhattan",
     "mat": "S",
@@ -1787,7 +1958,10 @@
         "page": 376,
         "note": "Manhattan 630 section notes sharp and dull striking varieties and difference in size of the M."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630ba",
@@ -1797,7 +1971,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Triborough Bridge and Tunnel Authority",
     "borough": "Manhattan",
     "mat": "B",
@@ -1821,7 +1995,10 @@
         "page": 376,
         "note": "Manhattan 630 section explains NY630BA toll increase context, facilities, roll sale terms, and 5% discount."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630bb",
@@ -1831,7 +2008,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "New York Street Railway Co. 1900",
     "borough": "Manhattan",
     "mat": "A",
@@ -1854,7 +2031,10 @@
         "page": 376,
         "note": "Manhattan 630 section explains NY630BB medical convention use and novelty purpose."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630bc",
@@ -1864,7 +2044,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Triborough Bridge and Tunnel Authority",
     "borough": "Manhattan",
     "mat": "S",
@@ -1890,7 +2070,10 @@
         "page": 376,
         "note": "Manhattan 630 section states 1,500,000 struck by Roger Williams Mint and explains roll sale and toll increase context."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630bd",
@@ -1900,7 +2083,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Triborough Bridge and Tunnel Authority",
     "borough": "Manhattan",
     "mat": "S",
@@ -1926,7 +2109,10 @@
         "page": 376,
         "note": "Manhattan 630 section states 7,500,000 struck by Roger Williams Mint and explains roll sale and toll increase context."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630be",
@@ -1936,7 +2122,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "New York City Transit Authority",
     "borough": "Manhattan",
     "mat": "B",
@@ -1950,7 +2136,10 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-be"
+    "sort": "630-be",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630bf",
@@ -1960,7 +2149,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "The N.Y. Trolley Car Company Inc. 1986 First Edition",
     "borough": "Manhattan",
     "mat": "B",
@@ -1974,7 +2163,10 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-bf"
+    "sort": "630-bf",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630bg",
@@ -1984,7 +2176,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "New York City Transit Authority",
     "borough": "Manhattan",
     "mat": "B",
@@ -1998,7 +2190,10 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-bg"
+    "sort": "630-bg",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630bh",
@@ -2008,7 +2203,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Roosevelt Island Operating Corporation of the State of New York",
     "borough": "Manhattan",
     "mat": "WM",
@@ -2022,7 +2217,10 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-bh"
+    "sort": "630-bh",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630bi",
@@ -2032,7 +2230,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "New York City Transit Authority",
     "borough": "Manhattan",
     "mat": "B",
@@ -2046,7 +2244,10 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-bi"
+    "sort": "630-bi",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630bj",
@@ -2056,7 +2257,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "New York City Transit Authority",
     "borough": "Manhattan",
     "mat": "S",
@@ -2070,7 +2271,10 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-bj"
+    "sort": "630-bj",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630bk",
@@ -2080,7 +2284,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "M 75 TBTA",
     "borough": "Manhattan",
     "mat": "B",
@@ -2094,7 +2298,10 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-bk"
+    "sort": "630-bk",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630bl",
@@ -2104,7 +2311,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan", "errors"],
+    "groups": [],
     "title": "New York City Transit Authority NYC",
     "borough": "Manhattan",
     "mat": "B",
@@ -2118,7 +2325,10 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-bl"
+    "sort": "630-bl",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "error"
   },
   {
     "id": "official-ny630bm",
@@ -2128,7 +2338,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Riverbank State Park - New York State Office of Parks · Recreation · Historic Preservation",
     "borough": "Manhattan",
     "mat": "Wgz",
@@ -2142,6 +2352,369 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-bm"
+    "sort": "630-bm",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
+  },
+  {
+    "id": "official-pp-am",
+    "displayId": "PP-AM",
+    "sec": "PP",
+    "code": "AM",
+    "var": "",
+    "status": "listed",
+    "type": "presentation",
+    "groups": [],
+    "title": "NY 630 AY Presentation Piece",
+    "borough": "Manhattan",
+    "mat": "X",
+    "form": "R",
+    "symbol": "Ddsc",
+    "size": 23,
+    "obv": "NY 630 AY",
+    "rev": "H STERN incused / numeral engraved on edge",
+    "desc": "Presentation piece based on NY 630 AY, struck in 14k gold with edge numeral and H STERN incused.",
+    "notes": "Listed as PP-AM in the Presentation Pieces section of the Atwood-Coffee catalogue. Struck in 14k gold. The catalogue notes that 500 were made.",
+    "rel": [
+      "NY630AY"
+    ],
+    "home": false,
+    "pub": true,
+    "sort": "pp-am",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
+  },
+  {
+    "id": "official-ny998ca",
+    "displayId": "NY998Ca",
+    "sec": "998",
+    "code": "C",
+    "var": "a",
+    "status": "listed",
+    "type": "pattern",
+    "groups": [
+      "nyhrr"
+    ],
+    "title": "New York & Harlaem Railroad",
+    "borough": "Manhattan",
+    "mat": "K",
+    "form": "Oc",
+    "symbol": "Sd",
+    "counterstamp": "",
+    "size": 18,
+    "obv": "NEW YORK & HARLAEM R.R.",
+    "rev": "(OMNIBUS)",
+    "desc": "Early octagonal New York & Harlaem Railroad omnibus token in copper.",
+    "notes": "The New York & Harlaem Railroad, incorporated in 1831, operated one of the earliest urban rail lines in the United States and is widely regarded as New York City’s first street railway. Service began in 1832 along the Bowery from Prince Street to 14th Street, with later extensions north on Fourth Avenue to Harlem and south to City Hall. Horse power was used initially, with steam locomotives introduced in 1837 for service north of the 27th Street depot. These tokens are believed to be the first transportation tokens issued for use in New York City.\n\nCollectors recognize seven major octagonal token varieties associated with the line. The regular circulating issues are the 18mm German silver pieces listed as Atwood-Coffee NY630: plain (NY630Dc), rosette counterstamp (NY630Da), and the famous dog counterstamp (NY630Db). Additional pattern issues were struck in copper and lead under the NY998 listings. Copper varieties include plain (NY998Ca) and leaf counterstamp (NY998Cb). Lead varieties include plain (NY998Da) and leaf counterstamp (NY998Db). The initials 'B & S' found beneath the railroad coach identify the token makers, Bale & Smith, noted New York engravers.\n\nToday these pieces are considered among the most historic American transit tokens, linking directly to the earliest development of organized public transportation in New York City.",
+    "wanted": false,
+    "wantedNote": "Currently represented, but looking to upgrade to a nicer example.",
+    "rel": [],
+    "home": false,
+    "pub": true,
+    "sort": "998-c-a",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
+  },
+  {
+    "id": "official-ny998cb",
+    "displayId": "NY998Cb",
+    "sec": "998",
+    "code": "C",
+    "var": "b",
+    "status": "listed",
+    "type": "pattern",
+    "groups": [
+      "nyhrr"
+    ],
+    "title": "New York & Harlaem Railroad",
+    "borough": "Manhattan",
+    "mat": "K",
+    "form": "Oc",
+    "symbol": "Sd",
+    "counterstamp": "Leaf",
+    "size": 18,
+    "obv": "NEW YORK & HARLAEM R.R.",
+    "rev": "(OMNIBUS)",
+    "desc": "Early octagonal New York & Harlaem Railroad omnibus token in copper.",
+    "notes": "The New York & Harlaem Railroad, incorporated in 1831, operated one of the earliest urban rail lines in the United States and is widely regarded as New York City’s first street railway. Service began in 1832 along the Bowery from Prince Street to 14th Street, with later extensions north on Fourth Avenue to Harlem and south to City Hall. Horse power was used initially, with steam locomotives introduced in 1837 for service north of the 27th Street depot. These tokens are believed to be the first transportation tokens issued for use in New York City.\n\nCollectors recognize seven major octagonal token varieties associated with the line. The regular circulating issues are the 18mm German silver pieces listed as Atwood-Coffee NY630: plain (NY630Dc), rosette counterstamp (NY630Da), and the famous dog counterstamp (NY630Db). Additional pattern issues were struck in copper and lead under the NY998 listings. Copper varieties include plain (NY998Ca) and leaf counterstamp (NY998Cb). Lead varieties include plain (NY998Da) and leaf counterstamp (NY998Db). The initials 'B & S' found beneath the railroad coach identify the token makers, Bale & Smith, noted New York engravers.\n\nToday these pieces are considered among the most historic American transit tokens, linking directly to the earliest development of organized public transportation in New York City.",
+    "wanted": false,
+    "wantedNote": "Currently represented, but looking to upgrade to a nicer example.",
+    "rel": [],
+    "home": false,
+    "pub": true,
+    "sort": "998-c-b",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
+  },
+  {
+    "id": "official-ny998da",
+    "displayId": "NY998Da",
+    "sec": "998",
+    "code": "D",
+    "var": "a",
+    "status": "listed",
+    "type": "pattern",
+    "groups": [
+      "nyhrr"
+    ],
+    "title": "New York & Harlaem Railroad",
+    "borough": "Manhattan",
+    "mat": "L",
+    "form": "Oc",
+    "symbol": "Sd",
+    "counterstamp": "",
+    "size": 18,
+    "obv": "NEW YORK & HARLAEM R.R.",
+    "rev": "(OMNIBUS)",
+    "desc": "Early octagonal New York & Harlaem Railroad omnibus token in lead.",
+    "notes": "The New York & Harlaem Railroad, incorporated in 1831, operated one of the earliest urban rail lines in the United States and is widely regarded as New York City’s first street railway. Service began in 1832 along the Bowery from Prince Street to 14th Street, with later extensions north on Fourth Avenue to Harlem and south to City Hall. Horse power was used initially, with steam locomotives introduced in 1837 for service north of the 27th Street depot. These tokens are believed to be the first transportation tokens issued for use in New York City.\n\nCollectors recognize seven major octagonal token varieties associated with the line. The regular circulating issues are the 18mm German silver pieces listed as Atwood-Coffee NY630: plain (NY630Dc), rosette counterstamp (NY630Da), and the famous dog counterstamp (NY630Db). Additional pattern issues were struck in copper and lead under the NY998 listings. Copper varieties include plain (NY998Ca) and leaf counterstamp (NY998Cb). Lead varieties include plain (NY998Da) and leaf counterstamp (NY998Db). The initials 'B & S' found beneath the railroad coach identify the token makers, Bale & Smith, noted New York engravers.\n\nToday these pieces are considered among the most historic American transit tokens, linking directly to the earliest development of organized public transportation in New York City.",
+    "wanted": false,
+    "wantedNote": "Currently represented, but looking to upgrade to a nicer example.",
+    "rel": [],
+    "home": false,
+    "pub": true,
+    "sort": "998-d-a",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
+  },
+  {
+    "id": "official-ny998db",
+    "displayId": "NY998Db",
+    "sec": "998",
+    "code": "D",
+    "var": "b",
+    "status": "listed",
+    "type": "pattern",
+    "groups": [
+      "nyhrr"
+    ],
+    "title": "New York & Harlaem Railroad",
+    "borough": "Manhattan",
+    "mat": "L",
+    "form": "Oc",
+    "symbol": "Sd",
+    "counterstamp": "Leaf",
+    "size": 18,
+    "obv": "NEW YORK & HARLAEM R.R.",
+    "rev": "(OMNIBUS)",
+    "desc": "Early octagonal New York & Harlaem Railroad omnibus token in lead.",
+    "notes": "The New York & Harlaem Railroad, incorporated in 1831, operated one of the earliest urban rail lines in the United States and is widely regarded as New York City’s first street railway. Service began in 1832 along the Bowery from Prince Street to 14th Street, with later extensions north on Fourth Avenue to Harlem and south to City Hall. Horse power was used initially, with steam locomotives introduced in 1837 for service north of the 27th Street depot. These tokens are believed to be the first transportation tokens issued for use in New York City.\n\nCollectors recognize seven major octagonal token varieties associated with the line. The regular circulating issues are the 18mm German silver pieces listed as Atwood-Coffee NY630: plain (NY630Dc), rosette counterstamp (NY630Da), and the famous dog counterstamp (NY630Db). Additional pattern issues were struck in copper and lead under the NY998 listings. Copper varieties include plain (NY998Ca) and leaf counterstamp (NY998Cb). Lead varieties include plain (NY998Da) and leaf counterstamp (NY998Db). The initials 'B & S' found beneath the railroad coach identify the token makers, Bale & Smith, noted New York engravers.\n\nToday these pieces are considered among the most historic American transit tokens, linking directly to the earliest development of organized public transportation in New York City.",
+    "wanted": false,
+    "wantedNote": "Currently represented, but looking to upgrade to a nicer example.",
+    "rel": [],
+    "home": false,
+    "pub": true,
+    "sort": "998-d-b",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
+  },
+  {
+    "id": "unlisted-man-0001",
+    "displayId": "UNL-MAN-0001",
+    "sec": "",
+    "code": "",
+    "var": "",
+    "status": "unlisted",
+    "type": "presentation",
+    "groups": [],
+    "title": "Unlisted Gold Presentation Piece Related to NY630AS",
+    "borough": "Manhattan",
+    "mat": "X",
+    "form": "R",
+    "symbol": "Sd",
+    "size": 23,
+    "obv": "NEW YORK CITY TRANSIT AUTHORITY N(Y)C",
+    "rev": "(C)TA",
+    "desc": "Gold piece related to NY630AS, likely struck as a presentation issue.",
+    "notes": "Not currently listed in the Atwood-Coffee Catalogue.",
+    "rel": [
+      "NY630AS"
+    ],
+    "home": true,
+    "pub": true,
+    "sort": "manhattan-unlisted-0001",
+    "collectionArea": "manhattan",
+    "catalogStatus": "unlisted",
+    "classification": "regular"
+  },
+  {
+    "id": "oddity-0001",
+    "displayId": "ODD-0001",
+    "sec": "",
+    "code": "",
+    "var": "",
+    "status": "unlisted",
+    "type": "error",
+    "groups": [],
+    "title": "Double Obverse NYC Transit Token",
+    "borough": "Manhattan",
+    "mat": "B",
+    "form": "R",
+    "symbol": "Sd",
+    "size": 22,
+    "obv": "",
+    "rev": "",
+    "desc": "Token struck with obverse dies on both sides.",
+    "notes": "",
+    "rel": [
+      "NY630AT"
+    ],
+    "home": false,
+    "pub": true,
+    "sort": "odd-0001",
+    "collectionArea": "manhattan",
+    "catalogStatus": "unlisted",
+    "classification": "error"
+  },
+  {
+    "id": "oddity-0002",
+    "displayId": "ODD-0002",
+    "sec": "",
+    "code": "",
+    "var": "",
+    "status": "unlisted",
+    "type": "error",
+    "groups": [],
+    "title": "NY630AO Unpunched Variety",
+    "borough": "Manhattan",
+    "mat": "",
+    "form": "R",
+    "symbol": "",
+    "size": null,
+    "obv": "",
+    "rev": "",
+    "desc": "Unpunched variety of NY630AO.",
+    "notes": "The punch-out portion of the design was not cut out.",
+    "rel": [
+      "NY630AO"
+    ],
+    "home": false,
+    "pub": true,
+    "sort": "odd-0002",
+    "collectionArea": "manhattan",
+    "catalogStatus": "unlisted",
+    "classification": "error"
+  },
+  {
+    "id": "oddity-0003",
+    "displayId": "ODD-0003",
+    "sec": "",
+    "code": "",
+    "var": "",
+    "status": "unlisted",
+    "type": "error",
+    "groups": [],
+    "title": "NY630AP Unpunched Variety",
+    "borough": "Manhattan",
+    "mat": "",
+    "form": "R",
+    "symbol": "",
+    "size": null,
+    "obv": "",
+    "rev": "",
+    "desc": "Unpunched variety of NY630AP.",
+    "notes": "The punch-out portion of the design was not cut out.",
+    "rel": [
+      "NY630AP"
+    ],
+    "home": false,
+    "pub": true,
+    "sort": "odd-0003",
+    "collectionArea": "manhattan",
+    "catalogStatus": "unlisted",
+    "classification": "error"
+  },
+  {
+    "id": "oddity-0004",
+    "displayId": "ODD-0004",
+    "sec": "",
+    "code": "",
+    "var": "",
+    "status": "unlisted",
+    "type": "error",
+    "groups": [],
+    "title": "NY630AS Mispunched Variety",
+    "borough": "Manhattan",
+    "mat": "",
+    "form": "R",
+    "symbol": "",
+    "size": null,
+    "obv": "",
+    "rev": "",
+    "desc": "Mispunched variety of NY630AS.",
+    "notes": "The punch-out portion of the design was punched incorrectly.",
+    "rel": [
+      "NY630AS"
+    ],
+    "home": false,
+    "pub": true,
+    "sort": "odd-0004",
+    "collectionArea": "manhattan",
+    "catalogStatus": "unlisted",
+    "classification": "error"
+  },
+  {
+    "id": "oddity-0005",
+    "displayId": "ODD-0005",
+    "sec": "",
+    "code": "",
+    "var": "",
+    "status": "unlisted",
+    "type": "error",
+    "groups": [],
+    "title": "NY630AS Unpunched Variety",
+    "borough": "Manhattan",
+    "mat": "",
+    "form": "R",
+    "symbol": "",
+    "size": null,
+    "obv": "",
+    "rev": "",
+    "desc": "Unpunched variety of NY630AS.",
+    "notes": "The punch-out portion of the design was not cut out.",
+    "rel": [
+      "NY630AS"
+    ],
+    "home": false,
+    "pub": true,
+    "sort": "odd-0005",
+    "collectionArea": "manhattan",
+    "catalogStatus": "unlisted",
+    "classification": "error"
+  },
+  {
+    "id": "counterfeit-ny630at-001",
+    "displayId": "CF-0001",
+    "sec": "630",
+    "code": "AT",
+    "var": "",
+    "status": "unlisted",
+    "type": "counterfeit",
+    "groups": [],
+    "title": "Counterfeit New York City Transit Authority NYC",
+    "borough": "Manhattan",
+    "mat": "L",
+    "form": "R",
+    "symbol": "Sd",
+    "size": 22,
+    "obv": "NEW YORK CITY TRANSIT AUTHORITY NYC",
+    "rev": "Good For One Fare NYC",
+    "desc": "Counterfeit token imitating NY630AT.",
+    "notes": "Modern or unofficial imitation of the listed NY630AT type.",
+    "rel": [
+      "NY630AT"
+    ],
+    "home": false,
+    "pub": true,
+    "sort": "630-at-counterfeit",
+    "collectionArea": "manhattan",
+    "catalogStatus": "unlisted",
+    "classification": "counterfeit"
   }
 ]

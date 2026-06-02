@@ -7,7 +7,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["bronx"],
+    "groups": [],
     "title": "Orchard Beach Turnstile S.T.C.",
     "borough": "Bronx",
     "mat": "WM",
@@ -32,7 +32,10 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "628-a"
+    "sort": "628-a",
+    "collectionArea": "bronx",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny628b",
@@ -42,7 +45,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["bronx"],
+    "groups": [],
     "title": "Orchard Beach Turnstile S.T.C.",
     "borough": "Bronx",
     "mat": "B",
@@ -67,7 +70,10 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "628-b"
+    "sort": "628-b",
+    "collectionArea": "bronx",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny628c",
@@ -77,7 +83,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["bronx"],
+    "groups": [],
     "title": "Orchard Beach Turnstile M.A.B.",
     "borough": "Bronx",
     "mat": "WM",
@@ -102,6 +108,9 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "628-c"
+    "sort": "628-c",
+    "collectionArea": "bronx",
+    "catalogStatus": "listed",
+    "classification": "regular"
   }
 ]

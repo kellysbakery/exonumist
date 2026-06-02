@@ -25,6 +25,9 @@
  * var
  *
  * status
+ * collectionArea
+ * catalogStatus
+ * classification
  * type
  * groups
  *
@@ -69,14 +72,12 @@
  *
  * Example:
  * node scripts/normalize-token-json.js --check \
- *   src/_data/official/*.json \
- *   src/_data/unofficial/*.json
+ *   src/_data/tokens/*.json
  *
  * Then run for real:
  *
  * node scripts/normalize-token-json.js \
- *   src/_data/official/*.json \
- *   src/_data/unofficial/*.json
+ *   src/_data/tokens/*.json
  *
  * Review changes:
  * git diff
@@ -143,6 +144,9 @@ function ordered(record) {
     var: record.var || "",
 
     status: record.status || "",
+    collectionArea: record.collectionArea || "",
+    catalogStatus: record.catalogStatus || record.status || "",
+    classification: record.classification || "regular",
     type: record.type || "",
     groups: Array.isArray(record.groups) ? record.groups : [],
 

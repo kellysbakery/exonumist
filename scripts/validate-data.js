@@ -5,8 +5,7 @@ const path = require("path");
 
 const ROOT = process.cwd();
 const DATA_DIR = path.join(ROOT, "src", "_data");
-const OFFICIAL_DIR = path.join(DATA_DIR, "official");
-const UNOFFICIAL_DIR = path.join(DATA_DIR, "unofficial");
+const TOKENS_DIR = path.join(DATA_DIR, "tokens");
 const ALLOWED_IMAGE_FORMS = new Set(["R", "Oc"]);
 const urlHelpers = require("../src/_data/urlHelpers");
 
@@ -14,6 +13,9 @@ const REQUIRED_FIELDS = [
   "id",
   "displayId",
   "status",
+  "collectionArea",
+  "catalogStatus",
+  "classification",
   "type",
   "groups",
   "title",
@@ -242,6 +244,10 @@ function main() {
   const allTokens = require("../src/_data/allTokens");
 
   const validStatuses = new Set(Object.keys(lookups.status || {}));
+  const validCollectionAreas = new Set(
+    require("../src/_data/collectionAreas").map((area) => area.slug)
+  );
+  const validClassifications = new Set(Object.keys(lookups.classification || {}));
   const validTypes = new Set(Object.keys(lookups.type || {}));
   const validMaterials = new Set(Object.keys(lookups.materials || {}));
   const validForms = new Set(Object.keys(lookups.forms || {}));
@@ -249,10 +255,7 @@ function main() {
   const validGroups = new Set(groups.map((g) => g.key));
 
   // Gather all token files
-  const tokenFiles = [
-    ...getJsonFiles(OFFICIAL_DIR),
-    ...getJsonFiles(UNOFFICIAL_DIR)
-  ];
+  const tokenFiles = getJsonFiles(TOKENS_DIR);
 
   const seenIds = new Map();
   const seenDisplayIds = new Map();
@@ -303,6 +306,21 @@ function main() {
       // status
       if (token.status && !validStatuses.has(token.status)) {
         errors.push(`${label}: invalid status '${token.status}'`);
+      }
+
+      // collection area
+      if (!validCollectionAreas.has(token.collectionArea)) {
+        errors.push(`${label}: invalid collectionArea '${token.collectionArea}'`);
+      }
+
+      // catalog status
+      if (token.catalogStatus && !validStatuses.has(token.catalogStatus)) {
+        errors.push(`${label}: invalid catalogStatus '${token.catalogStatus}'`);
+      }
+
+      // classification
+      if (token.classification && !validClassifications.has(token.classification)) {
+        errors.push(`${label}: invalid classification '${token.classification}'`);
       }
 
       // type

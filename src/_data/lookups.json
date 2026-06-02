@@ -3,6 +3,12 @@
     "listed": "Listed in Atwood-Coffee Catalogue",
     "unlisted": "Not currently listed in Atwood-Coffee Catalogue"
   },
+  "classification": {
+    "error": "Error",
+    "regular": "Regular",
+    "counterfeit": "Counterfeit",
+    "oddity": "Oddity"
+  },
   "type": {
     "club": "Club Tour",
     "counterfeit": "Counterfeit",

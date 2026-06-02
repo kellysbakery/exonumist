@@ -1,5 +1,3 @@
-const urlHelpers = require("./urlHelpers");
-
 function lookupValue(code, table) {
   if (!code || !table) return "";
   return table[code] || table[String(code).toLowerCase()] || code;
@@ -48,7 +46,8 @@ function buildQuickFacts(token, context = {}) {
     addRow("Minor Variety", token.var);
   }
 
-  const status = String(token.status || "").toLowerCase();
+  const statusValue = token.catalogStatus || token.status;
+  const status = String(statusValue || "").toLowerCase();
   const section = String(detailSectionTitle || "").toLowerCase();
 
   const statusIsRedundant =
@@ -58,9 +57,10 @@ function buildQuickFacts(token, context = {}) {
     status === section;
 
   if (!statusIsRedundant) {
-    addRow("Status", token.status);
+    addRow("Catalog Status", lookupValue(statusValue, lookups.status));
   }
 
+  addRow("Classification", lookupValue(token.classification, lookups.classification));
   addRow("Material", lookupValue(token.mat, lookups.materials));
   addRow("Size", hasMeaningfulValue(token.size) ? `${token.size} mm` : "");
   addRow("Shape", lookupValue(token.form, lookups.forms));
@@ -106,15 +106,17 @@ function buildBadges(token, context = {}) {
 
   const badges = [];
 
-  if (token.status) {
-    const status = String(token.status).toLowerCase();
+  const statusValue = token.catalogStatus || token.status;
+
+  if (statusValue) {
+    const status = String(statusValue).toLowerCase();
     const section = String(detailSectionTitle).toLowerCase();
 
     const redundant =
       status === "listed" || status === "official" || status === section;
 
     if (!redundant) {
-      badges.push(lookupValue(token.status, lookups.status) || token.status);
+      badges.push(lookupValue(statusValue, lookups.status) || statusValue);
     }
   }
 
@@ -168,7 +170,7 @@ function findPrevNext(items = [], currentToken) {
 function buildPagerItem(token, options = {}) {
   if (!token) return null;
 
-  const { urlBuilder, pagerGroupKey, hasTokenImage, tokenImagePath } = options;
+  const { urlBuilder, hasTokenImage, tokenImagePath } = options;
 
   const id = token.displayId || "";
   const slug = id.toLowerCase();
@@ -179,8 +181,6 @@ function buildPagerItem(token, options = {}) {
     url = token.collectionUrl;
   } else if (typeof urlBuilder === "function") {
     url = urlBuilder(token);
-  } else if (urlBuilder === "group" && pagerGroupKey && slug) {
-    url = urlHelpers.groupTokenUrl(pagerGroupKey, slug);
   } else {
     url = "/";
   }
@@ -209,8 +209,6 @@ function buildTokenDetailView(token, context = {}) {
     prevToken = null,
     nextToken = null,
     detailShowPager = false,
-    pagerUrlBuilder = null,
-    pagerGroupKey = "",
     isUnlisted = false,
     lookups = {}
   } = context;
@@ -265,14 +263,10 @@ function buildTokenDetailView(token, context = {}) {
     pager: detailShowPager
       ? {
           prev: buildPagerItem(prevToken, {
-            urlBuilder: pagerUrlBuilder,
-            pagerGroupKey,
             hasTokenImage: helperFns.hasTokenImage,
             tokenImagePath: helperFns.tokenImagePath
           }),
           next: buildPagerItem(nextToken, {
-            urlBuilder: pagerUrlBuilder,
-            pagerGroupKey,
             hasTokenImage: helperFns.hasTokenImage,
             tokenImagePath: helperFns.tokenImagePath
           })
@@ -291,55 +285,9 @@ function findSection(sections = [], sec = "") {
   );
 }
 
-function findListedGroupForSection(sections = [], groups = [], sec = "") {
-  const section = findSection(sections, sec);
-  if (!section || !Array.isArray(groups)) return null;
-
-  return (
-    groups.find(
-      (group) =>
-        group.pub !== false &&
-        group.section === "listed" &&
-        group.title === section.title &&
-        group.key
-    ) || null
-  );
-}
-
-function buildGroupBreadcrumbItems(group, token) {
-  const items = [{ label: "Home", url: "/" }];
-
-  if (group) {
-    items.push({
-      label: group.title || "",
-      url: urlHelpers.groupUrl(group.key)
-    });
-  }
-
-  items.push({
-    label: token?.displayId || "",
-    url: ""
-  });
-
-  return items;
-}
-
-function findGroupTokens(groupTokenPages = [], groupKey = "") {
-  if (!Array.isArray(groupTokenPages) || !groupKey) {
-    return [];
-  }
-
-  return groupTokenPages
-    .filter((item) => item.group && item.group.key === groupKey)
-    .map((item) => item.token);
-}
-
 module.exports = {
   findPrevNext,
   findSection,
-  findListedGroupForSection,
-  buildGroupBreadcrumbItems,
-  findGroupTokens,
   buildPagerItem,
   buildTokenDetailView
 };

@@ -7,7 +7,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "N.Y. & Q.C. Ry. Co. Lincoln C Andrews / NYQ",
     "borough": "Queens",
     "mat": "WM",
@@ -31,7 +31,10 @@
         "page": 377,
         "note": "Queens 631 section states 100,000 struck 7/26/24 and gives receiver/company history."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631ba",
@@ -41,7 +44,7 @@
     "var": "a",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Kings Coach Company",
     "borough": "Queens",
     "mat": "WM",
@@ -64,7 +67,10 @@
         "page": 377,
         "note": "Queens 631 section states 1,000 struck 2/8/35 for NY631B overall and notes Kings Coach Company history."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631bb",
@@ -74,7 +80,7 @@
     "var": "b",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Kings Coach Company",
     "borough": "Queens",
     "mat": "WM",
@@ -96,7 +102,10 @@
         "page": 377,
         "note": "Queens 631 section states 1,000 struck 2/8/35 for NY631B overall and notes Kings Coach Company history."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631c",
@@ -106,7 +115,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Jamaica Buses, Inc. Transfer Token",
     "borough": "Queens",
     "mat": "B",
@@ -128,7 +137,10 @@
         "page": 377,
         "note": "Queens 631 section notes Jamaica Buses, Inc. was taken over by Green Bus Lines."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631d",
@@ -138,7 +150,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Rauchwerger Bus Line / Flushing, L.I. N.Y. (BUS, type 1)",
     "borough": "Queens",
     "mat": "WM",
@@ -162,7 +174,10 @@
         "page": 377,
         "note": "Queens 631 section states 4,000 struck total in 3 orders beginning 6/14/26 and gives Rauchwerger Bus Line history."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631e",
@@ -172,7 +187,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "North Shore Bus Co. Inc.",
     "borough": "Queens",
     "mat": "WM",
@@ -186,7 +201,10 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "631-e"
+    "sort": "631-e",
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631f",
@@ -196,7 +214,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "North Shore Bus Co. Inc.",
     "borough": "Queens",
     "mat": "WM",
@@ -220,7 +238,10 @@
         "page": 377,
         "note": "Queens 631 section states 5,000 struck in 1930 and notes North Shore Bus Company was taken over by the City of New York in 1947."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631g",
@@ -230,7 +251,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Perey Turnstiles For Better Fare Collection",
     "borough": "Queens",
     "mat": "WM",
@@ -254,7 +275,10 @@
         "page": 377,
         "note": "Queens 631 section states 3,500 struck total in 3 orders from 4/20/35 to 11/1/45 and notes Green Bus Lines usage."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631h",
@@ -264,7 +288,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Perey Turnstiles For Better Fare Collection",
     "borough": "Queens",
     "mat": "B",
@@ -289,7 +313,10 @@
         "page": 377,
         "note": "Queens 631 section states 1,000 struck 4/18/41 and notes Green Bus Lines usage."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631i",
@@ -299,7 +326,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Triboro Coach Corp. No Value T",
     "borough": "Queens",
     "mat": "WM",
@@ -313,7 +340,10 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "631-i"
+    "sort": "631-i",
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631j",
@@ -323,7 +353,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Triboro Coach Corp. No Value T",
     "borough": "Queens",
     "mat": "WM",
@@ -347,7 +377,10 @@
         "page": 377,
         "note": "Queens 631 section states 2,000 struck 2/5/36 and 2,000 struck 11/13/37."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631k",
@@ -357,7 +390,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Triboro Coach Corp. No Value T",
     "borough": "Queens",
     "mat": "B",
@@ -381,7 +414,10 @@
         "page": 377,
         "note": "Queens 631 section states 2,000 struck 12/5/36 and 2,000 struck 11/13/37."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631l",
@@ -391,7 +427,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Triboro Coach Corp. No Value",
     "borough": "Queens",
     "mat": "B",
@@ -415,7 +451,10 @@
         "page": 377,
         "note": "Queens 631 section states 7,000 struck total in 4 orders from 7/3/40 to 2/47."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631m",
@@ -425,7 +464,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Triboro Coach Corp. No Value S",
     "borough": "Queens",
     "mat": "WM",
@@ -448,7 +487,10 @@
         "page": 377,
         "note": "Queens 631 section notes copper plating was probably done by the bus company."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631n",
@@ -458,7 +500,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Triboro Coach Corp. No Value S",
     "borough": "Queens",
     "mat": "WM",
@@ -482,7 +524,10 @@
         "page": 377,
         "note": "Queens 631 section states 6,000 struck total in 4 orders beginning 7/30/40 and gives Triborough/Green Bus Lines context."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631o",
@@ -492,7 +537,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Queensboro Bridge Railway Co., Inc. (Streetcar)",
     "borough": "Queens",
     "mat": "S",
@@ -516,7 +561,10 @@
         "page": 377,
         "note": "Queens 631 section states 20,000 struck 7/28/44."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631p",
@@ -526,7 +574,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Queensboro Bridge Railway Co., Inc. (Streetcar)",
     "borough": "Queens",
     "mat": "B",
@@ -550,7 +598,10 @@
         "page": 377,
         "note": "Queens 631 section states 40,000 struck total in 5 orders beginning 3/12/45."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631q",
@@ -560,7 +611,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Queensboro Bridge Railway Co., Inc. (Streetcar)",
     "borough": "Queens",
     "mat": "WM",
@@ -584,7 +635,10 @@
         "page": 377,
         "note": "Queens 631 section states 330,000 struck total in 11 orders beginning 4/9/47 and gives Queensboro Bridge Railway history."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631r",
@@ -594,7 +648,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Green Bus Lines, Inc. GBL INC.",
     "borough": "Queens",
     "mat": "Bz",
@@ -618,7 +672,10 @@
         "page": 377,
         "note": "Queens 631 section states 10,000 struck 6/4/37 and discusses uncertain usage and later availability."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631s",
@@ -628,7 +685,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "One Fare The Long Island Rail Road / The Route of the Dashing Commuter",
     "borough": "Queens",
     "mat": "Bz",
@@ -653,7 +710,10 @@
         "page": 377,
         "note": "Queens 631 section states 200,000 struck 12/6/63 and 100,000 struck 7/64 and describes World's Fair usage."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631t",
@@ -663,7 +723,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Queensboro Bridge Ry. Co., Inc. (BUS)",
     "borough": "Queens",
     "mat": "B",
@@ -687,7 +747,10 @@
         "page": 377,
         "note": "Queens 631 section states 150,000 struck total in 4 orders from 3/5/70 to 1/13/71 and explains the size/use change."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631u",
@@ -697,7 +760,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Jamaica Buses, Inc.",
     "borough": "Queens",
     "mat": "B",
@@ -721,7 +784,10 @@
         "page": 377,
         "note": "Queens 631 section notes 5/25/72 usage for express bus service to or from Aqueduct or Belmont Race Track."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631v",
@@ -731,7 +797,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Jamaica Buses Inc. N.Y.C. (Bus, type 2)",
     "borough": "Queens",
     "mat": "B",
@@ -754,7 +820,10 @@
         "page": 377,
         "note": "Queens 631 section lists NY631V with date 6/30/76."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631w",
@@ -764,7 +833,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Steinway Transit Corp.",
     "borough": "Queens",
     "mat": "WM",
@@ -787,7 +856,10 @@
         "page": 377,
         "note": "Queens 631 section notes 3/29/76 issue, fare-increase context, and Route Q-102 usage."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631x",
@@ -797,7 +869,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Airline· Connection Bus",
     "borough": "Queens",
     "mat": "B",
@@ -821,7 +893,10 @@
         "page": 377,
         "note": "Queens 631 section states 2,000 struck in 1976 but never placed in use."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631y",
@@ -831,7 +906,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Triborough Bridge and Tunnel Authority",
     "borough": "Queens",
     "mat": "S",
@@ -845,6 +920,65 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "631-y"
+    "sort": "631-y",
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
+  },
+  {
+    "id": "official-ny515",
+    "displayId": "TR-NY-515-A",
+    "sec": "TR",
+    "code": "515",
+    "var": "",
+    "status": "listed",
+    "type": "transportation-related",
+    "groups": [],
+    "title": "Department of Marine Aviation / LaGuardia Field",
+    "borough": "Queens",
+    "mat": "Bz",
+    "form": "R",
+    "symbol": "Ch",
+    "size": 23,
+    "obv": "DEPT. OF MARINE AVIATION / LAGUARDIA FIELD",
+    "rev": "Good For One Admission NYC",
+    "desc": "Listed transportation-related token.",
+    "notes": "Listed in the Atwood-Coffee Transportation Related category as New York - New York City: Queens NY515A. Details in Farebox: March, 2020.",
+    "rel": [],
+    "home": false,
+    "pub": true,
+    "sort": "tr-515",
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
+  },
+  {
+    "id": "oddity-0006",
+    "displayId": "ODD-0006",
+    "sec": "",
+    "code": "",
+    "var": "",
+    "status": "unlisted",
+    "type": "error",
+    "groups": [],
+    "title": "NY631E Unpunched Variety",
+    "borough": "Queens",
+    "mat": "",
+    "form": "R",
+    "symbol": "",
+    "size": null,
+    "obv": "",
+    "rev": "",
+    "desc": "Unpunched variety of NY631E.",
+    "notes": "The punch-out portion of the design was not cut out.",
+    "rel": [
+      "NY631E"
+    ],
+    "home": false,
+    "pub": true,
+    "sort": "odd-0006",
+    "collectionArea": "queens",
+    "catalogStatus": "unlisted",
+    "classification": "error"
   }
 ]

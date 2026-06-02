@@ -7,7 +7,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["statenisland"],
+    "groups": [],
     "title": "Richmond L. & R.R. Co. Staten Island, N.Y.",
     "borough": "Staten Island",
     "mat": "WM",
@@ -30,7 +30,10 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "632-a"
+    "sort": "632-a",
+    "collectionArea": "staten-island",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny632b",
@@ -40,7 +43,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["statenisland"],
+    "groups": [],
     "title": "Department of Transportation / Good For One Fare NYC",
     "borough": "Staten Island",
     "mat": "B",
@@ -65,7 +68,10 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "632-b"
+    "sort": "632-b",
+    "collectionArea": "staten-island",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny632c",
@@ -75,7 +81,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["statenisland"],
+    "groups": [],
     "title": "Department of Transportation / Good For One Fare NYC",
     "borough": "Staten Island",
     "mat": "WM",
@@ -100,7 +106,10 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "632-c"
+    "sort": "632-c",
+    "collectionArea": "staten-island",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny632d",
@@ -110,7 +119,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["statenisland"],
+    "groups": [],
     "title": "Triborough Bridge and Tunnel Authority",
     "borough": "Staten Island",
     "mat": "S",
@@ -124,7 +133,10 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "632-d"
+    "sort": "632-d",
+    "collectionArea": "staten-island",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny632e",
@@ -134,7 +146,7 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["statenisland"],
+    "groups": [],
     "title": "A Carousel For All Children / At Willowbrook Park",
     "borough": "Staten Island",
     "mat": "B",
@@ -148,6 +160,9 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "632-e"
+    "sort": "632-e",
+    "collectionArea": "staten-island",
+    "catalogStatus": "listed",
+    "classification": "regular"
   }
 ]

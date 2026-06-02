@@ -11,7 +11,7 @@ eleventyComputed:
 
 {% set collectionArea = collectionPage.collectionArea %}
 {% set token = collectionPage.token %}
-{% set isUnlisted = token.status != "listed" %}
+{% set isUnlisted = (token.catalogStatus or token.status) != "listed" %}
 
 {% set detailSectionTitle = collectionArea.title %}
 {% set detailSectionUrl = urlHelpers.collectionAreaUrl(collectionArea.slug) %}
