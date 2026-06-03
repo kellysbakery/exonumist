@@ -51,6 +51,71 @@ function buildDisplayDescription(token, context = {}) {
     : `${area} ${type} from this collection.`;
 }
 
+function normalizeCatalogCrossReferences(token = {}) {
+  const seen = new Set();
+
+  const normalizeEntry = (entry) => {
+    if (!entry) return null;
+
+    if (typeof entry === "string") {
+      const id = entry.trim();
+      return id ? { catalog: "Atwood-Coffee", id } : null;
+    }
+
+    const id = String(entry.id || entry.value || "").trim();
+    if (!id) return null;
+
+    const catalog = String(entry.catalog || entry.name || "Catalog").trim();
+
+    return {
+      catalog: catalog || "Catalog",
+      id
+    };
+  };
+
+  const addEntry = (refs, entry) => {
+    const normalized = normalizeEntry(entry);
+    if (!normalized) return;
+
+    const key = `${normalized.catalog.toLowerCase()}::${normalized.id.toLowerCase()}`;
+    if (seen.has(key)) return;
+
+    seen.add(key);
+    refs.push(normalized);
+  };
+
+  const refs = [];
+
+  if (Array.isArray(token.catalogCrossReferences)) {
+    token.catalogCrossReferences.forEach((entry) => addEntry(refs, entry));
+  }
+
+  if (refs.length) {
+    return refs;
+  }
+
+  if (isCatalogStyleDisplayId(token.displayId)) {
+    addEntry(refs, { catalog: "Atwood-Coffee", id: token.displayId });
+  }
+
+  return refs;
+}
+
+function isCatalogStyleDisplayId(value) {
+  const id = String(value || "").trim();
+  if (!id) return false;
+
+  if (/^(odd|unl|cf)-/i.test(id)) return false;
+
+  return /^(NY\d|PP-|CT-|FF-|TR-)/i.test(id);
+}
+
+function formatCatalogCrossReferences(token) {
+  return normalizeCatalogCrossReferences(token)
+    .map((ref) => `${ref.catalog}: ${ref.id}`)
+    .join("; ");
+}
+
 /**
  * Build the Quick Facts rows shown on detail pages.
  * Canonical schema only.
@@ -70,15 +135,14 @@ function buildQuickFacts(token, context = {}) {
     addRow("Collection ID", token.collectionId);
   }
 
-  if (isUnlisted) {
+  if (!token.collectionId && isUnlisted) {
     addRow("Collection ID", token.displayId);
-  } else {
-    addRow("Cat. X-Ref.", token.displayId);
-    addRow("Minor Variety", token.var);
   }
 
-  if (Array.isArray(token.rel) && token.rel.length) {
-    addRow("Cat. X-Ref.", token.rel.join(", "));
+  addRow("Cat. X-Ref.", formatCatalogCrossReferences(token));
+
+  if (!isUnlisted) {
+    addRow("Minor Variety", token.var);
   }
 
   addRow("Classification", lookupValue(token.classification, lookups.classification));
@@ -267,6 +331,7 @@ function buildTokenDetailView(token, context = {}) {
     notes: token.notes || "",
     wantedNote: token.wantedNote || "",
     summaryDescription: buildDisplayDescription(token, { lookups }),
+    catalogCrossReferences: normalizeCatalogCrossReferences(token),
 
     pager: detailShowPager
       ? {
@@ -298,5 +363,7 @@ module.exports = {
   findSection,
   buildPagerItem,
   buildDisplayDescription,
+  formatCatalogCrossReferences,
+  normalizeCatalogCrossReferences,
   buildTokenDetailView
 };

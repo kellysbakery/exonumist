@@ -46,6 +46,7 @@
  * notes
  *
  * rel
+ * catalogCrossReferences (optional)
  *
  * home
  * pub
@@ -135,6 +136,21 @@ function ordered(record) {
 
   const displayId = record.displayId || record.siteId || "";
   const title = record.title || record.displayTitle || "";
+  const catalogCrossReferences = Array.isArray(record.catalogCrossReferences)
+    ? record.catalogCrossReferences
+        .map((entry) => {
+          if (!entry || typeof entry !== "object") return null;
+
+          const id = String(entry.id || "").trim();
+          if (!id) return null;
+
+          return {
+            catalog: String(entry.catalog || "").trim(),
+            id
+          };
+        })
+        .filter(Boolean)
+    : [];
 
   return {
     id: record.id || "",
@@ -165,6 +181,7 @@ function ordered(record) {
     notes: record.notes || "",
 
     rel,
+    ...(catalogCrossReferences.length ? { catalogCrossReferences } : {}),
 
     home: Boolean(record.home),
     pub: Boolean(record.pub),

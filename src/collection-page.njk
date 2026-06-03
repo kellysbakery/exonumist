@@ -59,9 +59,17 @@ eleventyComputed:
       {% set tokenCardUrl = token.collectionUrl %}
       {% set tokenCardFilterable = true %}
       {% set tokenCardDescription = tokenDetailView.buildDisplayDescription(token, { lookups: lookups }) %}
+      {% set tokenCardCatalogCrossReferences = tokenDetailView.normalizeCatalogCrossReferences(token) %}
       {% set tokenCardSearchText %}
         {{ token.collectionId }}
         {{ token.displayId }}
+        {% if token.rel %}
+          {{ token.rel | join(" ") }}
+        {% endif %}
+        {% for ref in tokenCardCatalogCrossReferences %}
+          {{ ref.catalog }}
+          {{ ref.id }}
+        {% endfor %}
         {{ token.title }}
         {{ tokenCardDescription }}
         {{ token.desc }}

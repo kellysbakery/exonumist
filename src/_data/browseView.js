@@ -73,11 +73,17 @@ function buildSearchText(token) {
   const displayDescription = tokenDetailView.buildDisplayDescription(token, {
     lookups
   });
+  const catalogCrossReferences = tokenDetailView.normalizeCatalogCrossReferences(
+    token
+  );
 
   const parts = [
     token.collectionId || "",
     token.displayId || "",
     Array.isArray(token.rel) ? token.rel.join(" ") : "",
+    catalogCrossReferences
+      .flatMap((ref) => [ref.catalog, ref.id])
+      .join(" "),
     token.title || "",
     token.borough || "",
     displayDescription,
@@ -101,6 +107,7 @@ const tokens = allTokens.map((token) => ({
   url: buildBrowseUrl(token),
   browseTypes: buildBrowseTypes(token),
   displayDescription: tokenDetailView.buildDisplayDescription(token, { lookups }),
+  catalogCrossReferences: tokenDetailView.normalizeCatalogCrossReferences(token),
   searchText: buildSearchText(token)
 }));
 
