@@ -960,7 +960,9 @@
     "var": "",
     "status": "unlisted",
     "type": "error",
-    "groups": [],
+    "groups": [
+      "errors"
+    ],
     "title": "NY631E Unpunched Variety",
     "borough": "Queens",
     "mat": "WM",

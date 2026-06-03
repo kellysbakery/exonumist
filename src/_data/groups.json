@@ -22,6 +22,6 @@
     "url": "/groups/errors/",
     "cardImage": "/assets/images/thumb/odd-0003_o.webp",
     "description": "Production errors, unusual varieties, and oddball pieces that add personality and depth to the collection.",
-    "spotlight": true
+    "section": "spotlight"
   }
 ]

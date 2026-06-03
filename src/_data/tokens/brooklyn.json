@@ -345,7 +345,9 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [],
+    "groups": [
+      "errors"
+    ],
     "title": "New York City Transfer System B.M.T. Division Transfer Token",
     "borough": "Brooklyn",
     "mat": "Bz",

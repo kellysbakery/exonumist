@@ -2311,7 +2311,9 @@
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": [],
+    "groups": [
+      "errors"
+    ],
     "title": "New York City Transit Authority NYC",
     "borough": "Manhattan",
     "mat": "B",
@@ -2551,7 +2553,9 @@
     "var": "",
     "status": "unlisted",
     "type": "error",
-    "groups": [],
+    "groups": [
+      "errors"
+    ],
     "title": "Double Obverse NYC Transit Token",
     "borough": "Manhattan",
     "mat": "B",
@@ -2580,7 +2584,9 @@
     "var": "",
     "status": "unlisted",
     "type": "error",
-    "groups": [],
+    "groups": [
+      "errors"
+    ],
     "title": "NY630AO Unpunched Variety",
     "borough": "Manhattan",
     "mat": "B",
@@ -2609,7 +2615,9 @@
     "var": "",
     "status": "unlisted",
     "type": "error",
-    "groups": [],
+    "groups": [
+      "errors"
+    ],
     "title": "NY630AP Unpunched Variety",
     "borough": "Manhattan",
     "mat": "B",
@@ -2638,7 +2646,9 @@
     "var": "",
     "status": "unlisted",
     "type": "error",
-    "groups": [],
+    "groups": [
+      "errors"
+    ],
     "title": "NY630AS Mispunched Variety",
     "borough": "Manhattan",
     "mat": "B",
@@ -2667,7 +2677,9 @@
     "var": "",
     "status": "unlisted",
     "type": "error",
-    "groups": [],
+    "groups": [
+      "errors"
+    ],
     "title": "NY630AS Unpunched Variety",
     "borough": "Manhattan",
     "mat": "B",
@@ -2696,7 +2708,9 @@
     "var": "",
     "status": "unlisted",
     "type": "counterfeit",
-    "groups": [],
+    "groups": [
+      "errors"
+    ],
     "title": "Counterfeit New York City Transit Authority NYC",
     "borough": "Manhattan",
     "mat": "L",
