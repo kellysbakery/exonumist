@@ -38,12 +38,6 @@ const collectionDefinitions = [
     cardImage: "/assets/images/thumb/632-c_r.webp",
     cardImageForm: "R",
     description: "Staten Island transit tokens and related transportation pieces."
-  },
-  {
-    slug: "specialty",
-    groupKey: "specialty",
-    title: "Specialty",
-    description: "Transit-related, patterns, zone checks, club tour, fantasy, and presentation tokens."
   }
 ];
 
