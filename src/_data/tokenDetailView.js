@@ -20,12 +20,43 @@ function formatNumber(value) {
   return num.toLocaleString("en-US");
 }
 
+function formatTokenType(token, lookups = {}) {
+  const value = lookupValue(token.type, lookups.type);
+  return value ? String(value).toLowerCase() : "collection";
+}
+
+function buildDisplayDescription(token, context = {}) {
+  const { lookups = {} } = context;
+  const rawDescription = String(token.desc || "").trim();
+
+  if (
+    rawDescription &&
+    !/^(listed|unlisted)\b/i.test(rawDescription)
+  ) {
+    return rawDescription;
+  }
+
+  const area = token.borough || "Collection";
+  const type = formatTokenType(token, lookups);
+  const title = String(token.title || "").replace(/\.$/, "");
+
+  if (token.catalogStatus === "unlisted" || token.status === "unlisted") {
+    return title
+      ? `Documented variety in this collection: ${title}.`
+      : `${area} ${type} from this collection.`;
+  }
+
+  return title
+    ? `${area} ${type} associated with ${title}.`
+    : `${area} ${type} from this collection.`;
+}
+
 /**
  * Build the Quick Facts rows shown on detail pages.
  * Canonical schema only.
  */
 function buildQuickFacts(token, context = {}) {
-  const { isUnlisted = false, lookups = {}, detailSectionTitle = "" } = context;
+  const { isUnlisted = false, lookups = {} } = context;
 
   const rows = [];
 
@@ -35,29 +66,19 @@ function buildQuickFacts(token, context = {}) {
     }
   };
 
-  if (isUnlisted) {
-    addRow("ID", token.displayId);
+  if (token.collectionId) {
+    addRow("Collection ID", token.collectionId);
+  }
 
-    if (Array.isArray(token.rel) && token.rel.length) {
-      addRow("Related A/C", token.rel.join(", "));
-    }
+  if (isUnlisted) {
+    addRow("Collection ID", token.displayId);
   } else {
-    addRow("Catalogue ID", token.displayId);
+    addRow("Cat. X-Ref.", token.displayId);
     addRow("Minor Variety", token.var);
   }
 
-  const statusValue = token.catalogStatus || token.status;
-  const status = String(statusValue || "").toLowerCase();
-  const section = String(detailSectionTitle || "").toLowerCase();
-
-  const statusIsRedundant =
-    !status ||
-    status === "listed" ||
-    status === "official" ||
-    status === section;
-
-  if (!statusIsRedundant) {
-    addRow("Catalog Status", lookupValue(statusValue, lookups.status));
+  if (Array.isArray(token.rel) && token.rel.length) {
+    addRow("Catalog cross-reference", token.rel.join(", "));
   }
 
   addRow("Classification", lookupValue(token.classification, lookups.classification));
@@ -102,23 +123,9 @@ function buildMetaParts(token, context = {}) {
  * Build badge chips shown near the title.
  */
 function buildBadges(token, context = {}) {
-  const { lookups = {}, isUnlisted = false, detailSectionTitle = "" } = context;
+  const { isUnlisted = false } = context;
 
   const badges = [];
-
-  const statusValue = token.catalogStatus || token.status;
-
-  if (statusValue) {
-    const status = String(statusValue).toLowerCase();
-    const section = String(detailSectionTitle).toLowerCase();
-
-    const redundant =
-      status === "listed" || status === "official" || status === section;
-
-    if (!redundant) {
-      badges.push(lookupValue(statusValue, lookups.status) || statusValue);
-    }
-  }
 
   if (!isUnlisted && token.var) {
     badges.push(`Var. ${token.var}`);
@@ -259,6 +266,7 @@ function buildTokenDetailView(token, context = {}) {
 
     notes: token.notes || "",
     wantedNote: token.wantedNote || "",
+    summaryDescription: buildDisplayDescription(token, { lookups }),
 
     pager: detailShowPager
       ? {
@@ -289,5 +297,6 @@ module.exports = {
   findPrevNext,
   findSection,
   buildPagerItem,
+  buildDisplayDescription,
   buildTokenDetailView
 };

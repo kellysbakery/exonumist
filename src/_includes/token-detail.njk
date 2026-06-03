@@ -5,7 +5,7 @@
 {%- if detailView.tokenTitle -%}
   {%- set tokenStructuredName = detailView.tokenId ~ " | " ~ detailView.tokenTitle -%}
 {%- endif -%}
-{%- set tokenStructuredDescription = token.desc or detailView.tokenTitle or detailView.tokenId -%}
+{%- set tokenStructuredDescription = detailView.summaryDescription or detailView.tokenTitle or detailView.tokenId -%}
 {%- set tokenStructuredCategory = lookups.type[token.type] if token.type and lookups.type else token.type -%}
 {%- set tokenStructuredMaterial = lookups.materials[token.mat] if token.mat and lookups.materials else token.mat -%}
 {%- set tokenStructuredImages = [] -%}
@@ -68,9 +68,9 @@
     </div>
   {% endif %}
 
-  {% if token.desc %}
+  {% if detailView.summaryDescription %}
     <div class="token-summary">
-      <p>{{ token.desc }}</p>
+      <p>{{ detailView.summaryDescription }}</p>
     </div>
   {% endif %}
 

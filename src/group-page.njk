@@ -40,6 +40,7 @@ eleventyComputed:
       {% set tokenCardToken = token %}
       {% set tokenCardUrl = collectionTokenUrls[token.id | lower] or collectionTokenUrls[token.displayId | lower] or "/" %}
       {% set tokenCardFilterable = false %}
+      {% set tokenCardDescription = tokenDetailView.buildDisplayDescription(token, { lookups: lookups }) %}
       {% include "token-list-card.njk" %}
     {% endfor %}
   </div>

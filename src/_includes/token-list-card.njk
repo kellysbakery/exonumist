@@ -43,9 +43,10 @@
         </p>
       {% endif %}
 
-      {% if tokenCardToken.desc %}
+      {% set tokenCardDescription = tokenCardDescription or tokenDetailView.buildDisplayDescription(tokenCardToken, { lookups: lookups }) %}
+      {% if tokenCardDescription %}
         <p class="token-list-card-desc">
-          {{ tokenCardToken.desc }}
+          {{ tokenCardDescription }}
         </p>
       {% endif %}
 

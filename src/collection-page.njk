@@ -10,19 +10,6 @@ eleventyComputed:
 ---
 
 {% set groupTokens = collectionAreaTokens[collectionArea.slug] %}
-{% set listedCount = 0 %}
-{% set unlistedCount = 0 %}
-
-{% for token in groupTokens %}
-  {% set catalogStatus = token.catalogStatus or token.status %}
-  {% if catalogStatus == "listed" %}
-    {% set listedCount = listedCount + 1 %}
-  {% elif catalogStatus == "unlisted" %}
-    {% set unlistedCount = unlistedCount + 1 %}
-  {% endif %}
-{% endfor %}
-
-{% set showStatusFilters = listedCount > 0 and unlistedCount > 0 %}
 
 <section class="section">
   <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -52,7 +39,7 @@ eleventyComputed:
       placeholder="Search {{ collectionArea.title }}, e.g. Fare, Authority, NY..."
       data-collection-search />
     <p class="collection-search-help">
-      Search by token ID, legend text, authority, type, notes, or description.
+      Search by collection ID, catalog cross-reference, legend text, authority, type, notes, or description.
     </p>
     <p class="collection-result-summary">
       Showing
@@ -66,37 +53,17 @@ eleventyComputed:
     </p>
   </div>
 
-  {% if showStatusFilters %}
-    <div class="card browse-controls" data-collection-status-filters>
-      <div class="browse-filter-heading">
-        <strong>Catalog Status</strong>
-      </div>
-
-      <div class="browse-chip-row">
-        <button type="button" class="browse-chip is-active" data-status-filter="all" aria-pressed="true">
-          All
-          <span class="browse-chip-count" data-status-count="all">{{ groupTokens.length }}</span>
-        </button>
-        <button type="button" class="browse-chip" data-status-filter="listed" aria-pressed="false">
-          Listed
-          <span class="browse-chip-count" data-status-count="listed">{{ listedCount }}</span>
-        </button>
-        <button type="button" class="browse-chip" data-status-filter="unlisted" aria-pressed="false">
-          Unlisted
-          <span class="browse-chip-count" data-status-count="unlisted">{{ unlistedCount }}</span>
-        </button>
-      </div>
-    </div>
-  {% endif %}
-
   <div class="grid-3 token-card-grid">
     {% for token in groupTokens %}
       {% set tokenCardToken = token %}
       {% set tokenCardUrl = token.collectionUrl %}
       {% set tokenCardFilterable = true %}
+      {% set tokenCardDescription = tokenDetailView.buildDisplayDescription(token, { lookups: lookups }) %}
       {% set tokenCardSearchText %}
+        {{ token.collectionId }}
         {{ token.displayId }}
         {{ token.title }}
+        {{ tokenCardDescription }}
         {{ token.desc }}
         {{ token.obv }}
         {{ token.rev }}

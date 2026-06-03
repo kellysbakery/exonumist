@@ -1,6 +1,7 @@
 const allTokens = require("./allTokens");
 const collectionTokenUrls = require("./collectionTokenUrls");
 const lookups = require("./lookups.json");
+const tokenDetailView = require("./tokenDetailView");
 
 const TYPE_ORDER = [
   "transit",
@@ -69,10 +70,19 @@ function buildBrowseUrl(token) {
 }
 
 function buildSearchText(token) {
+  const displayDescription = tokenDetailView.buildDisplayDescription(token, {
+    lookups
+  });
+
   const parts = [
+    token.collectionId || "",
     token.displayId || "",
+    Array.isArray(token.rel) ? token.rel.join(" ") : "",
     token.title || "",
     token.borough || "",
+    displayDescription,
+    token.desc || "",
+    token.notes || "",
     token.classification
       ? lookups.classification[token.classification] || token.classification
       : "",
@@ -90,6 +100,7 @@ const tokens = allTokens.map((token) => ({
   ...token,
   url: buildBrowseUrl(token),
   browseTypes: buildBrowseTypes(token),
+  displayDescription: tokenDetailView.buildDisplayDescription(token, { lookups }),
   searchText: buildSearchText(token)
 }));
 

@@ -97,10 +97,6 @@ permalink: /browse/index.html
         <div class="browse-card-body">
           <div class="browse-card-topline">
             <strong class="browse-card-id">{{ token.displayId }}</strong>
-
-            <span class="browse-badge browse-badge-{{ token.catalogStatus or token.status }}">
-              {{ (token.catalogStatus or token.status) | capitalize }}
-            </span>
           </div>
 
           <p class="browse-card-title">{{ token.title }}</p>
