@@ -78,7 +78,7 @@ function buildQuickFacts(token, context = {}) {
   }
 
   if (Array.isArray(token.rel) && token.rel.length) {
-    addRow("Catalog cross-reference", token.rel.join(", "));
+    addRow("Cat. X-Ref.", token.rel.join(", "));
   }
 
   addRow("Classification", lookupValue(token.classification, lookups.classification));
