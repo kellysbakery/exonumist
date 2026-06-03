@@ -141,11 +141,12 @@ function buildQuickFacts(token, context = {}) {
 
   addRow("Cat. X-Ref.", formatCatalogCrossReferences(token));
 
-  if (!isUnlisted) {
-    addRow("Minor Variety", token.var);
+  if (
+    token.classification &&
+    String(token.classification).trim().toLowerCase() !== "regular"
+  ) {
+    addRow("Classification", lookupValue(token.classification, lookups.classification));
   }
-
-  addRow("Classification", lookupValue(token.classification, lookups.classification));
   addRow("Material", lookupValue(token.mat, lookups.materials));
   addRow("Size", hasMeaningfulValue(token.size) ? `${token.size} mm` : "");
   addRow("Shape", lookupValue(token.form, lookups.forms));
