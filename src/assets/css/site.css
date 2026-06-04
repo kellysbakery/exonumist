@@ -2309,6 +2309,15 @@ body:has(.inquiry-bar.is-visible) .shell {
 }
 
 @media (max-width: 640px) {
+  .available-meta-count,
+  .available-meta-updated {
+    display: block;
+  }
+
+  .available-meta-updated {
+    margin-top: 0.12rem;
+  }
+
   .available-mode-switch {
     display: grid;
     width: 100%;
