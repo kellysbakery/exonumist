@@ -2,6 +2,7 @@ const allTokens = require("./allTokens");
 const collectionTokenUrls = require("./collectionTokenUrls");
 const lookups = require("./lookups.json");
 const tokenDetailView = require("./tokenDetailView");
+const tokenSort = require("./tokenSort");
 
 const TYPE_ORDER = [
   "transit",
@@ -102,14 +103,16 @@ function buildSearchText(token) {
   return parts.join(" ").toLowerCase();
 }
 
-const tokens = allTokens.map((token) => ({
-  ...token,
-  url: buildBrowseUrl(token),
-  browseTypes: buildBrowseTypes(token),
-  displayDescription: tokenDetailView.buildDisplayDescription(token, { lookups }),
-  catalogCrossReferences: tokenDetailView.normalizeCatalogCrossReferences(token),
-  searchText: buildSearchText(token)
-}));
+const tokens = allTokens
+  .map((token) => ({
+    ...token,
+    url: buildBrowseUrl(token),
+    browseTypes: buildBrowseTypes(token),
+    displayDescription: tokenDetailView.buildDisplayDescription(token, { lookups }),
+    catalogCrossReferences: tokenDetailView.normalizeCatalogCrossReferences(token),
+    searchText: buildSearchText(token)
+  }))
+  .sort(tokenSort.compareTokens);
 
 module.exports = {
   tokens,

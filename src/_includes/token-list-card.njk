@@ -7,7 +7,6 @@
     data-search="{{ tokenCardSearchText | default('') | escape }}"
   {% endif %}>
   <article class="card token-list-card">
-
     <div class="token-list-card-media">
       {% set imagePath = "" %}
       {% if tokenCardToken | hasTokenThumb("o") %}
@@ -29,7 +28,7 @@
     </div>
 
     <div class="token-list-card-body">
-      <span class="eyebrow">
+      <span class="token-card-id">
         {{ tokenCardToken.displayId }}
       </span>
 
@@ -50,20 +49,22 @@
         </p>
       {% endif %}
 
-      <p class="token-list-card-meta">
-        {% if tokenCardToken.mat %}
-          {{ tokenCardToken.mat | lookup(lookups.materials) }}
-        {% endif %}
-        {% if tokenCardToken.size %}
-          · {{ tokenCardToken.size }} mm
-        {% endif %}
-        {% if tokenCardToken.form %}
-          · {{ tokenCardToken.form | lookup(lookups.forms) }}
-        {% endif %}
-        {% if tokenCardToken.symbol %}
-          · {{ tokenCardToken.symbol | lookup(lookups.symbols) }}
-        {% endif %}
-      </p>
+      <div class="token-card-meta-row">
+        <p class="token-list-card-meta">
+          {% if tokenCardToken.mat %}
+            {{ tokenCardToken.mat | lookup(lookups.materials) }}
+          {% endif %}
+          {% if tokenCardToken.size %}
+            · {{ tokenCardToken.size }} mm
+          {% endif %}
+          {% if tokenCardToken.form %}
+            · {{ tokenCardToken.form | lookup(lookups.forms) }}
+          {% endif %}
+          {% if tokenCardToken.symbol %}
+            · {{ tokenCardToken.symbol | lookup(lookups.symbols) }}
+          {% endif %}
+        </p>
+      </div>
     </div>
 
   </article>

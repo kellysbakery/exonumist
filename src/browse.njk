@@ -70,7 +70,6 @@ permalink: /browse/index.html
       data-borough="{{ token.borough }}"
       data-types="{{ token.browseTypes | join(' ') }}"
       data-search="{{ token.searchText }}">
-
       <a class="card-link browse-card-link" href="{{ token.url or '/' }}">
         <div class="browse-card-media">
           {% set browseImagePath = "" %}
@@ -95,15 +94,15 @@ permalink: /browse/index.html
         </div>
 
         <div class="browse-card-body">
-          <div class="browse-card-topline">
-            <strong class="browse-card-id">{{ token.displayId }}</strong>
-          </div>
+          <span class="token-card-id">{{ token.displayId }}</span>
 
           <p class="browse-card-title">{{ token.title }}</p>
 
-          <p class="meta browse-card-meta">
-            {{ token.borough }} · {{ lookups.type[token.type] }}
-          </p>
+          <div class="token-card-meta-row browse-card-meta-row">
+            <p class="meta browse-card-meta">
+              {{ token.borough }} · {{ lookups.type[token.type] }}
+            </p>
+          </div>
         </div>
       </a>
     </article>

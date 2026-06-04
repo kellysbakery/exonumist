@@ -723,6 +723,16 @@ h2 {
   padding: 16px;
 }
 
+.token-card-id {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+}
+
 .token-list-card-media {
   display: flex;
   align-items: center;
@@ -828,11 +838,15 @@ h2 {
   line-height: 1.45;
 }
 
-.token-list-card-meta {
+.token-card-meta-row {
   margin-top: auto;
+  padding-top: 6px;
+}
+
+.token-list-card-meta {
+  margin: 0;
   color: var(--muted);
   font-size: 0.88rem;
-  padding-top: 6px;
 }
 
 /* =========================================================
@@ -1609,18 +1623,9 @@ h2 {
 
 .browse-card-body {
   margin-top: auto;
-}
-
-.browse-card-topline {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
-  margin-bottom: 0.35rem;
-}
-
-.browse-card-id {
-  font-size: 1.05rem;
+  flex: 1;
+  flex-direction: column;
 }
 
 .browse-card-title {
@@ -1629,6 +1634,7 @@ h2 {
 }
 
 .browse-card-meta {
+  margin: 0;
   font-size: 0.92rem;
   opacity: 0.8;
 }

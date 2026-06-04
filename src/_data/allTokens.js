@@ -2,9 +2,9 @@ const fs = require("fs");
 const path = require("path");
 
 const TOKEN_FILE_ORDER = [
-  "manhattan.json",
   "bronx.json",
   "brooklyn.json",
+  "manhattan.json",
   "queens.json",
   "staten-island.json",
   "specialty.json"

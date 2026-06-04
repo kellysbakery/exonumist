@@ -2327,7 +2327,7 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-bl",
+    "sort": "630-at-1-error",
     "collectionArea": "manhattan",
     "catalogStatus": "listed",
     "classification": "error"
@@ -2383,7 +2383,7 @@
     ],
     "home": false,
     "pub": true,
-    "sort": "pp-am",
+    "sort": "630-ay-presentation",
     "collectionArea": "manhattan",
     "catalogStatus": "listed",
     "classification": "regular"
@@ -2415,7 +2415,7 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "998-c-a",
+    "sort": "630-d-pattern-copper-a",
     "collectionArea": "manhattan",
     "catalogStatus": "listed",
     "classification": "regular"
@@ -2447,7 +2447,7 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "998-c-b",
+    "sort": "630-d-pattern-copper-b",
     "collectionArea": "manhattan",
     "catalogStatus": "listed",
     "classification": "regular"
@@ -2479,7 +2479,7 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "998-d-a",
+    "sort": "630-d-pattern-lead-a",
     "collectionArea": "manhattan",
     "catalogStatus": "listed",
     "classification": "regular"
@@ -2511,7 +2511,7 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "998-d-b",
+    "sort": "630-d-pattern-lead-b",
     "collectionArea": "manhattan",
     "catalogStatus": "listed",
     "classification": "regular"
@@ -2540,7 +2540,7 @@
     ],
     "home": true,
     "pub": true,
-    "sort": "manhattan-unlisted-0001",
+    "sort": "630-as-presentation-gold",
     "collectionArea": "manhattan",
     "catalogStatus": "unlisted",
     "classification": "regular"
@@ -2571,7 +2571,7 @@
     ],
     "home": false,
     "pub": true,
-    "sort": "odd-0001",
+    "sort": "630-at-2-double-obverse",
     "collectionArea": "manhattan",
     "catalogStatus": "unlisted",
     "classification": "error"
@@ -2602,7 +2602,7 @@
     ],
     "home": false,
     "pub": true,
-    "sort": "odd-0002",
+    "sort": "630-ao-unpunched",
     "collectionArea": "manhattan",
     "catalogStatus": "unlisted",
     "classification": "error"
@@ -2633,7 +2633,7 @@
     ],
     "home": false,
     "pub": true,
-    "sort": "odd-0003",
+    "sort": "630-ap-unpunched",
     "collectionArea": "manhattan",
     "catalogStatus": "unlisted",
     "classification": "error"
@@ -2664,7 +2664,7 @@
     ],
     "home": false,
     "pub": true,
-    "sort": "odd-0004",
+    "sort": "630-as-mispunched",
     "collectionArea": "manhattan",
     "catalogStatus": "unlisted",
     "classification": "error"
@@ -2695,7 +2695,7 @@
     ],
     "home": false,
     "pub": true,
-    "sort": "odd-0005",
+    "sort": "630-as-unpunched",
     "collectionArea": "manhattan",
     "catalogStatus": "unlisted",
     "classification": "error"
@@ -2726,7 +2726,7 @@
     ],
     "home": false,
     "pub": true,
-    "sort": "630-at-counterfeit",
+    "sort": "630-at-3-counterfeit",
     "collectionArea": "manhattan",
     "catalogStatus": "unlisted",
     "classification": "counterfeit"
@@ -2903,7 +2903,7 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "998-n",
+    "sort": "630-am-z-pattern",
     "collectionArea": "manhattan",
     "catalogStatus": "listed",
     "classification": "regular"
