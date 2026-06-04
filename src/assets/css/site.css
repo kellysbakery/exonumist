@@ -1575,14 +1575,23 @@ h2 {
 }
 
 .browse-card {
+  padding: 16px;
+  border-color: rgba(120, 98, 71, 0.18);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 253, 248, 0.98),
+    rgba(255, 250, 242, 0.94)
+  );
   transition:
     transform 0.15s ease,
-    box-shadow 0.15s ease;
+    box-shadow 0.15s ease,
+    border-color 0.15s ease;
 }
 
 .browse-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+  border-color: var(--interactive-border);
+  box-shadow: 0 12px 28px rgba(82, 63, 39, 0.08);
 }
 
 .browse-card-link {
@@ -1594,31 +1603,48 @@ h2 {
 }
 
 .browse-card-media {
-  height: 190px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 0.75rem;
-  border-radius: 0.75rem;
-  background: rgba(0, 0, 0, 0.02);
+  min-height: 150px;
+  max-height: 170px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.28);
 }
 
 .browse-card-media img {
   max-width: 100%;
-  max-height: 180px;
+  max-height: 150px;
   object-fit: contain;
 }
 
 .browse-card-placeholder {
-  width: 100%;
-  height: 100%;
+  width: 108px;
+  height: 108px;
+  gap: 0.2rem;
+  padding: 0.45rem;
   border-color: rgba(120, 98, 71, 0.22);
-  border-radius: 0.75rem;
+  border-radius: 12px;
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.38),
     rgba(245, 238, 226, 0.52)
   );
+}
+
+.browse-card-placeholder .token-placeholder-icon {
+  font-size: 1.65rem;
+}
+
+.browse-card-placeholder .token-placeholder-title {
+  font-size: 0.78rem;
+}
+
+.browse-card-placeholder .token-placeholder-subtitle {
+  font-size: 0.62rem;
+  line-height: 1.2;
 }
 
 .browse-card-body {
@@ -1811,6 +1837,16 @@ h2 {
 
   .token-list-card-image {
     max-width: 135px;
+    max-height: 120px;
+  }
+
+  .browse-card-media {
+    min-height: 120px;
+    max-height: 140px;
+    margin-bottom: 10px;
+  }
+
+  .browse-card-media img {
     max-height: 120px;
   }
 
