@@ -120,8 +120,10 @@ permalink: /available/index.html
               data-catalog-id="{{ item.catalogId }}"
               data-catalog-value="{{ item.value }}"
               data-group-name="{{ group.stateName }}">
-              <span class="for-sale-id">{{ item.catalogId }}</span>
-              <span class="for-sale-price">Price: {{ item.value }}</span>
+              <span class="for-sale-token-info">
+                <span class="for-sale-id">{{ item.catalogId }}</span>
+                <span class="for-sale-price">Price: {{ item.value }}</span>
+              </span>
               <button
                 class="inquiry-toggle"
                 type="button"

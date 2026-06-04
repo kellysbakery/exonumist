@@ -2261,8 +2261,13 @@ body:has(.inquiry-bar.is-visible) .shell {
   border-bottom: 0;
 }
 
+.for-sale-token-info {
+  display: contents;
+}
+
 .for-sale-id {
   font-weight: 700;
+  font-style: normal;
   letter-spacing: 0.02em;
 }
 
@@ -2304,16 +2309,51 @@ body:has(.inquiry-bar.is-visible) .shell {
 }
 
 @media (max-width: 640px) {
-  .for-sale-item {
-    grid-template-columns: 1fr;
-    gap: 0.4rem;
-    align-items: start;
+  .available-mode-switch {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.2rem;
+    padding: 0.2rem;
+    border-radius: 0.55rem;
+    overflow: visible;
   }
 
-  .for-sale-price,
-  .inquiry-toggle {
-    justify-self: start;
+  .available-mode-button {
+    min-height: 2.5rem;
+    padding: 0.55rem 0.6rem;
+    border-radius: 0.4rem;
+    font-size: 0.94rem;
+    line-height: 1.2;
+  }
+
+  .for-sale-item {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .for-sale-token-info {
+    display: flex;
+    min-width: 0;
+    flex: 1 1 auto;
+    flex-direction: column;
+    gap: 0.12rem;
+    align-items: flex-start;
+  }
+
+  .for-sale-price {
+    color: var(--muted);
+    font-size: 0.92rem;
     text-align: left;
+  }
+
+  .for-sale-item .inquiry-toggle {
+    flex: 0 0 auto;
+    padding: 0.38rem 0.7rem;
+    font-size: 0.9rem;
+    text-align: center;
   }
 
   .inquiry-bar {
