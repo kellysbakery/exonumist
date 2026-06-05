@@ -89,14 +89,14 @@
 
   function openModal(img, trigger) {
     previouslyFocusedElement = trigger || document.activeElement;
-    modal.style.display = "flex";
+    modal.hidden = false;
     modalImg.src = img.src;
     modalImg.alt = img.alt;
     closeBtn.focus();
   }
 
   function closeModal() {
-    modal.style.display = "none";
+    modal.hidden = true;
     modalImg.src = "";
     modalImg.alt = "";
 
@@ -121,7 +121,7 @@
     img.addEventListener("click", function () {
       if (this.closest(".token-image-button")) return;
 
-      modal.style.display = "flex";
+      modal.hidden = false;
       modalImg.src = this.src;
       modalImg.alt = this.alt;
     });
@@ -138,7 +138,7 @@
   });
 
   document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape" && modal.style.display !== "none") {
+    if (event.key === "Escape" && !modal.hidden) {
       closeModal();
     }
   });
