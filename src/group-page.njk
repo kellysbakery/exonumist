@@ -12,10 +12,7 @@ eleventyComputed:
 {% set groupTokens = [] %}
 
 {% for token in allTokens %}
-  {% set legacyGroupMatch = token.groups and (group.key in token.groups) %}
-  {% set errorsGroupMatch = group.key == "errors" and (token.classification == "error" or token.classification == "oddity" or (token.groups and ("errors" in token.groups))) %}
-
-  {% if legacyGroupMatch or errorsGroupMatch %}
+  {% if token.groups and (group.key in token.groups) %}
     {% set groupTokens = groupTokens.concat([token]) %}
   {% endif %}
 {% endfor %}
