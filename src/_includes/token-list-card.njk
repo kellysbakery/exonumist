@@ -49,20 +49,12 @@
         </p>
       {% endif %}
 
+      {% set tokenCardMetaParts = tokenDetailView.buildCardMetaParts(tokenCardToken, { lookups: lookups }) %}
       <div class="token-card-meta-row">
         <p class="token-list-card-meta">
-          {% if tokenCardToken.mat %}
-            {{ tokenCardToken.mat | lookup(lookups.materials) }}
-          {% endif %}
-          {% if tokenCardToken.size %}
-            · {{ tokenCardToken.size }} mm
-          {% endif %}
-          {% if tokenCardToken.form %}
-            · {{ tokenCardToken.form | lookup(lookups.forms) }}
-          {% endif %}
-          {% if tokenCardToken.symbol %}
-            · {{ tokenCardToken.symbol | lookup(lookups.symbols) }}
-          {% endif %}
+          {% for part in tokenCardMetaParts %}
+            {% if not loop.first %}· {% endif %}{{ part }}
+          {% endfor %}
         </p>
       </div>
     </div>

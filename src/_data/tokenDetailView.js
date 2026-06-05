@@ -185,6 +185,21 @@ function buildMetaParts(token, context = {}) {
 }
 
 /**
+ * Build compact metadata shown on token listing cards.
+ */
+function buildCardMetaParts(token, context = {}) {
+  const { lookups = {} } = context;
+  const parts = [];
+
+  if (token.mat) parts.push(lookupValue(token.mat, lookups.materials));
+  if (token.size) parts.push(`${token.size} mm`);
+  if (token.form) parts.push(lookupValue(token.form, lookups.forms));
+  if (token.symbol) parts.push(lookupValue(token.symbol, lookups.symbols));
+
+  return parts.filter(Boolean);
+}
+
+/**
  * Build badge chips shown near the title.
  */
 function buildBadges(token, context = {}) {
@@ -363,6 +378,7 @@ module.exports = {
   findPrevNext,
   findSection,
   buildPagerItem,
+  buildCardMetaParts,
   buildDisplayDescription,
   formatCatalogCrossReferences,
   normalizeCatalogCrossReferences,
