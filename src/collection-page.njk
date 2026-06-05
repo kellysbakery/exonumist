@@ -59,31 +59,7 @@ eleventyComputed:
       {% set tokenCardUrl = token.collectionUrl %}
       {% set tokenCardFilterable = true %}
       {% set tokenCardDescription = tokenDetailView.buildDisplayDescription(token, { lookups: lookups }) %}
-      {% set tokenCardCatalogCrossReferences = tokenDetailView.normalizeCatalogCrossReferences(token) %}
-      {% set tokenCardSearchText %}
-        {{ token.collectionId }}
-        {{ token.displayId }}
-        {% if token.rel %}
-          {{ token.rel | join(" ") }}
-        {% endif %}
-        {% for ref in tokenCardCatalogCrossReferences %}
-          {{ ref.catalog }}
-          {{ ref.id }}
-        {% endfor %}
-        {{ token.title }}
-        {{ tokenCardDescription }}
-        {{ token.desc }}
-        {{ token.obv }}
-        {{ token.rev }}
-        {{ token.notes }}
-        {{ token.catalogStatus or token.status }}
-        {{ token.classification }}
-        {{ token.type }}
-        {{ token.borough }}
-        {{ token.mat | lookup(lookups.materials) }}
-        {{ token.form | lookup(lookups.forms) }}
-        {{ token.symbol | lookup(lookups.symbols) }}
-      {% endset %}
+      {% set tokenCardSearchText = tokenDetailView.buildCollectionCardSearchText(token, { lookups: lookups }) %}
       {% include "token-list-card.njk" %}
     {% endfor %}
   </div>

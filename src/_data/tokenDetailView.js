@@ -199,6 +199,36 @@ function buildCardMetaParts(token, context = {}) {
   return parts.filter(Boolean);
 }
 
+function buildCollectionCardSearchText(token, context = {}) {
+  const { lookups = {} } = context;
+  const catalogCrossReferences = normalizeCatalogCrossReferences(token);
+  const displayDescription = buildDisplayDescription(token, { lookups });
+
+  const parts = [
+    token.collectionId || "",
+    token.displayId || "",
+    Array.isArray(token.rel) ? token.rel.join(" ") : "",
+    catalogCrossReferences
+      .flatMap((ref) => [ref.catalog, ref.id])
+      .join(" "),
+    token.title || "",
+    displayDescription,
+    token.desc || "",
+    token.obv || "",
+    token.rev || "",
+    token.notes || "",
+    token.catalogStatus || token.status || "",
+    token.classification || "",
+    token.type || "",
+    token.borough || "",
+    lookupValue(token.mat, lookups.materials),
+    lookupValue(token.form, lookups.forms),
+    lookupValue(token.symbol, lookups.symbols)
+  ];
+
+  return parts.filter(Boolean).join(" ");
+}
+
 /**
  * Build badge chips shown near the title.
  */
@@ -379,6 +409,7 @@ module.exports = {
   findSection,
   buildPagerItem,
   buildCardMetaParts,
+  buildCollectionCardSearchText,
   buildDisplayDescription,
   formatCatalogCrossReferences,
   normalizeCatalogCrossReferences,
