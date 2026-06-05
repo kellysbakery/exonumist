@@ -4,19 +4,6 @@ const lookups = require("./lookups.json");
 const tokenDetailView = require("./tokenDetailView");
 const tokenSort = require("./tokenSort");
 
-const TYPE_ORDER = [
-  "transit",
-  "error",
-  "pattern",
-  "timetable",
-  "counterfeit",
-  "fantasy",
-  "presentation",
-  "club",
-  "zonecheck",
-  "transportation-related"
-];
-
 function uniqueSorted(values) {
   return [...new Set(values.filter(Boolean))].sort((a, b) =>
     a.localeCompare(b)
@@ -24,9 +11,11 @@ function uniqueSorted(values) {
 }
 
 function uniqueTypeSorted(values) {
+  const typeOrder = Array.isArray(lookups.typeOrder) ? lookups.typeOrder : [];
+
   return [...new Set(values.filter(Boolean))].sort((a, b) => {
-    const aIndex = TYPE_ORDER.indexOf(a);
-    const bIndex = TYPE_ORDER.indexOf(b);
+    const aIndex = typeOrder.indexOf(a);
+    const bIndex = typeOrder.indexOf(b);
 
     if (aIndex !== -1 && bIndex !== -1) {
       return aIndex - bIndex;

@@ -21,6 +21,18 @@
     "transportation-related": "Transportation Related",
     "zonecheck": "Zone Check"
   },
+  "typeOrder": [
+    "transit",
+    "error",
+    "pattern",
+    "timetable",
+    "counterfeit",
+    "fantasy",
+    "presentation",
+    "club",
+    "zonecheck",
+    "transportation-related"
+  ],
   "materials": {
     "A": "Aluminum",
     "B": "Brass",
