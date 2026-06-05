@@ -2416,6 +2416,7 @@
     "home": false,
     "pub": true,
     "sort": "630-d-pattern-copper-a",
+    "displaySort": "630-d-c-1-998-c-a",
     "collectionArea": "manhattan",
     "catalogStatus": "listed",
     "classification": "regular"
@@ -2448,6 +2449,7 @@
     "home": false,
     "pub": true,
     "sort": "630-d-pattern-copper-b",
+    "displaySort": "630-d-c-2-998-c-b",
     "collectionArea": "manhattan",
     "catalogStatus": "listed",
     "classification": "regular"
@@ -2480,6 +2482,7 @@
     "home": false,
     "pub": true,
     "sort": "630-d-pattern-lead-a",
+    "displaySort": "630-d-c-3-998-d-a",
     "collectionArea": "manhattan",
     "catalogStatus": "listed",
     "classification": "regular"
@@ -2512,6 +2515,7 @@
     "home": false,
     "pub": true,
     "sort": "630-d-pattern-lead-b",
+    "displaySort": "630-d-c-4-998-d-b",
     "collectionArea": "manhattan",
     "catalogStatus": "listed",
     "classification": "regular"
@@ -2904,6 +2908,7 @@
     "home": false,
     "pub": true,
     "sort": "630-am-z-pattern",
+    "displaySort": "630-am-z-998-n",
     "collectionArea": "manhattan",
     "catalogStatus": "listed",
     "classification": "regular"

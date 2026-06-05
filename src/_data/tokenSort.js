@@ -1,17 +1,5 @@
 const LETTERS = "abcdefghijklmnopqrstuvwxyz";
 
-const DISPLAY_SORT_OVERRIDES = {
-  // New York & Harlaem Railroad pattern pieces:
-  // display them with the NY630D family, after NY630Dc and before NY630E.
-  NY998Ca: "630-d-c-1-998-c-a",
-  NY998Cb: "630-d-c-2-998-c-b",
-  NY998Da: "630-d-c-3-998-d-a",
-  NY998Db: "630-d-c-4-998-d-b",
-
-  // Proposed NYC subway pattern before NY630AO.
-  NY998N: "630-am-z-998-n"
-};
-
 function normalize(value) {
   return String(value || "").trim();
 }
@@ -22,7 +10,7 @@ function displayIdKey(token) {
 
 function effectiveSort(token) {
   const displayId = displayIdKey(token);
-  return DISPLAY_SORT_OVERRIDES[displayId] || normalize(token.sort || displayId);
+  return normalize(token.displaySort || token.sort || displayId);
 }
 
 function splitSort(value) {
