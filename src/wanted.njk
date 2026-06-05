@@ -22,52 +22,36 @@ permalink: /wanted/index.html
         pieces already represented here.
       </p>
 
-      {# Specific catalog tokens marked with wanted: true in token JSON files #}
-      {% set wantedTokens = [] %}
-      {% for token in allTokens %}
-        {% if token.wanted %}
-          {% set wantedTokens = wantedTokens.concat([token]) %}
-        {% endif %}
-      {% endfor %}
-
-      {% if wantedTokens.length %}
+      {% if wantedView.wantedTokens.length %}
         <h2>Currently Seeking</h2>
 
         <div class="wanted-token-list">
-          {% for token in wantedTokens %}
-            <a class="wanted-token-link" href="{{ collectionTokenUrls[token.id | lower] or collectionTokenUrls[token.displayId | lower] or '/' }}">
-              <span class="wanted-token-badge">Wanted</span>
+          {% for token in wantedView.wantedTokens %}
+            <a class="wanted-token-link" href="{{ token.url }}">
+              <span class="wanted-token-badge">{{ token.badgeLabel }}</span>
 
-              <strong>{{ token.displayId }}</strong>
+              <strong>{{ token.id }}</strong>
 
               <span>{{ token.title }}</span>
 
               <span class="wanted-token-meta">
-                {% if token.mat %}{{ token.mat | lookup(lookups.materials) }}{% endif %}
-                {% if token.counterstamp %}
-                  {% if token.mat %} · {% endif %}{{ token.counterstamp }} counterstamp
-                {% endif %}
-                {% if token.type and token.type != "transit" %}
-                  {% if token.mat or token.counterstamp %} · {% endif %}{{ token.type | lookup(lookups.type) }}
-                {% endif %}
+                {% for part in token.metaParts %}
+                  {% if not loop.first %} · {% endif %}{{ part }}
+                {% endfor %}
               </span>
             </a>
           {% endfor %}
         </div>
       {% endif %}
 
-      {# General want-list entries from src/_data/wantList.json #}
-      {% if wantList and wantList.length %}
+      {% if wantedView.hasWantList %}
         <h2 class="wanted-secondary-heading">Other Wanted Material</h2>
 
         <ul class="prose-width">
-          {% for item in wantList | sort(attribute="sort") %}
-            {% if item.visibility != "private" and item.status == "wanted" %}
-              <li>
-                <strong>{{ item.title }}</strong>
-                <!-- {% if item.summary %} — {{ item.summary }}{% endif %} -->
-              </li>
-            {% endif %}
+          {% for item in wantedView.otherWantedItems %}
+            <li>
+              <strong>{{ item.title }}</strong>
+            </li>
           {% endfor %}
         </ul>
       {% endif %}
