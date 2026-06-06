@@ -2204,6 +2204,58 @@ h2 {
   display: none;
 }
 
+.matched-tokens-summary {
+  max-width: 700px;
+  margin: 0 0 1rem;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  background: rgba(239, 231, 218, 0.35);
+}
+
+.matched-tokens-summary[hidden],
+.matched-tokens-list[hidden] {
+  display: none;
+}
+
+.matched-tokens-summary h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+}
+
+.matched-tokens-summary p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+  font-weight: 700;
+}
+
+.matched-tokens-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.55rem;
+}
+
+.matched-token-link {
+  display: inline-flex;
+  padding: 0.2rem 0.48rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel);
+  color: var(--accent);
+  font-size: 0.88rem;
+  font-weight: 800;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.matched-token-link:hover,
+.matched-token-link:focus-visible {
+  border-color: var(--interactive-border);
+  background: var(--soft);
+}
+
 .inquiry-toggle {
   justify-self: end;
   padding: 0.38rem 0.65rem;

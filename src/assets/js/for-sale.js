@@ -9,8 +9,78 @@ function setElementHidden(element, isHidden) {
 let availableMode = "search";
 let wantListMatches = null;
 
+function getTokenTargetId(catalogId) {
+  return `available-token-${String(catalogId || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "")}`;
+}
+
+function formatTokenCount(count) {
+  return `${count} ${count === 1 ? "token" : "tokens"}`;
+}
+
+function resetMatchedTokensSummary() {
+  const summary = document.querySelector("[data-matched-tokens-summary]");
+  const count = document.querySelector("[data-matched-tokens-count]");
+  const list = document.querySelector("[data-matched-tokens-list]");
+
+  if (!summary || !count || !list) return;
+
+  count.textContent = "";
+  list.innerHTML = "";
+  setElementHidden(summary, true);
+}
+
+function updateMatchedTokensSummary(matchedCatalogIds) {
+  const summary = document.querySelector("[data-matched-tokens-summary]");
+  const count = document.querySelector("[data-matched-tokens-count]");
+  const list = document.querySelector("[data-matched-tokens-list]");
+
+  if (!summary || !count || !list) return;
+
+  list.innerHTML = "";
+
+  if (!(wantListMatches instanceof Set)) {
+    resetMatchedTokensSummary();
+    return;
+  }
+
+  const matchedIds = [...wantListMatches].filter((catalogId) =>
+    matchedCatalogIds.has(catalogId)
+  );
+
+  if (!matchedIds.length) {
+    count.textContent = "No tokens from your list are currently available.";
+    setElementHidden(list, true);
+    setElementHidden(summary, false);
+    return;
+  }
+
+  count.textContent = `${formatTokenCount(
+    matchedIds.length
+  )} from your list ${matchedIds.length === 1 ? "is" : "are"} currently available.`;
+  setElementHidden(list, false);
+
+  matchedIds.forEach((catalogId) => {
+    const link = document.createElement("a");
+
+    link.className = "matched-token-link";
+    link.href = `#${getTokenTargetId(catalogId)}`;
+    link.textContent = catalogId;
+    list.append(link);
+  });
+
+  setElementHidden(summary, false);
+}
+
 function setAvailableMode(mode) {
   availableMode = mode;
+
+  if (mode !== "want") {
+    wantListMatches = null;
+    resetMatchedTokensSummary();
+  }
 
   document.querySelectorAll("[data-available-mode-button]").forEach((button) => {
     const isActive = button.dataset.availableModeButton === mode;
@@ -42,6 +112,7 @@ function updateForSaleSearch() {
   const hasActiveFilter = Boolean(query || (isWantMode && hasWantListFilter));
   const totalAvailable = Number(resultsSummary?.dataset.forSaleTotal) || 0;
   let totalVisible = 0;
+  const matchedCatalogIds = new Set();
 
   groups.forEach((group) => {
     const items = group.querySelectorAll("[data-sale-item]");
@@ -56,10 +127,18 @@ function updateForSaleSearch() {
         ? !hasWantListFilter || wantListMatches.has(catalogId)
         : !query || searchText.includes(query);
 
+      if (catalogId && !item.id) {
+        item.id = getTokenTargetId(catalogId);
+      }
+
       setElementHidden(item, !isMatch);
 
       if (isMatch) {
         visibleInGroup += 1;
+
+        if (isWantMode && hasWantListFilter && wantListMatches.has(catalogId)) {
+          matchedCatalogIds.add(catalogId);
+        }
       }
     });
 
@@ -91,6 +170,12 @@ function updateForSaleSearch() {
       ? "No available tokens matched your want list."
       : "No available tokens match that catalog number.";
   setElementHidden(emptyMessage, totalVisible !== 0);
+
+  if (isWantMode && hasWantListFilter) {
+    updateMatchedTokensSummary(matchedCatalogIds);
+  } else {
+    resetMatchedTokensSummary();
+  }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -111,6 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.addEventListener("available:want-list-cleared", () => {
     wantListMatches = null;
+    resetMatchedTokensSummary();
     updateForSaleSearch();
   });
 

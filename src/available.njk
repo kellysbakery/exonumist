@@ -109,6 +109,16 @@ permalink: /available/index.html
       id="for-sale-total-phrase"></span> available tokens.
   </p>
 
+  <section
+    class="matched-tokens-summary"
+    data-matched-tokens-summary
+    aria-live="polite"
+    hidden>
+    <h2>Want list matches</h2>
+    <p data-matched-tokens-count></p>
+    <div class="matched-tokens-list" data-matched-tokens-list></div>
+  </section>
+
   <div class="for-sale-list">
     {% for group in forSale.groups %}
       <details class="for-sale-group" data-sale-group data-count="{{ group.items.length }}">
