@@ -70,7 +70,7 @@ permalink: /browse/index.html
       data-borough="{{ token.borough }}"
       data-types="{{ token.browseTypes | join(' ') }}"
       data-search="{{ token.searchText }}">
-      <a class="card-link browse-card-link" href="{{ token.url or '/' }}">
+      <a class="card-link browse-card-link" href="{{ token.url or '/' }}?from=browse">
         <div class="browse-card-media">
           {% set browseImagePath = "" %}
           {% if token | hasTokenThumb("o") %}

@@ -325,6 +325,8 @@ function buildTokenDetailView(token, context = {}) {
     breadcrumbItems = null,
     prevToken = null,
     nextToken = null,
+    globalPrevToken = null,
+    globalNextToken = null,
     detailShowPager = false,
     isUnlisted = false,
     lookups = {}
@@ -386,6 +388,19 @@ function buildTokenDetailView(token, context = {}) {
             tokenImagePath: helperFns.tokenImagePath
           }),
           next: buildPagerItem(nextToken, {
+            hasTokenImage: helperFns.hasTokenImage,
+            tokenImagePath: helperFns.tokenImagePath
+          })
+        }
+      : null,
+
+    browsePager: detailShowPager
+      ? {
+          prev: buildPagerItem(globalPrevToken, {
+            hasTokenImage: helperFns.hasTokenImage,
+            tokenImagePath: helperFns.tokenImagePath
+          }),
+          next: buildPagerItem(globalNextToken, {
             hasTokenImage: helperFns.hasTokenImage,
             tokenImagePath: helperFns.tokenImagePath
           })

@@ -1,4 +1,33 @@
 (function () {
+  function setupPagerContext() {
+    const collectionPager = document.querySelector('[data-token-pager="collection"]');
+    const browsePager = document.querySelector('[data-token-pager="browse"]');
+
+    if (!browsePager) return;
+
+    const params = new URLSearchParams(window.location.search);
+    let cameFromBrowse = params.get("from") === "browse";
+
+    if (!cameFromBrowse && document.referrer) {
+      try {
+        const referrerUrl = new URL(document.referrer);
+        cameFromBrowse =
+          referrerUrl.origin === window.location.origin &&
+          referrerUrl.pathname === "/browse/";
+      } catch (error) {
+        cameFromBrowse = false;
+      }
+    }
+
+    if (!cameFromBrowse) return;
+
+    if (collectionPager) {
+      collectionPager.hidden = true;
+    }
+
+    browsePager.hidden = false;
+  }
+
   function setupNotes() {
     const grids = document.querySelectorAll(".token-lower-grid");
 
@@ -80,6 +109,7 @@
 
   window.addEventListener("load", setupNotes);
   window.addEventListener("resize", setupNotes);
+  setupPagerContext();
 
   // Image modal functionality
   const modal = document.getElementById("image-modal");

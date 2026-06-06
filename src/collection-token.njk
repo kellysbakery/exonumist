@@ -18,6 +18,8 @@ eleventyComputed:
 
 {% set prevToken = collectionPage.previousToken %}
 {% set nextToken = collectionPage.nextToken %}
+{% set browsePrevToken = collectionPage.globalPreviousToken %}
+{% set browseNextToken = collectionPage.globalNextToken %}
 
 {% set detailView = tokenDetailView.buildTokenDetailView(token, {
   tokenId: token.displayId,
@@ -44,6 +46,8 @@ eleventyComputed:
   detailShowPager: true,
   prevToken: prevToken,
   nextToken: nextToken,
+  globalPrevToken: browsePrevToken,
+  globalNextToken: browseNextToken,
   isUnlisted: isUnlisted,
   lookups: lookups
 }) %}
