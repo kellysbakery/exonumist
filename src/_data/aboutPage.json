@@ -1,0 +1,10 @@
+{
+  "wantListCallout": {
+    "title": "Have something that fits?",
+    "url": "/wanted/",
+    "description": "See the Want List for tokens and related exonumia I’m currently looking for.",
+    "ctaLabel": "View the Want List →",
+    "image": "/assets/images/site/wantlist.png",
+    "imageAlt": "Want List"
+  }
+}

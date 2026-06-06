@@ -41,8 +41,7 @@ permalink: /about/index.html
 
       <p class="prose-width">
         While this site currently focuses on New York City transportation exonumia, my broader collection
-        includes Arcade, Hard Times, Civil War, Merchant, and Miscellaneous tokens — basically, interesting
-        shiny metal things with history behind them.
+        includes interesting tokens and exonumia with history behind them.
       </p>
 
       <p class="prose-width">
@@ -50,47 +49,28 @@ permalink: /about/index.html
         Undocumented items are included when they help document discoveries, varieties, errors,
         oddities, or related collecting areas.
       </p>
-      <p class="prose-width">
-        Have something I may be interested in? See my
-        <a href="/wanted/">Want List</a>.
-      </p>
     </div>
 
     <aside class="about-aside">
       <h3>Also Collecting</h3>
-      <ul>
-        <li>Civil War tokens</li>
-        <li>Hard Times tokens</li>
-        <li>Merchant tokens</li>
-        <li>Arcade tokens</li>
-        <li>Miscellaneous exonumia</li>
-      </ul>
+      <p>
+        Beyond NYC transportation tokens, I also collect Civil War, Hard Times, merchant, arcade,
+        and miscellaneous exonumia.
+      </p>
+
+      <div class="about-want-list-note">
+        <strong>{{ aboutPage.wantListCallout.title }}</strong>
+
+        <a class="about-want-list-link" href="{{ aboutPage.wantListCallout.url }}">
+          <span>{{ aboutPage.wantListCallout.ctaLabel }}</span>
+          <img
+            class="about-want-list-icon"
+            src="{{ aboutPage.wantListCallout.image }}"
+            alt="{{ aboutPage.wantListCallout.imageAlt }}" />
+        </a>
+      </div>
     </aside>
   </div>
-</section>
-
-<section class="section">
-  <h2>Free to Use</h2>
-
-  <p class="prose-width">
-    The goal of this site is to make the collection easy to browse, study, and share.
-  </p>
-
-  <p class="prose-width">
-    Unless otherwise noted, the original photos, descriptions, and site content on Exonumist.com
-    may be freely used, copied, downloaded, shared, and adapted for personal, educational,
-    research, and collector use. Credit to Exonumist.com is appreciated when practical.
-  </p>
-
-  <p class="prose-width">
-    Some catalog names, historical references, and identifying information may come from published
-    references or collector terminology. Those sources remain the property of their respective
-    authors or publishers.
-  </p>
-
-  <p class="prose-width">
-    Corrections, additions, and attribution requests are welcome.
-  </p>
 </section>
 
 <section class="section">
@@ -123,4 +103,28 @@ permalink: /about/index.html
       {% endif %}
     {% endfor %}
   </div>
+</section>
+
+<section class="section about-content-use">
+  <h2>Use of Site Content</h2>
+
+  <p class="prose-width">
+    The goal of this site is to make the collection easy to browse, study, and share.
+  </p>
+
+  <p class="prose-width">
+    Unless otherwise noted, the original photos, descriptions, and site content on Exonumist.com
+    may be freely used, copied, downloaded, shared, and adapted for personal, educational,
+    research, and collector use. Credit to Exonumist.com is appreciated when practical.
+  </p>
+
+  <p class="prose-width">
+    Some catalog names, historical references, and identifying information may come from published
+    references or collector terminology. Those sources remain the property of their respective
+    authors or publishers.
+  </p>
+
+  <p class="prose-width">
+    Corrections, additions, and attribution requests are welcome.
+  </p>
 </section>
