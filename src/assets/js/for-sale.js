@@ -29,6 +29,8 @@ function setAvailableMode(mode) {
 function updateForSaleSearch() {
   const input = document.querySelector("#for-sale-search-input");
   const visibleCount = document.querySelector("#for-sale-visible-count");
+  const resultsSummary = document.querySelector("#for-sale-results-summary");
+  const totalCountPhrase = document.querySelector("#for-sale-total-phrase");
   const emptyMessage = document.querySelector("#for-sale-empty");
   const groups = [...document.querySelectorAll("[data-sale-group]")];
 
@@ -37,6 +39,8 @@ function updateForSaleSearch() {
   const query = normalize(input.value);
   const isWantMode = availableMode === "want";
   const hasWantListFilter = wantListMatches instanceof Set;
+  const hasActiveFilter = Boolean(query || (isWantMode && hasWantListFilter));
+  const totalAvailable = Number(resultsSummary?.dataset.forSaleTotal) || 0;
   let totalVisible = 0;
 
   groups.forEach((group) => {
@@ -78,6 +82,10 @@ function updateForSaleSearch() {
   });
 
   visibleCount.textContent = totalVisible;
+  if (totalCountPhrase) {
+    totalCountPhrase.textContent = hasActiveFilter ? ` of ${totalAvailable}` : "";
+  }
+
   emptyMessage.textContent =
     isWantMode && hasWantListFilter
       ? "No available tokens matched your want list."

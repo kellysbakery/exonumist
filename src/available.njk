@@ -11,16 +11,24 @@ permalink: /available/index.html
     <span>/</span>
     <span>Available</span>
   </nav>
-  <h1>Available</h1>
+  <h1>Available Tokens</h1>
 
   <p class="section-intro">
-    Duplicate transportation tokens from my collection are available for sale or trade.
+    Duplicate transportation tokens from my collection may be available for sale or trade.
   </p>
 
-  <p class="for-sale-terms">
-    Please contact me to confirm current availability. Unless noted otherwise, prices are generally
-    based on Atwood-Coffee catalog value.
-  </p>
+  <div class="for-sale-terms">
+    <p>
+      These are duplicate tokens from my collection and may be available for sale or trade.
+      Please confirm availability before assuming a token is still available. Unless noted otherwise,
+      prices are based on Atwood-Coffee catalog value.
+    </p>
+
+    <a class="inline-icon-link" href="mailto:contact@exonumist.com">
+      <span class="inline-icon-link-icon" aria-hidden="true">✉</span>
+      <span>Confirm availability</span>
+    </a>
+  </div>
 
   <div class="available-mode-switch" aria-label="Available token search mode">
     <button
@@ -40,7 +48,6 @@ permalink: /available/index.html
   </div>
 
   <p class="section-intro available-meta">
-    <span class="available-meta-count"><strong>{{ forSale.total }}</strong> tokens available.</span>
     <span class="available-meta-updated">Last updated: {{ forSaleMeta.lastUpdated }}</span>
   </p>
 
@@ -94,11 +101,12 @@ permalink: /available/index.html
     </div>
   </div>
 
-  <p class="section-intro for-sale-results-summary">
-    <strong id="for-sale-visible-count">{{ forSale.total }}</strong>
-    of
-    <strong>{{ forSale.total }}</strong>
-    tokens shown.
+  <p
+    class="section-intro for-sale-results-summary"
+    id="for-sale-results-summary"
+    data-for-sale-total="{{ forSale.total }}">
+    Showing <strong id="for-sale-visible-count">{{ forSale.total }}</strong><span
+      id="for-sale-total-phrase"></span> available tokens.
   </p>
 
   <div class="for-sale-list">
