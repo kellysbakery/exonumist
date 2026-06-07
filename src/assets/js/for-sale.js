@@ -40,38 +40,13 @@ function updateMatchedTokensSummary(matchedCatalogIds) {
   if (!summary || !count || !list) return;
 
   list.innerHTML = "";
+  setElementHidden(summary, true);
+  setElementHidden(list, true);
 
   if (!(wantListMatches instanceof Set)) {
     resetMatchedTokensSummary();
     return;
   }
-
-  const matchedIds = [...wantListMatches].filter((catalogId) =>
-    matchedCatalogIds.has(catalogId)
-  );
-
-  if (!matchedIds.length) {
-    count.textContent = "No tokens from your list are currently available.";
-    setElementHidden(list, true);
-    setElementHidden(summary, false);
-    return;
-  }
-
-  count.textContent = `${formatTokenCount(
-    matchedIds.length
-  )} from your list ${matchedIds.length === 1 ? "is" : "are"} currently available.`;
-  setElementHidden(list, false);
-
-  matchedIds.forEach((catalogId) => {
-    const link = document.createElement("a");
-
-    link.className = "matched-token-link";
-    link.href = `#${getTokenTargetId(catalogId)}`;
-    link.textContent = catalogId;
-    list.append(link);
-  });
-
-  setElementHidden(summary, false);
 }
 
 function setAvailableMode(mode) {
@@ -102,6 +77,7 @@ function updateForSaleSearch() {
   const resultsSummary = document.querySelector("#for-sale-results-summary");
   const totalCountPhrase = document.querySelector("#for-sale-total-phrase");
   const emptyMessage = document.querySelector("#for-sale-empty");
+  const forSaleList = document.querySelector("[data-for-sale-list]");
   const groups = [...document.querySelectorAll("[data-sale-group]")];
 
   if (!input || !visibleCount || !emptyMessage) return;
@@ -160,6 +136,9 @@ function updateForSaleSearch() {
     totalVisible += visibleInGroup;
   });
 
+  const shouldHideGroupedResults =
+    isWantMode && hasWantListFilter && matchedCatalogIds.size > 0;
+
   visibleCount.textContent = totalVisible;
   if (totalCountPhrase) {
     totalCountPhrase.textContent = hasActiveFilter ? ` of ${totalAvailable}` : "";
@@ -169,13 +148,29 @@ function updateForSaleSearch() {
     isWantMode && hasWantListFilter
       ? "No available tokens matched your want list."
       : "No available tokens match that catalog number.";
-  setElementHidden(emptyMessage, totalVisible !== 0);
+  setElementHidden(
+    emptyMessage,
+    totalVisible !== 0 || shouldHideGroupedResults || (isWantMode && hasWantListFilter)
+  );
+
+  if (forSaleList) {
+    setElementHidden(forSaleList, shouldHideGroupedResults);
+  }
 
   if (isWantMode && hasWantListFilter) {
     updateMatchedTokensSummary(matchedCatalogIds);
   } else {
     resetMatchedTokensSummary();
   }
+}
+
+function hasUnselectedSearchMatch(query) {
+  return [...document.querySelectorAll("[data-sale-item]")].some((item) => {
+    const button = item.querySelector("[data-inquiry-toggle]");
+    const searchText = normalize(item.dataset.searchText || "");
+
+    return searchText.includes(query) && button?.getAttribute("aria-pressed") !== "true";
+  });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -198,6 +193,17 @@ document.addEventListener("DOMContentLoaded", () => {
     wantListMatches = null;
     resetMatchedTokensSummary();
     updateForSaleSearch();
+  });
+
+  document.addEventListener("available:inquiry-token-added", () => {
+    const query = normalize(input.value);
+
+    if (availableMode !== "search" || !query) return;
+    if (hasUnselectedSearchMatch(query)) return;
+
+    input.value = "";
+    updateForSaleSearch();
+    input.focus({ preventScroll: true });
   });
 
   input.addEventListener("input", updateForSaleSearch);

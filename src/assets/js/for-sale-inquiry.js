@@ -3,8 +3,10 @@
   const MAX_EMAIL_TOKENS = 50;
   const EMAIL_ADDRESS = "contact@exonumist.com";
   const EMAIL_SUBJECT = "Token availability inquiry";
+  const LETTERS = "abcdefghijklmnopqrstuvwxyz";
 
   const selected = new Map();
+  let inquiryPanelWasShown = false;
 
   function loadSelections() {
     try {
@@ -65,6 +67,97 @@
       .replace(/[^A-Z0-9]/g, "");
   }
 
+  function normalizeSortValue(value) {
+    return String(value || "").trim();
+  }
+
+  function catalogSortKey(catalogId) {
+    const normalized = normalizeSortValue(catalogId).toLowerCase();
+    const compactMatch = normalized.match(/^([a-z]+)(\d+)([a-z]*)$/);
+
+    if (!compactMatch) return normalized;
+
+    return compactMatch.slice(1).filter(Boolean).join(" ");
+  }
+
+  function splitSort(value) {
+    return catalogSortKey(value)
+      .split(/[-_\s]+/)
+      .filter(Boolean);
+  }
+
+  function letterRank(part) {
+    if (!/^[a-z]+$/.test(part)) return null;
+
+    let rank = 0;
+
+    for (let i = 0; i < part.length; i += 1) {
+      const index = LETTERS.indexOf(part[i]);
+      if (index === -1) return null;
+      rank = rank * 26 + index;
+    }
+
+    return part.length === 1 ? rank : 26 + rank;
+  }
+
+  function comparePart(a, b) {
+    if (a === b) return 0;
+
+    const aNumber = /^\d+$/.test(a) ? Number(a) : null;
+    const bNumber = /^\d+$/.test(b) ? Number(b) : null;
+
+    if (aNumber !== null && bNumber !== null) {
+      return aNumber - bNumber;
+    }
+
+    if (aNumber !== null) return -1;
+    if (bNumber !== null) return 1;
+
+    const aLetterRank = letterRank(a);
+    const bLetterRank = letterRank(b);
+
+    if (aLetterRank !== null && bLetterRank !== null) {
+      return aLetterRank - bLetterRank;
+    }
+
+    if (aLetterRank !== null) return -1;
+    if (bLetterRank !== null) return 1;
+
+    return a.localeCompare(b);
+  }
+
+  function compareSortKeys(aKey, bKey) {
+    const aParts = splitSort(aKey);
+    const bParts = splitSort(bKey);
+    const maxLength = Math.max(aParts.length, bParts.length);
+
+    for (let i = 0; i < maxLength; i += 1) {
+      const aPart = aParts[i];
+      const bPart = bParts[i];
+
+      if (aPart === undefined) return -1;
+      if (bPart === undefined) return 1;
+
+      const result = comparePart(aPart, bPart);
+      if (result !== 0) return result;
+    }
+
+    return 0;
+  }
+
+  function compareInquiryItems(a, b) {
+    const aCatalogId = normalizeSortValue(a.catalogId);
+    const bCatalogId = normalizeSortValue(b.catalogId);
+    const result = compareSortKeys(aCatalogId, bCatalogId);
+
+    if (result !== 0) return result;
+
+    return aCatalogId.localeCompare(bCatalogId, undefined, {
+      numeric: true,
+      sensitivity: "base"
+    });
+  }
+
   function getRowToken(row) {
     return {
       catalogId: row.dataset.catalogId || "",
@@ -81,6 +174,51 @@
       `${isSelected ? "Remove" : "Add"} ${catalogId} ${isSelected ? "from" : "to"} inquiry list`
     );
     button.textContent = isSelected ? "Added ✓" : "Add";
+  }
+
+  function getTokenTargetId(catalogId) {
+    return `available-token-${String(catalogId || "")
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-|-$/g, "")}`;
+  }
+
+  function createInquiryRow(item) {
+    const row = document.createElement("div");
+    const details = document.createElement("span");
+    const catalogId = document.createElement("a");
+    const meta = document.createElement("span");
+    const groupName = document.createElement("span");
+    const price = document.createElement("span");
+    const remove = document.createElement("button");
+
+    row.className = "inquiry-list-row";
+    details.className = "inquiry-list-details";
+
+    catalogId.className = "inquiry-list-token";
+    catalogId.href = `#${getTokenTargetId(item.catalogId)}`;
+    catalogId.textContent = item.catalogId;
+
+    meta.className = "inquiry-list-meta";
+
+    groupName.className = "inquiry-list-region";
+    groupName.textContent = item.groupName || "Area unavailable";
+
+    price.className = "inquiry-list-price";
+    price.textContent = item.catalogValue || "Price unavailable";
+
+    meta.append(groupName, price);
+    details.append(catalogId, meta);
+
+    remove.className = "inquiry-list-remove";
+    remove.type = "button";
+    remove.dataset.inquiryRemove = item.catalogId;
+    remove.setAttribute("aria-label", `Remove ${item.catalogId} from inquiry list`);
+    remove.textContent = "×";
+
+    row.append(details, remove);
+
+    return row;
   }
 
   function getAvailableTokenMap() {
@@ -183,9 +321,20 @@
       warning.hidden = !isOverLimit;
     });
 
-    document.querySelectorAll("[data-inquiry-bar]").forEach((bar) => {
-      bar.hidden = count === 0;
-      bar.classList.toggle("is-visible", count > 0);
+    document.querySelectorAll("[data-inquiry-panel]").forEach((panel) => {
+      panel.hidden = count === 0 && !inquiryPanelWasShown;
+    });
+
+    document.querySelectorAll("[data-inquiry-list]").forEach((list) => {
+      list.innerHTML = "";
+      [...selected.values()].sort(compareInquiryItems).forEach((item) => {
+        list.append(createInquiryRow(item));
+      });
+      list.hidden = count === 0;
+    });
+
+    document.querySelectorAll("[data-inquiry-empty]").forEach((empty) => {
+      empty.hidden = count !== 0;
     });
 
     document.querySelectorAll("[data-sale-item]").forEach((row) => {
@@ -198,12 +347,27 @@
     });
   }
 
+  function setSelections(tokens) {
+    selected.clear();
+
+    tokens.forEach((token) => {
+      if (token.catalogId) {
+        selected.set(token.catalogId, token);
+      }
+    });
+
+    saveSelections();
+    render();
+  }
+
   function toggleSelection(row) {
     const token = getRowToken(row);
 
     if (!token.catalogId) return;
 
-    if (selected.has(token.catalogId)) {
+    const wasSelected = selected.has(token.catalogId);
+
+    if (wasSelected) {
       selected.delete(token.catalogId);
     } else {
       selected.set(token.catalogId, token);
@@ -211,6 +375,16 @@
 
     saveSelections();
     render();
+
+    if (!wasSelected) {
+      document.dispatchEvent(
+        new CustomEvent("available:inquiry-token-added", {
+          detail: {
+            catalogId: token.catalogId
+          }
+        })
+      );
+    }
   }
 
   function matchWantList() {
@@ -228,9 +402,8 @@
     }
 
     let matched = 0;
-    let alreadySelected = 0;
-    let added = 0;
     const matchedCatalogIds = [];
+    const matchedTokens = [];
     const unmatched = [];
 
     candidates.forEach((candidate) => {
@@ -243,20 +416,11 @@
 
       matched += 1;
       matchedCatalogIds.push(token.catalogId);
-
-      if (selected.has(token.catalogId)) {
-        alreadySelected += 1;
-        return;
-      }
-
-      selected.set(token.catalogId, token);
-      added += 1;
+      matchedTokens.push(token);
     });
 
-    if (added > 0) {
-      saveSelections();
-      render();
-    }
+    inquiryPanelWasShown = true;
+    setSelections(matchedTokens);
 
     document.dispatchEvent(
       new CustomEvent("available:want-list-matched", {
@@ -266,40 +430,20 @@
       })
     );
 
-    if (matched > 0 && alreadySelected === matched) {
-      result.textContent = `${pluralize(
-        matched,
-        "available token",
-        "available tokens"
-      )} matched your want list. ${matched === 1 ? "It was" : "All were"} already in your inquiry list.${formatNotFound(
-        unmatched
-      )}`;
-      return;
-    }
-
-    if (matched > 0 && alreadySelected > 0) {
-      result.textContent = `${pluralize(
-        matched,
-        "available token",
-        "available tokens"
-      )} matched your want list. ${alreadySelected} ${alreadySelected === 1 ? "was" : "were"} already in your inquiry list.${formatNotFound(
-        unmatched
-      )}`;
-      return;
-    }
-
     if (matched > 0) {
       result.textContent = `${pluralize(
         matched,
         "available token",
         "available tokens"
-      )} matched your want list and ${added === 1 ? "was" : "were"} added to your inquiry list.${formatNotFound(
+      )} matched your want list and ${matched === 1 ? "was" : "were"} added to your inquiry list.${formatNotFound(
         unmatched
       )}`;
       return;
     }
 
-    result.textContent = "";
+    result.textContent = `No available tokens matched your want list.${formatNotFound(
+      unmatched
+    )}`;
   }
 
   function clearWantListMatch({ clearInput = false } = {}) {
@@ -323,6 +467,16 @@
 
   function clearSelections() {
     selected.clear();
+    inquiryPanelWasShown = Boolean(
+      document.querySelector("[data-want-list-result]")?.textContent.trim()
+    );
+    saveSelections();
+    render();
+  }
+
+  function removeSelection(catalogId) {
+    selected.delete(catalogId);
+    inquiryPanelWasShown = true;
     saveSelections();
     render();
   }
@@ -334,7 +488,7 @@
   }
 
   document.addEventListener("DOMContentLoaded", () => {
-    if (!document.querySelector("[data-inquiry-bar]")) return;
+    if (!document.querySelector("[data-inquiry-panel]")) return;
 
     loadSelections();
 
@@ -353,6 +507,14 @@
       .forEach((button) => {
         button.addEventListener("click", clearSelections);
       });
+
+    document.addEventListener("click", (event) => {
+      const remove = event.target.closest("[data-inquiry-remove]");
+
+      if (remove) {
+        removeSelection(remove.dataset.inquiryRemove || "");
+      }
+    });
 
     document.querySelectorAll("[data-want-list-match]").forEach((button) => {
       button.addEventListener("click", matchWantList);

@@ -119,7 +119,32 @@ permalink: /available/index.html
     <div class="matched-tokens-list" data-matched-tokens-list></div>
   </section>
 
-  <div class="for-sale-list">
+  <section
+    class="inquiry-panel"
+    data-inquiry-panel
+    aria-live="polite"
+    hidden>
+    <div class="inquiry-panel-header">
+      <div>
+        <h2>Inquiry list</h2>
+        <p class="inquiry-count" data-inquiry-bar-count>0 tokens selected</p>
+        <p class="inquiry-warning" data-inquiry-warning hidden>
+          Please limit your inquiry list to 50 tokens or fewer before sending an email.
+        </p>
+      </div>
+      <div class="inquiry-actions">
+        <button class="btn primary" type="button" data-inquiry-bar-email disabled>Email Inquiry</button>
+        <button class="btn" type="button" data-inquiry-bar-clear disabled>Clear List</button>
+      </div>
+    </div>
+    <div class="inquiry-list" data-inquiry-list></div>
+    <div class="inquiry-empty" data-inquiry-empty hidden>
+      <p>No tokens selected yet.</p>
+      <p>Add tokens to your inquiry list to review and email.</p>
+    </div>
+  </section>
+
+  <div class="for-sale-list" data-for-sale-list>
     {% for group in forSale.groups %}
       <details class="for-sale-group" data-sale-group data-count="{{ group.items.length }}">
         <summary>
@@ -161,19 +186,6 @@ permalink: /available/index.html
     No matching tokens found.
   </p>
 </section>
-
-<div class="inquiry-bar" data-inquiry-bar hidden>
-  <div>
-    <span class="inquiry-count" data-inquiry-bar-count>0 tokens selected</span>
-    <p class="inquiry-warning" data-inquiry-warning hidden>
-      Please limit your inquiry list to 50 tokens or fewer before sending an email.
-    </p>
-  </div>
-  <div class="inquiry-actions">
-    <button class="btn primary" type="button" data-inquiry-bar-email disabled>Email Inquiry</button>
-    <button class="btn" type="button" data-inquiry-bar-clear disabled>Clear List</button>
-  </div>
-</div>
 
 <script src="/assets/js/for-sale.js"></script>
 <script src="/assets/js/for-sale-inquiry.js"></script>
