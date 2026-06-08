@@ -98,6 +98,10 @@ function buildCatalogId(state, number, letter) {
   return `${state || ""}${number || ""}${letter || ""}`;
 }
 
+function buildDisplayCatalogId(state, number, letter) {
+  return [state, number, letter].filter(Boolean).join(" ");
+}
+
 module.exports = function () {
   const csv = fs.readFileSync(csvPath, "utf8").trim();
   const lines = csv.split(/\r?\n/);
@@ -113,6 +117,7 @@ module.exports = function () {
       letter,
       value,
       catalogId,
+      displayCatalogId: buildDisplayCatalogId(state, number, letter),
       searchText:
         `${catalogId} ${state} ${number} ${letter} ${value}`.toLowerCase()
     };
@@ -142,6 +147,7 @@ module.exports = function () {
     updated: now,
     updatedLabel: formatDate(now),
     total: rows.length,
+    items: rows,
     groups: sortedGroups
   };
 };

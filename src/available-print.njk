@@ -1,0 +1,43 @@
+---
+layout: base.njk
+title: Available Token Price List
+description: A print-friendly price list of available tokens.
+permalink: /available/print/index.html
+---
+
+<section class="section available-print-page">
+  <nav class="breadcrumb print-page-nav" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span>/</span>
+    <a href="/available/">Available</a>
+    <span>/</span>
+    <span>Price List</span>
+  </nav>
+
+  <header class="available-print-header">
+    <h1>Available Token Price List</h1>
+
+    <p class="section-intro">
+      Prices and availability are subject to confirmation.
+      Contact <a href="mailto:{{ contactPage.hero.email }}">{{ contactPage.hero.email }}</a>.
+    </p>
+
+    {% if forSaleMeta.lastUpdated %}
+      <p class="available-print-updated">Last updated: {{ forSaleMeta.lastUpdated }}</p>
+    {% endif %}
+
+    <div class="print-page-actions">
+      <button class="btn primary" type="button" onclick="window.print()">Print this list</button>
+      <a class="cta" href="/available/">Back to Available</a>
+    </div>
+  </header>
+
+  <div class="available-print-list" role="list" aria-label="Available token prices">
+    {% for item in forSale.items %}
+      <div class="available-print-row" role="listitem">
+        <span class="available-print-id">{{ item.displayCatalogId }}</span>
+        <span class="available-print-price">{{ item.value }}</span>
+      </div>
+    {% endfor %}
+  </div>
+</section>
