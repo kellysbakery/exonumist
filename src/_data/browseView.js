@@ -92,6 +92,27 @@ function buildSearchText(token) {
   return parts.join(" ").toLowerCase();
 }
 
+function lookupValue(code, table) {
+  if (!code || !table) return "";
+  return table[code] || table[String(code).toLowerCase()] || code;
+}
+
+function buildIdentifyingDetails(token) {
+  const parts = [];
+
+  if (token.mat) parts.push(lookupValue(token.mat, lookups.materials));
+  if (token.size) parts.push(`${token.size} mm`);
+  if (token.form) parts.push(lookupValue(token.form, lookups.forms));
+
+  if (token.counterstamp) {
+    parts.push(`${token.counterstamp} Counterstamp`);
+  } else if (token.symbol) {
+    parts.push(lookupValue(token.symbol, lookups.symbols));
+  }
+
+  return parts.filter(Boolean).slice(0, 4);
+}
+
 const tokens = allTokens
   .map((token) => ({
     ...token,
@@ -99,6 +120,7 @@ const tokens = allTokens
     browseTypes: buildBrowseTypes(token),
     displayDescription: tokenDetailView.buildDisplayDescription(token, { lookups }),
     catalogCrossReferences: tokenDetailView.normalizeCatalogCrossReferences(token),
+    identifyingDetails: buildIdentifyingDetails(token),
     searchText: buildSearchText(token)
   }))
   .sort(tokenSort.compareTokens);

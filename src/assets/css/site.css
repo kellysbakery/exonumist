@@ -976,6 +976,10 @@ h2 {
   padding-top: 6px;
 }
 
+.token-card-meta-row p + p {
+  margin-top: 0.25rem;
+}
+
 .token-list-card-meta {
   margin: 0;
   color: var(--muted);
@@ -1781,6 +1785,13 @@ h2 {
 .search-results-header h2 {
   margin: 0;
   font-size: 1.35rem;
+}
+
+.browse-card-details {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.35;
 }
 
 .browse-filter-group + .browse-filter-group {

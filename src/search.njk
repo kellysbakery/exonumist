@@ -122,6 +122,11 @@ permalink: /search/index.html
             <p class="meta browse-card-meta">
               {{ token.borough }} · {{ lookups.type[token.type] }}
             </p>
+            {% if token.identifyingDetails and token.identifyingDetails.length %}
+              <p class="meta browse-card-details">
+                {{ token.identifyingDetails | join(" · ") }}
+              </p>
+            {% endif %}
           </div>
         </div>
       </a>
