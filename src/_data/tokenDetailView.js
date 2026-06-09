@@ -303,6 +303,7 @@ function buildPagerItem(token, options = {}) {
   }
 
   return {
+    token,
     id,
     title: token.title || "",
     url,
@@ -311,6 +312,17 @@ function buildPagerItem(token, options = {}) {
         ? tokenImagePath(token, "o")
         : ""
   };
+}
+
+function buildPagerItemWithUrl(token, url, options = {}) {
+  const item = buildPagerItem(token, options);
+  if (!item) return null;
+
+  if (url) {
+    item.url = url;
+  }
+
+  return item;
 }
 
 /**
@@ -327,6 +339,7 @@ function buildTokenDetailView(token, context = {}) {
     nextToken = null,
     globalPrevToken = null,
     globalNextToken = null,
+    groupPagerContexts = [],
     detailShowPager = false,
     isUnlisted = false,
     lookups = {}
@@ -405,7 +418,32 @@ function buildTokenDetailView(token, context = {}) {
             tokenImagePath: helperFns.tokenImagePath
           })
         }
-      : null
+      : null,
+
+    groupPagers: detailShowPager
+      ? groupPagerContexts
+          .filter((groupPager) => groupPager && groupPager.key)
+          .map((groupPager) => ({
+            key: groupPager.key,
+            title: groupPager.title || groupPager.key,
+            prev: buildPagerItemWithUrl(
+              groupPager.prevToken,
+              groupPager.prevUrl,
+              {
+                hasTokenImage: helperFns.hasTokenImage,
+                tokenImagePath: helperFns.tokenImagePath
+              }
+            ),
+            next: buildPagerItemWithUrl(
+              groupPager.nextToken,
+              groupPager.nextUrl,
+              {
+                hasTokenImage: helperFns.hasTokenImage,
+                tokenImagePath: helperFns.tokenImagePath
+              }
+            )
+          }))
+      : []
   };
 }
 

@@ -35,7 +35,8 @@ eleventyComputed:
   <div class="grid-3 token-card-grid">
     {% for token in groupTokens %}
       {% set tokenCardToken = token %}
-      {% set tokenCardUrl = collectionTokenUrls[token.id | lower] or collectionTokenUrls[token.displayId | lower] or "/" %}
+      {% set tokenCardBaseUrl = collectionTokenUrls[token.id | lower] or collectionTokenUrls[token.displayId | lower] or "/" %}
+      {% set tokenCardUrl = tokenCardBaseUrl ~ "?from=group&group=" ~ group.key %}
       {% set tokenCardFilterable = false %}
       {% set tokenCardDescription = tokenDetailView.buildDisplayDescription(token, { lookups: lookups }) %}
       {% include "token-list-card.njk" %}

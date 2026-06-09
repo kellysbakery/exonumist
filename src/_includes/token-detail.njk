@@ -257,6 +257,59 @@
   </nav>
 {% endif %}
 
+  {% if detailView.groupPagers and detailView.groupPagers.length %}
+    {% for groupPager in detailView.groupPagers %}
+      {% if groupPager.prev or groupPager.next %}
+        <nav
+          class="token-pager"
+          aria-label="{{ groupPager.title }} token navigation"
+          data-token-pager="group"
+          data-token-group="{{ groupPager.key }}"
+          hidden>
+          <div class="token-pager-grid">
+            {% if groupPager.prev %}
+              <div class="token-pager-item token-pager-prev">
+                <a class="token-pager-link" href="{{ groupPager.prev.url }}?from=group&amp;group={{ groupPager.key }}"{% if groupPager.prev.token %} data-prev-obverse="{{ groupPager.prev.token | tokenImagePath('o') }}" data-prev-reverse="{{ groupPager.prev.token | tokenImagePath('r') }}"{% endif %}>
+                  <div class="token-pager-media">
+                    {% set pagerToken = groupPager.prev.token %}
+                    {% set pagerDirection = "prev" %}
+                    {% set pagerAltText = groupPager.prev.id ~ " obverse" %}
+                    {% include "token-pager-image.njk" %}
+                  </div>
+
+                  <div class="token-pager-content">
+                    <span class="token-pager-label">← Previous</span>
+                    <strong>{{ groupPager.prev.id }}</strong>
+                    <span>{{ groupPager.prev.title }}</span>
+                  </div>
+                </a>
+              </div>
+            {% endif %}
+
+            {% if groupPager.next %}
+              <div class="token-pager-item token-pager-next">
+                <a class="token-pager-link" href="{{ groupPager.next.url }}?from=group&amp;group={{ groupPager.key }}"{% if groupPager.next.token %} data-next-obverse="{{ groupPager.next.token | tokenImagePath('o') }}" data-next-reverse="{{ groupPager.next.token | tokenImagePath('r') }}"{% endif %}>
+                  <div class="token-pager-media">
+                    {% set pagerToken = groupPager.next.token %}
+                    {% set pagerDirection = "next" %}
+                    {% set pagerAltText = groupPager.next.id ~ " obverse" %}
+                    {% include "token-pager-image.njk" %}
+                  </div>
+
+                  <div class="token-pager-content">
+                    <span class="token-pager-label">Next →</span>
+                    <strong>{{ groupPager.next.id }}</strong>
+                    <span>{{ groupPager.next.title }}</span>
+                  </div>
+                </a>
+              </div>
+            {% endif %}
+          </div>
+        </nav>
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+
   <div
     id="image-modal"
     class="image-modal"

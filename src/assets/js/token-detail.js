@@ -2,11 +2,16 @@
   function setupPagerContext() {
     const collectionPager = document.querySelector('[data-token-pager="collection"]');
     const browsePager = document.querySelector('[data-token-pager="browse"]');
+    const groupPagers = [
+      ...document.querySelectorAll('[data-token-pager="group"]')
+    ];
 
-    if (!browsePager) return;
+    if (!browsePager && !groupPagers.length) return;
 
     const params = new URLSearchParams(window.location.search);
     let cameFromBrowse = params.get("from") === "search";
+    const cameFromGroup = params.get("from") === "group";
+    const groupKey = params.get("group") || "";
 
     if (!cameFromBrowse && document.referrer) {
       try {
@@ -19,13 +24,25 @@
       }
     }
 
-    if (!cameFromBrowse) return;
+    const matchingGroupPager =
+      cameFromGroup && groupKey
+        ? groupPagers.find((pager) => pager.dataset.tokenGroup === groupKey)
+        : null;
+
+    if (!cameFromBrowse && !matchingGroupPager) return;
 
     if (collectionPager) {
       collectionPager.hidden = true;
     }
 
-    browsePager.hidden = false;
+    if (cameFromBrowse && browsePager) {
+      browsePager.hidden = false;
+      return;
+    }
+
+    if (matchingGroupPager) {
+      matchingGroupPager.hidden = false;
+    }
   }
 
   function setupNotes() {
@@ -181,17 +198,15 @@
     }
   }
 
-  const prevLink = document.querySelector(".token-pager-prev a");
-  if (prevLink) {
-    preloadImage(prevLink.dataset.prevObverse);
-    preloadImage(prevLink.dataset.prevReverse);
-  }
+  document.querySelectorAll(".token-pager-prev a").forEach((link) => {
+    preloadImage(link.dataset.prevObverse);
+    preloadImage(link.dataset.prevReverse);
+  });
 
-  const nextLink = document.querySelector(".token-pager-next a");
-  if (nextLink) {
-    preloadImage(nextLink.dataset.nextObverse);
-    preloadImage(nextLink.dataset.nextReverse);
-  }
+  document.querySelectorAll(".token-pager-next a").forEach((link) => {
+    preloadImage(link.dataset.nextObverse);
+    preloadImage(link.dataset.nextReverse);
+  });
 
   // Preload HTML on hover for pagination links
   const prefetchedPages = new Set();
