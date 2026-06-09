@@ -297,8 +297,54 @@ h2 {
 }
 
 .footer-inner {
-  padding-top: 6px;
-  padding-bottom: 24px;
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-top: 18px;
+  padding-bottom: 28px;
+  border-top: 1px solid rgba(217, 210, 197, 0.82);
+}
+
+.footer-note {
+  max-width: 46rem;
+}
+
+.footer-note p {
+  margin: 0;
+}
+
+.footer-note p + p {
+  margin-top: 0.2rem;
+}
+
+.footer-nav {
+  display: flex;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  gap: 0.22rem 0.62rem;
+  justify-content: flex-end;
+}
+
+.footer-nav a {
+  color: var(--accent);
+  font-size: 0.88rem;
+  font-weight: 600;
+  opacity: 0.78;
+  text-decoration: none;
+  text-underline-offset: 0.1em;
+}
+
+.footer-nav a:hover,
+.footer-nav a:focus-visible {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.footer-nav a:focus-visible {
+  outline: 3px solid rgba(116, 88, 54, 0.28);
+  outline-offset: 3px;
+  border-radius: 0.25rem;
 }
 
 /* =========================================================
@@ -1239,7 +1285,7 @@ h2 {
   margin-top: auto;
   padding-top: 0.9rem;
   color: var(--accent);
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   font-weight: 700;
   line-height: 1.25;
 }
@@ -1412,7 +1458,7 @@ h2 {
 .wanted-token-meta {
   margin-top: 0.35rem;
   color: var(--muted);
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   line-height: 1.3;
 }
 
@@ -1710,7 +1756,7 @@ h2 {
 .search-filter-title {
   margin: 0 0 0.7rem;
   color: var(--muted);
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
@@ -1891,7 +1937,7 @@ h2 {
 
 .browse-card-meta {
   margin: 0;
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   opacity: 0.8;
 }
 
@@ -2043,6 +2089,16 @@ h2 {
 
   .nav a {
     padding: 0.26rem 0.5rem;
+  }
+
+  .footer-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  .footer-nav {
+    justify-content: flex-start;
   }
 
   .search-controls {
@@ -2691,8 +2747,8 @@ h2 {
 .for-sale-item {
   display: grid;
   grid-template-columns: minmax(8rem, 1fr) auto auto;
-  gap: 1rem;
-  align-items: baseline;
+  gap: 1.5rem;
+  align-items: flex-start;
   padding: 0.45rem 1rem;
   border-bottom: 1px solid rgba(217, 210, 197, 0.65);
   transition:
@@ -2815,7 +2871,7 @@ h2 {
 
   .for-sale-price {
     color: var(--muted);
-    font-size: 0.92rem;
+    font-size: 0.88rem;
     text-align: left;
   }
 
@@ -2863,7 +2919,7 @@ h2 {
     flex-direction: row;
     gap: 0.35rem;
     color: var(--muted);
-    font-size: 0.92rem;
+    font-size: 0.88rem;
   }
 
   .inquiry-list-region::after {
