@@ -2150,6 +2150,10 @@ h2 {
   }
 
   .footer-nav {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    width: 100%;
+    gap: 0.38rem 1rem;
     justify-content: flex-start;
   }
 
@@ -3088,6 +3092,32 @@ h2 {
   .token-pager-link:focus-visible,
   .browse-chip:hover {
     transform: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .footer-note {
+    max-width: 100%;
+  }
+
+  .footer-nav {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    gap: 0.35rem 0.9rem;
+    justify-content: flex-start;
+    max-width: 100%;
+  }
+
+  .footer-nav a {
+    font-size: 0.88rem;
+    line-height: 1.2;
+    opacity: 0.82;
+  }
+}
+
+@media (max-width: 340px) {
+  .footer-nav {
+    grid-template-columns: repeat(2, max-content);
   }
 }
 
