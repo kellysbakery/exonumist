@@ -62,7 +62,7 @@ description: Collector-focused reference for New York City transportation tokens
   <h2>Collection by Borough</h2>
 
   <p class="section-intro">
-    Choose a borough to view tokens from that part of the collection.
+    View the collection by borough, from local transit lines to subway-related issues.
   </p>
 
   <div class="home-section-grid">
@@ -73,6 +73,7 @@ description: Collector-focused reference for New York City transportation tokens
             <div class="home-section-card-body">
               <strong class="home-section-card-title">{{ area.title }}</strong>
               <p class="home-section-card-desc">{{ area.description }}</p>
+              <span class="home-section-card-action" aria-hidden="true">View {{ area.title }} →</span>
             </div>
 
             {% if area.cardImage %}

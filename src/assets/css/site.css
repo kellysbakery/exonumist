@@ -1199,7 +1199,7 @@ h2 {
 .home-section-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
+  gap: 18px;
 }
 
 .home-section-card {
@@ -1219,6 +1219,7 @@ h2 {
   display: flex;
   flex-direction: column;
   min-width: 0;
+  min-height: 100%;
 }
 
 .home-section-card-title {
@@ -1232,6 +1233,15 @@ h2 {
   margin: 0;
   color: var(--muted);
   line-height: 1.5;
+}
+
+.home-section-card-action {
+  margin-top: auto;
+  padding-top: 0.9rem;
+  color: var(--accent);
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.25;
 }
 
 .home-section-card-media {
@@ -1924,6 +1934,15 @@ h2 {
 
   .home-section-grid {
     grid-template-columns: 1fr;
+  }
+
+  .home-section-card-layout {
+    align-items: center;
+  }
+
+  .home-section-card-media {
+    align-self: center;
+    align-items: center;
   }
 
   h1 {
