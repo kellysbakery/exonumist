@@ -108,6 +108,13 @@ a {
   color: #ffffff;
 }
 
+.nav a[aria-current="page"] {
+  color: #ffffff;
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
 .shell {
   max-width: 1200px;
   margin: 0 auto;
@@ -1555,7 +1562,7 @@ h2 {
 
 /* =========================================================
    BROWSE PAGE
-   Used by: /browse/ filter controls and token result cards
+   Used by: /search/ filter controls and token result cards
    ========================================================= */
 
 .browse-controls {

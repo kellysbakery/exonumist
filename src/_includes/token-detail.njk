@@ -214,11 +214,11 @@
 {% endif %}
 
   {% if detailView.browsePager and (detailView.browsePager.prev or detailView.browsePager.next) %}
-  <nav class="token-pager" aria-label="Browse token navigation" data-token-pager="browse" hidden>
+  <nav class="token-pager" aria-label="Search token navigation" data-token-pager="browse" hidden>
     <div class="token-pager-grid">
       {% if detailView.browsePager.prev %}
         <div class="token-pager-item token-pager-prev">
-          <a class="token-pager-link" href="{{ detailView.browsePager.prev.url }}?from=browse"{% if browsePrevToken %} data-prev-obverse="{{ browsePrevToken | tokenImagePath('o') }}" data-prev-reverse="{{ browsePrevToken | tokenImagePath('r') }}"{% endif %}>
+          <a class="token-pager-link" href="{{ detailView.browsePager.prev.url }}?from=search"{% if browsePrevToken %} data-prev-obverse="{{ browsePrevToken | tokenImagePath('o') }}" data-prev-reverse="{{ browsePrevToken | tokenImagePath('r') }}"{% endif %}>
             <div class="token-pager-media">
               {% set pagerToken = browsePrevToken %}
               {% set pagerDirection = "prev" %}
@@ -237,7 +237,7 @@
 
       {% if detailView.browsePager.next %}
         <div class="token-pager-item token-pager-next">
-          <a class="token-pager-link" href="{{ detailView.browsePager.next.url }}?from=browse"{% if browseNextToken %} data-next-obverse="{{ browseNextToken | tokenImagePath('o') }}" data-next-reverse="{{ browseNextToken | tokenImagePath('r') }}"{% endif %}>
+          <a class="token-pager-link" href="{{ detailView.browsePager.next.url }}?from=search"{% if browseNextToken %} data-next-obverse="{{ browseNextToken | tokenImagePath('o') }}" data-next-reverse="{{ browseNextToken | tokenImagePath('r') }}"{% endif %}>
             <div class="token-pager-media">
               {% set pagerToken = browseNextToken %}
               {% set pagerDirection = "next" %}

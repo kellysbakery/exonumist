@@ -1,19 +1,21 @@
 ---
 layout: base.njk
-title: Browse Tokens
-description: Browse transportation tokens by borough and type, including cataloged and undocumented material.
-permalink: /browse/index.html
+title: Search the Collection
+description: Search the collection by catalog number, borough, material, token text, group, collecting area, and type.
+permalink: /search/index.html
 ---
 
 <section class="section">
   <nav class="breadcrumb" aria-label="Breadcrumb">
     <a href="/">Home</a>
     <span>/</span>
-    <span>Browse</span>
+    <span>Search</span>
   </nav>
 
-  <h1>Browse Tokens</h1>
-  <p class="section-intro">Browse across the Collection by borough and token type.</p>
+  <h1>Search the Collection</h1>
+  <p class="section-intro">
+    Search the collection by catalog number, borough, material, token text, group, or collecting area.
+  </p>
 
   <div class="card browse-controls">
     <div class="browse-search-group">
@@ -22,7 +24,7 @@ permalink: /browse/index.html
         type="text"
         id="browse-search"
         class="browse-search-input"
-        placeholder="Search by ID, title, borough, type, material, or notes..." />
+        placeholder="Search by catalog number, borough, material, token text, group, or area..." />
     </div>
 
     <div class="browse-filter-group" data-filter-group="borough">
@@ -70,7 +72,7 @@ permalink: /browse/index.html
       data-borough="{{ token.borough }}"
       data-types="{{ token.browseTypes | join(' ') }}"
       data-search="{{ token.searchText }}">
-      <a class="card-link browse-card-link" href="{{ token.url or '/' }}?from=browse">
+      <a class="card-link browse-card-link" href="{{ token.url or '/' }}?from=search">
         <div class="browse-card-media">
           {% set browseImagePath = "" %}
           {% if token | hasTokenThumb("o") %}

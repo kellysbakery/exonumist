@@ -110,15 +110,15 @@ Cross-cutting collections:
 src/_data/groups.json
 ```
 
-### Browse View
+### Search View
 
-Browse filters and presentation logic:
+Search filters and presentation logic:
 
 ```text
 src/_data/browseView.js
 ```
 
-Responsible for filter generation, display ordering, and browse-page view models.
+Responsible for filter generation, display ordering, and search-page view models.
 
 ### Token Detail View
 
@@ -189,7 +189,7 @@ Thumbnail filenames mirror the source image names and are intended to be regener
 
 Collection landing page and primary entry point to the site.
 
-### Browse
+### Search
 
 Interactive filtering and searching across the collection.
 

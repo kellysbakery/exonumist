@@ -6,14 +6,14 @@
     if (!browsePager) return;
 
     const params = new URLSearchParams(window.location.search);
-    let cameFromBrowse = params.get("from") === "browse";
+    let cameFromBrowse = params.get("from") === "search";
 
     if (!cameFromBrowse && document.referrer) {
       try {
         const referrerUrl = new URL(document.referrer);
         cameFromBrowse =
           referrerUrl.origin === window.location.origin &&
-          referrerUrl.pathname === "/browse/";
+          referrerUrl.pathname === "/search/";
       } catch (error) {
         cameFromBrowse = false;
       }
