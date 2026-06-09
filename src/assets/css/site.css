@@ -364,6 +364,7 @@ h2 {
 .card-link .resource-card {
   height: 100%;
   transition:
+    background 0.15s ease,
     transform 0.15s ease,
     box-shadow 0.15s ease,
     border-color 0.15s ease;
@@ -372,15 +373,19 @@ h2 {
 .card-link:hover .card,
 .card-link:hover .resource-card {
   transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--interactive-shadow-medium);
   border-color: var(--interactive-border);
+  background: rgba(255, 253, 248, 0.98);
 }
 
 .card-link:focus-visible .card,
 .card-link:focus-visible .resource-card {
   outline: 3px solid rgba(116, 88, 54, 0.28);
   outline-offset: 4px;
+  transform: translateY(-3px);
+  box-shadow: var(--interactive-shadow-medium);
   border-color: var(--interactive-border);
+  background: rgba(255, 253, 248, 0.98);
 }
 
 .utility-link,
@@ -962,15 +967,23 @@ h2 {
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.55);
   transition:
+    background 0.15s ease,
     transform 0.15s ease,
     box-shadow 0.15s ease,
     border-color 0.15s ease;
 }
 
-.token-pager-link:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.05);
+.token-pager-link:hover,
+.token-pager-link:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: var(--interactive-shadow-soft);
   border-color: var(--interactive-border);
+  background: rgba(255, 253, 248, 0.86);
+}
+
+.token-pager-link:focus-visible {
+  outline: 3px solid rgba(116, 88, 54, 0.28);
+  outline-offset: 4px;
 }
 
 .token-pager-media {
@@ -1696,15 +1709,31 @@ h2 {
     rgba(255, 250, 242, 0.94)
   );
   transition:
+    background 0.15s ease,
     transform 0.15s ease,
     box-shadow 0.15s ease,
     border-color 0.15s ease;
 }
 
-.browse-card:hover {
+.browse-card:hover,
+.browse-card:focus-within {
   transform: translateY(-3px);
   border-color: var(--interactive-border);
-  box-shadow: 0 12px 28px rgba(82, 63, 39, 0.08);
+  box-shadow: var(--interactive-shadow-medium);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 253, 248, 1),
+    rgba(255, 250, 242, 0.98)
+  );
+}
+
+.browse-card:focus-within {
+  outline: 3px solid rgba(116, 88, 54, 0.28);
+  outline-offset: 4px;
+}
+
+.browse-card-link:focus-visible {
+  outline: none;
 }
 
 .browse-card-link {
@@ -2552,6 +2581,9 @@ h2 {
   align-items: baseline;
   padding: 0.45rem 1rem;
   border-bottom: 1px solid rgba(217, 210, 197, 0.65);
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease;
 }
 
 .for-sale-group[hidden],
@@ -2566,8 +2598,10 @@ h2 {
   background: rgba(239, 231, 218, 0.32);
 }
 
-.for-sale-item:hover {
+.for-sale-item:hover,
+.for-sale-item:focus-within {
   background: rgba(239, 231, 218, 0.65);
+  border-bottom-color: var(--interactive-border);
 }
 
 .for-sale-item:last-child {
@@ -2730,6 +2764,32 @@ h2 {
   .want-list-actions .btn {
     flex: 1;
     text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-link .card,
+  .card-link .resource-card,
+  .hero-feature-card,
+  .browse-card,
+  .token-pager-link,
+  .browse-chip,
+  .for-sale-item {
+    transition: none;
+  }
+
+  .card-link:hover .card,
+  .card-link:hover .resource-card,
+  .card-link:focus-visible .card,
+  .card-link:focus-visible .resource-card,
+  .hero-feature .card-link:hover .hero-feature-card,
+  .hero-feature .card-link:focus-visible .hero-feature-card,
+  .browse-card:hover,
+  .browse-card:focus-within,
+  .token-pager-link:hover,
+  .token-pager-link:focus-visible,
+  .browse-chip:hover {
+    transform: none;
   }
 }
 
