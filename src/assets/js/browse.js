@@ -5,6 +5,7 @@
   const count = document.getElementById("browse-count");
   const reset = document.getElementById("browse-reset");
   const searchInput = document.getElementById("browse-search");
+  const emptyState = document.getElementById("browse-empty-state");
 
   let searchTerm = "";
   let searchTimeout;
@@ -130,6 +131,10 @@
 
     count.textContent = `${visible} of ${cards.length} shown`;
 
+    if (emptyState) {
+      emptyState.hidden = visible > 0;
+    }
+
     updateChipCounts(selected);
     syncChipPressedState();
 
@@ -168,6 +173,8 @@
 
   reset.addEventListener("click", function () {
     chips.forEach((chip) => chip.classList.add("is-active"));
+    searchTerm = "";
+    searchInput.value = "";
     applyFilters();
   });
 

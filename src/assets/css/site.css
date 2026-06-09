@@ -1965,6 +1965,34 @@ h2 {
   opacity: 0.8;
 }
 
+.browse-empty-state {
+  margin-top: 1rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid rgba(122, 84, 43, 0.42);
+  border-left: 5px solid var(--accent);
+  border-radius: 8px;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 250, 242, 0.98),
+      rgba(246, 234, 214, 0.88)
+    );
+  box-shadow: 0 10px 24px rgba(82, 58, 32, 0.08);
+  color: var(--muted);
+}
+
+.browse-empty-state strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--text);
+}
+
+.browse-empty-state p {
+  margin: 0;
+  max-width: 64ch;
+  line-height: 1.5;
+}
+
 .browse-badge {
   font-size: 0.75rem;
   padding: 0.2rem 0.45rem;
