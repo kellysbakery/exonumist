@@ -88,31 +88,45 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 18px;
+  gap: 8px;
   color: #ddd3c3;
   font-size: 0.94rem;
 }
 
 .nav a {
+  padding: 0.28rem 0.62rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
   color: #e8dfd1;
   font-weight: 500;
   letter-spacing: 0.005em;
   opacity: 0.92;
   transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
     opacity 0.15s ease,
     color 0.15s ease;
 }
 
-.nav a:hover {
+.nav a:hover,
+.nav a:focus-visible {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.07);
   opacity: 1;
   color: #ffffff;
 }
 
+.nav a:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.34);
+  outline-offset: 2px;
+}
+
 .nav a[aria-current="page"] {
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.12);
   color: #ffffff;
   opacity: 1;
-  text-decoration: underline;
-  text-underline-offset: 0.18em;
+  text-decoration: none;
 }
 
 .shell {
@@ -1896,13 +1910,13 @@ h2 {
   }
 
   .nav {
-    gap: 10px;
+    gap: 6px;
     font-size: 0.88rem;
     line-height: 1.2;
   }
 
   .nav a {
-    padding: 2px 0;
+    padding: 0.26rem 0.5rem;
   }
 
   .section,
@@ -2809,5 +2823,16 @@ h2 {
   .available-print-price {
     flex: 0 0 auto;
     white-space: nowrap;
+  }
+}
+
+@media (max-width: 390px) {
+  .nav {
+    gap: 3px;
+    font-size: 0.78rem;
+  }
+
+  .nav a {
+    padding: 0.2rem 0.34rem;
   }
 }
