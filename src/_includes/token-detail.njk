@@ -41,7 +41,7 @@
 </script>
 
 <section class="token-shell">
-  <nav class="breadcrumb" aria-label="Breadcrumb">
+  <nav class="breadcrumb" aria-label="Breadcrumb" data-token-breadcrumb="collection">
     {% for crumb in detailView.breadcrumbItems %}
       {% if crumb.url %}
         <a href="{{ crumb.url }}">{{ crumb.label }}</a>
@@ -51,6 +51,25 @@
       {% endif %}
     {% endfor %}
   </nav>
+
+  {% if detailView.groupPagers and detailView.groupPagers.length %}
+    {% for groupPager in detailView.groupPagers %}
+      {% if groupPager.url %}
+        <nav
+          class="breadcrumb"
+          aria-label="Breadcrumb"
+          data-token-breadcrumb="group"
+          data-token-group="{{ groupPager.key }}"
+          hidden>
+          <a href="/">Home</a>
+          <span>/</span>
+          <a href="{{ groupPager.url }}">{{ groupPager.title }}</a>
+          <span>/</span>
+          <span aria-current="page">{{ detailView.tokenId }}</span>
+        </nav>
+      {% endif %}
+    {% endfor %}
+  {% endif %}
 
   <h1>{{ detailView.tokenId }}</h1>
 

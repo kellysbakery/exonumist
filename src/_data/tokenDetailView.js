@@ -426,6 +426,7 @@ function buildTokenDetailView(token, context = {}) {
           .map((groupPager) => ({
             key: groupPager.key,
             title: groupPager.title || groupPager.key,
+            url: groupPager.url || "",
             prev: buildPagerItemWithUrl(
               groupPager.prevToken,
               groupPager.prevUrl,

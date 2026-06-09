@@ -5,8 +5,14 @@
     const groupPagers = [
       ...document.querySelectorAll('[data-token-pager="group"]')
     ];
+    const collectionBreadcrumb = document.querySelector(
+      '[data-token-breadcrumb="collection"]'
+    );
+    const groupBreadcrumbs = [
+      ...document.querySelectorAll('[data-token-breadcrumb="group"]')
+    ];
 
-    if (!browsePager && !groupPagers.length) return;
+    if (!browsePager && !groupPagers.length && !groupBreadcrumbs.length) return;
 
     const params = new URLSearchParams(window.location.search);
     let cameFromBrowse = params.get("from") === "search";
@@ -28,8 +34,16 @@
       cameFromGroup && groupKey
         ? groupPagers.find((pager) => pager.dataset.tokenGroup === groupKey)
         : null;
+    const matchingGroupBreadcrumb =
+      cameFromGroup && groupKey
+        ? groupBreadcrumbs.find(
+            (breadcrumb) => breadcrumb.dataset.tokenGroup === groupKey
+          )
+        : null;
 
-    if (!cameFromBrowse && !matchingGroupPager) return;
+    if (!cameFromBrowse && !matchingGroupPager && !matchingGroupBreadcrumb) {
+      return;
+    }
 
     if (collectionPager) {
       collectionPager.hidden = true;
@@ -38,6 +52,11 @@
     if (cameFromBrowse && browsePager) {
       browsePager.hidden = false;
       return;
+    }
+
+    if (matchingGroupBreadcrumb && collectionBreadcrumb) {
+      collectionBreadcrumb.hidden = true;
+      matchingGroupBreadcrumb.hidden = false;
     }
 
     if (matchingGroupPager) {

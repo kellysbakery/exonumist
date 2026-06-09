@@ -36,6 +36,7 @@ eleventyComputed:
       {% set groupPagerContexts = groupPagerContexts.concat([{
         key: group.key,
         title: group.title,
+        url: urlHelpers.groupUrl(group.key),
         prevToken: groupPrevNext.prev,
         prevUrl: collectionTokenUrls[groupPrevNext.prev.id | lower] or collectionTokenUrls[groupPrevNext.prev.displayId | lower] or "",
         nextToken: groupPrevNext.next,
