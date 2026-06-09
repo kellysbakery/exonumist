@@ -500,15 +500,18 @@ h2 {
 
 .token-subtitle {
   margin: 0 0 0.55rem;
+  max-width: 62ch;
   font-size: 1.2rem;
   font-weight: 600;
   color: var(--text);
+  line-height: 1.35;
 }
 
 .token-meta-line {
   margin: 0 0 1rem;
   font-size: 0.95rem;
   color: var(--muted);
+  line-height: 1.45;
 }
 
 .meta {
@@ -525,17 +528,18 @@ h2 {
 }
 
 .badge {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.4);
   border: 1px solid var(--line);
   opacity: 0.85;
   border-radius: 999px;
-  padding: 0.35rem 0.72rem;
+  padding: 0.38rem 0.74rem;
   font-size: 0.78rem;
   line-height: 1.2;
 }
 
 .token-summary {
   max-width: 72ch;
+  margin-bottom: 1.15rem;
 }
 
 .token-summary p {
@@ -554,6 +558,7 @@ h2 {
 
 .token-image-card {
   margin: 0;
+  min-width: 0;
   padding: 1rem 1rem 1.15rem;
   border: 1px solid rgba(120, 98, 71, 0.22);
   border-radius: 16px;
@@ -678,7 +683,7 @@ h2 {
 
 .token-lower-grid {
   display: grid;
-  grid-template-columns: minmax(300px, 0.9fr) minmax(0, 1.1fr);
+  grid-template-columns: minmax(290px, 0.86fr) minmax(0, 1.14fr);
   gap: 20px;
   align-items: start;
 }
@@ -692,12 +697,13 @@ h2 {
 
 .token-quickfacts h2,
 .token-notes-section h2 {
-  margin-bottom: 0.9rem;
+  margin-bottom: 0.75rem;
   font-size: 1.35rem;
+  line-height: 1.2;
 }
 
 .facts {
-  padding: 18px;
+  padding: 4px 18px;
   box-shadow: none;
   background: rgba(255, 255, 255, 0.55);
 }
@@ -715,9 +721,9 @@ h2 {
 
 .facts-row {
   display: grid;
-  grid-template-columns: 170px 1fr;
-  gap: 12px;
-  padding: 0.72rem 0;
+  grid-template-columns: minmax(9.5rem, 0.45fr) minmax(0, 1fr);
+  gap: 14px;
+  padding: 0.85rem 0;
   border-bottom: 1px solid #e7e0d2;
   align-items: start;
 }
@@ -728,18 +734,20 @@ h2 {
 
 .facts dt {
   color: var(--muted);
-  font-size: 0.84rem;
+  font-size: 0.78rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.03em;
   white-space: nowrap;
+  line-height: 1.35;
 }
 
 .facts dd {
   margin: 0;
   font-weight: 600;
-  font-size: 0.95rem;
-  line-height: 1.5;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
 }
 
 .token-notes-section {
@@ -763,14 +771,14 @@ h2 {
 }
 
 .notes-content {
-  padding: 1.1rem 1.1rem 4.25rem;
+  padding: 1.15rem 1.2rem 4.25rem;
   color: var(--text);
 }
 
 .notes-content p {
   margin: 0 0 1rem;
-  max-width: 74ch;
-  line-height: 1.72;
+  max-width: 70ch;
+  line-height: 1.78;
   white-space: pre-line;
 }
 
@@ -805,7 +813,8 @@ h2 {
   bottom: 1rem;
   border: 0;
   background: rgba(255, 253, 248, 0.99);
-  padding: 0.2rem 0.45rem;
+  min-height: 2.25rem;
+  padding: 0.35rem 0.55rem;
   font: inherit;
   font-weight: 700;
   color: var(--accent);
@@ -2011,7 +2020,7 @@ h2 {
   }
 
   .facts-row {
-    grid-template-columns: 155px 1fr;
+    grid-template-columns: minmax(8.75rem, 0.42fr) minmax(0, 1fr);
   }
 
   .token-list-card-media {
@@ -2123,26 +2132,93 @@ h2 {
     padding: 16px;
   }
 
+  .token-shell h1 {
+    margin-bottom: 0.5rem;
+    font-size: clamp(2rem, 13vw, 2.55rem);
+    line-height: 1;
+    overflow-wrap: anywhere;
+  }
+
   .token-subtitle {
     font-size: 1.05rem;
+    line-height: 1.4;
   }
 
   .token-meta-line {
     font-size: 0.9rem;
   }
 
+  .badges {
+    gap: 0.42rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .badge {
+    padding: 0.42rem 0.68rem;
+  }
+
+  .token-summary {
+    margin-bottom: 1rem;
+  }
+
+  .token-images {
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+
+  .token-image-card {
+    padding: 0.8rem 0.8rem 0.9rem;
+    border-radius: 14px;
+  }
+
+  .token-image,
+  .placeholder {
+    margin-bottom: 0.65rem;
+  }
+
+  .token-face-text,
+  .token-image-caption {
+    font-size: 0.95rem;
+    line-height: 1.48;
+  }
+
+  .token-lower-grid {
+    gap: 16px;
+  }
+
+  .token-quickfacts,
+  .token-notes-section {
+    padding: 14px;
+  }
+
+  .facts {
+    padding: 0 14px;
+    border-radius: 14px;
+  }
+
   .facts-row {
     grid-template-columns: 1fr;
-    gap: 6px;
+    gap: 4px;
+    padding: 0.8rem 0;
   }
 
   .facts dt {
-    font-size: 0.78rem;
+    font-size: 0.76rem;
     white-space: normal;
   }
 
   .facts dd {
-    font-size: 0.95rem;
+    font-size: 0.98rem;
+    line-height: 1.48;
+  }
+
+  .notes-content {
+    padding: 1rem 1rem 1.15rem;
+  }
+
+  .notes-content p {
+    max-width: none;
+    line-height: 1.68;
   }
 
   .token-list-card {
@@ -2182,7 +2258,7 @@ h2 {
 
   .token-pager-grid {
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 12px;
   }
 
   .token-pager-grid:has(
@@ -2193,28 +2269,35 @@ h2 {
 
   .token-pager-link,
   .token-pager-next .token-pager-link {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    text-align: center;
-    gap: 8px;
-    padding: 10px 8px;
+    min-height: 5.25rem;
+    text-align: left;
+    gap: 10px;
+    padding: 12px;
   }
 
   .token-pager-media {
-    order: 2;
+    order: 0;
     flex-basis: auto;
-    width: 64px;
-    height: 64px;
+    width: 58px;
+    height: 58px;
   }
 
   .token-pager-image-frame {
-    width: 64px;
-    height: 64px;
+    width: 58px;
+    height: 58px;
+  }
+
+  .token-pager-placeholder {
+    width: 58px;
+    height: 58px;
+    font-size: 1.65rem;
   }
 
   .token-pager-content {
-    order: 1;
-    align-items: center;
+    order: 0;
+    align-items: flex-start;
     gap: 3px;
   }
 
@@ -2225,11 +2308,13 @@ h2 {
 
   .token-pager-link strong {
     font-size: 1rem;
-    line-height: 1.1;
+    line-height: 1.15;
   }
 
   .token-pager-content span:last-child {
-    display: none;
+    display: block;
+    font-size: 0.86rem;
+    line-height: 1.3;
   }
 
   .hero-home-wide {
