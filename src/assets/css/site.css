@@ -2896,6 +2896,44 @@ body.has-inquiry-dialog {
   margin-top: 0.2rem;
 }
 
+.inquiry-clear-confirm {
+  flex: 0 0 auto;
+  margin-top: 0.85rem;
+  padding: 0.75rem 0.8rem;
+  border: 1px solid rgba(122, 84, 43, 0.3);
+  border-radius: 0.45rem;
+  background: rgba(246, 234, 214, 0.58);
+  color: var(--text);
+}
+
+.inquiry-clear-confirm[hidden] {
+  display: none;
+}
+
+.inquiry-clear-confirm p {
+  margin: 0;
+  font-weight: 800;
+}
+
+.inquiry-clear-confirm-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.65rem;
+}
+
+.inquiry-clear-confirm .btn.danger {
+  border-color: rgba(122, 84, 43, 0.5);
+  background: rgba(122, 84, 43, 0.12);
+  color: var(--accent);
+}
+
+.inquiry-clear-confirm .btn.danger:hover,
+.inquiry-clear-confirm .btn.danger:focus-visible {
+  border-color: var(--interactive-border);
+  background: rgba(122, 84, 43, 0.18);
+}
+
 .inquiry-sticky {
   position: fixed;
   right: 1rem;
@@ -3223,6 +3261,20 @@ body.has-inquiry-sticky {
   }
 
   .inquiry-panel > .inquiry-actions .btn {
+    text-align: center;
+  }
+
+  .inquiry-clear-confirm {
+    padding: 0.65rem;
+  }
+
+  .inquiry-clear-confirm-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+  }
+
+  .inquiry-clear-confirm-actions .btn {
     text-align: center;
   }
 

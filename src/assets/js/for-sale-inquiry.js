@@ -41,6 +41,10 @@
     return `${count} ${count === 1 ? "token" : "tokens"} selected`;
   }
 
+  function selectedTokenPhrase(count) {
+    return `${count} selected ${count === 1 ? "token" : "tokens"}`;
+  }
+
   function pluralize(count, singular, plural) {
     return `${count} ${count === 1 ? singular : plural}`;
   }
@@ -396,6 +400,14 @@
       warning.hidden = true;
     });
 
+    document.querySelectorAll("[data-inquiry-clear-confirm-text]").forEach((text) => {
+      text.textContent = `Clear ${selectedTokenPhrase(count)} from your inquiry list?`;
+    });
+
+    if (count === 0) {
+      hideClearConfirmation();
+    }
+
     document.querySelectorAll("[data-inquiry-panel-title]").forEach((title) => {
       title.textContent = count > 0 ? "Review selected tokens" : "Inquiry list";
     });
@@ -557,8 +569,33 @@
     clearWantListMatch({ clearInput: true });
   }
 
+  function hideClearConfirmation() {
+    document.querySelectorAll("[data-inquiry-clear-confirm]").forEach((panel) => {
+      panel.hidden = true;
+    });
+  }
+
+  function showClearConfirmation(trigger) {
+    const panel = document.querySelector("[data-inquiry-clear-confirm]");
+    const cancel = document.querySelector("[data-inquiry-clear-cancel]");
+
+    if (!selected.size || !panel) return;
+
+    panel.hidden = false;
+    cancel?.focus();
+  }
+
+  function requestClearSelections(event) {
+    event?.preventDefault();
+
+    if (!selected.size) return;
+
+    showClearConfirmation(event?.currentTarget);
+  }
+
   function clearSelections() {
     selected.clear();
+    hideClearConfirmation();
     saveSelections();
     render();
 
@@ -611,6 +648,7 @@
 
     dialog.hidden = true;
     document.body.classList.remove("has-inquiry-dialog");
+    hideClearConfirmation();
 
     if (
       restoreFocus &&
@@ -641,6 +679,16 @@
 
     document
       .querySelectorAll("[data-inquiry-clear], [data-inquiry-bar-clear]")
+      .forEach((button) => {
+        button.addEventListener("click", requestClearSelections);
+      });
+
+    document.querySelectorAll("[data-inquiry-clear-cancel]").forEach((button) => {
+      button.addEventListener("click", hideClearConfirmation);
+    });
+
+    document
+      .querySelectorAll("[data-inquiry-clear-confirm-action]")
       .forEach((button) => {
         button.addEventListener("click", clearSelections);
       });

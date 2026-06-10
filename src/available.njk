@@ -154,6 +154,13 @@ NY905A"></textarea>
         <p>Select tokens to build an inquiry list.</p>
         <p>Your selected token IDs and prices will be included in an email you can review before sending.</p>
       </div>
+      <div class="inquiry-clear-confirm" data-inquiry-clear-confirm hidden>
+        <p data-inquiry-clear-confirm-text>Clear selected tokens from your inquiry list?</p>
+        <div class="inquiry-clear-confirm-actions">
+          <button class="btn" type="button" data-inquiry-clear-cancel>Cancel</button>
+          <button class="btn danger" type="button" data-inquiry-clear-confirm-action>Clear selected tokens</button>
+        </div>
+      </div>
       <div class="inquiry-actions">
         <button class="btn" type="button" data-inquiry-bar-clear disabled>Clear List</button>
         <a class="btn primary" href="mailto:{{ contactPage.hero.email }}" data-inquiry-bar-email aria-disabled="false">Email inquiry</a>
