@@ -21,6 +21,7 @@
         selected.set(item.catalogId, {
           catalogId: String(item.catalogId),
           catalogValue: String(item.catalogValue || ""),
+          displayPlace: String(item.displayPlace || ""),
           groupName: String(item.groupName || "")
         });
       });
@@ -163,8 +164,27 @@
     return {
       catalogId: row.dataset.catalogId || "",
       catalogValue: row.dataset.catalogValue || "",
+      displayPlace: row.dataset.displayPlace || "",
       groupName: row.dataset.groupName || ""
     };
+  }
+
+  function hydrateSelectionsFromRows() {
+    const available = getAvailableTokenMap();
+
+    selected.forEach((item, catalogId) => {
+      const normalized = normalizeCatalogId(catalogId);
+      const fresh = available.get(normalized);
+
+      if (!fresh) return;
+
+      selected.set(catalogId, {
+        ...item,
+        catalogValue: item.catalogValue || fresh.catalogValue,
+        displayPlace: item.displayPlace || fresh.displayPlace,
+        groupName: item.groupName || fresh.groupName
+      });
+    });
   }
 
   function setButtonState(button, catalogId, isSelected) {
@@ -203,7 +223,8 @@
     meta.className = "inquiry-list-meta";
 
     groupName.className = "inquiry-list-region";
-    groupName.textContent = item.groupName || "Area unavailable";
+    groupName.textContent =
+      item.displayPlace || item.groupName || "Area unavailable";
 
     price.className = "inquiry-list-price";
     price.textContent = item.catalogValue
@@ -284,9 +305,9 @@
   function buildSelectedMailtoUrl() {
     const lines = [...selected.values()].map(
       (item) =>
-        `- ${item.catalogId} - ${item.groupName || "Area unavailable"} - Price: ${
-          item.catalogValue || "unavailable"
-        }`
+        `- ${item.catalogId} - ${
+          item.displayPlace || item.groupName || "Area unavailable"
+        } - Price: ${item.catalogValue || "unavailable"}`
     );
     const estimatedTotal = formatCurrency(getEstimatedTotal());
     const body = [
@@ -542,6 +563,8 @@
     if (!document.querySelector("[data-inquiry-panel]")) return;
 
     loadSelections();
+    hydrateSelectionsFromRows();
+    saveSelections();
 
     document.querySelectorAll("[data-inquiry-toggle]").forEach((button) => {
       button.addEventListener("click", () => {

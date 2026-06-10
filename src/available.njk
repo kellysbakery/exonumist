@@ -172,10 +172,14 @@ NY905A"></textarea>
               data-search-text="{{ item.searchText }}"
               data-catalog-id="{{ item.catalogId }}"
               data-catalog-value="{{ item.value }}"
+              data-display-place="{{ item.displayPlace }}"
               data-group-name="{{ group.stateName }}">
               <span class="for-sale-token-info">
                 <span class="for-sale-id">{{ item.catalogId }}</span>
-                <span class="for-sale-price">Price: {{ item.value }}</span>
+                {% if item.displayPlace %}
+                  <span class="for-sale-place">{{ item.displayPlace }}</span>
+                {% endif %}
+                <span class="for-sale-price">{{ item.value }}</span>
               </span>
               <button
                 class="inquiry-toggle"

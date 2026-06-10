@@ -2887,7 +2887,7 @@ h2 {
 
 .for-sale-item {
   display: grid;
-  grid-template-columns: minmax(8rem, 1fr) auto auto;
+  grid-template-columns: minmax(7rem, 0.75fr) minmax(10rem, 1.25fr) auto auto;
   gap: 1.5rem;
   align-items: flex-start;
   padding: 0.45rem 1rem;
@@ -2927,6 +2927,12 @@ h2 {
   font-weight: 700;
   font-style: normal;
   letter-spacing: 0.02em;
+}
+
+.for-sale-place {
+  min-width: 0;
+  color: var(--muted);
+  overflow-wrap: anywhere;
 }
 
 .for-sale-price {
