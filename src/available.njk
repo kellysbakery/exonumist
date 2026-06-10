@@ -24,12 +24,12 @@ permalink: /available/index.html
       prices are based on Atwood-Coffee catalog value.
     </p>
 
-    <a class="utility-link" href="mailto:contact@exonumist.com">
+    <a class="utility-link" href="mailto:contact@exonumist.com" data-inquiry-email>
       <svg class="utility-link-icon" aria-hidden="true" viewBox="0 0 24 24">
         <path d="M4 6h16v12H4z" />
         <path d="m4 7 8 6 8-6" />
       </svg>
-      <span>Confirm availability</span>
+      <span data-inquiry-email-label>Contact me</span>
     </a>
   </div>
 
@@ -130,25 +130,27 @@ NY905A"></textarea>
   <section
     class="inquiry-panel"
     data-inquiry-panel
-    aria-live="polite"
-    hidden>
+    aria-live="polite">
     <div class="inquiry-panel-header">
       <div>
         <h2>Inquiry list</h2>
         <p class="inquiry-count" data-inquiry-bar-count>0 tokens selected</p>
+        <p class="inquiry-help">
+          Select tokens to build an inquiry list. Availability will be confirmed by email.
+        </p>
         <p class="inquiry-warning" data-inquiry-warning hidden>
           Please limit your inquiry list to 50 tokens or fewer before sending an email.
         </p>
       </div>
       <div class="inquiry-actions">
-        <button class="btn primary" type="button" data-inquiry-bar-email disabled>Email Inquiry</button>
+        <a class="btn primary" href="mailto:{{ contactPage.hero.email }}" data-inquiry-bar-email aria-disabled="false">Email inquiry</a>
         <button class="btn" type="button" data-inquiry-bar-clear disabled>Clear List</button>
       </div>
     </div>
     <div class="inquiry-list" data-inquiry-list></div>
     <div class="inquiry-empty" data-inquiry-empty hidden>
-      <p>No tokens selected yet.</p>
-      <p>Add tokens to your inquiry list to review and email.</p>
+      <p>Select tokens to build an inquiry list.</p>
+      <p>Your selected token IDs and prices will be included in an email you can review before sending.</p>
     </div>
   </section>
 

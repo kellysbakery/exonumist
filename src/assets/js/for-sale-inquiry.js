@@ -3,6 +3,7 @@
   const MAX_EMAIL_TOKENS = 50;
   const EMAIL_ADDRESS = "contact@exonumist.com";
   const EMAIL_SUBJECT = "Token availability inquiry";
+  const GENERAL_EMAIL_SUBJECT = "Exonumist inquiry";
   const LETTERS = "abcdefghijklmnopqrstuvwxyz";
 
   const selected = new Map();
@@ -205,7 +206,9 @@
     groupName.textContent = item.groupName || "Area unavailable";
 
     price.className = "inquiry-list-price";
-    price.textContent = item.catalogValue || "Price unavailable";
+    price.textContent = item.catalogValue
+      ? `Price: ${item.catalogValue}`
+      : "Price unavailable";
 
     meta.append(groupName, price);
     details.append(catalogId, meta);
@@ -214,7 +217,7 @@
     remove.type = "button";
     remove.dataset.inquiryRemove = item.catalogId;
     remove.setAttribute("aria-label", `Remove ${item.catalogId} from inquiry list`);
-    remove.textContent = "×";
+    remove.textContent = "Remove";
 
     row.append(details, remove);
 
@@ -264,9 +267,26 @@
       : ` Not found: ${visible}.`;
   }
 
-  function buildMailtoUrl() {
+  function buildGeneralMailtoUrl() {
+    const body = [
+      "Hello,",
+      "",
+      "I have a question about available duplicate transportation tokens listed on exonumist.com.",
+      "",
+      "Thank you."
+    ].join("\n");
+
+    return `mailto:${EMAIL_ADDRESS}?subject=${encodeURIComponent(
+      GENERAL_EMAIL_SUBJECT
+    )}&body=${encodeURIComponent(body)}`;
+  }
+
+  function buildSelectedMailtoUrl() {
     const lines = [...selected.values()].map(
-      (item) => `- ${item.catalogId} — Price: ${item.catalogValue}`
+      (item) =>
+        `- ${item.catalogId} - ${item.groupName || "Area unavailable"} - Price: ${
+          item.catalogValue || "unavailable"
+        }`
     );
     const estimatedTotal = formatCurrency(getEstimatedTotal());
     const body = [
@@ -288,6 +308,10 @@
     )}&body=${encodeURIComponent(body)}`;
   }
 
+  function buildMailtoUrl() {
+    return selected.size ? buildSelectedMailtoUrl() : buildGeneralMailtoUrl();
+  }
+
   function render() {
     const count = selected.size;
     const countText = pluralizeToken(count);
@@ -295,7 +319,8 @@
       getEstimatedTotal()
     )}`;
     const isOverLimit = count > MAX_EMAIL_TOKENS;
-    const canEmail = count > 0 && !isOverLimit;
+    const canEmail = !isOverLimit;
+    const mailtoUrl = buildMailtoUrl();
 
     document.querySelectorAll("[data-inquiry-count]").forEach((element) => {
       element.textContent = countText;
@@ -307,9 +332,28 @@
 
     document
       .querySelectorAll("[data-inquiry-email], [data-inquiry-bar-email]")
-      .forEach((button) => {
-        button.disabled = !canEmail;
+      .forEach((control) => {
+        if (control.tagName.toLowerCase() === "a") {
+          control.toggleAttribute("href", canEmail);
+
+          if (canEmail) {
+            control.href = mailtoUrl;
+            control.removeAttribute("tabindex");
+          } else {
+            control.removeAttribute("href");
+            control.setAttribute("tabindex", "-1");
+          }
+
+          control.setAttribute("aria-disabled", canEmail ? "false" : "true");
+          return;
+        }
+
+        control.disabled = !canEmail;
       });
+
+    document.querySelectorAll("[data-inquiry-email-label]").forEach((label) => {
+      label.textContent = count > 0 ? "Confirm availability" : "Contact me";
+    });
 
     document
       .querySelectorAll("[data-inquiry-clear], [data-inquiry-bar-clear]")
@@ -322,7 +366,7 @@
     });
 
     document.querySelectorAll("[data-inquiry-panel]").forEach((panel) => {
-      panel.hidden = count === 0 && !inquiryPanelWasShown;
+      panel.hidden = false;
     });
 
     document.querySelectorAll("[data-inquiry-list]").forEach((list) => {
@@ -481,8 +525,15 @@
     render();
   }
 
-  function emailInquiry() {
-    if (!selected.size || selected.size > MAX_EMAIL_TOKENS) return;
+  function emailInquiry(event) {
+    if (selected.size > MAX_EMAIL_TOKENS) {
+      event?.preventDefault();
+      return;
+    }
+
+    const target = event?.currentTarget;
+
+    if (target?.tagName?.toLowerCase() === "a") return;
 
     window.location.href = buildMailtoUrl();
   }
@@ -534,8 +585,8 @@
 
     document
       .querySelectorAll("[data-inquiry-email], [data-inquiry-bar-email]")
-      .forEach((button) => {
-        button.addEventListener("click", emailInquiry);
+      .forEach((control) => {
+        control.addEventListener("click", emailInquiry);
       });
 
     render();
