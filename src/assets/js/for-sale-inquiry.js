@@ -188,6 +188,7 @@
   }
 
   function setButtonState(button, catalogId, isSelected) {
+    button.closest("[data-sale-item]")?.classList.toggle("is-selected", isSelected);
     button.classList.toggle("is-selected", isSelected);
     button.setAttribute("aria-pressed", isSelected ? "true" : "false");
     button.setAttribute(
