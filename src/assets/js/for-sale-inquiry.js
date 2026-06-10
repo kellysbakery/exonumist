@@ -1,13 +1,12 @@
 (() => {
   const STORAGE_KEY = "exonumistForSaleInquiry";
-  const MAX_EMAIL_TOKENS = 50;
-  const EMAIL_ADDRESS = "contact@exonumist.com";
+    const EMAIL_ADDRESS = "contact@exonumist.com";
   const EMAIL_SUBJECT = "Token availability inquiry";
   const GENERAL_EMAIL_SUBJECT = "Exonumist inquiry";
   const LETTERS = "abcdefghijklmnopqrstuvwxyz";
 
   const selected = new Map();
-  let inquiryPanelWasShown = false;
+  let lastReviewTrigger = null;
 
   function loadSelections() {
     try {
@@ -207,33 +206,23 @@
 
   function createInquiryRow(item) {
     const row = document.createElement("div");
-    const details = document.createElement("span");
     const catalogId = document.createElement("a");
-    const meta = document.createElement("span");
     const groupName = document.createElement("span");
     const price = document.createElement("span");
     const remove = document.createElement("button");
 
     row.className = "inquiry-list-row";
-    details.className = "inquiry-list-details";
 
     catalogId.className = "inquiry-list-token";
     catalogId.href = `#${getTokenTargetId(item.catalogId)}`;
     catalogId.textContent = item.catalogId;
-
-    meta.className = "inquiry-list-meta";
 
     groupName.className = "inquiry-list-region";
     groupName.textContent =
       item.displayPlace || item.groupName || "Area unavailable";
 
     price.className = "inquiry-list-price";
-    price.textContent = item.catalogValue
-      ? `Price: ${item.catalogValue}`
-      : "Price unavailable";
-
-    meta.append(groupName, price);
-    details.append(catalogId, meta);
+    price.textContent = item.catalogValue || "Price unavailable";
 
     remove.className = "inquiry-list-remove";
     remove.type = "button";
@@ -241,9 +230,25 @@
     remove.setAttribute("aria-label", `Remove ${item.catalogId} from inquiry list`);
     remove.textContent = "Remove";
 
-    row.append(details, remove);
+    row.append(catalogId, groupName, price, remove);
 
     return row;
+  }
+
+  function createInquiryListHeader() {
+    const header = document.createElement("div");
+
+    header.className = "inquiry-list-header";
+    header.setAttribute("aria-hidden", "true");
+
+    ["Catalog ID", "Place", "Price", "Remove"].forEach((label) => {
+      const span = document.createElement("span");
+
+      span.textContent = label;
+      header.append(span);
+    });
+
+    return header;
   }
 
   function getAvailableTokenMap() {
@@ -340,8 +345,8 @@
     const countWithTotalText = `${countText} · Estimated total: ${formatCurrency(
       getEstimatedTotal()
     )}`;
-    const isOverLimit = count > MAX_EMAIL_TOKENS;
-    const canEmail = !isOverLimit;
+    const isOverLimit = false;
+    const canEmail = true;
     const mailtoUrl = buildMailtoUrl();
 
     document.querySelectorAll("[data-inquiry-count]").forEach((element) => {
@@ -349,6 +354,10 @@
     });
 
     document.querySelectorAll("[data-inquiry-bar-count]").forEach((element) => {
+      element.textContent = countWithTotalText;
+    });
+
+    document.querySelectorAll("[data-inquiry-sticky-count]").forEach((element) => {
       element.textContent = countWithTotalText;
     });
 
@@ -384,15 +393,33 @@
       });
 
     document.querySelectorAll("[data-inquiry-warning]").forEach((warning) => {
-      warning.hidden = !isOverLimit;
+      warning.hidden = true;
     });
 
-    document.querySelectorAll("[data-inquiry-panel]").forEach((panel) => {
-      panel.hidden = false;
+    document.querySelectorAll("[data-inquiry-panel-title]").forEach((title) => {
+      title.textContent = count > 0 ? "Review selected tokens" : "Inquiry list";
     });
+
+    document.querySelectorAll("[data-inquiry-panel-help]").forEach((help) => {
+      help.textContent =
+        count > 0
+          ? "Review your selected tokens below, then email me to confirm current availability."
+          : "Select tokens to build an inquiry list. Availability will be confirmed by email.";
+    });
+
+    document.querySelectorAll("[data-inquiry-sticky]").forEach((tray) => {
+      tray.hidden = count === 0;
+    });
+
+    document.body.classList.toggle("has-inquiry-sticky", count > 0);
 
     document.querySelectorAll("[data-inquiry-list]").forEach((list) => {
       list.innerHTML = "";
+
+      if (count > 0) {
+        list.append(createInquiryListHeader());
+      }
+
       [...selected.values()].sort(compareInquiryItems).forEach((item) => {
         list.append(createInquiryRow(item));
       });
@@ -485,7 +512,6 @@
       matchedTokens.push(token);
     });
 
-    inquiryPanelWasShown = true;
     setSelections(matchedTokens);
 
     document.dispatchEvent(
@@ -533,18 +559,22 @@
 
   function clearSelections() {
     selected.clear();
-    inquiryPanelWasShown = Boolean(
-      document.querySelector("[data-want-list-result]")?.textContent.trim()
-    );
     saveSelections();
     render();
+
+    if (!selected.size) {
+      closeInquiryDialog();
+    }
   }
 
   function removeSelection(catalogId) {
     selected.delete(catalogId);
-    inquiryPanelWasShown = true;
     saveSelections();
     render();
+
+    if (!selected.size) {
+      closeInquiryDialog();
+    }
   }
 
   function emailInquiry(event) {
@@ -558,6 +588,38 @@
     if (target?.tagName?.toLowerCase() === "a") return;
 
     window.location.href = buildMailtoUrl();
+  }
+
+  function openInquiryDialog(trigger) {
+    const dialog = document.querySelector("[data-inquiry-dialog]");
+    const heading = document.querySelector("[data-inquiry-panel-heading]");
+
+    if (!dialog) return;
+
+    lastReviewTrigger = trigger || document.activeElement;
+    render();
+
+    dialog.hidden = false;
+    document.body.classList.add("has-inquiry-dialog");
+    heading?.focus({ preventScroll: true });
+  }
+
+  function closeInquiryDialog({ restoreFocus = true } = {}) {
+    const dialog = document.querySelector("[data-inquiry-dialog]");
+
+    if (!dialog || dialog.hidden) return;
+
+    dialog.hidden = true;
+    document.body.classList.remove("has-inquiry-dialog");
+
+    if (
+      restoreFocus &&
+      lastReviewTrigger &&
+      typeof lastReviewTrigger.focus === "function" &&
+      document.contains(lastReviewTrigger)
+    ) {
+      lastReviewTrigger.focus();
+    }
   }
 
   document.addEventListener("DOMContentLoaded", () => {
@@ -582,6 +644,24 @@
       .forEach((button) => {
         button.addEventListener("click", clearSelections);
       });
+
+    document.querySelectorAll("[data-inquiry-review]").forEach((button) => {
+      button.addEventListener("click", () => {
+        openInquiryDialog(button);
+      });
+    });
+
+    document.querySelectorAll("[data-inquiry-dialog-close]").forEach((control) => {
+      control.addEventListener("click", () => {
+        closeInquiryDialog();
+      });
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeInquiryDialog();
+      }
+    });
 
     document.addEventListener("click", (event) => {
       const remove = event.target.closest("[data-inquiry-remove]");

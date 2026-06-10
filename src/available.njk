@@ -127,32 +127,49 @@ NY905A"></textarea>
     <div class="matched-tokens-list" data-matched-tokens-list></div>
   </section>
 
-  <section
-    class="inquiry-panel"
-    data-inquiry-panel
-    aria-live="polite">
-    <div class="inquiry-panel-header">
-      <div>
-        <h2>Inquiry list</h2>
-        <p class="inquiry-count" data-inquiry-bar-count>0 tokens selected</p>
-        <p class="inquiry-help">
-          Select tokens to build an inquiry list. Availability will be confirmed by email.
-        </p>
-        <p class="inquiry-warning" data-inquiry-warning hidden>
-          Please limit your inquiry list to 50 tokens or fewer before sending an email.
-        </p>
+  <div class="inquiry-dialog" data-inquiry-dialog hidden>
+    <div class="inquiry-dialog-backdrop" data-inquiry-dialog-close></div>
+    <section
+      class="inquiry-panel"
+      data-inquiry-panel
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="inquiry-panel-title"
+      aria-live="polite">
+      <div class="inquiry-panel-header">
+        <div>
+          <h2 id="inquiry-panel-title" tabindex="-1" data-inquiry-panel-heading data-inquiry-panel-title>Review selected tokens</h2>
+          <p class="inquiry-count" data-inquiry-bar-count>0 tokens selected</p>
+          <p class="inquiry-help" data-inquiry-panel-help>
+            Review your selected tokens below, then email me to confirm current availability.
+          </p>
+          <p class="inquiry-warning" data-inquiry-warning hidden>
+            Please limit your inquiry list to 50 tokens or fewer before sending an email.
+          </p>
+        </div>
+        <button class="inquiry-dialog-close" type="button" data-inquiry-dialog-close aria-label="Close review panel">Close</button>
+      </div>
+      <div class="inquiry-list" data-inquiry-list></div>
+      <div class="inquiry-empty" data-inquiry-empty hidden>
+        <p>Select tokens to build an inquiry list.</p>
+        <p>Your selected token IDs and prices will be included in an email you can review before sending.</p>
       </div>
       <div class="inquiry-actions">
-        <a class="btn primary" href="mailto:{{ contactPage.hero.email }}" data-inquiry-bar-email aria-disabled="false">Email inquiry</a>
         <button class="btn" type="button" data-inquiry-bar-clear disabled>Clear List</button>
+        <a class="btn primary" href="mailto:{{ contactPage.hero.email }}" data-inquiry-bar-email aria-disabled="false">Email inquiry</a>
+      </div>
+    </section>
+  </div>
+
+  <div class="inquiry-sticky" data-inquiry-sticky hidden>
+    <div class="inquiry-sticky-inner">
+      <p class="inquiry-sticky-summary" data-inquiry-sticky-count>0 tokens selected</p>
+      <div class="inquiry-sticky-actions">
+        <button class="btn" type="button" data-inquiry-review>Review list</button>
+        <a class="btn primary" href="mailto:{{ contactPage.hero.email }}" data-inquiry-bar-email>Email inquiry</a>
       </div>
     </div>
-    <div class="inquiry-list" data-inquiry-list></div>
-    <div class="inquiry-empty" data-inquiry-empty hidden>
-      <p>Select tokens to build an inquiry list.</p>
-      <p>Your selected token IDs and prices will be included in an email you can review before sending.</p>
-    </div>
-  </section>
+  </div>
 
   <div class="for-sale-list" data-for-sale-list>
     {% for group in forSale.groups %}
