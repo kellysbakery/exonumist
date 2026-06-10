@@ -438,8 +438,7 @@ h2 {
   background: rgba(255, 253, 248, 0.98);
 }
 
-.utility-link,
-.inline-icon-link {
+.utility-link {
   display: inline-flex;
   align-items: center;
   gap: 0.42rem;
@@ -461,27 +460,17 @@ h2 {
   stroke-linejoin: round;
 }
 
-.inline-icon-link-icon {
-  font-size: 1.15em;
-  line-height: 1;
-  transform: translateY(-0.04em);
-}
-
-.utility-link span:last-child,
-.inline-icon-link span:last-child {
+.utility-link span:last-child {
   text-decoration: underline;
   text-underline-offset: 0.08em;
 }
 
 .utility-link:hover span:last-child,
-.utility-link:focus-visible span:last-child,
-.inline-icon-link:hover span:last-child,
-.inline-icon-link:focus-visible span:last-child {
+.utility-link:focus-visible span:last-child {
   text-decoration-thickness: 0.08em;
 }
 
-.utility-link:focus-visible,
-.inline-icon-link:focus-visible {
+.utility-link:focus-visible {
   outline: 3px solid rgba(116, 88, 54, 0.28);
   outline-offset: 4px;
   border-radius: 0.35rem;
