@@ -32,6 +32,25 @@ function setPluralLabel(element, count, singular, plural) {
   }
 }
 
+function getSaleGroups() {
+  return [...document.querySelectorAll("[data-sale-group]")];
+}
+
+function updateGroupControlState() {
+  const expandGroups = document.querySelector("[data-expand-groups]");
+  const collapseGroups = document.querySelector("[data-collapse-groups]");
+  const groups = getSaleGroups();
+  const visibleGroups = groups.filter((group) => !group.hidden);
+
+  if (expandGroups) {
+    expandGroups.disabled = visibleGroups.length === 0;
+  }
+
+  if (collapseGroups) {
+    collapseGroups.disabled = groups.length === 0;
+  }
+}
+
 function updateNoResultsMessage({ mode, query }) {
   const title = document.querySelector("[data-no-results-title]");
   const queryLine = document.querySelector("[data-no-results-query]");
@@ -126,7 +145,7 @@ function updateForSaleSearch() {
   const totalCountPhrase = document.querySelector("#for-sale-total-phrase");
   const emptyMessage = document.querySelector("#for-sale-empty");
   const forSaleList = document.querySelector("[data-for-sale-list]");
-  const groups = [...document.querySelectorAll("[data-sale-group]")];
+  const groups = getSaleGroups();
 
   if (!input || !visibleCount || !emptyMessage) return;
 
@@ -232,6 +251,8 @@ function updateForSaleSearch() {
   } else {
     resetMatchedTokensSummary();
   }
+
+  updateGroupControlState();
 }
 
 function hasUnselectedSearchMatch(query) {
@@ -274,6 +295,20 @@ document.addEventListener("DOMContentLoaded", () => {
     input.value = "";
     updateForSaleSearch();
     input.focus({ preventScroll: true });
+  });
+
+  document.querySelector("[data-expand-groups]")?.addEventListener("click", () => {
+    getSaleGroups().forEach((group) => {
+      if (!group.hidden) {
+        group.open = true;
+      }
+    });
+  });
+
+  document.querySelector("[data-collapse-groups]")?.addEventListener("click", () => {
+    getSaleGroups().forEach((group) => {
+      group.open = false;
+    });
   });
 
   input.addEventListener("input", updateForSaleSearch);
