@@ -63,7 +63,7 @@ function updateNoResultsMessage({ mode, query }) {
     queryLine.textContent = "";
     setElementHidden(queryLine, true);
     help.textContent =
-      "Check catalog numbers, try one per line, or search by city, state, or place name in Search one token mode.";
+      "Check catalog numbers, try one per line, or search by city, state, or place name in the Search available tab.";
     return;
   }
 
@@ -112,7 +112,7 @@ function updateMatchedTokensSummary(matchedCatalogIds) {
     setElementHidden(summary, false);
     setElementHidden(list, true);
     count.textContent =
-      "No available tokens matched your want list. Check catalog numbers, try one per line, or search by city, state, or place name in Search one token mode.";
+      "No available tokens matched your want list. Check catalog numbers, try one per line, or search by city, state, or place name in the Search available tab.";
   }
 }
 

@@ -39,7 +39,7 @@ permalink: /available/index.html
       type="button"
       data-available-mode-button="search"
       aria-pressed="true">
-      Search one token
+      Search available
     </button>
     <button
       class="available-mode-button"
@@ -50,8 +50,8 @@ permalink: /available/index.html
     </button>
   </div>
 
-  <p class="section-intro available-meta">
-    <span class="available-meta-updated">Last updated: {{ forSaleMeta.lastUpdated }}</span>
+  <p class="available-utility-row">
+    <span class="available-updated">Last updated: {{ forSaleMeta.lastUpdated }}</span>
     <a class="utility-link available-print-link" href="/available/print/">
       <svg class="utility-link-icon" aria-hidden="true" viewBox="0 0 24 24">
         <path d="M7 8V4h10v4" />
@@ -63,13 +63,13 @@ permalink: /available/index.html
   </p>
 
   <div class="available-workflow" data-available-panel="search">
-    <h2>Find a token</h2>
+    <h2>Search available tokens</h2>
     <p class="section-intro">
       Search by catalog number, city, state, or place to find duplicate tokens that may be available.
     </p>
 
     <div class="for-sale-search">
-      <label for="for-sale-search-input">Search available tokens</label>
+      <label for="for-sale-search-input">Catalog number, city, state, or place</label>
       <input
         id="for-sale-search-input"
         type="search"

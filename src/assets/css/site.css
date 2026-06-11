@@ -2487,15 +2487,29 @@ h2 {
   margin-bottom: 0.35rem;
 }
 
-.available-meta {
+.available-utility-row {
   display: flex;
+  width: fit-content;
+  max-width: 100%;
   flex-wrap: wrap;
-  gap: 0.35rem 1rem;
-  align-items: baseline;
+  gap: 0.45rem 0.9rem;
+  align-items: center;
+  margin: 0.95rem 0 1.15rem;
+  padding: 0.48rem 0.65rem;
+  border: 1px solid rgba(122, 84, 43, 0.18);
+  border-radius: 0.55rem;
+  background: rgba(246, 234, 214, 0.28);
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.available-updated {
+  font-weight: 700;
 }
 
 .available-print-link {
   flex: 0 0 auto;
+  font-size: 0.94rem;
 }
 
 .available-print-page {
@@ -3305,12 +3319,14 @@ body.has-inquiry-sticky {
 }
 
 @media (max-width: 640px) {
-  .available-meta {
+  .available-utility-row {
+    width: auto;
     align-items: flex-start;
     flex-direction: column;
+    gap: 0.35rem;
   }
 
-  .available-meta-updated {
+  .available-updated {
     display: block;
   }
 
