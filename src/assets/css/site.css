@@ -2766,9 +2766,18 @@ body.has-inquiry-dialog {
 }
 
 .inquiry-panel .inquiry-count {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem 0.45rem;
+  align-items: baseline;
   margin: 0;
   color: var(--muted);
   font-size: 0.94rem;
+}
+
+.inquiry-count-total::before {
+  content: "\00b7";
+  margin-right: 0.45rem;
 }
 
 .inquiry-dialog-close {
@@ -2880,11 +2889,7 @@ body.has-inquiry-dialog {
 }
 
 .inquiry-list-meta {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 0.75rem;
-  align-items: baseline;
-  min-width: 0;
+  display: contents;
 }
 
 .inquiry-list-region {
@@ -3412,6 +3417,34 @@ body.has-inquiry-sticky {
     gap: 0.75rem;
   }
 
+  .inquiry-panel-header > div {
+    min-width: 0;
+  }
+
+  .inquiry-panel h2 {
+    padding-right: 0.25rem;
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+
+  .inquiry-panel .inquiry-count {
+    display: grid;
+    gap: 0.08rem;
+    font-size: 0.9rem;
+    line-height: 1.25;
+  }
+
+  .inquiry-count-total::before {
+    content: "";
+    margin-right: 0;
+  }
+
+  .inquiry-help {
+    margin-top: 0.35rem;
+    font-size: 0.88rem;
+    line-height: 1.35;
+  }
+
   .inquiry-dialog-close {
     display: inline-grid;
     width: 2.75rem;
@@ -3504,8 +3537,9 @@ body.has-inquiry-sticky {
 
   .inquiry-list-row {
     grid-template-columns: minmax(0, 1fr) auto;
-    gap: 0.12rem 0.55rem;
-    min-height: 3.4rem;
+    gap: 0.16rem 0.55rem;
+    min-height: 0;
+    padding: 0.48rem 0.55rem;
   }
 
   .inquiry-list-header {
@@ -3518,27 +3552,38 @@ body.has-inquiry-sticky {
   }
 
   .inquiry-list-region {
-    grid-column: 1;
-    grid-row: 2;
     min-width: 0;
   }
 
-  .inquiry-list-price {
+  .inquiry-list-meta {
+    display: flex;
     grid-column: 1;
-    grid-row: 3;
+    grid-row: 2;
+    min-width: 0;
+    flex-wrap: wrap;
+    gap: 0.12rem 0.35rem;
+    align-items: baseline;
+  }
+
+  .inquiry-list-meta .inquiry-list-price::before {
+    content: "Price:";
+    margin-right: 0.35rem;
+    font-weight: 700;
   }
 
   .inquiry-list-region,
   .inquiry-list-price {
     color: var(--muted);
     font-size: 0.88rem;
+    line-height: 1.25;
   }
 
   .inquiry-list-remove {
     grid-column: 2;
-    grid-row: 1 / span 3;
+    grid-row: 1 / span 2;
     min-width: 2.5rem;
     min-height: 2.5rem;
+    align-self: center;
   }
 
   .want-list-actions .btn {

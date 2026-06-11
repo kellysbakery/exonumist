@@ -212,6 +212,7 @@
   function createInquiryRow(item) {
     const row = document.createElement("div");
     const catalogId = document.createElement("a");
+    const meta = document.createElement("span");
     const groupName = document.createElement("span");
     const price = document.createElement("span");
     const remove = document.createElement("button");
@@ -221,6 +222,8 @@
     catalogId.className = "inquiry-list-token";
     catalogId.href = `#${getTokenTargetId(item.catalogId)}`;
     catalogId.textContent = item.catalogId;
+
+    meta.className = "inquiry-list-meta";
 
     groupName.className = "inquiry-list-region";
     groupName.textContent =
@@ -235,7 +238,8 @@
     remove.setAttribute("aria-label", `Remove ${item.catalogId} from inquiry list`);
     remove.textContent = "Remove";
 
-    row.append(catalogId, groupName, price, remove);
+    meta.append(groupName, price);
+    row.append(catalogId, meta, remove);
 
     return row;
   }
@@ -350,9 +354,8 @@
   function render() {
     const count = selected.size;
     const countText = pluralizeToken(count);
-    const countWithTotalText = `${countText} · Estimated total: ${formatCurrency(
-      getEstimatedTotal()
-    )}`;
+    const estimatedTotalText = `Estimated total: ${formatCurrency(getEstimatedTotal())}`;
+    const countWithTotalText = `${countText} · ${estimatedTotalText}`;
     const isOverLimit = false;
     const canEmail = true;
     const mailtoUrl = buildMailtoUrl();
@@ -362,7 +365,18 @@
     });
 
     document.querySelectorAll("[data-inquiry-bar-count]").forEach((element) => {
-      element.textContent = countWithTotalText;
+      element.replaceChildren();
+
+      const countSpan = document.createElement("span");
+      const totalSpan = document.createElement("span");
+
+      countSpan.className = "inquiry-count-selected";
+      countSpan.textContent = countText;
+
+      totalSpan.className = "inquiry-count-total";
+      totalSpan.textContent = estimatedTotalText;
+
+      element.append(countSpan, totalSpan);
     });
 
     document.querySelectorAll("[data-inquiry-sticky-count]").forEach((element) => {
