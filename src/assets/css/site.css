@@ -3207,8 +3207,28 @@ body.has-inquiry-sticky {
 }
 
 .for-sale-empty {
+  margin-top: 1rem;
+  padding: 0.95rem 1rem;
+  border: 1px solid rgba(122, 84, 43, 0.28);
+  border-left: 4px solid rgba(122, 84, 43, 0.42);
+  border-radius: 0.55rem;
+  background: rgba(246, 234, 214, 0.46);
+  color: var(--text);
+}
+
+.for-sale-empty p {
+  margin: 0;
+}
+
+.for-sale-empty-title {
+  font-weight: 800;
+}
+
+.for-sale-empty-query,
+.for-sale-empty-help {
+  margin-top: 0.35rem;
   color: var(--muted);
-  font-weight: 700;
+  line-height: 1.45;
 }
 
 @media (max-width: 640px) {

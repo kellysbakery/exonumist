@@ -239,9 +239,13 @@ NY905A"></textarea>
     {% endfor %}
   </div>
 
-  <p class="for-sale-empty" id="for-sale-empty" hidden>
-    No matching tokens found.
-  </p>
+  <div class="for-sale-empty" id="for-sale-empty" aria-live="polite" hidden>
+    <p class="for-sale-empty-title" data-no-results-title>No available tokens found.</p>
+    <p class="for-sale-empty-query" data-no-results-query hidden></p>
+    <p class="for-sale-empty-help" data-no-results-help>
+      Try a shorter catalog number, a city or state, or alternate spelling with fewer words.
+    </p>
+  </div>
 </section>
 
 <script src="/assets/js/for-sale.js"></script>

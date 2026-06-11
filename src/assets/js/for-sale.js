@@ -32,6 +32,35 @@ function setPluralLabel(element, count, singular, plural) {
   }
 }
 
+function updateNoResultsMessage({ mode, query }) {
+  const title = document.querySelector("[data-no-results-title]");
+  const queryLine = document.querySelector("[data-no-results-query]");
+  const help = document.querySelector("[data-no-results-help]");
+
+  if (!title || !queryLine || !help) return;
+
+  if (mode === "want") {
+    title.textContent = "No available tokens matched your want list.";
+    queryLine.textContent = "";
+    setElementHidden(queryLine, true);
+    help.textContent =
+      "Check catalog numbers, try one per line, or search by city, state, or place name in Search one token mode.";
+    return;
+  }
+
+  if (query) {
+    title.textContent = `No available tokens found for "${query}".`;
+  } else {
+    title.textContent = "No available tokens found.";
+  }
+
+  queryLine.textContent = "";
+  setElementHidden(queryLine, true);
+
+  help.textContent =
+    "Try a shorter catalog number like NY631, a city or state like Birmingham or Alaska, or alternate spelling with fewer words.";
+}
+
 function resetMatchedTokensSummary() {
   const summary = document.querySelector("[data-matched-tokens-summary]");
   const count = document.querySelector("[data-matched-tokens-count]");
@@ -58,6 +87,13 @@ function updateMatchedTokensSummary(matchedCatalogIds) {
   if (!(wantListMatches instanceof Set)) {
     resetMatchedTokensSummary();
     return;
+  }
+
+  if (!matchedCatalogIds.size) {
+    setElementHidden(summary, false);
+    setElementHidden(list, true);
+    count.textContent =
+      "No available tokens matched your want list. Check catalog numbers, try one per line, or search by city, state, or place name in Search one token mode.";
   }
 }
 
@@ -178,10 +214,10 @@ function updateForSaleSearch() {
     totalCountPhrase.textContent = hasActiveFilter ? ` of ${totalAvailable}` : "";
   }
 
-  emptyMessage.textContent =
-    isWantMode && hasWantListFilter
-      ? "No available tokens matched your want list."
-      : "No available tokens match that catalog number.";
+  updateNoResultsMessage({
+    mode: isWantMode && hasWantListFilter ? "want" : "search",
+    query: input.value.trim()
+  });
   setElementHidden(
     emptyMessage,
     totalVisible !== 0 || shouldHideGroupedResults || (isWantMode && hasWantListFilter)
