@@ -32,11 +32,19 @@ permalink: /available/print/index.html
     </div>
   </header>
 
-  <div class="available-print-list" role="list" aria-label="Available token prices">
+  <div class="available-print-list" role="table" aria-label="Available token prices">
+    <div class="available-print-row available-print-row-header" role="row">
+      <span role="columnheader">Catalog ID</span>
+      <span role="columnheader">Place</span>
+      <span role="columnheader">Price</span>
+    </div>
     {% for item in forSale.items %}
-      <div class="available-print-row" role="listitem">
-        <span class="available-print-id">{{ item.displayCatalogId }}</span>
-        <span class="available-print-price">{{ item.value }}</span>
+      <div class="available-print-row" role="row">
+        <span class="available-print-id" role="cell">{{ item.displayCatalogId }}</span>
+        <span class="available-print-place" role="cell">
+          {% if item.displayPlace %}{{ item.displayPlace }}{% else %}Place unavailable{% endif %}
+        </span>
+        <span class="available-print-price" role="cell">{{ item.value }}</span>
       </div>
     {% endfor %}
   </div>
