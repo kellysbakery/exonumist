@@ -1675,6 +1675,13 @@ h2 {
   font-size: 1.12rem;
 }
 
+.search-input-label {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: var(--text);
+  font-weight: 800;
+}
+
 .search-input-shell {
   position: relative;
   display: flex;
@@ -1980,6 +1987,15 @@ h2 {
   margin: 0;
   max-width: 64ch;
   line-height: 1.5;
+}
+
+.browse-empty-state ul {
+  margin: 0.35rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.browse-empty-state li {
+  margin: 0.16rem 0;
 }
 
 .browse-badge {

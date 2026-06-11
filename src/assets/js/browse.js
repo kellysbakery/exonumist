@@ -26,11 +26,49 @@
     );
   }
 
+  function allFiltersActive() {
+    return ["borough", "type"].every((filterName) => allInGroupActive(filterName));
+  }
+
   function selections() {
     return {
       borough: activeValues("borough"),
       type: activeValues("type")
     };
+  }
+
+  function updateCountText(visible) {
+    const query = searchTerm.trim();
+    const tokenLabel = visible === 1 ? "collection token" : "collection tokens";
+
+    if (query) {
+      count.textContent = `Showing ${visible} ${tokenLabel} for "${query}".`;
+      return;
+    }
+
+    if (visible === cards.length && allFiltersActive()) {
+      count.textContent = "Showing all collection tokens.";
+      return;
+    }
+
+    count.textContent = `Showing ${visible} of ${cards.length} collection tokens.`;
+  }
+
+  function updateEmptyState(visible) {
+    if (!emptyState) return;
+
+    const title = emptyState.querySelector("[data-browse-empty-title]");
+    const query = searchTerm.trim();
+
+    emptyState.hidden = visible > 0;
+
+    if (!title) return;
+
+    if (query) {
+      title.textContent = `No collection tokens found for "${query}".`;
+    } else {
+      title.textContent = "No collection tokens matched the selected filters.";
+    }
   }
 
   function cardTypes(card) {
@@ -129,11 +167,8 @@
       if (match) visible++;
     });
 
-    count.textContent = `${visible} of ${cards.length} shown`;
-
-    if (emptyState) {
-      emptyState.hidden = visible > 0;
-    }
+    updateCountText(visible);
+    updateEmptyState(visible);
 
     updateChipCounts(selected);
     syncChipPressedState();
