@@ -2789,6 +2789,18 @@ body.has-inquiry-dialog {
   min-height: 2.5rem;
 }
 
+.inquiry-copy-status {
+  flex: 0 0 auto;
+  margin: 0.55rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.inquiry-copy-status[hidden] {
+  display: none;
+}
+
 .inquiry-list-header {
   display: grid;
   grid-template-columns: minmax(5.5rem, 0.8fr) minmax(9rem, 1.4fr) minmax(4.5rem, 0.55fr) auto;
@@ -3256,7 +3268,7 @@ body.has-inquiry-sticky {
   .inquiry-panel > .inquiry-actions {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
     gap: 0.55rem;
   }
 

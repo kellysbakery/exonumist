@@ -163,8 +163,10 @@ NY905A"></textarea>
       </div>
       <div class="inquiry-actions">
         <button class="btn" type="button" data-inquiry-bar-clear disabled>Clear List</button>
+        <button class="btn" type="button" data-inquiry-copy disabled>Copy inquiry text</button>
         <a class="btn primary" href="mailto:{{ contactPage.hero.email }}" data-inquiry-bar-email aria-disabled="false">Email inquiry</a>
       </div>
+      <p class="inquiry-copy-status" data-inquiry-copy-status aria-live="polite" hidden></p>
     </section>
   </div>
 

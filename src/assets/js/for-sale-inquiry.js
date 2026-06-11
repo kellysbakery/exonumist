@@ -7,6 +7,7 @@
 
   const selected = new Map();
   let lastReviewTrigger = null;
+  let copyStatusTimer = null;
 
   function loadSelections() {
     try {
@@ -312,7 +313,7 @@
     )}&body=${encodeURIComponent(body)}`;
   }
 
-  function buildSelectedMailtoUrl() {
+  function buildSelectedInquiryBody() {
     const lines = [...selected.values()].map(
       (item) =>
         `- ${item.catalogId} - ${
@@ -320,7 +321,8 @@
         } - Price: ${item.catalogValue || "unavailable"}`
     );
     const estimatedTotal = formatCurrency(getEstimatedTotal());
-    const body = [
+
+    return [
       "Hello,",
       "",
       "I am interested in the following duplicate transportation tokens listed on exonumist.com:",
@@ -333,10 +335,12 @@
       "",
       "Thank you."
     ].join("\n");
+  }
 
+  function buildSelectedMailtoUrl() {
     return `mailto:${EMAIL_ADDRESS}?subject=${encodeURIComponent(
       EMAIL_SUBJECT
-    )}&body=${encodeURIComponent(body)}`;
+    )}&body=${encodeURIComponent(buildSelectedInquiryBody())}`;
   }
 
   function buildMailtoUrl() {
@@ -396,6 +400,10 @@
         button.disabled = count === 0;
       });
 
+    document.querySelectorAll("[data-inquiry-copy]").forEach((button) => {
+      button.disabled = count === 0;
+    });
+
     document.querySelectorAll("[data-inquiry-warning]").forEach((warning) => {
       warning.hidden = true;
     });
@@ -406,6 +414,7 @@
 
     if (count === 0) {
       hideClearConfirmation();
+      setCopyStatus("");
     }
 
     document.querySelectorAll("[data-inquiry-panel-title]").forEach((title) => {
@@ -627,6 +636,45 @@
     window.location.href = buildMailtoUrl();
   }
 
+  function setCopyStatus(message) {
+    document.querySelectorAll("[data-inquiry-copy-status]").forEach((status) => {
+      status.textContent = message;
+      status.hidden = !message;
+    });
+
+    if (copyStatusTimer) {
+      window.clearTimeout(copyStatusTimer);
+      copyStatusTimer = null;
+    }
+
+    if (message) {
+      copyStatusTimer = window.setTimeout(() => {
+        document.querySelectorAll("[data-inquiry-copy-status]").forEach((status) => {
+          status.textContent = "";
+          status.hidden = true;
+        });
+        copyStatusTimer = null;
+      }, 4000);
+    }
+  }
+
+  async function copyInquiryText() {
+    if (!selected.size) return;
+
+    try {
+      if (!navigator.clipboard?.writeText) {
+        throw new Error("Clipboard API unavailable");
+      }
+
+      await navigator.clipboard.writeText(buildSelectedInquiryBody());
+      setCopyStatus("Inquiry text copied.");
+    } catch {
+      setCopyStatus(
+        "Could not copy automatically. Please select and copy the inquiry text manually."
+      );
+    }
+  }
+
   function openInquiryDialog(trigger) {
     const dialog = document.querySelector("[data-inquiry-dialog]");
     const heading = document.querySelector("[data-inquiry-panel-heading]");
@@ -649,6 +697,7 @@
     dialog.hidden = true;
     document.body.classList.remove("has-inquiry-dialog");
     hideClearConfirmation();
+    setCopyStatus("");
 
     if (
       restoreFocus &&
@@ -692,6 +741,10 @@
       .forEach((button) => {
         button.addEventListener("click", clearSelections);
       });
+
+    document.querySelectorAll("[data-inquiry-copy]").forEach((button) => {
+      button.addEventListener("click", copyInquiryText);
+    });
 
     document.querySelectorAll("[data-inquiry-review]").forEach((button) => {
       button.addEventListener("click", () => {
