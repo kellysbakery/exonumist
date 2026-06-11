@@ -20,6 +20,18 @@ function formatTokenCount(count) {
   return `${count} ${count === 1 ? "token" : "tokens"}`;
 }
 
+function setCountText(element, count) {
+  if (element) {
+    element.textContent = count;
+  }
+}
+
+function setPluralLabel(element, count, singular, plural) {
+  if (element) {
+    element.textContent = count === 1 ? singular : plural;
+  }
+}
+
 function resetMatchedTokensSummary() {
   const summary = document.querySelector("[data-matched-tokens-summary]");
   const count = document.querySelector("[data-matched-tokens-count]");
@@ -93,12 +105,19 @@ function updateForSaleSearch() {
   groups.forEach((group) => {
     const items = group.querySelectorAll("[data-sale-item]");
     const groupCount = group.querySelector("[data-group-visible-count]");
+    const groupTokenLabel = group.querySelector("[data-group-token-label]");
+    const groupPlaceMeta = group.querySelector("[data-group-place-meta]");
+    const groupPlaceCount = group.querySelector("[data-group-visible-place-count]");
+    const groupPlaceLabel = group.querySelector("[data-group-place-label]");
     const defaultCount = Number(group.dataset.count) || items.length;
+    const defaultPlaceCount = Number(group.dataset.placeCount) || 0;
     let visibleInGroup = 0;
+    const visiblePlaces = new Set();
 
     items.forEach((item) => {
       const searchText = normalize(item.dataset.searchText || "");
       const catalogId = item.dataset.catalogId || "";
+      const displayPlace = (item.dataset.displayPlace || "").trim();
       const isMatch = isWantMode
         ? !hasWantListFilter || wantListMatches.has(catalogId)
         : !query || searchText.includes(query);
@@ -112,6 +131,10 @@ function updateForSaleSearch() {
       if (isMatch) {
         visibleInGroup += 1;
 
+        if (displayPlace) {
+          visiblePlaces.add(displayPlace);
+        }
+
         if (isWantMode && hasWantListFilter && wantListMatches.has(catalogId)) {
           matchedCatalogIds.add(catalogId);
         }
@@ -120,9 +143,20 @@ function updateForSaleSearch() {
 
     setElementHidden(group, visibleInGroup === 0);
 
-    if (groupCount) {
-      groupCount.textContent =
-        query || (isWantMode && hasWantListFilter) ? visibleInGroup : defaultCount;
+    const visiblePlaceCount =
+      query || (isWantMode && hasWantListFilter)
+        ? visiblePlaces.size
+        : defaultPlaceCount;
+    const displayCount =
+      query || (isWantMode && hasWantListFilter) ? visibleInGroup : defaultCount;
+
+    setCountText(groupCount, displayCount);
+    setPluralLabel(groupTokenLabel, displayCount, "token", "tokens");
+    setCountText(groupPlaceCount, visiblePlaceCount);
+    setPluralLabel(groupPlaceLabel, visiblePlaceCount, "place", "places");
+
+    if (groupPlaceMeta) {
+      setElementHidden(groupPlaceMeta, visiblePlaceCount === 0);
     }
 
     if ((query || (isWantMode && hasWantListFilter)) && visibleInGroup > 0) {

@@ -218,11 +218,20 @@ module.exports = function () {
       groups[item.state] = {
         state: item.state,
         stateName: item.stateName,
+        placeCount: 0,
         items: []
       };
     }
 
     groups[item.state].items.push(item);
+  });
+
+  Object.values(groups).forEach((group) => {
+    group.placeCount = new Set(
+      group.items
+        .map((item) => String(item.displayPlace || "").trim())
+        .filter(Boolean)
+    ).size;
   });
 
   const sortedGroups = Object.values(groups).sort((a, b) =>

@@ -3049,15 +3049,42 @@ body.has-inquiry-sticky {
 }
 
 .for-sale-group summary {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 0.35rem 0.75rem;
+  align-items: baseline;
   cursor: pointer;
   padding: 0.85rem 1rem;
   font-weight: 800;
   background: rgba(239, 231, 218, 0.45);
+  list-style: none;
 }
 
-.for-sale-group summary span {
+.for-sale-group summary::-webkit-details-marker {
+  display: none;
+}
+
+.for-sale-group summary::before {
+  content: "▸";
+  color: var(--accent);
+  font-size: 0.9em;
+  line-height: 1;
+  transform: translateY(-0.03em);
+}
+
+.for-sale-group[open] summary::before {
+  content: "▾";
+}
+
+.for-sale-group summary .for-sale-group-name {
+  color: var(--text);
+  font-weight: 800;
+}
+
+.for-sale-group summary .for-sale-group-meta {
   color: var(--muted);
   font-weight: 600;
+  text-align: right;
 }
 
 .for-sale-items {
@@ -3217,6 +3244,15 @@ body.has-inquiry-sticky {
     gap: 0.75rem;
     align-items: center;
     padding: 0.5rem 0.75rem;
+  }
+
+  .for-sale-group summary {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .for-sale-group summary .for-sale-group-meta {
+    grid-column: 2;
+    text-align: left;
   }
 
   .for-sale-list-header {

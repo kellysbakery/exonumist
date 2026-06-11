@@ -182,11 +182,22 @@ NY905A"></textarea>
 
   <div class="for-sale-list" data-for-sale-list>
     {% for group in forSale.groups %}
-      <details class="for-sale-group" data-sale-group data-count="{{ group.items.length }}">
+      <details
+        class="for-sale-group"
+        data-sale-group
+        data-count="{{ group.items.length }}"
+        data-place-count="{{ group.placeCount }}">
         <summary>
-          {{ group.stateName }}
-          <span>
-            (<span data-group-visible-count>{{ group.items.length }}</span>)
+          <span class="for-sale-group-name">{{ group.stateName }}</span>
+          <span class="for-sale-group-meta">
+            <span data-group-visible-count>{{ group.items.length }}</span>
+            <span data-group-token-label>{% if group.items.length == 1 %}token{% else %}tokens{% endif %}</span>
+            {% if group.placeCount %}
+              <span data-group-place-meta>
+                · <span data-group-visible-place-count>{{ group.placeCount }}</span>
+                <span data-group-place-label>{% if group.placeCount == 1 %}place{% else %}places{% endif %}</span>
+              </span>
+            {% endif %}
           </span>
         </summary>
 
