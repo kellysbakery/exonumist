@@ -143,6 +143,7 @@ function updateForSaleSearch() {
   const visibleCount = document.querySelector("#for-sale-visible-count");
   const resultsSummary = document.querySelector("#for-sale-results-summary");
   const totalCountPhrase = document.querySelector("#for-sale-total-phrase");
+  const filterPhrase = document.querySelector("#for-sale-filter-phrase");
   const emptyMessage = document.querySelector("#for-sale-empty");
   const forSaleList = document.querySelector("[data-for-sale-list]");
   const groups = getSaleGroups();
@@ -150,9 +151,11 @@ function updateForSaleSearch() {
   if (!input || !visibleCount || !emptyMessage) return;
 
   const query = normalize(input.value);
+  const rawQuery = input.value.trim();
   const isWantMode = availableMode === "want";
   const hasWantListFilter = wantListMatches instanceof Set;
-  const hasActiveFilter = Boolean(query || (isWantMode && hasWantListFilter));
+  const hasSearchQuery = Boolean(!isWantMode && query);
+  const hasActiveFilter = Boolean(hasSearchQuery || (isWantMode && hasWantListFilter));
   const totalAvailable = Number(resultsSummary?.dataset.forSaleTotal) || 0;
   let totalVisible = 0;
   const matchedCatalogIds = new Set();
@@ -198,12 +201,9 @@ function updateForSaleSearch() {
 
     setElementHidden(group, visibleInGroup === 0);
 
-    const visiblePlaceCount =
-      query || (isWantMode && hasWantListFilter)
-        ? visiblePlaces.size
-        : defaultPlaceCount;
+    const visiblePlaceCount = hasActiveFilter ? visiblePlaces.size : defaultPlaceCount;
     const displayCount =
-      query || (isWantMode && hasWantListFilter) ? visibleInGroup : defaultCount;
+      hasActiveFilter ? visibleInGroup : defaultCount;
 
     setCountText(groupCount, displayCount);
     setPluralLabel(groupTokenLabel, displayCount, "token", "tokens");
@@ -214,11 +214,11 @@ function updateForSaleSearch() {
       setElementHidden(groupPlaceMeta, visiblePlaceCount === 0);
     }
 
-    if ((query || (isWantMode && hasWantListFilter)) && visibleInGroup > 0) {
+    if (hasActiveFilter && visibleInGroup > 0) {
       group.open = true;
     }
 
-    if ((!query && !isWantMode) || (isWantMode && !hasWantListFilter)) {
+    if (!hasActiveFilter) {
       group.open = false;
     }
 
@@ -232,10 +232,19 @@ function updateForSaleSearch() {
   if (totalCountPhrase) {
     totalCountPhrase.textContent = hasActiveFilter ? ` of ${totalAvailable}` : "";
   }
+  if (filterPhrase) {
+    if (hasSearchQuery) {
+      filterPhrase.textContent = ` for "${rawQuery}"`;
+    } else if (isWantMode && hasWantListFilter) {
+      filterPhrase.textContent = " from your want list";
+    } else {
+      filterPhrase.textContent = "";
+    }
+  }
 
   updateNoResultsMessage({
     mode: isWantMode && hasWantListFilter ? "want" : "search",
-    query: input.value.trim()
+    query: rawQuery
   });
   setElementHidden(
     emptyMessage,
