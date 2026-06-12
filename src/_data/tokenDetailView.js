@@ -86,6 +86,8 @@ function normalizeCatalogCrossReferences(token = {}) {
 
   const refs = [];
 
+  // Prefer explicit catalogRefs. The displayId fallback below is temporary
+  // backward compatibility until all token data has catalogRefs.
   if (Array.isArray(token.catalogRefs) && token.catalogRefs.length) {
     token.catalogRefs.forEach((entry) => addEntry(refs, entry));
     return refs;

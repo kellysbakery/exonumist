@@ -13,6 +13,12 @@
     "mat": "WM",
     "form": "R",
     "symbol": "R",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY632A"
+      }
+    ],
     "size": 16,
     "obv": "RICHMOND L. & R.R. CO. STATEN ISLAND, N.Y.",
     "rev": "Good For One Fare J.J. Kuhn Receiver",
@@ -49,6 +55,12 @@
     "mat": "B",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY632B"
+      }
+    ],
     "size": 25,
     "obv": "DEPARTMENT OF TRANSPORTATION / GOOD FOR ONE FARE NYC",
     "rev": "Staten Island Ferry New York City (ferry) GD",
@@ -87,6 +99,12 @@
     "mat": "WM",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY632C"
+      }
+    ],
     "size": 25,
     "obv": "DEPARTMENT OF TRANSPORTATION / GOOD FOR ONE FARE NYC",
     "rev": "Staten Island Ferry New York City (ferry) GD",
@@ -125,6 +143,12 @@
     "mat": "S",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY632D"
+      }
+    ],
     "size": 28,
     "obv": "TRIBOROUGH BRIDGE AND TUNNEL AUTHORITY / (CREST OF BRIDGE OVER TBTA)",
     "rev": "Staten Island Resident Verrazano / Narrows Bridge M",
@@ -152,6 +176,12 @@
     "mat": "B",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY632E"
+      }
+    ],
     "size": 29,
     "obv": "A CAROUSEL FOR ALL CHILDREN / AT WILLOWBROOK PARK / (2 MAPLE LEAVES)(CAROUSEL HORSE)",
     "rev": "A Greenbelt Conservancy Inc. Project / Staten Island New York / Good For 1 Ride",

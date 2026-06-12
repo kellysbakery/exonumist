@@ -13,6 +13,12 @@
     "mat": "B",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630A"
+      }
+    ],
     "size": 23,
     "obv": "I. GIBBS /BELLEVILLE & NEW YORK / U.S.M. /STAGE",
     "rev": "Good For One Ride /to /the /Bearer",
@@ -178,6 +184,12 @@
     "mat": "Pt",
     "form": "R",
     "symbol": "Pc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630E"
+      }
+    ],
     "size": 27,
     "obv": "4th AVENUE LINE /HASKINS /& /WILKINS",
     "rev": "Transfer Ticket",
@@ -205,6 +217,12 @@
     "mat": "Pt",
     "form": "R",
     "symbol": "Pc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630F"
+      }
+    ],
     "size": 27,
     "obv": "5th & 7th AVENUE /LINES / MARSHALLS /& /TOWNSEND",
     "rev": "Transfer Ticket",
@@ -240,6 +258,12 @@
     "mat": "Pt",
     "form": "R",
     "symbol": "Pc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630G"
+      }
+    ],
     "size": 27,
     "obv": "7th AVENUE LINES /MARSHALLS /& /TOWNSEND",
     "rev": "Transfer Ticket",
@@ -267,6 +291,12 @@
     "mat": "Pt",
     "form": "R",
     "symbol": "Pc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630H"
+      }
+    ],
     "size": 27,
     "obv": "7th AVENUE LINES /MARSHALLS /& /TOWNSEND",
     "rev": "Transfer Ticket",
@@ -294,6 +324,12 @@
     "mat": "Pt",
     "form": "R",
     "symbol": "Pc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630I"
+      }
+    ],
     "size": 27,
     "obv": "6th AVENUE LINES /YOUNG /& /WARD.",
     "rev": "Transfer Ticket",
@@ -331,6 +367,12 @@
     "mat": "Pt",
     "form": "R",
     "symbol": "Pc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630J"
+      }
+    ],
     "size": 27,
     "obv": "8th AVENUE LINES /FINCH /SANDERSON /& CO.",
     "rev": "Transfer Ticket",
@@ -368,6 +410,12 @@
     "mat": "Pt",
     "form": "R",
     "symbol": "Pc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630K"
+      }
+    ],
     "size": 27,
     "obv": "CHELSEA LINE /KIPP BROWN & CO.",
     "rev": "Transfer Ticket",
@@ -405,6 +453,12 @@
     "mat": "B",
     "form": "R",
     "symbol": "Pc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630La"
+      }
+    ],
     "size": 28,
     "obv": "TELEGRAPH LINE /TYSON & CO.",
     "rev": "Transfer Ticket",
@@ -442,6 +496,12 @@
     "mat": "B",
     "form": "R",
     "symbol": "Pc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630Lb"
+      }
+    ],
     "size": 28,
     "obv": "TELEGRAPH LINE /TYSON & CO.",
     "rev": "Transfer Ticket",
@@ -479,6 +539,12 @@
     "mat": "B",
     "form": "R",
     "symbol": "Pc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630Lc"
+      }
+    ],
     "size": 28,
     "obv": "TELEGRAPH LINE /TYSON & CO.",
     "rev": "Transfer Ticket",
@@ -516,6 +582,12 @@
     "mat": "B",
     "form": "R",
     "symbol": "Pc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630Ld"
+      }
+    ],
     "size": 28,
     "obv": "TELEGRAPH LINE /TYSON & CO.",
     "rev": "Transfer Ticket",
@@ -553,6 +625,12 @@
     "mat": "Pt",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630M"
+      }
+    ],
     "size": 27,
     "obv": "THIRD AVENUE RAIL ROAD (OMNIBUS)",
     "rev": "Harlem",
@@ -588,6 +666,12 @@
     "mat": "Pt",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630N"
+      }
+    ],
     "size": 27,
     "obv": "THIRD AVENUE RAIL ROAD (OMNIBUS)",
     "rev": "Yorkville.",
@@ -623,6 +707,12 @@
     "mat": "Pt",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630O"
+      }
+    ],
     "size": 27,
     "obv": "THIRD AVENUE RAIL ROAD (STREETCAR)",
     "rev": "Harlem",
@@ -658,6 +748,12 @@
     "mat": "Pt",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630P"
+      }
+    ],
     "size": 27,
     "obv": "THIRD AVENUE RAIL ROAD (STREETCAR)",
     "rev": "Yorkville.",
@@ -693,6 +789,12 @@
     "mat": "WM",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630Q"
+      }
+    ],
     "size": 23,
     "obv": "3RD AVE R.R. TO CABLE LINE",
     "rev": "One Fare Going West",
@@ -728,6 +830,12 @@
     "mat": "B",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630R"
+      }
+    ],
     "size": 27,
     "obv": "HOBOKEN /FERRY",
     "rev": "Car Check",
@@ -764,6 +872,12 @@
     "mat": "WM",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630S"
+      }
+    ],
     "size": 28,
     "obv": "42nd ST. M. & /ST. N. AVE RY. /TRANSFER",
     "rev": "86th St. /to /Boulevard /or /Amsterdam Ave.",
@@ -801,6 +915,12 @@
     "mat": "WM",
     "form": "R",
     "symbol": "Stsc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630T"
+      }
+    ],
     "size": 16,
     "obv": "BRIDGE R.R. NEW YORK DEP'T. P & S. / GROVER A WHALEN.",
     "rev": "Bridge R.R. New York Good For One Fare",
@@ -838,6 +958,12 @@
     "mat": "WM",
     "form": "R",
     "symbol": "Bl",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630U"
+      }
+    ],
     "size": 22,
     "obv": "INTERBOROUGH RAPID TRANSIT CO. IRT",
     "rev": "Good For One Fare IRT",
@@ -876,6 +1002,12 @@
     "mat": "WM",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630V"
+      }
+    ],
     "size": 22,
     "obv": "NEW YORK CITY TRANSIT SYSTEM / MANHATTAN BUS DIV. TRANSFER TOKEN",
     "rev": "Issued in Exchange for Transfer",
@@ -913,6 +1045,12 @@
     "mat": "Bz",
     "form": "R",
     "symbol": "COsc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630W"
+      }
+    ],
     "size": 22,
     "obv": "COMPREHENSIVE OMNIBUS CORPORATION",
     "rev": "Issued in Exchange for Transfer",
@@ -950,6 +1088,12 @@
     "mat": "S",
     "form": "R",
     "symbol": "COsc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630Y"
+      }
+    ],
     "size": 22,
     "obv": "COMPREHENSIVE OMNIBUS CORPORATION",
     "rev": "Issued in Exchange for Transfer",
@@ -987,6 +1131,12 @@
     "mat": "WM",
     "form": "R",
     "symbol": "ESsc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630Z"
+      }
+    ],
     "size": 22,
     "obv": "EAST SIDE OMNIBUS CORPORATION",
     "rev": "Issued in Exchange for Transfer",
@@ -1024,6 +1174,12 @@
     "mat": "S",
     "form": "R",
     "symbol": "ESsc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AA"
+      }
+    ],
     "size": 22,
     "obv": "EAST SIDE OMNIBUS CORPORATION",
     "rev": "Issued in Exchange for Transfer",
@@ -1059,6 +1215,12 @@
     "mat": "WM",
     "form": "R",
     "symbol": "Dd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630ABa"
+      }
+    ],
     "size": 23,
     "obv": "AVENUE B & EAST BROADWAY TRANS. CO. (BUS, type 1)",
     "rev": "Transfer Exchange",
@@ -1096,6 +1258,12 @@
     "mat": "WM",
     "form": "R",
     "symbol": "Dd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630ABb"
+      }
+    ],
     "size": 23,
     "obv": "AVENUE B & EAST BROADWAY TRANS. CO. (BUS, type 1)",
     "rev": "Transfer Exchange",
@@ -1133,6 +1301,12 @@
     "mat": "WM",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630ACa"
+      }
+    ],
     "size": 23,
     "obv": "AVENUE B & EAST BROADWAY TRANS. CO.",
     "rev": "Transfer Exchange",
@@ -1170,6 +1344,12 @@
     "mat": "WM",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630ACb"
+      }
+    ],
     "size": 23,
     "obv": "AVENUE B & EAST BROADWAY TRANS. CO.",
     "rev": "Transfer Exchange",
@@ -1207,6 +1387,12 @@
     "mat": "WM",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AD"
+      }
+    ],
     "size": 16,
     "obv": "AVENUE B & EAST BROADWAY TRANS. CO.",
     "rev": "Transfer Exchange",
@@ -1244,6 +1430,12 @@
     "mat": "WM",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AE"
+      }
+    ],
     "size": 16,
     "obv": "AVENUE B & EAST BROADWAY TRANS. CO.",
     "rev": "Transfer Exchange",
@@ -1280,6 +1472,12 @@
     "mat": "WM",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AF"
+      }
+    ],
     "size": 16,
     "obv": "AVENUE B & EAST BROADWAY TRANS. CO.",
     "rev": "Transfer Exchange",
@@ -1316,6 +1514,12 @@
     "mat": "WM",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AG"
+      }
+    ],
     "size": 16,
     "obv": "125th STREET FERRY EF",
     "rev": "Good For One Passage EF",
@@ -1354,6 +1558,12 @@
     "mat": "WM",
     "form": "R",
     "symbol": "H-sc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AH"
+      }
+    ],
     "size": 16,
     "obv": "H. & M. ONE FARE",
     "rev": "(same as obverse)",
@@ -1389,6 +1599,12 @@
     "mat": "B",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AI"
+      }
+    ],
     "size": 16,
     "obv": "H. & M. ONE FARE",
     "rev": "(same as obverse)",
@@ -1416,6 +1632,12 @@
     "mat": "WM",
     "form": "R",
     "symbol": "H-sc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AJ"
+      }
+    ],
     "size": 16,
     "obv": "H. & M. ONE FARE",
     "rev": "(same as obverse)",
@@ -1443,6 +1665,12 @@
     "mat": "WM",
     "form": "R",
     "symbol": "H-sc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AK"
+      }
+    ],
     "size": 16,
     "obv": "H. & M. ONE FARE",
     "rev": "(same as obverse)",
@@ -1470,6 +1698,12 @@
     "mat": "Bz",
     "form": "R",
     "symbol": "Ch",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AL"
+      }
+    ],
     "size": 18,
     "obv": "H & M /ONE FARE",
     "rev": "(same as obverse)",
@@ -1497,6 +1731,12 @@
     "mat": "B",
     "form": "R",
     "symbol": "W",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AM"
+      }
+    ],
     "size": 17,
     "obv": "WESTCHESTER ST. TRANSP. CO., INC.",
     "rev": "Good For One Fare",
@@ -1534,6 +1774,12 @@
     "mat": "B",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AN"
+      }
+    ],
     "size": 16,
     "obv": "NEW YORK CITY TRANSIT AUTHORITY NYC",
     "rev": "Good For One Fare NYC",
@@ -1571,6 +1817,12 @@
     "mat": "B",
     "form": "R",
     "symbol": "Y-sc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AO"
+      }
+    ],
     "size": 16,
     "obv": "NEW YORK CITY TRANSIT AUTHORITY NYC",
     "rev": "Good For One Fare NYC",
@@ -1608,6 +1860,12 @@
     "mat": "B",
     "form": "R",
     "symbol": "Y-sc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AP"
+      }
+    ],
     "size": 28,
     "obv": "NEW YORK CITY TRANSIT AUTHORITY NYC",
     "rev": "Good For One Fare NYC",
@@ -1644,6 +1902,12 @@
     "mat": "B",
     "form": "R",
     "symbol": "Sl",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AQ"
+      }
+    ],
     "size": 22,
     "obv": "P A T H NY = NJ (ARROW)",
     "rev": "Port Authority Trans-Hudson 1 Fare",
@@ -1682,6 +1946,12 @@
     "mat": "B",
     "form": "Ov",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AR"
+      }
+    ],
     "size": 18,
     "obv": "1965 A.V.A. CONVENTION • NEW YORK",
     "rev": "BOAT RIDE AROUND MANHATTAN",
@@ -1720,6 +1990,12 @@
     "mat": "B",
     "form": "R",
     "symbol": "Y-sc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AS"
+      }
+    ],
     "size": 23,
     "obv": "NEW YORK CITY TRANSIT AUTHORITY N(Y)C",
     "rev": "Good For One Fare N(Y)C",
@@ -1757,6 +2033,12 @@
     "mat": "B",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AT"
+      }
+    ],
     "size": 22,
     "obv": "NEW YORK CITY TRANSIT AUTHORITY NYC",
     "rev": "Good For One Fare NYC",
@@ -1796,6 +2078,12 @@
     "mat": "S",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AU"
+      }
+    ],
     "size": 25,
     "obv": "M 50 TBTA",
     "rev": "(same as obverse)",
@@ -1833,6 +2121,12 @@
     "mat": "S",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AV"
+      }
+    ],
     "size": 26,
     "obv": "M 75 TBTA",
     "rev": "(same as obverse)",
@@ -1870,6 +2164,12 @@
     "mat": "S",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AW"
+      }
+    ],
     "size": 28,
     "obv": "M 100 TBTA",
     "rev": "(same as obverse)",
@@ -1907,6 +2207,12 @@
     "mat": "WM",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AX"
+      }
+    ],
     "size": 23,
     "obv": "NEW YORK CITY TRANSIT AUTHORITY NYC",
     "rev": "Special Fare NYC",
@@ -1946,6 +2252,12 @@
     "mat": "B",
     "form": "R",
     "symbol": "Ddsc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AY"
+      }
+    ],
     "size": 23,
     "obv": "NYC SUBWAY 1904-1979 / PEOPLE MOVING PEOPLE (OLD SUBWAY KIOSK MARKED \"SUBWAY\" AND \"ENTRANCE\")",
     "rev": "Diamond Jubilee Seventy Fifth Anniversary / NYC Subway 1904-1979 (OLD SUBWAY CAR MARKED \"Interborough\" WITH \"3354\" AT BOTH ENDS)",
@@ -1983,6 +2295,12 @@
     "mat": "S",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AZ"
+      }
+    ],
     "size": 29,
     "obv": "M 75 TBTA",
     "rev": "(same as obverse)",
@@ -2019,6 +2337,12 @@
     "mat": "B",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630BA"
+      }
+    ],
     "size": 29,
     "obv": "TRIBOROUGH BRIDGE AND TUNNEL AUTHORITY (CREST OF BRIDGE OVER TBTA)",
     "rev": "M 100",
@@ -2056,6 +2380,12 @@
     "mat": "A",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630BB"
+      }
+    ],
     "size": 25,
     "obv": "NEW YORK STREET RAILWAY CO. 1900 (HORSECAR)",
     "rev": "Good For One Ride 5",
@@ -2092,6 +2422,12 @@
     "mat": "S",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630BC"
+      }
+    ],
     "size": 25,
     "obv": "TRIBOROUGH BRIDGE AND TUNNEL AUTHORITY (CREST OF BRIDGE OVER TBTA)",
     "rev": "Marine Henry Hudson Cross Bay M",
@@ -2131,6 +2467,12 @@
     "mat": "S",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630BD"
+      }
+    ],
     "size": 29,
     "obv": "TRIBOROUGH BRIDGE AND TUNNEL AUTHORITY (CREST OF BRIDGE OVER TBTA)",
     "rev": "Triborough Bronx Whitestone Verrazano Narrows / Brooklyn Battery Queens Midtown Throgs Neck / M",
@@ -2170,6 +2512,12 @@
     "mat": "B",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630BE"
+      }
+    ],
     "size": 22,
     "obv": "NEW YORK CITY TRANSIT AUTHORITY",
     "rev": "Good For One Fare sjd",
@@ -2197,6 +2545,12 @@
     "mat": "B",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630BF"
+      }
+    ],
     "size": 35,
     "obv": "THE N.Y. TROLLEY CAR COMPANY INC. / 1986 FIRST EDITION (FRONT VIEW OF RUBBER-TIRED TROLLEY)",
     "rev": "'N.Y. Trolley' Clang!Clang! 19 Fulton Street / South Street Seaport / New York, New York 10038 (REAR VIEW OF TROLLEY)",
@@ -2224,6 +2578,12 @@
     "mat": "B",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630BG"
+      }
+    ],
     "size": 22,
     "obv": "NEW YORK CITY TRANSIT AUTHORITY",
     "rev": "Archer Av Extension 12-88",
@@ -2251,6 +2611,12 @@
     "mat": "WM",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630BH"
+      }
+    ],
     "size": 23,
     "obv": "ROOSEVELT ISLAND OPERATING CORPORATION / OF THE STATE OF NEW YORK ® (BRIDGE)",
     "rev": "Roosevelt Island Tramway (SUSPENDED TRAM)",
@@ -2278,6 +2644,12 @@
     "mat": "B",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630BI"
+      }
+    ],
     "size": 22,
     "obv": "NEW YORK CITY TRANSIT AUTHORITY",
     "rev": "Good For One Fare",
@@ -2305,6 +2677,12 @@
     "mat": "S",
     "form": "R",
     "symbol": "Pgsc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630BJ"
+      }
+    ],
     "size": 20,
     "obv": "NEW YORK CITY TRANSIT AUTHORITY",
     "rev": "Good For One Fare",
@@ -2332,6 +2710,12 @@
     "mat": "B",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630BK"
+      }
+    ],
     "size": 26,
     "obv": "M 75 TBTA",
     "rev": "(same as obverse)",
@@ -2361,6 +2745,12 @@
     "mat": "B",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630BL"
+      }
+    ],
     "size": 22,
     "obv": "NEW YORK CITY TRANSIT AUTHORITY NYC",
     "rev": "(same as obverse)",
@@ -2388,6 +2778,12 @@
     "mat": "Wgz",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630BM"
+      }
+    ],
     "size": 38,
     "obv": "RIVERBANK STATE PARK - NEW YORK STATE OFFICE / OF PARKS · RECREATION · HISTORIC PRESERVATION / (LEAF)",
     "rev": "One Ride Totally Kid Carousel / (JESTER CAP)",
@@ -2415,6 +2811,12 @@
     "mat": "X",
     "form": "R",
     "symbol": "Ddsc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "PP-AM"
+      }
+    ],
     "size": 23,
     "obv": "NY 630 AY",
     "rev": "H STERN incused / numeral engraved on edge",
@@ -2447,6 +2849,12 @@
     "form": "Oc",
     "symbol": "Sd",
     "counterstamp": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY998Ca"
+      }
+    ],
     "size": 18,
     "obv": "NEW YORK & HARLAEM R.R.",
     "rev": "(OMNIBUS)",
@@ -2480,6 +2888,12 @@
     "form": "Oc",
     "symbol": "Sd",
     "counterstamp": "Leaf",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY998Cb"
+      }
+    ],
     "size": 18,
     "obv": "NEW YORK & HARLAEM R.R.",
     "rev": "(OMNIBUS)",
@@ -2513,6 +2927,12 @@
     "form": "Oc",
     "symbol": "Sd",
     "counterstamp": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY998Da"
+      }
+    ],
     "size": 18,
     "obv": "NEW YORK & HARLAEM R.R.",
     "rev": "(OMNIBUS)",
@@ -2546,6 +2966,12 @@
     "form": "Oc",
     "symbol": "Sd",
     "counterstamp": "Leaf",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY998Db"
+      }
+    ],
     "size": 18,
     "obv": "NEW YORK & HARLAEM R.R.",
     "rev": "(OMNIBUS)",
@@ -2791,6 +3217,12 @@
     "mat": "B",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "CT-NY-1"
+      }
+    ],
     "size": 39,
     "obv": "MOTOR BUS SOCIETY 1948-1998 FIFTY YEARS OF PRESERVING HISTORY (OLD DOUBLE-DECK BUS WITH 50-MBS ON FRONT) YELLOW COACH MODEL Z",
     "rev": "Good For One Tour New York, NY 50th Anniversary April 17-19, 1998",
@@ -2836,6 +3268,12 @@
     "mat": "WM",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "CT-NY-2"
+      }
+    ],
     "size": 39,
     "obv": "MOTOR BUS SOCIETY 1948-1998 FIFTY YEARS OF PRESERVING HISTORY (OLD DOUBLE-DECK BUS WITH 50-MBS ON FRONT) YELLOW COACH MODEL Z",
     "rev": "Good For One Tour New York, NY 50th Anniversary April 17-19, 1998",
@@ -2883,6 +3321,12 @@
     "mat": "B",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "FF-NY-1"
+      }
+    ],
     "size": 38,
     "obv": "FULTON FERRY CROSSING E-RIVER / BROOKLYN TO MANHATTAN",
     "rev": "Four Cents (ferryboat) Nassau / Admit the Bearer (all incuse)",
@@ -2912,6 +3356,12 @@
     "mat": "L",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "FF-NY-2"
+      }
+    ],
     "size": 25,
     "obv": "NEW YORK CITY TRANSIT AUTHORITY / BOMBARDIER (LOGO)",
     "rev": "R62A Good For One Ride / Inaugural Service Run",
@@ -2939,6 +3389,12 @@
     "mat": "WM",
     "form": "R",
     "symbol": "Bl",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY998N"
+      }
+    ],
     "size": 18,
     "obv": "NEW YORK CITY TRANSIT SYSTEM NYC",
     "rev": "Good For One Fare NYC",

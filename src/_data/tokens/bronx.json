@@ -13,6 +13,12 @@
     "mat": "WM",
     "form": "R",
     "symbol": "Bar",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY628A"
+      }
+    ],
     "size": 23,
     "obv": "ORCHARD BEACH TURNSTILE S.T.C.",
     "rev": "Good For One Zone S.T.C.",
@@ -51,6 +57,12 @@
     "mat": "B",
     "form": "R",
     "symbol": "Bar",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY628B"
+      }
+    ],
     "size": 16,
     "obv": "ORCHARD BEACH TURNSTILE S.T.C.",
     "rev": "Good For Two Zones S.T.C.",
@@ -89,6 +101,12 @@
     "mat": "WM",
     "form": "R",
     "symbol": "Bar",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY628C"
+      }
+    ],
     "size": 23,
     "obv": "ORCHARD BEACH TURNSTILE M.A.B.",
     "rev": "Good For One Zone M.A.B.",

@@ -13,6 +13,12 @@
     "mat": "WM",
     "form": "R",
     "symbol": "Bl",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631A"
+      }
+    ],
     "size": 16,
     "obv": "N.Y. & Q.C. RY. CO. LINCOLN C ANDREWS (fax) / NYQ",
     "rev": "Good For One Fare Queens NYQ",
@@ -51,6 +57,12 @@
     "form": "R",
     "symbol": "K-sc",
     "counterstamp": "Numerals",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631Ba"
+      }
+    ],
     "size": 23,
     "obv": "KINGS COACH COMPANY",
     "rev": "Issued In Exchange for Transfer",
@@ -86,6 +98,12 @@
     "mat": "WM",
     "form": "R",
     "symbol": "K-sc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631Bb"
+      }
+    ],
     "size": 23,
     "obv": "KINGS COACH COMPANY",
     "rev": "Issued In Exchange for Transfer",
@@ -121,6 +139,12 @@
     "mat": "B",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631C"
+      }
+    ],
     "size": 22,
     "obv": "JAMAICA BUSES, INC. TRANSFER TOKEN",
     "rev": "Issued In Exchange for Transfer",
@@ -156,6 +180,12 @@
     "mat": "WM",
     "form": "R",
     "symbol": "Bar",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631D"
+      }
+    ],
     "size": 21,
     "obv": "RAUCHWERGER BUS LINE / FLUSHING, L.I. N.Y. (BUS, type 1)",
     "rev": "Good For One Fare (bus)",
@@ -193,6 +223,12 @@
     "mat": "WM",
     "form": "R",
     "symbol": "Trsc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631E"
+      }
+    ],
     "size": 22,
     "obv": "NORTH SHORE BUS CO. INC.",
     "rev": "Issued In Exchange for Transfer",
@@ -220,6 +256,12 @@
     "mat": "WM",
     "form": "R",
     "symbol": "R",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631F"
+      }
+    ],
     "size": 16,
     "obv": "NORTH SHORE BUS CO. INC.",
     "rev": "Good For One Half Fare",
@@ -257,6 +299,12 @@
     "mat": "WM",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631G"
+      }
+    ],
     "size": 22,
     "obv": "PEREY TURNSTILES FOR BETTER / FARE COLLECTION",
     "rev": "Perey Turnstiles Tighten Up / Fare Collection",
@@ -294,6 +342,12 @@
     "mat": "B",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631H"
+      }
+    ],
     "size": 24,
     "obv": "PEREY TURNSTILES FOR BETTER / FARE COLLECTION",
     "rev": "Perey Turnstiles Tighten Up / Fare Collection",
@@ -332,6 +386,12 @@
     "mat": "WM",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631I"
+      }
+    ],
     "size": 22,
     "obv": "TRIBORO COACH CORP. NO VALUE T",
     "rev": "In Exchange for Transfer T",
@@ -359,6 +419,12 @@
     "mat": "WM",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631J"
+      }
+    ],
     "size": 22,
     "obv": "TRIBORO COACH CORP. NO VALUE T",
     "rev": "In Exchange for Transfer T",
@@ -396,6 +462,12 @@
     "mat": "B",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631K"
+      }
+    ],
     "size": 24,
     "obv": "TRIBORO COACH CORP. NO VALUE T",
     "rev": "In Exchange for School Ticket T",
@@ -433,6 +505,12 @@
     "mat": "B",
     "form": "R",
     "symbol": "T-sc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631L"
+      }
+    ],
     "size": 24,
     "obv": "TRIBORO COACH CORP. NO VALUE",
     "rev": "In Exchange for Transfer",
@@ -470,6 +548,12 @@
     "mat": "WM",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631M"
+      }
+    ],
     "size": 22,
     "obv": "TRIBORO COACH CORP. NO VALUE S",
     "rev": "In Exchange for School Ticket S",
@@ -506,6 +590,12 @@
     "mat": "WM",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631N"
+      }
+    ],
     "size": 22,
     "obv": "TRIBORO COACH CORP. NO VALUE S",
     "rev": "In Exchange for School Ticket S",
@@ -543,6 +633,12 @@
     "mat": "S",
     "form": "R",
     "symbol": "Bar",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631O"
+      }
+    ],
     "size": 23,
     "obv": "QUEENSBORO BRIDGE RAILWAY CO., INC. / (STREETCAR)",
     "rev": "Good For One Fare (streetcar)",
@@ -580,6 +676,12 @@
     "mat": "B",
     "form": "R",
     "symbol": "Bar",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631P"
+      }
+    ],
     "size": 23,
     "obv": "QUEENSBORO BRIDGE RAILWAY CO., INC. / (STREETCAR)",
     "rev": "Good For One Fare (streetcar)",
@@ -617,6 +719,12 @@
     "mat": "WM",
     "form": "R",
     "symbol": "Bar",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631Q"
+      }
+    ],
     "size": 23,
     "obv": "QUEENSBORO BRIDGE RAILWAY CO., INC. / (STREETCAR)",
     "rev": "Good For One Fare (streetcar)",
@@ -654,6 +762,12 @@
     "mat": "Bz",
     "form": "R",
     "symbol": "Bl",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631R"
+      }
+    ],
     "size": 21,
     "obv": "GREEN BUS LINES, INC. GBL INC.",
     "rev": "Good For One 5¢ Ride GBL Inc.",
@@ -691,6 +805,12 @@
     "mat": "Bz",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631S"
+      }
+    ],
     "size": 28,
     "obv": "ONE FARE THE LONG ISLAND RAIL ROAD / THE ROUTE OF THE DASHING COMMUTER / (MAN RUNNING TO CATCH TRAIN)",
     "rev": "©1961 New York World's Fair / 1964-1965 Corporation ® (unisphere)",
@@ -729,6 +849,12 @@
     "mat": "B",
     "form": "R",
     "symbol": "Bl",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631T"
+      }
+    ],
     "size": 16,
     "obv": "QUEENSBORO BRIDGE RY. CO., INC. (BUS)",
     "rev": "Good For One Fare (bus)(2 slots)",
@@ -766,6 +892,12 @@
     "mat": "B",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631U"
+      }
+    ],
     "size": 20,
     "obv": "JAMAICA BUSES, INC.",
     "rev": "One Fare",
@@ -803,6 +935,12 @@
     "mat": "B",
     "form": "R",
     "symbol": "Bar",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631V"
+      }
+    ],
     "size": 20,
     "obv": "JAMAICA BUSES INC. N.Y.C. (Bus, type 2)",
     "rev": "One Fare Race Track Express (bus)",
@@ -839,6 +977,12 @@
     "mat": "WM",
     "form": "R",
     "symbol": "S",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631W"
+      }
+    ],
     "size": 16,
     "obv": "STEINWAY TRANSIT CORP.",
     "rev": "Good For One Fare",
@@ -875,6 +1019,12 @@
     "mat": "B",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631X"
+      }
+    ],
     "size": 16,
     "obv": "AIRLINE· CONNECTION BUS",
     "rev": "(blank) (thick & thin)(2K)",
@@ -912,6 +1062,12 @@
     "mat": "S",
     "form": "R",
     "symbol": "Sd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631Y"
+      }
+    ],
     "size": 23,
     "obv": "TRIBOROUGH BRIDGE AND TUNNEL AUTHORITY / (CREST OF BRIDGE OVER TBTA)",
     "rev": "Rockaway Resident Crossbay and / Marine Parkway Bridges M",
@@ -939,6 +1095,12 @@
     "mat": "Bz",
     "form": "R",
     "symbol": "Ch",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "TR-NY-515-A"
+      }
+    ],
     "size": 23,
     "obv": "DEPT. OF MARINE AVIATION / LAGUARDIA FIELD",
     "rev": "Good For One Admission NYC",
