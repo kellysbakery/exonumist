@@ -43,6 +43,20 @@
     "form": "Oc",
     "symbol": "Sd",
     "counterstamp": "Rosette",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630Da"
+      },
+      {
+        "catalog": "Hard Times",
+        "number": "HT-299"
+      },
+      {
+        "catalog": "Low",
+        "number": "Low-371"
+      }
+    ],
     "size": 18,
     "obv": "NEW YORK & HARLAEM R.R.",
     "rev": "(OMNIBUS)",
@@ -75,6 +89,20 @@
     "form": "Oc",
     "symbol": "Sd",
     "counterstamp": "Dog",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630Db"
+      },
+      {
+        "catalog": "Hard Times",
+        "number": "HT-300"
+      },
+      {
+        "catalog": "Low",
+        "number": "Low-372"
+      }
+    ],
     "size": 18,
     "obv": "THE N-YORK /& HARLAEM /RAILROAD /COMPANY",
     "rev": "B & S N.Y",
@@ -107,6 +135,20 @@
     "form": "Oc",
     "symbol": "Sd",
     "counterstamp": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630Dc"
+      },
+      {
+        "catalog": "Hard Times",
+        "number": "HT-298"
+      },
+      {
+        "catalog": "Low",
+        "number": "Low-370"
+      }
+    ],
     "size": 18,
     "obv": "THE N-YORK /& HARLAEM /RAILROAD /COMPANY",
     "rev": "B & S N.Y",

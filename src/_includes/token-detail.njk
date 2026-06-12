@@ -150,7 +150,15 @@
           {% for fact in detailView.quickFacts %}
             <div class="facts-row">
               <dt>{{ fact.label }}</dt>
-              <dd>{{ fact.value }}</dd>
+              <dd>
+                {% if fact.valueLines and fact.valueLines.length > 1 %}
+                  {% for line in fact.valueLines %}
+                    <div>{{ line }}</div>
+                  {% endfor %}
+                {% else %}
+                  {{ fact.value }}
+                {% endif %}
+              </dd>
             </div>
           {% endfor %}
         </dl>

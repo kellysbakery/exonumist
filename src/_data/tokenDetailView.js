@@ -62,7 +62,7 @@ function normalizeCatalogCrossReferences(token = {}) {
       return id ? { catalog: "Atwood-Coffee", id } : null;
     }
 
-    const id = String(entry.id || entry.value || "").trim();
+    const id = String(entry.id || entry.number || entry.value || "").trim();
     if (!id) return null;
 
     const catalog = String(entry.catalog || entry.name || "Catalog").trim();
@@ -85,6 +85,11 @@ function normalizeCatalogCrossReferences(token = {}) {
   };
 
   const refs = [];
+
+  if (Array.isArray(token.catalogRefs) && token.catalogRefs.length) {
+    token.catalogRefs.forEach((entry) => addEntry(refs, entry));
+    return refs;
+  }
 
   if (Array.isArray(token.catalogCrossReferences)) {
     token.catalogCrossReferences.forEach((entry) => addEntry(refs, entry));
@@ -111,9 +116,13 @@ function isCatalogStyleDisplayId(value) {
 }
 
 function formatCatalogCrossReferences(token) {
-  return normalizeCatalogCrossReferences(token)
-    .map((ref) => `${ref.catalog}: ${ref.id}`)
-    .join("; ");
+  return formatCatalogCrossReferenceLines(token).join("\n");
+}
+
+function formatCatalogCrossReferenceLines(token) {
+  return normalizeCatalogCrossReferences(token).map(
+    (ref) => `${ref.catalog}: ${ref.id}`
+  );
 }
 
 /**
@@ -125,9 +134,9 @@ function buildQuickFacts(token, context = {}) {
 
   const rows = [];
 
-  const addRow = (label, value) => {
+  const addRow = (label, value, extra = {}) => {
     if (hasMeaningfulValue(value)) {
-      rows.push({ label, value });
+      rows.push({ label, value, ...extra });
     }
   };
 
@@ -139,7 +148,14 @@ function buildQuickFacts(token, context = {}) {
     addRow("Collection ID", token.displayId);
   }
 
-  addRow("Cat. X-Ref.", formatCatalogCrossReferences(token));
+  const catalogCrossReferenceLines = formatCatalogCrossReferenceLines(token);
+  addRow(
+    "Cat. X-Ref.",
+    catalogCrossReferenceLines[0] || "",
+    catalogCrossReferenceLines.length > 1
+      ? { valueLines: catalogCrossReferenceLines }
+      : {}
+  );
 
   if (
     token.classification &&
