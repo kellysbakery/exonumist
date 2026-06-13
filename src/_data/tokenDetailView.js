@@ -142,14 +142,6 @@ function buildQuickFacts(token, context = {}) {
     }
   };
 
-  if (token.collectionId) {
-    addRow("Collection ID", token.collectionId);
-  }
-
-  if (!token.collectionId && isUnlisted) {
-    addRow("Collection ID", token.displayId);
-  }
-
   const catalogCrossReferenceLines = formatCatalogCrossReferenceLines(token);
   addRow(
     "Cat. X-Ref.",
@@ -175,6 +167,7 @@ function buildQuickFacts(token, context = {}) {
   addRow("Issued", token.issued);
   addRow("Mintage", formatNumber(token.mintage));
   addRow("Usage", token.usage);
+  addRow("Exonumist ID", token.collectionId || (isUnlisted ? token.displayId : ""));
 
   return rows;
 }

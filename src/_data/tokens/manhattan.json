@@ -13,7 +13,7 @@
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -50,7 +50,7 @@
     "borough": "Manhattan",
     "mat": "Gs",
     "form": "Oc",
-    "symbol": "Sd",
+    "symbol": "",
     "counterstamp": "Rosette",
     "catalogRefs": [
       {
@@ -97,7 +97,7 @@
     "borough": "Manhattan",
     "mat": "Gs",
     "form": "Oc",
-    "symbol": "Sd",
+    "symbol": "",
     "counterstamp": "Dog",
     "catalogRefs": [
       {
@@ -145,7 +145,7 @@
     "borough": "Manhattan",
     "mat": "Gs",
     "form": "Oc",
-    "symbol": "Sd",
+    "symbol": "",
     "counterstamp": "",
     "catalogRefs": [
       {
@@ -650,7 +650,7 @@
     "borough": "Manhattan",
     "mat": "Pt",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -692,7 +692,7 @@
     "borough": "Manhattan",
     "mat": "Pt",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -735,7 +735,7 @@
     "borough": "Manhattan",
     "mat": "Pt",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -778,7 +778,7 @@
     "borough": "Manhattan",
     "mat": "Pt",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -821,7 +821,7 @@
     "borough": "Manhattan",
     "mat": "WM",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -863,7 +863,7 @@
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -906,7 +906,7 @@
     "borough": "Manhattan",
     "mat": "WM",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -1042,7 +1042,7 @@
     "borough": "Manhattan",
     "mat": "WM",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -1355,7 +1355,7 @@
     "borough": "Manhattan",
     "mat": "WM",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -1400,7 +1400,7 @@
     "borough": "Manhattan",
     "mat": "WM",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -1445,7 +1445,7 @@
     "borough": "Manhattan",
     "mat": "WM",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -1490,7 +1490,7 @@
     "borough": "Manhattan",
     "mat": "WM",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -1534,7 +1534,7 @@
     "borough": "Manhattan",
     "mat": "WM",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -1578,7 +1578,7 @@
     "borough": "Manhattan",
     "mat": "WM",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -1667,7 +1667,7 @@
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -1852,7 +1852,7 @@
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -2032,7 +2032,7 @@
     "borough": "Manhattan",
     "mat": "B",
     "form": "Ov",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -2123,7 +2123,7 @@
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -2170,7 +2170,7 @@
     "borough": "Manhattan",
     "mat": "S",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -2215,7 +2215,7 @@
     "borough": "Manhattan",
     "mat": "S",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -2260,7 +2260,7 @@
     "borough": "Manhattan",
     "mat": "S",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -2305,7 +2305,7 @@
     "borough": "Manhattan",
     "mat": "WM",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -2397,7 +2397,7 @@
     "borough": "Manhattan",
     "mat": "S",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -2441,7 +2441,7 @@
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -2486,7 +2486,7 @@
     "borough": "Manhattan",
     "mat": "A",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -2530,7 +2530,7 @@
     "borough": "Manhattan",
     "mat": "S",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -2577,7 +2577,7 @@
     "borough": "Manhattan",
     "mat": "S",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -2624,7 +2624,7 @@
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -2659,7 +2659,7 @@
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -2694,7 +2694,7 @@
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -2729,7 +2729,7 @@
     "borough": "Manhattan",
     "mat": "WM",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -2764,7 +2764,7 @@
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -2834,7 +2834,7 @@
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -2870,7 +2870,7 @@
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -2905,7 +2905,7 @@
     "borough": "Manhattan",
     "mat": "Wgz",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -2977,7 +2977,7 @@
     "borough": "Manhattan",
     "mat": "K",
     "form": "Oc",
-    "symbol": "Sd",
+    "symbol": "",
     "counterstamp": "",
     "catalogRefs": [
       {
@@ -3017,7 +3017,7 @@
     "borough": "Manhattan",
     "mat": "K",
     "form": "Oc",
-    "symbol": "Sd",
+    "symbol": "",
     "counterstamp": "Leaf",
     "catalogRefs": [
       {
@@ -3057,7 +3057,7 @@
     "borough": "Manhattan",
     "mat": "L",
     "form": "Oc",
-    "symbol": "Sd",
+    "symbol": "",
     "counterstamp": "",
     "catalogRefs": [
       {
@@ -3097,7 +3097,7 @@
     "borough": "Manhattan",
     "mat": "L",
     "form": "Oc",
-    "symbol": "Sd",
+    "symbol": "",
     "counterstamp": "Leaf",
     "catalogRefs": [
       {
@@ -3135,7 +3135,7 @@
     "borough": "Manhattan",
     "mat": "X",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "size": 23,
     "obv": "NEW YORK CITY TRANSIT AUTHORITY N(Y)C",
     "rev": "(C)TA",
@@ -3167,7 +3167,7 @@
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "size": 22,
     "obv": "NEW YORK CITY TRANSIT AUTHORITY NYC",
     "rev": "NEW YORK CITY TRANSIT AUTHORITY NYC",
@@ -3200,7 +3200,7 @@
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "size": 16,
     "obv": "NEW YORK CITY TRANSIT AUTHORITY NYC",
     "rev": "Good For One Fare NYC",
@@ -3233,7 +3233,7 @@
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "size": 28,
     "obv": "NEW YORK CITY TRANSIT AUTHORITY NYC",
     "rev": "Good For One Fare NYC",
@@ -3266,7 +3266,7 @@
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "size": 23,
     "obv": "NEW YORK CITY TRANSIT AUTHORITY N(Y)C",
     "rev": "Good For One Fare N(Y)C",
@@ -3299,7 +3299,7 @@
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "size": 23,
     "obv": "NEW YORK CITY TRANSIT AUTHORITY N(Y)C",
     "rev": "Good For One Fare N(Y)C",
@@ -3332,7 +3332,7 @@
     "borough": "Manhattan",
     "mat": "L",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "size": 22,
     "obv": "NEW YORK CITY TRANSIT AUTHORITY NYC",
     "rev": "Good For One Fare NYC",
@@ -3362,7 +3362,7 @@
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -3414,7 +3414,7 @@
     "borough": "Manhattan",
     "mat": "WM",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -3468,7 +3468,7 @@
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -3504,7 +3504,7 @@
     "borough": "Manhattan",
     "mat": "L",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",

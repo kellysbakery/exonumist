@@ -14,7 +14,7 @@
     "borough": "Brooklyn",
     "mat": "Vi",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -56,7 +56,7 @@
     "borough": "Brooklyn",
     "mat": "WM",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -101,7 +101,7 @@
     "borough": "Brooklyn",
     "mat": "WM",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -146,7 +146,7 @@
     "borough": "Brooklyn",
     "mat": "WM",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -236,7 +236,7 @@
     "borough": "Brooklyn",
     "mat": "WM",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -281,7 +281,7 @@
     "borough": "Brooklyn",
     "mat": "S",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -316,7 +316,7 @@
     "borough": "Brooklyn",
     "mat": "B",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -396,7 +396,7 @@
     "borough": "Brooklyn",
     "mat": "B",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -432,7 +432,7 @@
     "borough": "Brooklyn",
     "mat": "Bz",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -512,7 +512,7 @@
     "borough": "Brooklyn",
     "mat": "Ve",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
