@@ -2,6 +2,7 @@
   {
     "id": "official-ny628a",
     "displayId": "NY628A",
+    "imageKey": "628-a",
     "sec": "628",
     "code": "A",
     "var": "",
@@ -46,6 +47,7 @@
   {
     "id": "official-ny628b",
     "displayId": "NY628B",
+    "imageKey": "628-b",
     "sec": "628",
     "code": "B",
     "var": "",
@@ -90,6 +92,7 @@
   {
     "id": "official-ny628c",
     "displayId": "NY628C",
+    "imageKey": "628-c",
     "sec": "628",
     "code": "C",
     "var": "",

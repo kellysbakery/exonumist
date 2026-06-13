@@ -2,6 +2,7 @@
   {
     "id": "official-ny632a",
     "displayId": "NY632A",
+    "imageKey": "632-a",
     "sec": "632",
     "code": "A",
     "var": "",
@@ -44,6 +45,7 @@
   {
     "id": "official-ny632b",
     "displayId": "NY632B",
+    "imageKey": "632-b",
     "sec": "632",
     "code": "B",
     "var": "",
@@ -88,6 +90,7 @@
   {
     "id": "official-ny632c",
     "displayId": "NY632C",
+    "imageKey": "632-c",
     "sec": "632",
     "code": "C",
     "var": "",
@@ -132,6 +135,7 @@
   {
     "id": "official-ny632d",
     "displayId": "NY632D",
+    "imageKey": "632-d",
     "sec": "632",
     "code": "D",
     "var": "",
@@ -165,6 +169,7 @@
   {
     "id": "official-ny632e",
     "displayId": "NY632E",
+    "imageKey": "632-e",
     "sec": "632",
     "code": "E",
     "var": "",
