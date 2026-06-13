@@ -1,6 +1,7 @@
 [
   {
     "id": "official-ny628a",
+    "collectionId": "EXO-NY-BRX-0001",
     "displayId": "NY628A",
     "imageKey": "628-a",
     "sec": "628",
@@ -46,6 +47,7 @@
   },
   {
     "id": "official-ny628b",
+    "collectionId": "EXO-NY-BRX-0002",
     "displayId": "NY628B",
     "imageKey": "628-b",
     "sec": "628",
@@ -91,6 +93,7 @@
   },
   {
     "id": "official-ny628c",
+    "collectionId": "EXO-NY-BRX-0003",
     "displayId": "NY628C",
     "imageKey": "628-c",
     "sec": "628",

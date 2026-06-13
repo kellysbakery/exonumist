@@ -1,6 +1,7 @@
 [
   {
     "id": "official-ny632a",
+    "collectionId": "EXO-NY-STI-0001",
     "displayId": "NY632A",
     "imageKey": "632-a",
     "sec": "632",
@@ -44,6 +45,7 @@
   },
   {
     "id": "official-ny632b",
+    "collectionId": "EXO-NY-STI-0002",
     "displayId": "NY632B",
     "imageKey": "632-b",
     "sec": "632",
@@ -89,6 +91,7 @@
   },
   {
     "id": "official-ny632c",
+    "collectionId": "EXO-NY-STI-0003",
     "displayId": "NY632C",
     "imageKey": "632-c",
     "sec": "632",
@@ -134,6 +137,7 @@
   },
   {
     "id": "official-ny632d",
+    "collectionId": "EXO-NY-STI-0004",
     "displayId": "NY632D",
     "imageKey": "632-d",
     "sec": "632",
@@ -168,6 +172,7 @@
   },
   {
     "id": "official-ny632e",
+    "collectionId": "EXO-NY-STI-0005",
     "displayId": "NY632E",
     "imageKey": "632-e",
     "sec": "632",

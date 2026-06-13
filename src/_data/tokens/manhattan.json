@@ -1,6 +1,7 @@
 [
   {
     "id": "official-ny630a",
+    "collectionId": "EXO-NY-MAN-0001",
     "displayId": "NY630A",
     "sec": "630",
     "code": "A",
@@ -34,6 +35,7 @@
   },
   {
     "id": "official-ny630da",
+    "collectionId": "EXO-NY-MAN-0002",
     "displayId": "NY630Da",
     "imageKey": "630-d-a",
     "sec": "630",
@@ -81,6 +83,7 @@
   },
   {
     "id": "official-ny630db",
+    "collectionId": "EXO-NY-MAN-0003",
     "displayId": "NY630Db",
     "sec": "630",
     "code": "D",
@@ -127,6 +130,7 @@
   },
   {
     "id": "official-ny630dc",
+    "collectionId": "EXO-NY-MAN-0004",
     "displayId": "NY630Dc",
     "imageKey": "630-d-c",
     "sec": "630",
@@ -174,6 +178,7 @@
   },
   {
     "id": "official-ny630e",
+    "collectionId": "EXO-NY-MAN-0005",
     "displayId": "NY630E",
     "sec": "630",
     "code": "E",
@@ -207,6 +212,7 @@
   },
   {
     "id": "official-ny630f",
+    "collectionId": "EXO-NY-MAN-0006",
     "displayId": "NY630F",
     "sec": "630",
     "code": "F",
@@ -248,6 +254,7 @@
   },
   {
     "id": "official-ny630g",
+    "collectionId": "EXO-NY-MAN-0007",
     "displayId": "NY630G",
     "imageKey": "630-g",
     "sec": "630",
@@ -282,6 +289,7 @@
   },
   {
     "id": "official-ny630h",
+    "collectionId": "EXO-NY-MAN-0008",
     "displayId": "NY630H",
     "sec": "630",
     "code": "H",
@@ -315,6 +323,7 @@
   },
   {
     "id": "official-ny630i",
+    "collectionId": "EXO-NY-MAN-0009",
     "displayId": "NY630I",
     "sec": "630",
     "code": "I",
@@ -358,6 +367,7 @@
   },
   {
     "id": "official-ny630j",
+    "collectionId": "EXO-NY-MAN-0010",
     "displayId": "NY630J",
     "imageKey": "630-j",
     "sec": "630",
@@ -402,6 +412,7 @@
   },
   {
     "id": "official-ny630k",
+    "collectionId": "EXO-NY-MAN-0011",
     "displayId": "NY630K",
     "imageKey": "630-k",
     "sec": "630",
@@ -446,6 +457,7 @@
   },
   {
     "id": "official-ny630la",
+    "collectionId": "EXO-NY-MAN-0012",
     "displayId": "NY630La",
     "imageKey": "630-l-a",
     "sec": "630",
@@ -490,6 +502,7 @@
   },
   {
     "id": "official-ny630lb",
+    "collectionId": "EXO-NY-MAN-0013",
     "displayId": "NY630Lb",
     "imageKey": "630-l-b",
     "sec": "630",
@@ -534,6 +547,7 @@
   },
   {
     "id": "official-ny630lc",
+    "collectionId": "EXO-NY-MAN-0014",
     "displayId": "NY630Lc",
     "imageKey": "630-l-c",
     "sec": "630",
@@ -578,6 +592,7 @@
   },
   {
     "id": "official-ny630ld",
+    "collectionId": "EXO-NY-MAN-0015",
     "displayId": "NY630Ld",
     "imageKey": "630-l-d",
     "sec": "630",
@@ -622,6 +637,7 @@
   },
   {
     "id": "official-ny630m",
+    "collectionId": "EXO-NY-MAN-0016",
     "displayId": "NY630M",
     "imageKey": "630-m",
     "sec": "630",
@@ -664,6 +680,7 @@
   },
   {
     "id": "official-ny630n",
+    "collectionId": "EXO-NY-MAN-0017",
     "displayId": "NY630N",
     "sec": "630",
     "code": "N",
@@ -705,6 +722,7 @@
   },
   {
     "id": "official-ny630o",
+    "collectionId": "EXO-NY-MAN-0018",
     "displayId": "NY630O",
     "imageKey": "630-o",
     "sec": "630",
@@ -747,6 +765,7 @@
   },
   {
     "id": "official-ny630p",
+    "collectionId": "EXO-NY-MAN-0019",
     "displayId": "NY630P",
     "imageKey": "630-p",
     "sec": "630",
@@ -789,6 +808,7 @@
   },
   {
     "id": "official-ny630q",
+    "collectionId": "EXO-NY-MAN-0020",
     "displayId": "NY630Q",
     "imageKey": "630-q",
     "sec": "630",
@@ -831,6 +851,7 @@
   },
   {
     "id": "official-ny630r",
+    "collectionId": "EXO-NY-MAN-0021",
     "displayId": "NY630R",
     "sec": "630",
     "code": "R",
@@ -873,6 +894,7 @@
   },
   {
     "id": "official-ny630s",
+    "collectionId": "EXO-NY-MAN-0022",
     "displayId": "NY630S",
     "sec": "630",
     "code": "S",
@@ -916,6 +938,7 @@
   },
   {
     "id": "official-ny630t",
+    "collectionId": "EXO-NY-MAN-0023",
     "displayId": "NY630T",
     "imageKey": "630-t",
     "sec": "630",
@@ -960,6 +983,7 @@
   },
   {
     "id": "official-ny630u",
+    "collectionId": "EXO-NY-MAN-0024",
     "displayId": "NY630U",
     "imageKey": "630-u",
     "sec": "630",
@@ -1005,6 +1029,7 @@
   },
   {
     "id": "official-ny630v",
+    "collectionId": "EXO-NY-MAN-0025",
     "displayId": "NY630V",
     "imageKey": "630-v",
     "sec": "630",
@@ -1049,6 +1074,7 @@
   },
   {
     "id": "official-ny630w",
+    "collectionId": "EXO-NY-MAN-0026",
     "displayId": "NY630W",
     "imageKey": "630-w",
     "sec": "630",
@@ -1093,6 +1119,7 @@
   },
   {
     "id": "official-ny630y",
+    "collectionId": "EXO-NY-MAN-0027",
     "displayId": "NY630Y",
     "imageKey": "630-y",
     "sec": "630",
@@ -1137,6 +1164,7 @@
   },
   {
     "id": "official-ny630z",
+    "collectionId": "EXO-NY-MAN-0028",
     "displayId": "NY630Z",
     "imageKey": "630-z",
     "sec": "630",
@@ -1181,6 +1209,7 @@
   },
   {
     "id": "official-ny630aa",
+    "collectionId": "EXO-NY-MAN-0029",
     "displayId": "NY630AA",
     "imageKey": "630-aa",
     "sec": "630",
@@ -1223,6 +1252,7 @@
   },
   {
     "id": "official-ny630aba",
+    "collectionId": "EXO-NY-MAN-0030",
     "displayId": "NY630ABa",
     "imageKey": "630-ab-a",
     "sec": "630",
@@ -1267,6 +1297,7 @@
   },
   {
     "id": "official-ny630abb",
+    "collectionId": "EXO-NY-MAN-0031",
     "displayId": "NY630ABb",
     "imageKey": "630-ab-b",
     "sec": "630",
@@ -1311,6 +1342,7 @@
   },
   {
     "id": "official-ny630aca",
+    "collectionId": "EXO-NY-MAN-0032",
     "displayId": "NY630ACa",
     "imageKey": "630-ac-a",
     "sec": "630",
@@ -1355,6 +1387,7 @@
   },
   {
     "id": "official-ny630acb",
+    "collectionId": "EXO-NY-MAN-0033",
     "displayId": "NY630ACb",
     "imageKey": "630-ac-b",
     "sec": "630",
@@ -1399,6 +1432,7 @@
   },
   {
     "id": "official-ny630ad",
+    "collectionId": "EXO-NY-MAN-0034",
     "displayId": "NY630AD",
     "imageKey": "630-ad",
     "sec": "630",
@@ -1443,6 +1477,7 @@
   },
   {
     "id": "official-ny630ae",
+    "collectionId": "EXO-NY-MAN-0035",
     "displayId": "NY630AE",
     "imageKey": "630-ae",
     "sec": "630",
@@ -1486,6 +1521,7 @@
   },
   {
     "id": "official-ny630af",
+    "collectionId": "EXO-NY-MAN-0036",
     "displayId": "NY630AF",
     "imageKey": "630-af",
     "sec": "630",
@@ -1529,6 +1565,7 @@
   },
   {
     "id": "official-ny630ag",
+    "collectionId": "EXO-NY-MAN-0037",
     "displayId": "NY630AG",
     "imageKey": "630-ag",
     "sec": "630",
@@ -1574,6 +1611,7 @@
   },
   {
     "id": "official-ny630ah",
+    "collectionId": "EXO-NY-MAN-0038",
     "displayId": "NY630AH",
     "imageKey": "630-ah",
     "sec": "630",
@@ -1616,6 +1654,7 @@
   },
   {
     "id": "official-ny630ai",
+    "collectionId": "EXO-NY-MAN-0039",
     "displayId": "NY630AI",
     "imageKey": "630-ai",
     "sec": "630",
@@ -1650,6 +1689,7 @@
   },
   {
     "id": "official-ny630aj",
+    "collectionId": "EXO-NY-MAN-0040",
     "displayId": "NY630AJ",
     "imageKey": "630-aj",
     "sec": "630",
@@ -1684,6 +1724,7 @@
   },
   {
     "id": "official-ny630ak",
+    "collectionId": "EXO-NY-MAN-0041",
     "displayId": "NY630AK",
     "imageKey": "630-ak",
     "sec": "630",
@@ -1718,6 +1759,7 @@
   },
   {
     "id": "official-ny630al",
+    "collectionId": "EXO-NY-MAN-0042",
     "displayId": "NY630AL",
     "imageKey": "630-al",
     "sec": "630",
@@ -1752,6 +1794,7 @@
   },
   {
     "id": "official-ny630am",
+    "collectionId": "EXO-NY-MAN-0043",
     "displayId": "NY630AM",
     "imageKey": "630-am",
     "sec": "630",
@@ -1796,6 +1839,7 @@
   },
   {
     "id": "official-ny630an",
+    "collectionId": "EXO-NY-MAN-0044",
     "displayId": "NY630AN",
     "imageKey": "630-an",
     "sec": "630",
@@ -1840,6 +1884,7 @@
   },
   {
     "id": "official-ny630ao",
+    "collectionId": "EXO-NY-MAN-0045",
     "displayId": "NY630AO",
     "imageKey": "630-ao",
     "sec": "630",
@@ -1884,6 +1929,7 @@
   },
   {
     "id": "official-ny630ap",
+    "collectionId": "EXO-NY-MAN-0046",
     "displayId": "NY630AP",
     "imageKey": "630-ap",
     "sec": "630",
@@ -1927,6 +1973,7 @@
   },
   {
     "id": "official-ny630aq",
+    "collectionId": "EXO-NY-MAN-0047",
     "displayId": "NY630AQ",
     "imageKey": "630-aq",
     "sec": "630",
@@ -1972,6 +2019,7 @@
   },
   {
     "id": "official-ny630ar",
+    "collectionId": "EXO-NY-MAN-0048",
     "displayId": "NY630AR",
     "imageKey": "630-ar",
     "sec": "630",
@@ -2017,6 +2065,7 @@
   },
   {
     "id": "official-ny630as",
+    "collectionId": "EXO-NY-MAN-0049",
     "displayId": "NY630AS",
     "imageKey": "630-as",
     "sec": "630",
@@ -2061,6 +2110,7 @@
   },
   {
     "id": "official-ny630at",
+    "collectionId": "EXO-NY-MAN-0050",
     "displayId": "NY630AT",
     "imageKey": "630-at",
     "sec": "630",
@@ -2107,6 +2157,7 @@
   },
   {
     "id": "official-ny630au",
+    "collectionId": "EXO-NY-MAN-0051",
     "displayId": "NY630AU",
     "imageKey": "630-au",
     "sec": "630",
@@ -2151,6 +2202,7 @@
   },
   {
     "id": "official-ny630av",
+    "collectionId": "EXO-NY-MAN-0052",
     "displayId": "NY630AV",
     "imageKey": "630-av",
     "sec": "630",
@@ -2195,6 +2247,7 @@
   },
   {
     "id": "official-ny630aw",
+    "collectionId": "EXO-NY-MAN-0053",
     "displayId": "NY630AW",
     "imageKey": "630-aw",
     "sec": "630",
@@ -2239,6 +2292,7 @@
   },
   {
     "id": "official-ny630ax",
+    "collectionId": "EXO-NY-MAN-0054",
     "displayId": "NY630AX",
     "imageKey": "630-ax",
     "sec": "630",
@@ -2285,6 +2339,7 @@
   },
   {
     "id": "official-ny630ay",
+    "collectionId": "EXO-NY-MAN-0055",
     "displayId": "NY630AY",
     "imageKey": "630-ay",
     "sec": "630",
@@ -2329,6 +2384,7 @@
   },
   {
     "id": "official-ny630az",
+    "collectionId": "EXO-NY-MAN-0056",
     "displayId": "NY630AZ",
     "imageKey": "630-az",
     "sec": "630",
@@ -2372,6 +2428,7 @@
   },
   {
     "id": "official-ny630ba",
+    "collectionId": "EXO-NY-MAN-0057",
     "displayId": "NY630BA",
     "imageKey": "630-ba",
     "sec": "630",
@@ -2416,6 +2473,7 @@
   },
   {
     "id": "official-ny630bb",
+    "collectionId": "EXO-NY-MAN-0058",
     "displayId": "NY630BB",
     "imageKey": "630-bb",
     "sec": "630",
@@ -2459,6 +2517,7 @@
   },
   {
     "id": "official-ny630bc",
+    "collectionId": "EXO-NY-MAN-0059",
     "displayId": "NY630BC",
     "imageKey": "630-bc",
     "sec": "630",
@@ -2505,6 +2564,7 @@
   },
   {
     "id": "official-ny630bd",
+    "collectionId": "EXO-NY-MAN-0060",
     "displayId": "NY630BD",
     "imageKey": "630-bd",
     "sec": "630",
@@ -2551,6 +2611,7 @@
   },
   {
     "id": "official-ny630be",
+    "collectionId": "EXO-NY-MAN-0061",
     "displayId": "NY630BE",
     "imageKey": "630-be",
     "sec": "630",
@@ -2585,6 +2646,7 @@
   },
   {
     "id": "official-ny630bf",
+    "collectionId": "EXO-NY-MAN-0062",
     "displayId": "NY630BF",
     "imageKey": "630-bf",
     "sec": "630",
@@ -2619,6 +2681,7 @@
   },
   {
     "id": "official-ny630bg",
+    "collectionId": "EXO-NY-MAN-0063",
     "displayId": "NY630BG",
     "imageKey": "630-bg",
     "sec": "630",
@@ -2653,6 +2716,7 @@
   },
   {
     "id": "official-ny630bh",
+    "collectionId": "EXO-NY-MAN-0064",
     "displayId": "NY630BH",
     "imageKey": "630-bh",
     "sec": "630",
@@ -2687,6 +2751,7 @@
   },
   {
     "id": "official-ny630bi",
+    "collectionId": "EXO-NY-MAN-0065",
     "displayId": "NY630BI",
     "imageKey": "630-bi",
     "sec": "630",
@@ -2721,6 +2786,7 @@
   },
   {
     "id": "official-ny630bj",
+    "collectionId": "EXO-NY-MAN-0066",
     "displayId": "NY630BJ",
     "imageKey": "630-bj",
     "sec": "630",
@@ -2755,6 +2821,7 @@
   },
   {
     "id": "official-ny630bk",
+    "collectionId": "EXO-NY-MAN-0067",
     "displayId": "NY630BK",
     "imageKey": "630-bk",
     "sec": "630",
@@ -2789,6 +2856,7 @@
   },
   {
     "id": "official-ny630bl",
+    "collectionId": "EXO-NY-MAN-0068",
     "displayId": "NY630BL",
     "sec": "630",
     "code": "BL",
@@ -2824,6 +2892,7 @@
   },
   {
     "id": "official-ny630bm",
+    "collectionId": "EXO-NY-MAN-0069",
     "displayId": "NY630BM",
     "imageKey": "630-bm",
     "sec": "630",
@@ -2858,6 +2927,7 @@
   },
   {
     "id": "official-pp-am",
+    "collectionId": "EXO-NY-MAN-0070",
     "displayId": "PP-AM",
     "sec": "PP",
     "code": "AM",
@@ -2893,6 +2963,7 @@
   },
   {
     "id": "official-ny998ca",
+    "collectionId": "EXO-NY-MAN-0071",
     "displayId": "NY998Ca",
     "sec": "998",
     "code": "C",
@@ -2932,6 +3003,7 @@
   },
   {
     "id": "official-ny998cb",
+    "collectionId": "EXO-NY-MAN-0072",
     "displayId": "NY998Cb",
     "sec": "998",
     "code": "C",
@@ -2971,6 +3043,7 @@
   },
   {
     "id": "official-ny998da",
+    "collectionId": "EXO-NY-MAN-0073",
     "displayId": "NY998Da",
     "sec": "998",
     "code": "D",
@@ -3010,6 +3083,7 @@
   },
   {
     "id": "official-ny998db",
+    "collectionId": "EXO-NY-MAN-0074",
     "displayId": "NY998Db",
     "sec": "998",
     "code": "D",
@@ -3049,6 +3123,7 @@
   },
   {
     "id": "unlisted-man-0001",
+    "collectionId": "EXO-NY-MAN-0075",
     "displayId": "UNL-MAN-0001",
     "sec": "",
     "code": "",
@@ -3078,6 +3153,7 @@
   },
   {
     "id": "oddity-0001",
+    "collectionId": "EXO-NY-MAN-0076",
     "displayId": "ODD-0001",
     "sec": "",
     "code": "",
@@ -3109,6 +3185,7 @@
   },
   {
     "id": "oddity-0002",
+    "collectionId": "EXO-NY-MAN-0077",
     "displayId": "ODD-0002",
     "imageKey": "odd-0002",
     "sec": "",
@@ -3141,6 +3218,7 @@
   },
   {
     "id": "oddity-0003",
+    "collectionId": "EXO-NY-MAN-0078",
     "displayId": "ODD-0003",
     "imageKey": "odd-0003",
     "sec": "",
@@ -3173,6 +3251,7 @@
   },
   {
     "id": "oddity-0004",
+    "collectionId": "EXO-NY-MAN-0079",
     "displayId": "ODD-0004",
     "imageKey": "odd-0004",
     "sec": "",
@@ -3205,6 +3284,7 @@
   },
   {
     "id": "oddity-0005",
+    "collectionId": "EXO-NY-MAN-0080",
     "displayId": "ODD-0005",
     "imageKey": "odd-0005",
     "sec": "",
@@ -3237,6 +3317,7 @@
   },
   {
     "id": "counterfeit-ny630at-001",
+    "collectionId": "EXO-NY-MAN-0081",
     "displayId": "CF-0001",
     "imageKey": "cf-0001",
     "sec": "630",
@@ -3269,6 +3350,7 @@
   },
   {
     "id": "official-ct-ny-1",
+    "collectionId": "EXO-NY-MAN-0082",
     "displayId": "CT-NY-1",
     "sec": "CT",
     "code": "NY-1",
@@ -3320,6 +3402,7 @@
   },
   {
     "id": "official-ct-ny-2",
+    "collectionId": "EXO-NY-MAN-0083",
     "displayId": "CT-NY-2",
     "sec": "CT",
     "code": "NY-2",
@@ -3373,6 +3456,7 @@
   },
   {
     "id": "official-ff-ny-1",
+    "collectionId": "EXO-NY-MAN-0084",
     "displayId": "FF-NY-1",
     "sec": "FF",
     "code": "1",
@@ -3408,6 +3492,7 @@
   },
   {
     "id": "official-ff-ny-2",
+    "collectionId": "EXO-NY-MAN-0085",
     "displayId": "FF-NY-2",
     "sec": "FF",
     "code": "2",
@@ -3441,6 +3526,7 @@
   },
   {
     "id": "official-ny998n",
+    "collectionId": "EXO-NY-MAN-0086",
     "displayId": "NY998N",
     "sec": "998",
     "code": "N",
