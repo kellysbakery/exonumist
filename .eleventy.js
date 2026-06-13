@@ -95,6 +95,14 @@ module.exports = function (eleventyConfig) {
   function buildTokenImageStem(record) {
     if (!record) return "";
 
+    // imageKey is the explicit filename base for token images. The derived
+    // displayId/sort fallback remains for backward compatibility during migration.
+    const imageKey = String(record.imageKey || "").trim();
+
+    if (imageKey) {
+      return imageKey.toLowerCase();
+    }
+
     const status = String(record.status || "").toLowerCase();
 
     if (status === "listed" && record.sort) {
