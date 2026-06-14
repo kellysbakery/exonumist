@@ -1,7 +1,6 @@
 {%- set detailSectionTitle = detailSectionTitle or "Tokens" -%}
 {%- set detailSectionUrl = detailSectionUrl or "/" -%}
 {%- set detailView = detailView or tokenDetailView or display -%}
-{%- set isNyhrrCompact = token.groups and ("nyhrr" in token.groups) -%}
 {%- set tokenStructuredName = detailView.tokenId -%}
 {%- if detailView.tokenTitle -%}
   {%- set tokenStructuredName = detailView.tokenId ~ " | " ~ detailView.tokenTitle -%}
@@ -41,7 +40,7 @@
 }
 </script>
 
-<section class="token-shell{% if isNyhrrCompact %} token-detail--nyhrr-compact{% endif %}">
+<section class="token-shell token-detail--compact">
   <nav class="breadcrumb" aria-label="Breadcrumb" data-token-breadcrumb="collection">
     {% for crumb in detailView.breadcrumbItems %}
       {% if crumb.url %}
@@ -73,90 +72,71 @@
   {% endif %}
 
   <div class="token-heading">
-    <h1>{{ detailView.displayHeading if isNyhrrCompact else detailView.tokenId }}</h1>
+    <h1>{{ detailView.displayHeading }}</h1>
 
-    <p class="token-subtitle">
-      {% if isNyhrrCompact and detailView.variantLine %}
+    {% if detailView.variantLine %}
+      <p class="token-subtitle">
         {{ detailView.variantLine }}
-      {% else %}
-        {{ detailView.tokenTitle }}
-      {% endif %}
-    </p>
-
-    {% if (not isNyhrrCompact) and detailView.metaParts and detailView.metaParts.length %}
-      <p class="token-meta-line">{{ detailView.metaParts | join(" · ") }}</p>
-    {% endif %}
-
-    {% set visibleBadges = [] %}
-    {% if detailView.badges and not isNyhrrCompact %}
-      {% for badge in detailView.badges %}
-        {% set visibleBadges = visibleBadges.concat([badge]) %}
-      {% endfor %}
-    {% endif %}
-
-    {% if visibleBadges.length %}
-      <div class="badges">
-        {% for badge in visibleBadges %}
-          <span class="badge">{{ badge.label or badge }}</span>
-        {% endfor %}
-      </div>
+      </p>
     {% endif %}
   </div>
 
-  {% if detailView.summaryDescription %}
-    <div class="token-summary">
-      <p>{{ detailView.summaryDescription }}</p>
+  <div class="token-primary">
+    <div class="token-images">
+      <figure class="token-image-card">
+        {% if token | hasTokenImage("o") %}
+          <button
+            type="button"
+            class="token-image-button"
+            aria-label="Enlarge {{ detailView.tokenId }} obverse image">
+            <img
+              class="token-image"
+              src="{{ token | tokenImagePath('o') }}"
+              alt="{{ detailView.tokenId }} obverse" />
+          </button>
+        {% else %}
+          {% set tokenPlaceholderClass = "placeholder" %}
+          {% include "token-placeholder.njk" %}
+        {% endif %}
+
+        {% if detailView.obverseText %}
+          <figcaption class="token-image-caption">
+            <strong>Obverse:</strong>
+            <span class="token-caption-text">{{ detailView.obverseCaption }}</span>
+          </figcaption>
+        {% endif %}
+      </figure>
+
+      <figure class="token-image-card">
+        {% if token | hasTokenImage("r") %}
+          <button
+            type="button"
+            class="token-image-button"
+            aria-label="Enlarge {{ detailView.tokenId }} reverse image">
+            <img
+              class="token-image"
+              src="{{ token | tokenImagePath('r') }}"
+              alt="{{ detailView.tokenId }} reverse" />
+          </button>
+        {% else %}
+          {% set tokenPlaceholderClass = "placeholder" %}
+          {% include "token-placeholder.njk" %}
+        {% endif %}
+
+        {% if detailView.reverseText %}
+          <figcaption class="token-image-caption">
+            <strong>Reverse:</strong>
+            <span class="token-caption-text">{{ detailView.reverseCaption }}</span>
+          </figcaption>
+        {% endif %}
+      </figure>
     </div>
-  {% endif %}
 
-  <div class="token-images">
-    <figure class="token-image-card">
-      {% if token | hasTokenImage("o") %}
-        <button
-          type="button"
-          class="token-image-button"
-          aria-label="Enlarge {{ detailView.tokenId }} obverse image">
-          <img
-            class="token-image"
-            src="{{ token | tokenImagePath('o') }}"
-            alt="{{ detailView.tokenId }} obverse" />
-        </button>
-      {% else %}
-        {% set tokenPlaceholderClass = "placeholder" %}
-        {% include "token-placeholder.njk" %}
-      {% endif %}
-
-      {% if detailView.obverseText %}
-        <figcaption class="token-image-caption">
-          <strong>Obverse:</strong>
-          <span class="token-caption-text">{{ detailView.obverseCaption }}</span>
-        </figcaption>
-      {% endif %}
-    </figure>
-
-    <figure class="token-image-card">
-      {% if token | hasTokenImage("r") %}
-        <button
-          type="button"
-          class="token-image-button"
-          aria-label="Enlarge {{ detailView.tokenId }} reverse image">
-          <img
-            class="token-image"
-            src="{{ token | tokenImagePath('r') }}"
-            alt="{{ detailView.tokenId }} reverse" />
-        </button>
-      {% else %}
-        {% set tokenPlaceholderClass = "placeholder" %}
-        {% include "token-placeholder.njk" %}
-      {% endif %}
-
-      {% if detailView.reverseText %}
-        <figcaption class="token-image-caption">
-          <strong>Reverse:</strong>
-          <span class="token-caption-text">{{ detailView.reverseCaption }}</span>
-        </figcaption>
-      {% endif %}
-    </figure>
+    {% if detailView.summaryDescription %}
+      <div class="token-summary">
+        <p>{{ detailView.summaryDescription }}</p>
+      </div>
+    {% endif %}
   </div>
 
   <div class="token-lower-grid">
@@ -187,8 +167,8 @@
       <section class="section token-notes-section">
         <h2>Notes</h2>
 
-        <div class="notes-frame js-notes-frame">
-          <div class="notes-content js-notes-content">
+        <div class="notes-frame">
+          <div class="notes-content">
             <p>{{ detailView.notes }}</p>
 
             {% if token.wanted %}
@@ -202,15 +182,6 @@
             {% endif %}
           </div>
 
-          {% if not isNyhrrCompact %}
-            <button
-              type="button"
-              class="notes-more js-notes-more"
-              hidden
-              aria-expanded="false">
-              Read more
-            </button>
-          {% endif %}
         </div>
       </section>
     {% endif %}

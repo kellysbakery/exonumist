@@ -210,7 +210,6 @@ function buildQuickFacts(token, context = {}) {
   addRow("Maker", token.maker);
   addRow("Issued", token.issued);
   addRow("Mintage", formatNumber(token.mintage));
-  addRow("Usage", token.usage);
   addRow("Exonumist ID", token.collectionId || (isUnlisted ? token.displayId : ""));
 
   return rows;
@@ -282,41 +281,6 @@ function buildCollectionCardSearchText(token, context = {}) {
   ];
 
   return parts.filter(Boolean).join(" ");
-}
-
-/**
- * Build badge chips shown near the title.
- */
-function buildBadges(token, context = {}) {
-  const { isUnlisted = false, lookups = {} } = context;
-
-  const badges = [];
-  const addBadge = (label, type = "status") => {
-    if (!label) return;
-
-    badges.push({ label, type });
-  };
-
-  if (!isUnlisted && token.var) {
-    addBadge(`Var. ${token.var}`, "variety");
-  }
-
-  if (String(token.type || "").toLowerCase() === "pattern") {
-    addBadge(lookupValue(token.type, lookups.type));
-  }
-
-  if (
-    token.classification &&
-    String(token.classification).trim().toLowerCase() !== "regular"
-  ) {
-    addBadge(lookupValue(token.classification, lookups.classification));
-  }
-
-  if (isUnlisted) {
-    addBadge("Unlisted");
-  }
-
-  return badges;
 }
 
 function buildBreadcrumbItems(context = {}) {
@@ -447,12 +411,6 @@ function buildTokenDetailView(token, context = {}) {
     metaParts: buildMetaParts(token, {
       isUnlisted,
       lookups,
-      detailSectionTitle
-    }),
-
-    badges: buildBadges(token, {
-      lookups,
-      isUnlisted,
       detailSectionTitle
     }),
 
