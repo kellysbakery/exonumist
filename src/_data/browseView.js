@@ -83,7 +83,8 @@ function buildSearchText(token) {
       ? lookups.classification[token.classification] || token.classification
       : "",
     token.type ? lookups.type[token.type] || token.type : "",
-    token.mat ? lookups.materials[token.mat] || token.mat : "",
+    tokenDetailView.formatMaterialDisplay(token, lookups),
+    token.finish || "",
     token.counterstamp || "",
     token.obv || "",
     token.rev || ""
@@ -100,7 +101,7 @@ function lookupValue(code, table) {
 function buildIdentifyingDetails(token) {
   const parts = [];
 
-  if (token.mat) parts.push(lookupValue(token.mat, lookups.materials));
+  if (token.mat) parts.push(tokenDetailView.formatMaterialDisplay(token, lookups));
   if (token.size) parts.push(`${token.size} mm`);
   if (token.form) parts.push(lookupValue(token.form, lookups.forms));
 

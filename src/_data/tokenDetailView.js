@@ -25,6 +25,71 @@ function formatTokenType(token, lookups = {}) {
   return value ? String(value).toLowerCase() : "collection";
 }
 
+function formatMaterialDisplay(token, lookups = {}) {
+  const material = lookupValue(token.mat, lookups.materials);
+  if (!material) return "";
+
+  const finish = String(token.finish || "").trim();
+  return finish ? `${material} (${finish})` : material;
+}
+
+function sentenceStyle(value) {
+  const text = String(value || "").trim().toLowerCase();
+  if (!text) return "";
+
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
+function formatVariantLineMaterial(token, lookups = {}) {
+  const material = sentenceStyle(lookupValue(token.mat, lookups.materials));
+  if (!material) return "";
+
+  const finish = String(token.finish || "").trim();
+  return finish ? `${material}, ${finish}` : material;
+}
+
+function lowercaseFirst(value) {
+  const text = String(value || "").trim();
+  if (!text) return "";
+
+  return text.charAt(0).toLowerCase() + text.slice(1);
+}
+
+function formatCounterstampTrait(value) {
+  const counterstamp = String(value || "").trim();
+  if (!counterstamp) return "";
+
+  return `${lowercaseFirst(counterstamp)} counterstamp`;
+}
+
+function normalizeInscriptionCaption(value) {
+  return String(value || "")
+    .replace(/\//g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function buildVariantLine(token, context = {}) {
+  const { lookups = {} } = context;
+  const parts = [];
+
+  if (token.mat) parts.push(formatVariantLineMaterial(token, lookups));
+  if (token.variantTrait) {
+    parts.push(String(token.variantTrait).trim().toLowerCase());
+  } else if (token.counterstamp) {
+    parts.push(formatCounterstampTrait(token.counterstamp));
+  }
+  if (hasMeaningfulValue(token.size)) parts.push(`${token.size} mm`);
+  if (token.form) {
+    const shape = String(lookupValue(token.form, lookups.forms)).trim();
+    if (shape && shape.toLowerCase() !== "round") {
+      parts.push(shape.toLowerCase());
+    }
+  }
+
+  return parts.filter(Boolean).join(" · ");
+}
+
 function buildDisplayDescription(token, context = {}) {
   const { lookups = {} } = context;
   const rawDescription = String(token.desc || "").trim();
@@ -157,7 +222,7 @@ function buildQuickFacts(token, context = {}) {
   ) {
     addRow("Classification", lookupValue(token.classification, lookups.classification));
   }
-  addRow("Material", lookupValue(token.mat, lookups.materials));
+  addRow("Material", formatMaterialDisplay(token, lookups));
   addRow("Size", hasMeaningfulValue(token.size) ? `${token.size} mm` : "");
   addRow("Shape", lookupValue(token.form, lookups.forms));
   addRow("Symbol", lookupValue(token.symbol, lookups.symbols));
@@ -166,7 +231,6 @@ function buildQuickFacts(token, context = {}) {
   addRow("Maker", token.maker);
   addRow("Issued", token.issued);
   addRow("Mintage", formatNumber(token.mintage));
-  addRow("Usage", token.usage);
   addRow("Exonumist ID", token.collectionId || (isUnlisted ? token.displayId : ""));
 
   return rows;
@@ -186,7 +250,7 @@ function buildMetaParts(token, context = {}) {
     parts.push(`Section ${token.sec}`);
   }
 
-  if (token.mat) parts.push(lookupValue(token.mat, lookups.materials));
+  if (token.mat) parts.push(formatMaterialDisplay(token, lookups));
   if (token.size) parts.push(`${token.size} mm`);
   if (token.form) parts.push(lookupValue(token.form, lookups.forms));
   if (token.symbol)
@@ -202,7 +266,7 @@ function buildCardMetaParts(token, context = {}) {
   const { lookups = {} } = context;
   const parts = [];
 
-  if (token.mat) parts.push(lookupValue(token.mat, lookups.materials));
+  if (token.mat) parts.push(formatMaterialDisplay(token, lookups));
   if (token.size) parts.push(`${token.size} mm`);
   if (token.form) parts.push(lookupValue(token.form, lookups.forms));
   if (token.symbol) parts.push(lookupValue(token.symbol, lookups.symbols));
@@ -232,27 +296,13 @@ function buildCollectionCardSearchText(token, context = {}) {
     token.classification || "",
     token.type || "",
     token.borough || "",
-    lookupValue(token.mat, lookups.materials),
+    formatMaterialDisplay(token, lookups),
+    token.finish || "",
     lookupValue(token.form, lookups.forms),
     lookupValue(token.symbol, lookups.symbols)
   ];
 
   return parts.filter(Boolean).join(" ");
-}
-
-/**
- * Build badge chips shown near the title.
- */
-function buildBadges(token, context = {}) {
-  const { isUnlisted = false } = context;
-
-  const badges = [];
-
-  if (!isUnlisted && token.var) {
-    badges.push(`Var. ${token.var}`);
-  }
-
-  return badges.filter(Boolean);
 }
 
 function buildBreadcrumbItems(context = {}) {
@@ -295,13 +345,42 @@ function findPrevNext(items = [], currentToken) {
   };
 }
 
+function normalizePagerArea(value) {
+  return String(value || "")
+    .trim()
+    .toLowerCase();
+}
+
+function getPagerAreaKey(token = {}) {
+  return String(token.collectionArea || token.borough || "").trim();
+}
+
+function getPagerBoroughLabel(token = {}) {
+  return String(token.borough || token.collectionArea || "")
+    .trim()
+    .toUpperCase();
+}
+
 function buildPagerItem(token, options = {}) {
   if (!token) return null;
 
-  const { urlBuilder, hasTokenImage, tokenImagePath } = options;
+  const {
+    urlBuilder,
+    hasTokenImage,
+    tokenImagePath,
+    currentToken = null,
+    direction = ""
+  } = options;
 
   const id = token.displayId || "";
   const slug = id.toLowerCase();
+  const currentArea = getPagerAreaKey(currentToken || {});
+  const targetArea = getPagerAreaKey(token);
+  const targetBorough = getPagerBoroughLabel(token);
+  const crossesBorough =
+    Boolean(currentArea && targetArea) &&
+    normalizePagerArea(currentArea) !== normalizePagerArea(targetArea);
+  const directionText = direction === "prev" ? "Previous" : "Next";
 
   let url = "";
 
@@ -318,6 +397,11 @@ function buildPagerItem(token, options = {}) {
     id,
     title: token.title || "",
     url,
+    crossesBorough,
+    targetBorough,
+    directionLabel: crossesBorough
+      ? `${directionText} borough`
+      : directionText,
     image:
       hasTokenImage && hasTokenImage(token, "o")
         ? tokenImagePath(token, "o")
@@ -357,6 +441,12 @@ function buildTokenDetailView(token, context = {}) {
   } = context;
 
   const helperFns = context.helperFns || {};
+  const obverseText = token.obv
+    ? token.counterstamp
+      ? `${token.obv} (${token.counterstamp} Counterstamp)`
+      : token.obv
+    : "";
+  const reverseText = token.rev || "";
 
   return {
     token,
@@ -380,11 +470,9 @@ function buildTokenDetailView(token, context = {}) {
       detailSectionTitle
     }),
 
-    badges: buildBadges(token, {
-      lookups,
-      isUnlisted,
-      detailSectionTitle
-    }),
+    displayHeading: tokenTitle || tokenId,
+    materialDisplay: formatMaterialDisplay(token, lookups),
+    variantLine: buildVariantLine(token, { lookups }),
 
     quickFacts: buildQuickFacts(token, {
       isUnlisted,
@@ -392,13 +480,11 @@ function buildTokenDetailView(token, context = {}) {
       detailSectionTitle
     }),
 
-    obverseText: token.obv
-      ? token.counterstamp
-        ? `${token.obv} (${token.counterstamp} Counterstamp)`
-        : token.obv
-      : "",
+    obverseText,
+    obverseCaption: normalizeInscriptionCaption(obverseText),
 
-    reverseText: token.rev || "",
+    reverseText,
+    reverseCaption: normalizeInscriptionCaption(reverseText),
 
     notes: token.notes || "",
     wantedNote: token.wantedNote || "",
@@ -409,11 +495,15 @@ function buildTokenDetailView(token, context = {}) {
       ? {
           prev: buildPagerItem(prevToken, {
             hasTokenImage: helperFns.hasTokenImage,
-            tokenImagePath: helperFns.tokenImagePath
+            tokenImagePath: helperFns.tokenImagePath,
+            currentToken: token,
+            direction: "prev"
           }),
           next: buildPagerItem(nextToken, {
             hasTokenImage: helperFns.hasTokenImage,
-            tokenImagePath: helperFns.tokenImagePath
+            tokenImagePath: helperFns.tokenImagePath,
+            currentToken: token,
+            direction: "next"
           })
         }
       : null,
@@ -422,11 +512,15 @@ function buildTokenDetailView(token, context = {}) {
       ? {
           prev: buildPagerItem(globalPrevToken, {
             hasTokenImage: helperFns.hasTokenImage,
-            tokenImagePath: helperFns.tokenImagePath
+            tokenImagePath: helperFns.tokenImagePath,
+            currentToken: token,
+            direction: "prev"
           }),
           next: buildPagerItem(globalNextToken, {
             hasTokenImage: helperFns.hasTokenImage,
-            tokenImagePath: helperFns.tokenImagePath
+            tokenImagePath: helperFns.tokenImagePath,
+            currentToken: token,
+            direction: "next"
           })
         }
       : null,
@@ -443,7 +537,9 @@ function buildTokenDetailView(token, context = {}) {
               groupPager.prevUrl,
               {
                 hasTokenImage: helperFns.hasTokenImage,
-                tokenImagePath: helperFns.tokenImagePath
+                tokenImagePath: helperFns.tokenImagePath,
+                currentToken: token,
+                direction: "prev"
               }
             ),
             next: buildPagerItemWithUrl(
@@ -451,7 +547,9 @@ function buildTokenDetailView(token, context = {}) {
               groupPager.nextUrl,
               {
                 hasTokenImage: helperFns.hasTokenImage,
-                tokenImagePath: helperFns.tokenImagePath
+                tokenImagePath: helperFns.tokenImagePath,
+                currentToken: token,
+                direction: "next"
               }
             )
           }))
@@ -476,6 +574,7 @@ module.exports = {
   buildCardMetaParts,
   buildCollectionCardSearchText,
   buildDisplayDescription,
+  formatMaterialDisplay,
   formatCatalogCrossReferences,
   normalizeCatalogCrossReferences,
   buildTokenDetailView

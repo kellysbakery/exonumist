@@ -7,7 +7,7 @@
 {%- endif -%}
 {%- set tokenStructuredDescription = detailView.summaryDescription or detailView.tokenTitle or detailView.tokenId -%}
 {%- set tokenStructuredCategory = lookups.type[token.type] if token.type and lookups.type else token.type -%}
-{%- set tokenStructuredMaterial = lookups.materials[token.mat] if token.mat and lookups.materials else token.mat -%}
+{%- set tokenStructuredMaterial = detailView.materialDisplay -%}
 {%- set tokenStructuredImages = [] -%}
 {%- if token | hasTokenImage("o") -%}
   {%- set tokenStructuredImages = tokenStructuredImages.concat([(token | tokenImagePath("o")) | absoluteUrl(site)]) -%}
@@ -40,7 +40,7 @@
 }
 </script>
 
-<section class="token-shell">
+<section class="token-shell token-detail--compact">
   <nav class="breadcrumb" aria-label="Breadcrumb" data-token-breadcrumb="collection">
     {% for crumb in detailView.breadcrumbItems %}
       {% if crumb.url %}
@@ -71,74 +71,72 @@
     {% endfor %}
   {% endif %}
 
-  <h1>{{ detailView.tokenId }}</h1>
+  <div class="token-heading">
+    <h1>{{ detailView.displayHeading }}</h1>
 
-  <p class="token-subtitle">{{ detailView.tokenTitle }}</p>
+    {% if detailView.variantLine %}
+      <p class="token-subtitle">
+        {{ detailView.variantLine }}
+      </p>
+    {% endif %}
+  </div>
 
-  {% if detailView.metaParts and detailView.metaParts.length %}
-    <p class="token-meta-line">{{ detailView.metaParts | join(" · ") }}</p>
-  {% endif %}
+  <div class="token-primary">
+    <div class="token-images">
+      <figure class="token-image-card">
+        {% if token | hasTokenImage("o") %}
+          <button
+            type="button"
+            class="token-image-button"
+            aria-label="Enlarge {{ detailView.tokenId }} obverse image">
+            <img
+              class="token-image"
+              src="{{ token | tokenImagePath('o') }}"
+              alt="{{ detailView.tokenId }} obverse" />
+          </button>
+        {% else %}
+          {% set tokenPlaceholderClass = "placeholder" %}
+          {% include "token-placeholder.njk" %}
+        {% endif %}
 
-  {% if detailView.badges and detailView.badges.length %}
-    <div class="badges">
-      {% for badge in detailView.badges %}
-        <span class="badge">{{ badge }}</span>
-      {% endfor %}
+        {% if detailView.obverseText %}
+          <figcaption class="token-image-caption">
+            <strong>Obverse:</strong>
+            <span class="token-caption-text">{{ detailView.obverseCaption }}</span>
+          </figcaption>
+        {% endif %}
+      </figure>
+
+      <figure class="token-image-card">
+        {% if token | hasTokenImage("r") %}
+          <button
+            type="button"
+            class="token-image-button"
+            aria-label="Enlarge {{ detailView.tokenId }} reverse image">
+            <img
+              class="token-image"
+              src="{{ token | tokenImagePath('r') }}"
+              alt="{{ detailView.tokenId }} reverse" />
+          </button>
+        {% else %}
+          {% set tokenPlaceholderClass = "placeholder" %}
+          {% include "token-placeholder.njk" %}
+        {% endif %}
+
+        {% if detailView.reverseText %}
+          <figcaption class="token-image-caption">
+            <strong>Reverse:</strong>
+            <span class="token-caption-text">{{ detailView.reverseCaption }}</span>
+          </figcaption>
+        {% endif %}
+      </figure>
     </div>
-  {% endif %}
 
-  {% if detailView.summaryDescription %}
-    <div class="token-summary">
-      <p>{{ detailView.summaryDescription }}</p>
-    </div>
-  {% endif %}
-
-  <div class="token-images">
-    <figure class="token-image-card">
-      {% if token | hasTokenImage("o") %}
-        <button
-          type="button"
-          class="token-image-button"
-          aria-label="Enlarge {{ detailView.tokenId }} obverse image">
-          <img
-            class="token-image"
-            src="{{ token | tokenImagePath('o') }}"
-            alt="{{ detailView.tokenId }} obverse" />
-        </button>
-      {% else %}
-        {% set tokenPlaceholderClass = "placeholder" %}
-        {% include "token-placeholder.njk" %}
-      {% endif %}
-
-      {% if detailView.obverseText %}
-        <figcaption class="token-image-caption">
-          <strong>Obverse:</strong> {{ detailView.obverseText }}
-        </figcaption>
-      {% endif %}
-    </figure>
-
-    <figure class="token-image-card">
-      {% if token | hasTokenImage("r") %}
-        <button
-          type="button"
-          class="token-image-button"
-          aria-label="Enlarge {{ detailView.tokenId }} reverse image">
-          <img
-            class="token-image"
-            src="{{ token | tokenImagePath('r') }}"
-            alt="{{ detailView.tokenId }} reverse" />
-        </button>
-      {% else %}
-        {% set tokenPlaceholderClass = "placeholder" %}
-        {% include "token-placeholder.njk" %}
-      {% endif %}
-
-      {% if detailView.reverseText %}
-        <figcaption class="token-image-caption">
-          <strong>Reverse:</strong> {{ detailView.reverseText }}
-        </figcaption>
-      {% endif %}
-    </figure>
+    {% if detailView.summaryDescription %}
+      <div class="token-summary">
+        <p>{{ detailView.summaryDescription }}</p>
+      </div>
+    {% endif %}
   </div>
 
   <div class="token-lower-grid">
@@ -169,8 +167,8 @@
       <section class="section token-notes-section">
         <h2>Notes</h2>
 
-        <div class="notes-frame js-notes-frame">
-          <div class="notes-content js-notes-content">
+        <div class="notes-frame">
+          <div class="notes-content">
             <p>{{ detailView.notes }}</p>
 
             {% if token.wanted %}
@@ -184,13 +182,6 @@
             {% endif %}
           </div>
 
-          <button
-            type="button"
-            class="notes-more js-notes-more"
-            hidden
-            aria-expanded="false">
-            Read more
-          </button>
         </div>
       </section>
     {% endif %}
@@ -210,7 +201,10 @@
             </div>
 
             <div class="token-pager-content">
-              <span class="token-pager-label">← Previous</span>
+              <span class="token-pager-label">← {{ detailView.pager.prev.directionLabel or "Previous" }}</span>
+              {% if detailView.pager.prev.targetBorough %}
+                <span class="token-pager-borough">{{ detailView.pager.prev.targetBorough }}</span>
+              {% endif %}
               <strong>{{ detailView.pager.prev.id }}</strong>
               <span>{{ detailView.pager.prev.title }}</span>
             </div>
@@ -229,7 +223,10 @@
             </div>
 
             <div class="token-pager-content">
-              <span class="token-pager-label">Next →</span>
+              <span class="token-pager-label">{{ detailView.pager.next.directionLabel or "Next" }} →</span>
+              {% if detailView.pager.next.targetBorough %}
+                <span class="token-pager-borough">{{ detailView.pager.next.targetBorough }}</span>
+              {% endif %}
               <strong>{{ detailView.pager.next.id }}</strong>
               <span>{{ detailView.pager.next.title }}</span>
             </div>
@@ -254,7 +251,10 @@
             </div>
 
             <div class="token-pager-content">
-              <span class="token-pager-label">← Previous</span>
+              <span class="token-pager-label">← {{ detailView.browsePager.prev.directionLabel or "Previous" }}</span>
+              {% if detailView.browsePager.prev.targetBorough %}
+                <span class="token-pager-borough">{{ detailView.browsePager.prev.targetBorough }}</span>
+              {% endif %}
               <strong>{{ detailView.browsePager.prev.id }}</strong>
               <span>{{ detailView.browsePager.prev.title }}</span>
             </div>
@@ -273,7 +273,10 @@
             </div>
 
             <div class="token-pager-content">
-              <span class="token-pager-label">Next →</span>
+              <span class="token-pager-label">{{ detailView.browsePager.next.directionLabel or "Next" }} →</span>
+              {% if detailView.browsePager.next.targetBorough %}
+                <span class="token-pager-borough">{{ detailView.browsePager.next.targetBorough }}</span>
+              {% endif %}
               <strong>{{ detailView.browsePager.next.id }}</strong>
               <span>{{ detailView.browsePager.next.title }}</span>
             </div>
@@ -305,7 +308,10 @@
                   </div>
 
                   <div class="token-pager-content">
-                    <span class="token-pager-label">← Previous</span>
+                    <span class="token-pager-label">← {{ groupPager.prev.directionLabel or "Previous" }}</span>
+                    {% if groupPager.prev.targetBorough %}
+                      <span class="token-pager-borough">{{ groupPager.prev.targetBorough }}</span>
+                    {% endif %}
                     <strong>{{ groupPager.prev.id }}</strong>
                     <span>{{ groupPager.prev.title }}</span>
                   </div>
@@ -324,7 +330,10 @@
                   </div>
 
                   <div class="token-pager-content">
-                    <span class="token-pager-label">Next →</span>
+                    <span class="token-pager-label">{{ groupPager.next.directionLabel or "Next" }} →</span>
+                    {% if groupPager.next.targetBorough %}
+                      <span class="token-pager-borough">{{ groupPager.next.targetBorough }}</span>
+                    {% endif %}
                     <strong>{{ groupPager.next.id }}</strong>
                     <span>{{ groupPager.next.title }}</span>
                   </div>

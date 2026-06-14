@@ -312,6 +312,7 @@
     "title": "Perey Turnstiles For Better Fare Collection",
     "borough": "Queens",
     "mat": "WM",
+    "finish": "gunmetal plated",
     "form": "R",
     "symbol": "",
     "catalogRefs": [
@@ -438,6 +439,7 @@
     "title": "Triboro Coach Corp. No Value T",
     "borough": "Queens",
     "mat": "WM",
+    "finish": "gunmetal plated",
     "form": "R",
     "symbol": "",
     "catalogRefs": [
@@ -573,6 +575,7 @@
     "title": "Triboro Coach Corp. No Value S",
     "borough": "Queens",
     "mat": "WM",
+    "finish": "copper plated",
     "form": "R",
     "symbol": "",
     "catalogRefs": [
@@ -617,6 +620,7 @@
     "title": "Triboro Coach Corp. No Value S",
     "borough": "Queens",
     "mat": "WM",
+    "finish": "gunmetal plated",
     "form": "R",
     "symbol": "",
     "catalogRefs": [
@@ -1111,6 +1115,7 @@
     "title": "Triborough Bridge and Tunnel Authority",
     "borough": "Queens",
     "mat": "S",
+    "finish": "brass plated",
     "form": "R",
     "symbol": "",
     "catalogRefs": [
