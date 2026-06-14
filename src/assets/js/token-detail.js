@@ -73,13 +73,14 @@
       const notesFrame = grid.querySelector(".js-notes-frame");
       const notesContent = grid.querySelector(".js-notes-content");
       const notesMore = grid.querySelector(".js-notes-more");
+      const isCompactNyhrr = Boolean(grid.closest(".token-detail--nyhrr-compact"));
 
       if (
         !quickFactsSection ||
         !notesSection ||
         !notesFrame ||
         !notesContent ||
-        !notesMore
+        (!notesMore && !isCompactNyhrr)
       ) {
         return;
       }
@@ -87,9 +88,18 @@
       notesSection.style.minHeight = "";
       notesFrame.style.height = "";
       notesFrame.classList.remove("is-collapsed", "is-expanded");
-      notesMore.hidden = true;
-      notesMore.setAttribute("aria-expanded", "false");
-      notesMore.textContent = "Read more";
+      if (notesMore) {
+        notesMore.hidden = true;
+        notesMore.setAttribute("aria-expanded", "false");
+        notesMore.textContent = "Read more";
+      }
+
+      if (isCompactNyhrr) {
+        notesFrame.classList.add("is-expanded");
+        notesFrame.style.height = "auto";
+        notesSection.style.minHeight = "";
+        return;
+      }
 
       const heading = notesSection.querySelector("h2");
       const headingHeight = heading ? heading.offsetHeight + 14 : 48;

@@ -146,7 +146,8 @@
     "mat": "Gs",
     "form": "Oc",
     "symbol": "",
-    "counterstamp": "Plain",
+    "counterstamp": "",
+    "variantTrait": "Plain",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -2978,7 +2979,8 @@
     "mat": "K",
     "form": "Oc",
     "symbol": "",
-    "counterstamp": "Plain",
+    "counterstamp": "",
+    "variantTrait": "Plain",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",
@@ -3058,7 +3060,8 @@
     "mat": "L",
     "form": "Oc",
     "symbol": "",
-    "counterstamp": "Plain",
+    "counterstamp": "",
+    "variantTrait": "Plain",
     "catalogRefs": [
       {
         "catalog": "Atwood-Coffee",

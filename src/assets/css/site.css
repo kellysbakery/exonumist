@@ -674,6 +674,12 @@ h2 {
   overflow-wrap: anywhere;
 }
 
+.token-caption-text {
+  display: block;
+  margin-top: 0.28rem;
+  overflow-wrap: anywhere;
+}
+
 .token-lower-grid {
   display: grid;
   grid-template-columns: minmax(290px, 0.86fr) minmax(0, 1.14fr);
@@ -752,10 +758,6 @@ h2 {
 
 .token-detail--nyhrr-compact > * {
   grid-column: 1 / -1;
-}
-
-.token-detail--nyhrr-compact .badges {
-  display: none;
 }
 
 .token-detail--nyhrr-compact .breadcrumb {
@@ -844,6 +846,18 @@ h2 {
   max-width: 95ch;
 }
 
+.token-detail--nyhrr-compact .notes-content {
+  padding-bottom: 1.2rem;
+}
+
+.token-detail--nyhrr-compact .notes-frame.is-collapsed::after {
+  content: none;
+}
+
+.token-detail--nyhrr-compact .notes-more {
+  display: none;
+}
+
 .token-notes-section {
   padding: 20px;
 }
@@ -918,6 +932,76 @@ h2 {
 
 .notes-more:hover {
   text-decoration: underline;
+}
+
+@media (min-width: 821px) and (max-width: 1150px) {
+  .token-detail--nyhrr-compact {
+    grid-template-columns: minmax(0, 1fr) minmax(340px, 0.72fr);
+    gap: 0 16px;
+  }
+
+  .token-detail--nyhrr-compact .token-image,
+  .token-detail--nyhrr-compact .placeholder {
+    max-height: 230px;
+  }
+
+  .token-detail--nyhrr-compact .token-image-card {
+    padding: 0.75rem 0.75rem 0.85rem;
+  }
+
+  .token-detail--nyhrr-compact .facts {
+    padding-inline: 14px;
+  }
+
+  .token-detail--nyhrr-compact .facts-row {
+    grid-template-columns: minmax(7.35rem, 0.38fr) minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .token-detail--nyhrr-compact .facts dd {
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+}
+
+@media (max-width: 820px) {
+  .token-detail--nyhrr-compact {
+    grid-template-columns: 1fr;
+  }
+
+  .token-detail--nyhrr-compact .token-heading,
+  .token-detail--nyhrr-compact .token-images,
+  .token-detail--nyhrr-compact .token-quickfacts,
+  .token-detail--nyhrr-compact .token-summary,
+  .token-detail--nyhrr-compact .token-notes-section,
+  .token-detail--nyhrr-compact .token-pager {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .token-detail--nyhrr-compact .token-heading {
+    order: 2;
+  }
+
+  .token-detail--nyhrr-compact .token-images {
+    order: 3;
+  }
+
+  .token-detail--nyhrr-compact .token-quickfacts {
+    order: 4;
+  }
+
+  .token-detail--nyhrr-compact .token-summary {
+    order: 5;
+  }
+
+  .token-detail--nyhrr-compact .token-notes-section {
+    order: 6;
+  }
+
+  .token-detail--nyhrr-compact .token-pager {
+    order: 7;
+  }
 }
 
 .section-intro {
@@ -2159,46 +2243,12 @@ h2 {
     padding: 20px;
   }
 
-  .token-detail--nyhrr-compact {
-    grid-template-columns: 1fr;
-  }
-
-  .token-detail--nyhrr-compact .token-heading,
-  .token-detail--nyhrr-compact .token-images,
-  .token-detail--nyhrr-compact .token-quickfacts,
-  .token-detail--nyhrr-compact .token-summary,
-  .token-detail--nyhrr-compact .token-notes-section,
-  .token-detail--nyhrr-compact .token-pager {
-    grid-column: 1;
-    grid-row: auto;
-  }
-
-  .token-detail--nyhrr-compact .token-heading {
-    order: 2;
+  .quickfacts-panel {
+    max-width: 100%;
   }
 
   .token-detail--nyhrr-compact .token-images {
-    order: 3;
-  }
-
-  .token-detail--nyhrr-compact .token-quickfacts {
-    order: 4;
-  }
-
-  .token-detail--nyhrr-compact .token-summary {
-    order: 5;
-  }
-
-  .token-detail--nyhrr-compact .token-notes-section {
-    order: 6;
-  }
-
-  .token-detail--nyhrr-compact .token-pager {
-    order: 7;
-  }
-
-  .quickfacts-panel {
-    max-width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .token-image,

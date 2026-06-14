@@ -87,10 +87,17 @@
       <p class="token-meta-line">{{ detailView.metaParts | join(" · ") }}</p>
     {% endif %}
 
-    {% if detailView.badges and detailView.badges.length %}
+    {% set visibleBadges = [] %}
+    {% if detailView.badges and not isNyhrrCompact %}
+      {% for badge in detailView.badges %}
+        {% set visibleBadges = visibleBadges.concat([badge]) %}
+      {% endfor %}
+    {% endif %}
+
+    {% if visibleBadges.length %}
       <div class="badges">
-        {% for badge in detailView.badges %}
-          <span class="badge">{{ badge }}</span>
+        {% for badge in visibleBadges %}
+          <span class="badge">{{ badge.label or badge }}</span>
         {% endfor %}
       </div>
     {% endif %}
@@ -121,7 +128,8 @@
 
       {% if detailView.obverseText %}
         <figcaption class="token-image-caption">
-          <strong>Obverse:</strong> {{ detailView.obverseText }}
+          <strong>Obverse:</strong>
+          <span class="token-caption-text">{{ detailView.obverseCaption }}</span>
         </figcaption>
       {% endif %}
     </figure>
@@ -144,7 +152,8 @@
 
       {% if detailView.reverseText %}
         <figcaption class="token-image-caption">
-          <strong>Reverse:</strong> {{ detailView.reverseText }}
+          <strong>Reverse:</strong>
+          <span class="token-caption-text">{{ detailView.reverseCaption }}</span>
         </figcaption>
       {% endif %}
     </figure>
@@ -193,13 +202,15 @@
             {% endif %}
           </div>
 
-          <button
-            type="button"
-            class="notes-more js-notes-more"
-            hidden
-            aria-expanded="false">
-            Read more
-          </button>
+          {% if not isNyhrrCompact %}
+            <button
+              type="button"
+              class="notes-more js-notes-more"
+              hidden
+              aria-expanded="false">
+              Read more
+            </button>
+          {% endif %}
         </div>
       </section>
     {% endif %}

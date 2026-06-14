@@ -43,11 +43,14 @@ function formatCounterstampTrait(value) {
   const counterstamp = String(value || "").trim();
   if (!counterstamp) return "";
 
-  if (counterstamp.toLowerCase() === "plain") {
-    return "plain";
-  }
-
   return `${lowercaseFirst(counterstamp)} counterstamp`;
+}
+
+function normalizeInscriptionCaption(value) {
+  return String(value || "")
+    .replace(/\//g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 function buildVariantLine(token, context = {}) {
@@ -55,7 +58,11 @@ function buildVariantLine(token, context = {}) {
   const parts = [];
 
   if (token.mat) parts.push(sentenceCase(lookupValue(token.mat, lookups.materials)));
-  if (token.counterstamp) parts.push(formatCounterstampTrait(token.counterstamp));
+  if (token.variantTrait) {
+    parts.push(String(token.variantTrait).trim().toLowerCase());
+  } else if (token.counterstamp) {
+    parts.push(formatCounterstampTrait(token.counterstamp));
+  }
   if (hasMeaningfulValue(token.size)) parts.push(`${token.size} mm`);
   if (token.form) parts.push(String(lookupValue(token.form, lookups.forms)).toLowerCase());
 
@@ -281,15 +288,35 @@ function buildCollectionCardSearchText(token, context = {}) {
  * Build badge chips shown near the title.
  */
 function buildBadges(token, context = {}) {
-  const { isUnlisted = false } = context;
+  const { isUnlisted = false, lookups = {} } = context;
 
   const badges = [];
+  const addBadge = (label, type = "status") => {
+    if (!label) return;
+
+    badges.push({ label, type });
+  };
 
   if (!isUnlisted && token.var) {
-    badges.push(`Var. ${token.var}`);
+    addBadge(`Var. ${token.var}`, "variety");
   }
 
-  return badges.filter(Boolean);
+  if (String(token.type || "").toLowerCase() === "pattern") {
+    addBadge(lookupValue(token.type, lookups.type));
+  }
+
+  if (
+    token.classification &&
+    String(token.classification).trim().toLowerCase() !== "regular"
+  ) {
+    addBadge(lookupValue(token.classification, lookups.classification));
+  }
+
+  if (isUnlisted) {
+    addBadge("Unlisted");
+  }
+
+  return badges;
 }
 
 function buildBreadcrumbItems(context = {}) {
@@ -394,6 +421,12 @@ function buildTokenDetailView(token, context = {}) {
   } = context;
 
   const helperFns = context.helperFns || {};
+  const obverseText = token.obv
+    ? token.counterstamp
+      ? `${token.obv} (${token.counterstamp} Counterstamp)`
+      : token.obv
+    : "";
+  const reverseText = token.rev || "";
 
   return {
     token,
@@ -432,13 +465,11 @@ function buildTokenDetailView(token, context = {}) {
       detailSectionTitle
     }),
 
-    obverseText: token.obv
-      ? token.counterstamp
-        ? `${token.obv} (${token.counterstamp} Counterstamp)`
-        : token.obv
-      : "",
+    obverseText,
+    obverseCaption: normalizeInscriptionCaption(obverseText),
 
-    reverseText: token.rev || "",
+    reverseText,
+    reverseCaption: normalizeInscriptionCaption(reverseText),
 
     notes: token.notes || "",
     wantedNote: token.wantedNote || "",
