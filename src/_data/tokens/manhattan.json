@@ -1132,6 +1132,7 @@
     "title": "Comprehensive Omnibus Corporation",
     "borough": "Manhattan",
     "mat": "S",
+    "finish": "bronze plated",
     "form": "R",
     "symbol": "COsc",
     "catalogRefs": [
@@ -1445,6 +1446,7 @@
     "title": "Avenue B & East Broadway Trans. Co.",
     "borough": "Manhattan",
     "mat": "WM",
+    "finish": "gunmetal plated",
     "form": "R",
     "symbol": "",
     "catalogRefs": [
@@ -1490,6 +1492,7 @@
     "title": "Avenue B & East Broadway Trans. Co.",
     "borough": "Manhattan",
     "mat": "WM",
+    "finish": "gunmetal plated",
     "form": "R",
     "symbol": "",
     "catalogRefs": [
@@ -1534,6 +1537,7 @@
     "title": "Avenue B & East Broadway Trans. Co.",
     "borough": "Manhattan",
     "mat": "WM",
+    "finish": "red enameled",
     "form": "R",
     "symbol": "",
     "catalogRefs": [
@@ -1702,6 +1706,7 @@
     "title": "H. & M. One Fare",
     "borough": "Manhattan",
     "mat": "WM",
+    "finish": "copper plated",
     "form": "R",
     "symbol": "H-sc",
     "catalogRefs": [
@@ -1737,6 +1742,7 @@
     "title": "H. & M. One Fare",
     "borough": "Manhattan",
     "mat": "WM",
+    "finish": "brass plated",
     "form": "R",
     "symbol": "H-sc",
     "catalogRefs": [
@@ -2170,6 +2176,7 @@
     "title": "M 50 TBTA",
     "borough": "Manhattan",
     "mat": "S",
+    "finish": "brass plated",
     "form": "R",
     "symbol": "",
     "catalogRefs": [
@@ -2215,6 +2222,7 @@
     "title": "M 75 TBTA",
     "borough": "Manhattan",
     "mat": "S",
+    "finish": "copper plated",
     "form": "R",
     "symbol": "",
     "catalogRefs": [
@@ -2260,6 +2268,7 @@
     "title": "M 100 TBTA",
     "borough": "Manhattan",
     "mat": "S",
+    "finish": "white-metal plated",
     "form": "R",
     "symbol": "",
     "catalogRefs": [
@@ -2397,6 +2406,7 @@
     "title": "M 75 TBTA",
     "borough": "Manhattan",
     "mat": "S",
+    "finish": "copper plated",
     "form": "R",
     "symbol": "",
     "catalogRefs": [
@@ -2530,6 +2540,7 @@
     "title": "Triborough Bridge and Tunnel Authority",
     "borough": "Manhattan",
     "mat": "S",
+    "finish": "copper plated",
     "form": "R",
     "symbol": "",
     "catalogRefs": [
@@ -2577,6 +2588,7 @@
     "title": "Triborough Bridge and Tunnel Authority",
     "borough": "Manhattan",
     "mat": "S",
+    "finish": "copper plated",
     "form": "R",
     "symbol": "",
     "catalogRefs": [

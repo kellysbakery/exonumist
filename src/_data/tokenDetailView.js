@@ -25,18 +25,34 @@ function formatTokenType(token, lookups = {}) {
   return value ? String(value).toLowerCase() : "collection";
 }
 
+function formatMaterialDisplay(token, lookups = {}) {
+  const material = lookupValue(token.mat, lookups.materials);
+  if (!material) return "";
+
+  const finish = String(token.finish || "").trim();
+  return finish ? `${material} (${finish})` : material;
+}
+
+function sentenceStyle(value) {
+  const text = String(value || "").trim().toLowerCase();
+  if (!text) return "";
+
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
+function formatVariantLineMaterial(token, lookups = {}) {
+  const material = sentenceStyle(lookupValue(token.mat, lookups.materials));
+  if (!material) return "";
+
+  const finish = String(token.finish || "").trim();
+  return finish ? `${material}, ${finish}` : material;
+}
+
 function lowercaseFirst(value) {
   const text = String(value || "").trim();
   if (!text) return "";
 
   return text.charAt(0).toLowerCase() + text.slice(1);
-}
-
-function sentenceCase(value) {
-  const text = String(value || "").trim().toLowerCase();
-  if (!text) return "";
-
-  return text.charAt(0).toUpperCase() + text.slice(1);
 }
 
 function formatCounterstampTrait(value) {
@@ -57,14 +73,19 @@ function buildVariantLine(token, context = {}) {
   const { lookups = {} } = context;
   const parts = [];
 
-  if (token.mat) parts.push(sentenceCase(lookupValue(token.mat, lookups.materials)));
+  if (token.mat) parts.push(formatVariantLineMaterial(token, lookups));
   if (token.variantTrait) {
     parts.push(String(token.variantTrait).trim().toLowerCase());
   } else if (token.counterstamp) {
     parts.push(formatCounterstampTrait(token.counterstamp));
   }
   if (hasMeaningfulValue(token.size)) parts.push(`${token.size} mm`);
-  if (token.form) parts.push(String(lookupValue(token.form, lookups.forms)).toLowerCase());
+  if (token.form) {
+    const shape = String(lookupValue(token.form, lookups.forms)).trim();
+    if (shape && shape.toLowerCase() !== "round") {
+      parts.push(shape.toLowerCase());
+    }
+  }
 
   return parts.filter(Boolean).join(" · ");
 }
@@ -201,7 +222,7 @@ function buildQuickFacts(token, context = {}) {
   ) {
     addRow("Classification", lookupValue(token.classification, lookups.classification));
   }
-  addRow("Material", lookupValue(token.mat, lookups.materials));
+  addRow("Material", formatMaterialDisplay(token, lookups));
   addRow("Size", hasMeaningfulValue(token.size) ? `${token.size} mm` : "");
   addRow("Shape", lookupValue(token.form, lookups.forms));
   addRow("Symbol", lookupValue(token.symbol, lookups.symbols));
@@ -229,7 +250,7 @@ function buildMetaParts(token, context = {}) {
     parts.push(`Section ${token.sec}`);
   }
 
-  if (token.mat) parts.push(lookupValue(token.mat, lookups.materials));
+  if (token.mat) parts.push(formatMaterialDisplay(token, lookups));
   if (token.size) parts.push(`${token.size} mm`);
   if (token.form) parts.push(lookupValue(token.form, lookups.forms));
   if (token.symbol)
@@ -245,7 +266,7 @@ function buildCardMetaParts(token, context = {}) {
   const { lookups = {} } = context;
   const parts = [];
 
-  if (token.mat) parts.push(lookupValue(token.mat, lookups.materials));
+  if (token.mat) parts.push(formatMaterialDisplay(token, lookups));
   if (token.size) parts.push(`${token.size} mm`);
   if (token.form) parts.push(lookupValue(token.form, lookups.forms));
   if (token.symbol) parts.push(lookupValue(token.symbol, lookups.symbols));
@@ -275,7 +296,8 @@ function buildCollectionCardSearchText(token, context = {}) {
     token.classification || "",
     token.type || "",
     token.borough || "",
-    lookupValue(token.mat, lookups.materials),
+    formatMaterialDisplay(token, lookups),
+    token.finish || "",
     lookupValue(token.form, lookups.forms),
     lookupValue(token.symbol, lookups.symbols)
   ];
@@ -415,6 +437,7 @@ function buildTokenDetailView(token, context = {}) {
     }),
 
     displayHeading: tokenTitle || tokenId,
+    materialDisplay: formatMaterialDisplay(token, lookups),
     variantLine: buildVariantLine(token, { lookups }),
 
     quickFacts: buildQuickFacts(token, {
@@ -505,6 +528,7 @@ module.exports = {
   buildCardMetaParts,
   buildCollectionCardSearchText,
   buildDisplayDescription,
+  formatMaterialDisplay,
   formatCatalogCrossReferences,
   normalizeCatalogCrossReferences,
   buildTokenDetailView

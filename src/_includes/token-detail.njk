@@ -7,7 +7,7 @@
 {%- endif -%}
 {%- set tokenStructuredDescription = detailView.summaryDescription or detailView.tokenTitle or detailView.tokenId -%}
 {%- set tokenStructuredCategory = lookups.type[token.type] if token.type and lookups.type else token.type -%}
-{%- set tokenStructuredMaterial = lookups.materials[token.mat] if token.mat and lookups.materials else token.mat -%}
+{%- set tokenStructuredMaterial = detailView.materialDisplay -%}
 {%- set tokenStructuredImages = [] -%}
 {%- if token | hasTokenImage("o") -%}
   {%- set tokenStructuredImages = tokenStructuredImages.concat([(token | tokenImagePath("o")) | absoluteUrl(site)]) -%}
