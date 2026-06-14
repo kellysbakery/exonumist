@@ -1,6 +1,7 @@
 {%- set detailSectionTitle = detailSectionTitle or "Tokens" -%}
 {%- set detailSectionUrl = detailSectionUrl or "/" -%}
 {%- set detailView = detailView or tokenDetailView or display -%}
+{%- set isNyhrrCompact = token.groups and ("nyhrr" in token.groups) -%}
 {%- set tokenStructuredName = detailView.tokenId -%}
 {%- if detailView.tokenTitle -%}
   {%- set tokenStructuredName = detailView.tokenId ~ " | " ~ detailView.tokenTitle -%}
@@ -40,7 +41,7 @@
 }
 </script>
 
-<section class="token-shell">
+<section class="token-shell{% if isNyhrrCompact %} token-detail--nyhrr-compact{% endif %}">
   <nav class="breadcrumb" aria-label="Breadcrumb" data-token-breadcrumb="collection">
     {% for crumb in detailView.breadcrumbItems %}
       {% if crumb.url %}
@@ -71,21 +72,29 @@
     {% endfor %}
   {% endif %}
 
-  <h1>{{ detailView.tokenId }}</h1>
+  <div class="token-heading">
+    <h1>{{ detailView.displayHeading if isNyhrrCompact else detailView.tokenId }}</h1>
 
-  <p class="token-subtitle">{{ detailView.tokenTitle }}</p>
+    <p class="token-subtitle">
+      {% if isNyhrrCompact and detailView.variantLine %}
+        {{ detailView.variantLine }}
+      {% else %}
+        {{ detailView.tokenTitle }}
+      {% endif %}
+    </p>
 
-  {% if detailView.metaParts and detailView.metaParts.length %}
-    <p class="token-meta-line">{{ detailView.metaParts | join(" · ") }}</p>
-  {% endif %}
+    {% if (not isNyhrrCompact) and detailView.metaParts and detailView.metaParts.length %}
+      <p class="token-meta-line">{{ detailView.metaParts | join(" · ") }}</p>
+    {% endif %}
 
-  {% if detailView.badges and detailView.badges.length %}
-    <div class="badges">
-      {% for badge in detailView.badges %}
-        <span class="badge">{{ badge }}</span>
-      {% endfor %}
-    </div>
-  {% endif %}
+    {% if detailView.badges and detailView.badges.length %}
+      <div class="badges">
+        {% for badge in detailView.badges %}
+          <span class="badge">{{ badge }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
 
   {% if detailView.summaryDescription %}
     <div class="token-summary">

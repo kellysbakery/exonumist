@@ -25,6 +25,43 @@ function formatTokenType(token, lookups = {}) {
   return value ? String(value).toLowerCase() : "collection";
 }
 
+function lowercaseFirst(value) {
+  const text = String(value || "").trim();
+  if (!text) return "";
+
+  return text.charAt(0).toLowerCase() + text.slice(1);
+}
+
+function sentenceCase(value) {
+  const text = String(value || "").trim().toLowerCase();
+  if (!text) return "";
+
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
+function formatCounterstampTrait(value) {
+  const counterstamp = String(value || "").trim();
+  if (!counterstamp) return "";
+
+  if (counterstamp.toLowerCase() === "plain") {
+    return "plain";
+  }
+
+  return `${lowercaseFirst(counterstamp)} counterstamp`;
+}
+
+function buildVariantLine(token, context = {}) {
+  const { lookups = {} } = context;
+  const parts = [];
+
+  if (token.mat) parts.push(sentenceCase(lookupValue(token.mat, lookups.materials)));
+  if (token.counterstamp) parts.push(formatCounterstampTrait(token.counterstamp));
+  if (hasMeaningfulValue(token.size)) parts.push(`${token.size} mm`);
+  if (token.form) parts.push(String(lookupValue(token.form, lookups.forms)).toLowerCase());
+
+  return parts.filter(Boolean).join(" · ");
+}
+
 function buildDisplayDescription(token, context = {}) {
   const { lookups = {} } = context;
   const rawDescription = String(token.desc || "").trim();
@@ -385,6 +422,9 @@ function buildTokenDetailView(token, context = {}) {
       isUnlisted,
       detailSectionTitle
     }),
+
+    displayHeading: tokenTitle || tokenId,
+    variantLine: buildVariantLine(token, { lookups }),
 
     quickFacts: buildQuickFacts(token, {
       isUnlisted,
