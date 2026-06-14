@@ -345,13 +345,42 @@ function findPrevNext(items = [], currentToken) {
   };
 }
 
+function normalizePagerArea(value) {
+  return String(value || "")
+    .trim()
+    .toLowerCase();
+}
+
+function getPagerAreaKey(token = {}) {
+  return String(token.collectionArea || token.borough || "").trim();
+}
+
+function getPagerBoroughLabel(token = {}) {
+  return String(token.borough || token.collectionArea || "")
+    .trim()
+    .toUpperCase();
+}
+
 function buildPagerItem(token, options = {}) {
   if (!token) return null;
 
-  const { urlBuilder, hasTokenImage, tokenImagePath } = options;
+  const {
+    urlBuilder,
+    hasTokenImage,
+    tokenImagePath,
+    currentToken = null,
+    direction = ""
+  } = options;
 
   const id = token.displayId || "";
   const slug = id.toLowerCase();
+  const currentArea = getPagerAreaKey(currentToken || {});
+  const targetArea = getPagerAreaKey(token);
+  const targetBorough = getPagerBoroughLabel(token);
+  const crossesBorough =
+    Boolean(currentArea && targetArea) &&
+    normalizePagerArea(currentArea) !== normalizePagerArea(targetArea);
+  const directionText = direction === "prev" ? "Previous" : "Next";
 
   let url = "";
 
@@ -368,6 +397,11 @@ function buildPagerItem(token, options = {}) {
     id,
     title: token.title || "",
     url,
+    crossesBorough,
+    targetBorough,
+    directionLabel: crossesBorough
+      ? `${directionText} borough`
+      : directionText,
     image:
       hasTokenImage && hasTokenImage(token, "o")
         ? tokenImagePath(token, "o")
@@ -461,11 +495,15 @@ function buildTokenDetailView(token, context = {}) {
       ? {
           prev: buildPagerItem(prevToken, {
             hasTokenImage: helperFns.hasTokenImage,
-            tokenImagePath: helperFns.tokenImagePath
+            tokenImagePath: helperFns.tokenImagePath,
+            currentToken: token,
+            direction: "prev"
           }),
           next: buildPagerItem(nextToken, {
             hasTokenImage: helperFns.hasTokenImage,
-            tokenImagePath: helperFns.tokenImagePath
+            tokenImagePath: helperFns.tokenImagePath,
+            currentToken: token,
+            direction: "next"
           })
         }
       : null,
@@ -474,11 +512,15 @@ function buildTokenDetailView(token, context = {}) {
       ? {
           prev: buildPagerItem(globalPrevToken, {
             hasTokenImage: helperFns.hasTokenImage,
-            tokenImagePath: helperFns.tokenImagePath
+            tokenImagePath: helperFns.tokenImagePath,
+            currentToken: token,
+            direction: "prev"
           }),
           next: buildPagerItem(globalNextToken, {
             hasTokenImage: helperFns.hasTokenImage,
-            tokenImagePath: helperFns.tokenImagePath
+            tokenImagePath: helperFns.tokenImagePath,
+            currentToken: token,
+            direction: "next"
           })
         }
       : null,
@@ -495,7 +537,9 @@ function buildTokenDetailView(token, context = {}) {
               groupPager.prevUrl,
               {
                 hasTokenImage: helperFns.hasTokenImage,
-                tokenImagePath: helperFns.tokenImagePath
+                tokenImagePath: helperFns.tokenImagePath,
+                currentToken: token,
+                direction: "prev"
               }
             ),
             next: buildPagerItemWithUrl(
@@ -503,7 +547,9 @@ function buildTokenDetailView(token, context = {}) {
               groupPager.nextUrl,
               {
                 hasTokenImage: helperFns.hasTokenImage,
-                tokenImagePath: helperFns.tokenImagePath
+                tokenImagePath: helperFns.tokenImagePath,
+                currentToken: token,
+                direction: "next"
               }
             )
           }))

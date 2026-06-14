@@ -1250,6 +1250,16 @@ h2 {
   font-size: 1rem;
 }
 
+.token-pager-borough {
+  display: block;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
 .token-pager-content span:last-child {
   color: var(--muted);
 }
