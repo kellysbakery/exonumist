@@ -571,44 +571,37 @@ h2 {
   display: block;
   margin: 0 auto 0.9rem;
   border-radius: 12px;
-  cursor: pointer;
+  cursor: zoom-in;
   transition:
     transform 160ms ease,
+    filter 160ms ease,
     box-shadow 160ms ease;
+  transform-origin: center;
 }
 
 .token-image-button {
   display: block;
   width: 100%;
+  max-width: 520px;
+  margin: 0 auto 0.9rem;
   padding: 0;
+  overflow: hidden;
   border: 0;
+  border-radius: 12px;
   background: none;
   cursor: zoom-in;
   font: inherit;
 }
 
 .token-image-button .token-image {
+  max-width: none;
+  margin: 0;
   cursor: zoom-in;
-}
-
-.token-image:hover,
-.token-image-button:hover .token-image,
-.token-image:focus-visible {
-  box-shadow: var(--interactive-shadow-strong);
-  outline: var(--interactive-outline);
-  outline-offset: 4px;
-  transform: scale(1.015);
 }
 
 .token-image-button:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 4px;
-  border-radius: 12px;
-}
-
-.token-image-button:focus-visible .token-image {
-  box-shadow: var(--interactive-shadow-strong);
-  transform: scale(1.015);
 }
 
 .token-placeholder {
@@ -1027,6 +1020,10 @@ h2 {
   max-height: 150px;
   object-fit: contain;
   display: block;
+  transition:
+    transform 180ms ease,
+    filter 180ms ease;
+  transform-origin: center;
 }
 
 .token-list-card-media-frame--round .token-list-card-image,
@@ -2048,6 +2045,22 @@ h2 {
   max-width: 100%;
   max-height: 150px;
   object-fit: contain;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card-link:hover .token-list-card-image,
+  .card-link:focus-visible .token-list-card-image,
+  .browse-card-link:hover .token-list-card-image,
+  .browse-card-link:focus-visible .token-list-card-image {
+    filter: brightness(1.025) contrast(1.02);
+    transform: scale(1.08);
+  }
+
+  .token-image-button:hover .token-image,
+  .token-image-button:focus-visible .token-image {
+    filter: brightness(1.025) contrast(1.02);
+    transform: scale(1.12);
+  }
 }
 
 .browse-card-placeholder {
@@ -3728,6 +3741,8 @@ body.has-inquiry-sticky {
   .browse-card,
   .token-pager-link,
   .browse-chip,
+  .token-list-card-image,
+  .token-image,
   .for-sale-item {
     transition: none;
   }
@@ -3742,6 +3757,12 @@ body.has-inquiry-sticky {
   .browse-card:focus-within,
   .token-pager-link:hover,
   .token-pager-link:focus-visible,
+  .card-link:hover .token-list-card-image,
+  .card-link:focus-visible .token-list-card-image,
+  .browse-card-link:hover .token-list-card-image,
+  .browse-card-link:focus-visible .token-list-card-image,
+  .token-image-button:hover .token-image,
+  .token-image-button:focus-visible .token-image,
   .browse-chip:hover {
     transform: none;
   }
