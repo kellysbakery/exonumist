@@ -60,17 +60,27 @@
   {% endif %}
 
   <link rel="stylesheet" href="/assets/css/site.css" />
-  {% if eleventy.env.runMode == "build" %}
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LQLSFWP6FW"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-LQLSFWP6FW');
-</script>
-  {% endif %}
+  <!-- Google Analytics: production hostname only -->
+  <script>
+    if (
+      window.location.hostname === "exonumist.com" ||
+      window.location.hostname === "www.exonumist.com"
+    ) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+
+      gtag('js', new Date());
+      gtag('config', 'G-LQLSFWP6FW');
+
+      const analyticsScript = document.createElement('script');
+      analyticsScript.async = true;
+      analyticsScript.src =
+        'https://www.googletagmanager.com/gtag/js?id=G-LQLSFWP6FW';
+      document.head.appendChild(analyticsScript);
+    }
+  </script>
 </head>
 <body>
   {% include "partials/header.njk" %}
