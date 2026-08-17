@@ -21,6 +21,7 @@
         selected.set(item.catalogId, {
           catalogId: String(item.catalogId),
           catalogValue: String(item.catalogValue || ""),
+          box: String(item.box || ""),
           displayPlace: String(item.displayPlace || ""),
           groupName: String(item.groupName || "")
         });
@@ -168,6 +169,7 @@
     return {
       catalogId: row.dataset.catalogId || "",
       catalogValue: row.dataset.catalogValue || "",
+      box: row.dataset.box || "",
       displayPlace: row.dataset.displayPlace || "",
       groupName: row.dataset.groupName || ""
     };
@@ -185,6 +187,7 @@
       selected.set(catalogId, {
         ...item,
         catalogValue: item.catalogValue || fresh.catalogValue,
+        box: item.box || fresh.box,
         displayPlace: item.displayPlace || fresh.displayPlace,
         groupName: item.groupName || fresh.groupName
       });
@@ -214,6 +217,7 @@
     const catalogId = document.createElement("a");
     const meta = document.createElement("span");
     const groupName = document.createElement("span");
+    const value = document.createElement("span");
     const price = document.createElement("span");
     const remove = document.createElement("button");
 
@@ -232,13 +236,24 @@
     price.className = "inquiry-list-price";
     price.textContent = item.catalogValue || "Price unavailable";
 
+    value.className = "inquiry-list-value";
+    value.append(price);
+
+    if (item.box) {
+      const box = document.createElement("span");
+
+      box.className = "inquiry-list-box";
+      box.textContent = `Box ${item.box}`;
+      value.append(box);
+    }
+
     remove.className = "inquiry-list-remove";
     remove.type = "button";
     remove.dataset.inquiryRemove = item.catalogId;
     remove.setAttribute("aria-label", `Remove ${item.catalogId} from inquiry list`);
     remove.textContent = "Remove";
 
-    meta.append(groupName, price);
+    meta.append(groupName, value);
     row.append(catalogId, meta, remove);
 
     return row;
@@ -319,10 +334,13 @@
 
   function buildSelectedInquiryBody() {
     const lines = [...selected.values()].map(
-      (item) =>
-        `- ${item.catalogId} - ${
+      (item) => {
+        const box = item.box ? ` - Box ${item.box}` : "";
+
+        return `- ${item.catalogId} - ${
           item.displayPlace || item.groupName || "Area unavailable"
-        } - Price: ${item.catalogValue || "unavailable"}`
+        } - Price: ${item.catalogValue || "unavailable"}${box}`;
+      }
     );
     const estimatedTotal = formatCurrency(getEstimatedTotal());
 

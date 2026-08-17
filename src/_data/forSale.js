@@ -185,7 +185,7 @@ module.exports = function () {
   const catalogPlaces = loadCatalogPlaces();
 
   const rows = lines.slice(1).map((line) => {
-    const [state, number, letter, value] = parseCsvLine(line);
+    const [state, number, letter, value, , box = ""] = parseCsvLine(line);
     const catalogId = buildCatalogId(state, number, letter);
     const catalogPlace = catalogPlaces.get(normalizePlaceKey(state, number));
     const displayPlace =
@@ -200,6 +200,7 @@ module.exports = function () {
       number,
       letter,
       value,
+      box,
       catalogId,
       displayPlace,
       catalogPlace,

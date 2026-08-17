@@ -3046,6 +3046,20 @@ body.has-inquiry-dialog {
   white-space: nowrap;
 }
 
+.inquiry-list-value {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.12rem;
+}
+
+.inquiry-list-box {
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
 .inquiry-list-remove {
   min-width: 2.25rem;
   min-height: 2.25rem;
@@ -3714,10 +3728,15 @@ body.has-inquiry-sticky {
   }
 
   .inquiry-list-region,
-  .inquiry-list-price {
+  .inquiry-list-price,
+  .inquiry-list-box {
     color: var(--muted);
     font-size: 0.88rem;
     line-height: 1.25;
+  }
+
+  .inquiry-list-value {
+    gap: 0.04rem;
   }
 
   .inquiry-list-remove {
