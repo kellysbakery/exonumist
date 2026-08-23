@@ -1,15 +1,15 @@
 [
   {
     "id": "unknown-nyc-transit-material",
-    "title": "Unknown, unlisted, or undocumented NYC transportation tokens",
-    "summary": "I am especially interested in pieces not listed on this site, including errors, oddities, undocumented issues, and unusual transportation-related tokens.",
+    "title": "Unknown or undocumented NYC transportation tokens",
+    "summary": "I am especially interested in pieces not yet documented in this collection, including errors, oddities, undocumented issues, and unusual transportation-related tokens.",
     "category": "unknown",
     "type": "undocumented-piece",
     "status": "wanted",
     "priority": "high",
     "visibility": "public",
     "groups": ["discoveries"],
-    "tags": ["unknown", "unlisted", "oddities", "transportation"],
+    "tags": ["unknown", "undocumented", "oddities", "transportation"],
     "sort": "001-unknown-nyc-transit"
   },
   {

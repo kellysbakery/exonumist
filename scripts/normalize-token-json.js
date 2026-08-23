@@ -25,6 +25,9 @@
  * var
  *
  * status
+ * collectionArea
+ * catalogStatus
+ * classification
  * type
  * groups
  *
@@ -43,6 +46,7 @@
  * notes
  *
  * rel
+ * catalogCrossReferences (optional)
  *
  * home
  * pub
@@ -69,14 +73,12 @@
  *
  * Example:
  * node scripts/normalize-token-json.js --check \
- *   src/_data/official/*.json \
- *   src/_data/unofficial/*.json
+ *   src/_data/tokens/*.json
  *
  * Then run for real:
  *
  * node scripts/normalize-token-json.js \
- *   src/_data/official/*.json \
- *   src/_data/unofficial/*.json
+ *   src/_data/tokens/*.json
  *
  * Review changes:
  * git diff
@@ -134,6 +136,21 @@ function ordered(record) {
 
   const displayId = record.displayId || record.siteId || "";
   const title = record.title || record.displayTitle || "";
+  const catalogCrossReferences = Array.isArray(record.catalogCrossReferences)
+    ? record.catalogCrossReferences
+        .map((entry) => {
+          if (!entry || typeof entry !== "object") return null;
+
+          const id = String(entry.id || "").trim();
+          if (!id) return null;
+
+          return {
+            catalog: String(entry.catalog || "").trim(),
+            id
+          };
+        })
+        .filter(Boolean)
+    : [];
 
   return {
     id: record.id || "",
@@ -143,6 +160,9 @@ function ordered(record) {
     var: record.var || "",
 
     status: record.status || "",
+    collectionArea: record.collectionArea || "",
+    catalogStatus: record.catalogStatus || record.status || "",
+    classification: record.classification || "regular",
     type: record.type || "",
     groups: Array.isArray(record.groups) ? record.groups : [],
 
@@ -161,6 +181,7 @@ function ordered(record) {
     notes: record.notes || "",
 
     rel,
+    ...(catalogCrossReferences.length ? { catalogCrossReferences } : {}),
 
     home: Boolean(record.home),
     pub: Boolean(record.pub),

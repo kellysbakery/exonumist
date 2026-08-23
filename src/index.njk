@@ -18,21 +18,15 @@ description: Collector-focused reference for New York City transportation tokens
 
       <div class="hero-copy">
         <p>
-          Welcome to my online token collection, with a special focus on New York City transportation
-          exonumia. I collect tokens for the history they preserve, the stories they tell, and the
-          connection they offer to everyday life in earlier eras.
+            Welcome to my online token collection, with a special focus on New York City transportation exonumia. I have always been fascinated by the subway system in New York, and collecting transit tokens became a natural extension of that interest.
         </p>
 
         <p class="note">
-          Start with the Collection areas below, or use Browse to search across cataloged,
-          undocumented, specialty, oddities, counterfeits, and related material.
+          Explore the curated collection by borough below, or use Search to find cataloged,
+          undocumented, counterfeit, error, and related material.
         </p>
       </div>
 
-      <div class="hero-actions">
-        <a href="/collection/" class="btn primary">Collection</a>
-        <a href="/browse/" class="btn">Browse</a>
-      </div>
     </div>
 
     {% for group in groups %}
@@ -65,10 +59,10 @@ description: Collector-focused reference for New York City transportation tokens
 </section>
 
 <section class="section">
-  <h2>Collection</h2>
+  <h2>Collection by Borough</h2>
 
   <p class="section-intro">
-    Browse by collecting area. Catalog status stays inside each area as metadata and filters.
+    View the collection by borough, from local transit lines to subway-related issues.
   </p>
 
   <div class="home-section-grid">
@@ -79,6 +73,7 @@ description: Collector-focused reference for New York City transportation tokens
             <div class="home-section-card-body">
               <strong class="home-section-card-title">{{ area.title }}</strong>
               <p class="home-section-card-desc">{{ area.description }}</p>
+              <span class="home-section-card-action" aria-hidden="true">View {{ area.title }} →</span>
             </div>
 
             {% if area.cardImage %}

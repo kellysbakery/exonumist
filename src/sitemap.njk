@@ -4,11 +4,10 @@ eleventyExcludeFromCollections: true
 ---
 {%- set sitemapUrls = [
   "/",
-  "/browse/",
-  "/collection/",
+  "/search/",
   "/about/",
   "/contact/",
-  "/for-sale/",
+  "/available/",
   "/wanted/"
 ] -%}
 {%- for group in groups -%}
@@ -19,9 +18,6 @@ eleventyExcludeFromCollections: true
 {%- endfor -%}
 {%- for pageData in collectionTokenPages -%}
   {%- set sitemapUrls = sitemapUrls.concat([urlHelpers.collectionTokenUrl(pageData.collectionArea.slug, pageData.pageId | lower)]) -%}
-{%- endfor -%}
-{%- for pageData in groupTokenPages -%}
-  {%- set sitemapUrls = sitemapUrls.concat([urlHelpers.groupTokenUrl(pageData.group.key, pageData.pageId | lower)]) -%}
 {%- endfor -%}
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

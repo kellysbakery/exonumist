@@ -1,7 +1,7 @@
 ---
 layout: base.njk
 title: Contact
-description: Contact Exonumist about New York transportation tokens, unlisted pieces, errors, oddities, buying, selling, trading, and collector research.
+description: Contact Exonumist about New York transportation tokens, undocumented pieces, errors, oddities, buying, selling, trading, and collector research.
 permalink: /contact/index.html
 ---
 
@@ -24,10 +24,12 @@ permalink: /contact/index.html
     </div>
 
     <aside class="contact-profile-card">
-      <img
-        class="contact-profile-image"
-        src="{{ contactPage.profile.image }}"
-        alt="{{ contactPage.profile.imageAlt }}" />
+      <div class="contact-profile-image-frame">
+        <img
+          class="contact-profile-image"
+          src="{{ contactPage.profile.image }}"
+          alt="{{ contactPage.profile.imageAlt }}" />
+      </div>
 
       <div class="contact-profile-body">
         <h2>{{ contactPage.profile.heading }}</h2>

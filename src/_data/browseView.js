@@ -1,24 +1,8 @@
 const allTokens = require("./allTokens");
 const collectionTokenUrls = require("./collectionTokenUrls");
 const lookups = require("./lookups.json");
-
-const GROUP_BROWSE_TYPES = {
-  errors: "error",
-  counterfeit: "counterfeit"
-};
-
-const TYPE_ORDER = [
-  "transit",
-  "error",
-  "pattern",
-  "timetable",
-  "counterfeit",
-  "fantasy",
-  "presentation",
-  "club",
-  "zonecheck",
-  "transportation-related"
-];
+const tokenDetailView = require("./tokenDetailView");
+const tokenSort = require("./tokenSort");
 
 function uniqueSorted(values) {
   return [...new Set(values.filter(Boolean))].sort((a, b) =>
@@ -27,9 +11,11 @@ function uniqueSorted(values) {
 }
 
 function uniqueTypeSorted(values) {
+  const typeOrder = Array.isArray(lookups.typeOrder) ? lookups.typeOrder : [];
+
   return [...new Set(values.filter(Boolean))].sort((a, b) => {
-    const aIndex = TYPE_ORDER.indexOf(a);
-    const bIndex = TYPE_ORDER.indexOf(b);
+    const aIndex = typeOrder.indexOf(a);
+    const bIndex = typeOrder.indexOf(b);
 
     if (aIndex !== -1 && bIndex !== -1) {
       return aIndex - bIndex;
@@ -49,10 +35,12 @@ function buildBrowseTypes(token) {
     types.add(token.type);
   }
 
-  for (const group of token.groups || []) {
-    if (GROUP_BROWSE_TYPES[group]) {
-      types.add(GROUP_BROWSE_TYPES[group]);
-    }
+  if (token.classification === "error" || token.classification === "oddity") {
+    types.add("error");
+  }
+
+  if (token.classification === "counterfeit") {
+    types.add("counterfeit");
   }
 
   return [...types];
@@ -72,12 +60,31 @@ function buildBrowseUrl(token) {
 }
 
 function buildSearchText(token) {
+  const displayDescription = tokenDetailView.buildDisplayDescription(token, {
+    lookups
+  });
+  const catalogCrossReferences = tokenDetailView.normalizeCatalogCrossReferences(
+    token
+  );
+
   const parts = [
+    token.collectionId || "",
     token.displayId || "",
+    Array.isArray(token.rel) ? token.rel.join(" ") : "",
+    catalogCrossReferences
+      .flatMap((ref) => [ref.catalog, ref.id])
+      .join(" "),
     token.title || "",
     token.borough || "",
+    displayDescription,
+    token.desc || "",
+    token.notes || "",
+    token.classification
+      ? lookups.classification[token.classification] || token.classification
+      : "",
     token.type ? lookups.type[token.type] || token.type : "",
-    token.mat ? lookups.materials[token.mat] || token.mat : "",
+    tokenDetailView.formatMaterialDisplay(token, lookups),
+    token.finish || "",
     token.counterstamp || "",
     token.obv || "",
     token.rev || ""
@@ -86,12 +93,38 @@ function buildSearchText(token) {
   return parts.join(" ").toLowerCase();
 }
 
-const tokens = allTokens.map((token) => ({
-  ...token,
-  url: buildBrowseUrl(token),
-  browseTypes: buildBrowseTypes(token),
-  searchText: buildSearchText(token)
-}));
+function lookupValue(code, table) {
+  if (!code || !table) return "";
+  return table[code] || table[String(code).toLowerCase()] || code;
+}
+
+function buildIdentifyingDetails(token) {
+  const parts = [];
+
+  if (token.mat) parts.push(tokenDetailView.formatMaterialDisplay(token, lookups));
+  if (token.size) parts.push(`${token.size} mm`);
+  if (token.form) parts.push(lookupValue(token.form, lookups.forms));
+
+  if (token.counterstamp) {
+    parts.push(`${token.counterstamp} Counterstamp`);
+  } else if (token.symbol) {
+    parts.push(lookupValue(token.symbol, lookups.symbols));
+  }
+
+  return parts.filter(Boolean).slice(0, 4);
+}
+
+const tokens = allTokens
+  .map((token) => ({
+    ...token,
+    url: buildBrowseUrl(token),
+    browseTypes: buildBrowseTypes(token),
+    displayDescription: tokenDetailView.buildDisplayDescription(token, { lookups }),
+    catalogCrossReferences: tokenDetailView.normalizeCatalogCrossReferences(token),
+    identifyingDetails: buildIdentifyingDetails(token),
+    searchText: buildSearchText(token)
+  }))
+  .sort(tokenSort.compareTokens);
 
 module.exports = {
   tokens,

@@ -6,5 +6,7 @@
   {% set frameClassPrefix = "token-pager-image-frame" %}
   {% include "shaped-image.njk" %}
 {% else %}
-  <div class="token-pager-placeholder"></div>
+  <div class="token-pager-placeholder" aria-hidden="true">
+    {% if pagerDirection == "prev" %}←{% else %}→{% endif %}
+  </div>
 {% endif %}

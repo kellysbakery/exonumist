@@ -3,11 +3,10 @@
   href="{{ tokenCardUrl }}"
   {% if tokenCardFilterable %}
     data-collection-token-card
-    data-status="{{ tokenCardToken.status }}"
+    data-status="{{ tokenCardToken.catalogStatus or tokenCardToken.status }}"
     data-search="{{ tokenCardSearchText | default('') | escape }}"
   {% endif %}>
   <article class="card token-list-card">
-
     <div class="token-list-card-media">
       {% set imagePath = "" %}
       {% if tokenCardToken | hasTokenThumb("o") %}
@@ -23,12 +22,13 @@
         {% set frameClassPrefix = "token-list-card-media-frame" %}
         {% include "shaped-image.njk" %}
       {% else %}
-        <div class="token-list-card-placeholder"></div>
+        {% set tokenPlaceholderClass = "token-list-card-placeholder" %}
+        {% include "token-placeholder.njk" %}
       {% endif %}
     </div>
 
     <div class="token-list-card-body">
-      <span class="eyebrow">
+      <span class="token-card-id">
         {{ tokenCardToken.displayId }}
       </span>
 
@@ -42,26 +42,21 @@
         </p>
       {% endif %}
 
-      {% if tokenCardToken.desc %}
+      {% set tokenCardDescription = tokenCardDescription or tokenDetailView.buildDisplayDescription(tokenCardToken, { lookups: lookups }) %}
+      {% if tokenCardDescription %}
         <p class="token-list-card-desc">
-          {{ tokenCardToken.desc }}
+          {{ tokenCardDescription }}
         </p>
       {% endif %}
 
-      <p class="token-list-card-meta">
-        {% if tokenCardToken.mat %}
-          {{ tokenCardToken.mat | lookup(lookups.materials) }}
-        {% endif %}
-        {% if tokenCardToken.size %}
-          · {{ tokenCardToken.size }} mm
-        {% endif %}
-        {% if tokenCardToken.form %}
-          · {{ tokenCardToken.form | lookup(lookups.forms) }}
-        {% endif %}
-        {% if tokenCardToken.symbol %}
-          · {{ tokenCardToken.symbol | lookup(lookups.symbols) }}
-        {% endif %}
-      </p>
+      {% set tokenCardMetaParts = tokenDetailView.buildCardMetaParts(tokenCardToken, { lookups: lookups }) %}
+      <div class="token-card-meta-row">
+        <p class="token-list-card-meta">
+          {% for part in tokenCardMetaParts %}
+            {% if not loop.first %}· {% endif %}{{ part }}
+          {% endfor %}
+        </p>
+      </div>
     </div>
 
   </article>

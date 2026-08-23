@@ -1,85 +1,70 @@
 (function () {
-  function setupNotes() {
-    const grids = document.querySelectorAll(".token-lower-grid");
+  function setupPagerContext() {
+    const collectionPager = document.querySelector('[data-token-pager="collection"]');
+    const browsePager = document.querySelector('[data-token-pager="browse"]');
+    const groupPagers = [
+      ...document.querySelectorAll('[data-token-pager="group"]')
+    ];
+    const collectionBreadcrumb = document.querySelector(
+      '[data-token-breadcrumb="collection"]'
+    );
+    const groupBreadcrumbs = [
+      ...document.querySelectorAll('[data-token-breadcrumb="group"]')
+    ];
 
-    grids.forEach((grid) => {
-      const quickFactsSection = grid.querySelector(".token-quickfacts");
-      const notesSection = grid.querySelector(".token-notes-section");
-      const notesFrame = grid.querySelector(".js-notes-frame");
-      const notesContent = grid.querySelector(".js-notes-content");
-      const notesMore = grid.querySelector(".js-notes-more");
+    if (!browsePager && !groupPagers.length && !groupBreadcrumbs.length) return;
 
-      if (
-        !quickFactsSection ||
-        !notesSection ||
-        !notesFrame ||
-        !notesContent ||
-        !notesMore
-      ) {
-        return;
+    const params = new URLSearchParams(window.location.search);
+    let cameFromBrowse = params.get("from") === "search";
+    const cameFromGroup = params.get("from") === "group";
+    const groupKey = params.get("group") || "";
+
+    if (!cameFromBrowse && document.referrer) {
+      try {
+        const referrerUrl = new URL(document.referrer);
+        cameFromBrowse =
+          referrerUrl.origin === window.location.origin &&
+          referrerUrl.pathname === "/search/";
+      } catch (error) {
+        cameFromBrowse = false;
       }
+    }
 
-      notesSection.style.minHeight = "";
-      notesFrame.style.height = "";
-      notesFrame.classList.remove("is-collapsed", "is-expanded");
-      notesMore.hidden = true;
-      notesMore.setAttribute("aria-expanded", "false");
-      notesMore.textContent = "Read more";
+    const matchingGroupPager =
+      cameFromGroup && groupKey
+        ? groupPagers.find((pager) => pager.dataset.tokenGroup === groupKey)
+        : null;
+    const matchingGroupBreadcrumb =
+      cameFromGroup && groupKey
+        ? groupBreadcrumbs.find(
+            (breadcrumb) => breadcrumb.dataset.tokenGroup === groupKey
+          )
+        : null;
 
-      const heading = notesSection.querySelector("h2");
-      const headingHeight = heading ? heading.offsetHeight + 14 : 48;
+    if (!cameFromBrowse && !matchingGroupPager && !matchingGroupBreadcrumb) {
+      return;
+    }
 
-      const isMobile = window.matchMedia("(max-width: 700px)").matches;
+    if (collectionPager) {
+      collectionPager.hidden = true;
+    }
 
-      if (isMobile) {
-        notesFrame.classList.add("is-expanded");
-        notesFrame.classList.remove("is-collapsed");
-        notesMore.hidden = true;
-        notesFrame.style.height = "auto";
-        notesSection.style.minHeight = "";
-        return;
-      }
+    if (cameFromBrowse && browsePager) {
+      browsePager.hidden = false;
+      return;
+    }
 
-      const quickFactsHeight = quickFactsSection.offsetHeight;
-      if (!quickFactsHeight) return;
+    if (matchingGroupBreadcrumb && collectionBreadcrumb) {
+      collectionBreadcrumb.hidden = true;
+      matchingGroupBreadcrumb.hidden = false;
+    }
 
-      const frameHeight = Math.max(140, quickFactsHeight - headingHeight - 42);
-
-      notesSection.style.minHeight = quickFactsHeight + "px";
-      notesFrame.style.height = frameHeight + "px";
-
-      const needsToggle =
-        notesContent.scrollHeight > notesFrame.clientHeight + 2;
-
-      if (needsToggle) {
-        notesFrame.classList.add("is-collapsed");
-        notesMore.hidden = false;
-      } else {
-        notesFrame.classList.add("is-expanded");
-      }
-
-      notesMore.onclick = function () {
-        const isExpanded = notesFrame.classList.contains("is-expanded");
-
-        if (isExpanded) {
-          notesFrame.classList.remove("is-expanded");
-          notesFrame.classList.add("is-collapsed");
-          notesFrame.style.height = frameHeight + "px";
-          notesMore.textContent = "Read more";
-          notesMore.setAttribute("aria-expanded", "false");
-        } else {
-          notesFrame.classList.remove("is-collapsed");
-          notesFrame.classList.add("is-expanded");
-          notesFrame.style.height = notesContent.scrollHeight + 8 + "px";
-          notesMore.textContent = "Show less";
-          notesMore.setAttribute("aria-expanded", "true");
-        }
-      };
-    });
+    if (matchingGroupPager) {
+      matchingGroupPager.hidden = false;
+    }
   }
 
-  window.addEventListener("load", setupNotes);
-  window.addEventListener("resize", setupNotes);
+  setupPagerContext();
 
   // Image modal functionality
   const modal = document.getElementById("image-modal");
@@ -89,14 +74,14 @@
 
   function openModal(img, trigger) {
     previouslyFocusedElement = trigger || document.activeElement;
-    modal.style.display = "flex";
+    modal.hidden = false;
     modalImg.src = img.src;
     modalImg.alt = img.alt;
     closeBtn.focus();
   }
 
   function closeModal() {
-    modal.style.display = "none";
+    modal.hidden = true;
     modalImg.src = "";
     modalImg.alt = "";
 
@@ -121,7 +106,7 @@
     img.addEventListener("click", function () {
       if (this.closest(".token-image-button")) return;
 
-      modal.style.display = "flex";
+      modal.hidden = false;
       modalImg.src = this.src;
       modalImg.alt = this.alt;
     });
@@ -138,7 +123,7 @@
   });
 
   document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape" && modal.style.display !== "none") {
+    if (event.key === "Escape" && !modal.hidden) {
       closeModal();
     }
   });
@@ -151,17 +136,15 @@
     }
   }
 
-  const prevLink = document.querySelector(".token-pager-prev a");
-  if (prevLink) {
-    preloadImage(prevLink.dataset.prevObverse);
-    preloadImage(prevLink.dataset.prevReverse);
-  }
+  document.querySelectorAll(".token-pager-prev a").forEach((link) => {
+    preloadImage(link.dataset.prevObverse);
+    preloadImage(link.dataset.prevReverse);
+  });
 
-  const nextLink = document.querySelector(".token-pager-next a");
-  if (nextLink) {
-    preloadImage(nextLink.dataset.nextObverse);
-    preloadImage(nextLink.dataset.nextReverse);
-  }
+  document.querySelectorAll(".token-pager-next a").forEach((link) => {
+    preloadImage(link.dataset.nextObverse);
+    preloadImage(link.dataset.nextReverse);
+  });
 
   // Preload HTML on hover for pagination links
   const prefetchedPages = new Set();

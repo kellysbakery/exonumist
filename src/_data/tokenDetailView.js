@@ -1,5 +1,3 @@
-const urlHelpers = require("./urlHelpers");
-
 function lookupValue(code, table) {
   if (!code || !table) return "";
   return table[code] || table[String(code).toLowerCase()] || code;
@@ -22,46 +20,209 @@ function formatNumber(value) {
   return num.toLocaleString("en-US");
 }
 
+function formatTokenType(token, lookups = {}) {
+  const value = lookupValue(token.type, lookups.type);
+  return value ? String(value).toLowerCase() : "collection";
+}
+
+function formatMaterialDisplay(token, lookups = {}) {
+  const material = lookupValue(token.mat, lookups.materials);
+  if (!material) return "";
+
+  const finish = String(token.finish || "").trim();
+  return finish ? `${material} (${finish})` : material;
+}
+
+function sentenceStyle(value) {
+  const text = String(value || "").trim().toLowerCase();
+  if (!text) return "";
+
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
+function formatVariantLineMaterial(token, lookups = {}) {
+  const material = sentenceStyle(lookupValue(token.mat, lookups.materials));
+  if (!material) return "";
+
+  const finish = String(token.finish || "").trim();
+  return finish ? `${material}, ${finish}` : material;
+}
+
+function lowercaseFirst(value) {
+  const text = String(value || "").trim();
+  if (!text) return "";
+
+  return text.charAt(0).toLowerCase() + text.slice(1);
+}
+
+function formatCounterstampTrait(value) {
+  const counterstamp = String(value || "").trim();
+  if (!counterstamp) return "";
+
+  return `${lowercaseFirst(counterstamp)} counterstamp`;
+}
+
+function normalizeInscriptionCaption(value) {
+  return String(value || "")
+    .replace(/\//g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function buildVariantLine(token, context = {}) {
+  const { lookups = {} } = context;
+  const parts = [];
+
+  if (token.mat) parts.push(formatVariantLineMaterial(token, lookups));
+  if (token.variantTrait) {
+    parts.push(String(token.variantTrait).trim().toLowerCase());
+  } else if (token.counterstamp) {
+    parts.push(formatCounterstampTrait(token.counterstamp));
+  }
+  if (hasMeaningfulValue(token.size)) parts.push(`${token.size} mm`);
+  if (token.form) {
+    const shape = String(lookupValue(token.form, lookups.forms)).trim();
+    if (shape && shape.toLowerCase() !== "round") {
+      parts.push(shape.toLowerCase());
+    }
+  }
+
+  return parts.filter(Boolean).join(" · ");
+}
+
+function buildDisplayDescription(token, context = {}) {
+  const { lookups = {} } = context;
+  const rawDescription = String(token.desc || "").trim();
+
+  if (
+    rawDescription &&
+    !/^(listed|unlisted)\b/i.test(rawDescription)
+  ) {
+    return rawDescription;
+  }
+
+  const area = token.borough || "Collection";
+  const type = formatTokenType(token, lookups);
+  const title = String(token.title || "").replace(/\.$/, "");
+
+  if (token.catalogStatus === "unlisted" || token.status === "unlisted") {
+    return title
+      ? `Documented variety in this collection: ${title}.`
+      : `${area} ${type} from this collection.`;
+  }
+
+  return title
+    ? `${area} ${type} associated with ${title}.`
+    : `${area} ${type} from this collection.`;
+}
+
+function normalizeCatalogCrossReferences(token = {}) {
+  const seen = new Set();
+
+  const normalizeEntry = (entry) => {
+    if (!entry) return null;
+
+    if (typeof entry === "string") {
+      const id = entry.trim();
+      return id ? { catalog: "Atwood-Coffee", id } : null;
+    }
+
+    const id = String(entry.id || entry.number || entry.value || "").trim();
+    if (!id) return null;
+
+    const catalog = String(entry.catalog || entry.name || "Catalog").trim();
+
+    return {
+      catalog: catalog || "Catalog",
+      id
+    };
+  };
+
+  const addEntry = (refs, entry) => {
+    const normalized = normalizeEntry(entry);
+    if (!normalized) return;
+
+    const key = `${normalized.catalog.toLowerCase()}::${normalized.id.toLowerCase()}`;
+    if (seen.has(key)) return;
+
+    seen.add(key);
+    refs.push(normalized);
+  };
+
+  const refs = [];
+
+  // Prefer explicit catalogRefs. The displayId fallback below is temporary
+  // backward compatibility until all token data has catalogRefs.
+  if (Array.isArray(token.catalogRefs) && token.catalogRefs.length) {
+    token.catalogRefs.forEach((entry) => addEntry(refs, entry));
+    return refs;
+  }
+
+  if (Array.isArray(token.catalogCrossReferences)) {
+    token.catalogCrossReferences.forEach((entry) => addEntry(refs, entry));
+  }
+
+  if (refs.length) {
+    return refs;
+  }
+
+  if (isCatalogStyleDisplayId(token.displayId)) {
+    addEntry(refs, { catalog: "Atwood-Coffee", id: token.displayId });
+  }
+
+  return refs;
+}
+
+function isCatalogStyleDisplayId(value) {
+  const id = String(value || "").trim();
+  if (!id) return false;
+
+  if (/^(odd|unl|cf)-/i.test(id)) return false;
+
+  return /^(NY\d|PP-|CT-|FF-|TR-)/i.test(id);
+}
+
+function formatCatalogCrossReferences(token) {
+  return formatCatalogCrossReferenceLines(token).join("\n");
+}
+
+function formatCatalogCrossReferenceLines(token) {
+  return normalizeCatalogCrossReferences(token).map(
+    (ref) => `${ref.catalog}: ${ref.id}`
+  );
+}
+
 /**
  * Build the Quick Facts rows shown on detail pages.
  * Canonical schema only.
  */
 function buildQuickFacts(token, context = {}) {
-  const { isUnlisted = false, lookups = {}, detailSectionTitle = "" } = context;
+  const { isUnlisted = false, lookups = {} } = context;
 
   const rows = [];
 
-  const addRow = (label, value) => {
+  const addRow = (label, value, extra = {}) => {
     if (hasMeaningfulValue(value)) {
-      rows.push({ label, value });
+      rows.push({ label, value, ...extra });
     }
   };
 
-  if (isUnlisted) {
-    addRow("ID", token.displayId);
+  const catalogCrossReferenceLines = formatCatalogCrossReferenceLines(token);
+  addRow(
+    "Cat. X-Ref.",
+    catalogCrossReferenceLines[0] || "",
+    catalogCrossReferenceLines.length > 1
+      ? { valueLines: catalogCrossReferenceLines }
+      : {}
+  );
 
-    if (Array.isArray(token.rel) && token.rel.length) {
-      addRow("Related A/C", token.rel.join(", "));
-    }
-  } else {
-    addRow("Catalogue ID", token.displayId);
-    addRow("Minor Variety", token.var);
+  if (
+    token.classification &&
+    String(token.classification).trim().toLowerCase() !== "regular"
+  ) {
+    addRow("Classification", lookupValue(token.classification, lookups.classification));
   }
-
-  const status = String(token.status || "").toLowerCase();
-  const section = String(detailSectionTitle || "").toLowerCase();
-
-  const statusIsRedundant =
-    !status ||
-    status === "listed" ||
-    status === "official" ||
-    status === section;
-
-  if (!statusIsRedundant) {
-    addRow("Status", token.status);
-  }
-
-  addRow("Material", lookupValue(token.mat, lookups.materials));
+  addRow("Material", formatMaterialDisplay(token, lookups));
   addRow("Size", hasMeaningfulValue(token.size) ? `${token.size} mm` : "");
   addRow("Shape", lookupValue(token.form, lookups.forms));
   addRow("Symbol", lookupValue(token.symbol, lookups.symbols));
@@ -70,7 +231,7 @@ function buildQuickFacts(token, context = {}) {
   addRow("Maker", token.maker);
   addRow("Issued", token.issued);
   addRow("Mintage", formatNumber(token.mintage));
-  addRow("Usage", token.usage);
+  addRow("Exonumist ID", token.collectionId || (isUnlisted ? token.displayId : ""));
 
   return rows;
 }
@@ -89,7 +250,7 @@ function buildMetaParts(token, context = {}) {
     parts.push(`Section ${token.sec}`);
   }
 
-  if (token.mat) parts.push(lookupValue(token.mat, lookups.materials));
+  if (token.mat) parts.push(formatMaterialDisplay(token, lookups));
   if (token.size) parts.push(`${token.size} mm`);
   if (token.form) parts.push(lookupValue(token.form, lookups.forms));
   if (token.symbol)
@@ -99,30 +260,49 @@ function buildMetaParts(token, context = {}) {
 }
 
 /**
- * Build badge chips shown near the title.
+ * Build compact metadata shown on token listing cards.
  */
-function buildBadges(token, context = {}) {
-  const { lookups = {}, isUnlisted = false, detailSectionTitle = "" } = context;
+function buildCardMetaParts(token, context = {}) {
+  const { lookups = {} } = context;
+  const parts = [];
 
-  const badges = [];
+  if (token.mat) parts.push(formatMaterialDisplay(token, lookups));
+  if (token.size) parts.push(`${token.size} mm`);
+  if (token.form) parts.push(lookupValue(token.form, lookups.forms));
+  if (token.symbol) parts.push(lookupValue(token.symbol, lookups.symbols));
 
-  if (token.status) {
-    const status = String(token.status).toLowerCase();
-    const section = String(detailSectionTitle).toLowerCase();
+  return parts.filter(Boolean);
+}
 
-    const redundant =
-      status === "listed" || status === "official" || status === section;
+function buildCollectionCardSearchText(token, context = {}) {
+  const { lookups = {} } = context;
+  const catalogCrossReferences = normalizeCatalogCrossReferences(token);
+  const displayDescription = buildDisplayDescription(token, { lookups });
 
-    if (!redundant) {
-      badges.push(lookupValue(token.status, lookups.status) || token.status);
-    }
-  }
+  const parts = [
+    token.collectionId || "",
+    token.displayId || "",
+    Array.isArray(token.rel) ? token.rel.join(" ") : "",
+    catalogCrossReferences
+      .flatMap((ref) => [ref.catalog, ref.id])
+      .join(" "),
+    token.title || "",
+    displayDescription,
+    token.desc || "",
+    token.obv || "",
+    token.rev || "",
+    token.notes || "",
+    token.catalogStatus || token.status || "",
+    token.classification || "",
+    token.type || "",
+    token.borough || "",
+    formatMaterialDisplay(token, lookups),
+    token.finish || "",
+    lookupValue(token.form, lookups.forms),
+    lookupValue(token.symbol, lookups.symbols)
+  ];
 
-  if (!isUnlisted && token.var) {
-    badges.push(`Var. ${token.var}`);
-  }
-
-  return badges.filter(Boolean);
+  return parts.filter(Boolean).join(" ");
 }
 
 function buildBreadcrumbItems(context = {}) {
@@ -165,13 +345,42 @@ function findPrevNext(items = [], currentToken) {
   };
 }
 
+function normalizePagerArea(value) {
+  return String(value || "")
+    .trim()
+    .toLowerCase();
+}
+
+function getPagerAreaKey(token = {}) {
+  return String(token.collectionArea || token.borough || "").trim();
+}
+
+function getPagerBoroughLabel(token = {}) {
+  return String(token.borough || token.collectionArea || "")
+    .trim()
+    .toUpperCase();
+}
+
 function buildPagerItem(token, options = {}) {
   if (!token) return null;
 
-  const { urlBuilder, pagerGroupKey, hasTokenImage, tokenImagePath } = options;
+  const {
+    urlBuilder,
+    hasTokenImage,
+    tokenImagePath,
+    currentToken = null,
+    direction = ""
+  } = options;
 
   const id = token.displayId || "";
   const slug = id.toLowerCase();
+  const currentArea = getPagerAreaKey(currentToken || {});
+  const targetArea = getPagerAreaKey(token);
+  const targetBorough = getPagerBoroughLabel(token);
+  const crossesBorough =
+    Boolean(currentArea && targetArea) &&
+    normalizePagerArea(currentArea) !== normalizePagerArea(targetArea);
+  const directionText = direction === "prev" ? "Previous" : "Next";
 
   let url = "";
 
@@ -179,21 +388,36 @@ function buildPagerItem(token, options = {}) {
     url = token.collectionUrl;
   } else if (typeof urlBuilder === "function") {
     url = urlBuilder(token);
-  } else if (urlBuilder === "group" && pagerGroupKey && slug) {
-    url = urlHelpers.groupTokenUrl(pagerGroupKey, slug);
   } else {
     url = "/";
   }
 
   return {
+    token,
     id,
     title: token.title || "",
     url,
+    crossesBorough,
+    targetBorough,
+    directionLabel: crossesBorough
+      ? `${directionText} borough`
+      : directionText,
     image:
       hasTokenImage && hasTokenImage(token, "o")
         ? tokenImagePath(token, "o")
         : ""
   };
+}
+
+function buildPagerItemWithUrl(token, url, options = {}) {
+  const item = buildPagerItem(token, options);
+  if (!item) return null;
+
+  if (url) {
+    item.url = url;
+  }
+
+  return item;
 }
 
 /**
@@ -208,14 +432,21 @@ function buildTokenDetailView(token, context = {}) {
     breadcrumbItems = null,
     prevToken = null,
     nextToken = null,
+    globalPrevToken = null,
+    globalNextToken = null,
+    groupPagerContexts = [],
     detailShowPager = false,
-    pagerUrlBuilder = null,
-    pagerGroupKey = "",
     isUnlisted = false,
     lookups = {}
   } = context;
 
   const helperFns = context.helperFns || {};
+  const obverseText = token.obv
+    ? token.counterstamp
+      ? `${token.obv} (${token.counterstamp} Counterstamp)`
+      : token.obv
+    : "";
+  const reverseText = token.rev || "";
 
   return {
     token,
@@ -239,11 +470,9 @@ function buildTokenDetailView(token, context = {}) {
       detailSectionTitle
     }),
 
-    badges: buildBadges(token, {
-      lookups,
-      isUnlisted,
-      detailSectionTitle
-    }),
+    displayHeading: tokenTitle || tokenId,
+    materialDisplay: formatMaterialDisplay(token, lookups),
+    variantLine: buildVariantLine(token, { lookups }),
 
     quickFacts: buildQuickFacts(token, {
       isUnlisted,
@@ -251,33 +480,80 @@ function buildTokenDetailView(token, context = {}) {
       detailSectionTitle
     }),
 
-    obverseText: token.obv
-      ? token.counterstamp
-        ? `${token.obv} (${token.counterstamp} Counterstamp)`
-        : token.obv
-      : "",
+    obverseText,
+    obverseCaption: normalizeInscriptionCaption(obverseText),
 
-    reverseText: token.rev || "",
+    reverseText,
+    reverseCaption: normalizeInscriptionCaption(reverseText),
 
     notes: token.notes || "",
     wantedNote: token.wantedNote || "",
+    summaryDescription: buildDisplayDescription(token, { lookups }),
+    catalogCrossReferences: normalizeCatalogCrossReferences(token),
 
     pager: detailShowPager
       ? {
           prev: buildPagerItem(prevToken, {
-            urlBuilder: pagerUrlBuilder,
-            pagerGroupKey,
             hasTokenImage: helperFns.hasTokenImage,
-            tokenImagePath: helperFns.tokenImagePath
+            tokenImagePath: helperFns.tokenImagePath,
+            currentToken: token,
+            direction: "prev"
           }),
           next: buildPagerItem(nextToken, {
-            urlBuilder: pagerUrlBuilder,
-            pagerGroupKey,
             hasTokenImage: helperFns.hasTokenImage,
-            tokenImagePath: helperFns.tokenImagePath
+            tokenImagePath: helperFns.tokenImagePath,
+            currentToken: token,
+            direction: "next"
           })
         }
-      : null
+      : null,
+
+    browsePager: detailShowPager
+      ? {
+          prev: buildPagerItem(globalPrevToken, {
+            hasTokenImage: helperFns.hasTokenImage,
+            tokenImagePath: helperFns.tokenImagePath,
+            currentToken: token,
+            direction: "prev"
+          }),
+          next: buildPagerItem(globalNextToken, {
+            hasTokenImage: helperFns.hasTokenImage,
+            tokenImagePath: helperFns.tokenImagePath,
+            currentToken: token,
+            direction: "next"
+          })
+        }
+      : null,
+
+    groupPagers: detailShowPager
+      ? groupPagerContexts
+          .filter((groupPager) => groupPager && groupPager.key)
+          .map((groupPager) => ({
+            key: groupPager.key,
+            title: groupPager.title || groupPager.key,
+            url: groupPager.url || "",
+            prev: buildPagerItemWithUrl(
+              groupPager.prevToken,
+              groupPager.prevUrl,
+              {
+                hasTokenImage: helperFns.hasTokenImage,
+                tokenImagePath: helperFns.tokenImagePath,
+                currentToken: token,
+                direction: "prev"
+              }
+            ),
+            next: buildPagerItemWithUrl(
+              groupPager.nextToken,
+              groupPager.nextUrl,
+              {
+                hasTokenImage: helperFns.hasTokenImage,
+                tokenImagePath: helperFns.tokenImagePath,
+                currentToken: token,
+                direction: "next"
+              }
+            )
+          }))
+      : []
   };
 }
 
@@ -291,55 +567,15 @@ function findSection(sections = [], sec = "") {
   );
 }
 
-function findListedGroupForSection(sections = [], groups = [], sec = "") {
-  const section = findSection(sections, sec);
-  if (!section || !Array.isArray(groups)) return null;
-
-  return (
-    groups.find(
-      (group) =>
-        group.pub !== false &&
-        group.section === "listed" &&
-        group.title === section.title &&
-        group.key
-    ) || null
-  );
-}
-
-function buildGroupBreadcrumbItems(group, token) {
-  const items = [{ label: "Home", url: "/" }];
-
-  if (group) {
-    items.push({
-      label: group.title || "",
-      url: urlHelpers.groupUrl(group.key)
-    });
-  }
-
-  items.push({
-    label: token?.displayId || "",
-    url: ""
-  });
-
-  return items;
-}
-
-function findGroupTokens(groupTokenPages = [], groupKey = "") {
-  if (!Array.isArray(groupTokenPages) || !groupKey) {
-    return [];
-  }
-
-  return groupTokenPages
-    .filter((item) => item.group && item.group.key === groupKey)
-    .map((item) => item.token);
-}
-
 module.exports = {
   findPrevNext,
   findSection,
-  findListedGroupForSection,
-  buildGroupBreadcrumbItems,
-  findGroupTokens,
   buildPagerItem,
+  buildCardMetaParts,
+  buildCollectionCardSearchText,
+  buildDisplayDescription,
+  formatMaterialDisplay,
+  formatCatalogCrossReferences,
+  normalizeCatalogCrossReferences,
   buildTokenDetailView
 };

@@ -1,0 +1,148 @@
+---
+layout: base.njk
+title: Search the collection
+description: Search Keith's collection by catalog number, borough, title, material, variety, or description.
+permalink: /search/index.html
+---
+
+<section class="section">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span>/</span>
+    <span>Search</span>
+  </nav>
+
+  <h1>Search the collection</h1>
+  <p class="section-intro">
+    Search Keith's collection by catalog number, borough, title, material, variety, or description.
+  </p>
+
+  <div class="card browse-controls search-controls">
+    <div class="browse-search-group">
+      <h2 class="search-control-title">Search terms</h2>
+      <label class="sr-only" for="browse-search">Catalog number, borough, material, or keyword</label>
+      <div class="search-input-shell">
+        <svg class="search-input-icon" aria-hidden="true" viewBox="0 0 24 24">
+          <circle cx="11" cy="11" r="6" />
+          <path d="m16 16 4 4" />
+        </svg>
+        <input
+          type="text"
+          id="browse-search"
+          class="browse-search-input"
+          placeholder="Search, e.g. NY630, Manhattan, Y-cutout, brass..." />
+      </div>
+      <p class="search-input-help">
+        Try catalog numbers, boroughs, materials, token types, or words from the description.
+      </p>
+    </div>
+
+    <div class="search-filter-area" aria-label="Filter results">
+      <h2 class="search-filter-title">Filter results</h2>
+
+      <div class="browse-filter-group" data-filter-group="borough">
+        <div class="browse-filter-heading">
+          <strong>Borough</strong>
+          <button type="button" class="browse-group-action" data-action="all" data-filter="borough">All boroughs</button>
+        </div>
+
+        <div class="browse-chip-row">
+          {% for item in browseView.filters.boroughs %}
+            <button type="button" class="browse-chip is-active" data-filter="borough" data-value="{{ item }}" aria-pressed="true">
+              <span>{{ item }}</span>
+              <span class="browse-chip-count">0</span>
+            </button>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="browse-filter-group" data-filter-group="type">
+        <div class="browse-filter-heading">
+          <strong>Type</strong>
+          <button type="button" class="browse-group-action" data-action="all" data-filter="type">All types</button>
+        </div>
+
+        <div class="browse-chip-row">
+          {% for item in browseView.filters.types %}
+            <button type="button" class="browse-chip is-active" data-filter="type" data-value="{{ item }}" aria-pressed="true">
+              <span>{{ lookups.type[item] }}</span>
+              <span class="browse-chip-count">0</span>
+            </button>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="browse-summary">
+        <strong id="browse-count"></strong>
+        <button type="button" id="browse-reset">Reset filters</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="search-results-header">
+    <h2>Matching tokens</h2>
+  </div>
+
+  <div id="browse-grid" class="grid-3 browse-grid">
+  {% for token in browseView.tokens %}
+    <article
+      class="card browse-card"
+      data-borough="{{ token.borough }}"
+      data-types="{{ token.browseTypes | join(' ') }}"
+      data-search="{{ token.searchText }}">
+      <a class="card-link browse-card-link" href="{{ token.url or '/' }}?from=search">
+        <div class="browse-card-media">
+          {% set browseImagePath = "" %}
+          {% if token | hasTokenThumb("o") %}
+            {% set browseImagePath = token | tokenThumbPath("o") %}
+          {% elif token | hasTokenImage("o") %}
+            {% set browseImagePath = token | tokenImagePath("o") %}
+          {% endif %}
+
+          {% if browseImagePath %}
+            {% set imagePath = browseImagePath %}
+            {% set imageAlt = token.displayId %}
+            {% set imageForm = token.form %}
+            {% set imageClass = "token-list-card-image" %}
+            {% set plainImageClass = "token-list-card-image" %}
+            {% set frameClassPrefix = "token-list-card-media-frame" %}
+            {% include "shaped-image.njk" %}
+          {% else %}
+            {% set tokenPlaceholderClass = "browse-card-placeholder" %}
+            {% include "token-placeholder.njk" %}
+          {% endif %}
+        </div>
+
+        <div class="browse-card-body">
+          <span class="token-card-id">{{ token.displayId }}</span>
+
+          <p class="browse-card-title">{{ token.title }}</p>
+
+          <div class="token-card-meta-row browse-card-meta-row">
+            <p class="meta browse-card-meta">
+              {{ token.borough }} · {{ lookups.type[token.type] }}
+            </p>
+            {% if token.identifyingDetails and token.identifyingDetails.length %}
+              <p class="meta browse-card-details">
+                {{ token.identifyingDetails | join(" · ") }}
+              </p>
+            {% endif %}
+          </div>
+        </div>
+      </a>
+    </article>
+  {% endfor %}
+</div>
+
+  <div class="browse-empty-state" id="browse-empty-state" hidden aria-live="polite">
+    <strong data-browse-empty-title>No collection tokens found.</strong>
+    <p>Try:</p>
+    <ul>
+      <li>a catalog number like NY630</li>
+      <li>a borough like Manhattan or Brooklyn</li>
+      <li>a material like brass or vulcanite</li>
+      <li>fewer words or alternate spelling</li>
+    </ul>
+  </div>
+</section>
+<script src="/assets/js/browse.js" defer></script>

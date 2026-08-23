@@ -1,22 +1,30 @@
 [
   {
     "id": "official-ny631a",
+    "collectionId": "EXO-NY-QNS-0001",
     "displayId": "NY631A",
+    "imageKey": "631-a",
     "sec": "631",
     "code": "A",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "N.Y. & Q.C. Ry. Co. Lincoln C Andrews / NYQ",
     "borough": "Queens",
     "mat": "WM",
     "form": "R",
     "symbol": "Bl",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631A"
+      }
+    ],
     "size": 16,
     "obv": "N.Y. & Q.C. RY. CO. LINCOLN C ANDREWS (fax) / NYQ",
     "rev": "Good For One Fare Queens NYQ",
-    "desc": "Listed transit token.",
+    "desc": "Queens transit token associated with N.Y. & Q.C. Ry. Co. Lincoln C Andrews / NYQ.",
     "notes": "Lincoln C. Andrews was appointed receiver of this line on January 18, 1923. The following year, use of a 6¢ convenience token was instituted. New York & Queens County Railway was taken over by New York & Queens Transit in 1932.",
     "rel": [],
     "home": false,
@@ -31,27 +39,37 @@
         "page": 377,
         "note": "Queens 631 section states 100,000 struck 7/26/24 and gives receiver/company history."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631ba",
+    "collectionId": "EXO-NY-QNS-0002",
     "displayId": "NY631Ba",
     "sec": "631",
     "code": "B",
     "var": "a",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Kings Coach Company",
     "borough": "Queens",
     "mat": "WM",
     "form": "R",
     "symbol": "K-sc",
     "counterstamp": "Numerals",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631Ba"
+      }
+    ],
     "size": 23,
     "obv": "KINGS COACH COMPANY",
     "rev": "Issued In Exchange for Transfer",
-    "desc": "Listed transit token.",
+    "desc": "Queens transit token associated with Kings Coach Company.",
     "notes": "Counterstamped numerals. Atwood-Coffee reports 1,000 struck for NY631B overall on 2/8/35. Kings Coach Company was taken over by Triborough Coach Corporation.",
     "rel": [],
     "home": false,
@@ -64,26 +82,37 @@
         "page": 377,
         "note": "Queens 631 section states 1,000 struck 2/8/35 for NY631B overall and notes Kings Coach Company history."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631bb",
+    "collectionId": "EXO-NY-QNS-0003",
     "displayId": "NY631Bb",
+    "imageKey": "631-b-b",
     "sec": "631",
     "code": "B",
     "var": "b",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Kings Coach Company",
     "borough": "Queens",
     "mat": "WM",
     "form": "R",
     "symbol": "K-sc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631Bb"
+      }
+    ],
     "size": 23,
     "obv": "KINGS COACH COMPANY",
     "rev": "Issued In Exchange for Transfer",
-    "desc": "Listed transit token.",
+    "desc": "Queens transit token associated with Kings Coach Company.",
     "notes": "Not counterstamped. Atwood-Coffee reports 1,000 struck for NY631B overall on 2/8/35. Kings Coach Company was taken over by Triborough Coach Corporation.",
     "rel": [],
     "home": false,
@@ -96,26 +125,37 @@
         "page": 377,
         "note": "Queens 631 section states 1,000 struck 2/8/35 for NY631B overall and notes Kings Coach Company history."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631c",
+    "collectionId": "EXO-NY-QNS-0004",
     "displayId": "NY631C",
+    "imageKey": "631-c",
     "sec": "631",
     "code": "C",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Jamaica Buses, Inc. Transfer Token",
     "borough": "Queens",
     "mat": "B",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631C"
+      }
+    ],
     "size": 22,
     "obv": "JAMAICA BUSES, INC. TRANSFER TOKEN",
     "rev": "Issued In Exchange for Transfer",
-    "desc": "Listed transit token.",
+    "desc": "Queens transit token associated with Jamaica Buses, Inc. Transfer Token.",
     "notes": "Jamaica Buses, Inc. was taken over by Green Bus Lines.",
     "rel": [],
     "home": false,
@@ -128,26 +168,37 @@
         "page": 377,
         "note": "Queens 631 section notes Jamaica Buses, Inc. was taken over by Green Bus Lines."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631d",
+    "collectionId": "EXO-NY-QNS-0005",
     "displayId": "NY631D",
+    "imageKey": "631-d",
     "sec": "631",
     "code": "D",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Rauchwerger Bus Line / Flushing, L.I. N.Y. (BUS, type 1)",
     "borough": "Queens",
     "mat": "WM",
     "form": "R",
     "symbol": "Bar",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631D"
+      }
+    ],
     "size": 21,
     "obv": "RAUCHWERGER BUS LINE / FLUSHING, L.I. N.Y. (BUS, type 1)",
     "rev": "Good For One Fare (bus)",
-    "desc": "Listed transit token.",
+    "desc": "Queens transit token associated with Rauchwerger Bus Line / Flushing, L.I. N.Y. (BUS, type 1).",
     "notes": "Rauchwerger Bus Line was taken over by North Shore Bus Company on January 30.",
     "rel": [],
     "home": false,
@@ -162,50 +213,72 @@
         "page": 377,
         "note": "Queens 631 section states 4,000 struck total in 3 orders beginning 6/14/26 and gives Rauchwerger Bus Line history."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631e",
+    "collectionId": "EXO-NY-QNS-0006",
     "displayId": "NY631E",
+    "imageKey": "631-e",
     "sec": "631",
     "code": "E",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "North Shore Bus Co. Inc.",
     "borough": "Queens",
     "mat": "WM",
     "form": "R",
     "symbol": "Trsc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631E"
+      }
+    ],
     "size": 22,
     "obv": "NORTH SHORE BUS CO. INC.",
     "rev": "Issued In Exchange for Transfer",
-    "desc": "Listed transit token.",
+    "desc": "Queens transit token associated with North Shore Bus Co. Inc.",
     "notes": "",
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "631-e"
+    "sort": "631-e",
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631f",
+    "collectionId": "EXO-NY-QNS-0007",
     "displayId": "NY631F",
+    "imageKey": "631-f",
     "sec": "631",
     "code": "F",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "North Shore Bus Co. Inc.",
     "borough": "Queens",
     "mat": "WM",
     "form": "R",
     "symbol": "R",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631F"
+      }
+    ],
     "size": 16,
     "obv": "NORTH SHORE BUS CO. INC.",
     "rev": "Good For One Half Fare",
-    "desc": "Listed transit token.",
+    "desc": "Queens transit token associated with North Shore Bus Co. Inc.",
     "notes": "North Shore Bus Company was taken over by the City of New York in 1947.",
     "rel": [],
     "home": false,
@@ -220,26 +293,38 @@
         "page": 377,
         "note": "Queens 631 section states 5,000 struck in 1930 and notes North Shore Bus Company was taken over by the City of New York in 1947."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631g",
+    "collectionId": "EXO-NY-QNS-0008",
     "displayId": "NY631G",
+    "imageKey": "631-g",
     "sec": "631",
     "code": "G",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Perey Turnstiles For Better Fare Collection",
     "borough": "Queens",
     "mat": "WM",
+    "finish": "gunmetal plated",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631G"
+      }
+    ],
     "size": 22,
     "obv": "PEREY TURNSTILES FOR BETTER / FARE COLLECTION",
     "rev": "Perey Turnstiles Tighten Up / Fare Collection",
-    "desc": "Listed transit token.",
+    "desc": "Queens transit token associated with Perey Turnstiles For Better Fare Collection.",
     "notes": "Gm-plated. Used by Green Bus Lines. Became obsolete in 1950.",
     "rel": [],
     "home": false,
@@ -254,26 +339,37 @@
         "page": 377,
         "note": "Queens 631 section states 3,500 struck total in 3 orders from 4/20/35 to 11/1/45 and notes Green Bus Lines usage."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631h",
+    "collectionId": "EXO-NY-QNS-0009",
     "displayId": "NY631H",
+    "imageKey": "631-h",
     "sec": "631",
     "code": "H",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Perey Turnstiles For Better Fare Collection",
     "borough": "Queens",
     "mat": "B",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631H"
+      }
+    ],
     "size": 24,
     "obv": "PEREY TURNSTILES FOR BETTER / FARE COLLECTION",
     "rev": "Perey Turnstiles Tighten Up / Fare Collection",
-    "desc": "Listed transit token.",
+    "desc": "Queens transit token associated with Perey Turnstiles For Better Fare Collection.",
     "notes": "Used by Green Bus Lines. Became obsolete in 1950.",
     "rel": [],
     "home": false,
@@ -289,50 +385,73 @@
         "page": 377,
         "note": "Queens 631 section states 1,000 struck 4/18/41 and notes Green Bus Lines usage."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631i",
+    "collectionId": "EXO-NY-QNS-0010",
     "displayId": "NY631I",
+    "imageKey": "631-i",
     "sec": "631",
     "code": "I",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Triboro Coach Corp. No Value T",
     "borough": "Queens",
     "mat": "WM",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631I"
+      }
+    ],
     "size": 22,
     "obv": "TRIBORO COACH CORP. NO VALUE T",
     "rev": "In Exchange for Transfer T",
-    "desc": "Listed transit token.",
+    "desc": "Queens transit token associated with Triboro Coach Corp. No Value T.",
     "notes": "There is no record of 631 I ever being made, and we believe that any such token would be 631 J with the plating worn off or removed privately.",
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "631-i"
+    "sort": "631-i",
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631j",
+    "collectionId": "EXO-NY-QNS-0011",
     "displayId": "NY631J",
+    "imageKey": "631-j",
     "sec": "631",
     "code": "J",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Triboro Coach Corp. No Value T",
     "borough": "Queens",
     "mat": "WM",
+    "finish": "gunmetal plated",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631J"
+      }
+    ],
     "size": 22,
     "obv": "TRIBORO COACH CORP. NO VALUE T",
     "rev": "In Exchange for Transfer T",
-    "desc": "Listed transit token.",
+    "desc": "Queens transit token associated with Triboro Coach Corp. No Value T.",
     "notes": "Gm-plated.",
     "rel": [],
     "home": false,
@@ -347,26 +466,37 @@
         "page": 377,
         "note": "Queens 631 section states 2,000 struck 2/5/36 and 2,000 struck 11/13/37."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631k",
+    "collectionId": "EXO-NY-QNS-0012",
     "displayId": "NY631K",
+    "imageKey": "631-k",
     "sec": "631",
     "code": "K",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Triboro Coach Corp. No Value T",
     "borough": "Queens",
     "mat": "B",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631K"
+      }
+    ],
     "size": 24,
     "obv": "TRIBORO COACH CORP. NO VALUE T",
     "rev": "In Exchange for School Ticket T",
-    "desc": "Listed transit token.",
+    "desc": "Queens transit token associated with Triboro Coach Corp. No Value T.",
     "notes": "",
     "rel": [],
     "home": false,
@@ -381,26 +511,37 @@
         "page": 377,
         "note": "Queens 631 section states 2,000 struck 12/5/36 and 2,000 struck 11/13/37."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631l",
+    "collectionId": "EXO-NY-QNS-0013",
     "displayId": "NY631L",
+    "imageKey": "631-l",
     "sec": "631",
     "code": "L",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Triboro Coach Corp. No Value",
     "borough": "Queens",
     "mat": "B",
     "form": "R",
     "symbol": "T-sc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631L"
+      }
+    ],
     "size": 24,
     "obv": "TRIBORO COACH CORP. NO VALUE",
     "rev": "In Exchange for Transfer",
-    "desc": "Listed transit token.",
+    "desc": "Queens transit token associated with Triboro Coach Corp. No Value.",
     "notes": "",
     "rel": [],
     "home": false,
@@ -415,26 +556,38 @@
         "page": 377,
         "note": "Queens 631 section states 7,000 struck total in 4 orders from 7/3/40 to 2/47."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631m",
+    "collectionId": "EXO-NY-QNS-0014",
     "displayId": "NY631M",
+    "imageKey": "631-m",
     "sec": "631",
     "code": "M",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Triboro Coach Corp. No Value S",
     "borough": "Queens",
     "mat": "WM",
+    "finish": "copper plated",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631M"
+      }
+    ],
     "size": 22,
     "obv": "TRIBORO COACH CORP. NO VALUE S",
     "rev": "In Exchange for School Ticket S",
-    "desc": "Listed transit token.",
+    "desc": "Queens transit token associated with Triboro Coach Corp. No Value S.",
     "notes": "Copper-plated. Copper plating was probably done by the bus company.",
     "rel": [],
     "home": false,
@@ -448,26 +601,38 @@
         "page": 377,
         "note": "Queens 631 section notes copper plating was probably done by the bus company."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631n",
+    "collectionId": "EXO-NY-QNS-0015",
     "displayId": "NY631N",
+    "imageKey": "631-n",
     "sec": "631",
     "code": "N",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Triboro Coach Corp. No Value S",
     "borough": "Queens",
     "mat": "WM",
+    "finish": "gunmetal plated",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631N"
+      }
+    ],
     "size": 22,
     "obv": "TRIBORO COACH CORP. NO VALUE S",
     "rev": "In Exchange for School Ticket S",
-    "desc": "Listed transit token.",
+    "desc": "Queens transit token associated with Triboro Coach Corp. No Value S.",
     "notes": "Gm-plated. In 1947, Triborough Coach Corporation expected the City of New York to take over its system; when that did not happen, Triborough merged with Green Bus Lines.",
     "rel": [],
     "home": false,
@@ -482,26 +647,37 @@
         "page": 377,
         "note": "Queens 631 section states 6,000 struck total in 4 orders beginning 7/30/40 and gives Triborough/Green Bus Lines context."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631o",
+    "collectionId": "EXO-NY-QNS-0016",
     "displayId": "NY631O",
+    "imageKey": "631-o",
     "sec": "631",
     "code": "O",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Queensboro Bridge Railway Co., Inc. (Streetcar)",
     "borough": "Queens",
     "mat": "S",
     "form": "R",
     "symbol": "Bar",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631O"
+      }
+    ],
     "size": 23,
     "obv": "QUEENSBORO BRIDGE RAILWAY CO., INC. / (STREETCAR)",
     "rev": "Good For One Fare (streetcar)",
-    "desc": "Listed transit token.",
+    "desc": "Queens transit token associated with Queensboro Bridge Railway Co., Inc. (Streetcar).",
     "notes": "",
     "rel": [],
     "home": false,
@@ -516,26 +692,37 @@
         "page": 377,
         "note": "Queens 631 section states 20,000 struck 7/28/44."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631p",
+    "collectionId": "EXO-NY-QNS-0017",
     "displayId": "NY631P",
+    "imageKey": "631-p",
     "sec": "631",
     "code": "P",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Queensboro Bridge Railway Co., Inc. (Streetcar)",
     "borough": "Queens",
     "mat": "B",
     "form": "R",
     "symbol": "Bar",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631P"
+      }
+    ],
     "size": 23,
     "obv": "QUEENSBORO BRIDGE RAILWAY CO., INC. / (STREETCAR)",
     "rev": "Good For One Fare (streetcar)",
-    "desc": "Listed transit token.",
+    "desc": "Queens transit token associated with Queensboro Bridge Railway Co., Inc. (Streetcar).",
     "notes": "",
     "rel": [],
     "home": false,
@@ -550,26 +737,37 @@
         "page": 377,
         "note": "Queens 631 section states 40,000 struck total in 5 orders beginning 3/12/45."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631q",
+    "collectionId": "EXO-NY-QNS-0018",
     "displayId": "NY631Q",
+    "imageKey": "631-q",
     "sec": "631",
     "code": "Q",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Queensboro Bridge Railway Co., Inc. (Streetcar)",
     "borough": "Queens",
     "mat": "WM",
     "form": "R",
     "symbol": "Bar",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631Q"
+      }
+    ],
     "size": 23,
     "obv": "QUEENSBORO BRIDGE RAILWAY CO., INC. / (STREETCAR)",
     "rev": "Good For One Fare (streetcar)",
-    "desc": "Listed transit token.",
+    "desc": "Queens transit token associated with Queensboro Bridge Railway Co., Inc. (Streetcar).",
     "notes": "Vars. 5. Streetcar service over the Queensboro Bridge began in 1909. Until 1939 it was known as the Steinway Railway, then renamed Queensboro Bridge Railway. Streetcar service ended April 7, 1957, but NY631W tokens continued to be used on buses operated by Steinway Transit Corporation.",
     "rel": [],
     "home": false,
@@ -584,26 +782,37 @@
         "page": 377,
         "note": "Queens 631 section states 330,000 struck total in 11 orders beginning 4/9/47 and gives Queensboro Bridge Railway history."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631r",
+    "collectionId": "EXO-NY-QNS-0019",
     "displayId": "NY631R",
+    "imageKey": "631-r",
     "sec": "631",
     "code": "R",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Green Bus Lines, Inc. GBL INC.",
     "borough": "Queens",
     "mat": "Bz",
     "form": "R",
     "symbol": "Bl",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631R"
+      }
+    ],
     "size": 21,
     "obv": "GREEN BUS LINES, INC. GBL INC.",
     "rev": "Good For One 5¢ Ride GBL Inc.",
-    "desc": "Listed transit token.",
+    "desc": "Queens transit token associated with Green Bus Lines, Inc. GBL INC.",
     "notes": "There is some question as to whether these tokens were ever placed in use. They were extremely rare for years, but later several hundred became available. Green Bus Lines was incorporated in April 1925.",
     "rel": [],
     "home": false,
@@ -618,26 +827,37 @@
         "page": 377,
         "note": "Queens 631 section states 10,000 struck 6/4/37 and discusses uncertain usage and later availability."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631s",
+    "collectionId": "EXO-NY-QNS-0020",
     "displayId": "NY631S",
+    "imageKey": "631-s",
     "sec": "631",
     "code": "S",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "One Fare The Long Island Rail Road / The Route of the Dashing Commuter",
     "borough": "Queens",
     "mat": "Bz",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631S"
+      }
+    ],
     "size": 28,
     "obv": "ONE FARE THE LONG ISLAND RAIL ROAD / THE ROUTE OF THE DASHING COMMUTER / (MAN RUNNING TO CATCH TRAIN)",
     "rev": "©1961 New York World's Fair / 1964-1965 Corporation ® (unisphere)",
-    "desc": "Listed transit token.",
+    "desc": "Queens transit token associated with One Fare The Long Island Rail Road / The Route of the Dashing Commuter.",
     "notes": "Vars. 2. Used on special trains to the New York World's Fair and deposited in turnstiles accepting either 50¢ in coins or one token. The Long Island Rail Road also sold special kits containing one of these tokens; after the fair, 200,000 were melted down.",
     "rel": [],
     "home": false,
@@ -653,26 +873,37 @@
         "page": 377,
         "note": "Queens 631 section states 200,000 struck 12/6/63 and 100,000 struck 7/64 and describes World's Fair usage."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631t",
+    "collectionId": "EXO-NY-QNS-0021",
     "displayId": "NY631T",
+    "imageKey": "631-t",
     "sec": "631",
     "code": "T",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Queensboro Bridge Ry. Co., Inc. (BUS)",
     "borough": "Queens",
     "mat": "B",
     "form": "R",
     "symbol": "Bl",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631T"
+      }
+    ],
     "size": 16,
     "obv": "QUEENSBORO BRIDGE RY. CO., INC. (BUS)",
     "rev": "Good For One Fare (bus)(2 slots)",
-    "desc": "Listed transit token.",
+    "desc": "Queens transit token associated with Queensboro Bridge Ry. Co., Inc. (BUS).",
     "notes": "These were issued so bridge railway tokens would differ in size from New York subway tokens. Sold to employees at 15¢ less than subway tokens. NY631T replaced NY631Q.",
     "rel": [],
     "home": false,
@@ -687,26 +918,37 @@
         "page": 377,
         "note": "Queens 631 section states 150,000 struck total in 4 orders from 3/5/70 to 1/13/71 and explains the size/use change."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631u",
+    "collectionId": "EXO-NY-QNS-0022",
     "displayId": "NY631U",
+    "imageKey": "631-u",
     "sec": "631",
     "code": "U",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Jamaica Buses, Inc.",
     "borough": "Queens",
     "mat": "B",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631U"
+      }
+    ],
     "size": 20,
     "obv": "JAMAICA BUSES, INC.",
     "rev": "One Fare",
-    "desc": "Listed transit token.",
+    "desc": "Queens transit token associated with Jamaica Buses, Inc.",
     "notes": "",
     "rel": [],
     "home": false,
@@ -721,26 +963,37 @@
         "page": 377,
         "note": "Queens 631 section notes 5/25/72 usage for express bus service to or from Aqueduct or Belmont Race Track."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631v",
+    "collectionId": "EXO-NY-QNS-0023",
     "displayId": "NY631V",
+    "imageKey": "631-v",
     "sec": "631",
     "code": "V",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Jamaica Buses Inc. N.Y.C. (Bus, type 2)",
     "borough": "Queens",
     "mat": "B",
     "form": "R",
     "symbol": "Bar",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631V"
+      }
+    ],
     "size": 20,
     "obv": "JAMAICA BUSES INC. N.Y.C. (Bus, type 2)",
     "rev": "One Fare Race Track Express (bus)",
-    "desc": "Listed transit token.",
+    "desc": "Queens transit token associated with Jamaica Buses Inc. N.Y.C. (Bus, type 2).",
     "notes": "",
     "rel": [],
     "home": false,
@@ -754,26 +1007,37 @@
         "page": 377,
         "note": "Queens 631 section lists NY631V with date 6/30/76."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631w",
+    "collectionId": "EXO-NY-QNS-0024",
     "displayId": "NY631W",
+    "imageKey": "631-w",
     "sec": "631",
     "code": "W",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Steinway Transit Corp.",
     "borough": "Queens",
     "mat": "WM",
     "form": "R",
     "symbol": "S",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631W"
+      }
+    ],
     "size": 16,
     "obv": "STEINWAY TRANSIT CORP.",
     "rev": "Good For One Fare",
-    "desc": "Listed transit token.",
+    "desc": "Queens transit token associated with Steinway Transit Corp.",
     "notes": "Vars. 2. Issued to coincide with the fare increase on New York subways. Continued in use with the necessity of paying 15¢ cash in addition to the token. Replaced NY631T as a full 50¢ fare. Used only on Route Q-102 of Steinway Transit Corp., serving Roosevelt Island.",
     "rel": [],
     "home": false,
@@ -787,26 +1051,37 @@
         "page": 377,
         "note": "Queens 631 section notes 3/29/76 issue, fare-increase context, and Route Q-102 usage."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631x",
+    "collectionId": "EXO-NY-QNS-0025",
     "displayId": "NY631X",
+    "imageKey": "631-x",
     "sec": "631",
     "code": "X",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Airline· Connection Bus",
     "borough": "Queens",
     "mat": "B",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631X"
+      }
+    ],
     "size": 16,
     "obv": "AIRLINE· CONNECTION BUS",
     "rev": "(blank) (thick & thin)(2K)",
-    "desc": "Listed transit token.",
+    "desc": "Queens transit token associated with Airline· Connection Bus.",
     "notes": "Made for the Port Authority of New York and shipped to Airway Equipment Rentals Co. Intended for use at Kennedy Airport on a bus connecting various airport terminals, but tickets were used instead of tokens.",
     "rel": [],
     "home": false,
@@ -821,30 +1096,112 @@
         "page": 377,
         "note": "Queens 631 section states 2,000 struck in 1976 but never placed in use."
       }
-    ]
+    ],
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny631y",
+    "collectionId": "EXO-NY-QNS-0026",
     "displayId": "NY631Y",
+    "imageKey": "631-y",
     "sec": "631",
     "code": "Y",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["queens"],
+    "groups": [],
     "title": "Triborough Bridge and Tunnel Authority",
     "borough": "Queens",
     "mat": "S",
+    "finish": "brass plated",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY631Y"
+      }
+    ],
     "size": 23,
     "obv": "TRIBOROUGH BRIDGE AND TUNNEL AUTHORITY / (CREST OF BRIDGE OVER TBTA)",
     "rev": "Rockaway Resident Crossbay and / Marine Parkway Bridges M",
-    "desc": "Listed transit token.",
+    "desc": "Queens transit token associated with Triborough Bridge and Tunnel Authority.",
     "notes": "Reeded edge. Brass-plated.",
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "631-y"
+    "sort": "631-y",
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
+  },
+  {
+    "id": "official-ny515",
+    "collectionId": "EXO-NY-QNS-0027",
+    "displayId": "TR-NY-515-A",
+    "sec": "TR",
+    "code": "515",
+    "var": "",
+    "status": "listed",
+    "type": "transportation-related",
+    "groups": [],
+    "title": "Department of Marine Aviation / LaGuardia Field",
+    "borough": "Queens",
+    "mat": "Bz",
+    "form": "R",
+    "symbol": "Ch",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "TR-NY-515-A"
+      }
+    ],
+    "size": 23,
+    "obv": "DEPT. OF MARINE AVIATION / LAGUARDIA FIELD",
+    "rev": "Good For One Admission NYC",
+    "desc": "Queens transportation-related token associated with Department of Marine Aviation / LaGuardia Field.",
+    "notes": "Catalog cross-reference: Atwood-Coffee Transportation Related category, New York - New York City: Queens NY515A. Details in Farebox: March, 2020.",
+    "rel": [],
+    "home": false,
+    "pub": true,
+    "sort": "tr-515",
+    "collectionArea": "queens",
+    "catalogStatus": "listed",
+    "classification": "regular"
+  },
+  {
+    "id": "oddity-0006",
+    "collectionId": "EXO-NY-QNS-0028",
+    "displayId": "ODD-0006",
+    "imageKey": "odd-0006",
+    "sec": "",
+    "code": "",
+    "var": "",
+    "status": "unlisted",
+    "type": "error",
+    "groups": [
+      "errors"
+    ],
+    "title": "NY631E Unpunched Variety",
+    "borough": "Queens",
+    "mat": "WM",
+    "form": "R",
+    "symbol": "",
+    "size": 22,
+    "obv": "NORTH SHORE BUS CO. INC.",
+    "rev": "Issued In Exchange for Transfer",
+    "desc": "Unpunched variety of the North Shore Bus Co. Inc. transfer token.",
+    "notes": "This example retains the metal that would normally have been removed from the token's triangular cutout. The standard NY631E token has a triangle-shaped cutout; this variety is represented here as solid because the punch-out was not removed.",
+    "rel": [
+      "NY631E"
+    ],
+    "home": false,
+    "pub": true,
+    "sort": "631-e-unpunched",
+    "collectionArea": "queens",
+    "catalogStatus": "unlisted",
+    "classification": "error"
   }
 ]

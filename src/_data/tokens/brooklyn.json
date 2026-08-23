@@ -1,22 +1,30 @@
 [
   {
     "id": "official-ny629a",
+    "collectionId": "EXO-NY-BKN-0001",
     "displayId": "NY629A",
+    "imageKey": "629-a",
     "sec": "629",
     "code": "A",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["brooklyn"],
+    "groups": [],
     "title": "Nassau / R.R. Co.",
     "borough": "Brooklyn",
     "mat": "Vi",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY629A"
+      }
+    ],
     "size": 21,
     "obv": "NASSAU /R.R. CO.",
     "rev": "One /Fare",
-    "desc": "Listed transit token.",
+    "desc": "Brooklyn transit token associated with Nassau / R.R. Co.",
     "notes": "Atwood-Coffee notes that these tokens seem to have been impregnated with mica.",
     "sources": [
       {
@@ -29,26 +37,36 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "629-a"
+    "sort": "629-a",
+    "collectionArea": "brooklyn",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny629b",
+    "collectionId": "EXO-NY-BKN-0002",
     "displayId": "NY629B",
     "sec": "629",
     "code": "B",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["brooklyn"],
+    "groups": [],
     "title": "Brooklyn Cross Town R.R. / Pass",
     "borough": "Brooklyn",
     "mat": "WM",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY629B"
+      }
+    ],
     "size": 23,
     "obv": "BROOKLYN CROSS TOWN R.R. /PASS",
     "rev": "(same as obverse)",
-    "desc": "Listed transit token.",
+    "desc": "Brooklyn transit token associated with Brooklyn Cross Town R.R. / Pass.",
     "notes": "All letters incuse. Brooklyn Crosstown Railroad was chartered in 1872 and leased its property in August 1889 to the Brooklyn City Railroad.",
     "sources": [
       {
@@ -58,29 +76,43 @@
         "note": "Brooklyn 629 section gives Brooklyn Crosstown Railroad history and references NY997A."
       }
     ],
-    "rel": ["NY997A"],
+    "rel": [
+      "NY997A"
+    ],
     "home": false,
     "pub": true,
-    "sort": "629-b"
+    "sort": "629-b",
+    "collectionArea": "brooklyn",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny629c",
+    "collectionId": "EXO-NY-BKN-0003",
     "displayId": "NY629C",
+    "imageKey": "629-c",
     "sec": "629",
     "code": "C",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["brooklyn"],
+    "groups": [],
     "title": "Brooklyn Bus Corporation / Transfer Token",
     "borough": "Brooklyn",
     "mat": "WM",
+    "finish": "gunmetal plated",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY629C"
+      }
+    ],
     "size": 22,
     "obv": "BROOKLYN BUS CORPORATION / TRANSFER TOKEN",
     "rev": "Issued in Exchange for Transfer",
-    "desc": "Listed transit token.",
+    "desc": "Brooklyn transit token associated with Brooklyn Bus Corporation / Transfer Token.",
     "notes": "Gm-plated. Vars. 2. Brooklyn Bus Corporation was incorporated in 1925 and operated buses in Brooklyn and Queens, including service across the Manhattan Bridge into Manhattan. Transfer token use was instituted in 1929.",
     "issued": "1938-05",
     "mintage": 5000,
@@ -95,26 +127,37 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "629-c"
+    "sort": "629-c",
+    "collectionArea": "brooklyn",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny629d",
+    "collectionId": "EXO-NY-BKN-0004",
     "displayId": "NY629D",
+    "imageKey": "629-d",
     "sec": "629",
     "code": "D",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["brooklyn"],
+    "groups": [],
     "title": "Brooklyn and Queens Transit Corporation / Transfer Token",
     "borough": "Brooklyn",
     "mat": "WM",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY629D"
+      }
+    ],
     "size": 22,
     "obv": "BROOKLYN AND QUEENS TRANSIT CORPORATION / TRANSFER TOKEN",
     "rev": "Issued in Exchange for Transfer",
-    "desc": "Listed transit token.",
+    "desc": "Brooklyn transit token associated with Brooklyn and Queens Transit Corporation / Transfer Token.",
     "notes": "Vars. 4. Brooklyn & Queens Transit Corporation was incorporated in 1929 as a consolidation of earlier companies.",
     "issued": "1929-1939",
     "mintage": 45000,
@@ -129,26 +172,37 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "629-d"
+    "sort": "629-d",
+    "collectionArea": "brooklyn",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny629f",
+    "collectionId": "EXO-NY-BKN-0005",
     "displayId": "NY629F",
+    "imageKey": "629-f",
     "sec": "629",
     "code": "F",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["brooklyn"],
+    "groups": [],
     "title": "Brooklyn and Queens Transit Corporation / Half Fare Token",
     "borough": "Brooklyn",
     "mat": "B",
     "form": "R",
     "symbol": "Ch",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY629F"
+      }
+    ],
     "size": 24,
     "obv": "BROOKLYN AND QUEENS TRANSIT CORPORATION / HALF FARE TOKEN",
     "rev": "Issued in Exchange for Three Cents",
-    "desc": "Listed transit token.",
+    "desc": "Brooklyn transit token associated with Brooklyn and Queens Transit Corporation / Half Fare Token.",
     "notes": "Brooklyn & Queens Transit Corp. became part of New York City Transit System in 1940.",
     "issued": "1936-04",
     "mintage": 5000,
@@ -163,26 +217,37 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "629-f"
+    "sort": "629-f",
+    "collectionArea": "brooklyn",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny629g",
+    "collectionId": "EXO-NY-BKN-0006",
     "displayId": "NY629G",
+    "imageKey": "629-g",
     "sec": "629",
     "code": "G",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["brooklyn"],
+    "groups": [],
     "title": "New York City Transit System B.M.T. Div. / Transfer Token",
     "borough": "Brooklyn",
     "mat": "WM",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY629G"
+      }
+    ],
     "size": 22,
     "obv": "NEW YORK CITY TRANSIT SYSTEM B.M.T. DIV. / TRANSFER TOKEN",
     "rev": "Issued in Exchange for Transfer",
-    "desc": "Listed transit token.",
+    "desc": "Brooklyn transit token associated with New York City Transit System B.M.T. Div. / Transfer Token.",
     "notes": "Vars. 5. In 1940 the New York City Transit System was organized and took over the Brooklyn-Manhattan Transit Corp., which became a division of NYCTS, the B.M.T. Division.",
     "issued": "1940-1947",
     "mintage": 75000,
@@ -197,74 +262,107 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "629-g"
+    "sort": "629-g",
+    "collectionArea": "brooklyn",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny629h",
+    "collectionId": "EXO-NY-BKN-0007",
     "displayId": "NY629H",
+    "imageKey": "629-h",
     "sec": "629",
     "code": "H",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["brooklyn"],
+    "groups": [],
     "title": "New York City Transit System B.M.T. Div. / Transfer Token",
     "borough": "Brooklyn",
     "mat": "S",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY629H"
+      }
+    ],
     "size": 22,
     "obv": "NEW YORK CITY TRANSIT SYSTEM B.M.T. DIV. / TRANSFER TOKEN",
     "rev": "Issued in Exchange for Transfer",
-    "desc": "Listed transit token.",
+    "desc": "Brooklyn transit token associated with New York City Transit System B.M.T. Div. / Transfer Token.",
     "notes": "",
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "629-h"
+    "sort": "629-h",
+    "collectionArea": "brooklyn",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny629i",
+    "collectionId": "EXO-NY-BKN-0008",
     "displayId": "NY629I",
+    "imageKey": "629-i",
     "sec": "629",
     "code": "I",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["brooklyn"],
+    "groups": [],
     "title": "New York City Transit System B.M.T. Div. / Transfer Token",
     "borough": "Brooklyn",
     "mat": "B",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY629I"
+      }
+    ],
     "size": 22,
     "obv": "NEW YORK CITY TRANSIT SYSTEM B.M.T. DIV. / TRANSFER TOKEN",
     "rev": "Issued in Exchange for Transfer",
-    "desc": "Listed transit token.",
+    "desc": "Brooklyn transit token associated with New York City Transit System B.M.T. Div. / Transfer Token.",
     "notes": "",
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "629-i"
+    "sort": "629-i",
+    "collectionArea": "brooklyn",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny629j",
+    "collectionId": "EXO-NY-BKN-0009",
     "displayId": "NY629J",
+    "imageKey": "629-j",
     "sec": "629",
     "code": "J",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["brooklyn"],
+    "groups": [],
     "title": "New York City Transit System BMT Div. / Half Fare Token",
     "borough": "Brooklyn",
     "mat": "B",
     "form": "R",
     "symbol": "Ch",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY629J"
+      }
+    ],
     "size": 24,
     "obv": "NEW YORK CITY TRANSIT SYSTEM BMT DIV. / HALF FARE TOKEN",
     "rev": "Issued in Exchange for Three Cents",
-    "desc": "Listed transit token.",
+    "desc": "Brooklyn transit token associated with New York City Transit System BMT Div. / Half Fare Token.",
     "notes": "In 1940 the New York City Transit System was organized and took over the Brooklyn-Manhattan Transit Corp., which became a division of NYCTS, the B.M.T. Division.",
     "issued": "1941",
     "mintage": 25000,
@@ -279,74 +377,108 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "629-j"
+    "sort": "629-j",
+    "collectionArea": "brooklyn",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny629k",
+    "collectionId": "EXO-NY-BKN-0010",
     "displayId": "NY629K",
+    "imageKey": "629-k",
     "sec": "629",
     "code": "K",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["brooklyn"],
+    "groups": [],
     "title": "New York City Transit System B.M.T. Division Transfer Token",
     "borough": "Brooklyn",
     "mat": "B",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY629K"
+      }
+    ],
     "size": 22,
     "obv": "NEW YORK CITY TRANSIT SYSTEM B.M.T. / DIVISION TRANSFER TOKEN",
     "rev": "Issued in Exchange for Transfer",
-    "desc": "Listed transit token.",
+    "desc": "Brooklyn transit token associated with New York City Transit System B.M.T. Division Transfer Token.",
     "notes": "",
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "629-k"
+    "sort": "629-k",
+    "collectionArea": "brooklyn",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny629ka",
+    "collectionId": "EXO-NY-BKN-0011",
     "displayId": "NY629KA",
     "sec": "629",
     "code": "KA",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["brooklyn", "errors"],
+    "groups": [
+      "errors"
+    ],
     "title": "New York City Transfer System B.M.T. Division Transfer Token",
     "borough": "Brooklyn",
     "mat": "Bz",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY629KA"
+      }
+    ],
     "size": 22,
     "obv": "NEW YORK CITY TRANSFER SYSTEM B.M.T. / DIVISION TRANSFER TOKEN",
     "rev": "Issued in Exchange for Transfer",
-    "desc": "Listed transit token.",
+    "desc": "Brooklyn transit token associated with New York City Transfer System B.M.T. Division Transfer Token.",
     "notes": "KA with TRANSFER SYSTEM was an error, and never used.",
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "629-k-a"
+    "sort": "629-k-a",
+    "collectionArea": "brooklyn",
+    "catalogStatus": "listed",
+    "classification": "error"
   },
   {
     "id": "official-ny629l",
+    "collectionId": "EXO-NY-BKN-0012",
     "displayId": "NY629L",
+    "imageKey": "629-l",
     "sec": "629",
     "code": "L",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["brooklyn"],
+    "groups": [],
     "title": "R.T. Corp. One Way Fare",
     "borough": "Brooklyn",
     "mat": "WM",
     "form": "R",
     "symbol": "R",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY629L"
+      }
+    ],
     "size": 23,
     "obv": "R.T. CORP. ONE WAY FARE",
     "rev": "(same as obverse)",
-    "desc": "Listed transit token.",
+    "desc": "Brooklyn transit token associated with R.T. Corp. One Way Fare.",
     "notes": "Vars. 2. This token became obsolete in early summer 1977. It was used on a boat operated by Rockaway Transit Corporation crossing Sheepshead Bay.",
     "issued": "1949-1968",
     "mintage": 11000,
@@ -362,6 +494,45 @@
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "629-l"
+    "sort": "629-l",
+    "collectionArea": "brooklyn",
+    "catalogStatus": "listed",
+    "classification": "regular"
+  },
+  {
+    "id": "official-997-a",
+    "collectionId": "EXO-NY-BKN-0013",
+    "displayId": "NY997A",
+    "sec": "997",
+    "code": "A",
+    "var": "",
+    "status": "listed",
+    "type": "zonecheck",
+    "groups": [],
+    "title": "B.C.R.R. Co. Zone Check",
+    "borough": "Brooklyn",
+    "mat": "Ve",
+    "form": "R",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY997A"
+      }
+    ],
+    "size": 31,
+    "obv": "B.C.R.R. CO.",
+    "rev": "To Be Surrendered at /the /City Line",
+    "desc": "Zone check issued by B.C.R.R. Co. for surrender at the city line.",
+    "notes": "Catalog cross-reference: NY997A in the Zone Checks section of the Atwood-Coffee catalogue.",
+    "wanted": true,
+    "wantedNote": "Actively seeking an example of this token.",
+    "rel": [],
+    "home": false,
+    "pub": true,
+    "sort": "997-a",
+    "collectionArea": "brooklyn",
+    "catalogStatus": "listed",
+    "classification": "regular"
   }
 ]

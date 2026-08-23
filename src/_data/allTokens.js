@@ -1,37 +1,40 @@
 const fs = require("fs");
 const path = require("path");
 
-const oddities = require("./unofficial/oddities.json");
-const unlisted = require("./unofficial/unlisted.json");
-const counterfeit = require("./unofficial/counterfeit.json");
+const TOKEN_FILE_ORDER = [
+  "bronx.json",
+  "brooklyn.json",
+  "manhattan.json",
+  "queens.json",
+  "staten-island.json",
+  "specialty.json"
+];
 
 function loadJsonArray(filePath) {
   const data = JSON.parse(fs.readFileSync(filePath, "utf8"));
   return Array.isArray(data) ? data : [];
 }
 
-function loadOfficialTokens() {
-  const officialDir = path.join(__dirname, "official");
+function loadCollectionAreaTokens() {
+  const tokensDir = path.join(__dirname, "tokens");
   const files = fs
-    .readdirSync(officialDir)
-    .filter((file) => file.endsWith(".json"));
+    .readdirSync(tokensDir)
+    .filter((file) => file.endsWith(".json"))
+    .sort((a, b) => {
+      const aIndex = TOKEN_FILE_ORDER.indexOf(a);
+      const bIndex = TOKEN_FILE_ORDER.indexOf(b);
+
+      if (aIndex !== -1 && bIndex !== -1) return aIndex - bIndex;
+      if (aIndex !== -1) return -1;
+      if (bIndex !== -1) return 1;
+
+      return a.localeCompare(b);
+    });
 
   return files.flatMap((file) => {
-    const fullPath = path.join(officialDir, file);
+    const fullPath = path.join(tokensDir, file);
     return loadJsonArray(fullPath);
   });
 }
 
-function withSource(tokens, sourceType) {
-  return tokens.map((token) => ({
-    ...token,
-    sourceType
-  }));
-}
-
-module.exports = [
-  ...withSource(loadOfficialTokens(), "official"),
-  ...withSource(oddities, "oddities"),
-  ...withSource(unlisted, "unlisted"),
-  ...withSource(counterfeit, "counterfeit")
-].filter((token) => token.pub !== false);
+module.exports = loadCollectionAreaTokens().filter((token) => token.pub !== false);

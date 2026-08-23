@@ -1,6 +1,7 @@
 const allTokens = require("./allTokens");
 const collectionAreas = require("./collectionAreas");
 const urlHelpers = require("./urlHelpers");
+const tokenSort = require("./tokenSort");
 
 function normalize(value) {
   return String(value || "")
@@ -9,6 +10,10 @@ function normalize(value) {
 }
 
 function tokenInArea(token, area) {
+  if (token.collectionArea) {
+    return normalize(token.collectionArea) === normalize(area.slug);
+  }
+
   if (area.slug === "specialty") {
     return Array.isArray(token.groups) && token.groups.includes(area.groupKey);
   }
@@ -25,6 +30,7 @@ function buildPageId(token) {
 module.exports = collectionAreas.reduce((result, area) => {
   result[area.slug] = allTokens
     .filter((token) => tokenInArea(token, area))
+    .sort(tokenSort.compareTokens)
     .map((token) => ({
       ...token,
       collectionPageId: buildPageId(token),

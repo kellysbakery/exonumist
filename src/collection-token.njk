@@ -11,13 +11,40 @@ eleventyComputed:
 
 {% set collectionArea = collectionPage.collectionArea %}
 {% set token = collectionPage.token %}
-{% set isUnlisted = token.status != "listed" %}
+{% set isUnlisted = (token.catalogStatus or token.status) != "listed" %}
 
 {% set detailSectionTitle = collectionArea.title %}
 {% set detailSectionUrl = urlHelpers.collectionAreaUrl(collectionArea.slug) %}
 
 {% set prevToken = collectionPage.previousToken %}
 {% set nextToken = collectionPage.nextToken %}
+{% set browsePrevToken = collectionPage.globalPreviousToken %}
+{% set browseNextToken = collectionPage.globalNextToken %}
+{% set groupPagerContexts = [] %}
+
+{% if token.groups %}
+  {% for group in groups %}
+    {% if group.key in token.groups %}
+      {% set groupTokens = [] %}
+      {% for groupToken in allTokens %}
+        {% if groupToken.groups and (group.key in groupToken.groups) %}
+          {% set groupTokens = groupTokens.concat([groupToken]) %}
+        {% endif %}
+      {% endfor %}
+
+      {% set groupPrevNext = tokenDetailView.findPrevNext(groupTokens, token) %}
+      {% set groupPagerContexts = groupPagerContexts.concat([{
+        key: group.key,
+        title: group.title,
+        url: urlHelpers.groupUrl(group.key),
+        prevToken: groupPrevNext.prev,
+        prevUrl: collectionTokenUrls[groupPrevNext.prev.id | lower] or collectionTokenUrls[groupPrevNext.prev.displayId | lower] or "",
+        nextToken: groupPrevNext.next,
+        nextUrl: collectionTokenUrls[groupPrevNext.next.id | lower] or collectionTokenUrls[groupPrevNext.next.displayId | lower] or ""
+      }]) %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
 
 {% set detailView = tokenDetailView.buildTokenDetailView(token, {
   tokenId: token.displayId,
@@ -31,7 +58,7 @@ eleventyComputed:
     },
     {
       label: "Collection",
-      url: "/collection/"
+      url: "/"
     },
     {
       label: detailSectionTitle,
@@ -44,6 +71,9 @@ eleventyComputed:
   detailShowPager: true,
   prevToken: prevToken,
   nextToken: nextToken,
+  globalPrevToken: browsePrevToken,
+  globalNextToken: browseNextToken,
+  groupPagerContexts: groupPagerContexts,
   isUnlisted: isUnlisted,
   lookups: lookups
 }) %}

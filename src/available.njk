@@ -1,0 +1,263 @@
+---
+layout: base.njk
+title: Available
+description: Duplicate transportation tokens available for sale or trade, organized by state and catalog number.
+permalink: /available/index.html
+---
+
+<section class="section">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span>/</span>
+    <span>Available</span>
+  </nav>
+  <h1>Available Tokens</h1>
+
+  <p class="section-intro">
+    Duplicate transportation tokens from my collection may be available for sale or trade.
+  </p>
+
+  <div class="for-sale-terms">
+    <p>
+      These are duplicate tokens from my collection and may be available for sale or trade.
+      Please confirm availability before assuming a token is still available. Unless noted otherwise,
+      prices are based on Atwood-Coffee catalog value.
+    </p>
+
+    <a class="utility-link" href="mailto:contact@exonumist.com" data-inquiry-email>
+      <svg class="utility-link-icon" aria-hidden="true" viewBox="0 0 24 24">
+        <path d="M4 6h16v12H4z" />
+        <path d="m4 7 8 6 8-6" />
+      </svg>
+      <span data-inquiry-email-label>Contact me</span>
+    </a>
+  </div>
+
+  <div class="available-mode-switch" aria-label="Available token search mode">
+    <button
+      class="available-mode-button is-active"
+      type="button"
+      data-available-mode-button="search"
+      aria-pressed="true">
+      Search available
+    </button>
+    <button
+      class="available-mode-button"
+      type="button"
+      data-available-mode-button="want"
+      aria-pressed="false">
+      Match a want list
+    </button>
+  </div>
+
+  <p class="available-utility-row">
+    <span class="available-updated">Last updated: {{ forSaleMeta.lastUpdated }}</span>
+    <a class="utility-link available-print-link" href="/available/print/">
+      <svg class="utility-link-icon" aria-hidden="true" viewBox="0 0 24 24">
+        <path d="M7 8V4h10v4" />
+        <path d="M7 17H5a2 2 0 0 1-2-2v-5h18v5a2 2 0 0 1-2 2h-2" />
+        <path d="M7 14h10v6H7z" />
+      </svg>
+      <span>Print-friendly price list</span>
+    </a>
+  </p>
+
+  <div class="available-workflow" data-available-panel="search">
+    <h2>Search available tokens</h2>
+    <p class="section-intro">
+      Search by catalog number, city, state, or place to find duplicate tokens that may be available.
+    </p>
+
+    <div class="for-sale-search">
+      <label for="for-sale-search-input">Catalog number, city, state, or place</label>
+      <input
+        id="for-sale-search-input"
+        type="search"
+        placeholder="Search, e.g. NY905A, AL120, Birmingham, Alaska..."
+        autocomplete="off" />
+    </div>
+  </div>
+
+  <div class="available-workflow" data-available-panel="want" hidden>
+    <h2>Match a want list</h2>
+    <p class="section-intro">
+      Paste the Atwood-Coffee catalog numbers you're looking for, then match them against my
+      available duplicates.
+    </p>
+
+    <div class="want-list">
+      <label class="want-list-label" for="want-list-input">Want List</label>
+      <p class="want-list-help">
+        Paste one catalog number per line. Comma-separated lists are okay too.
+      </p>
+      <textarea
+        class="want-list-input"
+        id="want-list-input"
+        data-want-list-input
+        rows="5"
+        placeholder="Example:
+AK50A
+AR300F
+NY905A"></textarea>
+
+      <div class="want-list-actions">
+        <button class="btn" type="button" data-want-list-match>Match Want List</button>
+        <button class="btn" type="button" data-want-list-clear>Clear Want List</button>
+      </div>
+
+      <p class="want-list-result" data-want-list-result aria-live="polite"></p>
+    </div>
+  </div>
+
+  <div
+    class="section-intro for-sale-results-summary"
+    id="for-sale-results-summary"
+    data-for-sale-total="{{ forSale.total }}">
+    <span>
+      Showing <strong id="for-sale-visible-count">{{ forSale.total }}</strong><span
+        id="for-sale-total-phrase"></span> available tokens<span
+        id="for-sale-filter-phrase"></span>.
+    </span>
+    <span class="for-sale-group-actions" aria-label="Available token group controls">
+      <span class="for-sale-group-actions-label">Groups:</span>
+      <button class="for-sale-group-action" type="button" data-expand-groups>Expand all</button>
+      <button class="for-sale-group-action" type="button" data-collapse-groups>Collapse all</button>
+    </span>
+  </div>
+
+  <section
+    class="matched-tokens-summary"
+    data-matched-tokens-summary
+    aria-live="polite"
+    hidden>
+    <h2>Want list matches</h2>
+    <p data-matched-tokens-count></p>
+    <div class="matched-tokens-list" data-matched-tokens-list></div>
+  </section>
+
+  <div class="inquiry-dialog" data-inquiry-dialog hidden>
+    <div class="inquiry-dialog-backdrop" data-inquiry-dialog-close></div>
+    <section
+      class="inquiry-panel"
+      data-inquiry-panel
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="inquiry-panel-title"
+      aria-live="polite">
+      <div class="inquiry-panel-header">
+        <div>
+          <h2 id="inquiry-panel-title" tabindex="-1" data-inquiry-panel-heading data-inquiry-panel-title>Review selected tokens</h2>
+          <p class="inquiry-count" data-inquiry-bar-count>0 tokens selected</p>
+          <p class="inquiry-help" data-inquiry-panel-help>
+            Review your selected tokens, then email me to confirm availability.
+          </p>
+          <p class="inquiry-warning" data-inquiry-warning hidden>
+            Please limit your inquiry list to 50 tokens or fewer before sending an email.
+          </p>
+        </div>
+        <button class="inquiry-dialog-close" type="button" data-inquiry-dialog-close aria-label="Close">
+          <span class="inquiry-dialog-close-text">Close</span>
+        </button>
+      </div>
+      <div class="inquiry-list" data-inquiry-list></div>
+      <div class="inquiry-empty" data-inquiry-empty hidden>
+        <p>Select tokens to build an inquiry list.</p>
+        <p>Your selected token IDs and prices will be included in an email you can review before sending.</p>
+      </div>
+      <div class="inquiry-clear-confirm" data-inquiry-clear-confirm hidden>
+        <p data-inquiry-clear-confirm-text>Clear selected tokens from your inquiry list?</p>
+        <div class="inquiry-clear-confirm-actions">
+          <button class="btn" type="button" data-inquiry-clear-cancel>Cancel</button>
+          <button class="btn danger" type="button" data-inquiry-clear-confirm-action>Clear selected tokens</button>
+        </div>
+      </div>
+      <div class="inquiry-actions">
+        <button class="btn" type="button" data-inquiry-bar-clear disabled>Clear List</button>
+        <button class="btn" type="button" data-inquiry-copy disabled>Copy inquiry text</button>
+        <a class="btn primary" href="mailto:{{ contactPage.hero.email }}" data-inquiry-bar-email aria-disabled="false">Email inquiry</a>
+      </div>
+      <p class="inquiry-copy-status" data-inquiry-copy-status aria-live="polite" hidden></p>
+    </section>
+  </div>
+
+  <div class="inquiry-sticky" data-inquiry-sticky hidden>
+    <div class="inquiry-sticky-inner">
+      <p class="inquiry-sticky-summary" data-inquiry-sticky-count>0 tokens selected</p>
+      <div class="inquiry-sticky-actions">
+        <button class="btn" type="button" data-inquiry-review>Review list</button>
+        <a class="btn primary" href="mailto:{{ contactPage.hero.email }}" data-inquiry-bar-email>Email inquiry</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="for-sale-list" data-for-sale-list>
+    {% for group in forSale.groups %}
+      <details
+        class="for-sale-group"
+        data-sale-group
+        data-count="{{ group.items.length }}"
+        data-place-count="{{ group.placeCount }}">
+        <summary>
+          <span class="for-sale-group-name">{{ group.stateName }}</span>
+          <span class="for-sale-group-meta">
+            <span data-group-visible-count>{{ group.items.length }}</span>
+            <span data-group-token-label>{% if group.items.length == 1 %}token{% else %}tokens{% endif %}</span>
+            {% if group.placeCount %}
+              <span data-group-place-meta>
+                · <span data-group-visible-place-count>{{ group.placeCount }}</span>
+                <span data-group-place-label>{% if group.placeCount == 1 %}place{% else %}places{% endif %}</span>
+              </span>
+            {% endif %}
+          </span>
+        </summary>
+
+        <div class="for-sale-items">
+          <div class="for-sale-list-header" aria-hidden="true">
+            <span>Catalog ID</span>
+            <span>Place</span>
+            <span>Price</span>
+            <span>Inquiry</span>
+          </div>
+          {% for item in group.items %}
+            <div
+              class="for-sale-item"
+              data-sale-item
+              data-search-text="{{ item.searchText }}"
+              data-catalog-id="{{ item.catalogId }}"
+              data-catalog-value="{{ item.value }}"
+              data-box="{{ item.box }}"
+              data-display-place="{{ item.displayPlace }}"
+              data-group-name="{{ group.stateName }}">
+              <span class="for-sale-token-info">
+                <span class="for-sale-id">{{ item.catalogId }}</span>
+                {% if item.displayPlace %}
+                  <span class="for-sale-place">{{ item.displayPlace }}</span>
+                {% endif %}
+                <span class="for-sale-price">{{ item.value }}</span>
+              </span>
+              <button
+                class="inquiry-toggle"
+                type="button"
+                data-inquiry-toggle
+                aria-pressed="false"
+                aria-label="Add {{ item.catalogId }} to inquiry list">
+                Add
+              </button>
+            </div>
+          {% endfor %}
+        </div>
+      </details>
+    {% endfor %}
+  </div>
+
+  <div class="for-sale-empty" id="for-sale-empty" aria-live="polite" hidden>
+    <p class="for-sale-empty-title" data-no-results-title>No available tokens found.</p>
+    <p class="for-sale-empty-query" data-no-results-query hidden></p>
+    <p class="for-sale-empty-help" data-no-results-help>
+      Try a shorter catalog number, a city or state, or alternate spelling with fewer words.
+    </p>
+  </div>
+</section>
+
+<script src="/assets/js/for-sale.js"></script>
+<script src="/assets/js/for-sale-inquiry.js"></script>

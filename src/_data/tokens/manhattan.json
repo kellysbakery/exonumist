@@ -1,151 +1,241 @@
 [
   {
     "id": "official-ny630a",
+    "collectionId": "EXO-NY-MAN-0001",
     "displayId": "NY630A",
     "sec": "630",
     "code": "A",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "I. Gibbs / Belleville & New York / U.S.M. / Stage",
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630A"
+      }
+    ],
     "size": 23,
     "obv": "I. GIBBS /BELLEVILLE & NEW YORK / U.S.M. /STAGE",
     "rev": "Good For One Ride /to /the /Bearer",
-    "desc": "Listed Manhattan transit token: I. Gibbs / Belleville & New York / U.S.M. / Stage.",
+    "desc": "Manhattan transit token associated with I. Gibbs / Belleville & New York / U.S.M. / Stage.",
     "notes": "",
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-a"
+    "sort": "630-a",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630da",
+    "collectionId": "EXO-NY-MAN-0002",
     "displayId": "NY630Da",
+    "imageKey": "630-d-a",
     "sec": "630",
     "code": "D",
     "var": "a",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan", "nyhrr"],
+    "groups": [
+      "nyhrr"
+    ],
     "title": "New York & Harlaem Railroad",
     "borough": "Manhattan",
     "mat": "Gs",
     "form": "Oc",
-    "symbol": "Sd",
+    "symbol": "",
     "counterstamp": "Rosette",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630Da"
+      },
+      {
+        "catalog": "Hard Times",
+        "number": "HT-299"
+      },
+      {
+        "catalog": "Low",
+        "number": "Low-371"
+      }
+    ],
     "size": 18,
     "obv": "NEW YORK & HARLAEM R.R.",
     "rev": "(OMNIBUS)",
     "desc": "Early octagonal New York & Harlaem Railroad omnibus token in German silver.",
-    "notes": "The New York & Harlaem Railroad, incorporated in 1831, operated one of the earliest urban rail lines in the United States and is widely regarded as New York City’s first street railway. Service began in 1832 along the Bowery from Prince Street to 14th Street, with later extensions north on Fourth Avenue to Harlem and south to City Hall. Horse power was used initially, with steam locomotives introduced in 1837 for service north of the 27th Street depot. These tokens are believed to be the first transportation tokens issued for use in New York City.\n\nCollectors recognize seven major octagonal token varieties associated with the line. The regular circulating issues are the 18mm German silver pieces listed as Atwood-Coffee NY630: plain (NY630Dc), rosette counterstamp (NY630Da), and the famous dog counterstamp (NY630Db). Additional pattern issues were struck in copper and lead under the NY998 listings. Copper varieties include plain (NY998Ca) and leaf counterstamp (NY998Cb). Lead varieties include plain (NY998Da) and leaf counterstamp (NY998Db). The initials 'B & S' found beneath the railroad coach identify the token makers, Bale & Smith, noted New York engravers.\n\nToday these pieces are considered among the most historic American transit tokens, linking directly to the earliest development of organized public transportation in New York City.",
+    "notes": "The New York & Harlaem Railroad, incorporated in 1831, operated one of the earliest urban rail lines in the United States and is widely regarded as New York City’s first street railway. Service began in 1832 along the Bowery from Prince Street to 14th Street, with later extensions north on Fourth Avenue to Harlem and south to City Hall. Horse power was used initially, with steam locomotives introduced in 1837 for service north of the 27th Street depot. These tokens are believed to be the first transportation tokens issued for use in New York City.\n\nCollectors recognize seven major octagonal varieties associated with the New York & Harlaem Railroad. Known examples include pieces struck in German silver, copper, and lead, with varieties distinguished by material and by the presence or absence of a counterstamp. The German silver pieces include the plain variety (Atwood-Coffee NY630Dc), the rosette counterstamp variety (NY630Da), and the well-known dog counterstamp variety (NY630Db). The copper pieces include a plain variety (NY998Ca) and a leaf counterstamp variety (NY998Cb). The lead pieces likewise include a plain variety (NY998Da) and a leaf counterstamp variety (NY998Db). The initials 'B & S' found beneath the railroad coach identify the token makers, Bale & Smith, noted New York engravers.\n\nToday these pieces are considered among the most historic American transit tokens, linking directly to the earliest development of organized public transportation in New York City.",
     "wanted": false,
     "wantedNote": "Currently represented, but looking to upgrade to a nicer example.",
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-d-a"
+    "sort": "630-d-a",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630db",
+    "collectionId": "EXO-NY-MAN-0003",
     "displayId": "NY630Db",
     "sec": "630",
     "code": "D",
     "var": "b",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan", "nyhrr"],
+    "groups": [
+      "nyhrr"
+    ],
     "title": "New York & Harlaem Railroad",
     "borough": "Manhattan",
     "mat": "Gs",
     "form": "Oc",
-    "symbol": "Sd",
+    "symbol": "",
     "counterstamp": "Dog",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630Db"
+      },
+      {
+        "catalog": "Hard Times",
+        "number": "HT-300"
+      },
+      {
+        "catalog": "Low",
+        "number": "Low-372"
+      }
+    ],
     "size": 18,
     "obv": "THE N-YORK /& HARLAEM /RAILROAD /COMPANY",
     "rev": "B & S N.Y",
     "desc": "Early octagonal New York & Harlaem Railroad omnibus token in German silver.",
-    "notes": "The New York & Harlaem Railroad, incorporated in 1831, operated one of the earliest urban rail lines in the United States and is widely regarded as New York City’s first street railway. Service began in 1832 along the Bowery from Prince Street to 14th Street, with later extensions north on Fourth Avenue to Harlem and south to City Hall. Horse power was used initially, with steam locomotives introduced in 1837 for service north of the 27th Street depot. These tokens are believed to be the first transportation tokens issued for use in New York City.\n\nCollectors recognize seven major octagonal token varieties associated with the line. The regular circulating issues are the 18mm German silver pieces listed as Atwood-Coffee NY630: plain (NY630Dc), rosette counterstamp (NY630Da), and the famous dog counterstamp (NY630Db). Additional pattern issues were struck in copper and lead under the NY998 listings. Copper varieties include plain (NY998Ca) and leaf counterstamp (NY998Cb). Lead varieties include plain (NY998Da) and leaf counterstamp (NY998Db). The initials 'B & S' found beneath the railroad coach identify the token makers, Bale & Smith, noted New York engravers.\n\nToday these pieces are considered among the most historic American transit tokens, linking directly to the earliest development of organized public transportation in New York City.",
+    "notes": "The New York & Harlaem Railroad, incorporated in 1831, operated one of the earliest urban rail lines in the United States and is widely regarded as New York City’s first street railway. Service began in 1832 along the Bowery from Prince Street to 14th Street, with later extensions north on Fourth Avenue to Harlem and south to City Hall. Horse power was used initially, with steam locomotives introduced in 1837 for service north of the 27th Street depot. These tokens are believed to be the first transportation tokens issued for use in New York City.\n\nCollectors recognize seven major octagonal varieties associated with the New York & Harlaem Railroad. Known examples include pieces struck in German silver, copper, and lead, with varieties distinguished by material and by the presence or absence of a counterstamp. The German silver pieces include the plain variety (Atwood-Coffee NY630Dc), the rosette counterstamp variety (NY630Da), and the well-known dog counterstamp variety (NY630Db). The copper pieces include a plain variety (NY998Ca) and a leaf counterstamp variety (NY998Cb). The lead pieces likewise include a plain variety (NY998Da) and a leaf counterstamp variety (NY998Db). The initials 'B & S' found beneath the railroad coach identify the token makers, Bale & Smith, noted New York engravers.\n\nToday these pieces are considered among the most historic American transit tokens, linking directly to the earliest development of organized public transportation in New York City.",
     "wanted": false,
     "wantedNote": "Currently represented, but looking to upgrade to a nicer example.",
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-d-b"
+    "sort": "630-d-b",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630dc",
+    "collectionId": "EXO-NY-MAN-0004",
     "displayId": "NY630Dc",
+    "imageKey": "630-d-c",
     "sec": "630",
     "code": "D",
     "var": "c",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan", "nyhrr"],
+    "groups": [
+      "nyhrr"
+    ],
     "title": "New York & Harlaem Railroad",
     "borough": "Manhattan",
     "mat": "Gs",
     "form": "Oc",
-    "symbol": "Sd",
+    "symbol": "",
     "counterstamp": "",
+    "variantTrait": "Plain",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630Dc"
+      },
+      {
+        "catalog": "Hard Times",
+        "number": "HT-298"
+      },
+      {
+        "catalog": "Low",
+        "number": "Low-370"
+      }
+    ],
     "size": 18,
     "obv": "THE N-YORK /& HARLAEM /RAILROAD /COMPANY",
     "rev": "B & S N.Y",
     "desc": "Early octagonal New York & Harlaem Railroad omnibus token in German silver.",
-    "notes": "The New York & Harlaem Railroad, incorporated in 1831, operated one of the earliest urban rail lines in the United States and is widely regarded as New York City’s first street railway. Service began in 1832 along the Bowery from Prince Street to 14th Street, with later extensions north on Fourth Avenue to Harlem and south to City Hall. Horse power was used initially, with steam locomotives introduced in 1837 for service north of the 27th Street depot. These tokens are believed to be the first transportation tokens issued for use in New York City.\n\nCollectors recognize seven major octagonal token varieties associated with the line. The regular circulating issues are the 18mm German silver pieces listed as Atwood-Coffee NY630: plain (NY630Dc), rosette counterstamp (NY630Da), and the famous dog counterstamp (NY630Db). Additional pattern issues were struck in copper and lead under the NY998 listings. Copper varieties include plain (NY998Ca) and leaf counterstamp (NY998Cb). Lead varieties include plain (NY998Da) and leaf counterstamp (NY998Db). The initials 'B & S' found beneath the railroad coach identify the token makers, Bale & Smith, noted New York engravers.\n\nToday these pieces are considered among the most historic American transit tokens, linking directly to the earliest development of organized public transportation in New York City.",
+    "notes": "The New York & Harlaem Railroad, incorporated in 1831, operated one of the earliest urban rail lines in the United States and is widely regarded as New York City’s first street railway. Service began in 1832 along the Bowery from Prince Street to 14th Street, with later extensions north on Fourth Avenue to Harlem and south to City Hall. Horse power was used initially, with steam locomotives introduced in 1837 for service north of the 27th Street depot. These tokens are believed to be the first transportation tokens issued for use in New York City.\n\nCollectors recognize seven major octagonal varieties associated with the New York & Harlaem Railroad. Known examples include pieces struck in German silver, copper, and lead, with varieties distinguished by material and by the presence or absence of a counterstamp. The German silver pieces include the plain variety (Atwood-Coffee NY630Dc), the rosette counterstamp variety (NY630Da), and the well-known dog counterstamp variety (NY630Db). The copper pieces include a plain variety (NY998Ca) and a leaf counterstamp variety (NY998Cb). The lead pieces likewise include a plain variety (NY998Da) and a leaf counterstamp variety (NY998Db). The initials 'B & S' found beneath the railroad coach identify the token makers, Bale & Smith, noted New York engravers.\n\nToday these pieces are considered among the most historic American transit tokens, linking directly to the earliest development of organized public transportation in New York City.",
     "wanted": false,
     "wantedNote": "Currently represented, but looking to upgrade to a nicer example.",
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-d-c"
+    "sort": "630-d-c",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630e",
+    "collectionId": "EXO-NY-MAN-0005",
     "displayId": "NY630E",
     "sec": "630",
     "code": "E",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "4th Avenue Line / Haskins / & / Wilkins",
     "borough": "Manhattan",
     "mat": "Pt",
     "form": "R",
     "symbol": "Pc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630E"
+      }
+    ],
     "size": 27,
     "obv": "4th AVENUE LINE /HASKINS /& /WILKINS",
     "rev": "Transfer Ticket",
-    "desc": "Listed Manhattan transit token: 4th Avenue Line / Haskins / & / Wilkins.",
+    "desc": "Manhattan transit token associated with 4th Avenue Line / Haskins / & / Wilkins.",
     "notes": "",
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-e"
+    "sort": "630-e",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630f",
+    "collectionId": "EXO-NY-MAN-0006",
     "displayId": "NY630F",
     "sec": "630",
     "code": "F",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "5th & 7th Avenue Lines / Marshalls / & / Townsend",
     "borough": "Manhattan",
     "mat": "Pt",
     "form": "R",
     "symbol": "Pc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630F"
+      }
+    ],
     "size": 27,
     "obv": "5th & 7th AVENUE /LINES / MARSHALLS /& /TOWNSEND",
     "rev": "Transfer Ticket",
-    "desc": "Listed Manhattan transit token: 5th & 7th Avenue Lines / Marshalls / & / Townsend.",
+    "desc": "Manhattan transit token associated with 5th & 7th Avenue Lines / Marshalls / & / Townsend.",
     "notes": "Atwood-Coffee notes that this line is not listed in the 1851 City Directory.",
     "rel": [],
     "home": false,
@@ -158,74 +248,105 @@
         "page": 373,
         "note": "Manhattan 630 section notes NY630F line is not listed in the 1851 City Directory."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630g",
+    "collectionId": "EXO-NY-MAN-0007",
     "displayId": "NY630G",
+    "imageKey": "630-g",
     "sec": "630",
     "code": "G",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "7th Avenue Lines / Marshalls / & / Townsend",
     "borough": "Manhattan",
     "mat": "Pt",
     "form": "R",
     "symbol": "Pc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630G"
+      }
+    ],
     "size": 27,
     "obv": "7th AVENUE LINES /MARSHALLS /& /TOWNSEND",
     "rev": "Transfer Ticket",
-    "desc": "Listed Manhattan transit token: 7th Avenue Lines / Marshalls / & / Townsend.",
+    "desc": "Manhattan transit token associated with 7th Avenue Lines / Marshalls / & / Townsend.",
     "notes": "\"5th &\" removed from die.",
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-g"
+    "sort": "630-g",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630h",
+    "collectionId": "EXO-NY-MAN-0008",
     "displayId": "NY630H",
     "sec": "630",
     "code": "H",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "7th Avenue Lines / Marshalls / & / Townsend",
     "borough": "Manhattan",
     "mat": "Pt",
     "form": "R",
     "symbol": "Pc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630H"
+      }
+    ],
     "size": 27,
     "obv": "7th AVENUE LINES /MARSHALLS /& /TOWNSEND",
     "rev": "Transfer Ticket",
-    "desc": "Listed Manhattan transit token: 7th Avenue Lines / Marshalls / & / Townsend.",
+    "desc": "Manhattan transit token associated with 7th Avenue Lines / Marshalls / & / Townsend.",
     "notes": "\"5th &\" scratched off token.",
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-h"
+    "sort": "630-h",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630i",
+    "collectionId": "EXO-NY-MAN-0009",
     "displayId": "NY630I",
     "sec": "630",
     "code": "I",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "6th Avenue Lines / Young / & / Ward.",
     "borough": "Manhattan",
     "mat": "Pt",
     "form": "R",
     "symbol": "Pc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630I"
+      }
+    ],
     "size": 27,
     "obv": "6th AVENUE LINES /YOUNG /& /WARD.",
     "rev": "Transfer Ticket",
-    "desc": "Listed Manhattan transit token: 6th Avenue Lines / Young / & / Ward..",
+    "desc": "Manhattan transit token associated with 6th Avenue Lines / Young / & / Ward.",
     "notes": "Atwood-Coffee notes that an 1851 City Directory lists a Waverley Line operated by Ward, Bolster & Jacacks, probably predecessor to the Sixth Avenue Lines. The route ran from 34th Street & 6th Avenue along 6th Avenue to 8th Street, Broadway and Whitehall Street to South Ferry, operating 20 stages.",
     "rel": [],
     "home": false,
@@ -240,26 +361,37 @@
         "page": 373,
         "note": "Manhattan 630 section gives Waverley Line route and 1851 directory context."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630j",
+    "collectionId": "EXO-NY-MAN-0010",
     "displayId": "NY630J",
+    "imageKey": "630-j",
     "sec": "630",
     "code": "J",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "8th Avenue Lines / Finch / Sanderson / & Co.",
     "borough": "Manhattan",
     "mat": "Pt",
     "form": "R",
     "symbol": "Pc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630J"
+      }
+    ],
     "size": 27,
     "obv": "8th AVENUE LINES /FINCH /SANDERSON /& CO.",
     "rev": "Transfer Ticket",
-    "desc": "Listed Manhattan transit token: 8th Avenue Lines / Finch / Sanderson / & Co..",
+    "desc": "Manhattan transit token associated with 8th Avenue Lines / Finch / Sanderson / & Co.",
     "notes": "Finch & Sanderson were listed in 1851 as proprietors of the Knickerbocker Line and Phenix Line. Atwood-Coffee notes NY630J was quite likely used on either line.",
     "rel": [],
     "home": false,
@@ -274,26 +406,37 @@
         "page": 373,
         "note": "Manhattan 630 section gives Finch & Sanderson route context and likely usage."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630k",
+    "collectionId": "EXO-NY-MAN-0011",
     "displayId": "NY630K",
+    "imageKey": "630-k",
     "sec": "630",
     "code": "K",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Chelsea Line / Kipp Brown & Co.",
     "borough": "Manhattan",
     "mat": "Pt",
     "form": "R",
     "symbol": "Pc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630K"
+      }
+    ],
     "size": 27,
     "obv": "CHELSEA LINE /KIPP BROWN & CO.",
     "rev": "Transfer Ticket",
-    "desc": "Listed Manhattan transit token: Chelsea Line / Kipp Brown & Co..",
+    "desc": "Manhattan transit token associated with Chelsea Line / Kipp Brown & Co.",
     "notes": "Chelsea Line, operated by Kipp & Brown, operated 40 coaches beginning at 27th Street & 9th Avenue, along 9th Avenue, Hudson and Canal Streets, and Broadway to Bowling Green.",
     "rel": [],
     "home": false,
@@ -308,26 +451,37 @@
         "page": 373,
         "note": "Manhattan 630 section gives Chelsea Line operator, coach count, and route."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630la",
+    "collectionId": "EXO-NY-MAN-0012",
     "displayId": "NY630La",
+    "imageKey": "630-l-a",
     "sec": "630",
     "code": "L",
     "var": "a",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Telegraph Line / Tyson & Co.",
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
     "symbol": "Pc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630La"
+      }
+    ],
     "size": 28,
     "obv": "TELEGRAPH LINE /TYSON & CO.",
     "rev": "Transfer Ticket",
-    "desc": "Listed Manhattan transit token: Telegraph Line / Tyson & Co..",
+    "desc": "Manhattan transit token associated with Telegraph Line / Tyson & Co.",
     "notes": "Letters close to edge; 2 periods. Vars. 4. Telegraph Line was operated by William Tyson with 20 coaches, running from Grand Street Ferry through Grand Street, Broadway, Canal, Greenwich and Cortlandt Streets to the Jersey City Ferry. Atwood-Coffee notes these transfer-ticket tokens were good for transfer from one omnibus line to another.",
     "rel": [],
     "home": false,
@@ -342,26 +496,37 @@
         "page": 373,
         "note": "Manhattan 630 section gives Telegraph Line route, operator, and transfer-token usage."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630lb",
+    "collectionId": "EXO-NY-MAN-0013",
     "displayId": "NY630Lb",
+    "imageKey": "630-l-b",
     "sec": "630",
     "code": "L",
     "var": "b",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Telegraph Line / Tyson & Co.",
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
     "symbol": "Pc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630Lb"
+      }
+    ],
     "size": 28,
     "obv": "TELEGRAPH LINE /TYSON & CO.",
     "rev": "Transfer Ticket",
-    "desc": "Listed Manhattan transit token: Telegraph Line / Tyson & Co..",
+    "desc": "Manhattan transit token associated with Telegraph Line / Tyson & Co.",
     "notes": "Letters close to edge; 3 periods. Vars. 4. Telegraph Line was operated by William Tyson with 20 coaches, running from Grand Street Ferry through Grand Street, Broadway, Canal, Greenwich and Cortlandt Streets to the Jersey City Ferry. Atwood-Coffee notes Tyson tokens are brass, with four die varieties, and comparatively common.",
     "rel": [],
     "home": false,
@@ -376,26 +541,37 @@
         "page": 373,
         "note": "Manhattan 630 section gives Telegraph Line route, operator, and transfer-token usage."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630lc",
+    "collectionId": "EXO-NY-MAN-0014",
     "displayId": "NY630Lc",
+    "imageKey": "630-l-c",
     "sec": "630",
     "code": "L",
     "var": "c",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Telegraph Line / Tyson & Co.",
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
     "symbol": "Pc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630Lc"
+      }
+    ],
     "size": 28,
     "obv": "TELEGRAPH LINE /TYSON & CO.",
     "rev": "Transfer Ticket",
-    "desc": "Listed Manhattan transit token: Telegraph Line / Tyson & Co..",
+    "desc": "Manhattan transit token associated with Telegraph Line / Tyson & Co.",
     "notes": "Letters away from edge; period after N. Vars. 4. Telegraph Line was operated by William Tyson with 20 coaches, running from Grand Street Ferry through Grand Street, Broadway, Canal, Greenwich and Cortlandt Streets to the Jersey City Ferry.",
     "rel": [],
     "home": false,
@@ -410,26 +586,37 @@
         "page": 373,
         "note": "Manhattan 630 section gives Telegraph Line route, operator, and transfer-token usage."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630ld",
+    "collectionId": "EXO-NY-MAN-0015",
     "displayId": "NY630Ld",
+    "imageKey": "630-l-d",
     "sec": "630",
     "code": "L",
     "var": "d",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Telegraph Line / Tyson & Co.",
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
     "symbol": "Pc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630Ld"
+      }
+    ],
     "size": 28,
     "obv": "TELEGRAPH LINE /TYSON & CO.",
     "rev": "Transfer Ticket",
-    "desc": "Listed Manhattan transit token: Telegraph Line / Tyson & Co..",
+    "desc": "Manhattan transit token associated with Telegraph Line / Tyson & Co.",
     "notes": "Letters away from edge; no period after N. Vars. 4. Telegraph Line was operated by William Tyson with 20 coaches, running from Grand Street Ferry through Grand Street, Broadway, Canal, Greenwich and Cortlandt Streets to the Jersey City Ferry.",
     "rel": [],
     "home": false,
@@ -444,26 +631,37 @@
         "page": 373,
         "note": "Manhattan 630 section gives Telegraph Line route, operator, and transfer-token usage."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630m",
+    "collectionId": "EXO-NY-MAN-0016",
     "displayId": "NY630M",
+    "imageKey": "630-m",
     "sec": "630",
     "code": "M",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Third Avenue Rail Road (Omnibus)",
     "borough": "Manhattan",
     "mat": "Pt",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630M"
+      }
+    ],
     "size": 27,
     "obv": "THIRD AVENUE RAIL ROAD (OMNIBUS)",
     "rev": "Harlem",
-    "desc": "Listed Manhattan transit token: Third Avenue Rail Road (Omnibus).",
+    "desc": "Manhattan transit token associated with Third Avenue Rail Road (Omnibus).",
     "notes": "Third Avenue Railroad was chartered October 8, 1853. Cable power was substituted for horses in 1893.",
     "rel": [],
     "home": false,
@@ -476,26 +674,36 @@
         "page": 373,
         "note": "Manhattan 630 section gives Third Avenue Railroad charter date and cable-power context for NY630M-Q."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630n",
+    "collectionId": "EXO-NY-MAN-0017",
     "displayId": "NY630N",
     "sec": "630",
     "code": "N",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Third Avenue Rail Road (Omnibus)",
     "borough": "Manhattan",
     "mat": "Pt",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630N"
+      }
+    ],
     "size": 27,
     "obv": "THIRD AVENUE RAIL ROAD (OMNIBUS)",
     "rev": "Yorkville.",
-    "desc": "Listed Manhattan transit token: Third Avenue Rail Road (Omnibus).",
+    "desc": "Manhattan transit token associated with Third Avenue Rail Road (Omnibus).",
     "notes": "Third Avenue Railroad was chartered October 8, 1853. Cable power was substituted for horses in 1893.",
     "rel": [],
     "home": false,
@@ -508,26 +716,37 @@
         "page": 373,
         "note": "Manhattan 630 section gives Third Avenue Railroad charter date and cable-power context for NY630M-Q."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630o",
+    "collectionId": "EXO-NY-MAN-0018",
     "displayId": "NY630O",
+    "imageKey": "630-o",
     "sec": "630",
     "code": "O",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Third Avenue Rail Road (Streetcar)",
     "borough": "Manhattan",
     "mat": "Pt",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630O"
+      }
+    ],
     "size": 27,
     "obv": "THIRD AVENUE RAIL ROAD (STREETCAR)",
     "rev": "Harlem",
-    "desc": "Listed Manhattan transit token: Third Avenue Rail Road (Streetcar).",
+    "desc": "Manhattan transit token associated with Third Avenue Rail Road (Streetcar).",
     "notes": "Third Avenue Railroad was chartered October 8, 1853. Cable power was substituted for horses in 1893.",
     "rel": [],
     "home": false,
@@ -540,26 +759,37 @@
         "page": 373,
         "note": "Manhattan 630 section gives Third Avenue Railroad charter date and cable-power context for NY630M-Q."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630p",
+    "collectionId": "EXO-NY-MAN-0019",
     "displayId": "NY630P",
+    "imageKey": "630-p",
     "sec": "630",
     "code": "P",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Third Avenue Rail Road (Streetcar)",
     "borough": "Manhattan",
     "mat": "Pt",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630P"
+      }
+    ],
     "size": 27,
     "obv": "THIRD AVENUE RAIL ROAD (STREETCAR)",
     "rev": "Yorkville.",
-    "desc": "Listed Manhattan transit token: Third Avenue Rail Road (Streetcar).",
+    "desc": "Manhattan transit token associated with Third Avenue Rail Road (Streetcar).",
     "notes": "Third Avenue Railroad was chartered October 8, 1853. Cable power was substituted for horses in 1893.",
     "rel": [],
     "home": false,
@@ -572,26 +802,37 @@
         "page": 373,
         "note": "Manhattan 630 section gives Third Avenue Railroad charter date and cable-power context for NY630M-Q."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630q",
+    "collectionId": "EXO-NY-MAN-0020",
     "displayId": "NY630Q",
+    "imageKey": "630-q",
     "sec": "630",
     "code": "Q",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "3rd Ave R.R. to Cable Line",
     "borough": "Manhattan",
     "mat": "WM",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630Q"
+      }
+    ],
     "size": 23,
     "obv": "3RD AVE R.R. TO CABLE LINE",
     "rev": "One Fare Going West",
-    "desc": "Listed Manhattan transit token: 3rd Ave R.R. to Cable Line.",
+    "desc": "Manhattan transit token associated with 3rd Ave R.R. to Cable Line.",
     "notes": "Third Avenue Railroad was chartered October 8, 1853. Cable power was substituted for horses in 1893.",
     "rel": [],
     "home": false,
@@ -604,26 +845,36 @@
         "page": 373,
         "note": "Manhattan 630 section gives Third Avenue Railroad charter date and cable-power context for NY630M-Q."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630r",
+    "collectionId": "EXO-NY-MAN-0021",
     "displayId": "NY630R",
     "sec": "630",
     "code": "R",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Hoboken Ferry",
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630R"
+      }
+    ],
     "size": 27,
     "obv": "HOBOKEN /FERRY",
     "rev": "Car Check",
-    "desc": "Listed Manhattan ferry token: Hoboken Ferry.",
+    "desc": "Manhattan transit token associated with Hoboken Ferry.",
     "notes": "Atwood-Coffee notes this may have been a streetcar token issued in conjunction with a combination ferry-streetcar ride.",
     "rel": [],
     "home": false,
@@ -637,26 +888,36 @@
         "page": 373,
         "note": "Manhattan 630 section notes possible ferry-streetcar combination usage."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630s",
+    "collectionId": "EXO-NY-MAN-0022",
     "displayId": "NY630S",
     "sec": "630",
     "code": "S",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "42nd St. M. & St. N. Ave Ry. Transfer",
     "borough": "Manhattan",
     "mat": "WM",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630S"
+      }
+    ],
     "size": 28,
     "obv": "42nd ST. M. & /ST. N. AVE RY. /TRANSFER",
     "rev": "86th St. /to /Boulevard /or /Amsterdam Ave.",
-    "desc": "Listed Manhattan transfer token: 42nd St. M. & St. N. Ave Ry. Transfer.",
+    "desc": "Manhattan transit token associated with 42nd St. M. & St. N. Ave Ry. Transfer.",
     "notes": "42nd Street, Manhattanville & St. Nicholas Avenue Railway began operating August 9, 1884 and was taken over by the Third Avenue Railroad in January 1896. It was a horsecar line operating 24.9 miles of track.",
     "rel": [],
     "home": false,
@@ -671,26 +932,37 @@
         "page": 373,
         "note": "Manhattan 630 section gives railway operating dates, takeover, and track mileage."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630t",
+    "collectionId": "EXO-NY-MAN-0023",
     "displayId": "NY630T",
+    "imageKey": "630-t",
     "sec": "630",
     "code": "T",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Bridge R.R. New York Dep't. P & S.",
     "borough": "Manhattan",
     "mat": "WM",
     "form": "R",
     "symbol": "Stsc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630T"
+      }
+    ],
     "size": 16,
     "obv": "BRIDGE R.R. NEW YORK DEP'T. P & S. / GROVER A WHALEN.",
     "rev": "Bridge R.R. New York Good For One Fare",
-    "desc": "Listed Manhattan toll token: Bridge R.R. New York Dep't. P & S..",
+    "desc": "Manhattan transit token associated with Bridge R.R. New York Dep't. P & S.",
     "notes": "Grover Whalen was in charge of the New York Department of Plants and Structures from 1919 to 1924, so the token was issued during that period. The token was used on the streetcar shuttle on the Williamsburg Bridge, operated by that department.",
     "rel": [],
     "home": false,
@@ -705,26 +977,37 @@
         "page": 373,
         "note": "Manhattan 630 section dates Grover Whalen's department role and describes Williamsburg Bridge shuttle usage."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630u",
+    "collectionId": "EXO-NY-MAN-0024",
     "displayId": "NY630U",
+    "imageKey": "630-u",
     "sec": "630",
     "code": "U",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Interborough Rapid Transit Co. IRT",
     "borough": "Manhattan",
     "mat": "WM",
     "form": "R",
     "symbol": "Bl",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630U"
+      }
+    ],
     "size": 22,
     "obv": "INTERBOROUGH RAPID TRANSIT CO. IRT",
     "rev": "Good For One Fare IRT",
-    "desc": "Listed Manhattan transit token: Interborough Rapid Transit Co. IRT.",
+    "desc": "Manhattan transit token associated with Interborough Rapid Transit Co. IRT.",
     "notes": "Vars. 6. Interborough Rapid Transit opened subway service October 27, 1904 with a 5¢ fare. In 1928, in anticipation of a 7¢ fare that never materialized, 6,000,000 tokens were struck. In 1940, NYCTS inherited these tokens when it took over IRT and unified it with BMT and IND. During World War II some were sold to other companies, and in 1948 NYCTA sold the remaining stock for scrap.",
     "rel": [],
     "home": false,
@@ -740,26 +1023,37 @@
         "page": 373,
         "note": "Manhattan 630 section states 6,000,000 struck in 1928 and explains intended fare use, later inheritance, resale, and scrapping."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630v",
+    "collectionId": "EXO-NY-MAN-0025",
     "displayId": "NY630V",
+    "imageKey": "630-v",
     "sec": "630",
     "code": "V",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "New York City Transit System Manhattan Bus Div. Transfer Token",
     "borough": "Manhattan",
     "mat": "WM",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630V"
+      }
+    ],
     "size": 22,
     "obv": "NEW YORK CITY TRANSIT SYSTEM / MANHATTAN BUS DIV. TRANSFER TOKEN",
     "rev": "Issued in Exchange for Transfer",
-    "desc": "Listed Manhattan transfer token: New York City Transit System Manhattan Bus Div. Transfer Token.",
+    "desc": "Manhattan transit token associated with New York City Transit System Manhattan Bus Div. Transfer Token.",
     "notes": "First use listed as 1949. In 1940, the IRT and BMT were acquired by the City of New York and unified with its publicly owned IND system to form New York City Transit System, which lasted under that name until 1953.",
     "rel": [],
     "home": false,
@@ -774,26 +1068,37 @@
         "page": 373,
         "note": "Manhattan 630 section states 5,000 struck 12/49 and provides NYCTS formation context."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630w",
+    "collectionId": "EXO-NY-MAN-0026",
     "displayId": "NY630W",
+    "imageKey": "630-w",
     "sec": "630",
     "code": "W",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Comprehensive Omnibus Corporation",
     "borough": "Manhattan",
     "mat": "Bz",
     "form": "R",
     "symbol": "COsc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630W"
+      }
+    ],
     "size": 22,
     "obv": "COMPREHENSIVE OMNIBUS CORPORATION",
     "rev": "Issued in Exchange for Transfer",
-    "desc": "Listed Manhattan transit token: Comprehensive Omnibus Corporation.",
+    "desc": "Manhattan transit token associated with Comprehensive Omnibus Corporation.",
     "notes": "First use listed as 1935. Comprehensive Omnibus Corp. and East Side Omnibus Corp. had the same address, 433 East 92nd Street, in 1945, and were both taken over by the City of New York in 1948.",
     "rel": [],
     "home": false,
@@ -808,26 +1113,38 @@
         "page": 375,
         "note": "Manhattan 630 section states 5,000 struck 2/4/35, 2,000 struck 2/3/41, 2,000 struck 2/4/42, and 5,000 struck 10/3/44."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630y",
+    "collectionId": "EXO-NY-MAN-0027",
     "displayId": "NY630Y",
+    "imageKey": "630-y",
     "sec": "630",
     "code": "Y",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Comprehensive Omnibus Corporation",
     "borough": "Manhattan",
     "mat": "S",
+    "finish": "bronze plated",
     "form": "R",
     "symbol": "COsc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630Y"
+      }
+    ],
     "size": 22,
     "obv": "COMPREHENSIVE OMNIBUS CORPORATION",
     "rev": "Issued in Exchange for Transfer",
-    "desc": "Listed Manhattan transit token: Comprehensive Omnibus Corporation.",
+    "desc": "Manhattan transit token associated with Comprehensive Omnibus Corporation.",
     "notes": "First use listed as 1944. Plating: bronze. Comprehensive Omnibus Corp. and East Side Omnibus Corp. had the same address, 433 East 92nd Street, in 1945, and were both taken over by the City of New York in 1948.",
     "rel": [],
     "home": false,
@@ -842,26 +1159,37 @@
         "page": 375,
         "note": "Manhattan 630 section states 11,000 struck total in 5 orders beginning 6/13/33."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630z",
+    "collectionId": "EXO-NY-MAN-0028",
     "displayId": "NY630Z",
+    "imageKey": "630-z",
     "sec": "630",
     "code": "Z",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "East Side Omnibus Corporation",
     "borough": "Manhattan",
     "mat": "WM",
     "form": "R",
     "symbol": "ESsc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630Z"
+      }
+    ],
     "size": 22,
     "obv": "EAST SIDE OMNIBUS CORPORATION",
     "rev": "Issued in Exchange for Transfer",
-    "desc": "Listed Manhattan transit token: East Side Omnibus Corporation.",
+    "desc": "Manhattan transit token associated with East Side Omnibus Corporation.",
     "notes": "First use listed as 1933. Vars. 2.",
     "rel": [],
     "home": false,
@@ -876,26 +1204,37 @@
         "page": 375,
         "note": "Manhattan 630 section states 5,000 struck 10/6/44."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630aa",
+    "collectionId": "EXO-NY-MAN-0029",
     "displayId": "NY630AA",
+    "imageKey": "630-aa",
     "sec": "630",
     "code": "AA",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "East Side Omnibus Corporation",
     "borough": "Manhattan",
     "mat": "S",
     "form": "R",
     "symbol": "ESsc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AA"
+      }
+    ],
     "size": 22,
     "obv": "EAST SIDE OMNIBUS CORPORATION",
     "rev": "Issued in Exchange for Transfer",
-    "desc": "Listed Manhattan transit token: East Side Omnibus Corporation.",
+    "desc": "Manhattan transit token associated with East Side Omnibus Corporation.",
     "notes": "First use listed as 1944. Comprehensive Omnibus Corp. and East Side Omnibus Corp. had the same address, 433 East 92nd Street, in 1945, and were both taken over by the City of New York in 1948.",
     "rel": [],
     "home": false,
@@ -908,26 +1247,37 @@
         "page": 375,
         "note": "Manhattan 630 section gives Comprehensive Omnibus Corp. and East Side Omnibus Corp. shared address and 1948 city takeover."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630aba",
+    "collectionId": "EXO-NY-MAN-0030",
     "displayId": "NY630ABa",
+    "imageKey": "630-ab-a",
     "sec": "630",
     "code": "AB",
     "var": "a",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Avenue B & East Broadway Trans. Co.",
     "borough": "Manhattan",
     "mat": "WM",
     "form": "R",
     "symbol": "Dd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630ABa"
+      }
+    ],
     "size": 23,
     "obv": "AVENUE B & EAST BROADWAY TRANS. CO. (BUS, type 1)",
     "rev": "Transfer Exchange",
-    "desc": "Listed Manhattan transit token: Avenue B & East Broadway Trans. Co..",
+    "desc": "Manhattan transit token associated with Avenue B & East Broadway Trans. Co.",
     "notes": "Counterstamped numerals. First use listed as 1934. Vars. 2. Avenue B & East Broadway Transit Company operated 34 buses in 1945. Larger tokens AB and AC were used when the fare was 5¢.",
     "rel": [],
     "home": false,
@@ -942,26 +1292,37 @@
         "page": 375,
         "note": "Manhattan 630 section states 5,000 struck total in 4 orders beginning 10/34 and explains Avenue B & East Broadway token usage."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630abb",
+    "collectionId": "EXO-NY-MAN-0031",
     "displayId": "NY630ABb",
+    "imageKey": "630-ab-b",
     "sec": "630",
     "code": "AB",
     "var": "b",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Avenue B & East Broadway Trans. Co.",
     "borough": "Manhattan",
     "mat": "WM",
     "form": "R",
     "symbol": "Dd",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630ABb"
+      }
+    ],
     "size": 23,
     "obv": "AVENUE B & EAST BROADWAY TRANS. CO. (BUS, type 1)",
     "rev": "Transfer Exchange",
-    "desc": "Listed Manhattan transit token: Avenue B & East Broadway Trans. Co..",
+    "desc": "Manhattan transit token associated with Avenue B & East Broadway Trans. Co.",
     "notes": "Not counterstamped. First use listed as 1934. Vars. 2. Avenue B & East Broadway Transit Company operated 34 buses in 1945. Larger tokens AB and AC were used when the fare was 5¢.",
     "rel": [],
     "home": false,
@@ -976,26 +1337,37 @@
         "page": 375,
         "note": "Manhattan 630 section states 5,000 struck total in 4 orders beginning 10/34 and explains Avenue B & East Broadway token usage."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630aca",
+    "collectionId": "EXO-NY-MAN-0032",
     "displayId": "NY630ACa",
+    "imageKey": "630-ac-a",
     "sec": "630",
     "code": "AC",
     "var": "a",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Avenue B & East Broadway Trans. Co.",
     "borough": "Manhattan",
     "mat": "WM",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630ACa"
+      }
+    ],
     "size": 23,
     "obv": "AVENUE B & EAST BROADWAY TRANS. CO.",
     "rev": "Transfer Exchange",
-    "desc": "Listed Manhattan transit token: Avenue B & East Broadway Trans. Co..",
+    "desc": "Manhattan transit token associated with Avenue B & East Broadway Trans. Co.",
     "notes": "Counterstamped numerals. First use listed as 1947. Vars. 2. Larger tokens AB and AC were used when the fare was 5¢.",
     "rel": [],
     "home": false,
@@ -1010,26 +1382,37 @@
         "page": 375,
         "note": "Manhattan 630 section states 2,500 struck 6/47 and explains Avenue B & East Broadway token usage."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630acb",
+    "collectionId": "EXO-NY-MAN-0033",
     "displayId": "NY630ACb",
+    "imageKey": "630-ac-b",
     "sec": "630",
     "code": "AC",
     "var": "b",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Avenue B & East Broadway Trans. Co.",
     "borough": "Manhattan",
     "mat": "WM",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630ACb"
+      }
+    ],
     "size": 23,
     "obv": "AVENUE B & EAST BROADWAY TRANS. CO.",
     "rev": "Transfer Exchange",
-    "desc": "Listed Manhattan transit token: Avenue B & East Broadway Trans. Co..",
+    "desc": "Manhattan transit token associated with Avenue B & East Broadway Trans. Co.",
     "notes": "Not counterstamped. First use listed as 1947. Vars. 2. Larger tokens AB and AC were used when the fare was 5¢.",
     "rel": [],
     "home": false,
@@ -1044,26 +1427,38 @@
         "page": 375,
         "note": "Manhattan 630 section states 2,500 struck 6/47 and explains Avenue B & East Broadway token usage."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630ad",
+    "collectionId": "EXO-NY-MAN-0034",
     "displayId": "NY630AD",
+    "imageKey": "630-ad",
     "sec": "630",
     "code": "AD",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Avenue B & East Broadway Trans. Co.",
     "borough": "Manhattan",
     "mat": "WM",
+    "finish": "gunmetal plated",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AD"
+      }
+    ],
     "size": 16,
     "obv": "AVENUE B & EAST BROADWAY TRANS. CO.",
     "rev": "Transfer Exchange",
-    "desc": "Listed Manhattan transit token: Avenue B & East Broadway Trans. Co..",
+    "desc": "Manhattan transit token associated with Avenue B & East Broadway Trans. Co.",
     "notes": "First use listed as 1951. Smaller tokens AD-AF were used when the fare was 10¢. The AD token was too similar to a dime, so the company had them Gm-plated or oxidized to distinguish them.",
     "rel": [],
     "home": false,
@@ -1078,26 +1473,38 @@
         "page": 375,
         "note": "Manhattan 630 section states 3,000 struck 2/51 and explains small-token usage and plating context."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630ae",
+    "collectionId": "EXO-NY-MAN-0035",
     "displayId": "NY630AE",
+    "imageKey": "630-ae",
     "sec": "630",
     "code": "AE",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Avenue B & East Broadway Trans. Co.",
     "borough": "Manhattan",
     "mat": "WM",
+    "finish": "gunmetal plated",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AE"
+      }
+    ],
     "size": 16,
     "obv": "AVENUE B & EAST BROADWAY TRANS. CO.",
     "rev": "Transfer Exchange",
-    "desc": "Listed Manhattan transit token: Avenue B & East Broadway Trans. Co..",
+    "desc": "Manhattan transit token associated with Avenue B & East Broadway Trans. Co.",
     "notes": "Gm-plated. First use listed as 1951. Smaller tokens AD-AF were used when the fare was 10¢.",
     "rel": [],
     "home": false,
@@ -1111,26 +1518,38 @@
         "page": 375,
         "note": "Manhattan 630 section dates NY630AE to 1951-52 and explains small-token usage."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630af",
+    "collectionId": "EXO-NY-MAN-0036",
     "displayId": "NY630AF",
+    "imageKey": "630-af",
     "sec": "630",
     "code": "AF",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Avenue B & East Broadway Trans. Co.",
     "borough": "Manhattan",
     "mat": "WM",
+    "finish": "red enameled",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AF"
+      }
+    ],
     "size": 16,
     "obv": "AVENUE B & EAST BROADWAY TRANS. CO.",
     "rev": "Transfer Exchange",
-    "desc": "Listed Manhattan transit token: Avenue B & East Broadway Trans. Co..",
+    "desc": "Manhattan transit token associated with Avenue B & East Broadway Trans. Co.",
     "notes": "Red-enameled. First use listed as 1952. Smaller tokens AD-AF were used when the fare was 10¢ and these were used until 1958.",
     "rel": [],
     "home": false,
@@ -1144,26 +1563,37 @@
         "page": 375,
         "note": "Manhattan 630 section dates NY630AF to 1952-58 and notes these were used until 1958."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630ag",
+    "collectionId": "EXO-NY-MAN-0037",
     "displayId": "NY630AG",
+    "imageKey": "630-ag",
     "sec": "630",
     "code": "AG",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "125th Street Ferry EF",
     "borough": "Manhattan",
     "mat": "WM",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AG"
+      }
+    ],
     "size": 16,
     "obv": "125th STREET FERRY EF",
     "rev": "Good For One Passage EF",
-    "desc": "Listed Manhattan ferry token: 125th Street Ferry EF.",
+    "desc": "Manhattan transit token associated with 125th Street Ferry EF.",
     "notes": "First use listed as 1947. Vars. 2. Used on the Edgewater Ferry, owned by Electric Ferries, which operated from 1943 until December 1950. It was strictly a convenience token with no discount.",
     "rel": [],
     "home": false,
@@ -1179,26 +1609,37 @@
         "page": 375,
         "note": "Manhattan 630 section states 100,000 struck total in 3 orders from 7/25/47 to 6/11/48 and describes Edgewater Ferry usage."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630ah",
+    "collectionId": "EXO-NY-MAN-0038",
     "displayId": "NY630AH",
+    "imageKey": "630-ah",
     "sec": "630",
     "code": "AH",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "H. & M. One Fare",
     "borough": "Manhattan",
     "mat": "WM",
     "form": "R",
     "symbol": "H-sc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AH"
+      }
+    ],
     "size": 16,
     "obv": "H. & M. ONE FARE",
     "rev": "(same as obverse)",
-    "desc": "Listed Manhattan transit token: H. & M. One Fare.",
+    "desc": "Manhattan transit token associated with H. & M. One Fare.",
     "notes": "Hudson & Manhattan Railroad Company operated 321 electric passenger cars over 9 route miles through a tunnel. H&M was taken over by Port Authority Trans-Hudson in September 1962.",
     "rel": [],
     "home": false,
@@ -1211,122 +1652,179 @@
         "page": 375,
         "note": "Manhattan 630 section gives Hudson & Manhattan Railroad operating details and 1962 PATH takeover."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630ai",
+    "collectionId": "EXO-NY-MAN-0039",
     "displayId": "NY630AI",
+    "imageKey": "630-ai",
     "sec": "630",
     "code": "AI",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "H. & M. One Fare",
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AI"
+      }
+    ],
     "size": 16,
     "obv": "H. & M. ONE FARE",
     "rev": "(same as obverse)",
-    "desc": "Listed Manhattan transit token: H. & M. One Fare.",
+    "desc": "Manhattan transit token associated with H. & M. One Fare.",
     "notes": "",
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-ai"
+    "sort": "630-ai",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630aj",
+    "collectionId": "EXO-NY-MAN-0040",
     "displayId": "NY630AJ",
+    "imageKey": "630-aj",
     "sec": "630",
     "code": "AJ",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "H. & M. One Fare",
     "borough": "Manhattan",
     "mat": "WM",
+    "finish": "copper plated",
     "form": "R",
     "symbol": "H-sc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AJ"
+      }
+    ],
     "size": 16,
     "obv": "H. & M. ONE FARE",
     "rev": "(same as obverse)",
-    "desc": "Listed Manhattan transit token: H. & M. One Fare.",
+    "desc": "Manhattan transit token associated with H. & M. One Fare.",
     "notes": "First use listed as 1946. Plating: copper-plated.",
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-aj"
+    "sort": "630-aj",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630ak",
+    "collectionId": "EXO-NY-MAN-0041",
     "displayId": "NY630AK",
+    "imageKey": "630-ak",
     "sec": "630",
     "code": "AK",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "H. & M. One Fare",
     "borough": "Manhattan",
     "mat": "WM",
+    "finish": "brass plated",
     "form": "R",
     "symbol": "H-sc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AK"
+      }
+    ],
     "size": 16,
     "obv": "H. & M. ONE FARE",
     "rev": "(same as obverse)",
-    "desc": "Listed Manhattan transit token: H. & M. One Fare.",
+    "desc": "Manhattan transit token associated with H. & M. One Fare.",
     "notes": "First use listed as 1951. Plating: brass-plated.",
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-ak"
+    "sort": "630-ak",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630al",
+    "collectionId": "EXO-NY-MAN-0042",
     "displayId": "NY630AL",
+    "imageKey": "630-al",
     "sec": "630",
     "code": "AL",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "H & M / One Fare",
     "borough": "Manhattan",
     "mat": "Bz",
     "form": "R",
     "symbol": "Ch",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AL"
+      }
+    ],
     "size": 18,
     "obv": "H & M /ONE FARE",
     "rev": "(same as obverse)",
-    "desc": "Listed Manhattan transit token: H & M / One Fare.",
+    "desc": "Manhattan transit token associated with H & M / One Fare.",
     "notes": "Hub token.",
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-al"
+    "sort": "630-al",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630am",
+    "collectionId": "EXO-NY-MAN-0043",
     "displayId": "NY630AM",
+    "imageKey": "630-am",
     "sec": "630",
     "code": "AM",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Westchester St. Transp. Co., Inc.",
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
     "symbol": "W",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AM"
+      }
+    ],
     "size": 17,
     "obv": "WESTCHESTER ST. TRANSP. CO., INC.",
     "rev": "Good For One Fare",
-    "desc": "Listed Manhattan transit token: Westchester St. Transp. Co., Inc..",
+    "desc": "Manhattan transit token associated with Westchester St. Transp. Co., Inc.",
     "notes": "Made sometime in the 1950s, probably by Scovill, but never placed in use. Probably made for use in Westchester County, though the company's office was in New York City.",
     "rel": [],
     "home": false,
@@ -1341,22 +1839,33 @@
         "page": 375,
         "note": "Manhattan 630 section notes NY630AM was probably made by Scovill in the 1950s and never placed in use."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630an",
+    "collectionId": "EXO-NY-MAN-0044",
     "displayId": "NY630AN",
+    "imageKey": "630-an",
     "sec": "630",
     "code": "AN",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "New York City Transit Authority NYC",
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AN"
+      }
+    ],
     "size": 16,
     "obv": "NEW YORK CITY TRANSIT AUTHORITY NYC",
     "rev": "Good For One Fare NYC",
@@ -1375,26 +1884,37 @@
         "page": 375,
         "note": "Manhattan 630 section states NY630AN has Scovill and Osborne varieties dated 7/25/53."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630ao",
+    "collectionId": "EXO-NY-MAN-0045",
     "displayId": "NY630AO",
+    "imageKey": "630-ao",
     "sec": "630",
     "code": "AO",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "New York City Transit Authority NYC",
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
     "symbol": "Y-sc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AO"
+      }
+    ],
     "size": 16,
     "obv": "NEW YORK CITY TRANSIT AUTHORITY NYC",
     "rev": "Good For One Fare NYC",
-    "desc": "Listed Manhattan transit token: New York City Transit Authority NYC.",
+    "desc": "Manhattan transit token associated with New York City Transit Authority NYC.",
     "notes": "First use listed as 1953. Vars. 6. Three legitimate varieties are listed: no dots by Scovill, dots with tail on G by Meyer & Wenthe, and dots with no tail on G by Osborne. Approximately 1,500,000 counterfeits were also made. These may be distinguished by the lined background not showing clearly inside the letters, particularly the O's. NY630AO is used as a children's admission token at the historical museum operated by the New York Subway system.",
     "rel": [],
     "home": false,
@@ -1409,26 +1929,37 @@
         "page": 375,
         "note": "Manhattan 630 section states 2,100,000 legitimate NY630AO tokens made and approximately 1,500,000 counterfeits."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630ap",
+    "collectionId": "EXO-NY-MAN-0046",
     "displayId": "NY630AP",
+    "imageKey": "630-ap",
     "sec": "630",
     "code": "AP",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "New York City Transit Authority NYC",
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
     "symbol": "Y-sc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AP"
+      }
+    ],
     "size": 28,
     "obv": "NEW YORK CITY TRANSIT AUTHORITY NYC",
     "rev": "Good For One Fare NYC",
-    "desc": "Listed Manhattan transit token: New York City Transit Authority NYC.",
+    "desc": "Manhattan transit token associated with New York City Transit Authority NYC.",
     "notes": "First use listed as 1966. Used in season for trips to Aqueduct Race Track. New York City Transit Authority was created 3/23/53, became effective 6/15/53, and became part of the Metropolitan Transportation Authority on 3/1/68.",
     "rel": [],
     "home": false,
@@ -1442,26 +1973,37 @@
         "page": 375,
         "note": "Manhattan 630 section notes Aqueduct Race Track usage and gives NYCTA/MTA organizational dates."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630aq",
+    "collectionId": "EXO-NY-MAN-0047",
     "displayId": "NY630AQ",
+    "imageKey": "630-aq",
     "sec": "630",
     "code": "AQ",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "P A T H NY = NJ (Arrow)",
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
     "symbol": "Sl",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AQ"
+      }
+    ],
     "size": 22,
     "obv": "P A T H NY = NJ (ARROW)",
     "rev": "Port Authority Trans-Hudson 1 Fare",
-    "desc": "Listed Manhattan transit token: P A T H NY = NJ (Arrow).",
+    "desc": "Manhattan transit token associated with P A T H NY = NJ (Arrow).",
     "notes": "First use listed as 1963. Vars. 2. Atwood-Coffee reports 1,000,000 struck by Osborne.",
     "rel": [],
     "home": false,
@@ -1477,22 +2019,33 @@
         "page": 376,
         "note": "Manhattan 630 section states 1,000,000 struck by Osborne for NY630AQ."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630ar",
+    "collectionId": "EXO-NY-MAN-0048",
     "displayId": "NY630AR",
+    "imageKey": "630-ar",
     "sec": "630",
     "code": "AR",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "1965 A.V.A. Convention Tour Token",
     "borough": "Manhattan",
     "mat": "B",
     "form": "Ov",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AR"
+      }
+    ],
     "size": 18,
     "obv": "1965 A.V.A. CONVENTION • NEW YORK",
     "rev": "BOAT RIDE AROUND MANHATTAN",
@@ -1512,26 +2065,37 @@
         "page": 376,
         "note": "Manhattan 630 section states 300 struck for the A.V.A. Convention."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630as",
+    "collectionId": "EXO-NY-MAN-0049",
     "displayId": "NY630AS",
+    "imageKey": "630-as",
     "sec": "630",
     "code": "AS",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "New York City Transit Authority N(Y)C",
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
     "symbol": "Y-sc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AS"
+      }
+    ],
     "size": 23,
     "obv": "NEW YORK CITY TRANSIT AUTHORITY N(Y)C",
     "rev": "Good For One Fare N(Y)C",
-    "desc": "Listed Manhattan transit token: New York City Transit Authority N(Y)C.",
+    "desc": "Manhattan transit token associated with New York City Transit Authority N(Y)C.",
     "notes": "First use listed as 1970. Vars. 4. Put in use when the fare went to 30¢.",
     "rel": [],
     "home": false,
@@ -1546,26 +2110,37 @@
         "page": 376,
         "note": "Manhattan 630 section notes NY630AS was put in use when the fare went to 30¢."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630at",
+    "collectionId": "EXO-NY-MAN-0050",
     "displayId": "NY630AT",
+    "imageKey": "630-at",
     "sec": "630",
     "code": "AT",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "New York City Transit Authority NYC",
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AT"
+      }
+    ],
     "size": 22,
     "obv": "NEW YORK CITY TRANSIT AUTHORITY NYC",
     "rev": "Good For One Fare NYC",
-    "desc": "Listed Manhattan transit token: New York City Transit Authority NYC.",
+    "desc": "Manhattan transit token associated with New York City Transit Authority NYC.",
     "notes": "First use listed as 1980. Roger Williams Mint struck 35,000,000 in June 1975 in anticipation of a fare increase, but they were not used until June 1980. At that time, a new order for 15,000,000 was placed. The token went into use when the fare increased to 75¢.",
     "rel": [],
     "home": false,
@@ -1582,26 +2157,38 @@
         "page": 376,
         "note": "Manhattan 630 section states 35,000,000 struck in June 1975, plus a later 15,000,000 order, and explains 1980 fare-increase use."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630au",
+    "collectionId": "EXO-NY-MAN-0051",
     "displayId": "NY630AU",
+    "imageKey": "630-au",
     "sec": "630",
     "code": "AU",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "M 50 TBTA",
     "borough": "Manhattan",
     "mat": "S",
+    "finish": "brass plated",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AU"
+      }
+    ],
     "size": 25,
     "obv": "M 50 TBTA",
     "rev": "(same as obverse)",
-    "desc": "Listed Manhattan toll token: M 50 TBTA.",
+    "desc": "Manhattan transit token associated with M 50 TBTA.",
     "notes": "Reeded edge. First use listed as 1976. Plating: brass-plated. For use on Henry Hudson, Marine Parkway, and Cross Bay Bridges. AU, AV, and AW are TBTA tokens bearing the M logo.",
     "rel": [],
     "home": false,
@@ -1616,26 +2203,38 @@
         "page": 376,
         "note": "Manhattan 630 section gives 6/29/76 issue date and bridge usage for NY630AU."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630av",
+    "collectionId": "EXO-NY-MAN-0052",
     "displayId": "NY630AV",
+    "imageKey": "630-av",
     "sec": "630",
     "code": "AV",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "M 75 TBTA",
     "borough": "Manhattan",
     "mat": "S",
+    "finish": "copper plated",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AV"
+      }
+    ],
     "size": 26,
     "obv": "M 75 TBTA",
     "rev": "(same as obverse)",
-    "desc": "Listed Manhattan toll token: M 75 TBTA.",
+    "desc": "Manhattan transit token associated with M 75 TBTA.",
     "notes": "Reeded edge. First use listed as 1976. Plating: copper-plated. For use on Triborough, Whitestone, and Throgs Neck Bridges, and the Queens Midtown and Brooklyn Battery Tunnels. AU, AV, and AW are TBTA tokens bearing the M logo.",
     "rel": [],
     "home": false,
@@ -1650,26 +2249,38 @@
         "page": 376,
         "note": "Manhattan 630 section gives 6/29/76 issue date and bridge/tunnel usage for NY630AV."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630aw",
+    "collectionId": "EXO-NY-MAN-0053",
     "displayId": "NY630AW",
+    "imageKey": "630-aw",
     "sec": "630",
     "code": "AW",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "M 100 TBTA",
     "borough": "Manhattan",
     "mat": "S",
+    "finish": "white-metal plated",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AW"
+      }
+    ],
     "size": 28,
     "obv": "M 100 TBTA",
     "rev": "(same as obverse)",
-    "desc": "Listed Manhattan toll token: M 100 TBTA.",
+    "desc": "Manhattan transit token associated with M 100 TBTA.",
     "notes": "Reeded edge. First use listed as 1976. Plating: WM-plated. For use on the Verrazano Narrows Bridge. AU, AV, and AW are TBTA tokens bearing the M logo.",
     "rel": [],
     "home": false,
@@ -1684,26 +2295,37 @@
         "page": 376,
         "note": "Manhattan 630 section gives 6/29/76 issue date and Verrazano Narrows Bridge usage for NY630AW."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630ax",
+    "collectionId": "EXO-NY-MAN-0054",
     "displayId": "NY630AX",
+    "imageKey": "630-ax",
     "sec": "630",
     "code": "AX",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "New York City Transit Authority NYC",
     "borough": "Manhattan",
     "mat": "WM",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AX"
+      }
+    ],
     "size": 23,
     "obv": "NEW YORK CITY TRANSIT AUTHORITY NYC",
     "rev": "Special Fare NYC",
-    "desc": "Listed Manhattan transit token: New York City Transit Authority NYC.",
+    "desc": "Manhattan transit token associated with New York City Transit Authority NYC.",
     "notes": "Originally intended for use on “The Train to the Plane,” a special express train to John F. Kennedy Airport. Instead it was used only at the Aqueduct Race Track stop on the inbound express train to Manhattan, where it was purchased at that station and inserted in a turnstile.",
     "rel": [],
     "home": false,
@@ -1720,26 +2342,37 @@
         "page": 376,
         "note": "Manhattan 630 section states 500,000 struck by Roger Williams Mint and explains intended JFK express use versus actual Aqueduct usage."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630ay",
+    "collectionId": "EXO-NY-MAN-0055",
     "displayId": "NY630AY",
+    "imageKey": "630-ay",
     "sec": "630",
     "code": "AY",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "NYC Subway 1904-1979 / People Moving People",
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
     "symbol": "Ddsc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AY"
+      }
+    ],
     "size": 23,
     "obv": "NYC SUBWAY 1904-1979 / PEOPLE MOVING PEOPLE (OLD SUBWAY KIOSK MARKED \"SUBWAY\" AND \"ENTRANCE\")",
     "rev": "Diamond Jubilee Seventy Fifth Anniversary / NYC Subway 1904-1979 (OLD SUBWAY CAR MARKED \"Interborough\" WITH \"3354\" AT BOTH ENDS)",
-    "desc": "Listed Manhattan transit token: NYC Subway 1904-1979 / People Moving People.",
+    "desc": "Manhattan transit token associated with NYC Subway 1904-1979 / People Moving People.",
     "notes": "Vars. 2. Atwood-Coffee reports 10,000,000 struck.",
     "rel": [],
     "home": false,
@@ -1754,26 +2387,38 @@
         "page": 376,
         "note": "Manhattan 630 section states 10,000,000 struck for NY630AY."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630az",
+    "collectionId": "EXO-NY-MAN-0056",
     "displayId": "NY630AZ",
+    "imageKey": "630-az",
     "sec": "630",
     "code": "AZ",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "M 75 TBTA",
     "borough": "Manhattan",
     "mat": "S",
+    "finish": "copper plated",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630AZ"
+      }
+    ],
     "size": 29,
     "obv": "M 75 TBTA",
     "rev": "(same as obverse)",
-    "desc": "Listed Manhattan toll token: M 75 TBTA.",
+    "desc": "Manhattan transit token associated with M 75 TBTA.",
     "notes": "Reeded edge. First use listed as 1979. Vars. 2. Plating: copper-plated. Comes with both sharp and dull strikings; the varieties differ in the size of the M on the token.",
     "rel": [],
     "home": false,
@@ -1787,26 +2432,37 @@
         "page": 376,
         "note": "Manhattan 630 section notes sharp and dull striking varieties and difference in size of the M."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630ba",
+    "collectionId": "EXO-NY-MAN-0057",
     "displayId": "NY630BA",
+    "imageKey": "630-ba",
     "sec": "630",
     "code": "BA",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Triborough Bridge and Tunnel Authority",
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630BA"
+      }
+    ],
     "size": 29,
     "obv": "TRIBOROUGH BRIDGE AND TUNNEL AUTHORITY (CREST OF BRIDGE OVER TBTA)",
     "rev": "M 100",
-    "desc": "Listed Manhattan toll token: Triborough Bridge and Tunnel Authority.",
+    "desc": "Manhattan transit token associated with Triborough Bridge and Tunnel Authority.",
     "notes": "Reeded edge. First use listed as 1980. Introduced for increased TBTA tolls that had formerly been 75¢. Good for Brooklyn Battery Tunnel, Queens Midtown Tunnel, Bronx Whitestone Bridge, and Triborough Bridge; also good for Verrazano-Narrows Bridge while its toll remained $1.00. Tokens were sold in rolls of 20 for $20, giving drivers one free passage at purchase.",
     "rel": [],
     "home": false,
@@ -1821,26 +2477,37 @@
         "page": 376,
         "note": "Manhattan 630 section explains NY630BA toll increase context, facilities, roll sale terms, and 5% discount."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630bb",
+    "collectionId": "EXO-NY-MAN-0058",
     "displayId": "NY630BB",
+    "imageKey": "630-bb",
     "sec": "630",
     "code": "BB",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "New York Street Railway Co. 1900",
     "borough": "Manhattan",
     "mat": "A",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630BB"
+      }
+    ],
     "size": 25,
     "obv": "NEW YORK STREET RAILWAY CO. 1900 (HORSECAR)",
     "rev": "Good For One Ride 5",
-    "desc": "Listed Manhattan transit token: New York Street Railway Co. 1900.",
+    "desc": "Manhattan transit token associated with New York Street Railway Co. 1900.",
     "notes": "Used only during a medical convention to pay fare on Steinway Transit buses operating to or from Roosevelt Island, then known as Welfare Island. Made to resemble an early token of 1900, apparently as a lark.",
     "rel": [],
     "home": false,
@@ -1854,26 +2521,38 @@
         "page": 376,
         "note": "Manhattan 630 section explains NY630BB medical convention use and novelty purpose."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630bc",
+    "collectionId": "EXO-NY-MAN-0059",
     "displayId": "NY630BC",
+    "imageKey": "630-bc",
     "sec": "630",
     "code": "BC",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Triborough Bridge and Tunnel Authority",
     "borough": "Manhattan",
     "mat": "S",
+    "finish": "copper plated",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630BC"
+      }
+    ],
     "size": 25,
     "obv": "TRIBOROUGH BRIDGE AND TUNNEL AUTHORITY (CREST OF BRIDGE OVER TBTA)",
     "rev": "Marine Henry Hudson Cross Bay M",
-    "desc": "Listed Manhattan toll token: Triborough Bridge and Tunnel Authority.",
+    "desc": "Manhattan transit token associated with Triborough Bridge and Tunnel Authority.",
     "notes": "Reeded edge. 5mm stainless steel stripe. First use listed as 1982. Plating: copper-plated. Sold in rolls of 19 for $12; purchaser could pass free at time of purchase. Issued to reflect a toll increase from 75¢ to 90¢ on various facilities.",
     "rel": [],
     "home": false,
@@ -1890,26 +2569,38 @@
         "page": 376,
         "note": "Manhattan 630 section states 1,500,000 struck by Roger Williams Mint and explains roll sale and toll increase context."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630bd",
+    "collectionId": "EXO-NY-MAN-0060",
     "displayId": "NY630BD",
+    "imageKey": "630-bd",
     "sec": "630",
     "code": "BD",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Triborough Bridge and Tunnel Authority",
     "borough": "Manhattan",
     "mat": "S",
+    "finish": "copper plated",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630BD"
+      }
+    ],
     "size": 29,
     "obv": "TRIBOROUGH BRIDGE AND TUNNEL AUTHORITY (CREST OF BRIDGE OVER TBTA)",
     "rev": "Triborough Bronx Whitestone Verrazano Narrows / Brooklyn Battery Queens Midtown Throgs Neck / M",
-    "desc": "Listed Manhattan toll token: Triborough Bridge and Tunnel Authority.",
+    "desc": "Manhattan transit token associated with Triborough Bridge and Tunnel Authority.",
     "notes": "Reeded edge. 5mm stainless steel stripe. First use listed as 1982. Plating: copper-plated. Sold in rolls of 19 for $22; purchaser could pass free at time of purchase. Issued to reflect a toll increase from $1.00 to $1.25 on certain facilities.",
     "rel": [],
     "home": false,
@@ -1926,222 +2617,963 @@
         "page": 376,
         "note": "Manhattan 630 section states 7,500,000 struck by Roger Williams Mint and explains roll sale and toll increase context."
       }
-    ]
+    ],
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630be",
+    "collectionId": "EXO-NY-MAN-0061",
     "displayId": "NY630BE",
+    "imageKey": "630-be",
     "sec": "630",
     "code": "BE",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "New York City Transit Authority",
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630BE"
+      }
+    ],
     "size": 22,
     "obv": "NEW YORK CITY TRANSIT AUTHORITY",
     "rev": "Good For One Fare sjd",
-    "desc": "Listed Manhattan transit token: New York City Transit Authority.",
+    "desc": "Manhattan transit token associated with New York City Transit Authority.",
     "notes": "8mm stainless steel center. 50M. First use listed as 4/22/86.",
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-be"
+    "sort": "630-be",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630bf",
+    "collectionId": "EXO-NY-MAN-0062",
     "displayId": "NY630BF",
+    "imageKey": "630-bf",
     "sec": "630",
     "code": "BF",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "The N.Y. Trolley Car Company Inc. 1986 First Edition",
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630BF"
+      }
+    ],
     "size": 35,
     "obv": "THE N.Y. TROLLEY CAR COMPANY INC. / 1986 FIRST EDITION (FRONT VIEW OF RUBBER-TIRED TROLLEY)",
     "rev": "'N.Y. Trolley' Clang!Clang! 19 Fulton Street / South Street Seaport / New York, New York 10038 (REAR VIEW OF TROLLEY)",
-    "desc": "Listed Manhattan trolley token: The N.Y. Trolley Car Company Inc. 1986 First Edition.",
+    "desc": "Manhattan trolley token: The N.Y. Trolley Car Company Inc. 1986 First Edition.",
     "notes": "Reeded edge. First use listed as 1986.",
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-bf"
+    "sort": "630-bf",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630bg",
+    "collectionId": "EXO-NY-MAN-0063",
     "displayId": "NY630BG",
+    "imageKey": "630-bg",
     "sec": "630",
     "code": "BG",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "New York City Transit Authority",
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630BG"
+      }
+    ],
     "size": 22,
     "obv": "NEW YORK CITY TRANSIT AUTHORITY",
     "rev": "Archer Av Extension 12-88",
-    "desc": "Listed Manhattan transit token: New York City Transit Authority.",
+    "desc": "Manhattan transit token associated with New York City Transit Authority.",
     "notes": "8mm stainless steel center. 100K. First use listed as 12/88.",
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-bg"
+    "sort": "630-bg",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630bh",
+    "collectionId": "EXO-NY-MAN-0064",
     "displayId": "NY630BH",
+    "imageKey": "630-bh",
     "sec": "630",
     "code": "BH",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Roosevelt Island Operating Corporation of the State of New York",
     "borough": "Manhattan",
     "mat": "WM",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630BH"
+      }
+    ],
     "size": 23,
     "obv": "ROOSEVELT ISLAND OPERATING CORPORATION / OF THE STATE OF NEW YORK ® (BRIDGE)",
     "rev": "Roosevelt Island Tramway (SUSPENDED TRAM)",
-    "desc": "Listed Manhattan transit token: Roosevelt Island Operating Corporation of the State of New York.",
+    "desc": "Manhattan transit token associated with Roosevelt Island Operating Corporation of the State of New York.",
     "notes": "8 mm magnetic plug in center of token.",
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-bh"
+    "sort": "630-bh",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630bi",
+    "collectionId": "EXO-NY-MAN-0065",
     "displayId": "NY630BI",
+    "imageKey": "630-bi",
     "sec": "630",
     "code": "BI",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "New York City Transit Authority",
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630BI"
+      }
+    ],
     "size": 22,
     "obv": "NEW YORK CITY TRANSIT AUTHORITY",
     "rev": "Good For One Fare",
-    "desc": "Listed Manhattan transit token: New York City Transit Authority.",
+    "desc": "Manhattan transit token associated with New York City Transit Authority.",
     "notes": "8mm stainless steel center. 10M. Same as BE, but no tiny \"sjd\" on reverse. First use listed as 1989.",
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-bi"
+    "sort": "630-bi",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630bj",
+    "collectionId": "EXO-NY-MAN-0066",
     "displayId": "NY630BJ",
+    "imageKey": "630-bj",
     "sec": "630",
     "code": "BJ",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "New York City Transit Authority",
     "borough": "Manhattan",
     "mat": "S",
     "form": "R",
     "symbol": "Pgsc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630BJ"
+      }
+    ],
     "size": 20,
     "obv": "NEW YORK CITY TRANSIT AUTHORITY",
     "rev": "Good For One Fare",
-    "desc": "Listed Manhattan transit token: New York City Transit Authority.",
+    "desc": "Manhattan transit token associated with New York City Transit Authority.",
     "notes": "60M. First use listed as 11/12/95.",
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-bj"
+    "sort": "630-bj",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630bk",
+    "collectionId": "EXO-NY-MAN-0067",
     "displayId": "NY630BK",
+    "imageKey": "630-bk",
     "sec": "630",
     "code": "BK",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "M 75 TBTA",
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630BK"
+      }
+    ],
     "size": 26,
     "obv": "M 75 TBTA",
     "rev": "(same as obverse)",
-    "desc": "Listed Manhattan toll token: M 75 TBTA.",
+    "desc": "Manhattan transit token associated with M 75 TBTA.",
     "notes": "Reeded edge. First use listed as circa 1976.",
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-bk"
+    "sort": "630-bk",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   },
   {
     "id": "official-ny630bl",
+    "collectionId": "EXO-NY-MAN-0068",
     "displayId": "NY630BL",
     "sec": "630",
     "code": "BL",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan", "errors"],
+    "groups": [
+      "errors"
+    ],
     "title": "New York City Transit Authority NYC",
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630BL"
+      }
+    ],
     "size": 22,
     "obv": "NEW YORK CITY TRANSIT AUTHORITY NYC",
     "rev": "(same as obverse)",
-    "desc": "Listed Manhattan transit token: New York City Transit Authority NYC.",
+    "desc": "Manhattan transit token associated with New York City Transit Authority NYC.",
     "notes": "Error token.",
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-bl"
+    "sort": "630-at-1-error",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "error"
   },
   {
     "id": "official-ny630bm",
+    "collectionId": "EXO-NY-MAN-0069",
     "displayId": "NY630BM",
+    "imageKey": "630-bm",
     "sec": "630",
     "code": "BM",
     "var": "",
     "status": "listed",
     "type": "transit",
-    "groups": ["manhattan"],
+    "groups": [],
     "title": "Riverbank State Park - New York State Office of Parks · Recreation · Historic Preservation",
     "borough": "Manhattan",
     "mat": "Wgz",
     "form": "R",
-    "symbol": "Sd",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY630BM"
+      }
+    ],
     "size": 38,
     "obv": "RIVERBANK STATE PARK - NEW YORK STATE OFFICE / OF PARKS · RECREATION · HISTORIC PRESERVATION / (LEAF)",
     "rev": "One Ride Totally Kid Carousel / (JESTER CAP)",
-    "desc": "Listed Manhattan transit token: Riverbank State Park - New York State Office of Parks · Recreation · Historic Preservation.",
+    "desc": "Manhattan transit token associated with Riverbank State Park - New York State Office of Parks · Recreation · Historic Preservation.",
     "notes": "First use listed as 1999.",
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-bm"
+    "sort": "630-bm",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
+  },
+  {
+    "id": "official-pp-am",
+    "collectionId": "EXO-NY-MAN-0070",
+    "displayId": "PP-AM",
+    "sec": "PP",
+    "code": "AM",
+    "var": "",
+    "status": "listed",
+    "type": "presentation",
+    "groups": [],
+    "title": "NY 630 AY Presentation Piece",
+    "borough": "Manhattan",
+    "mat": "X",
+    "form": "R",
+    "symbol": "Ddsc",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "PP-AM"
+      }
+    ],
+    "size": 23,
+    "obv": "NY 630 AY",
+    "rev": "H STERN incused / numeral engraved on edge",
+    "desc": "Presentation piece based on NY 630 AY, struck in 14k gold with edge numeral and H STERN incused.",
+    "notes": "Catalog cross-reference: PP-AM in the Presentation Pieces section of the Atwood-Coffee catalogue. Struck in 14k gold. The catalogue notes that 500 were made.",
+    "rel": [
+      "NY630AY"
+    ],
+    "home": false,
+    "pub": true,
+    "sort": "630-ay-presentation",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
+  },
+  {
+    "id": "official-ny998ca",
+    "collectionId": "EXO-NY-MAN-0071",
+    "displayId": "NY998Ca",
+    "sec": "998",
+    "code": "C",
+    "var": "a",
+    "status": "listed",
+    "type": "pattern",
+    "groups": [
+      "nyhrr"
+    ],
+    "title": "New York & Harlaem Railroad",
+    "borough": "Manhattan",
+    "mat": "K",
+    "form": "Oc",
+    "symbol": "",
+    "counterstamp": "",
+    "variantTrait": "Plain",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY998Ca"
+      }
+    ],
+    "size": 18,
+    "obv": "NEW YORK & HARLAEM R.R.",
+    "rev": "(OMNIBUS)",
+    "desc": "Early octagonal New York & Harlaem Railroad omnibus token in copper.",
+    "notes": "The New York & Harlaem Railroad, incorporated in 1831, operated one of the earliest urban rail lines in the United States and is widely regarded as New York City’s first street railway. Service began in 1832 along the Bowery from Prince Street to 14th Street, with later extensions north on Fourth Avenue to Harlem and south to City Hall. Horse power was used initially, with steam locomotives introduced in 1837 for service north of the 27th Street depot. These tokens are believed to be the first transportation tokens issued for use in New York City.\n\nCollectors recognize seven major octagonal varieties associated with the New York & Harlaem Railroad. Known examples include pieces struck in German silver, copper, and lead, with varieties distinguished by material and by the presence or absence of a counterstamp. The German silver pieces include the plain variety (Atwood-Coffee NY630Dc), the rosette counterstamp variety (NY630Da), and the well-known dog counterstamp variety (NY630Db). The copper pieces include a plain variety (NY998Ca) and a leaf counterstamp variety (NY998Cb). The lead pieces likewise include a plain variety (NY998Da) and a leaf counterstamp variety (NY998Db). The initials 'B & S' found beneath the railroad coach identify the token makers, Bale & Smith, noted New York engravers.\n\nToday these pieces are considered among the most historic American transit tokens, linking directly to the earliest development of organized public transportation in New York City.",
+    "wanted": false,
+    "wantedNote": "Currently represented, but looking to upgrade to a nicer example.",
+    "rel": [],
+    "home": false,
+    "pub": true,
+    "sort": "630-d-pattern-copper-a",
+    "displaySort": "630-d-c-1-998-c-a",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
+  },
+  {
+    "id": "official-ny998cb",
+    "collectionId": "EXO-NY-MAN-0072",
+    "displayId": "NY998Cb",
+    "sec": "998",
+    "code": "C",
+    "var": "b",
+    "status": "listed",
+    "type": "pattern",
+    "groups": [
+      "nyhrr"
+    ],
+    "title": "New York & Harlaem Railroad",
+    "borough": "Manhattan",
+    "mat": "K",
+    "form": "Oc",
+    "symbol": "",
+    "counterstamp": "Leaf",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY998Cb"
+      }
+    ],
+    "size": 18,
+    "obv": "NEW YORK & HARLAEM R.R.",
+    "rev": "(OMNIBUS)",
+    "desc": "Early octagonal New York & Harlaem Railroad omnibus token in copper.",
+    "notes": "The New York & Harlaem Railroad, incorporated in 1831, operated one of the earliest urban rail lines in the United States and is widely regarded as New York City’s first street railway. Service began in 1832 along the Bowery from Prince Street to 14th Street, with later extensions north on Fourth Avenue to Harlem and south to City Hall. Horse power was used initially, with steam locomotives introduced in 1837 for service north of the 27th Street depot. These tokens are believed to be the first transportation tokens issued for use in New York City.\n\nCollectors recognize seven major octagonal varieties associated with the New York & Harlaem Railroad. Known examples include pieces struck in German silver, copper, and lead, with varieties distinguished by material and by the presence or absence of a counterstamp. The German silver pieces include the plain variety (Atwood-Coffee NY630Dc), the rosette counterstamp variety (NY630Da), and the well-known dog counterstamp variety (NY630Db). The copper pieces include a plain variety (NY998Ca) and a leaf counterstamp variety (NY998Cb). The lead pieces likewise include a plain variety (NY998Da) and a leaf counterstamp variety (NY998Db). The initials 'B & S' found beneath the railroad coach identify the token makers, Bale & Smith, noted New York engravers.\n\nToday these pieces are considered among the most historic American transit tokens, linking directly to the earliest development of organized public transportation in New York City.",
+    "wanted": false,
+    "wantedNote": "Currently represented, but looking to upgrade to a nicer example.",
+    "rel": [],
+    "home": false,
+    "pub": true,
+    "sort": "630-d-pattern-copper-b",
+    "displaySort": "630-d-c-2-998-c-b",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
+  },
+  {
+    "id": "official-ny998da",
+    "collectionId": "EXO-NY-MAN-0073",
+    "displayId": "NY998Da",
+    "sec": "998",
+    "code": "D",
+    "var": "a",
+    "status": "listed",
+    "type": "pattern",
+    "groups": [
+      "nyhrr"
+    ],
+    "title": "New York & Harlaem Railroad",
+    "borough": "Manhattan",
+    "mat": "L",
+    "form": "Oc",
+    "symbol": "",
+    "counterstamp": "",
+    "variantTrait": "Plain",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY998Da"
+      }
+    ],
+    "size": 18,
+    "obv": "NEW YORK & HARLAEM R.R.",
+    "rev": "(OMNIBUS)",
+    "desc": "Early octagonal New York & Harlaem Railroad omnibus token in lead.",
+    "notes": "The New York & Harlaem Railroad, incorporated in 1831, operated one of the earliest urban rail lines in the United States and is widely regarded as New York City’s first street railway. Service began in 1832 along the Bowery from Prince Street to 14th Street, with later extensions north on Fourth Avenue to Harlem and south to City Hall. Horse power was used initially, with steam locomotives introduced in 1837 for service north of the 27th Street depot. These tokens are believed to be the first transportation tokens issued for use in New York City.\n\nCollectors recognize seven major octagonal varieties associated with the New York & Harlaem Railroad. Known examples include pieces struck in German silver, copper, and lead, with varieties distinguished by material and by the presence or absence of a counterstamp. The German silver pieces include the plain variety (Atwood-Coffee NY630Dc), the rosette counterstamp variety (NY630Da), and the well-known dog counterstamp variety (NY630Db). The copper pieces include a plain variety (NY998Ca) and a leaf counterstamp variety (NY998Cb). The lead pieces likewise include a plain variety (NY998Da) and a leaf counterstamp variety (NY998Db). The initials 'B & S' found beneath the railroad coach identify the token makers, Bale & Smith, noted New York engravers.\n\nToday these pieces are considered among the most historic American transit tokens, linking directly to the earliest development of organized public transportation in New York City.",
+    "wanted": false,
+    "wantedNote": "Currently represented, but looking to upgrade to a nicer example.",
+    "rel": [],
+    "home": false,
+    "pub": true,
+    "sort": "630-d-pattern-lead-a",
+    "displaySort": "630-d-c-3-998-d-a",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
+  },
+  {
+    "id": "official-ny998db",
+    "collectionId": "EXO-NY-MAN-0074",
+    "displayId": "NY998Db",
+    "sec": "998",
+    "code": "D",
+    "var": "b",
+    "status": "listed",
+    "type": "pattern",
+    "groups": [
+      "nyhrr"
+    ],
+    "title": "New York & Harlaem Railroad",
+    "borough": "Manhattan",
+    "mat": "L",
+    "form": "Oc",
+    "symbol": "",
+    "counterstamp": "Leaf",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY998Db"
+      }
+    ],
+    "size": 18,
+    "obv": "NEW YORK & HARLAEM R.R.",
+    "rev": "(OMNIBUS)",
+    "desc": "Early octagonal New York & Harlaem Railroad omnibus token in lead.",
+    "notes": "The New York & Harlaem Railroad, incorporated in 1831, operated one of the earliest urban rail lines in the United States and is widely regarded as New York City’s first street railway. Service began in 1832 along the Bowery from Prince Street to 14th Street, with later extensions north on Fourth Avenue to Harlem and south to City Hall. Horse power was used initially, with steam locomotives introduced in 1837 for service north of the 27th Street depot. These tokens are believed to be the first transportation tokens issued for use in New York City.\n\nCollectors recognize seven major octagonal varieties associated with the New York & Harlaem Railroad. Known examples include pieces struck in German silver, copper, and lead, with varieties distinguished by material and by the presence or absence of a counterstamp. The German silver pieces include the plain variety (Atwood-Coffee NY630Dc), the rosette counterstamp variety (NY630Da), and the well-known dog counterstamp variety (NY630Db). The copper pieces include a plain variety (NY998Ca) and a leaf counterstamp variety (NY998Cb). The lead pieces likewise include a plain variety (NY998Da) and a leaf counterstamp variety (NY998Db). The initials 'B & S' found beneath the railroad coach identify the token makers, Bale & Smith, noted New York engravers.\n\nToday these pieces are considered among the most historic American transit tokens, linking directly to the earliest development of organized public transportation in New York City.",
+    "wanted": false,
+    "wantedNote": "Currently represented, but looking to upgrade to a nicer example.",
+    "rel": [],
+    "home": false,
+    "pub": true,
+    "sort": "630-d-pattern-lead-b",
+    "displaySort": "630-d-c-4-998-d-b",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
+  },
+  {
+    "id": "unlisted-man-0001",
+    "collectionId": "EXO-NY-MAN-0075",
+    "displayId": "UNL-MAN-0001",
+    "sec": "",
+    "code": "",
+    "var": "",
+    "status": "unlisted",
+    "type": "presentation",
+    "groups": [],
+    "title": "Gold Presentation Piece Related to NY630AS",
+    "borough": "Manhattan",
+    "mat": "X",
+    "form": "R",
+    "symbol": "",
+    "size": 23,
+    "obv": "NEW YORK CITY TRANSIT AUTHORITY N(Y)C",
+    "rev": "(C)TA",
+    "desc": "Gold piece related to NY630AS, likely struck as a presentation issue.",
+    "notes": "Not currently listed in the Atwood-Coffee Catalogue.",
+    "rel": [
+      "NY630AS"
+    ],
+    "home": true,
+    "pub": true,
+    "sort": "630-as-presentation-gold",
+    "collectionArea": "manhattan",
+    "catalogStatus": "unlisted",
+    "classification": "regular"
+  },
+  {
+    "id": "oddity-0001",
+    "collectionId": "EXO-NY-MAN-0076",
+    "displayId": "ODD-0001",
+    "sec": "",
+    "code": "",
+    "var": "",
+    "status": "unlisted",
+    "type": "error",
+    "groups": [
+      "errors"
+    ],
+    "title": "Double Obverse NYC Transit Token",
+    "borough": "Manhattan",
+    "mat": "B",
+    "form": "R",
+    "symbol": "",
+    "size": 22,
+    "obv": "NEW YORK CITY TRANSIT AUTHORITY NYC",
+    "rev": "NEW YORK CITY TRANSIT AUTHORITY NYC",
+    "desc": "Token struck with obverse dies on both sides.",
+    "notes": "Both sides were struck from obverse dies.",
+    "rel": [
+      "NY630AT"
+    ],
+    "home": false,
+    "pub": true,
+    "sort": "630-at-2-double-obverse",
+    "collectionArea": "manhattan",
+    "catalogStatus": "unlisted",
+    "classification": "error"
+  },
+  {
+    "id": "oddity-0002",
+    "collectionId": "EXO-NY-MAN-0077",
+    "displayId": "ODD-0002",
+    "imageKey": "odd-0002",
+    "sec": "",
+    "code": "",
+    "var": "",
+    "status": "unlisted",
+    "type": "error",
+    "groups": [
+      "errors"
+    ],
+    "title": "NY630AO Unpunched Variety",
+    "borough": "Manhattan",
+    "mat": "B",
+    "form": "R",
+    "symbol": "",
+    "size": 16,
+    "obv": "NEW YORK CITY TRANSIT AUTHORITY NYC",
+    "rev": "Good For One Fare NYC",
+    "desc": "Unpunched variety of NY630AO.",
+    "notes": "The punch-out portion of the design was not cut out.",
+    "rel": [
+      "NY630AO"
+    ],
+    "home": false,
+    "pub": true,
+    "sort": "630-ao-unpunched",
+    "collectionArea": "manhattan",
+    "catalogStatus": "unlisted",
+    "classification": "error"
+  },
+  {
+    "id": "oddity-0003",
+    "collectionId": "EXO-NY-MAN-0078",
+    "displayId": "ODD-0003",
+    "imageKey": "odd-0003",
+    "sec": "",
+    "code": "",
+    "var": "",
+    "status": "unlisted",
+    "type": "error",
+    "groups": [
+      "errors"
+    ],
+    "title": "NY630AP Unpunched Variety",
+    "borough": "Manhattan",
+    "mat": "B",
+    "form": "R",
+    "symbol": "",
+    "size": 28,
+    "obv": "NEW YORK CITY TRANSIT AUTHORITY NYC",
+    "rev": "Good For One Fare NYC",
+    "desc": "Unpunched variety of NY630AP.",
+    "notes": "The punch-out portion of the design was not cut out.",
+    "rel": [
+      "NY630AP"
+    ],
+    "home": false,
+    "pub": true,
+    "sort": "630-ap-unpunched",
+    "collectionArea": "manhattan",
+    "catalogStatus": "unlisted",
+    "classification": "error"
+  },
+  {
+    "id": "oddity-0004",
+    "collectionId": "EXO-NY-MAN-0079",
+    "displayId": "ODD-0004",
+    "imageKey": "odd-0004",
+    "sec": "",
+    "code": "",
+    "var": "",
+    "status": "unlisted",
+    "type": "error",
+    "groups": [
+      "errors"
+    ],
+    "title": "NY630AS Mispunched Variety",
+    "borough": "Manhattan",
+    "mat": "B",
+    "form": "R",
+    "symbol": "",
+    "size": 23,
+    "obv": "NEW YORK CITY TRANSIT AUTHORITY N(Y)C",
+    "rev": "Good For One Fare N(Y)C",
+    "desc": "Mispunched variety of NY630AS.",
+    "notes": "The punch-out portion of the design was punched incorrectly.",
+    "rel": [
+      "NY630AS"
+    ],
+    "home": false,
+    "pub": true,
+    "sort": "630-as-mispunched",
+    "collectionArea": "manhattan",
+    "catalogStatus": "unlisted",
+    "classification": "error"
+  },
+  {
+    "id": "oddity-0005",
+    "collectionId": "EXO-NY-MAN-0080",
+    "displayId": "ODD-0005",
+    "imageKey": "odd-0005",
+    "sec": "",
+    "code": "",
+    "var": "",
+    "status": "unlisted",
+    "type": "error",
+    "groups": [
+      "errors"
+    ],
+    "title": "NY630AS Unpunched Variety",
+    "borough": "Manhattan",
+    "mat": "B",
+    "form": "R",
+    "symbol": "",
+    "size": 23,
+    "obv": "NEW YORK CITY TRANSIT AUTHORITY N(Y)C",
+    "rev": "Good For One Fare N(Y)C",
+    "desc": "Unpunched variety of NY630AS.",
+    "notes": "The punch-out portion of the design was not cut out.",
+    "rel": [
+      "NY630AS"
+    ],
+    "home": false,
+    "pub": true,
+    "sort": "630-as-unpunched",
+    "collectionArea": "manhattan",
+    "catalogStatus": "unlisted",
+    "classification": "error"
+  },
+  {
+    "id": "counterfeit-ny630at-001",
+    "collectionId": "EXO-NY-MAN-0081",
+    "displayId": "CF-0001",
+    "imageKey": "cf-0001",
+    "sec": "630",
+    "code": "AT",
+    "var": "",
+    "status": "unlisted",
+    "type": "counterfeit",
+    "groups": [
+      "errors"
+    ],
+    "title": "Counterfeit New York City Transit Authority NYC",
+    "borough": "Manhattan",
+    "mat": "L",
+    "form": "R",
+    "symbol": "",
+    "size": 22,
+    "obv": "NEW YORK CITY TRANSIT AUTHORITY NYC",
+    "rev": "Good For One Fare NYC",
+    "desc": "Counterfeit token imitating NY630AT.",
+    "notes": "Modern or unofficial imitation of the listed NY630AT type.",
+    "rel": [
+      "NY630AT"
+    ],
+    "home": false,
+    "pub": true,
+    "sort": "630-at-3-counterfeit",
+    "collectionArea": "manhattan",
+    "catalogStatus": "unlisted",
+    "classification": "counterfeit"
+  },
+  {
+    "id": "official-ct-ny-1",
+    "collectionId": "EXO-NY-MAN-0082",
+    "displayId": "CT-NY-1",
+    "sec": "CT",
+    "code": "NY-1",
+    "var": "",
+    "status": "listed",
+    "type": "club",
+    "groups": [],
+    "title": "Motor Bus Society 1948-1998 Fifty Years of Preserving History",
+    "borough": "Manhattan",
+    "mat": "B",
+    "form": "R",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "CT-NY-1"
+      }
+    ],
+    "size": 39,
+    "obv": "MOTOR BUS SOCIETY 1948-1998 FIFTY YEARS OF PRESERVING HISTORY (OLD DOUBLE-DECK BUS WITH 50-MBS ON FRONT) YELLOW COACH MODEL Z",
+    "rev": "Good For One Tour New York, NY 50th Anniversary April 17-19, 1998",
+    "desc": "Club tour token issued for the Motor Bus Society 50th Anniversary events in New York City.",
+    "notes": "Brass example listed as New York CT (2), number 1. Contemporary Farebox commentary described these as thick, heavy, proof-like pieces and among the most attractive tour tokens produced. Additional off-catalog examples were reportedly struck in other metals, but only the tour tokens actually used and readily available were cataloged. Offered to collectors in 1998 for $3 plus $1 postage and handling.",
+    "maker": "Masterpiece Medallions, Claremont, CA",
+    "issued": "1998",
+    "mintage": 755,
+    "usage": "Used for the Saturday night sightseeing tour.",
+    "sources": [
+      {
+        "title": "Farebox",
+        "issue": "May 1998",
+        "page": 57,
+        "note": "Announcement notes that NY CT-1 and CT-2 were struck by Masterpiece Medallions and that other off-catalog metals exist."
+      },
+      {
+        "title": "Farebox",
+        "issue": "May 1998",
+        "page": 61,
+        "note": "Notes usage, maker location, and original collector offering price."
+      }
+    ],
+    "rel": [],
+    "home": false,
+    "pub": true,
+    "sort": "ct-ny-1",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
+  },
+  {
+    "id": "official-ct-ny-2",
+    "collectionId": "EXO-NY-MAN-0083",
+    "displayId": "CT-NY-2",
+    "sec": "CT",
+    "code": "NY-2",
+    "var": "",
+    "status": "listed",
+    "type": "club",
+    "groups": [],
+    "title": "Motor Bus Society 1948-1998 Fifty Years of Preserving History",
+    "borough": "Manhattan",
+    "mat": "WM",
+    "form": "R",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "CT-NY-2"
+      }
+    ],
+    "size": 39,
+    "obv": "MOTOR BUS SOCIETY 1948-1998 FIFTY YEARS OF PRESERVING HISTORY (OLD DOUBLE-DECK BUS WITH 50-MBS ON FRONT) YELLOW COACH MODEL Z",
+    "rev": "Good For One Tour New York, NY 50th Anniversary April 17-19, 1998",
+    "desc": "Club tour token issued for the Motor Bus Society 50th Anniversary events in New York City.",
+    "notes": "White metal example listed as New York CT (2), number 2. Contemporary Farebox commentary described these as thick, heavy, proof-like pieces and among the most attractive tour tokens produced. Additional off-catalog examples were reportedly struck in other metals, but only the tour tokens actually used and readily available were cataloged. Offered to collectors in 1998 for $5 plus $1 postage and handling.",
+    "maker": "Masterpiece Medallions, Claremont, CA",
+    "issued": "1998",
+    "mintage": 200,
+    "usage": "Used for the daytime trips.",
+    "sources": [
+      {
+        "title": "Farebox",
+        "issue": "May 1998",
+        "page": 57,
+        "url": "/resources/farebox/1998-05.pdf",
+        "note": "Announcement notes that NY CT-1 and CT-2 were struck by Masterpiece Medallions and that other off-catalog metals exist."
+      },
+      {
+        "title": "Farebox",
+        "issue": "May 1998",
+        "page": 61,
+        "url": "/resources/farebox/1998-05.pdf",
+        "note": "Notes usage, maker location, and original collector offering price."
+      }
+    ],
+    "rel": [],
+    "home": false,
+    "pub": true,
+    "sort": "ct-ny-2",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
+  },
+  {
+    "id": "official-ff-ny-1",
+    "collectionId": "EXO-NY-MAN-0084",
+    "displayId": "FF-NY-1",
+    "sec": "FF",
+    "code": "1",
+    "var": "",
+    "status": "listed",
+    "type": "fantasy",
+    "groups": [],
+    "title": "Fulton Ferry Crossing E-River",
+    "borough": "Manhattan",
+    "mat": "B",
+    "form": "R",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "FF-NY-1"
+      }
+    ],
+    "size": 38,
+    "obv": "FULTON FERRY CROSSING E-RIVER / BROOKLYN TO MANHATTAN",
+    "rev": "Four Cents (ferryboat) Nassau / Admit the Bearer (all incuse)",
+    "desc": "Fantasy token copying an authentic Fulton Ferry ticket design for a Brooklyn to Manhattan crossing.",
+    "notes": "Catalog cross-reference: FF-NY-1 in the Atwood-Coffee catalogue. Manufactured in the 1970s and wholesaled to dealers for a few cents apiece. The design is copied after an authentic ticket issued by the Fulton Ferry.",
+    "wanted": true,
+    "wantedNote": "Actively seeking an example of this token.",
+    "rel": [],
+    "home": false,
+    "pub": true,
+    "sort": "ff-ny-1",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
+  },
+  {
+    "id": "official-ff-ny-2",
+    "collectionId": "EXO-NY-MAN-0085",
+    "displayId": "FF-NY-2",
+    "sec": "FF",
+    "code": "2",
+    "var": "",
+    "status": "listed",
+    "type": "fantasy",
+    "groups": [],
+    "title": "NYCTA Bombardier R62A Inaugural Service Run",
+    "borough": "Manhattan",
+    "mat": "L",
+    "form": "R",
+    "symbol": "",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "FF-NY-2"
+      }
+    ],
+    "size": 25,
+    "obv": "NEW YORK CITY TRANSIT AUTHORITY / BOMBARDIER (LOGO)",
+    "rev": "R62A Good For One Ride / Inaugural Service Run",
+    "desc": "Fantasy token referencing the introduction of R62A subway cars by the New York City Transit Authority.",
+    "notes": "Catalog cross-reference: FF-NY-2 in the Atwood-Coffee catalogue. Associated with the Bombardier-built R62A cars and their inaugural service.",
+    "rel": [],
+    "home": false,
+    "pub": true,
+    "sort": "ff-ny-2",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
+  },
+  {
+    "id": "official-ny998n",
+    "collectionId": "EXO-NY-MAN-0086",
+    "displayId": "NY998N",
+    "sec": "998",
+    "code": "N",
+    "var": "",
+    "status": "listed",
+    "type": "pattern",
+    "groups": [],
+    "title": "Proposed pattern for the NYC subway.",
+    "borough": "Manhattan",
+    "mat": "WM",
+    "form": "R",
+    "symbol": "Bl",
+    "catalogRefs": [
+      {
+        "catalog": "Atwood-Coffee",
+        "number": "NY998N"
+      }
+    ],
+    "size": 18,
+    "obv": "NEW YORK CITY TRANSIT SYSTEM NYC",
+    "rev": "Good For One Fare NYC",
+    "desc": "A proposed NYC subway token.",
+    "notes": "This was a proposed token for the NYC subway. This design was ultimately not used.",
+    "wanted": false,
+    "wantedNote": "Currently represented, but looking to upgrade to a nicer example.",
+    "rel": [],
+    "home": false,
+    "pub": true,
+    "sort": "630-am-z-pattern",
+    "displaySort": "630-am-z-998-n",
+    "collectionArea": "manhattan",
+    "catalogStatus": "listed",
+    "classification": "regular"
   }
 ]
