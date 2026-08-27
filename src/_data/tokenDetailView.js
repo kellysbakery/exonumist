@@ -103,7 +103,7 @@ function buildDisplayDescription(token, context = {}) {
 
   const area = token.borough || "Collection";
   const type = formatTokenType(token, lookups);
-  const title = String(token.title || "").replace(/\.$/, "");
+  const title = publicCollectionTitle(token, context).replace(/\.$/, "");
 
   if (token.catalogStatus === "unlisted" || token.status === "unlisted") {
     return title
@@ -124,13 +124,15 @@ function normalizeCatalogCrossReferences(token = {}) {
 
     if (typeof entry === "string") {
       const id = entry.trim();
-      return id ? { catalog: "Atwood-Coffee", id } : null;
+      return id ? { catalog: "Catalog", id } : null;
     }
 
     const id = String(entry.id || entry.number || entry.value || "").trim();
     if (!id) return null;
 
-    const catalog = String(entry.catalog || entry.name || "Catalog").trim();
+    const catalog = String(
+      entry.catalog || entry.source || entry.name || "Catalog"
+    ).trim();
 
     return {
       catalog: catalog || "Catalog",
@@ -151,8 +153,6 @@ function normalizeCatalogCrossReferences(token = {}) {
 
   const refs = [];
 
-  // Prefer explicit catalogRefs. The displayId fallback below is temporary
-  // backward compatibility until all token data has catalogRefs.
   if (Array.isArray(token.catalogRefs) && token.catalogRefs.length) {
     token.catalogRefs.forEach((entry) => addEntry(refs, entry));
     return refs;
@@ -166,30 +166,23 @@ function normalizeCatalogCrossReferences(token = {}) {
     return refs;
   }
 
-  if (isCatalogStyleDisplayId(token.displayId)) {
-    addEntry(refs, { catalog: "Atwood-Coffee", id: token.displayId });
-  }
-
   return refs;
 }
 
-function isCatalogStyleDisplayId(value) {
-  const id = String(value || "").trim();
-  if (!id) return false;
+function publicCollectionId(token = {}) {
+  return String(token.collectionId || "").trim();
+}
 
-  if (/^(odd|unl|cf)-/i.test(id)) return false;
-
-  return /^(NY\d|PP-|CT-|FF-|TR-)/i.test(id);
+function publicCollectionTitle(token = {}, options = {}) {
+  return token.title || "";
 }
 
 function formatCatalogCrossReferences(token) {
-  return formatCatalogCrossReferenceLines(token).join("\n");
+  return formatCatalogCrossReferenceLines(token).join(" / ");
 }
 
 function formatCatalogCrossReferenceLines(token) {
-  return normalizeCatalogCrossReferences(token).map(
-    (ref) => `${ref.catalog}: ${ref.id}`
-  );
+  return normalizeCatalogCrossReferences(token).map((ref) => ref.id);
 }
 
 /**
@@ -197,7 +190,7 @@ function formatCatalogCrossReferenceLines(token) {
  * Canonical schema only.
  */
 function buildQuickFacts(token, context = {}) {
-  const { isUnlisted = false, lookups = {} } = context;
+  const { lookups = {} } = context;
 
   const rows = [];
 
@@ -207,14 +200,12 @@ function buildQuickFacts(token, context = {}) {
     }
   };
 
-  const catalogCrossReferenceLines = formatCatalogCrossReferenceLines(token);
-  addRow(
-    "Cat. X-Ref.",
-    catalogCrossReferenceLines[0] || "",
-    catalogCrossReferenceLines.length > 1
-      ? { valueLines: catalogCrossReferenceLines }
-      : {}
-  );
+  addRow("Exonumist ID", publicCollectionId(token));
+
+  const catalogLines = formatCatalogCrossReferenceLines(token);
+  if (catalogLines.length) {
+    addRow("Catalog X-Refs", catalogLines.join(" / "));
+  }
 
   if (
     token.classification &&
@@ -231,7 +222,6 @@ function buildQuickFacts(token, context = {}) {
   addRow("Maker", token.maker);
   addRow("Issued", token.issued);
   addRow("Mintage", formatNumber(token.mintage));
-  addRow("Exonumist ID", token.collectionId || (isUnlisted ? token.displayId : ""));
 
   return rows;
 }
@@ -276,17 +266,14 @@ function buildCardMetaParts(token, context = {}) {
 
 function buildCollectionCardSearchText(token, context = {}) {
   const { lookups = {} } = context;
-  const catalogCrossReferences = normalizeCatalogCrossReferences(token);
   const displayDescription = buildDisplayDescription(token, { lookups });
+  const catalogLines = formatCatalogCrossReferenceLines(token);
 
   const parts = [
     token.collectionId || "",
-    token.displayId || "",
+    catalogLines.join(" "),
     Array.isArray(token.rel) ? token.rel.join(" ") : "",
-    catalogCrossReferences
-      .flatMap((ref) => [ref.catalog, ref.id])
-      .join(" "),
-    token.title || "",
+    publicCollectionTitle(token, context),
     displayDescription,
     token.desc || "",
     token.obv || "",
@@ -329,10 +316,10 @@ function findPrevNext(items = [], currentToken) {
     return { prev: null, next: null };
   }
 
-  const currentId = String(currentToken.displayId || "").toLowerCase();
+  const currentId = String(publicCollectionId(currentToken)).toLowerCase();
 
   const index = items.findIndex(
-    (item) => String(item.displayId || "").toLowerCase() === currentId
+    (item) => String(publicCollectionId(item)).toLowerCase() === currentId
   );
 
   if (index === -1) {
@@ -372,7 +359,7 @@ function buildPagerItem(token, options = {}) {
     direction = ""
   } = options;
 
-  const id = token.displayId || "";
+  const id = publicCollectionId(token);
   const slug = id.toLowerCase();
   const currentArea = getPagerAreaKey(currentToken || {});
   const targetArea = getPagerAreaKey(token);
@@ -395,7 +382,7 @@ function buildPagerItem(token, options = {}) {
   return {
     token,
     id,
-    title: token.title || "",
+    title: publicCollectionTitle(token),
     url,
     crossesBorough,
     targetBorough,
@@ -489,7 +476,6 @@ function buildTokenDetailView(token, context = {}) {
     notes: token.notes || "",
     wantedNote: token.wantedNote || "",
     summaryDescription: buildDisplayDescription(token, { lookups }),
-    catalogCrossReferences: normalizeCatalogCrossReferences(token),
 
     pager: detailShowPager
       ? {
@@ -576,6 +562,9 @@ module.exports = {
   buildDisplayDescription,
   formatMaterialDisplay,
   formatCatalogCrossReferences,
+  formatCatalogCrossReferenceLines,
   normalizeCatalogCrossReferences,
+  publicCollectionId,
+  publicCollectionTitle,
   buildTokenDetailView
 };

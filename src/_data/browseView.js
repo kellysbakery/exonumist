@@ -47,7 +47,7 @@ function buildBrowseTypes(token) {
 }
 
 function buildBrowseUrl(token) {
-  const keys = [token.id, token.displayId];
+  const keys = [token.collectionId];
 
   for (const key of keys) {
     if (!key) continue;
@@ -63,18 +63,12 @@ function buildSearchText(token) {
   const displayDescription = tokenDetailView.buildDisplayDescription(token, {
     lookups
   });
-  const catalogCrossReferences = tokenDetailView.normalizeCatalogCrossReferences(
-    token
-  );
-
+  const catalogLines = tokenDetailView.formatCatalogCrossReferenceLines(token);
   const parts = [
     token.collectionId || "",
-    token.displayId || "",
+    catalogLines.join(" "),
     Array.isArray(token.rel) ? token.rel.join(" ") : "",
-    catalogCrossReferences
-      .flatMap((ref) => [ref.catalog, ref.id])
-      .join(" "),
-    token.title || "",
+    tokenDetailView.publicCollectionTitle(token),
     token.borough || "",
     displayDescription,
     token.desc || "",
@@ -119,8 +113,8 @@ const tokens = allTokens
     ...token,
     url: buildBrowseUrl(token),
     browseTypes: buildBrowseTypes(token),
+    publicTitle: tokenDetailView.publicCollectionTitle(token),
     displayDescription: tokenDetailView.buildDisplayDescription(token, { lookups }),
-    catalogCrossReferences: tokenDetailView.normalizeCatalogCrossReferences(token),
     identifyingDetails: buildIdentifyingDetails(token),
     searchText: buildSearchText(token)
   }))

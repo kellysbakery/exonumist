@@ -1,6 +1,7 @@
 {
   "siteName": "Exonumist",
   "siteUrl": "https://exonumist.com",
+  "showAvailableInNavigation": true,
   "catalog": {
     "name": "Atwood-Coffee Catalogue",
     "shortName": "A/C Catalogue",

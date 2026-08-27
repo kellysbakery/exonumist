@@ -17,7 +17,7 @@
 
       {% if imagePath %}
         {% set imageForm = tokenCardToken.form %}
-        {% set imageAlt = tokenCardToken.displayId ~ " obverse" %}
+        {% set imageAlt = tokenDetailView.publicCollectionId(tokenCardToken) ~ " obverse" %}
         {% set imageClass = "token-list-card-image" %}
         {% set frameClassPrefix = "token-list-card-media-frame" %}
         {% include "shaped-image.njk" %}
@@ -29,11 +29,18 @@
 
     <div class="token-list-card-body">
       <span class="token-card-id">
-        {{ tokenCardToken.displayId }}
+        {{ tokenDetailView.publicCollectionId(tokenCardToken) }}
       </span>
 
+      {% set tokenCardCatalogRefs = tokenDetailView.formatCatalogCrossReferenceLines(tokenCardToken) %}
+      {% if tokenCardCatalogRefs and tokenCardCatalogRefs.length %}
+        <p class="meta token-card-secondary-refs">
+          {{ tokenCardCatalogRefs | join(" / ") }}
+        </p>
+      {% endif %}
+
       <strong class="token-list-card-title">
-        {{ tokenCardToken.title }}
+        {{ tokenDetailView.publicCollectionTitle(tokenCardToken) }}
       </strong>
 
       {% if tokenCardToken.counterstamp %}

@@ -1,7 +1,7 @@
 ---
 layout: base.njk
 title: Search the collection
-description: Search Keith's collection by catalog number, borough, title, material, variety, or description.
+description: Search Keith's collection by identifier, catalog cross-reference, borough, title, material, variety, or description.
 permalink: /search/index.html
 ---
 
@@ -14,13 +14,13 @@ permalink: /search/index.html
 
   <h1>Search the collection</h1>
   <p class="section-intro">
-    Search Keith's collection by catalog number, borough, title, material, variety, or description.
+    Search Keith's collection by identifier, catalog cross-reference, borough, title, material, variety, or description.
   </p>
 
   <div class="card browse-controls search-controls">
     <div class="browse-search-group">
       <h2 class="search-control-title">Search terms</h2>
-      <label class="sr-only" for="browse-search">Catalog number, borough, material, or keyword</label>
+      <label class="sr-only" for="browse-search">Identifier, borough, material, or keyword</label>
       <div class="search-input-shell">
         <svg class="search-input-icon" aria-hidden="true" viewBox="0 0 24 24">
           <circle cx="11" cy="11" r="6" />
@@ -30,10 +30,10 @@ permalink: /search/index.html
           type="text"
           id="browse-search"
           class="browse-search-input"
-          placeholder="Search, e.g. NY630, Manhattan, Y-cutout, brass..." />
+          placeholder="Search, e.g. Manhattan, Y-cutout, brass..." />
       </div>
       <p class="search-input-help">
-        Try catalog numbers, boroughs, materials, token types, or words from the description.
+        Try item IDs, catalog cross-references, boroughs, materials, token types, or words from the description.
       </p>
     </div>
 
@@ -101,7 +101,7 @@ permalink: /search/index.html
 
           {% if browseImagePath %}
             {% set imagePath = browseImagePath %}
-            {% set imageAlt = token.displayId %}
+            {% set imageAlt = tokenDetailView.publicCollectionId(token) %}
             {% set imageForm = token.form %}
             {% set imageClass = "token-list-card-image" %}
             {% set plainImageClass = "token-list-card-image" %}
@@ -114,9 +114,16 @@ permalink: /search/index.html
         </div>
 
         <div class="browse-card-body">
-          <span class="token-card-id">{{ token.displayId }}</span>
+          <span class="token-card-id">{{ tokenDetailView.publicCollectionId(token) }}</span>
 
-          <p class="browse-card-title">{{ token.title }}</p>
+          {% set tokenCatalogRefs = tokenDetailView.formatCatalogCrossReferenceLines(token) %}
+          {% if tokenCatalogRefs and tokenCatalogRefs.length %}
+            <p class="meta token-card-secondary-refs">
+              {{ tokenCatalogRefs | join(" / ") }}
+            </p>
+          {% endif %}
+
+          <p class="browse-card-title">{{ token.publicTitle }}</p>
 
           <div class="token-card-meta-row browse-card-meta-row">
             <p class="meta browse-card-meta">
@@ -138,7 +145,7 @@ permalink: /search/index.html
     <strong data-browse-empty-title>No collection tokens found.</strong>
     <p>Try:</p>
     <ul>
-      <li>a catalog number like NY630</li>
+      <li>an item ID or catalog cross-reference</li>
       <li>a borough like Manhattan or Brooklyn</li>
       <li>a material like brass or vulcanite</li>
       <li>fewer words or alternate spelling</li>

@@ -1,6 +1,7 @@
 const allTokens = require("./allTokens");
 const collectionTokenUrls = require("./collectionTokenUrls");
 const lookups = require("./lookups.json");
+const tokenDetailView = require("./tokenDetailView");
 const wantList = require("./wantList.json");
 
 function lookupValue(code, table) {
@@ -9,7 +10,7 @@ function lookupValue(code, table) {
 }
 
 function tokenUrl(token = {}) {
-  const keys = [token.id, token.displayId];
+  const keys = [token.collectionId];
 
   for (const key of keys) {
     if (!key) continue;
@@ -42,10 +43,11 @@ function buildWantedTokenMetaParts(token = {}) {
 const wantedTokens = allTokens
   .filter((token) => token.wanted)
   .map((token) => ({
-    id: token.displayId,
-    title: token.title,
+    publicId: tokenDetailView.publicCollectionId(token),
+    title: tokenDetailView.publicCollectionTitle(token),
     url: tokenUrl(token),
     badgeLabel: "Wanted",
+    catalogRefParts: tokenDetailView.formatCatalogCrossReferenceLines(token),
     metaParts: buildWantedTokenMetaParts(token)
   }));
 

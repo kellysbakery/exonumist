@@ -9,7 +9,7 @@
     "heading": "About the Collector",
     "name": "Keith Baron",
     "image": "/assets/images/token/630-ap_r.jpg",
-    "imageAlt": "Reverse of token NY630AP showing Good For One Fare",
+    "imageAlt": "Reverse of a New York City transit token showing Good For One Fare",
     "bio": "Independent collector with a particular interest in New York City transportation tokens, undocumented varieties, oddities, and the history connected to everyday transit objects.",
     "links": [
       {
@@ -57,13 +57,6 @@
       "description": "Learn more about the collection and site goals.",
       "image": "/assets/images/site/aboutus.png",
       "imageAlt": "AboutUs"
-    },
-    {
-      "title": "Available",
-      "url": "/available/",
-      "description": "View duplicate transportation tokens available for sale or trade.",
-      "image": "/assets/images/site/forsale.png",
-      "imageAlt": "Available"
     },
     {
       "title": "Want List",
