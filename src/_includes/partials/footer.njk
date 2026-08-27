@@ -6,11 +6,9 @@
     </div>
 
     <nav class="footer-nav" aria-label="Footer">
-      <a href="/">Collection</a>
-      <a href="/search/">Search</a>
-      <a href="/available/">Available</a>
-      <a href="/about/">About</a>
-      <a href="/contact/">Contact</a>
+      {% for item in navigation.footer %}
+        <a href="{{ item.url }}">{{ item.label }}</a>
+      {% endfor %}
     </nav>
   </div>
 </footer>

@@ -18,6 +18,14 @@
       {
         "catalog": "Atwood-Coffee",
         "number": "NY630A"
+      },
+      {
+        "catalog": "Hard Times",
+        "number": "HT-203"
+      },
+      {
+        "catalog": "Low",
+        "number": "Low-374"
       }
     ],
     "size": 23,
@@ -827,6 +835,10 @@
       {
         "catalog": "Atwood-Coffee",
         "number": "NY630Q"
+      },
+      {
+        "catalog": "Token Catalog",
+        "number": "TC-440720"
       }
     ],
     "size": 23,
@@ -957,6 +969,10 @@
       {
         "catalog": "Atwood-Coffee",
         "number": "NY630T"
+      },
+      {
+        "catalog": "Token Catalog",
+        "number": "TC-440721"
       }
     ],
     "size": 16,
@@ -1002,6 +1018,10 @@
       {
         "catalog": "Atwood-Coffee",
         "number": "NY630U"
+      },
+      {
+        "catalog": "Token Catalog",
+        "number": "TC-440723"
       }
     ],
     "size": 22,
@@ -1634,6 +1654,10 @@
       {
         "catalog": "Atwood-Coffee",
         "number": "NY630AH"
+      },
+      {
+        "catalog": "Token Catalog",
+        "number": "TC-240207"
       }
     ],
     "size": 16,
@@ -1677,6 +1701,10 @@
       {
         "catalog": "Atwood-Coffee",
         "number": "NY630AI"
+      },
+      {
+        "catalog": "Token Catalog",
+        "number": "TC-440729"
       }
     ],
     "size": 16,
@@ -1713,6 +1741,10 @@
       {
         "catalog": "Atwood-Coffee",
         "number": "NY630AJ"
+      },
+      {
+        "catalog": "Token Catalog",
+        "number": "TC-440730"
       }
     ],
     "size": 16,
@@ -1749,6 +1781,10 @@
       {
         "catalog": "Atwood-Coffee",
         "number": "NY630AK"
+      },
+      {
+        "catalog": "Token Catalog",
+        "number": "TC-440732"
       }
     ],
     "size": 16,
@@ -1784,6 +1820,10 @@
       {
         "catalog": "Atwood-Coffee",
         "number": "NY630AL"
+      },
+      {
+        "catalog": "Token Catalog",
+        "number": "TC-609069"
       }
     ],
     "size": 18,
@@ -1819,6 +1859,10 @@
       {
         "catalog": "Atwood-Coffee",
         "number": "NY630AM"
+      },
+      {
+        "catalog": "Token Catalog",
+        "number": "TC-440733"
       }
     ],
     "size": 17,
@@ -1864,6 +1908,10 @@
       {
         "catalog": "Atwood-Coffee",
         "number": "NY630AN"
+      },
+      {
+        "catalog": "Token Catalog",
+        "number": "TC-109006"
       }
     ],
     "size": 16,
@@ -1909,6 +1957,14 @@
       {
         "catalog": "Atwood-Coffee",
         "number": "NY630AO"
+      },
+      {
+        "catalog": "Token Catalog",
+        "number": "TC-664914"
+      },
+      {
+        "catalog": "Token Catalog",
+        "number": "TC-109007"
       }
     ],
     "size": 16,
@@ -1954,6 +2010,10 @@
       {
         "catalog": "Atwood-Coffee",
         "number": "NY630AP"
+      },
+      {
+        "catalog": "Token Catalog",
+        "number": "TC-109013"
       }
     ],
     "size": 28,
@@ -2090,6 +2150,10 @@
       {
         "catalog": "Atwood-Coffee",
         "number": "NY630AS"
+      },
+      {
+        "catalog": "Token Catalog",
+        "number": "TC-109012"
       }
     ],
     "size": 23,
@@ -2135,6 +2199,10 @@
       {
         "catalog": "Atwood-Coffee",
         "number": "NY630AT"
+      },
+      {
+        "catalog": "Token Catalog",
+        "number": "TC-109009"
       }
     ],
     "size": 22,
@@ -2642,6 +2710,10 @@
       {
         "catalog": "Atwood-Coffee",
         "number": "NY630BE"
+      },
+      {
+        "catalog": "Token Catalog",
+        "number": "TC-240253"
       }
     ],
     "size": 22,
@@ -2782,6 +2854,10 @@
       {
         "catalog": "Atwood-Coffee",
         "number": "NY630BI"
+      },
+      {
+        "catalog": "Token Catalog",
+        "number": "TC-109011"
       }
     ],
     "size": 22,
@@ -2817,6 +2893,10 @@
       {
         "catalog": "Atwood-Coffee",
         "number": "NY630BJ"
+      },
+      {
+        "catalog": "Token Catalog",
+        "number": "TC-109008"
       }
     ],
     "size": 20,
@@ -2879,7 +2959,7 @@
     "groups": [
       "errors"
     ],
-    "title": "New York City Transit Authority NYC",
+    "title": "Double Obverse NYC Transit Token",
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
@@ -2892,13 +2972,13 @@
     ],
     "size": 22,
     "obv": "NEW YORK CITY TRANSIT AUTHORITY NYC",
-    "rev": "(same as obverse)",
-    "desc": "Manhattan transit token associated with New York City Transit Authority NYC.",
-    "notes": "Error token.",
+    "rev": "NEW YORK CITY TRANSIT AUTHORITY NYC",
+    "desc": "Token struck with obverse dies on both sides.",
+    "notes": "Both sides were struck from obverse dies.",
     "rel": [],
     "home": false,
     "pub": true,
-    "sort": "630-at-1-error",
+    "sort": "630-at-1-double-obverse",
     "collectionArea": "manhattan",
     "catalogStatus": "listed",
     "classification": "error"
@@ -3178,22 +3258,22 @@
     "groups": [
       "errors"
     ],
-    "title": "Double Obverse NYC Transit Token",
+    "title": "Double Reverse NYC Transit Token",
     "borough": "Manhattan",
     "mat": "B",
     "form": "R",
     "symbol": "",
     "size": 22,
-    "obv": "NEW YORK CITY TRANSIT AUTHORITY NYC",
-    "rev": "NEW YORK CITY TRANSIT AUTHORITY NYC",
-    "desc": "Token struck with obverse dies on both sides.",
-    "notes": "Both sides were struck from obverse dies.",
+    "obv": "GOOD FOR ONE FARE NYC",
+    "rev": "GOOD FOR ONE FARE NYC",
+    "desc": "Token struck with reverse dies on both sides.",
+    "notes": "Both sides were struck from reverse dies.",
     "rel": [
       "NY630AT"
     ],
     "home": false,
     "pub": true,
-    "sort": "630-at-2-double-obverse",
+    "sort": "630-at-2-double-reverse",
     "collectionArea": "manhattan",
     "catalogStatus": "unlisted",
     "classification": "error"
@@ -3558,6 +3638,10 @@
       {
         "catalog": "Atwood-Coffee",
         "number": "NY998N"
+      },
+      {
+        "catalog": "Token Catalog",
+        "number": "TC-529041"
       }
     ],
     "size": 18,

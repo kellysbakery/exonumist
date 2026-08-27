@@ -6,7 +6,7 @@ pagination:
   alias: collectionPage
 permalink: "{{ urlHelpers.collectionTokenUrl(collectionPage.collectionArea.slug, collectionPage.pageId | lower) }}index.html"
 eleventyComputed:
-  title: "{{ collectionPage.token.displayId }} – {{ collectionPage.token.title }}"
+  title: "{{ tokenDetailView.publicCollectionId(collectionPage.token) }} – {{ tokenDetailView.publicCollectionTitle(collectionPage.token) }}"
 ---
 
 {% set collectionArea = collectionPage.collectionArea %}
@@ -33,21 +33,29 @@ eleventyComputed:
       {% endfor %}
 
       {% set groupPrevNext = tokenDetailView.findPrevNext(groupTokens, token) %}
+      {% set groupPrevUrl = "" %}
+      {% set groupNextUrl = "" %}
+      {% if groupPrevNext.prev %}
+        {% set groupPrevUrl = collectionTokenUrls[tokenDetailView.publicCollectionId(groupPrevNext.prev) | lower] or "" %}
+      {% endif %}
+      {% if groupPrevNext.next %}
+        {% set groupNextUrl = collectionTokenUrls[tokenDetailView.publicCollectionId(groupPrevNext.next) | lower] or "" %}
+      {% endif %}
       {% set groupPagerContexts = groupPagerContexts.concat([{
         key: group.key,
         title: group.title,
         url: urlHelpers.groupUrl(group.key),
         prevToken: groupPrevNext.prev,
-        prevUrl: collectionTokenUrls[groupPrevNext.prev.id | lower] or collectionTokenUrls[groupPrevNext.prev.displayId | lower] or "",
+        prevUrl: groupPrevUrl,
         nextToken: groupPrevNext.next,
-        nextUrl: collectionTokenUrls[groupPrevNext.next.id | lower] or collectionTokenUrls[groupPrevNext.next.displayId | lower] or ""
+        nextUrl: groupNextUrl
       }]) %}
     {% endif %}
   {% endfor %}
 {% endif %}
 
 {% set detailView = tokenDetailView.buildTokenDetailView(token, {
-  tokenId: token.displayId,
+  tokenId: tokenDetailView.publicCollectionId(token),
   tokenTitle: token.title,
   detailSectionTitle: detailSectionTitle,
   detailSectionUrl: detailSectionUrl,
@@ -65,7 +73,7 @@ eleventyComputed:
       url: detailSectionUrl
     },
     {
-      label: token.displayId
+      label: tokenDetailView.publicCollectionId(token)
     }
   ],
   detailShowPager: true,
