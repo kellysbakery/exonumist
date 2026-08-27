@@ -1,5 +1,6 @@
 const allTokens = require("./allTokens");
 const collectionAreas = require("./collectionAreas");
+const tokenDetailView = require("./tokenDetailView");
 const urlHelpers = require("./urlHelpers");
 const tokenSort = require("./tokenSort");
 
@@ -22,7 +23,7 @@ function tokenInArea(token, area) {
 }
 
 function buildPageId(token) {
-  return String(token.displayId || token.id || "")
+  return tokenDetailView.publicCollectionId(token)
     .trim()
     .toLowerCase();
 }

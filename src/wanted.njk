@@ -30,7 +30,11 @@ permalink: /wanted/index.html
             <a class="wanted-token-link" href="{{ token.url }}">
               <span class="wanted-token-badge">{{ token.badgeLabel }}</span>
 
-              <strong>{{ token.id }}</strong>
+              <strong>{{ token.publicId }}</strong>
+
+              {% if token.catalogRefParts and token.catalogRefParts.length %}
+                <span>{{ token.catalogRefParts | join(" / ") }}</span>
+              {% endif %}
 
               <span>{{ token.title }}</span>
 

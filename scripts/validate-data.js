@@ -11,6 +11,7 @@ const urlHelpers = require("../src/_data/urlHelpers");
 
 const REQUIRED_FIELDS = [
   "id",
+  "collectionId",
   "displayId",
   "status",
   "collectionArea",
@@ -57,6 +58,7 @@ function normalizeKey(value) {
 function describeToken(token) {
   return [
     `id=${token.id || "missing"}`,
+    `collectionId=${token.collectionId || "missing"}`,
     `displayId=${token.displayId || "missing"}`,
     `title=${token.title || "missing"}`,
     `borough=${token.borough || "missing"}`,
@@ -109,8 +111,8 @@ function validateCollectionCoverage(errors, allTokens) {
     const token = page.token || {};
     const areaSlug = page.collectionArea?.slug || "unknown";
     const url = urlHelpers.collectionTokenUrl(areaSlug, page.pageId);
-    const owner = `${token.id || "missing"} (${token.displayId || "missing"}) in ${areaSlug}`;
-    const keys = [token.id, token.displayId].filter(Boolean).map(normalizeKey);
+    const owner = `${token.collectionId || "missing"} (${token.id || "missing"}) in ${areaSlug}`;
+    const keys = [token.collectionId].filter(Boolean).map(normalizeKey);
 
     if (urlOwners.has(url) && urlOwners.get(url) !== owner) {
       errors.push(
@@ -150,10 +152,8 @@ function validateCollectionCoverage(errors, allTokens) {
   }
 
   for (const token of allTokens) {
-    const idKey = normalizeKey(token.id);
-    const displayIdKey = normalizeKey(token.displayId);
-    const idUrl = idKey ? collectionTokenUrls[idKey] : "";
-    const displayIdUrl = displayIdKey ? collectionTokenUrls[displayIdKey] : "";
+    const collectionIdKey = normalizeKey(token.collectionId);
+    const collectionIdUrl = collectionIdKey ? collectionTokenUrls[collectionIdKey] : "";
     const membershipCount = Object.values(collectionAreaTokens).filter((tokens) =>
       tokens.some((item) => item.id === token.id)
     ).length;
@@ -164,15 +164,9 @@ function validateCollectionCoverage(errors, allTokens) {
       );
     }
 
-    if (!idUrl && !displayIdUrl) {
+    if (!collectionIdUrl) {
       errors.push(
         `Public token has no canonical Collection URL: ${describeToken(token)}`
-      );
-    }
-
-    if (idUrl && displayIdUrl && idUrl !== displayIdUrl) {
-      errors.push(
-        `Public token Collection URL mismatch for ${describeToken(token)}: id maps to '${idUrl}', displayId maps to '${displayIdUrl}'`
       );
     }
   }
