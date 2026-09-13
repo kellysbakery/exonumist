@@ -185,6 +185,37 @@ function formatCatalogCrossReferenceLines(token) {
   return normalizeCatalogCrossReferences(token).map((ref) => ref.id);
 }
 
+function tokenCatalogUrlForReference(value) {
+  const match = String(value || "").trim().match(/^TC-(\d+)$/);
+  if (!match) return "";
+
+  return `https://tokencatalog.com/token_record_forms.php?action=DisplayTokenRecord&td_id=${match[1]}`;
+}
+
+function buildCatalogCrossReferenceParts(token) {
+  return formatCatalogCrossReferenceLines(token).flatMap((reference, index) => {
+    const parts = [];
+    const text = String(reference || "");
+    const url = tokenCatalogUrlForReference(text);
+
+    if (index > 0) {
+      parts.push({ text: " / " });
+    }
+
+    parts.push(
+      url
+        ? {
+            text,
+            url,
+            ariaLabel: `${text} on TokenCatalog, opens in a new tab`
+          }
+        : { text }
+    );
+
+    return parts;
+  });
+}
+
 /**
  * Build the Quick Facts rows shown on detail pages.
  * Canonical schema only.
@@ -204,7 +235,9 @@ function buildQuickFacts(token, context = {}) {
 
   const catalogLines = formatCatalogCrossReferenceLines(token);
   if (catalogLines.length) {
-    addRow("Catalog X-Refs", catalogLines.join(" / "));
+    addRow("Catalog X-Refs", catalogLines.join(" / "), {
+      valueParts: buildCatalogCrossReferenceParts(token)
+    });
   }
 
   if (
@@ -563,6 +596,7 @@ module.exports = {
   formatMaterialDisplay,
   formatCatalogCrossReferences,
   formatCatalogCrossReferenceLines,
+  buildCatalogCrossReferenceParts,
   normalizeCatalogCrossReferences,
   publicCollectionId,
   publicCollectionTitle,
