@@ -153,6 +153,19 @@
                   {% for line in fact.valueLines %}
                     <div>{{ line }}</div>
                   {% endfor %}
+                {% elif fact.valueParts and fact.valueParts.length %}
+                  {% for part in fact.valueParts %}
+                    {% if part.url %}
+                      <a
+                        class="catalog-xref-link"
+                        href="{{ part.url }}"
+                        target="_blank"
+                        rel="noopener"
+                        aria-label="{{ part.ariaLabel }}">{{ part.text }}</a>
+                    {% else %}
+                      {{ part.text }}
+                    {% endif %}
+                  {% endfor %}
                 {% else %}
                   {{ fact.value }}
                 {% endif %}
