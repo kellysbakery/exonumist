@@ -176,26 +176,66 @@
       </div>
     </section>
 
-    {% if detailView.notes %}
+    {% if detailView.notes or detailView.usage or detailView.references.length %}
       <section class="section token-notes-section">
-        <h2>Notes</h2>
+        {% if detailView.notes %}
+          <div class="token-note-block">
+            <h2>Notes</h2>
 
-        <div class="notes-frame">
-          <div class="notes-content">
-            <p>{{ detailView.notes }}</p>
+            <div class="notes-frame">
+              <div class="notes-content">
+                <p>{{ detailView.notes }}</p>
 
-            {% if token.wanted %}
-              <div class="wanted-note">
-                <div class="wanted-note-label">Collector Interest</div>
-                <div class="wanted-note-text">
-                  {{ detailView.wantedNote }}
-                </div>
-                <a class="wanted-note-link" href="/wanted/">Have one for sale? Contact me.</a>
+                {% if token.wanted %}
+                  <div class="wanted-note">
+                    <div class="wanted-note-label">Collector Interest</div>
+                    <div class="wanted-note-text">
+                      {{ detailView.wantedNote }}
+                    </div>
+                    <a class="wanted-note-link" href="/wanted/">Have one for sale? Contact me.</a>
+                  </div>
+                {% endif %}
               </div>
-            {% endif %}
+            </div>
           </div>
+        {% endif %}
 
-        </div>
+        {% if detailView.usage %}
+          <div class="token-note-block token-usage-section">
+            <h2>Usage</h2>
+            <div class="notes-frame">
+              <div class="notes-content">
+                <p>{{ detailView.usage | escape }}</p>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+
+        {% if detailView.references.length %}
+          <div class="token-note-block token-references-section">
+            <h2>References</h2>
+            <div class="notes-frame">
+              <div class="notes-content">
+                <ul class="token-reference-list">
+                  {% for reference in detailView.references %}
+                    <li>
+                      {% if reference.citation %}
+                        {% if reference.url %}
+                          <a href="{{ reference.url | escape }}">{{ reference.citation | escape }}</a>
+                        {% else %}
+                          <span>{{ reference.citation | escape }}</span>
+                        {% endif %}
+                      {% endif %}
+                      {% if reference.note %}
+                        <p>{{ reference.note | escape }}</p>
+                      {% endif %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+        {% endif %}
       </section>
     {% endif %}
   </div>

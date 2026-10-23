@@ -1,3 +1,6 @@
+const fs = require("fs");
+const path = require("path");
+
 function lookupValue(code, table) {
   if (!code || !table) return "";
   return table[code] || table[String(code).toLowerCase()] || code;
@@ -114,6 +117,112 @@ function buildDisplayDescription(token, context = {}) {
   return title
     ? `${area} ${type} associated with ${title}.`
     : `${area} ${type} from this collection.`;
+}
+
+/** Keep identifying facts intact; omit optional dates rather than cutting text. */
+function buildMetaDescription(token = {}, { lookups = {} } = {}) {
+  const title = publicCollectionTitle(token).trim();
+  const catalogId = formatCatalogCrossReferenceLines(token)[0] || publicCollectionId(token);
+  const identity = [title, catalogId ? `(${catalogId})` : ""].filter(Boolean).join(" ");
+  const category = [token.borough, formatTokenType(token, lookups), "token"].filter(Boolean).join(" ");
+  const variant = buildVariantLine(token, { lookups });
+  let description = `${identity}. ${category}.${variant ? ` ${variant}.` : ""}`;
+  const reverse = normalizeInscriptionCaption(token.rev);
+  const optional = [
+    hasMeaningfulValue(token.issued) ? `Issued ${token.issued}.` : "",
+    /\b(fare|zone|ride|transfer)\b/i.test(reverse) &&
+      !normalizeComparisonText(title).includes(normalizeComparisonText(reverse))
+      ? `Reverse: ${reverse}${/[.!?]$/.test(reverse) ? "" : "."}` : ""
+  ];
+
+  for (const fact of optional) {
+    if (fact && description.length + fact.length + 1 <= 160) description += ` ${fact}`;
+  }
+
+  // Short records can still offer useful shape/cutout identification, without padding.
+  for (const [label, value] of [
+    ["Shape", lookupValue(token.form, lookups.forms)],
+    ["Symbol", lookupValue(token.symbol, lookups.symbols)]
+  ]) {
+    const fact = value ? `${label}: ${value}.` : "";
+    if (description.length < 120 && fact && description.length + fact.length + 1 <= 160) {
+      description += ` ${fact}`;
+    }
+  }
+
+  return description;
+}
+
+function referenceText(value) {
+  return typeof value === "string" || typeof value === "number"
+    ? String(value).trim()
+    : "";
+}
+
+function normalizeComparisonText(value) {
+  return referenceText(value).toLowerCase().replace(/\s+/g, " ").trim();
+}
+
+function buildUsage(token = {}) {
+  const usage = referenceText(token.usage);
+  const comparable = normalizeComparisonText(usage).replace(/[.!?]+$/, "");
+  if (!comparable) return "";
+
+  // Suppress only a complete matching phrase, not a speculative semantic match.
+  const visible = [token.notes, token.desc].map(normalizeComparisonText);
+  const alreadyVisible = visible.some((text) => {
+    const index = text.indexOf(comparable);
+    return index !== -1 &&
+      (index === 0 || !/[\p{L}\p{N}]/u.test(text[index - 1])) &&
+      (index + comparable.length === text.length ||
+        !/[\p{L}\p{N}]/u.test(text[index + comparable.length]));
+  });
+
+  return alreadyVisible ? "" : usage;
+}
+
+function safeSourceUrl(value) {
+  const url = referenceText(value);
+  if (!url || /[\s\u0000-\u001f\u007f\\]/.test(url)) return "";
+
+  try {
+    const parsed = new URL(url, "https://exonumist.com");
+    if (!["http:", "https:"].includes(parsed.protocol) || parsed.username || parsed.password) {
+      return "";
+    }
+    if (/^https?:\/\//i.test(url)) return url;
+    if (!url.startsWith("/") || url.startsWith("//")) return "";
+
+    // Do not turn missing local bibliography assets into broken links.
+    const sourceRoot = path.resolve(__dirname, "..");
+    const file = path.resolve(sourceRoot, `.${decodeURIComponent(parsed.pathname)}`);
+    return file.startsWith(sourceRoot + path.sep) &&
+      fs.existsSync(file) && fs.statSync(file).isFile() ? url : "";
+  } catch {
+    return "";
+  }
+}
+
+function buildReferences(token = {}) {
+  if (!Array.isArray(token.sources)) return [];
+
+  return token.sources.flatMap((source) => {
+    if (typeof source === "string") {
+      const citation = source.trim();
+      return citation ? [{ citation, note: "", url: "" }] : [];
+    }
+    if (!source || typeof source !== "object") return [];
+
+    const title = referenceText(source.title);
+    const issue = referenceText(source.issue);
+    const page = referenceText(source.page);
+    const citation = [title, issue, page ? `p. ${page}` : ""].filter(Boolean).join(", ");
+    const note = referenceText(source.note);
+    const url = safeSourceUrl(source.url);
+    if (!citation && !note) return [];
+
+    return [{ citation, note, url: citation ? url : "" }];
+  });
 }
 
 function normalizeCatalogCrossReferences(token = {}) {
@@ -507,6 +616,8 @@ function buildTokenDetailView(token, context = {}) {
     reverseCaption: normalizeInscriptionCaption(reverseText),
 
     notes: token.notes || "",
+    usage: buildUsage(token),
+    references: buildReferences(token),
     wantedNote: token.wantedNote || "",
     summaryDescription: buildDisplayDescription(token, { lookups }),
 
@@ -593,6 +704,7 @@ module.exports = {
   buildCardMetaParts,
   buildCollectionCardSearchText,
   buildDisplayDescription,
+  buildMetaDescription,
   formatMaterialDisplay,
   formatCatalogCrossReferences,
   formatCatalogCrossReferenceLines,

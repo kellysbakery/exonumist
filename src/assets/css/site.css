@@ -884,6 +884,21 @@ h2 {
   margin-bottom: 0;
 }
 
+.token-note-block + .token-note-block {
+  margin-top: 1.25rem;
+}
+
+.token-reference-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  line-height: 1.78;
+  overflow-wrap: anywhere;
+}
+
+.token-reference-list li + li {
+  margin-top: 1rem;
+}
+
 @media (min-width: 821px) and (max-width: 1150px) {
   .token-detail--compact {
     grid-template-columns: minmax(0, 1fr) minmax(380px, 0.78fr);
