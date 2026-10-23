@@ -7,6 +7,8 @@ pagination:
 permalink: "{{ urlHelpers.collectionTokenUrl(collectionPage.collectionArea.slug, collectionPage.pageId | lower) }}index.html"
 eleventyComputed:
   title: "{{ tokenDetailView.publicCollectionId(collectionPage.token) }} – {{ tokenDetailView.publicCollectionTitle(collectionPage.token) }}"
+  # Keep computed data as plain text; base.njk escapes the HTML attributes.
+  description: "{{ tokenDetailView.buildMetaDescription(collectionPage.token, { lookups: lookups }) | safe }}"
 ---
 
 {% set collectionArea = collectionPage.collectionArea %}
