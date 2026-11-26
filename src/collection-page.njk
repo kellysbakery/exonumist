@@ -7,6 +7,7 @@ pagination:
 permalink: "{{ urlHelpers.collectionAreaUrl(collectionArea.slug) }}index.html"
 eleventyComputed:
   title: "{{ collectionArea.title }}"
+  description: "{{ collectionArea.description }}"
 ---
 
 {% set groupTokens = collectionAreaTokens[collectionArea.slug] %}
